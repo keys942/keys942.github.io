@@ -1,0 +1,566 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>Git-Gitee初步配置及使用 - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Git-Gitee初步配置及使用">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-27 00:00" pubdate>
+        2021年7月27日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      37
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Git-Gitee初步配置及使用</h1>
+            
+            <div class="markdown-body">
+              <p><strong>Git</strong> 是一个开源的<strong>分布式版本控制</strong>系统，用于敏捷高效地处理任何或小或大的项目。</p>
+<p><strong>Gitee</strong> 是开源中国（OSChina）推出的<strong>基于 Git</strong> 的<strong>代码托管服务</strong>，提供免费的 Git 仓库。</p>
+<p><strong>Git</strong> 文档：<a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2">Git - Book (git-scm.com)</a></p>
+<p><strong>Gitee</strong> 帮助文档：<a target="_blank" rel="noopener" href="https://gitee.com/help">Gitee 帮助中心 - Gitee.com</a></p>
+<h2 id="一、用户信息配置"><a href="#一、用户信息配置" class="headerlink" title="一、用户信息配置"></a>一、用户信息配置</h2><p>第一个要配置的是你个人的用户名称和电子邮件地址。这两条配置很重要，每次 Git 提交时都会引用这两条信息，说明是谁提交了更新，所以会随更新内容一起被永久纳入历史记录：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git config --global user.name <span class="hljs-string">&quot;John&quot;</span><br>$ git config --global user.email john@example.com<br></code></pre></td></tr></table></figure>
+<p>如果用了 <code>--global</code> 选项，那么更改的配置文件就是位于你用户主目录下的那个，以后你所有的仓库都会默认使用这里配置的用户信息。如果要在某个特定的仓库中使用其他名字或者电邮，只要去掉 <code>--global</code> 选项重新配置即可，新的设定保存在当前仓库的 <code>.git/config</code> 文件里。</p>
+<h2 id="二、数据传输协议"><a href="#二、数据传输协议" class="headerlink" title="二、数据传输协议"></a>二、数据传输协议</h2><p>Git 可以使用以下四种协议进行资料的传输：</p>
+<ul>
+<li>本地协议（Local）</li>
+<li>HTTP/HTTPS 协议</li>
+<li>SSH（Secure Shell）协议</li>
+<li>git 协议</li>
+</ul>
+<p>其中，本地协议由于目前大都是进行远程开发和共享代码所以一般不常用，而 <code>git 协议</code> 由于缺乏授权机制且较难架设所以也不常用。</p>
+<p>目前 Gitee 支持使用 <code>HTTPS协议</code> 和 <code>ssh 协议</code> 进行代码的推送/拉取。两种协议的差别仅在于同一个仓库使用不同协议时的地址不同，以及对应的授权实现不同。</p>
+<h3 id="1、HTTPS-传输协议"><a href="#1、HTTPS-传输协议" class="headerlink" title="1、HTTPS 传输协议"></a>1、HTTPS 传输协议</h3><p><strong>HTTPS</strong> 利于匿名访问，适合开源项目可以方便被别人克隆和读取（ 但他没有 <code>push</code> 权限 ）。</p>
+<p>当自己要进行 <code>push</code> 操作时，每次都需要我们进行用户名和密码的验证。</p>
+<p>当然，为避免每次都输入密码，可以配置客户端记住密码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git config --global credential.helper store<br></code></pre></td></tr></table></figure>
+<h3 id="2、SSH-传输协议"><a href="#2、SSH-传输协议" class="headerlink" title="2、SSH 传输协议"></a>2、SSH 传输协议</h3><p><strong>SSH</strong> 协议使用公钥认证比较适合内部项目。</p>
+<p>使用 <strong>SSH</strong> 进行数据传输时，不再需要每次验证密码，但需要提前生成并在<strong>服务器端</strong>添加 <strong>SSH</strong> 公钥。</p>
+<h4 id="1）生成-SSH-公钥"><a href="#1）生成-SSH-公钥" class="headerlink" title="1）生成 SSH 公钥"></a>1）生成 SSH 公钥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ ssh-keygen -t rsa -C <span class="hljs-string">&quot;xxxxx@xxxxx.com&quot;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：这里的 <code>xxxxx@xxxxx.com</code> 只是生成的 ssh-key 的名称，并不约束或要求具体命名为某个邮箱。<br>现网的大部分教程均讲解的使用邮箱生成，其一开始的初衷仅仅是为了便于辨识所以使用了邮箱。</p>
+</blockquote>
+<p>按照提示完成三次回车，即可生成 ssh-key。</p>
+<p>通过查看 <code>~/.ssh/id_rsa.pub</code> 文件内容，获取 public key。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ cat ~/.ssh/id_rsa.pub<br></code></pre></td></tr></table></figure>
+<h4 id="2）配置仓库的-SSH-公钥"><a href="#2）配置仓库的-SSH-公钥" class="headerlink" title="2）配置仓库的 SSH 公钥"></a>2）配置仓库的 SSH 公钥</h4><p>复制生成后的 ssh-key，通过仓库主页 <strong>「管理」-&gt;「部署公钥管理」-&gt;「添加部署公钥」</strong> ，添加生成的 public key 添加到仓库中。</p>
+<p>添加后，在终端（Terminal）中输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ ssh -T git@gitee.com<br></code></pre></td></tr></table></figure>
+<p>首次使用需要确认并添加主机到本机 SSH 可信列表。若返回以下内容，则证明添加成功。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">Hi XXX! You<span class="hljs-string">&#x27;ve successfully authenticated, but Gitee.com does not provide shell access.</span><br></code></pre></td></tr></table></figure>
+<h4 id="3）配置帐户的-SSH-公钥"><a href="#3）配置帐户的-SSH-公钥" class="headerlink" title="3）配置帐户的 SSH 公钥"></a>3）配置帐户的 SSH 公钥</h4><p>我们可以通过主页右上角 <strong>「个人设置」-&gt;「安全设置」-&gt;「SSH公钥」-&gt;「<a target="_blank" rel="noopener" href="https://gitee.com/profile/sshkeys">添加公钥</a>」</strong> ，将上面生成的 public key 添加到当前账户中。</p>
+<h4 id="4）仓库的-SSH-Key-和账户-SSH-Key-的区别"><a href="#4）仓库的-SSH-Key-和账户-SSH-Key-的区别" class="headerlink" title="4）仓库的 SSH Key 和账户 SSH Key 的区别"></a>4）仓库的 SSH Key 和账户 SSH Key 的区别</h4><ul>
+<li>仓库的 SSH Key 具有且只有 <strong>“只读”</strong> 权限，即只能 <code>clone</code> 不能 <code>push</code></li>
+<li>账户的 SSH Key 同时具备<code>clone</code> 和 <code>push</code> 的权限，对用户创建/参与的仓库均能使用，使用起来更加方便。</li>
+</ul>
+<blockquote>
+<p>仓库的 ssh-key 只针对仓库，且我们仅对仓库提供了部署公钥，即<strong>仓库下的公钥仅能拉取仓库</strong>，这通常用于生产服务器拉取仓库的代码。<br>而用户的 ssh-key 则是针对用户的，用户添加了 key 就对用户名下的仓库和用户参加了的仓库具有权限，一般而言，<strong>用户的 key 具有推送和拉取的权限</strong>，<strong>而仓库的 key 则只具有拉取权限</strong>。</p>
+</blockquote>
+<p>所以，这里建议生成 SSH 公钥后直接配置帐户的 SSH 公钥。</p>
+<h3 id="3、HTTPS-和-SSH-说明"><a href="#3、HTTPS-和-SSH-说明" class="headerlink" title="3、HTTPS 和 SSH 说明"></a>3、HTTPS 和 SSH 说明</h3><ul>
+<li><p><strong>SSH</strong> 只能对自己创建的仓库或者 <strong>Fork</strong> 到自己名下的仓库进行 <code>clone、push</code>（ 推送和拉取 ），因此， <strong>如果用户想要使用 SSH 克隆的话，必须是这个仓库的拥有者</strong> 。</p>
+</li>
+<li><p><strong>HTTPS</strong> 可以对任意仓库进行 <code>clone</code> 操作，但注意对于其他人的仓库并没有 <code>push</code> 的权限，当然对于自己的仓库是有 <code>push</code> 的权限的，不过需要每次输入验证密码，但可以通过存储密码，避免每次输入。</p>
+</li>
+<li><p>总的来说，自己的仓库用哪个都可以，看个人习惯，我个人更习惯用 <strong>SSH</strong> （一开始根据老师的文档设置了 <strong>SSH</strong>），而其他人的仓库适合用 <strong>HTTPS</strong> （总不能为了用 <strong>SSH</strong> 而去 <strong>Fork</strong> 一个仓库吧）。</p>
+</li>
+</ul>
+<h2 id="三、Git-仓库基础操作"><a href="#三、Git-仓库基础操作" class="headerlink" title="三、Git 仓库基础操作"></a>三、Git 仓库基础操作</h2><h3 id="1、仓库基本管理"><a href="#1、仓库基本管理" class="headerlink" title="1、仓库基本管理"></a>1、仓库基本管理</h3><h4 id="1）初始化一个Git仓库"><a href="#1）初始化一个Git仓库" class="headerlink" title="1）初始化一个Git仓库"></a>1）初始化一个Git仓库</h4><p>以 <code>/home/gitee/test</code> 文件夹为例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">cd</span> /home/gitee/<span class="hljs-built_in">test</span>    <span class="hljs-comment">#进入git文件夹</span><br>$ git init               <span class="hljs-comment">#初始化一个Git仓库</span><br></code></pre></td></tr></table></figure>
+<h4 id="2）将文件添加到-Git-的暂存区"><a href="#2）将文件添加到-Git-的暂存区" class="headerlink" title="2）将文件添加到 Git 的暂存区"></a>2）将文件添加到 Git 的暂存区</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git add <span class="hljs-string">&quot;readme.txt&quot;</span> <br></code></pre></td></tr></table></figure>
+<p>注：使用 <code>git add -A</code> 或 <code>git add .</code> 可以提交当前仓库的所有改动。</p>
+<h4 id="3）从-Git-的暂存区提交版本到仓库"><a href="#3）从-Git-的暂存区提交版本到仓库" class="headerlink" title="3）从 Git 的暂存区提交版本到仓库"></a>3）从 Git 的暂存区提交版本到仓库</h4><p>参数 <code>-m</code> 后为当次提交的备注信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git commit -m <span class="hljs-string">&quot;1st commit&quot;</span><br></code></pre></td></tr></table></figure>
+<h4 id="4）将本地的-Git-仓库信息推送上传到服务器"><a href="#4）将本地的-Git-仓库信息推送上传到服务器" class="headerlink" title="4）将本地的 Git 仓库信息推送上传到服务器"></a>4）将本地的 Git 仓库信息推送上传到服务器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git push https://gitee.com/***/test.git<br></code></pre></td></tr></table></figure>
+<h4 id="5）查看-Git-提交的日志"><a href="#5）查看-Git-提交的日志" class="headerlink" title="5）查看 Git 提交的日志"></a>5）查看 Git 提交的日志</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git <span class="hljs-built_in">log</span><br></code></pre></td></tr></table></figure>
+<h3 id="2、远程仓库管理"><a href="#2、远程仓库管理" class="headerlink" title="2、远程仓库管理"></a>2、远程仓库管理</h3><h4 id="1）修改仓库名"><a href="#1）修改仓库名" class="headerlink" title="1）修改仓库名"></a>1）修改仓库名</h4><p>一般来讲，默认情况下，在执行 <code>clone</code> 或者其他操作时，仓库名都是 <strong>origin</strong> ，如果说我们想给他改改名字，比如我不喜欢 <strong>origin</strong> 这个名字，想改为 <strong>oschina</strong> ，那么就要在仓库目录下执行命令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git remote rename origin oschina<br></code></pre></td></tr></table></figure>
+<p>这样，你的远程仓库名字就改成了<strong>oschina</strong>，同样，以后推送时执行的命令就不再是 <code>git push origin master</code> 而是 <code>git push oschina master</code> 拉取也是一样的。</p>
+<h4 id="2）添加一个仓库"><a href="#2）添加一个仓库" class="headerlink" title="2）添加一个仓库"></a>2）添加一个仓库</h4><p>在不执行克隆操作时，如果想将一个远程仓库添加到本地的仓库中，可以执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git remote add origin  仓库地址<br></code></pre></td></tr></table></figure>
+<p>注意: </p>
+<ul>
+<li><p><strong>origin</strong> 是你的仓库的别名 可以随便改，但请务必不要与已有的仓库别名冲突 </p>
+</li>
+<li><p>仓库地址一般来讲支持 <code>http/https/ssh/git</code> 协议，其他协议地址请勿添加</p>
+</li>
+</ul>
+<h4 id="3）查看当前仓库对应的远程仓库地址"><a href="#3）查看当前仓库对应的远程仓库地址" class="headerlink" title="3）查看当前仓库对应的远程仓库地址"></a>3）查看当前仓库对应的远程仓库地址</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git remote -v<br></code></pre></td></tr></table></figure>
+<p>这条命令能显示你当前仓库中已经添加了的仓库名和对应的仓库地址，通常来讲，会有两条一模一样的记录，分别是 <code>fetch</code> 和 <code>push</code>，其中 <code>fetch</code> 是用来从远程同步，<code>push</code> 是用来推送到远程。</p>
+<h4 id="4）修改仓库对应的远程仓库地址"><a href="#4）修改仓库对应的远程仓库地址" class="headerlink" title="4）修改仓库对应的远程仓库地址"></a>4）修改仓库对应的远程仓库地址</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git remote set-url origin 仓库地址<br></code></pre></td></tr></table></figure>
+<h2 id="四、Git-常用命令"><a href="#四、Git-常用命令" class="headerlink" title="四、Git 常用命令"></a>四、Git 常用命令</h2><h3 id="1、git-clone"><a href="#1、git-clone" class="headerlink" title="1、git clone"></a>1、git clone</h3><p><code>git clone</code> 实际上是一个封装了其他几个命令的命令。 它创建了一个新目录，切换到新的目录，然后 <code>git init</code> 来初始化一个空的 Git 仓库， 然后为你指定的 URL 添加一个（默认名称为 <code>origin</code> 的）远程仓库（<code>git remote add</code>），再针对远程仓库执行 <code>git fetch</code>，最后通过 <code>git checkout</code> 将远程仓库的最新提交检出到本地的工作目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git <span class="hljs-built_in">clone</span> 仓库地址(HTTPS or SSH)<br>$ git <span class="hljs-built_in">clone</span> https://gitee.com/***/test.git<br>$ git <span class="hljs-built_in">clone</span> 仓库地址 文件目录                   <span class="hljs-comment">#克隆到指定目录</span><br></code></pre></td></tr></table></figure>
+<h3 id="2、git-status"><a href="#2、git-status" class="headerlink" title="2、git status"></a>2、git status</h3><p><code>git status</code> 命令会显示工作区及暂存区域中不同状态的文件。 其中包含了已修改但未暂存，或已经暂存但没有提交的文件。 在一般的显示形式中，它会给你一些如何在这些暂存区之间移动文件的提示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git status<br></code></pre></td></tr></table></figure>
+<h3 id="3、git-add"><a href="#3、git-add" class="headerlink" title="3、git add"></a>3、git add</h3><p><code>git add</code> 命令将内容从工作目录添加到暂存区（或称为索引（index）区），以备下次提交。 当 <code>git commit</code> 命令执行时，默认情况下它只会检查暂存区域，因此 <code>git add</code> 是用来确定下一次提交时快照的样子的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git add <span class="hljs-string">&quot;readme.txt&quot;</span>   <span class="hljs-comment">#提交readme.txt到暂存区</span><br>$ git add -A             <span class="hljs-comment">#提交当前仓库的所有改动</span><br>$ git add .              <span class="hljs-comment">#提交当前仓库的所有改动</span><br></code></pre></td></tr></table></figure>
+<h3 id="4、git-commit"><a href="#4、git-commit" class="headerlink" title="4、git commit"></a>4、git commit</h3><p><code>git commit</code> 命令将所有通过 <code>git add</code> 暂存的文件内容在数据库中创建一个持久的快照，然后将当前分支上的分支指针移到其之上。</p>
+<p>参数 <code>-m</code> 后为当次提交的备注信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git commit -m <span class="hljs-string">&quot;1st commit&quot;</span><br></code></pre></td></tr></table></figure>
+<h3 id="5、git-push"><a href="#5、git-push" class="headerlink" title="5、git push"></a>5、git push</h3><p><code>git push</code> 命令用来与另一个仓库通信，计算你本地数据库与远程仓库的差异，然后将差异推送到另一个仓库中。 它需要有另一个仓库的写权限，因此这通常是需要验证的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git push https://gitee.com/***/test.git<br>$ git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;   <span class="hljs-comment">#git remote后</span><br>$ git push &lt;远程主机名&gt; &lt;本地分支名&gt;              <span class="hljs-comment">#本地分支名与远程分支名相同</span><br></code></pre></td></tr></table></figure>
+<p>以下命令将本地的 master 分支推送到 origin 主机的 master 分支。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git push origin master:master<br>$ git push origin master           <span class="hljs-comment">#本地分支名与远程分支名相同</span><br>$ git push origin                  <span class="hljs-comment">#当前分支与远程分支存在追踪关系</span><br>$ git push                         <span class="hljs-comment">#当前分支只有一个追踪分支</span><br></code></pre></td></tr></table></figure>
+<p>如果当前分支与多个主机存在追踪关系，那么这个时候 <strong>-u</strong> 选项会指定一个默认主机，这样后面就可以不加任何参数使用 <code>git push</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git push -u origin master<br></code></pre></td></tr></table></figure>
+<p>上面命令将本地的 <strong>master</strong> 分支推送到 <strong>origin</strong> 主机，同时指定 <strong>origin</strong> 为<strong>默认主机</strong>，后面就可以不加任何参数使用<code>git push</code> 了。</p>
+<h3 id="6、git-init"><a href="#6、git-init" class="headerlink" title="6、git init"></a>6、git init</h3><p>你只需要简单地运行 <code>git init</code> 就可以将一个目录转变成一个 Git 仓库，这样你就可以开始对它进行版本管理了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git init               <span class="hljs-comment">#初始化一个Git仓库</span><br></code></pre></td></tr></table></figure>
+<h3 id="7、git-remote"><a href="#7、git-remote" class="headerlink" title="7、git remote"></a>7、git remote</h3><p><code>git remote</code> 命令是一个是你远程仓库记录的管理工具。 它允许你将一个长的 URL 保存成一个简写的句柄，例如 <code>origin</code> ，这样你就可以不用每次都输入他们了。 你可以有多个这样的句柄，<code>git remote</code> 可以用来添加，修改，及删除它们。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git remote add &lt;name&gt; &lt;url&gt;<br></code></pre></td></tr></table></figure>
+<h3 id="8、git-pull"><a href="#8、git-pull" class="headerlink" title="8、git pull"></a>8、git pull</h3><p><code>git pull</code> 命令基本上就是 <code>git fetch</code> 和 <code>git merge</code> 命令的组合体，Git 从你指定的远程仓库中抓取内容，然后马上尝试将其合并进你所在的分支中。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;<br></code></pre></td></tr></table></figure>
+<p>将远程主机 origin 的 master 分支拉取过来，与本地的 brantest 分支合并。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git pull origin master:brantest<br></code></pre></td></tr></table></figure>
+<p>如果远程分支是与当前分支合并，则冒号后面的部分可以省略。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git pull origin master<br></code></pre></td></tr></table></figure>
+<p>如果当前分支与远程分支存在追踪关系，<code>git pull</code>就可以省略远程分支名。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git pull origin<br></code></pre></td></tr></table></figure>
+<p>如果当前分支只有一个追踪分支，连远程主机名都可以省略。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git pull<br></code></pre></td></tr></table></figure>
+<h2 id="五、获取与推送项目"><a href="#五、获取与推送项目" class="headerlink" title="五、获取与推送项目"></a>五、获取与推送项目</h2><p>有几种方式获取一个 Git 仓库。 一种是从网络上或者其他地方拷贝一个现有的仓库，另一种就是在一个目录中创建一个新的仓库。</p>
+<h3 id="1、远端克隆"><a href="#1、远端克隆" class="headerlink" title="1、远端克隆"></a>1、远端克隆</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git <span class="hljs-built_in">clone</span> https://gitee.com/***/test.git<br><span class="hljs-comment"># 创建、修改</span><br>$ git status<br>$ git add -A<br>$ git commit -m <span class="hljs-string">&quot;1st commit&quot;</span><br>$ git push origin master<br></code></pre></td></tr></table></figure>
+<h3 id="2、本地创建"><a href="#2、本地创建" class="headerlink" title="2、本地创建"></a>2、本地创建</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ mkdir <span class="hljs-built_in">test</span><br>$ <span class="hljs-built_in">cd</span> <span class="hljs-built_in">test</span><br>$ git init<br><span class="hljs-comment"># 创建、修改</span><br>$ git status<br>$ git add -A<br>$ git commit -m <span class="hljs-string">&quot;1st commit&quot;</span><br>$ git remote add origin https://gitee.com/***/test.git<br>$ git push origin master<br></code></pre></td></tr></table></figure>
+<h2 id="六、参与项目的一般流程"><a href="#六、参与项目的一般流程" class="headerlink" title="六、参与项目的一般流程"></a>六、参与项目的一般流程</h2><p>1、<strong>Fork</strong> 项目仓库，建立派生仓库，作为自己 <strong>Gitee</strong> 上的远端仓库</p>
+<p>2、获取远端仓库，一般为 <code>clone</code> 远端仓库</p>
+<p>3、进行修改</p>
+<p>4、推送项目到远端仓库</p>
+<p>5、提交 <strong>Pull Requests</strong> </p>
+<p>注：如果是自己创建的开发项目，则不需要进行 <strong>Fork</strong> 和 <strong>Pull Requests</strong> </p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Git/">Git</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/gitee/">gitee</a>
+                    
+                      <a class="hover-with-bg" href="/tags/git/">git</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/07/27/Linux/Kali/kali%E5%AE%89%E8%A3%85AWVS/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Kali安装AWVS</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/07/27/Tools/Git/Git%E5%B8%B8%E8%A7%81%E5%87%BA%E9%94%99/">
+                        <span class="hidden-mobile">Git常见出错</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

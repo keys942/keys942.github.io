@@ -1,0 +1,540 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>CTFHub-Web-信息泄露 - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="CTFHub-Web-信息泄露">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-08-08 00:00" pubdate>
+        2021年8月8日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      25
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">CTFHub-Web-信息泄露</h1>
+            
+            <div class="markdown-body">
+              <h2 id="1、目录遍历"><a href="#1、目录遍历" class="headerlink" title="1、目录遍历"></a>1、目录遍历</h2><p>1）直接手动遍历，得到 flag：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ctfhub</span>&#123;a<span class="hljs-number">5</span>b<span class="hljs-number">8</span>e<span class="hljs-number">8</span>d<span class="hljs-number">63</span>b<span class="hljs-number">093</span>a<span class="hljs-number">694</span>ca<span class="hljs-number">4318</span>b&#125;<br></code></pre></td></tr></table></figure>
+<p>2）Requests 库</p>
+<h2 id="2、PHPINFO"><a href="#2、PHPINFO" class="headerlink" title="2、PHPINFO"></a>2、PHPINFO</h2><p>1）直接找</p>
+<p>2）<code>Ctrl+F</code> 打开查找，输入并搜索 flag ，得到 flag：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ctfhub</span>&#123;<span class="hljs-number">45</span>f<span class="hljs-number">70</span>ffa<span class="hljs-number">6</span>cd<span class="hljs-number">795</span>e<span class="hljs-number">0948</span>e<span class="hljs-number">9</span>fa<span class="hljs-number">5</span>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="3、备份文件下载"><a href="#3、备份文件下载" class="headerlink" title="3、备份文件下载"></a>3、备份文件下载</h2><h3 id="1）网站源码"><a href="#1）网站源码" class="headerlink" title="1）网站源码"></a>1）网站源码</h3><p>题目给出常见的网站源码备份文件名和后缀，所以文件一定在其中两个组合中。可以通过<code>遍历</code>找出文件，也可以通过 <code>disearch</code> 或<code>御剑</code>扫描出文件。</p>
+<p><code>dirsearch</code> 扫描命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> python dirsearch.py -u http://challenge-8fecf8af902f41f7.sandbox.ctfhub.com:10800/ -e *</span><br></code></pre></td></tr></table></figure>
+<p>扫描出 <code>www.zip</code> 文件，URL 访问下载，发现压缩包中有名为 <code>flag_377715964.txt</code> 的文件，打开查看，内容为：<code>where is flag ??</code> ，尝试用 URL 直接访问文件 。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">http://challenge-8fecf8af902f41f7.sandbox.ctfhub.com:10800/www.zip</span>             <span class="hljs-comment">#访问下载www.zip</span><br><span class="hljs-string">http://challenge-8fecf8af902f41f7.sandbox.ctfhub.com:10800/flag_377715964.txt</span>  <span class="hljs-comment">#用URL直接访问文件</span><br></code></pre></td></tr></table></figure>
+<p>得到 flag：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">ctfhub&#123;c2e8849c26142934698534ae&#125;</span><br></code></pre></td></tr></table></figure>
+<h3 id="2）bak文件"><a href="#2）bak文件" class="headerlink" title="2）bak文件"></a>2）bak文件</h3><p>题目提示 <code>Flag in index.php source code</code> ，访问 <code>/index.php</code> ，没有东西，题目又是 <code>bak文件</code> ，flag 可能在 <code>.bak</code> 里面，URL 访问 <code>index.php.bak</code> ，下载得到源码，flag 在源码里 。</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ctfhub</span>&#123;<span class="hljs-number">78</span>bdc<span class="hljs-number">17</span>ad<span class="hljs-number">65801</span>bdbf<span class="hljs-number">3</span>fc<span class="hljs-number">26</span>d&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="3）vim缓存"><a href="#3）vim缓存" class="headerlink" title="3）vim缓存"></a>3）vim缓存</h3><p>题目提示 <code>flag 在 index.php 源码中</code> ，访问 <code>/index.php</code> ，没有东西，题目又是 <code>vim缓存(临时文件)</code> ，所以是 <code>SWP文件</code> ，flag 可能在 <code>.index.php.swp</code> 里面，URL 访问 <code>.index.php.swp</code> ,下载文件，记事本打开，<code>Ctrl+F</code> 搜索 <code>ctfhub</code> ，得到 flag：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ctfhub</span>&#123;<span class="hljs-number">4</span>a<span class="hljs-number">8</span>a<span class="hljs-number">5</span>a<span class="hljs-number">6827</span>ef<span class="hljs-number">58</span>eaa<span class="hljs-number">1</span>cb<span class="hljs-number">48</span>c<span class="hljs-number">7</span>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="4）-DS-Store"><a href="#4）-DS-Store" class="headerlink" title="4）.DS_Store"></a>4）.DS_Store</h3><h4 id="Methods-1"><a href="#Methods-1" class="headerlink" title="Methods 1"></a>Methods 1</h4><p>由题目可以得知，该题为 <code>DS_Store 文件泄露</code>  ，访问 <code>.DS_Store</code> ，下载文件 。使用 <code>.DS_Store</code> 的解析工具 <code>Python-dsstore</code> 进行文件的解析或者 <code>cat</code> 直接查看。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> python main.py /root/桌面/DS_Store</span><br>Count:  1<br>74dcfc27bb26b65249468deab0aec8c1.txt<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> cat /root/桌面/DS_Store</span><br>Bud1<br>······<br>DSDB@ @ @$74dcfc27bb26b65249468deab0aec8c1.txtnoteustr<br>flag here！<br></code></pre></td></tr></table></figure>
+<p>发现一个文件，用 URL 访问 。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">http://challenge-d04c378688ecba9a.sandbox.ctfhub.com:10800/.DS_Store</span>      <span class="hljs-comment">#下载文件</span><br><span class="hljs-string">http://challenge-d04c378688ecba9a.sandbox.ctfhub.com:10800/74dcfc27bb26b65249468deab0aec8c1.txt</span>   <span class="hljs-comment">#URL 访问</span><br></code></pre></td></tr></table></figure>
+<p>得到 flag：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ctfhub</span>&#123;aeeb<span class="hljs-number">8</span>c<span class="hljs-number">0</span>ba<span class="hljs-number">40</span>d<span class="hljs-number">9</span>cca<span class="hljs-number">11112094</span>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="Methods-2"><a href="#Methods-2" class="headerlink" title="Methods 2"></a>Methods 2</h4><p>使用 <code>.DS_Store文件</code> 解析工具 <code>ds_store_exp</code> ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> python ds_store_exp.py http://challenge-ad228a72e55f9db6.sandbox.ctfhub.com:10800/.DS_Store</span><br>[200] http://challenge-ad228a72e55f9db6.sandbox.ctfhub.com:10800/.DS_Store<br>[200] http://challenge-ad228a72e55f9db6.sandbox.ctfhub.com:10800/e31117b96839e81d486c3966e76bf354.txt<br><br></code></pre></td></tr></table></figure>
+<p>得到一个文件，用 URL 访问或直接打开查看，得到 flag 。</p>
+<p>这里，题目直接告诉了我们是 <code>DS_Store 文件泄露</code>  ，如果没告诉，我们可以用 <code>dirsearch</code> 来把它扫出来 。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> python3 dirsearch.py -u http://challenge-ad228a72e55f9db6.sandbox.ctfhub.com:10800/ -e <span class="hljs-string">&quot;*&quot;</span></span><br><br>Target: http://challenge-ad228a72e55f9db6.sandbox.ctfhub.com:10800/<br><br>[22:24:06] Starting: <br>[22:24:10] 503 -  605B  - /.document<br><br>······<br><br>[22:24:10] 200 -   16KB - /.DS_Store<br><br>······<br><br>[22:25:57] 200 -  200B  - /index.html<br><br>Task Completed <br></code></pre></td></tr></table></figure>
+<h2 id="4、Git泄露"><a href="#4、Git泄露" class="headerlink" title="4、Git泄露"></a>4、Git泄露</h2><h3 id="1）Log"><a href="#1）Log" class="headerlink" title="1）Log"></a>1）Log</h3><p>使用 <code>dirsearch</code> 进行扫描：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> python3 dirsearch.py -u http://challenge-21144f4dddfed1c1.sandbox.ctfhub.com:10800/ -e <span class="hljs-string">&quot;*&quot;</span></span><br></code></pre></td></tr></table></figure>
+<p>发现可能是 <code>.git泄露</code> ，使用 <code>GitHack</code> 进行处理：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> python2 GitHack.py http://challenge-58f241fad417e4d0.sandbox.ctfhub.com:10800/.git</span><br></code></pre></td></tr></table></figure>
+<p>找到相应目录，使用 <code>git log</code> 查看历史记录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> git <span class="hljs-built_in">log</span></span><br>commit 9d5b583530f59c07fc62f457066d4ebd81db9782 (HEAD -&gt; master)<br>Author: CTFHub &lt;sandbox@ctfhub.com&gt;<br>Date:   Wed Aug 11 13:22:49 2021 +0000<br><br>    remove flag<br><br>commit 9b5b583530f59c07fc62f457066d4ebd81db9782<br>Author: CTFHub &lt;sandbox@ctfhub.com&gt;<br>Date:   Wed Aug 11 13:22:49 2021 +0000<br><br>    add flag<br><br>commit 9a5b583530f59c07fc62f457066d4ebd81db9782<br>Author: CTFHub &lt;sandbox@ctfhub.com&gt;<br>Date:   Wed Aug 11 13:22:49 2021 +0000<br><br>    init<br><br></code></pre></td></tr></table></figure>
+<p>当前所处的版本为 <code>remove flag</code> ，<code>flag</code>  可能在 <code>add flag</code> 这次提交中，可以与 <code>add flag</code> 提交版本进行比对或者直接切换到 <code>add flag</code> 提交版本 。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">//比较版本<br><span class="hljs-meta">#</span><span class="bash"> git diff 9b5b583530f59c07fc62f457066d4ebd81db9782</span><br>//切换版本<br><span class="hljs-meta">#</span><span class="bash"> git reset --hard 9b5b583530f59c07fc62f457066d4ebd81db9782</span><br></code></pre></td></tr></table></figure>
+<p>比较版本可以直接得到 flag ，切换版本会得到几个文件，打开 <code>.txt</code> 文件，得到 flag：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ctfhub</span>&#123;<span class="hljs-number">107</span>f<span class="hljs-number">71</span>b<span class="hljs-number">7</span>e<span class="hljs-number">778</span>af<span class="hljs-number">3</span>f<span class="hljs-number">1</span>bbf<span class="hljs-number">4487</span>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="2）Stash"><a href="#2）Stash" class="headerlink" title="2）Stash"></a>2）Stash</h3><p>使用 <code>dirsearch</code> 进行扫描：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> python3 dirsearch.py -u http://challenge-5d6ff60def13b410.sandbox.ctfhub.com:10800/ -e <span class="hljs-string">&quot;*&quot;</span></span><br></code></pre></td></tr></table></figure>
+<p>发现可能是 <code>.git泄露</code> ，使用 <code>GitHack</code> 进行处理：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> python2 GitHack.py http://challenge-5d6ff60def13b410.sandbox.ctfhub.com:10800/.git</span><br></code></pre></td></tr></table></figure>
+<p>找到相应目录，使用 <code>git log</code> 查看历史记录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> git <span class="hljs-built_in">log</span></span><br>commit 6de721fac74432123c67e910c3d6a3a65652d685 (HEAD -&gt; master)<br>Author: CTFHub &lt;sandbox@ctfhub.com&gt;<br>Date:   Wed Aug 11 13:22:49 2021 +0000<br><br>    remove flag<br><br>commit 58e73246189a7eb7756367821c193aaa6ffd369f<br>Author: CTFHub &lt;sandbox@ctfhub.com&gt;<br>Date:   Wed Aug 11 13:22:49 2021 +0000<br><br>    add flag<br><br>commit 6f2d3b79179d482bdb02514dfbe82f3a1f70a68b<br>Author: CTFHub &lt;sandbox@ctfhub.com&gt;<br>Date:   Wed Aug 11 13:22:49 2021 +0000<br><br>    init<br>    <br></code></pre></td></tr></table></figure>
+<p>当前所处的版本为 <code>remove flag</code> ，<code>flag</code>  可能在 <code>add flag</code> 这次提交中，与 <code>add flag</code> 提交版本进行比对 。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> git diff 58e73246189a7eb7756367821c193aaa6ffd369f</span><br>diff --git a/2973298199238.txt b/2973298199238.txt<br>deleted file mode 100644<br>index e358b09..0000000<br>--- a/2973298199238.txt<br>+++ /dev/null<br>@@ -1 +0,0 @@<br>-where is flag<br><br>······<br><br></code></pre></td></tr></table></figure>
+<p>比较版本发现变化是 <code>where is flag</code> 而不是 <code>flag</code> ，切换到 <code>add flag</code> 版本查看 <code>.txt</code> 文件，跟上面一样，猜测可能进行了更改，可以通过 <code>git stash pop</code> 命令恢复之前缓存的工作目录。</p>
+<blockquote>
+<p>这个指令将缓存堆栈中的第一个 stash 删除，并将对应修改应用到当前的工作目录下。也可以使用 <code>git stash apply</code> 命令，将缓存堆栈中的 stash 多次应用到工作目录中，但并不删除 stash 拷贝</p>
+</blockquote>
+<p>得到一个 <code>.txt</code> 文件，查看，得到 flag：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ctfhub</span>&#123;<span class="hljs-number">7419</span>cb<span class="hljs-number">6</span>a<span class="hljs-number">91</span>b<span class="hljs-number">581</span>d<span class="hljs-number">62470863</span>c&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="3）Index"><a href="#3）Index" class="headerlink" title="3）Index"></a>3）Index</h3><p>使用 <code>dirsearch</code> 进行扫描：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> python3 dirsearch.py -u http://challenge-eb00a79e8f8033f0.sandbox.ctfhub.com:10800/ -e <span class="hljs-string">&quot;*&quot;</span></span><br></code></pre></td></tr></table></figure>
+<p>发现可能是 <code>.git泄露</code> ，使用 <code>GitHack</code> 进行处理：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> python2 GitHack.py http://challenge-eb00a79e8f8033f0.sandbox.ctfhub.com:10800/.git</span><br></code></pre></td></tr></table></figure>
+<p>找到相应目录，使用 <code>git log</code> 查看历史记录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> git <span class="hljs-built_in">log</span></span><br>commit f12bae0c5091515b7a628f4ce5164b277c8c05bd (HEAD -&gt; master)<br>Author: CTFHub &lt;sandbox@ctfhub.com&gt;<br>Date:   Wed Aug 11 14:00:53 2021 +0000<br><br>    add flag<br><br>commit a067ca223b652e73fa3e0705522c5d7ecb936ff7<br>Author: CTFHub &lt;sandbox@ctfhub.com&gt;<br>Date:   Wed Aug 11 14:00:53 2021 +0000<br><br>    init<br></code></pre></td></tr></table></figure>
+<p>当前所处的版本为 <code>add flag</code> ，<code>flag</code>  可能就在此版本中 。重新切换到当前版本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> git reset --hard</span><br>HEAD 现在位于 f12bae0 add flag<br></code></pre></td></tr></table></figure>
+<p>得到一个 <code>.txt</code> 文件，查看，得到 flag：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ctfhub</span>&#123;<span class="hljs-number">1152</span>c<span class="hljs-number">288321</span>eb<span class="hljs-number">80</span>b<span class="hljs-number">9</span>bc<span class="hljs-number">40</span>aa<span class="hljs-number">5</span>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="5、SVN泄露"><a href="#5、SVN泄露" class="headerlink" title="5、SVN泄露"></a>5、SVN泄露</h2><p>题目显示：Flag 在服务端旧版本的源代码中 。</p>
+<p>使用 <code>dirsearch</code> 进行扫描，发现可能是 <code>SVN泄露</code> ，使用 <code>dvcs-ripper</code> 进行处理：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> perl rip-svn.pl -v -u http://challenge-519d5d6873629d73.sandbox.ctfhub.com:10800/.svn/</span><br></code></pre></td></tr></table></figure>
+<p>然后在工具的所在目录下生成了 <code>.svn</code> 文件夹，但是由于隐藏需要输入 <code>ls -al</code> 命令才能看到 。</p>
+<p>使用 <code>tree</code> 命令查看 <code>.svn</code> 内的内容：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> tree .svn/</span><br>.svn/<br>├── entries<br>├── format<br>├── pristine<br>│   ├── 96<br>│   │   └── 9615f4dee905fe62f578d91e3df23c7e3d294e15.svn-base<br>│   └── bf<br>│       └── bf45c36a4dfb73378247a6311eac4f80f48fcb92.svn-base<br>├── text-base<br>├── tmp<br>├── wc.db<br>└── wc.db-journal<br><br>5 directories, 6 files<br></code></pre></td></tr></table></figure>
+<p>猜测 <code>.svn/pristine</code> 里面存的是不同版本，<code>cat</code> 查看，在 <code>pristine/96/9615f4dee905fe62f578d91e3df23c7e3d294e15.svn-base</code> 中发现 flag ：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ctfhub</span>&#123;<span class="hljs-number">372</span>c<span class="hljs-number">3</span>bfe<span class="hljs-number">29808</span>e<span class="hljs-number">2</span>a<span class="hljs-number">6</span>db<span class="hljs-number">76</span>c<span class="hljs-number">00</span>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="6、HG泄露"><a href="#6、HG泄露" class="headerlink" title="6、HG泄露"></a>6、HG泄露</h2><p>题目显示：Flag 在服务端旧版本的源代码中, 不太好使的情况下, 试着手工解决。</p>
+<p>使用 <code>dirsearch</code> 进行扫描，发现可能是 <code>HG泄露</code> ，使用 <code>dvcs-ripper</code> 进行处理：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> perl rip-hg.pl -v -u http://challenge-fee1df107e428836.sandbox.ctfhub.com:10800/.hg/</span><br></code></pre></td></tr></table></figure>
+<p>然后在工具的所在目录下生成了 <code>.hg</code> 文件夹，但是由于隐藏需要输入 <code>ls -al</code> 命令才能看到 。</p>
+<p>使用 <code>tree</code> 命令查看 <code>.hg</code> 内的内容：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> tree .hg/</span><br>.hg/<br>├── 00changelog.i<br>├── dirstate<br>├── last-message.txt<br>├── requires<br>├── store<br>│   ├── 00changelog.i<br>│   ├── 00manifest.i<br>│   ├── data<br>│   │   ├── 50x.html.i<br>│   │   └── index.html.i<br>│   ├── fncache<br>│   └── undo<br>├── undo.branch<br>├── undo.desc<br>├── undo.dirstate<br>└── wcache<br>    ├── checkisexec<br>    └── checknoexec<br><br>3 directories, 15 files<br></code></pre></td></tr></table></figure>
+<p><code>cat</code> 查看 <code>.hg/store/fncache</code> ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> cat .hg/store/fncache</span> <br>data/index.html.i<br>data/50x.html.i<br>data/flag_2225111905.txt.i<br></code></pre></td></tr></table></figure>
+<p>发现 <code>.hg/store/data</code> 中应该有 <code>flag_2225111905.txt</code> ，但实际上却没有，加上题目提示，猜测可能没有抓取到，查看抓取过程得到验证 。</p>
+<p>直接 URL 访问 <code>flag_2225111905.txt</code> 文件：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs http">http://challenge-fee1df107e428836.sandbox.ctfhub.com:10800/flag_2225111905.txt<br></code></pre></td></tr></table></figure>
+<p>得到 flag ：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ctfhub</span>&#123;<span class="hljs-number">79</span>b<span class="hljs-number">4</span>fe<span class="hljs-number">2881022888</span>ff<span class="hljs-number">2679</span>c<span class="hljs-number">0</span>&#125;<br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Web/">Web</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/CTF/">CTF</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Web/">Web</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Leakage/">Leakage</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Wp/">Wp</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/08/08/CTF/Web/Notes/%E5%B8%B8%E8%A7%81Web%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">常见Web源码泄露</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/08/08/CTF/Web/Write-up/CTFHub-Web-%E5%AF%86%E7%A0%81%E5%8F%A3%E4%BB%A4/">
+                        <span class="hidden-mobile">CTFHub-Web-密码口令</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

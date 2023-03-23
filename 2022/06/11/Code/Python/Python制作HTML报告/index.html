@@ -1,0 +1,489 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>Python制作HTML报告 - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Python制作HTML报告">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-06-11 00:00" pubdate>
+        2022年6月11日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      14
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Python制作HTML报告</h1>
+            
+            <div class="markdown-body">
+              <h1 id="Python制作HTML报告"><a href="#Python制作HTML报告" class="headerlink" title="Python制作HTML报告"></a>Python制作HTML报告</h1><blockquote>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/341869724">用Python制作一份HTML报告 - 知乎 (zhihu.com)</a></p>
+</blockquote>
+<p>多学习，少比比。</p>
+<blockquote>
+<p>本文使用 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/106057556">Zhihu On VSCode</a> 创作并发布</p>
+</blockquote>
+<p>刚刚写好了一个制作报告的Python程序，分享一下，也是作为自己的笔记：（几乎）没有任何前端基础，用Python制作一份HTML的数据报告。既可以做为网页发布到网站上，也可以打印成PDF。</p>
+<h2 id="一、用Markdown制作一个网页模板"><a href="#一、用Markdown制作一个网页模板" class="headerlink" title="一、用Markdown制作一个网页模板"></a>一、用Markdown制作一个网页模板</h2><p>第一步是制作一个网页模板。如果有前端技术，当然可以用html和CSS做出一个漂亮的模板。或者也可以在网上找到合适的模板。但是我用了最简单的方法：在VScode里用Markdown写一份简单的模板，并用Markdown Preview Enhanced插件保存为html格式。也可以使用其他喜欢的Markdown笔记软件，如Typora之类的，大多有导出html的功能。所以最后html的样式就取决于这些软件的渲染结果了。</p>
+<p>写模板的时候把需要插入文字、表格、图片等内容的地方用两层大括号 {{ }}括起来，后续插入内容。</p>
+<p>另外，在开头插入一段plotly的源码地址，后面将会用plotly画图。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs text">&lt;script src=&quot;https://cdn.plot.ly/plotly-latest.min.js&quot;&gt;&lt;/script&gt;<br><br># 报告标题<br><br>&#123;&#123; summary &#125;&#125;<br><br>## 详细数据<br><br>&#123;&#123; table &#125;&#125;<br><br>## 数据可视化<br><br>&#123;&#123; chart &#125;&#125;<br></code></pre></td></tr></table></figure>
+<p>把这份MD文件导出为html，命名为”Template.html“，并放在Python代码的同一个文件夹下，这样模板就准备好了。</p>
+<h2 id="二、用jinja2导入模板"><a href="#二、用jinja2导入模板" class="headerlink" title="二、用jinja2导入模板"></a>二、用jinja2导入模板</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="http://docs.jinkan.org/docs/jinja2/index.html">欢迎来到 Jinja2 — Jinja2 2.7 documentation (jinkan.org)</a></p>
+</blockquote>
+<p><code>jinja2</code>是一个处理html的模板引擎。我只学到了一个语法，就是在模板中的 <code>&#123;&#123; &#125;&#125;</code> 用法类似于字符串的format函数。</p>
+<p>用<code>Jinja2</code>载入模板：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> jinja2<br><br>env = jinja2.Environment(loader=jinja2.FileSystemLoader(searchpath=<span class="hljs-string">&#x27;&#x27;</span>))<br>template = env.get_template(<span class="hljs-string">&#x27;Template.html&#x27;</span>)<br><br>summary = <span class="hljs-string">u&quot;这是一些文字&quot;</span><br><br><span class="hljs-comment"># 输出数据表格的代码</span><br>table = <span class="hljs-string">u&quot;后面来制作数据表格&quot;</span><br><br><span class="hljs-comment"># 输出图表的代码</span><br>chart = <span class="hljs-string">u&quot;后面来制作图片&quot;</span><br><br><span class="hljs-comment"># 导出图片并保存</span><br><span class="hljs-comment"># 语法和format类似，‘=’前面是html模板的&#123;&#123; &#125;&#125;中的变量名，后面是要导入的内容，我喜欢用一样的名字，比较容易识别</span><br>html = template.render(summary=summary, table=table, chart=chart)<br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;Report.html&#x27;</span>, <span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>        f.write(html)<br></code></pre></td></tr></table></figure>
+<p>这样就得到了一份Report的html文件。其中的数据表格和图暂时都是用字符串代替的。接下来讲怎么插入数据和图。</p>
+<h2 id="三、用Pandas输出表格"><a href="#三、用Pandas输出表格" class="headerlink" title="三、用Pandas输出表格"></a>三、用<code>Pandas</code>输出表格</h2><p>可以用<code>df.to_html</code>把数据表格变成html格式插入网页，还可以用<code>df.style</code>功能对数据表做一些高亮等操作。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br><span class="hljs-comment"># 简单的数据表格</span><br>df = pd.DataFrame(np.random.randn(<span class="hljs-number">5</span>, <span class="hljs-number">4</span>), columns=[<span class="hljs-string">&#x27;one&#x27;</span>, <span class="hljs-string">&#x27;two&#x27;</span>, <span class="hljs-string">&#x27;three&#x27;</span>, <span class="hljs-string">&#x27;four&#x27;</span>],<br>                  index=[<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>, <span class="hljs-string">&#x27;d&#x27;</span>, <span class="hljs-string">&#x27;e&#x27;</span>])<br><br><span class="hljs-comment"># 输出为html</span><br>table = df.to_html()<br></code></pre></td></tr></table></figure>
+<h2 id="四、用plotly进行数据可视化并插入网页"><a href="#四、用plotly进行数据可视化并插入网页" class="headerlink" title="四、用plotly进行数据可视化并插入网页"></a>四、用<code>plotly</code>进行数据可视化并插入网页</h2><p><a target="_blank" rel="noopener" href="https://plotly.com/python/">Plotly Python Graphing Library</a></p>
+<p><a target="_blank" rel="noopener" href="https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf">python_cheat_sheet.pdf (plot.ly)</a></p>
+<p><code>plotly</code>本身就是一个交互式的数据可视化包。我们用<code>plotly.offline.plot</code>可以直接输出图片内容为网页格式。为了把图片插入到我们的报告里，我们需要plotly不要输出完整html，而只是包含数据的div。所以前面提到了把plotly的js引用加到我们的模板前面。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> plotly <span class="hljs-keyword">as</span> py<br><span class="hljs-keyword">import</span> plotly.express <span class="hljs-keyword">as</span> px<br><br><span class="hljs-comment"># 画一个箱型图。</span><br>fig = px.box(data_frame=df, x=<span class="hljs-string">&#x27;one&#x27;</span>, y=<span class="hljs-string">&#x27;two&#x27;</span>)<br>chart = py.offline.plot(fig, include_plotlyjs=<span class="hljs-literal">False</span>, output_type=<span class="hljs-string">&#x27;div&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<p>好了，现在我们可以把所有的表格和图片插入报告里了。重新运行一下前面保存文件的代码。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">html = template.render(summary=summary, table=table, chart=chart)<br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;Report.html&#x27;</span>, <span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>        f.write(html)<br></code></pre></td></tr></table></figure>
+<p>这样，一份完整的html格式的数据报告就做好了。你可以把这份代码作为你整个数据分析pipeline的一部分，每次的分析结果都可以自动生成一份报告。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_38037405/article/details/124323127">(5条消息) Plotly：最强Python可视化库，没有之一_我爱Python数据挖掘的博客-CSDN博客_plotly</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/57bad75139ca">python plotly 使用教程 - 简书 (jianshu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhouchen1998/article/details/108976110">(5条消息) Plotly基础教程_周先森爱吃素的博客-CSDN博客_plotly</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/441617577">数据科学家必备｜使用jupyter生成html格式报告 - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xuezhangjun0121/article/details/96288810">(5条消息) HTML测试报告模板_Saggitarxm的博客-CSDN博客_html报告模板</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Python/">Python</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Code/">Code</a>
+                    
+                      <a class="hover-with-bg" href="/tags/HTML-report/">HTML report</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/06/26/Penetration/Vulnhub/Part-1/0x04%20DC-1/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">DC：1</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/06/08/Code/Python/Python%E8%B7%A8%E6%96%87%E4%BB%B6%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0/">
+                        <span class="hidden-mobile">Python跨文件调用函数</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

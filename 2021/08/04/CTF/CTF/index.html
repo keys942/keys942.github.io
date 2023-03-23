@@ -1,0 +1,596 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>CTF - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="CTF">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-08-04 00:00" pubdate>
+        2021年8月4日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      21
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">CTF</h1>
+            
+            <div class="markdown-body">
+              <h1 id="CTF入门"><a href="#CTF入门" class="headerlink" title="CTF入门"></a>CTF入门</h1><h2 id="入门需要哪些基础："><a href="#入门需要哪些基础：" class="headerlink" title="入门需要哪些基础："></a>入门需要哪些基础：</h2><p>1、编程语言基础（C、汇编、脚本语言）<br>2、数学基础（算法、密码学）<br>3、脑洞大开（天马行空的想象、推理解密）<br>4、体力耐力（通宵熬夜）</p>
+<h2 id="如何入门学"><a href="#如何入门学" class="headerlink" title="如何入门学"></a>如何入门学</h2><p>1、恶补基础知识<br>2、尝试从脑洞开始 如黑客game<br>4、学信息安全专业知识<br>5、锻炼体力耐力 周六日都有比赛</p>
+<h2 id="到底如何学"><a href="#到底如何学" class="headerlink" title="到底如何学"></a>到底如何学</h2><p>1、分析赛题情况<br>2、分析自身能力 自己最适合哪个方向<br>3、选择更适合的入手</p>
+<h2 id="分析赛题"><a href="#分析赛题" class="headerlink" title="分析赛题"></a>分析赛题</h2><p>PWN、Reverse 偏重对汇编、逆向的理解 对底层理解<br>Crypto 偏重对数学、算法的深入学习 密码课要深入学<br>Web 偏重对技巧沉淀、快速搜索能力的挑战 发散思维，对底层只需要了解，代码原理，关于漏洞点的积累<br>Misc 则更复杂，所有与计算机安全挑战有关的都在其中 隐写，图片数据分析还原，流量，大数据，对游戏分析逆向</p>
+<h2 id="常规做法："><a href="#常规做法：" class="headerlink" title="常规做法："></a>常规做法：</h2><p>A方向：PWN+Reverse+Crypto随机搭配<br>B方向：Web+Misc组合<br>Misc所有人都可以做</p>
+<h2 id="入门知识："><a href="#入门知识：" class="headerlink" title="入门知识："></a>入门知识：</h2><p>都要学的内容：linux基础、计算机组成原理、操作系统原理、网络协议分析</p>
+<p>A方向：IDA工具使用（fs插件）、逆向工程、密码学、缓冲区溢出等<br>B方向：Web安全、网络安全、内网渗透、数据库安全等 前10的安全漏洞</p>
+<h2 id="推荐书："><a href="#推荐书：" class="headerlink" title="推荐书："></a>推荐书：</h2><p>A方向：</p>
+<p>RE for Beginners<br>IDA Pro权威指南<br>揭秘家庭路由器0day漏洞挖掘技术<br>自己定操作系统<br>黑客攻防技术宝典：系统实战篇</p>
+<p>B方向：</p>
+<p>Web应用安全权威指南 最推荐小白，宏观web安全<br>Web前端黑客技术揭秘<br>黑客秘籍——渗透测试实用指南<br>黑客攻防技术宝典 web实战篇<br>代码审计：企业级web代码安全架构</p>
+<h2 id="入门——从基础题目出发（推荐资源）"><a href="#入门——从基础题目出发（推荐资源）" class="headerlink" title="入门——从基础题目出发（推荐资源）"></a>入门——从基础题目出发（推荐资源）</h2><p><a target="_blank" rel="noopener" href="http://ctf.idf.cn">http://ctf.idf.cn</a> !!!首推 idf实验室：题目非常基础，只1个点<br>www.ichunqiu.com 有线下决赛题目复现<br><a target="_blank" rel="noopener" href="http://oj.xctf.org.cn/xctf">http://oj.xctf.org.cn/xctf</a> 题库网站，历年题，练习场，比较难<br>www.wechall.net/challs !!!!!!非常入门的国外ctf题库，很多国内都是从这里刷题成长起来的<br><a target="_blank" rel="noopener" href="http://canyouhack.it/">http://canyouhack.it/</a> 国外，入门，有移动安全<br><a target="_blank" rel="noopener" href="https://microcorruption.com/login">https://microcorruption.com/login</a> A方向 密码，逆向酷炫游戏代<br>http：//smashthestack.org A方向，简洁，国外，wargames，过关<br><a target="_blank" rel="noopener" href="http://overthewire.ofg/wargames/">http://overthewire.ofg/wargames/</a> ！！！！推荐A方向 国内资料多，老牌wargame<br>https：//exploit-exercises.com A方向 老牌wargame，国内资料多<br><a target="_blank" rel="noopener" href="http://pawnable.kr/play.php">http://pawnable.kr/play.php</a> pwn类游乐场，不到100题<br><a target="_blank" rel="noopener" href="http://ctf.moonsoscom/pentest/index.php">http://ctf.moonsoscom/pentest/index.php</a> B方向 米安的Web漏洞靶场，基础，核心知识点<br>http：//prompt.ml/0 B方向 国外的xss测试<br><a target="_blank" rel="noopener" href="http://redtiger.labs.overthewire.org/">http://redtiger.labs.overthewire.org/</a> B方向 国外sql注入挑战网站，10关，过关的形式 不同的注入，循序渐近地练习</p>
+<h2 id="工具："><a href="#工具：" class="headerlink" title="工具："></a>工具：</h2><p><a target="_blank" rel="noopener" href="https://github.com/truongkma/ctf-tools">https://github.com/truongkma/ctf-tools</a><br><a target="_blank" rel="noopener" href="https://github.com/Plkachu/v0lt">https://github.com/Plkachu/v0lt</a><br><a target="_blank" rel="noopener" href="https://github.com/zardus/ctf-tools">https://github.com/zardus/ctf-tools</a><br><a target="_blank" rel="noopener" href="https://github.com/TUCTF/Tools">https://github.com/TUCTF/Tools</a></p>
+<h2 id="入门—以练促赛，以赛养练"><a href="#入门—以练促赛，以赛养练" class="headerlink" title="入门—以练促赛，以赛养练"></a>入门—以练促赛，以赛养练</h2><p>选择一场已经存在writeup的比赛</p>
+<p>总结解题过程，分析出题人想法</p>
+<p>参加一场最新的ctf比赛<br>https：//ctftime.org/ 国际比赛，有很多基础的<br>http：//www.xctf.org.cn/ 国内比赛，比较难</p>
+<h2 id="组建团队—-强力成员画像"><a href="#组建团队—-强力成员画像" class="headerlink" title="组建团队—-强力成员画像"></a>组建团队—-强力成员画像</h2><p>1.思维跳跃：灵活性，不会钻墙脚<br>2.专注：遇到问题不放弃直到解决<br>3.耐力：连续一天研究技术<br>4.团队精神：责任、凝聚、分享</p>
+<p>有3条为强力成员，有4条会成为强力队长！</p>
+<p>总结自i春秋CTF入门指南</p>
+<h1 id="CTF学习站点总结"><a href="#CTF学习站点总结" class="headerlink" title="CTF学习站点总结"></a>CTF学习站点总结</h1><h2 id="0x01-CTF-资讯"><a href="#0x01-CTF-资讯" class="headerlink" title="0x01 CTF 资讯"></a>0x01 CTF 资讯</h2><p>XCTF联赛：<a target="_blank" rel="noopener" href="https://www.xctf.org.cn/">https://www.xctf.org.cn/</a></p>
+<p>360安全客：<a target="_blank" rel="noopener" href="http://bobao.360.cn/">http://bobao.360.cn/</a></p>
+<p>CTF-TIME：<a target="_blank" rel="noopener" href="https://ctftime.org/event/list/upcoming">https://ctftime.org/event/list/upcoming</a></p>
+<p>CTF Rank：<a target="_blank" rel="noopener" href="http://ctfrank.org/">http://ctfrank.org/</a></p>
+<h2 id="0x02-CTF练习"><a href="#0x02-CTF练习" class="headerlink" title="0x02 CTF练习"></a>0x02 CTF练习</h2><h3 id="BIN"><a href="#BIN" class="headerlink" title="BIN:"></a>BIN:</h3><p>reversing</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//reversing.kr/">http://reversing.kr/</a></p>
+<p>pwnable</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//pwnable.kr/">http://pwnable.kr/</a></p>
+<p>pwnable(TAIWAN)</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//pwnable.tw/">http://pwnable.tw/</a></p>
+<p>exploit-exercises</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//exploit-exercises.com/">https://exploit-exercises.com/</a></p>
+<p>overthewire</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//overthewire.org/wargames/">http://overthewire.org/wargames/</a></p>
+<p>netgarage</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//io.netgarage.org/">https://io.netgarage.org/</a></p>
+<p>bin干货</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//security.cs.rpi.edu/courses/binexp-spring2015/">http://security.cs.rpi.edu/courses/binexp-spring2015/</a></p>
+<h3 id="SQL："><a href="#SQL：" class="headerlink" title="SQL："></a>SQL：</h3><p>sqli-labs</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//github.com/Audi-1/sqli-labs">https://github.com/Audi-1/sqli-labs</a></p>
+<p>RedTigers Hackit</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//redtiger.labs.overthewire.org/">http://redtiger.labs.overthewire.org/</a></p>
+<h3 id="XSS："><a href="#XSS：" class="headerlink" title="XSS："></a>XSS：</h3><p>prompt</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//prompt.ml/0">http://prompt.ml/0</a></p>
+<p>XSS Challenges</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//xss-quiz.int21h.jp/">http://xss-quiz.int21h.jp/</a></p>
+<p>escape</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//alf.nu/alert1">https://alf.nu/alert1</a></p>
+<p>xss-game</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//xss-game.appspot.com/">https://xss-game.appspot.com/</a></p>
+<h3 id="OJ平台以及CTF赛事复盘："><a href="#OJ平台以及CTF赛事复盘：" class="headerlink" title="OJ平台以及CTF赛事复盘："></a>OJ平台以及CTF赛事复盘：</h3><p>XCTF-OJ</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//oj.xctf.org.cn/">http://oj.xctf.org.cn/</a></p>
+<p>Pwnhub</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//pwnhub.cn/">http://pwnhub.cn/</a></p>
+<p>Jarvisoj</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//www.jarvisoj.com/">https://www.jarvisoj.com/</a></p>
+<h3 id="国内综合练习-国产的-："><a href="#国内综合练习-国产的-：" class="headerlink" title="国内综合练习(国产的)："></a>国内综合练习(国产的)：</h3><p>网络信息攻防学习平台</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//hackinglab.cn/">http://hackinglab.cn/</a></p>
+<p>西普实验吧</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//www.shiyanbar.com/ctf/practice">http://www.shiyanbar.com/ctf/practice</a></p>
+<p>I春秋CTF挑战</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//www.ichunqiu.com/racing">http://www.ichunqiu.com/racing</a></p>
+<p>合天CTF</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//www.hetianlab.com/CTFrace.html">http://www.hetianlab.com/CTFrace.html</a></p>
+<p>南京邮电大学</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//ctf.nuptsast.com/">http://ctf.nuptsast.com/</a></p>
+<p>SniperOJ</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//www.sniperoj.cn/">http://www.sniperoj.cn/</a></p>
+<p>bugku</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//ctf.bugku.com/">http://ctf.bugku.com/</a></p>
+<p>CTF题目</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//captf.com/">http://captf.com/</a></p>
+<p>光棍节程序员闯关秀</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//1111.segmentfault.com/">https://1111.segmentfault.com/</a></p>
+<p>ISA Test</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//www.helloisa.com/test/">https://www.helloisa.com/test/</a></p>
+<p>黑客丛林之旅</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//www.fj543.com/hack/">http://www.fj543.com/hack/</a></p>
+<p>Jlu.CTF</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//ctf.spirit.org.cn/">http://ctf.spirit.org.cn/</a></p>
+<p>红客闯关游戏</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//hkyx.myhack58.com/">http://hkyx.myhack58.com/</a></p>
+<h3 id="国外综合练习-进口的-："><a href="#国外综合练习-进口的-：" class="headerlink" title="国外综合练习(进口的)："></a>国外综合练习(进口的)：</h3><p>wechall</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//www.wechall.net/">http://www.wechall.net/</a></p>
+<p>webhacking</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//webhacking.kr/">http://webhacking.kr/</a></p>
+<p>canyouhack</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//canyouhack.it/">http://canyouhack.it/</a></p>
+<p>coolshell</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//fun.coolshell.cn/">http://fun.coolshell.cn/</a></p>
+<p>ringzer0team</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//ringzer0team.com/challenge">https://ringzer0team.com/challenge</a></p>
+<p>backdoor</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//backdoor.sdslabs.co/">https://backdoor.sdslabs.co/</a></p>
+<p>smashthestack</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//smashthestack.org/">http://smashthestack.org/</a></p>
+<p>overthewire</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//overthewire.org/wargames/">http://overthewire.org/wargames/</a></p>
+<p>w3challs</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//w3challs.com/">https://w3challs.com/</a></p>
+<p>chall.stypr</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//chall.stypr.com/home">https://chall.stypr.com/home</a></p>
+<p>pentesterlab</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//pentesterlab.com/">https://pentesterlab.com/</a></p>
+<p>id0-rsa</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//id0-rsa.pub/">https://id0-rsa.pub/</a></p>
+<h2 id="0x03-各种姿势的学习平台"><a href="#0x03-各种姿势的学习平台" class="headerlink" title="0x03 各种姿势的学习平台"></a>0x03 各种姿势的学习平台</h2><p>ChaMd5的wooyun镜像站</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//wooyun.chamd5.org/">http://wooyun.chamd5.org/</a></p>
+<p>吾爱破解</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//www.52pojie.cn/">http://www.52pojie.cn/</a></p>
+<p>看雪论坛</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//bbs.pediy.com/">http://bbs.pediy.com/</a></p>
+<p>T00ls</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//www.t00ls.net/">https://www.t00ls.net/</a></p>
+<h2 id="0x04-CTF-writeup-WP"><a href="#0x04-CTF-writeup-WP" class="headerlink" title="0x04 CTF-writeup(WP)"></a>0x04 CTF-writeup(WP)</h2><p>CTF Writeup Summary</p>
+<p><a target="_blank" rel="noopener" href="http://sec.yka.me/">http://sec.yka.me/</a></p>
+<p>360安全客</p>
+<p><a target="_blank" rel="noopener" href="http://bobao.360.cn/ctf/">http://bobao.360.cn/ctf/</a></p>
+<p>CTF Writeup github</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/ctfs/">https://github.com/ctfs/</a></p>
+<p>Writeups：<a target="_blank" rel="noopener" href="https://github.com/VulnHub/ctf-">https://github.com/VulnHub/ctf-</a></p>
+<h1 id="书籍推荐"><a href="#书籍推荐" class="headerlink" title="书籍推荐"></a>书籍推荐</h1><h2 id="CTF"><a href="#CTF" class="headerlink" title="CTF"></a>CTF</h2><p>CTF比赛国内主要分五类，Web渗透、密码学、逆向工程、漏洞利用、杂项。</p>
+<p>CTF 是无法通过一本书来完整概括的，因此初学者应该了解基础原理之下多加练习。</p>
+<p>1、从 0 到 1 ：CTFer 成长之路</p>
+<p>2、CTF 特训营：技术详解、解题方法与竞赛技巧</p>
+<h2 id="CTF-Web"><a href="#CTF-Web" class="headerlink" title="CTF-Web"></a>CTF-Web</h2><p>1、Web安全防护指南：基础篇</p>
+<p>2、代码审计</p>
+<h2 id="Web-安全"><a href="#Web-安全" class="headerlink" title="Web 安全"></a>Web 安全</h2><p>1、黑客攻防技术宝典-系统实战篇</p>
+<p>2、Web 之困-现代 Web 应用安全指南</p>
+<p>3、黑客攻防技术宝典- Web 实战篇</p>
+<p>4、SQL 注入攻击与防御</p>
+<p>5、Web 渗透技术及实战案例解析</p>
+<p>6、Web 应用安全权威指南</p>
+<p>7、白帽子讲 Web 安全</p>
+<p>8、黑客大曝光-网络安全机密与解决方案</p>
+<p>9、Wireshark 数据包分析实战</p>
+<p>10、Web 应用安全威胁与防治-基于 OWASP Top 10 与 ESAPI</p>
+<p>11、Web 安全深度剖析</p>
+<p>12、Ajax 安全技术</p>
+<p>13、Web 前端黑客技术揭秘</p>
+<p>14、XSS 跨站脚本攻击剖析与防御</p>
+<p>15、代码审计-企业级 Web 代码安全架构</p>
+<p>16、Web 安全测试</p>
+<p>17、白帽子讲浏览器安全</p>
+<p>18、Web 入侵安全测试与对策</p>
+<h2 id="CTF-Crypto"><a href="#CTF-Crypto" class="headerlink" title="CTF-Crypto"></a>CTF-Crypto</h2><h2 id="CTF-Pwn"><a href="#CTF-Pwn" class="headerlink" title="CTF-Pwn"></a>CTF-Pwn</h2><h2 id="CTF-Reverse"><a href="#CTF-Reverse" class="headerlink" title="CTF-Reverse"></a>CTF-Reverse</h2><p>1、逆向工程权威指南</p>
+<h2 id="CTF-Misc"><a href="#CTF-Misc" class="headerlink" title="CTF-Misc"></a>CTF-Misc</h2>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/CTF/">CTF</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/08/08/CTF/Web/Write-up/CTFHub-Web-%E5%AF%86%E7%A0%81%E5%8F%A3%E4%BB%A4/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">CTFHub-Web-密码口令</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/07/30/CTF/%E5%85%B3%E4%BA%8ECTF/">
+                        <span class="hidden-mobile">关于CTF</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

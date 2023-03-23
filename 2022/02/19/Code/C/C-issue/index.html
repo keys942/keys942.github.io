@@ -1,0 +1,562 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>C issue - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="C issue">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-02-19 00:00" pubdate>
+        2022年2月19日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      14
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">C issue</h1>
+            
+            <div class="markdown-body">
+              <h1 id="C-issue"><a href="#C-issue" class="headerlink" title="C issue"></a>C issue</h1><h2 id="得到指针指向的数组的长度"><a href="#得到指针指向的数组的长度" class="headerlink" title="得到指针指向的数组的长度"></a>得到指针指向的数组的长度</h2><p>定义数组，要给定其长度，在对数组进行操作时，可能需要计算数组长度，方法是：sizeof(数组名)/sizeof(元素类型)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp">数组<span class="hljs-keyword">int</span> a[<span class="hljs-number">4</span>]; <br><span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(a)=<span class="hljs-number">4</span>*<span class="hljs-number">4</span>=<span class="hljs-number">16</span>字节 （<span class="hljs-keyword">int</span>为<span class="hljs-number">4</span>个字节）<br><span class="hljs-keyword">int</span> *p=a; <span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(p)=<span class="hljs-number">4</span>字节<br><br>对数组应用<span class="hljs-keyword">sizeof</span>，可以得到整个数组分配的字节数（存储全部数据占用的内存字节数）<br>对指针应用<span class="hljs-keyword">sizeof</span>，只是得到分配给用来存储一个地址值的指针所用的字节数，即<span class="hljs-number">4</span>个字节。（上面都是在<span class="hljs-number">32</span>位编译系统）<br> <br>C++中<span class="hljs-keyword">sizeof</span>得到的是字节数，也就是你所说的“长度单位”<br> <br>指针指向的字符数组长度的获取方法，不能用<span class="hljs-keyword">sizeof</span>，因为用<span class="hljs-keyword">sizeof</span>（指针），得到指针长度为<span class="hljs-number">4</span>，应该用<span class="hljs-built_in">strlen</span>()函数。<br></code></pre></td></tr></table></figure>
+<h2 id="字符串-02x格式化输出出现FFFFFF解决办法"><a href="#字符串-02x格式化输出出现FFFFFF解决办法" class="headerlink" title="字符串%02x格式化输出出现FFFFFF解决办法"></a>字符串%02x格式化输出出现FFFFFF解决办法</h2><p>  最近做项目，遇到字符串格%02x式化输出出现FFFFFF现象，偶尔出现，大部分时间是好的，网上查阅资料，发现解决办法：</p>
+<pre><code>C89标准规定，short和char会被自动提升为int（整形化，类似地，float也会自动提升为double），这样做是为了便于编译器进行优化，使变量的长度尽可能一样，尽可能提升所产生代码的效率。data[i]的值当它是正数的时候也同样进行了符号扩展的，只不过正数是前面加0，用%02x打印的时候那些0被忽略；而补码表示的负数的符号扩展却是前面加1，用%02x打印的时候那些1不能被忽略，因此才按照本来的长度输出来。如没有添加unsigned，则当data[i]&gt;0x7F时（如0X80），格式转换为FFFFFF80！
+</code></pre><p>故计算8位异或校验函数调整如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> <span class="hljs-title">calc_crc</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *buff, <span class="hljs-keyword">int</span> buff_sz)</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-keyword">int</span> chsum = <span class="hljs-number">0</span>, it;<br>	<span class="hljs-keyword">for</span>(it = <span class="hljs-number">0</span>; it &lt; buff_sz; ++it)<br>		chsum ^= (<span class="hljs-keyword">int</span>)buff[it];<br>	<span class="hljs-keyword">return</span> (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span>)(chsum &amp; <span class="hljs-number">0xFF</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="1000-0000-为什么是-128"><a href="#1000-0000-为什么是-128" class="headerlink" title="1000 0000 为什么是-128"></a>1000 0000 为什么是-128</h2><p>试想一个八位二进制数：00000000</p>
+<p>如果我们对它进行减一的操作，用小学的减法知识，我们知道0号位（最右边那位）不够，要向1号位（右数第二个位）借，1号位不够再往前借，借到7号位发现还是不够，于是计算机在虚拟的8号位处借给这个00000000一个1，得到减法的结果：11111111。也就是我们嘴上说的负一。</p>
+<p>然后，我们如果再对这个负一做减一的操作，会发生什么？变成11111110，没错，就是负二，依次类推1000000就是负一百二十八。</p>
+<p>作者：波斯基<br>链接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/28685048/answer/41728110">https://www.zhihu.com/question/28685048/answer/41728110</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p>很多人并不理解补码。<strong>补码就是同余啊。</strong>1000000是正128你知道吧，正负128模256是同余的。加减乘可以直接算也是同余的定理决定的，而不是凑出来的巧合，哪可能凑出这种东西？</p>
+<p>8位只能表示256个数，0到255，但我还想表示一些负数怎么办呢？就用与该负数同余的正数来表示呗。-1=255，-2=254，等等。</p>
+<p>建议脱离算数的思维方式，<strong>这其实就是一个环</strong>。模任何一个正整数（如256），可以把所有整数分类，比如模256可分256类，0 256 -256…是一类（余0类），1 257 -255…是一类（余1类），等等，这256类可看作环<img src="https://www.zhihu.com/equation?tex=Z_%7B256%7D" srcset="/img/loading.gif" lazyload alt="[公式]">的元素，你看-128和128是同一个类里的（余128类），用一个代表另一个罢了。补码和普通的unsigned integers都是在每类中选一个数，unsigned integers选0到255，补码表示的有符号整数选-128到127，都是一个数恰好对应一个类。</p>
+<p>当你明白这一切后，补码就是顺理成章的事。</p>
+<p>练习：设计用8位二进制数表示13至268这256个数的方案。要求作加减乘运算的时候，可以直接把编码当正整数算，能得到正确结果。</p>
+<p>作者：fhylhlasdf<br>链接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/28685048/answer/41735701">https://www.zhihu.com/question/28685048/answer/41735701</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p>设机器数字长为 8 位（其中 1 位为符号位）对于整数，当其分别代表无符号数、原码、补码和反码时，对应的真值范围各为多少？</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>二进制代码</th>
+<th>无符号数对应的真值</th>
+<th>原码对应的真值</th>
+<th>补码对应的真值</th>
+<th>反码对应的真值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00000000</td>
+<td>0</td>
+<td>+0</td>
+<td>+0，-0</td>
+<td>+0</td>
+</tr>
+<tr>
+<td>00000001</td>
+<td>1</td>
+<td>+1</td>
+<td>+1</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>00000010</td>
+<td>2</td>
+<td>+2</td>
+<td>+2</td>
+<td>+2</td>
+</tr>
+<tr>
+<td>······</td>
+<td>······</td>
+<td>······</td>
+<td>······</td>
+<td>······</td>
+</tr>
+<tr>
+<td>01111111</td>
+<td>127</td>
+<td>+127</td>
+<td>+127</td>
+<td>+127</td>
+</tr>
+<tr>
+<td>10000000</td>
+<td>128</td>
+<td>-0</td>
+<td>-128</td>
+<td>-127</td>
+</tr>
+<tr>
+<td>10000001</td>
+<td>129</td>
+<td>-1</td>
+<td>-127</td>
+<td>-126</td>
+</tr>
+<tr>
+<td>······</td>
+<td>······</td>
+<td>······</td>
+<td>······</td>
+<td>······</td>
+</tr>
+<tr>
+<td>11111101</td>
+<td>253</td>
+<td>-125</td>
+<td>-3</td>
+<td>-2</td>
+</tr>
+<tr>
+<td>11111110</td>
+<td>254</td>
+<td>-126</td>
+<td>-2</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>11111111</td>
+<td>255</td>
+<td>-127</td>
+<td>-1</td>
+<td>-0</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/C/">C</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/C/">C</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Code/">Code</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/02/25/Code/C/C%E8%AF%AD%E8%A8%80%E6%95%B0%E6%8D%AE%E6%BA%A2%E5%87%BA/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">C语言数据溢出</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/01/19/CTF/Pwn/Pwn/">
+                        <span class="hidden-mobile">Pwn</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

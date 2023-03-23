@@ -1,0 +1,493 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>Hexo issue and error - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Hexo issue and error">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-07-11 00:00" pubdate>
+        2022年7月11日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      35
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Hexo issue and error</h1>
+            
+            <div class="markdown-body">
+              <h1 id="Hexo-issue-and-error"><a href="#Hexo-issue-and-error" class="headerlink" title="Hexo issue and error"></a>Hexo issue and error</h1><h2 id="一、Issue"><a href="#一、Issue" class="headerlink" title="一、Issue"></a>一、Issue</h2><h3 id="1、gitee-图片部署后无法正常显示问题"><a href="#1、gitee-图片部署后无法正常显示问题" class="headerlink" title="1、gitee 图片部署后无法正常显示问题"></a>1、gitee 图片部署后无法正常显示问题</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/selier/p/9570650.html">Hexo使用细节及各种问题 - Selier - 博客园 (cnblogs.com)</a></p>
+</blockquote>
+<p>出现 gitee 图片本地正常显示部署后却不显示问题，但是如果直接访问图片显示正常 。</p>
+<p><img src="/2022/07/11/MessUp/Hexo-Issue-Error/image-20230323134316335.png" srcset="/img/loading.gif" lazyload alt="image-20230323134316335" style="zoom:67%;"></p>
+<p><img src="/2022/07/11/MessUp/Hexo-Issue-Error/image-20230323134230467.png" srcset="/img/loading.gif" lazyload alt="image-20230323134230467" style="zoom:67%;"></p>
+<p><strong>解决方法</strong> ：403 forbidden，说明了这个网络资源这样获取是被拒绝的，只需要在头部添加一个 meta：<code>&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;</code></p>
+<p>在 .md 文件中添加 meta，如下：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs markdown">---<br>title: test<br>date: 2022-7-11<br>categories: Test<br><span class="hljs-section">tags: Test</span><br><span class="hljs-section">---</span><br><br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;referrer&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;no-referrer&quot;</span> /&gt;</span></span><br><br><span class="hljs-section"># 标题</span><br><span class="hljs-section">## 内容</span><br><br></code></pre></td></tr></table></figure>
+<h3 id="2、本地照片部署后无法正常显示问题"><a href="#2、本地照片部署后无法正常显示问题" class="headerlink" title="2、本地照片部署后无法正常显示问题"></a>2、本地照片部署后无法正常显示问题</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3db6a61d3782">hexo使用markdown图片无法显示问题 - 简书 (jianshu.com)</a></p>
+</blockquote>
+<p>Hexo 老版本默认无法自动处理文章插入的本地图片，需要通过扩展插件支持，虽然新版本可以处理了但还是存在无法显示的问题，主要是因为 Hexo 处理后的文件路径多了一层文件夹，同时在新版本中老插件也出现问题。</p>
+<p><strong>问题：</strong></p>
+<p>由于 Hexo 3版本后对很多插件支持有问题，<a target="_blank" rel="noopener" href="https://github.com/CodeFalling/hexo-asset-image.git">hexo-asset-image</a> 插件在处理 <code>data.permalink</code> 链接时出现路径错误，把年月去掉了，导致最后生成的路径为 <code>%d/xxx/xxx</code> 需要对其做兼容处理。通过判断当前版本是否等于<code>3</code>的版本做不同的路径分割。</p>
+<p>在代码中加入：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> version = <span class="hljs-built_in">String</span>(hexo.version).split(<span class="hljs-string">&#x27;.&#x27;</span>);<br></code></pre></td></tr></table></figure>
+<p>修改 <code>date.permalink</code> 处理：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> link = data.permalink;  <br><span class="hljs-keyword">if</span>(version.length &gt; <span class="hljs-number">0</span> &amp;&amp; <span class="hljs-built_in">Number</span>(version[<span class="hljs-number">0</span>]) == <span class="hljs-number">3</span>) <br>    <span class="hljs-keyword">var</span> beginPos = getPosition(link, <span class="hljs-string">&#x27;/&#x27;</span>, <span class="hljs-number">1</span>) + <span class="hljs-number">1</span>; <br><span class="hljs-keyword">else</span> <br>    <span class="hljs-keyword">var</span> beginPos = getPosition(link, <span class="hljs-string">&#x27;/&#x27;</span>, <span class="hljs-number">3</span>) + <span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+<p>重新生成静态文件即可正确显示。</p>
+<p>可直接安装已经修改过得插件 <code>npm install https://github.com/7ym0n/hexo-asset-image --save</code>。</p>
+<p><strong>解决方法：</strong></p>
+<p>1）配置 <code>_config.yml</code> 里面的 <code>post_asset_folder:false</code> 这个选项设置为 <code>true</code>。</p>
+<p>2）安装 <a target="_blank" rel="noopener" href="https://github.com/7ym0n/hexo-asset-image.git">hexo-asset-image</a>（已修改过的），运行 <code>hexo n &quot;xxxx&quot;</code> 来生成md博文时，<code>/source/_posts</code> 文件夹内除了 <code>xxxx.md</code> 文件还有一个同名的文件夹，把图片放入该文件夹即可。</p>
+<p>3）使用 <code>![xxx](xxx/xxx.png)</code> 直接插入图片即可。</p>
+<h2 id="二、Error"><a href="#二、Error" class="headerlink" title="二、Error"></a>二、Error</h2><h3 id="1、title-中含有-“-“-导致错误"><a href="#1、title-中含有-“-“-导致错误" class="headerlink" title="1、title 中含有 “: “ 导致错误"></a>1、title 中含有 “: “ 导致错误</h3><p><strong>错误：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs bash">13562@DESKTOP-8HHTU8A MINGW64 /d/Blog/blog<br>$ hexo s<br>INFO  Validating config<br>INFO  Start processing<br>ERROR &#123;<br>  err: YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 13:<br>      title: W1R3S: 1.0.1<br>                  ^<br>      at generateError (D:\Blog\blog\node_modules\hexo-front-matter\node_modules\js-yaml\lib\js-yaml\loader.js:167:10)<br>      at throwError (D:\Blog\blog\node_modules\hexo-front-matter\node_modules\js-yaml\lib\js-yaml\loader.js:173:9)<br>      at readBlockMapping (D:\Blog\blog\node_modules\hexo-front-matter\node_modules\js-yaml\lib\js-yaml\loader.js:1027:9)<br>      at composeNode (D:\Blog\blog\node_modules\hexo-front-matter\node_modules\js-yaml\lib\js-yaml\loader.js:1359:12)<br>      at readDocument (D:\Blog\blog\node_modules\hexo-front-matter\node_modules\js-yaml\lib\js-yaml\loader.js:1525:3)<br>      at loadDocuments (D:\Blog\blog\node_modules\hexo-front-matter\node_modules\js-yaml\lib\js-yaml\loader.js:1588:5)<br>      at Object.load (D:\Blog\blog\node_modules\hexo-front-matter\node_modules\js-yaml\lib\js-yaml\loader.js:1614:19)<br>      at parseYAML (D:\Blog\blog\node_modules\hexo-front-matter\lib\front_matter.js:69:23)<br>      at parse (D:\Blog\blog\node_modules\hexo-front-matter\lib\front_matter.js:50:12)<br>      at D:\Blog\blog\node_modules\hexo\lib\plugins\processor\post.js:51:20<br>      at tryCatcher (D:\Blog\blog\node_modules\bluebird\js\release\util.js:16:23)<br>      at Promise._settlePromiseFromHandler (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:544:35)<br>      at Promise._settlePromise (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:604:18)<br>      at Promise._settlePromise0 (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:649:10)<br>      at Promise._settlePromises (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:729:18)<br>      at Promise._fulfill (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:673:18)<br>      at PromiseArray._resolve (D:\Blog\blog\node_modules\bluebird\js\release\promise_array.js:127:19)<br>      at PromiseArray._promiseFulfilled (D:\Blog\blog\node_modules\bluebird\js\release\promise_array.js:145:14)<br>      at PromiseArray._iterate (D:\Blog\blog\node_modules\bluebird\js\release\promise_array.js:115:31)<br>      at PromiseArray.init [as _init] (D:\Blog\blog\node_modules\bluebird\js\release\promise_array.js:79:10)<br>      at Promise._settlePromise (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:601:21)<br>      at Promise._settlePromise0 (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:649:10)<br>      at Promise._settlePromises (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:729:18)<br>      at Promise._fulfill (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:673:18)<br>      at PromiseArray._resolve (D:\Blog\blog\node_modules\bluebird\js\release\promise_array.js:127:19)<br>      at PromiseArray._promiseFulfilled (D:\Blog\blog\node_modules\bluebird\js\release\promise_array.js:145:14)<br>      at Promise._settlePromise (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:609:26)<br>      at Promise._settlePromise0 (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:649:10) &#123;<br>    reason: <span class="hljs-string">&#x27;incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line&#x27;</span>,<br>    mark: Mark &#123;<br>      name: null,<br>      buffer: <span class="hljs-string">&#x27;title: W1R3S: 1.0.1\n&#x27;</span> +<br>        <span class="hljs-string">&#x27;date: 2022-05-01\n&#x27;</span> +<br>        <span class="hljs-string">&#x27;categories: Penetration\n&#x27;</span> +<br>        <span class="hljs-string">&#x27;tags: [Penetration, vulnhub]\n&#x27;</span> +<br>        <span class="hljs-string">&#x27;\x00&#x27;</span>,<br>      position: 12,<br>      line: 0,<br>      column: 12<br>    &#125;<br>  &#125;<br>&#125; Process failed: %s _posts/Penetration/Vulnhub/Part-1/0x02 W1R3S.md<br></code></pre></td></tr></table></figure>
+<p><strong>原因：</strong> <code>title</code> 中有<strong>英文冒号加空格</strong>。例如：<code>title: W1R3S: 1.0.1</code></p>
+<p><strong>解决方法：</strong>可以把英文的 <code>:</code> 改成中文的 <code>：</code> 。</p>
+<h3 id="2、内容含有-导致错误"><a href="#2、内容含有-导致错误" class="headerlink" title="2、内容含有  导致错误"></a>2、内容含有 {{  }} 导致错误</h3><p><strong>错误：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> hexo s</span><br>INFO  Validating config<br>INFO  Start processing<br>INFO  [Fluid] 读取 _config.yml 中 theme_config 配置项覆盖配置<br>update link as:--&gt;/2023/03/23/Test/test-local-image/image-20230323112709634.png<br>update link as:--&gt;/2023/03/23/Test/test-local-image/image-20230323112709634.png<br>FATAL &#123;<br>  err: Error [Nunjucks Error]: _posts/MessUp/Hexo-Issue-Error.md [Line 30, Column 89] unexpected token: &#125;&#125;<br>      =====               Context Dump               =====<br>      === (line number probably different from source) ===<br>    25 | &lt;p&gt;3）使用 &lt;code&gt;![xxx](xxx/xxx.png)&lt;/code&gt; 直接插入图片即可。&lt;/p&gt;<br>    26 | &lt;h2 id=&quot;二、Error&quot;&gt;&lt;a href=&quot;#二、Error&quot; class=&quot;headerlink&quot; title=&quot;二、Error&quot;&gt;&lt;/a&gt;二、Error&lt;/h2&gt;&lt;h3 id=&quot;1、title-中含有-“-“-导致错误&quot;&gt;&lt;a href=&quot;#1、title-中含有-“-“-导致错误&quot; class=&quot;headerlink&quot; title=&quot;1、title 中含有 “: “ 导致错误&quot;&gt;&lt;/a&gt;1、title 中含有 “: “ 导致错误&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;hexo s&lt;/code&gt; 后出现错误：&lt;/strong&gt;&lt;/p&gt;<br>    27 | &lt;!--code 3--&gt;<br>    28 | &lt;p&gt;&lt;strong&gt;原因：&lt;/strong&gt; &lt;code&gt;title&lt;/code&gt; 中有&lt;strong&gt;英文冒号加空格&lt;/strong&gt;。例如：&lt;code&gt;title: W1R3S: 1.0.1&lt;/code&gt;&lt;/p&gt;<br>    29 | &lt;p&gt;&lt;strong&gt;解决方法：&lt;/strong&gt;可以把英文的 &lt;code&gt;:&lt;/code&gt; 改成中文的 &lt;code&gt;：&lt;/code&gt; 。&lt;/p&gt;<br>    30 | &lt;h3 id=&quot;2、内容含有-“-”-导致错误&quot;&gt;&lt;a href=&quot;#2、内容含有-“-”-导致错误&quot; class=&quot;headerlink&quot; title=&quot;2、内容含有 “&#123;&#123;&#125;&#125;” 导致错误&quot;&gt;&lt;/a&gt;2、内容含有 “&#123;&#123;&#125;&#125;” 导致错误&lt;/h3&gt;<br>      =====             Context Dump Ends            =====<br>      at formatNunjucksError (D:\Blog\blog\node_modules\hexo\lib\extend\tag.js:171:13)<br>      at D:\Blog\blog\node_modules\hexo\lib\extend\tag.js:246:36<br>      at tryCatcher (D:\Blog\blog\node_modules\bluebird\js\release\util.js:16:23)<br>      at Promise._settlePromiseFromHandler (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:547:31)<br>      at Promise._settlePromise (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:604:18)<br>      at Promise._settlePromise0 (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:649:10)<br>      at Promise._settlePromises (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:725:18)<br>      at _drainQueueStep (D:\Blog\blog\node_modules\bluebird\js\release\async.js:93:12)<br>      at _drainQueue (D:\Blog\blog\node_modules\bluebird\js\release\async.js:86:9)<br>      at Async._drainQueues (D:\Blog\blog\node_modules\bluebird\js\release\async.js:102:5)<br>      at Immediate.Async.drainQueues [as _onImmediate] (D:\Blog\blog\node_modules\bluebird\js\release\async.js:15:14)<br>      at processImmediate (internal/timers.js:464:21) &#123;<br>    line: 30,<br>    location: &#x27;_posts/MessUp/Hexo-Issue-Error.md [Line 30, Column 89]&#x27;,<br>    type: &#x27;unexpected token: &#125;&#125;&#x27;<br>  &#125;<br>&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html<br><br></code></pre></td></tr></table></figure>
+<p><strong>原因：</strong></p>
+<p>根据提示访问 <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">https://hexo.io/docs/troubleshooting.html</a> ，找到原因：</p>
+<p><img src="/2022/07/11/MessUp/Hexo-Issue-Error/image-20230323141735849.png" srcset="/img/loading.gif" lazyload alt="image-20230323141735849" style="zoom:67%;"></p>
+<p><strong>解决方法：</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-section"># 方法1</span><br>&#123;% raw %&#125;<br>Hello &#123;&#123; world &#125;&#125;<br>&#123;% endraw %&#125;<br><br><span class="hljs-section"># 方法2</span><br><span class="hljs-code">```</span><br><span class="hljs-code">Hello &#123;&#123; world &#125;&#125;</span><br><span class="hljs-code">```</span><br><br><span class="hljs-section"># 方法3</span><br><span class="hljs-code">`Hello &#123;&#123; world &#125;&#125;`</span><br></code></pre></td></tr></table></figure>
+<h3 id="3、标题使用-导致错误"><a href="#3、标题使用-导致错误" class="headerlink" title="3、标题使用  导致错误"></a>3、标题使用 `{{  }}` 导致错误</h3><p><strong>错误：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo s<br>INFO  Validating config<br>INFO  Start processing<br>INFO  [Fluid] 读取 _config.yml 中 theme_config 配置项覆盖配置<br>FATAL &#123;<br>  err: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:<br><br>    assert(cache[index])<br><br>      at D:\Blog\blog\node_modules\hexo\lib\hexo\post.js:25:3<br>      at String.replace (&lt;anonymous&gt;)<br>      at PostRenderCache.restoreAllSwigTags (D:\Blog\blog\node_modules\hexo\lib\hexo\post.js:37:26)<br>      at Object.onRenderEnd (D:\Blog\blog\node_modules\hexo\lib\hexo\post.js:291:35)<br>      at D:\Blog\blog\node_modules\hexo\lib\hexo\render.js:79:21<br>      at tryCatcher (D:\Blog\blog\node_modules\bluebird\js\release\util.js:16:23)<br>      at Promise._settlePromiseFromHandler (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:547:31)<br>      at Promise._settlePromise (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:604:18)<br>      at Promise._settlePromise0 (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:649:10)<br>      at Promise._settlePromises (D:\Blog\blog\node_modules\bluebird\js\release\promise.js:729:18)<br>      at _drainQueueStep (D:\Blog\blog\node_modules\bluebird\js\release\async.js:93:12)<br>      at _drainQueue (D:\Blog\blog\node_modules\bluebird\js\release\async.js:86:9)<br>      at Async._drainQueues (D:\Blog\blog\node_modules\bluebird\js\release\async.js:102:5)<br>      at Immediate.Async.drainQueues [as _onImmediate] (D:\Blog\blog\node_modules\bluebird\js\release\async.js:15:14)<br>      at processImmediate (internal/timers.js:464:21) &#123;<br>    generatedMessage: <span class="hljs-literal">true</span>,<br>    code: <span class="hljs-string">&#x27;ERR_ASSERTION&#x27;</span>,<br>    actual: null,<br>    expected: <span class="hljs-literal">true</span>,<br>    operator: <span class="hljs-string">&#x27;==&#x27;</span><br>  &#125;<br>&#125; Something<span class="hljs-string">&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
+<p><strong>原因：</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">标题中使用 <span class="hljs-code">`&#123;&#123; &#125;&#125;`</span> 导致错误<br></code></pre></td></tr></table></figure>
+<p><strong>解决方法：</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">改为使用 &#123;% raw %&#125;&#123;&#123;  &#125;&#125;&#123;% endraw %&#125; <br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Hexo/">Hexo</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Hexo/">Hexo</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/15/Tools/VM/VirtualBox%20Ubuntu%E5%BC%80%E6%9C%BA%E5%90%8E%E9%BB%91%E5%B1%8F/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">VirtualBox Ubuntu开机后黑屏</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/07/11/Penetration/Vulnhub/Part-1/0x07%20DC-4/">
+                        <span class="hidden-mobile">DC：4</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,2788 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>Crypto - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Crypto">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-11-20 00:00" pubdate>
+        2021年11月20日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      10.6k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      135
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Crypto</h1>
+            
+            <div class="markdown-body">
+              <h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h1><p>[TOC]</p>
+<h2 id="0x01-古典密码"><a href="#0x01-古典密码" class="headerlink" title="0x01 古典密码"></a>0x01 古典密码</h2><p>这部分我们介绍几种典密码。  </p>
+<blockquote>
+<p>问：什么是古典<br>答：很早以前的<br>问：多早以前的<br>答：What？Can u speak English？</p>
+</blockquote>
+<p>“古典”本身就是一个模糊的定义，通常我们认为香农经典论文发表之前的为”古典”，或者利用香农的基本思想设计的密码系统将不是“古典密码”。</p>
+<h3 id="1、凯撒密码"><a href="#1、凯撒密码" class="headerlink" title="1、凯撒密码"></a>1、凯撒密码</h3><p>每个字母在字母表中“移动”了一定的位置。</p>
+<p><strong>数学表示（密码为3）：</strong></p>
+<script type="math/tex; mode=display">
+\begin{cases}
+𝑐 = 𝑚 + 3(𝑚𝑜𝑑 26) & 0 ≤ 𝑚 ≤ 25 \\
+𝑚 = 𝑐 − 3(𝑚𝑜𝑑 26) & 0 ≤ 𝑐 ≤ 25
+\end{cases}</script><p><img src="/2021/11/20/CTF/Crypto/Crypto/8f107ab1d8ddf6f94abd90b923e8bea7.png" srcset="/img/loading.gif" lazyload alt="image-20211121145730842" style="zoom:80%;"></p>
+<p>例：利用凯撒密码对”abc” 进行加密。 </p>
+<p>解：def</p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/6874af019accd5e84054654c4514c624.png" srcset="/img/loading.gif" lazyload alt="image-20211121142047922"></p>
+<h3 id="2、维吉尼亚密码"><a href="#2、维吉尼亚密码" class="headerlink" title="2、维吉尼亚密码"></a>2、维吉尼亚密码</h3><p>维吉尼亚密码（又译维热纳尔密码）是使用一系列凯撒密码组成 密码字母表的加密算法，属于多表密码的一种简单形式。</p>
+<ul>
+<li><p>26 × 26 方阵</p>
+</li>
+<li><p>密钥循环使用</p>
+</li>
+</ul>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/f42b3c44867d376fe3876d5dada08597.png" srcset="/img/loading.gif" lazyload alt="image-20211124161834324"></p>
+<p>明文：This_is_flag </p>
+<p>密钥：biu</p>
+<p>密文：Upct_qm_gtuh</p>
+<h3 id="3、猪圈密码"><a href="#3、猪圈密码" class="headerlink" title="3、猪圈密码"></a>3、猪圈密码</h3><p>猪圈密码（亦称朱高密码、共济会暗号、共济会密码或共济会员密码），是一种以格子为基础的简单替代式密码。</p>
+<h4 id="1）传统的"><a href="#1）传统的" class="headerlink" title="1）传统的"></a>1）传统的</h4><p><img src="/2021/11/20/CTF/Crypto/Crypto/8892f798dae3867e46e17558a0a8cb1a.jpg" srcset="/img/loading.gif" lazyload alt="1-210929212934M6" style="zoom:80%;"></p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/b3fbfc30133f75688a23bfd2a7ccad58.jpg" srcset="/img/loading.gif" lazyload alt="1-21092921320b28" style="zoom:80%;"></p>
+<h4 id="2）变种"><a href="#2）变种" class="headerlink" title="2）变种"></a>2）变种</h4><p><img src="/2021/11/20/CTF/Crypto/Crypto/e2928e0053f124c5f3c009291345f6a8.jpg" srcset="/img/loading.gif" lazyload alt="1-210929213KN21"></p>
+<h3 id="4、栅栏密码"><a href="#4、栅栏密码" class="headerlink" title="4、栅栏密码"></a>4、栅栏密码</h3><p>所谓栅栏密码，就是将要加密的明文分为N个一组，再从每组的选出一个字母连起来，形成一段无规律的密文。</p>
+<p>栅栏密码可以分为两类，第一种是N型栅栏密码（加密方式源自百度百科）、第二种是V型栅栏密码（加密方式源自维基百科）。</p>
+<h4 id="1）N型栅栏密码"><a href="#1）N型栅栏密码" class="headerlink" title="1）N型栅栏密码"></a>1）N型栅栏密码</h4><p>使用密钥 8（栅栏的栏数）加密一下明文 <code>1234567891234567891234567891234567891</code> </p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs lasso"><span class="hljs-number">1.</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">9.</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">8.</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">7.</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">6.</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">5.</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span>..<br><span class="hljs-number">.2</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.1</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.9</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.8</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.7</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.6</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span>..<br>.<span class="hljs-number">.3</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.2</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.1</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.9</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.8</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.7</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span>.<br><span class="hljs-params">...</span><span class="hljs-number">4.</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">3.</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">2.</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">1.</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">9.</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">8.</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span>..<br><span class="hljs-params">...</span><span class="hljs-number">.5</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.4</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.3</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.2</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.1</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.9</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span>..<br><span class="hljs-params">...</span>.<span class="hljs-number">.6</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.5</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.4</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.3</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.2</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.1</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span>.<br><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">7.</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">6.</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">5.</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">4.</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">3.</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span>.<br><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.8</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.7</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.6</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.5</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-number">.4</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span>.<br></code></pre></td></tr></table></figure>
+<p><strong>首先画出8栏表格，明文由上至下顺序写上，当到达最低部时，再回到第一栏重新开始，一直重复直至整篇明文写完为止。</strong></p>
+<p>横向读取表格即为密文：<code>1987652198763219874321985432196543217654387654</code> 。</p>
+<h4 id="2）V型栅栏密码"><a href="#2）V型栅栏密码" class="headerlink" title="2）V型栅栏密码"></a>2）V型栅栏密码</h4><p>使用密钥 8（栅栏的栏数）加密一下明文<code>Will invade Kentucky on October the eighth# signal is Frozen chicken&#39;#</code></p>
+<figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cos"><span class="hljs-keyword">W</span>...........<span class="hljs-built_in">..n</span>...........<span class="hljs-built_in">..b</span>.............#...........<span class="hljs-built_in">..r</span>.............#...<br>.i.........<span class="hljs-built_in">..e</span>.t.........<span class="hljs-built_in">..o</span>.e.........<span class="hljs-built_in">..h</span>. .........<span class="hljs-built_in">..F</span>.o...........&#x27;....<br><span class="hljs-built_in">..l</span>.......<span class="hljs-built_in">..K</span>.<span class="hljs-built_in">..u</span>.......<span class="hljs-built_in">..t</span>.<span class="hljs-built_in">..r</span>.......<span class="hljs-built_in">..t</span>.<span class="hljs-built_in">..s</span>.........&#x27;.<span class="hljs-built_in">..z</span>.......<span class="hljs-built_in">..n</span>.....<br>.<span class="hljs-built_in">..l</span>....... ...<span class="hljs-built_in">..c</span>.....<span class="hljs-built_in">..c</span>..... .....<span class="hljs-built_in">..h</span>...<span class="hljs-built_in">..i</span>....... ...<span class="hljs-built_in">..e</span>.....<span class="hljs-built_in">..e</span>......<br>.... ...<span class="hljs-built_in">..e</span>.....<span class="hljs-built_in">..k</span>...<span class="hljs-built_in">..O</span>.....<span class="hljs-built_in">..t</span>...<span class="hljs-built_in">..g</span>.....<span class="hljs-built_in">..g</span>...<span class="hljs-built_in">..s</span>.....<span class="hljs-built_in">..n</span>...<span class="hljs-built_in">..k</span>.......<br>...<span class="hljs-built_in">..i</span>.<span class="hljs-built_in">..d</span>.......<span class="hljs-built_in">..y</span>... .......<span class="hljs-built_in">..h</span>.<span class="hljs-built_in">..i</span>.......<span class="hljs-built_in">..n</span>.<span class="hljs-built_in">..i</span>......... .<span class="hljs-built_in">..c</span>........<br>....<span class="hljs-built_in">..n</span>.a........... .n.........<span class="hljs-built_in">..e</span>.e.........<span class="hljs-built_in">..a</span>. .........<span class="hljs-built_in">..c</span>.i.........<br>.....<span class="hljs-built_in">..v</span>...........<span class="hljs-built_in">..o</span>............. ...........<span class="hljs-built_in">..l</span>...........<span class="hljs-built_in">..h</span>..........<br></code></pre></td></tr></table></figure>
+<p><strong>在V型栅栏密码中，明文由上至下顺序写上，当到达最低部时，再回头向上，一直重复直至整篇明文写完为止。</strong></p>
+<p>横向读取表格即为密文：<code>Wnb#r#ietoehFo&#39;lkutrts&#39;znl cc hi ee ekOtggsnkidy hini cna neea civo lh</code> 。</p>
+<h3 id="5、摩斯密码"><a href="#5、摩斯密码" class="headerlink" title="5、摩斯密码"></a>5、摩斯密码</h3><p>摩尔斯电码是一种早期的数字化通信形式，但是它不同于现代只使用零和一两种状态的二进制代码，它的代码包括五种： 点、划、点和划之间的停顿、每个字符之间短的停顿、每个词之间中等的停顿以及句子之间长的停顿。</p>
+<p><strong>摩斯电码特点：</strong></p>
+<ul>
+<li>点（.）、划（-）————（可能会用<strong>0和1</strong>代替<strong>点和划</strong>）</li>
+<li>通常用空格表示每个字符间短的停顿</li>
+<li>通常用 <strong>/</strong> 划分每个词之间中等的停顿</li>
+</ul>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/cbe5f50ef451fa68ddd4698b8df939a3.png" srcset="/img/loading.gif" lazyload alt="2020040817184768"></p>
+<h3 id="6、培根密码"><a href="#6、培根密码" class="headerlink" title="6、培根密码"></a>6、培根密码</h3><p>加密时，明文中的每个字母都会转换成一组五个英文字母。</p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/67a33cf000b1de408ad6481e8579e8c6.png" srcset="/img/loading.gif" lazyload alt="image-20211124145910337"></p>
+<p>培根密码相对随意，当出现了两种不同形式的呈现时候（一段文字有两种字体就可能是这种密码），就可以使用培根密码。将其五五分组，之后把第一种形式当成a，把另一种当成b（或者反过来），然后就可以一一对应进行解密。</p>
+<p><strong>给大家展现一些例子：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>密文</th>
+<th>可能解密一</th>
+<th>明文</th>
+<th>可能解密二</th>
+<th>明文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong>2<strong>34</strong>5 6<strong>789</strong>0</td>
+<td>abaab baaab</td>
+<td>jr</td>
+<td>babba abbba</td>
+<td>wo</td>
+</tr>
+<tr>
+<td>10110 01110</td>
+<td>abaab baaab</td>
+<td>jr</td>
+<td>babba abbba</td>
+<td>wo</td>
+</tr>
+<tr>
+<td>你海他们湖 江们你他流</td>
+<td>abaab baaab</td>
+<td>jr</td>
+<td>babba abbba</td>
+<td>wo</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="7、Base64加密"><a href="#7、Base64加密" class="headerlink" title="7、Base64加密"></a>7、Base64加密</h3><p>Base64编码，是我们程序开发中经常使用到的编码方法。它是一种基于用64个可打印字符来表示二进制数据的表示方法。它通常用作存储、传输一些二进制数据的编码方法。</p>
+<p><strong>Base64转换原理：</strong></p>
+<p>它是用64个可打印字符表示二进制所有数据方法。由于2的6次方等于64，所以可以用每6位为一个单元，对应某个可打印字符。</p>
+<p>我们知道三个字节有24位，就可以刚好对应于4个Base64单元，即3个字节需要用4个Base64的可打印字符来表示。</p>
+<p>在Base64中的可打印字符包括字母A-Z、a-z、数字0-9 ，这样共有62个字符，此外两个可打印符号在不同的系统中一般有所不同。但是，我们经常所说的Base64另外2个字符是：“+/”。</p>
+<p>这64个字符，所对应表如下。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>字符</th>
+<th></th>
+<th>编号</th>
+<th>字符</th>
+<th></th>
+<th>编号</th>
+<th>字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>A</td>
+<td>16</td>
+<td>Q</td>
+<td>32</td>
+<td>g</td>
+<td>48</td>
+<td>w</td>
+</tr>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>17</td>
+<td>R</td>
+<td>33</td>
+<td>h</td>
+<td>49</td>
+<td>x</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C</td>
+<td>18</td>
+<td>S</td>
+<td>34</td>
+<td>i</td>
+<td>50</td>
+<td>y</td>
+</tr>
+<tr>
+<td>3</td>
+<td>D</td>
+<td>19</td>
+<td>T</td>
+<td>35</td>
+<td>j</td>
+<td>51</td>
+<td>z</td>
+</tr>
+<tr>
+<td>4</td>
+<td>E</td>
+<td>20</td>
+<td>U</td>
+<td>36</td>
+<td>k</td>
+<td>52</td>
+<td>0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>F</td>
+<td>21</td>
+<td>V</td>
+<td>37</td>
+<td>l</td>
+<td>53</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>G</td>
+<td>22</td>
+<td>W</td>
+<td>38</td>
+<td>m</td>
+<td>54</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>H</td>
+<td>23</td>
+<td>X</td>
+<td>39</td>
+<td>n</td>
+<td>55</td>
+<td>3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>I</td>
+<td>24</td>
+<td>Y</td>
+<td>40</td>
+<td>o</td>
+<td>56</td>
+<td>4</td>
+</tr>
+<tr>
+<td>9</td>
+<td>J</td>
+<td>25</td>
+<td>Z</td>
+<td>41</td>
+<td>p</td>
+<td>57</td>
+<td>5</td>
+</tr>
+<tr>
+<td>10</td>
+<td>K</td>
+<td>26</td>
+<td>a</td>
+<td>42</td>
+<td>q</td>
+<td>58</td>
+<td>6</td>
+</tr>
+<tr>
+<td>11</td>
+<td>L</td>
+<td>27</td>
+<td>b</td>
+<td>43</td>
+<td>r</td>
+<td>59</td>
+<td>7</td>
+</tr>
+<tr>
+<td>12</td>
+<td>M</td>
+<td>28</td>
+<td>c</td>
+<td>44</td>
+<td>s</td>
+<td>60</td>
+<td>8</td>
+</tr>
+<tr>
+<td>13</td>
+<td>N</td>
+<td>29</td>
+<td>d</td>
+<td>45</td>
+<td>t</td>
+<td>61</td>
+<td>9</td>
+</tr>
+<tr>
+<td>14</td>
+<td>O</td>
+<td>30</td>
+<td>e</td>
+<td>46</td>
+<td>u</td>
+<td>62</td>
+<td>+</td>
+</tr>
+<tr>
+<td>15</td>
+<td>P</td>
+<td>31</td>
+<td>f</td>
+<td>47</td>
+<td>v</td>
+<td>63</td>
+<td>/</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>转换的时候，将三个byte的数据，先后放入一个24bit的缓冲区中，先来的byte占高位。数据不足3byte的话，于缓冲区中剩下的bit用0补足。然后，每次取出6个bit，按照其值选择 <code>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/</code> 中的字符作为编码后的输出。不断进行，直到全部输入数据转换完成。</p>
+<p>如果最后剩下两个输入数据，在编码结果后加1个“=”；如果最后剩下一个输入数据，编码结果后加2个“=”；如果没有剩下任何数据，就什么都不要加，这样才可以保证资料还原的正确性。</p>
+<p>编码后的数据比原始数据略长，为原来的4/3。无论什么样的字符都会全部被编码，因此不像<a target="_blank" rel="noopener" href="http://blog.chacuo.net/494.html">Quoted-printable</a> 编码，还保留部分可打印字符。所以，它的可读性不如<a target="_blank" rel="noopener" href="http://blog.chacuo.net/494.html">Quoted-printable</a>编码！</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>文本</th>
+<th><strong>M</strong></th>
+<th><strong>a</strong></th>
+<th><strong>n</strong></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ASCII编码</td>
+<td>77</td>
+<td>97</td>
+<td>110</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>二进制位（8位）</td>
+<td>0100 1101</td>
+<td>0110 0001</td>
+<td>0110 1110</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>二进制位（6位）</td>
+<td>01 0011</td>
+<td>01 0110</td>
+<td>00 0101</td>
+<td>10 1110</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>十进制</td>
+<td>19</td>
+<td>22</td>
+<td>5</td>
+<td>46</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Base64编码</td>
+<td><strong>T</strong></td>
+<td><strong>W</strong></td>
+<td><strong>F</strong></td>
+<td><strong>u</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>M的Ascii码是77,前六位对应值为19，对应base64字符是T，如此类推。其它字符编码就可以自动转换得到！我们看看另外不是刚好是3个字节的情况！</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>文本（1 Byte）</th>
+<th><strong>A</strong></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th>B</th>
+<th>C</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ASCII编码</td>
+<td>65</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>66</td>
+<td>67</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>二进制位（8位）</td>
+<td>0100 0001</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0100 0010</td>
+<td>0100 0011</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>二进制位（6位）</td>
+<td>01 0000</td>
+<td>01 <strong>0000</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>01 0000</td>
+<td>10 0100</td>
+<td>0011 <strong>00</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>十进制</td>
+<td>16</td>
+<td>16</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>16</td>
+<td>36</td>
+<td>12</td>
+<td></td>
+</tr>
+<tr>
+<td>Base64编码</td>
+<td><strong>Q</strong></td>
+<td><strong>Q</strong></td>
+<td><strong>=</strong></td>
+<td><strong>=</strong></td>
+<td></td>
+<td></td>
+<td><strong>Q</strong></td>
+<td><strong>K</strong></td>
+<td><strong>M</strong></td>
+<td><strong>=</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="8、URL编码"><a href="#8、URL编码" class="headerlink" title="8、URL编码"></a>8、URL编码</h3><h4 id="1）Url编码前置知识"><a href="#1）Url编码前置知识" class="headerlink" title="1）Url编码前置知识"></a>1）Url编码前置知识</h4><p><strong>Url编码的原则</strong>就是使用<strong>安全的字符</strong>（没有特殊用途或者特殊意义的可打印字符）去表示那些<strong>不安全的字符</strong>。</p>
+<ul>
+<li><p><strong>RFC3986文档</strong>规定，Url中只允许包含<strong>英文字母（a-z、A-Z）、数字（0-9）、-_.~4个特殊字符以及所有保留字符</strong>。</p>
+<blockquote>
+<p>RFC3986文档对Url的编解码问题做出了详细的建议，指出了哪些字符需要被编码才不会引起Url语义的转变，以及对为什么这些字符需要编码做出了相应的解释。</p>
+</blockquote>
+</li>
+<li><p>保留字符：Url可以划分成若干个组件，协议、主机、路径等。有一些字符（<strong>:/?#[]@</strong>）是用作分隔不同组件的。RFC3986中指定了以下字符为保留字符：<strong>! * ‘ ( ) ; : @ &amp; = + $ , / ? # [ ]</strong></p>
+<blockquote>
+<p>例如:冒号用于分隔协议和主机，/用于分隔主机和路径，?用于分隔路径和查询参数，等等。</p>
+<p>还有一些字符（!$&amp;’()*+,;=）用于在每个组件中起到分隔作用的，如=用于表示查询参数中的键值对，&amp;符号用于分隔查询多个键值对。当组件中的普通数据包含这些特殊字符时，需要对其进行编码。</p>
+</blockquote>
+</li>
+<li><p>不安全字符：还有一些字符，当他们直接放在Url中的时候，可能会引起解析程序的歧义，这些字符被视为不安全字符。</p>
+<ul>
+<li>空格：Url在传输的过程，或者用户在排版的过程，或者文本处理程序在处理Url的过程，都有可能引入无关紧要的空格，或者将那些有意义的空格给去掉。</li>
+<li>引号以及&lt;&gt;：引号和尖括号通常用于在普通文本中起到分隔Url的作用</li>
+<li><h1 id="：通常用于表示书签或者锚点"><a href="#：通常用于表示书签或者锚点" class="headerlink" title="：通常用于表示书签或者锚点"></a>：通常用于表示书签或者锚点</h1></li>
+<li>%：百分号本身用作对不安全字符进行编码时使用的特殊字符，因此本身需要编码</li>
+<li>{}|\^[]`~：某一些网关或者传输代理会篡改这些字符</li>
+</ul>
+</li>
+<li><p>需要注意的是，对于Url中的合法字符，编码和不编码是等价的，但是对于上面提到的这些字符，如果不经过编码，那么它们有可能会造成Url语义的不同。因此对于Url而言，只有普通<strong>英文字符和数字，特殊字符$-_.+!*’()还有保留字符</strong>，才能出现在未经编码的Url之中。其他字符均需要经过编码之后才能出现在Url中。</p>
+</li>
+<li>现在已经成为一种规范了，基本所有程序语言都有这种编码，如<strong>PHP有 urlencode、urldecode</strong>等。</li>
+</ul>
+<h4 id="2）如何进行编码"><a href="#2）如何进行编码" class="headerlink" title="2）如何进行编码"></a>2）如何进行编码</h4><ul>
+<li><p>Url编码使用%（百分号）加十六进制。Url编码默认使用的字符集是ASCII。</p>
+<blockquote>
+<p>例如符号#在ASCII字符集中对应的字节为0x23，经过Url编码之后得到的是%23。</p>
+</blockquote>
+</li>
+<li><p>对于非ASCII字符，需要使用ASCII字符集的超集进行编码得到相应的字节，然后对每个字节执行百分号编码。</p>
+<blockquote>
+<p>对于Unicode字符，RFC文档建议使用utf-8对其进行编码得到相应的字节，然后对每个字节执行百分号编码。</p>
+<p>如”中文”使用UTF-8字符集得到的字节为0xE4 0xB8 0xAD 0xE6 0x96 0x87，经过Url编码之后到”%E4%B8%AD%E6%96%87”。</p>
+</blockquote>
+</li>
+<li><p>如果某个字节对应着ASCII字符集中的某个非保留字符，则此字节无需使用百分号表示。</p>
+<blockquote>
+<p>例如”Url编码”，使用UTF-8编码得到的字节是0x55 0x72 0x6C 0xE7 0xBC 0x96 0xE7 0xA0 0x81，由于前三个字节对应着ASCII中的非保留字符”Url”，因此这三个字节可以用非保留字符”Url”表示。最终的Url编码可以简化成”Url%E7%BC%96%E7%A0%81” ，当然，如果你用”%55%72%6C%E7%BC%96%E7%A0%81”也是可以的。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="3）ASCII码对照表0-255："><a href="#3）ASCII码对照表0-255：" class="headerlink" title="3）ASCII码对照表0-255："></a>3）ASCII码对照表0-255：</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong>十进制代码</strong></th>
+<th><strong>十六进制代码</strong></th>
+<th><strong>MCS 字符或缩写</strong></th>
+<th><strong>DEC 多国字符名</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ASCII 控制字符 1</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>NUL</td>
+<td>空字符</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>SOH</td>
+<td>标题起始 (Ctrl/A)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>STX</td>
+<td>文本起始 (Ctrl/B)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>ETX</td>
+<td>文本结束 (Ctrl/C)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>EOT</td>
+<td>传输结束 (Ctrl/D)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5</td>
+<td>ENQ</td>
+<td>询问 (Ctrl/E)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>6</td>
+<td>ACK</td>
+<td>认可 (Ctrl/F)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>7</td>
+<td>BEL</td>
+<td>铃 (Ctrl/G)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>8</td>
+<td>BS</td>
+<td>退格 (Ctrl/H)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>9</td>
+<td>HT</td>
+<td>水平制表栏 (Ctrl/I)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>0A</td>
+<td>LF</td>
+<td>换行 (Ctrl/J)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>0B</td>
+<td>VT</td>
+<td>垂直制表栏 (Ctrl/K)</td>
+</tr>
+<tr>
+<td>12</td>
+<td>0C</td>
+<td>FF</td>
+<td>换页 (Ctrl/L)</td>
+</tr>
+<tr>
+<td>13</td>
+<td>0D</td>
+<td>CR</td>
+<td>回车 (Ctrl/M)</td>
+</tr>
+<tr>
+<td>14</td>
+<td>0E</td>
+<td>SO</td>
+<td>移出 (Ctrl/N)</td>
+</tr>
+<tr>
+<td>15</td>
+<td>0F</td>
+<td>SI</td>
+<td>移入 (Ctrl/O)</td>
+</tr>
+<tr>
+<td>16</td>
+<td>10</td>
+<td>DLE</td>
+<td>数据链接丢失 (Ctrl/P)</td>
+</tr>
+<tr>
+<td>17</td>
+<td>11</td>
+<td>DC1</td>
+<td>设备控制 1 (Ctrl/Q)</td>
+</tr>
+<tr>
+<td>18</td>
+<td>12</td>
+<td>DC2</td>
+<td>设备控制 2 (Ctrl/R)</td>
+</tr>
+<tr>
+<td>19</td>
+<td>13</td>
+<td>DC3</td>
+<td>设备控制 3 (Ctrl/S)</td>
+</tr>
+<tr>
+<td>20</td>
+<td>14</td>
+<td>DC4</td>
+<td>设备控制 4 (Ctrl/T)</td>
+</tr>
+<tr>
+<td>21</td>
+<td>15</td>
+<td>NAK</td>
+<td>否定接受 (Ctrl/U)</td>
+</tr>
+<tr>
+<td>22</td>
+<td>16</td>
+<td>SYN</td>
+<td>同步闲置符 (Ctrl/V)</td>
+</tr>
+<tr>
+<td>23</td>
+<td>17</td>
+<td>ETB</td>
+<td>传输块结束 (Ctrl/W)</td>
+</tr>
+<tr>
+<td>24</td>
+<td>18</td>
+<td>CAN</td>
+<td>取消 (Ctrl/X)</td>
+</tr>
+<tr>
+<td>25</td>
+<td>19</td>
+<td>EM</td>
+<td>媒体结束 (Ctrl/Y)</td>
+</tr>
+<tr>
+<td>26</td>
+<td>1A</td>
+<td>SUB</td>
+<td>替换 (Ctrl/Z)</td>
+</tr>
+<tr>
+<td>27</td>
+<td>1B</td>
+<td>ESC</td>
+<td>换码符</td>
+</tr>
+<tr>
+<td>28</td>
+<td>1C</td>
+<td>FS</td>
+<td>文件分隔符</td>
+</tr>
+<tr>
+<td>29</td>
+<td>1D</td>
+<td>GS</td>
+<td>组分隔符</td>
+</tr>
+<tr>
+<td>30</td>
+<td>1E</td>
+<td>RS</td>
+<td>记录分隔符</td>
+</tr>
+<tr>
+<td>31</td>
+<td>1F</td>
+<td>US</td>
+<td>单位分隔符</td>
+</tr>
+<tr>
+<td><strong>ASCII 特殊和数字字符</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>32</td>
+<td>20</td>
+<td>SP</td>
+<td>空格</td>
+</tr>
+<tr>
+<td>33</td>
+<td>21</td>
+<td>!</td>
+<td>感叹号</td>
+</tr>
+<tr>
+<td>34</td>
+<td>22</td>
+<td>“</td>
+<td>引号 (双引号)</td>
+</tr>
+<tr>
+<td>35</td>
+<td>23</td>
+<td>#</td>
+<td>数字符号</td>
+</tr>
+<tr>
+<td>36</td>
+<td>24</td>
+<td>$</td>
+<td>美元符</td>
+</tr>
+<tr>
+<td>37</td>
+<td>25</td>
+<td>%</td>
+<td>百分号</td>
+</tr>
+<tr>
+<td>38</td>
+<td>26</td>
+<td>&amp;</td>
+<td>和号</td>
+</tr>
+<tr>
+<td>39</td>
+<td>27</td>
+<td>‘</td>
+<td>省略号 (单引号)</td>
+</tr>
+<tr>
+<td>40</td>
+<td>28</td>
+<td>(</td>
+<td>左圆括号</td>
+</tr>
+<tr>
+<td>41</td>
+<td>29</td>
+<td>)</td>
+<td>右圆括号</td>
+</tr>
+<tr>
+<td>42</td>
+<td>2A</td>
+<td>*</td>
+<td>星号</td>
+</tr>
+<tr>
+<td>43</td>
+<td>2B</td>
+<td>+</td>
+<td>加号</td>
+</tr>
+<tr>
+<td>44</td>
+<td>2C</td>
+<td>,</td>
+<td>逗号</td>
+</tr>
+<tr>
+<td>45</td>
+<td>2D</td>
+<td>—</td>
+<td>连字号或减号</td>
+</tr>
+<tr>
+<td>46</td>
+<td>2E</td>
+<td>.</td>
+<td>句点或小数点</td>
+</tr>
+<tr>
+<td>47</td>
+<td>2F</td>
+<td>/</td>
+<td>斜杠</td>
+</tr>
+<tr>
+<td>48</td>
+<td>30</td>
+<td>0</td>
+<td>零</td>
+</tr>
+<tr>
+<td>49</td>
+<td>31</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>50</td>
+<td>32</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>51</td>
+<td>33</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>52</td>
+<td>34</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>53</td>
+<td>35</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>54</td>
+<td>36</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr>
+<td>55</td>
+<td>37</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr>
+<td>56</td>
+<td>38</td>
+<td>8</td>
+<td>8</td>
+</tr>
+<tr>
+<td>57</td>
+<td>39</td>
+<td>9</td>
+<td>9</td>
+</tr>
+<tr>
+<td>58</td>
+<td>3A</td>
+<td>:</td>
+<td>冒号</td>
+</tr>
+<tr>
+<td>59</td>
+<td>3B</td>
+<td>;</td>
+<td>分号</td>
+</tr>
+<tr>
+<td>60</td>
+<td>3C</td>
+<td>&lt;</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>61</td>
+<td>3D</td>
+<td>=</td>
+<td>等于</td>
+</tr>
+<tr>
+<td>62</td>
+<td>3E</td>
+<td>&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>63</td>
+<td>3F</td>
+<td>?</td>
+<td>问号</td>
+</tr>
+<tr>
+<td><strong>ASCII 字母字符</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>64</td>
+<td>40</td>
+<td>@</td>
+<td>商业 at 符号</td>
+</tr>
+<tr>
+<td>65</td>
+<td>41</td>
+<td>A</td>
+<td>大写字母 A</td>
+</tr>
+<tr>
+<td>66</td>
+<td>42</td>
+<td>B</td>
+<td>大写字母 B</td>
+</tr>
+<tr>
+<td>67</td>
+<td>43</td>
+<td>C</td>
+<td>大写字母 C</td>
+</tr>
+<tr>
+<td>68</td>
+<td>44</td>
+<td>D</td>
+<td>大写字母 D</td>
+</tr>
+<tr>
+<td>69</td>
+<td>45</td>
+<td>E</td>
+<td>大写字母 E</td>
+</tr>
+<tr>
+<td>70</td>
+<td>46</td>
+<td>F</td>
+<td>大写字母 F</td>
+</tr>
+<tr>
+<td>71</td>
+<td>47</td>
+<td>G</td>
+<td>大写字母 G</td>
+</tr>
+<tr>
+<td>72</td>
+<td>48</td>
+<td>H</td>
+<td>大写字母 H</td>
+</tr>
+<tr>
+<td>73</td>
+<td>49</td>
+<td>I</td>
+<td>大写字母 I</td>
+</tr>
+<tr>
+<td>74</td>
+<td>4A</td>
+<td>J</td>
+<td>大写字母 J</td>
+</tr>
+<tr>
+<td>75</td>
+<td>4B</td>
+<td>K</td>
+<td>大写字母 K</td>
+</tr>
+<tr>
+<td>76</td>
+<td>4C</td>
+<td>L</td>
+<td>大写字母 L</td>
+</tr>
+<tr>
+<td>77</td>
+<td>4D</td>
+<td>M</td>
+<td>大写字母 M</td>
+</tr>
+<tr>
+<td>78</td>
+<td>4E</td>
+<td>N</td>
+<td>大写字母 N</td>
+</tr>
+<tr>
+<td>79</td>
+<td>4F</td>
+<td>O</td>
+<td>大写字母 O</td>
+</tr>
+<tr>
+<td>80</td>
+<td>50</td>
+<td>P</td>
+<td>大写字母 P</td>
+</tr>
+<tr>
+<td>81</td>
+<td>51</td>
+<td>Q</td>
+<td>大写字母 Q</td>
+</tr>
+<tr>
+<td>82</td>
+<td>52</td>
+<td>R</td>
+<td>大写字母 R</td>
+</tr>
+<tr>
+<td>83</td>
+<td>53</td>
+<td>S</td>
+<td>大写字母 S</td>
+</tr>
+<tr>
+<td>84</td>
+<td>54</td>
+<td>T</td>
+<td>大写字母 T</td>
+</tr>
+<tr>
+<td>85</td>
+<td>55</td>
+<td>U</td>
+<td>大写字母 U</td>
+</tr>
+<tr>
+<td>86</td>
+<td>56</td>
+<td>V</td>
+<td>大写字母 V</td>
+</tr>
+<tr>
+<td>87</td>
+<td>57</td>
+<td>W</td>
+<td>大写字母 W</td>
+</tr>
+<tr>
+<td>88</td>
+<td>58</td>
+<td>X</td>
+<td>大写字母 X</td>
+</tr>
+<tr>
+<td>89</td>
+<td>59</td>
+<td>Y</td>
+<td>大写字母 Y</td>
+</tr>
+<tr>
+<td>90</td>
+<td>5A</td>
+<td>Z</td>
+<td>大写字母 Z</td>
+</tr>
+<tr>
+<td>91</td>
+<td>5B</td>
+<td>[</td>
+<td>左中括号</td>
+</tr>
+<tr>
+<td>92</td>
+<td>5C</td>
+<td>\</td>
+<td>反斜杠</td>
+</tr>
+<tr>
+<td>93</td>
+<td>5D</td>
+<td>]</td>
+<td>右中括号</td>
+</tr>
+<tr>
+<td>94</td>
+<td>5E</td>
+<td>^</td>
+<td>音调符号</td>
+</tr>
+<tr>
+<td>95</td>
+<td>5F</td>
+<td>_</td>
+<td>下划线</td>
+</tr>
+<tr>
+<td>96</td>
+<td>60</td>
+<td>`</td>
+<td>重音符</td>
+</tr>
+<tr>
+<td>97</td>
+<td>61</td>
+<td>a</td>
+<td>小写字母 a</td>
+</tr>
+<tr>
+<td>98</td>
+<td>62</td>
+<td>b</td>
+<td>小写字母 b</td>
+</tr>
+<tr>
+<td>99</td>
+<td>63</td>
+<td>c</td>
+<td>小写字母 c</td>
+</tr>
+<tr>
+<td>100</td>
+<td>64</td>
+<td>d</td>
+<td>小写字母 d</td>
+</tr>
+<tr>
+<td>101</td>
+<td>65</td>
+<td>e</td>
+<td>小写字母 e</td>
+</tr>
+<tr>
+<td>102</td>
+<td>66</td>
+<td>f</td>
+<td>小写字母 f</td>
+</tr>
+<tr>
+<td>103</td>
+<td>67</td>
+<td>g</td>
+<td>小写字母 g</td>
+</tr>
+<tr>
+<td>104</td>
+<td>68</td>
+<td>h</td>
+<td>小写字母 h</td>
+</tr>
+<tr>
+<td>105</td>
+<td>69</td>
+<td>i</td>
+<td>小写字母 i</td>
+</tr>
+<tr>
+<td>106</td>
+<td>6A</td>
+<td>j</td>
+<td>小写字母 j</td>
+</tr>
+<tr>
+<td>107</td>
+<td>6B</td>
+<td>k</td>
+<td>小写字母 k</td>
+</tr>
+<tr>
+<td>108</td>
+<td>6C</td>
+<td>l</td>
+<td>小写字母 l</td>
+</tr>
+<tr>
+<td>109</td>
+<td>6D</td>
+<td>m</td>
+<td>小写字母 m</td>
+</tr>
+<tr>
+<td>110</td>
+<td>6E</td>
+<td>n</td>
+<td>小写字母 n</td>
+</tr>
+<tr>
+<td>111</td>
+<td>6F</td>
+<td>o</td>
+<td>小写字母 o</td>
+</tr>
+<tr>
+<td>112</td>
+<td>70</td>
+<td>p</td>
+<td>小写字母 p</td>
+</tr>
+<tr>
+<td>113</td>
+<td>71</td>
+<td>q</td>
+<td>小写字母 q</td>
+</tr>
+<tr>
+<td>114</td>
+<td>72</td>
+<td>r</td>
+<td>小写字母 r</td>
+</tr>
+<tr>
+<td>115</td>
+<td>73</td>
+<td>s</td>
+<td>小写字母 s</td>
+</tr>
+<tr>
+<td>116</td>
+<td>74</td>
+<td>t</td>
+<td>小写字母 t</td>
+</tr>
+<tr>
+<td>117</td>
+<td>75</td>
+<td>u</td>
+<td>小写字母 u</td>
+</tr>
+<tr>
+<td>118</td>
+<td>76</td>
+<td>v</td>
+<td>小写字母 v</td>
+</tr>
+<tr>
+<td>119</td>
+<td>77</td>
+<td>w</td>
+<td>小写字母 w</td>
+</tr>
+<tr>
+<td>120</td>
+<td>78</td>
+<td>x</td>
+<td>小写字母 x</td>
+</tr>
+<tr>
+<td>121</td>
+<td>79</td>
+<td>y</td>
+<td>小写字母 y</td>
+</tr>
+<tr>
+<td>122</td>
+<td>7A</td>
+<td>z</td>
+<td>小写字母 z</td>
+</tr>
+<tr>
+<td>123</td>
+<td>7B</td>
+<td>{</td>
+<td>左大括号</td>
+</tr>
+<tr>
+<td>124</td>
+<td>7C</td>
+<td>\</td>
+<td></td>
+<td>垂直线</td>
+</tr>
+<tr>
+<td>125</td>
+<td>7D</td>
+<td>}</td>
+<td>右大括号 (ALTMODE)</td>
+</tr>
+<tr>
+<td>126</td>
+<td>7E</td>
+<td>~</td>
+<td>代字号 (ALTMODE)</td>
+</tr>
+<tr>
+<td>127</td>
+<td>7F</td>
+<td>DEL</td>
+<td>擦掉 (DELETE)</td>
+</tr>
+<tr>
+<td><strong>控制字符</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>128</td>
+<td>80</td>
+<td></td>
+<td>[保留]</td>
+</tr>
+<tr>
+<td>129</td>
+<td>81</td>
+<td></td>
+<td>[保留]</td>
+</tr>
+<tr>
+<td>130</td>
+<td>82</td>
+<td></td>
+<td>[保留]</td>
+</tr>
+<tr>
+<td>131</td>
+<td>83</td>
+<td></td>
+<td>[保留]</td>
+</tr>
+<tr>
+<td>132</td>
+<td>84</td>
+<td>IND</td>
+<td>索引</td>
+</tr>
+<tr>
+<td>133</td>
+<td>85</td>
+<td>NEL</td>
+<td>下一行</td>
+</tr>
+<tr>
+<td>134</td>
+<td>86</td>
+<td>SSA</td>
+<td>被选区域起始</td>
+</tr>
+<tr>
+<td>135</td>
+<td>87</td>
+<td>ESA</td>
+<td>被选区域结束</td>
+</tr>
+<tr>
+<td>136</td>
+<td>88</td>
+<td>HTS</td>
+<td>水平制表符集</td>
+</tr>
+<tr>
+<td>137</td>
+<td>89</td>
+<td>HTJ</td>
+<td>对齐的水平制表符集</td>
+</tr>
+<tr>
+<td>138</td>
+<td>8A</td>
+<td>VTS</td>
+<td>垂直制表符集</td>
+</tr>
+<tr>
+<td>139</td>
+<td>8B</td>
+<td>PLD</td>
+<td>部分行向下</td>
+</tr>
+<tr>
+<td>140</td>
+<td>8C</td>
+<td>PLU</td>
+<td>部分行向上</td>
+</tr>
+<tr>
+<td>141</td>
+<td>8D</td>
+<td>RI</td>
+<td>反向索引</td>
+</tr>
+<tr>
+<td>142</td>
+<td>8E</td>
+<td>SS2</td>
+<td>单移 2</td>
+</tr>
+<tr>
+<td>143</td>
+<td>8F</td>
+<td>SS3</td>
+<td>单移 3</td>
+</tr>
+<tr>
+<td>144</td>
+<td>90</td>
+<td>DCS</td>
+<td>设备控制字符串</td>
+</tr>
+<tr>
+<td>145</td>
+<td>91</td>
+<td>PU1</td>
+<td>专用 1</td>
+</tr>
+<tr>
+<td>146</td>
+<td>92</td>
+<td>PU2</td>
+<td>专用 2</td>
+</tr>
+<tr>
+<td>147</td>
+<td>93</td>
+<td>STS</td>
+<td>设置传输状态</td>
+</tr>
+<tr>
+<td>148</td>
+<td>94</td>
+<td>CCH</td>
+<td>取消字符</td>
+</tr>
+<tr>
+<td>149</td>
+<td>95</td>
+<td>MW</td>
+<td>消息等待</td>
+</tr>
+<tr>
+<td>150</td>
+<td>96</td>
+<td>SPA</td>
+<td>保护区起始</td>
+</tr>
+<tr>
+<td>151</td>
+<td>97</td>
+<td>EPA</td>
+<td>保护区结束</td>
+</tr>
+<tr>
+<td>152</td>
+<td>98</td>
+<td></td>
+<td>[保留]</td>
+</tr>
+<tr>
+<td>153</td>
+<td>99</td>
+<td></td>
+<td>[保留]</td>
+</tr>
+<tr>
+<td>154</td>
+<td>9A</td>
+<td></td>
+<td>[保留]</td>
+</tr>
+<tr>
+<td>155</td>
+<td>9B</td>
+<td>CSI</td>
+<td>控制序列引导符</td>
+</tr>
+<tr>
+<td>156</td>
+<td>9C</td>
+<td>ST</td>
+<td>字符串终止符</td>
+</tr>
+<tr>
+<td>157</td>
+<td>9D</td>
+<td>OSC</td>
+<td>操作系统命令</td>
+</tr>
+<tr>
+<td>158</td>
+<td>9E</td>
+<td>PM</td>
+<td>秘密消息</td>
+</tr>
+<tr>
+<td>159</td>
+<td>9F</td>
+<td>APC</td>
+<td>应用程序</td>
+</tr>
+<tr>
+<td><strong>其他字符</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>160</td>
+<td>A0</td>
+<td></td>
+<td>[保留] 2</td>
+</tr>
+<tr>
+<td>161</td>
+<td>A1</td>
+<td>¡</td>
+<td>反向感叹号</td>
+</tr>
+<tr>
+<td>162</td>
+<td>A2</td>
+<td>¢</td>
+<td>分币符</td>
+</tr>
+<tr>
+<td>163</td>
+<td>A3</td>
+<td>£</td>
+<td>英磅符</td>
+</tr>
+<tr>
+<td>164</td>
+<td>A4</td>
+<td></td>
+<td>[保留] 2</td>
+</tr>
+<tr>
+<td>165</td>
+<td>A5</td>
+<td>¥</td>
+<td>人民币符</td>
+</tr>
+<tr>
+<td>166</td>
+<td>A6</td>
+<td></td>
+<td>[保留] 2</td>
+</tr>
+<tr>
+<td>167</td>
+<td>A7</td>
+<td>§</td>
+<td>章节符</td>
+</tr>
+<tr>
+<td>168</td>
+<td>A8</td>
+<td>¤</td>
+<td>通用货币符号 2</td>
+</tr>
+<tr>
+<td>169</td>
+<td>A9</td>
+<td>©</td>
+<td>版权符号</td>
+</tr>
+<tr>
+<td>170</td>
+<td>AA</td>
+<td>ª</td>
+<td>阴性顺序指示符</td>
+</tr>
+<tr>
+<td>171</td>
+<td>AB</td>
+<td>«</td>
+<td>左角引号</td>
+</tr>
+<tr>
+<td>172</td>
+<td>AC</td>
+<td></td>
+<td>[保留] 2</td>
+</tr>
+<tr>
+<td>173</td>
+<td>AD</td>
+<td></td>
+<td>[保留] 2</td>
+</tr>
+<tr>
+<td>174</td>
+<td>AE</td>
+<td></td>
+<td>[保留] 2</td>
+</tr>
+<tr>
+<td>175</td>
+<td>AF</td>
+<td></td>
+<td>[保留] 2</td>
+</tr>
+<tr>
+<td>176</td>
+<td>B0</td>
+<td>°</td>
+<td>温度符</td>
+</tr>
+<tr>
+<td>177</td>
+<td>B1</td>
+<td>±</td>
+<td>加/减号</td>
+</tr>
+<tr>
+<td>178</td>
+<td>B2</td>
+<td>²</td>
+<td>上标 2</td>
+</tr>
+<tr>
+<td>179</td>
+<td>B3</td>
+<td>³</td>
+<td>上标 3</td>
+</tr>
+<tr>
+<td>180</td>
+<td>B4</td>
+<td></td>
+<td>[保留] 2</td>
+</tr>
+<tr>
+<td>181</td>
+<td>B5</td>
+<td>µ</td>
+<td>微符</td>
+</tr>
+<tr>
+<td>182</td>
+<td>B6</td>
+<td>¶</td>
+<td>段落符，pilcrow</td>
+</tr>
+<tr>
+<td>183</td>
+<td>B7</td>
+<td>·</td>
+<td>中点</td>
+</tr>
+<tr>
+<td>184</td>
+<td>B8</td>
+<td></td>
+<td>[保留] 2</td>
+</tr>
+<tr>
+<td>185</td>
+<td>B9</td>
+<td>¹</td>
+<td>上标 1</td>
+</tr>
+<tr>
+<td>186</td>
+<td>BA</td>
+<td>º</td>
+<td>阳性顺序指示符</td>
+</tr>
+<tr>
+<td>187</td>
+<td>BB</td>
+<td>»</td>
+<td>右角引号</td>
+</tr>
+<tr>
+<td>188</td>
+<td>BC</td>
+<td>¼</td>
+<td>分数四分之一</td>
+</tr>
+<tr>
+<td>189</td>
+<td>BD</td>
+<td>½</td>
+<td>分数二分之一</td>
+</tr>
+<tr>
+<td>190</td>
+<td>BE</td>
+<td></td>
+<td>[保留] 2</td>
+</tr>
+<tr>
+<td>191</td>
+<td>BF</td>
+<td>¿</td>
+<td>反向问号</td>
+</tr>
+<tr>
+<td>192</td>
+<td>C0</td>
+<td>À</td>
+<td>带重音符的大写字母 A</td>
+</tr>
+<tr>
+<td>193</td>
+<td>C1</td>
+<td>Á</td>
+<td>带尖锐重音的大写字母 A</td>
+</tr>
+<tr>
+<td>194</td>
+<td>C2</td>
+<td>Â</td>
+<td>带音调符号的大写字母 A</td>
+</tr>
+<tr>
+<td>195</td>
+<td>C3</td>
+<td>Ã</td>
+<td>带代字号的大写字母 A</td>
+</tr>
+<tr>
+<td>196</td>
+<td>C4</td>
+<td>Ä</td>
+<td>带元音变音 (分音符号) 的大写字母 A</td>
+</tr>
+<tr>
+<td>197</td>
+<td>C5</td>
+<td>Å</td>
+<td>带铃声的大写字母 A</td>
+</tr>
+<tr>
+<td>198</td>
+<td>C6</td>
+<td>Æ</td>
+<td>大写字母 AE 双重元音</td>
+</tr>
+<tr>
+<td>199</td>
+<td>C7</td>
+<td>Ç</td>
+<td>带变音符号的大写字母 C</td>
+</tr>
+<tr>
+<td>200</td>
+<td>C8</td>
+<td>È</td>
+<td>带重音符的大写字母 E</td>
+</tr>
+<tr>
+<td>201</td>
+<td>C9</td>
+<td>É</td>
+<td>带尖锐重音的大写字母 E</td>
+</tr>
+<tr>
+<td>202</td>
+<td>CA</td>
+<td>Ê</td>
+<td>带音调符号的大写字母 E</td>
+</tr>
+<tr>
+<td>203</td>
+<td>CB</td>
+<td>Ë</td>
+<td>带元音变音 (分音符号) 的大写字母 E</td>
+</tr>
+<tr>
+<td>204</td>
+<td>CC</td>
+<td>Ì</td>
+<td>带重音符的大写字母 I</td>
+</tr>
+<tr>
+<td>205</td>
+<td>CD</td>
+<td>Í</td>
+<td>带尖锐重音的大写字母 I</td>
+</tr>
+<tr>
+<td>206</td>
+<td>CE</td>
+<td>Î</td>
+<td>带音调符号的大写字母 I</td>
+</tr>
+<tr>
+<td>207</td>
+<td>CF</td>
+<td>Ï</td>
+<td>带元音变音 (分音符号) 的大写字母 I</td>
+</tr>
+<tr>
+<td>208</td>
+<td>D0</td>
+<td></td>
+<td>[保留] 2</td>
+</tr>
+<tr>
+<td>209</td>
+<td>D1</td>
+<td>Ñ</td>
+<td>带代字号的大写字母 N</td>
+</tr>
+<tr>
+<td>210</td>
+<td>D2</td>
+<td>Ò</td>
+<td>带重音符的大写字母 O</td>
+</tr>
+<tr>
+<td>211</td>
+<td>D3</td>
+<td>Ó</td>
+<td>带尖锐重音的大写字母 O</td>
+</tr>
+<tr>
+<td>212</td>
+<td>D4</td>
+<td>Ô</td>
+<td>带音调符号的大写字母 O</td>
+</tr>
+<tr>
+<td>213</td>
+<td>D5</td>
+<td>Õ</td>
+<td>带代字号的大写字母 O</td>
+</tr>
+<tr>
+<td>214</td>
+<td>D6</td>
+<td>Ö</td>
+<td>带元音变音 (分音符号) 的大写字母 O</td>
+</tr>
+<tr>
+<td>215</td>
+<td>D7</td>
+<td>OE</td>
+<td>大写字母 OE 连字 2</td>
+</tr>
+<tr>
+<td>216</td>
+<td>D8</td>
+<td>Ø</td>
+<td>带斜杠的大写字母 O</td>
+</tr>
+<tr>
+<td>217</td>
+<td>D9</td>
+<td>Ù</td>
+<td>带重音符的大写字母 U</td>
+</tr>
+<tr>
+<td>218</td>
+<td>DA</td>
+<td>Ú</td>
+<td>带尖锐重音的大写字母 U</td>
+</tr>
+<tr>
+<td>219</td>
+<td>DB</td>
+<td>Û</td>
+<td>带音调符号的大写字母 U</td>
+</tr>
+<tr>
+<td>220</td>
+<td>DC</td>
+<td>Ü</td>
+<td>带元音变音 (分音符号) 的大写字母 U</td>
+</tr>
+<tr>
+<td>221</td>
+<td>DD</td>
+<td>Y</td>
+<td>带元音变音 (分音符号) 的大写字母 Y</td>
+</tr>
+<tr>
+<td>222</td>
+<td>DE</td>
+<td></td>
+<td>[保留] 2</td>
+</tr>
+<tr>
+<td>223</td>
+<td>DF</td>
+<td>ß</td>
+<td>德语高调小写字母 s</td>
+</tr>
+<tr>
+<td>224</td>
+<td>E0</td>
+<td>à</td>
+<td>带重音符的小写字母 a</td>
+</tr>
+<tr>
+<td>225</td>
+<td>E1</td>
+<td>á</td>
+<td>带尖锐重音的小写字母 a</td>
+</tr>
+<tr>
+<td>226</td>
+<td>E2</td>
+<td>â</td>
+<td>带音调符号的小写字母 a</td>
+</tr>
+<tr>
+<td>227</td>
+<td>E3</td>
+<td>ã</td>
+<td>带代字号的小写字母 a</td>
+</tr>
+<tr>
+<td>228</td>
+<td>E4</td>
+<td>ä</td>
+<td>带元音变音 (分音符号) 的小写字母 a</td>
+</tr>
+<tr>
+<td>229</td>
+<td>E5</td>
+<td>å</td>
+<td>带铃声的小写字母 a</td>
+</tr>
+<tr>
+<td>230</td>
+<td>E6</td>
+<td>æ</td>
+<td>小写字母 ae 双重元音</td>
+</tr>
+<tr>
+<td>231</td>
+<td>E7</td>
+<td>ç</td>
+<td>带变音符号的小写字母 c</td>
+</tr>
+<tr>
+<td>232</td>
+<td>E8</td>
+<td>è</td>
+<td>带重音符的小写字母 e</td>
+</tr>
+<tr>
+<td>233</td>
+<td>E9</td>
+<td>é</td>
+<td>带尖锐重音的小写字母 e</td>
+</tr>
+<tr>
+<td>234</td>
+<td>EA</td>
+<td>ê</td>
+<td>带音调符号的小写字母 e</td>
+</tr>
+<tr>
+<td>235</td>
+<td>EB</td>
+<td>ë</td>
+<td>带元音变音 (分音符号) 的小写字母 e</td>
+</tr>
+<tr>
+<td>236</td>
+<td>EC</td>
+<td>ì</td>
+<td>带重音符的小写字母 i</td>
+</tr>
+<tr>
+<td>237</td>
+<td>ED</td>
+<td>í</td>
+<td>带尖锐重音的小写字母 i</td>
+</tr>
+<tr>
+<td>238</td>
+<td>EE</td>
+<td>î</td>
+<td>带音调符号的小写字母 i</td>
+</tr>
+<tr>
+<td>239</td>
+<td>EF</td>
+<td>ï</td>
+<td>带元音变音 (分音符号) 的小写字母 i</td>
+</tr>
+<tr>
+<td>240</td>
+<td>F0</td>
+<td></td>
+<td>[保留] 2</td>
+</tr>
+<tr>
+<td>241</td>
+<td>F1</td>
+<td>ñ</td>
+<td>带代字号的小写字母 n</td>
+</tr>
+<tr>
+<td>242</td>
+<td>F2</td>
+<td>ò</td>
+<td>带重音符的小写字母 o</td>
+</tr>
+<tr>
+<td>243</td>
+<td>F3</td>
+<td>ó</td>
+<td>带尖锐重音的小写字母 o</td>
+</tr>
+<tr>
+<td>244</td>
+<td>F4</td>
+<td>ô</td>
+<td>带音调符号的小写字母 o</td>
+</tr>
+<tr>
+<td>245</td>
+<td>F5</td>
+<td>õ</td>
+<td>带代字号的小写字母 o</td>
+</tr>
+<tr>
+<td>246</td>
+<td>F6</td>
+<td>ö</td>
+<td>带元音变音 (分音符号) 的小写字母 o</td>
+</tr>
+<tr>
+<td>247</td>
+<td>F7</td>
+<td>oe</td>
+<td>小写字母 oe 连字 2</td>
+</tr>
+<tr>
+<td>248</td>
+<td>F8</td>
+<td>ø</td>
+<td>带斜杠的小写字母 o</td>
+</tr>
+<tr>
+<td>249</td>
+<td>F9</td>
+<td>ù</td>
+<td>带重音符的小写字母 u</td>
+</tr>
+<tr>
+<td>250</td>
+<td>FA</td>
+<td>ú</td>
+<td>带尖锐重音的小写字母 u</td>
+</tr>
+<tr>
+<td>251</td>
+<td>FB</td>
+<td>û</td>
+<td>带音调符号的小写字母 u</td>
+</tr>
+<tr>
+<td>252</td>
+<td>FC</td>
+<td>ü</td>
+<td>带元音变音 (分音符号) 的小写字母 u</td>
+</tr>
+<tr>
+<td>253</td>
+<td>FD</td>
+<td>ÿ</td>
+<td>带元音变音 (分音符号) 的小写字母 y 2</td>
+</tr>
+<tr>
+<td>254</td>
+<td>FE</td>
+<td></td>
+<td>[保留] 2</td>
+</tr>
+<tr>
+<td>255</td>
+<td>FF</td>
+<td></td>
+<td>[保留] 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="9、JS代码混淆"><a href="#9、JS代码混淆" class="headerlink" title="9、JS代码混淆"></a>9、JS代码混淆</h3><p><a target="_blank" rel="noopener" href="https://examine2.top/2020/02/12/JS代码混淆/">JS代码混淆 | examine2’s Blog</a></p>
+<h4 id="1）AAEncode"><a href="#1）AAEncode" class="headerlink" title="1）AAEncode"></a>1）AAEncode</h4><p>什么是AAEncode？ 就是将JavaScript代码转换成颜文字网络表情的编码。</p>
+<p>经过aaencode混淆的JS代码十分显眼，通篇代码呈现 <code>(ﾟДﾟ)(ﾟoﾟ)(ﾟΘﾟ)</code> 之类的颜文字，相当可爱。</p>
+<p><strong>在线解密：</strong></p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/109a4bf02dd139a0432ac65efb29fc71.png" srcset="/img/loading.gif" lazyload alt="1"></p>
+<p><strong>直接运行：</strong></p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/01da495f776f5048b76eee04c6f1fab5.png" srcset="/img/loading.gif" lazyload alt="3"></p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/08b33b7b0ab51060b426577f38e9a6fb.png" srcset="/img/loading.gif" lazyload alt="2"></p>
+<p><strong>源码：</strong></p>
+<pre><code>function aaencode( text )
+&#123;
+    var t;
+    var b = [
+        &quot;(c^_^o)&quot;,
+        &quot;(ﾟΘﾟ)&quot;,
+        &quot;((o^_^o) - (ﾟΘﾟ))&quot;,
+        &quot;(o^_^o)&quot;,
+        &quot;(ﾟｰﾟ)&quot;,
+        &quot;((ﾟｰﾟ) + (ﾟΘﾟ))&quot;,
+        &quot;((o^_^o) +(o^_^o))&quot;,
+        &quot;((ﾟｰﾟ) + (o^_^o))&quot;,
+        &quot;((ﾟｰﾟ) + (ﾟｰﾟ))&quot;,
+        &quot;((ﾟｰﾟ) + (ﾟｰﾟ) + (ﾟΘﾟ))&quot;,
+        &quot;(ﾟДﾟ) .ﾟωﾟﾉ&quot;,
+        &quot;(ﾟДﾟ) .ﾟΘﾟﾉ&quot;,
+        &quot;(ﾟДﾟ) [&#39;c&#39;]&quot;,
+        &quot;(ﾟДﾟ) .ﾟｰﾟﾉ&quot;,
+        &quot;(ﾟДﾟ) .ﾟДﾟﾉ&quot;,
+        &quot;(ﾟДﾟ) [ﾟΘﾟ]&quot;
+        ];
+    var r = &quot;ﾟωﾟﾉ= /｀ｍ´）ﾉ ~┻━┻   //*´∇｀*/ [&#39;_&#39;]; o=(ﾟｰﾟ)  =_=3; c=(ﾟΘﾟ) =(ﾟｰﾟ)-(ﾟｰﾟ); &quot;; 
+
+    if( /ひだまりスケッチ×(365|３５６)\s*来週も見てくださいね[!！]/.test( text ) )&#123;
+        r += &quot;X=_=3; &quot;;
+        r += &quot;\r\n\r\n    X / _ / X &lt; \&quot;来週も見てくださいね!\&quot;;\r\n\r\n&quot;;
+    &#125;
+    r += &quot;(ﾟДﾟ) =(ﾟΘﾟ)= (o^_^o)/ (o^_^o);&quot;+
+        &quot;(ﾟДﾟ)=&#123;ﾟΘﾟ: &#39;_&#39; ,ﾟωﾟﾉ : ((ﾟωﾟﾉ==3) +&#39;_&#39;) [ﾟΘﾟ] &quot;+
+        &quot;,ﾟｰﾟﾉ :(ﾟωﾟﾉ+ &#39;_&#39;)[o^_^o -(ﾟΘﾟ)] &quot;+
+        &quot;,ﾟДﾟﾉ:((ﾟｰﾟ==3) +&#39;_&#39;)[ﾟｰﾟ] &#125;; (ﾟДﾟ) [ﾟΘﾟ] =((ﾟωﾟﾉ==3) +&#39;_&#39;) [c^_^o];&quot;+
+        &quot;(ﾟДﾟ) [&#39;c&#39;] = ((ﾟДﾟ)+&#39;_&#39;) [ (ﾟｰﾟ)+(ﾟｰﾟ)-(ﾟΘﾟ) ];&quot;+
+        &quot;(ﾟДﾟ) [&#39;o&#39;] = ((ﾟДﾟ)+&#39;_&#39;) [ﾟΘﾟ];&quot;+
+        &quot;(ﾟoﾟ)=(ﾟДﾟ) [&#39;c&#39;]+(ﾟДﾟ) [&#39;o&#39;]+(ﾟωﾟﾉ +&#39;_&#39;)[ﾟΘﾟ]+ ((ﾟωﾟﾉ==3) +&#39;_&#39;) [ﾟｰﾟ] + &quot;+
+        &quot;((ﾟДﾟ) +&#39;_&#39;) [(ﾟｰﾟ)+(ﾟｰﾟ)]+ ((ﾟｰﾟ==3) +&#39;_&#39;) [ﾟΘﾟ]+&quot;+
+        &quot;((ﾟｰﾟ==3) +&#39;_&#39;) [(ﾟｰﾟ) - (ﾟΘﾟ)]+(ﾟДﾟ) [&#39;c&#39;]+&quot;+
+        &quot;((ﾟДﾟ)+&#39;_&#39;) [(ﾟｰﾟ)+(ﾟｰﾟ)]+ (ﾟДﾟ) [&#39;o&#39;]+&quot;+
+        &quot;((ﾟｰﾟ==3) +&#39;_&#39;) [ﾟΘﾟ];(ﾟДﾟ) [&#39;_&#39;] =(o^_^o) [ﾟoﾟ] [ﾟoﾟ];&quot;+
+        &quot;(ﾟεﾟ)=((ﾟｰﾟ==3) +&#39;_&#39;) [ﾟΘﾟ]+ (ﾟДﾟ) .ﾟДﾟﾉ+&quot;+
+        &quot;((ﾟДﾟ)+&#39;_&#39;) [(ﾟｰﾟ) + (ﾟｰﾟ)]+((ﾟｰﾟ==3) +&#39;_&#39;) [o^_^o -ﾟΘﾟ]+&quot;+
+        &quot;((ﾟｰﾟ==3) +&#39;_&#39;) [ﾟΘﾟ]+ (ﾟωﾟﾉ +&#39;_&#39;) [ﾟΘﾟ]; &quot;+
+        &quot;(ﾟｰﾟ)+=(ﾟΘﾟ); (ﾟДﾟ)[ﾟεﾟ]=&#39;\\\\&#39;; &quot;+
+        &quot;(ﾟДﾟ).ﾟΘﾟﾉ=(ﾟДﾟ+ ﾟｰﾟ)[o^_^o -(ﾟΘﾟ)];&quot;+ 
+        &quot;(oﾟｰﾟo)=(ﾟωﾟﾉ +&#39;_&#39;)[c^_^o];&quot;+//TODO
+        &quot;(ﾟДﾟ) [ﾟoﾟ]=&#39;\\\&quot;&#39;;&quot;+ 
+        &quot;(ﾟДﾟ) [&#39;_&#39;] ( (ﾟДﾟ) [&#39;_&#39;] (ﾟεﾟ+&quot;;
+    r += &quot;(ﾟДﾟ)[ﾟoﾟ]+ &quot;;
+    for( var i = 0; i &lt; text.length; i++ )&#123;
+        n = text.charCodeAt( i );
+        t = &quot;(ﾟДﾟ)[ﾟεﾟ]+&quot;;
+        if( n &lt;= 127 )&#123;
+            t += n.toString( 8 ).replace( /[0-7]/g, function(c)&#123; return b[ c ] + &quot;+ &quot;; &#125; );
+        &#125;else&#123;
+            var m = /[0-9a-f]&#123;4&#125;$/.exec( &quot;000&quot; + n.toString(16 ) )[0];
+            t += &quot;(oﾟｰﾟo)+ &quot; + m.replace( /[0-9a-f]/gi, function(c)&#123; return b[ parseInt( c,16 ) ] + &quot;+ &quot;; &#125; );
+        &#125;
+        r += t;
+
+    &#125;
+    r += &quot;(ﾟДﾟ)[ﾟoﾟ]) (ﾟΘﾟ)) (&#39;_&#39;);&quot;;
+    return r;
+&#125;
+</code></pre><h4 id="2）JSFUCK"><a href="#2）JSFUCK" class="headerlink" title="2）JSFUCK"></a>2）JSFUCK</h4><p>日本安全研究人员<code>长谷川阳介</code>制作了名为<code>JSF*ck</code>的编码器，能够将所有JS代码用6个字符（分别是<strong><code>[</code>、<code>]</code>、<code>(</code>、<code>)</code>、<code>!</code>、<code>+</code></strong>）来表示（称之为<strong>用6个字符来混淆JavaScript</strong>）。</p>
+<h4 id="3）JJEncode"><a href="#3）JJEncode" class="headerlink" title="3）JJEncode"></a>3）JJEncode</h4><p>jjencode同样又<code>长谷川阳介</code>先生创建，只是与JSFuck的创建时间不同</p>
+<p>jjencode创建于2009年7月，JSFuck则是2010年底；jjencode先于JSFuck，而在混淆能力上，jjencode弱于JSFuck——jjencode将JS代码混淆为<strong><code>[]()!+,\&quot;$.:;_&#123;&#125;~=</code> 这18个字符的排列组合</strong></p>
+<p>可以说jjencode是JSFuck的早期弱化版本</p>
+<blockquote>
+<p>Perl语言有ppencode混淆、Ruby语言有rrencode，所以从jjencode的命名也能看出这是最初的JS混淆</p>
+</blockquote>
+<p>将任何合法的JavaScript代码进行编码。编码后的JS代码仅由符号组成的。</p>
+<p>编码前：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">alert(<span class="hljs-string">&quot;Hello, JavaScript&quot;</span> )<br></code></pre></td></tr></table></figure>
+<p>编码后：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$</span>=~[];<span class="hljs-variable">$</span>=&#123;___:++<span class="hljs-variable">$</span>,<span class="hljs-variable">$</span><span class="hljs-variable">$</span><span class="hljs-variable">$</span><span class="hljs-variable">$</span>:(![]+<span class="hljs-string">&quot;&quot;</span>)[<span class="hljs-variable">$</span>],__<span class="hljs-variable">$</span>:++<span class="hljs-variable">$</span>,<span class="hljs-variable">$_</span><span class="hljs-variable">$_:</span>(![]+<span class="hljs-string">&quot;&quot;</span>)[<span class="hljs-variable">$</span>],_<span class="hljs-variable">$_:</span>++<span class="hljs-variable">$</span>,<span class="hljs-variable">$_</span><span class="hljs-variable">$</span><span class="hljs-variable">$</span>:(&#123;&#125;+<span class="hljs-string">&quot;&quot;</span>)[<span class="hljs-variable">$</span>],<span class="hljs-variable">$</span><span class="hljs-variable">$_</span><span class="hljs-variable">$</span>:(<span class="hljs-variable">$</span>[<span class="hljs-variable">$</span>]+<span class="hljs-string">&quot;&quot;</span>)[<span class="hljs-variable">$</span>],_<span class="hljs-variable">$</span><span class="hljs-variable">$</span>:++<span class="hljs-variable">$</span>,<span class="hljs-variable">$</span><span class="hljs-variable">$</span><span class="hljs-variable">$_:</span>(!<span class="hljs-string">&quot;&quot;</span>+<span class="hljs-string">&quot;&quot;</span>)[<span class="hljs-variable">$</span>],<span class="hljs-variable">$__:</span>++<span class="hljs-variable">$</span>,<span class="hljs-variable">$_</span><span class="hljs-variable">$</span>:++<span class="hljs-variable">$</span>,<span class="hljs-variable">$</span><span class="hljs-variable">$__:</span>(&#123;&#125;+<span class="hljs-string">&quot;&quot;</span>)[<span class="hljs-variable">$</span>],<span class="hljs-variable">$</span><span class="hljs-variable">$_:</span>++<span class="hljs-variable">$</span>,<span class="hljs-variable">$</span><span class="hljs-variable">$</span><span class="hljs-variable">$</span>:++<span class="hljs-variable">$</span>,<span class="hljs-variable">$___:</span>++<span class="hljs-variable">$</span>,<span class="hljs-variable">$__</span><span class="hljs-variable">$</span>:++<span class="hljs-variable">$</span>&#125;;<span class="hljs-variable">$</span>.<span class="hljs-variable">$_</span>=(<span class="hljs-variable">$</span>.<span class="hljs-variable">$_</span>=<span class="hljs-variable">$</span>+<span class="hljs-string">&quot;&quot;</span>)[<span class="hljs-variable">$</span><span class="hljs-type">.</span><span class="hljs-variable">$_</span><span class="hljs-variable">$</span>]+(<span class="hljs-variable">$</span>._<span class="hljs-variable">$</span>=<span class="hljs-variable">$</span>.<span class="hljs-variable">$_</span>[<span class="hljs-variable">$</span><span class="hljs-type">.__</span><span class="hljs-variable">$</span>])+(<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span><span class="hljs-variable">$</span>=(<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span>+<span class="hljs-string">&quot;&quot;</span>)[<span class="hljs-variable">$</span><span class="hljs-type">.__</span><span class="hljs-variable">$</span>])+((!<span class="hljs-variable">$</span>)+<span class="hljs-string">&quot;&quot;</span>)[<span class="hljs-variable">$</span><span class="hljs-type">._</span><span class="hljs-variable">$</span><span class="hljs-variable">$</span>]+(<span class="hljs-variable">$</span>.__=<span class="hljs-variable">$</span>.<span class="hljs-variable">$_</span>[<span class="hljs-variable">$</span><span class="hljs-type">.</span><span class="hljs-variable">$</span><span class="hljs-variable">$_</span>])+(<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span>=(!<span class="hljs-string">&quot;&quot;</span>+<span class="hljs-string">&quot;&quot;</span>)[<span class="hljs-variable">$</span><span class="hljs-type">.__</span><span class="hljs-variable">$</span>])+(<span class="hljs-variable">$</span>._=(!<span class="hljs-string">&quot;&quot;</span>+<span class="hljs-string">&quot;&quot;</span>)[<span class="hljs-variable">$</span><span class="hljs-type">._</span><span class="hljs-variable">$_</span>])+<span class="hljs-variable">$</span>.<span class="hljs-variable">$_</span>[<span class="hljs-variable">$</span><span class="hljs-type">.</span><span class="hljs-variable">$_</span><span class="hljs-variable">$</span>]+<span class="hljs-variable">$</span>.__+<span class="hljs-variable">$</span>._<span class="hljs-variable">$</span>+<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span>;<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span><span class="hljs-variable">$</span>=<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span>+(!<span class="hljs-string">&quot;&quot;</span>+<span class="hljs-string">&quot;&quot;</span>)[<span class="hljs-variable">$</span><span class="hljs-type">._</span><span class="hljs-variable">$</span><span class="hljs-variable">$</span>]+<span class="hljs-variable">$</span>.__+<span class="hljs-variable">$</span>._+<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span>+<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span><span class="hljs-variable">$</span>;<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span>=(<span class="hljs-variable">$</span>.___)[<span class="hljs-variable">$</span><span class="hljs-type">.</span><span class="hljs-variable">$_</span>][<span class="hljs-variable">$</span><span class="hljs-type">.</span><span class="hljs-variable">$_</span>];<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span>(<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span>(<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span><span class="hljs-variable">$</span>+<span class="hljs-string">&quot;\&quot;</span><span class="hljs-string">&quot;+<span class="hljs-variable">$</span>.<span class="hljs-variable">$_</span><span class="hljs-variable">$_</span>+(![]+&quot;</span><span class="hljs-string">&quot;)[<span class="hljs-variable">$</span>._<span class="hljs-variable">$_</span>]+<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span><span class="hljs-variable">$</span><span class="hljs-variable">$_</span>+&quot;</span>\\<span class="hljs-string">&quot;+<span class="hljs-variable">$</span>.__<span class="hljs-variable">$</span>+<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span><span class="hljs-variable">$_</span>+<span class="hljs-variable">$</span>._<span class="hljs-variable">$_</span>+<span class="hljs-variable">$</span>.__+&quot;</span>(\\\<span class="hljs-string">&quot;\\&quot;</span>+<span class="hljs-variable">$</span>.__<span class="hljs-variable">$</span>+<span class="hljs-variable">$</span>.__<span class="hljs-variable">$</span>+<span class="hljs-variable">$</span>.___+<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span><span class="hljs-variable">$</span><span class="hljs-variable">$_</span>+(![]+<span class="hljs-string">&quot;&quot;</span>)[<span class="hljs-variable">$</span><span class="hljs-type">._</span><span class="hljs-variable">$_</span>]+(![]+<span class="hljs-string">&quot;&quot;</span>)[<span class="hljs-variable">$</span><span class="hljs-type">._</span><span class="hljs-variable">$_</span>]+<span class="hljs-variable">$</span>._<span class="hljs-variable">$</span>+<span class="hljs-string">&quot;,\\&quot;</span>+<span class="hljs-variable">$</span>.<span class="hljs-variable">$__</span>+<span class="hljs-variable">$</span>.___+<span class="hljs-string">&quot;\\&quot;</span>+<span class="hljs-variable">$</span>.__<span class="hljs-variable">$</span>+<span class="hljs-variable">$</span>.__<span class="hljs-variable">$</span>+<span class="hljs-variable">$</span>._<span class="hljs-variable">$_</span>+<span class="hljs-variable">$</span>.<span class="hljs-variable">$_</span><span class="hljs-variable">$_</span>+<span class="hljs-string">&quot;\\&quot;</span>+<span class="hljs-variable">$</span>.__<span class="hljs-variable">$</span>+<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span><span class="hljs-variable">$_</span>+<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span><span class="hljs-variable">$_</span>+<span class="hljs-variable">$</span>.<span class="hljs-variable">$_</span><span class="hljs-variable">$_</span>+<span class="hljs-string">&quot;\\&quot;</span>+<span class="hljs-variable">$</span>.__<span class="hljs-variable">$</span>+<span class="hljs-variable">$</span>._<span class="hljs-variable">$_</span>+<span class="hljs-variable">$</span>._<span class="hljs-variable">$</span><span class="hljs-variable">$</span>+<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span><span class="hljs-variable">$__</span>+<span class="hljs-string">&quot;\\&quot;</span>+<span class="hljs-variable">$</span>.__<span class="hljs-variable">$</span>+<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span><span class="hljs-variable">$_</span>+<span class="hljs-variable">$</span>._<span class="hljs-variable">$_</span>+<span class="hljs-string">&quot;\\&quot;</span>+<span class="hljs-variable">$</span>.__<span class="hljs-variable">$</span>+<span class="hljs-variable">$</span>.<span class="hljs-variable">$_</span><span class="hljs-variable">$</span>+<span class="hljs-variable">$</span>.__<span class="hljs-variable">$</span>+<span class="hljs-string">&quot;\\&quot;</span>+<span class="hljs-variable">$</span>.__<span class="hljs-variable">$</span>+<span class="hljs-variable">$</span>.<span class="hljs-variable">$</span><span class="hljs-variable">$_</span>+<span class="hljs-variable">$</span>.___+<span class="hljs-variable">$</span>.__+<span class="hljs-string">&quot;\\\&quot;</span>\\<span class="hljs-string">&quot;+<span class="hljs-variable">$</span>.<span class="hljs-variable">$__</span>+<span class="hljs-variable">$</span>.___+&quot;</span>)<span class="hljs-string">&quot;+&quot;</span>\<span class="hljs-string">&quot;&quot;</span>)())();<br></code></pre></td></tr></table></figure>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<li><p><strong>JSFuck</strong>：仅由 <code>[]()+!</code> 六个字符组成</p>
+</li>
+<li><p><strong>aaencode</strong>：颜文字编码</p>
+</li>
+<li><p><strong>jjencode</strong>：由<code>[]()!+,\&quot;$.:;_&#123;&#125;~=</code> 18个字符组成，自定义能力强</p>
+<blockquote>
+<p>明显特征为开头的 <code>全局变量=~[];</code>，默认的全局变量为 <code>$</code></p>
+</blockquote>
+</li>
+<li><p>解码方法：<code>.toString()</code>；<strong>hook function constructor</strong>；在线网站解码</p>
+</li>
+</ul>
+<h2 id="0x02-流密码"><a href="#0x02-流密码" class="headerlink" title="0x02 流密码"></a>0x02 流密码</h2><h3 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h3><p>𝑚 表示原始数据，𝑐 表示加密后数据，𝑘 表示密钥，大写 E 表示二进制的运算（也可称为函数、算子），那么对于一个流加密我们可以表示为 $𝑐<em>𝑖 = 𝐸(𝑚</em>𝑖,𝑘_𝑖)$ , 其中 𝑖 = 0, 1, 2, . . . 表示是第几位。</p>
+<p>我们可以看到流密码的核心就是设计 E 和密钥流。但是由于是<strong>位运算</strong>，E 也没有什么好设计的，通常会用<strong>异或运算</strong>，异或运算好处是加解密都可以用这个运算。那么流密码的设计将归结为密钥的设计，就是设计如何产生一个密钥流 $𝑘_𝑖 = 𝐺(𝑠) ;\quad 𝑖=0,1,2,…$, s 是密钥产生的种子 (seeds), 也就是产生密钥流的一个初始值，G(generator) 是密钥生成算法，可见 s 是整个算法的秘密。</p>
+<p>流密码的加解密可以写为：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+𝐺(𝑠) ⊕ 𝑚_𝑖 = 𝑐_𝑖 \\
+𝐺(𝑠) ⊕ 𝑐_𝑖 = 𝑚_𝑖
+\end{cases}</script><h3 id="2、密钥的产生"><a href="#2、密钥的产生" class="headerlink" title="2、密钥的产生"></a>2、密钥的产生</h3><p>根据香浓的完全安全系统的定义，如果密钥流是一个随机数，那么就可以构成一个完全安全加密系统，但是无法达到这个要求，所以通常我们会用伪随机数发生器PRG(pesudo-random generator ) 来产生密钥流。</p>
+<h4 id="1）线性同余发生器-LCG-linear-congruential-generator"><a href="#1）线性同余发生器-LCG-linear-congruential-generator" class="headerlink" title="1）线性同余发生器 LCG(linear congruential generator)"></a>1）线性同余发生器 LCG(linear congruential generator)</h4><p>可以利用 $𝑥<em>𝑛 = (𝑎𝑥</em>{𝑛-1} + 𝑏) \ 𝑚𝑜𝑑 \ 𝑚$ 产生一个周期不超过 m 的伪随机数序列，$𝑥_0$ 为种 子 (seed)，也就是密钥。 LCG 不用在密码学中，因其在 1977 年被 J.A. Reeds 破译，也就是找到预测的方法， 但是其在一些需要产生随机数的场合下依然有应用，比如在一些测试中。</p>
+<h4 id="2）线性反馈移位寄存器-LSFR-Linear-Feedback-shift-register"><a href="#2）线性反馈移位寄存器-LSFR-Linear-Feedback-shift-register" class="headerlink" title="2）线性反馈移位寄存器 LSFR(Linear Feedback shift register)"></a>2）线性反馈移位寄存器 LSFR(Linear Feedback shift register)</h4><p>线性反馈移位寄存器图形化表示方法：</p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/3cbdd2ffd1e3b7cafec2d5ac44188ce4.png" srcset="/img/loading.gif" lazyload alt="image-20211122203017530"></p>
+<p>一个 LFSR 可以用一元多项式来表示, 移位寄存器与多项式的对应一般对应关系如图所示：</p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/14d7d3482efb1ad0d16a31b89d4b71a6.png" srcset="/img/loading.gif" lazyload alt="image-20211122204106321"></p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/15c2effc7adf8fd8026847014510b72d.png" srcset="/img/loading.gif" lazyload alt="image-20211122203438241"></p>
+<p>第一个三位移位寄存器，其对应的多项式可表示为: $𝑥^3 + 1$ ；第二个三位移位寄存器，其对应的多项式可以表示为：$𝑥^3 + 𝑥 + 1$。 </p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/ac925a88f21cdb65ebd58ae7f6abe3cf.png" srcset="/img/loading.gif" lazyload alt="image-20211122203327613"></p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/24434b29e600a274424be16c4b39b20f.png" srcset="/img/loading.gif" lazyload alt="image-20211122203358953"></p>
+<p>我们希望在一定的资源配置下，能够得到周期最长的伪随机序列。</p>
+<ul>
+<li><p><strong>LFSR 最大周期：</strong>n 级 LFSR 产生的序列最大周期为 $2^𝑛 − 1$ ，我们将最大周期序列，称为 m 序列。 </p>
+</li>
+<li><p><strong>LFSR 最大周期必要条件：</strong>n 级 LFSR 产生的序列最大周期 $2^𝑛 − 1$ 的必要条件是其特征多项式是不可约的。 </p>
+</li>
+<li><p><strong>m 序列充要条件：</strong>若 n 次不可约多项式 p(x) 的阶为 $2^𝑛 − 1$，则称 p(x) 为 n 次本原多项式。</p>
+</li>
+</ul>
+<p>Partow 的网站：<a target="_blank" rel="noopener" href="https://www.partow.net/programming/polynomials/index.html">https://www.partow.net/programming/polynomials/index.html</a></p>
+<h2 id="0x03-分组密码（DES）"><a href="#0x03-分组密码（DES）" class="headerlink" title="0x03 分组密码（DES）"></a>0x03 分组密码（DES）</h2><h3 id="1、Feistel-密码结构"><a href="#1、Feistel-密码结构" class="headerlink" title="1、Feistel 密码结构"></a>1、Feistel 密码结构</h3><p>很多分组密码的结构从本质上说都是基于一个称为Feistel 网络的结构。Feistel 提出利用乘积密码可获得简单的代换密码， 乘积密码指顺序地执行两个或多个基本密码系统， 使得最后结果的密码强度高于每个基本密码系统产生的结果， Feistel 还提出了实现代换和置换的方法。其思想实际上是Shannon 提出的利用乘积密码实现混淆和扩散思想的具体应用。</p>
+<p><strong>Feistel 网络图解：</strong></p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/96efacbddb6d2b458622e805f6eab73d.png" srcset="/img/loading.gif" lazyload alt="image-20211122204316739" style="zoom:50%;"></p>
+<p><strong>Feistel 网络第i轮数学表达式：</strong></p>
+<script type="math/tex; mode=display">
+\begin{cases}
+L_i = R_{i-1} \\
+R_i = L_{i-1} ⊕ F(R_{i-1},K_i)
+\end{cases}</script><p><strong>Feistel 加解密过程：</strong></p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/2ac77d8bac9d8cd11ef692b02d652e24.png" srcset="/img/loading.gif" lazyload alt="image-20211122204522044" style="zoom:50%;"></p>
+<h3 id="2、DES"><a href="#2、DES" class="headerlink" title="2、DES"></a>2、DES</h3><p>DES 是 Data Encryption Standard 的缩写，中文翻译为“数据加密标准”，其明文分组长度为 64 比特，密钥长为 56 比特，密文长度 64 比特。 DES 的加密算法框图如图所示，DES 首先将输入的 64 比特明文进行初始置换，然后将 64 比特分为左 32 比特 𝐿𝑖 和右 32 比特 𝑅𝑖 , 然后进行一轮处理，处理完后，刚开始分出来的右边 32 比特做为下一轮处理的左 32 比特，也就是 $L<em>i = R</em>{i-1}$，下一轮的右 32 比特为 $R<em>i = L</em>{i-1} ⊕ F(R_{i-1},K_i)$, 依次进行 16 轮这样的变换，然后进行逆初始置换，形成最终的密文。</p>
+<p><strong>DES 加密过程：</strong></p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/1ff0901942bab57f24e2ab6d313ec3b2.png" srcset="/img/loading.gif" lazyload alt="image-20211122215845237" style="zoom:67%;"></p>
+<h4 id="1）初始置换"><a href="#1）初始置换" class="headerlink" title="1）初始置换"></a>1）初始置换</h4><p>初始置换 IP 初始置换输入是 64bit，输出也是 64bit，初始置换表中元素表示 64bit 中 的第几个，原始顺序是 1, 2, 3, . . . , 63, 64，置换表就是调换后的顺序，其顺序是由左至右， 由上到下。逆初始置换表也是同样的含义。</p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/c4440e5f47c7e98e54195d616916ede1.png" srcset="/img/loading.gif" lazyload alt="image-20211122210423865" style="zoom:50%;"></p>
+<h4 id="2）轮结构"><a href="#2）轮结构" class="headerlink" title="2）轮结构"></a>2）轮结构</h4><p>轮结构 (f 函数) 处理过程如图所示。 轮结构中有两个置换 E 和 P，E 置换输入 32bit，输出 48bit，是将其中一些位重复， 并进行重排，利用扩展表形式表示。P 变换输入 32bit，输出 32bit，只是将比特位进行了重排，如上图所示。</p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/b41d704a8b0b90ec4f61ebe60fadb821.png" srcset="/img/loading.gif" lazyload alt="image-20211122210156702" style="zoom:50%;"></p>
+<p>轮结构中的 S 盒是 DES 中重要的设计部分，DES 中共有 8 个 S 盒，每个 S 盒输入 6bit，输出 4bit。</p>
+<p>对于一个 S 盒的 6bit 输入，第一位和第六位，用来选择 S 盒中的一种代换方法，所以一个 S 盒共定义了四种代换方法，输入的另外4 bit,用来确定其输出数据，我们从 S 定义表中的输出数据区可以看到，输出的最大数据为 15，最小为 0， 这与输出是个 4bit 数据相符。</p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/c571a58de704a7a39023f68827352b0d.png" srcset="/img/loading.gif" lazyload alt="image-20211122220552653"></p>
+<h4 id="3）密钥生成"><a href="#3）密钥生成" class="headerlink" title="3）密钥生成"></a>3）密钥生成</h4><p><strong>密钥生成过程：</strong></p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/9fa7ceae1306d7d99102d65a188069ca.png" srcset="/img/loading.gif" lazyload alt="image-20211122221026078" style="zoom:67%;"></p>
+<p>DES 初始密钥 K 是一个 64 位的二进制块，其中有 8 位奇偶校验位。</p>
+<p>对 DES 的 64 比特初始密钥进行置换选择 1(PC-1) 有两个作用： 一是将分别位于 8、16、24、32、40、48、56、64 的校验位去掉。 二是对剩余 56 比特进行换位。</p>
+<p>$𝐶_0$ 和 $𝐷_0$ 是将换位后的 56 比特密钥分为两半，各为 28 比特。$𝐿𝑆_i$ 是循环左移变换，具体移位位数见下表。</p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/583a46495a4bc2a4f8559034ee4e15b2.png" srcset="/img/loading.gif" lazyload alt="image-20211122210250965" style="zoom:50%;"></p>
+<h4 id="4）解密"><a href="#4）解密" class="headerlink" title="4）解密"></a>4）解密</h4><p>在经过所有的代替、置换、异或和循环移动之后, 你或许认为解密算法与加密算法完全不同, 并且也像加密算法一样要有很强的混乱效果。恰恰相反, 经过精心选择各种运算, 获得了这样一个非常有用的性质: 加密和解密可使用相同的算法。</p>
+<p>DES 使得用相同的函数来加密或解密每个分组成为可能。两者的唯之不同是密钥的次序相反。</p>
+<h3 id="3、多重-DES"><a href="#3、多重-DES" class="headerlink" title="3、多重 DES"></a>3、多重 DES</h3><p>二重DES、两个密钥的三重DES、三个密钥的三重DES</p>
+<h3 id="4、分组密码的运行模式"><a href="#4、分组密码的运行模式" class="headerlink" title="4、分组密码的运行模式"></a>4、分组密码的运行模式</h3><p><img src="/2021/11/20/CTF/Crypto/Crypto/1e11b62795b80bafca39e804ef74ad0d.png" srcset="/img/loading.gif" lazyload alt="image-20211122222105510" style="zoom:80%;"></p>
+<h3 id="5、AES"><a href="#5、AES" class="headerlink" title="5、AES"></a>5、AES</h3><p>AES的全称是Advanced Encryption Standard，意思是高级加密标准。它的出现主要是为了取代DES加密算法的，因为我们都知道DES算法的密钥长度是56Bit，因此算法的理论安全强度是2的56次方。但二十世纪中后期正是计算机飞速发展的阶段，元器件制造工艺的进步使得计算机的处理能力越来越强，虽然出现了3DES的加密方法，但由于它的加密时间是DES算法的3倍多，64Bit的分组大小相对较小，所以还是不能满足人们对安全性的要求。于是1997年1月2号，美国国家标准技术研究所宣布希望征集高级加密标准，用以取代DES。AES也得到了全世界很多密码工作者的响应，先后有很多人提交了自己设计的算法。最终有5个候选算法进入最后一轮：Rijndael，Serpent，Twofish，RC6和MARS。最终经过安全性分析、软硬件性能评估等严格的步骤，Rijndael算法获胜。</p>
+<h2 id="0x04-公钥密码体制（RSA）"><a href="#0x04-公钥密码体制（RSA）" class="headerlink" title="0x04 公钥密码体制（RSA）"></a>0x04 公钥密码体制（RSA）</h2><p>在公钥密码体制以前的整个密码学史中， 所有的密码算法， 包括原始手工计算的、由机械设备实现的以及由计算机实现的， 都是<strong>基于代换和置换</strong>这两个基本工具。而公钥密码体制则为密码学的发展提供了新的理论和技术基础， 一方面， 公钥密码算法的基本工具不再是代换和置换， 而是<strong>数学函数</strong>； 另一方面， 公钥密码算法<strong>以非对称的形式使用两个密钥</strong>， 两个密钥的使用对保密性、密钥分配、认证等都有着深刻的意义。可以说， 公钥密码体制的出现在密码学史上是一个最大的而且是唯一真正的革命。</p>
+<p>公钥密码体制的概念是在<strong>解决单钥密码体制中最难解决的两个问题</strong>时提出的， 这两个问题是<strong>密钥分配和数字签字</strong>。</p>
+<p>单钥密码体制在进行密钥分配时，要求通信双方或者已经有一个共享的密钥， 或者可借助于一个密钥分配中心。对第一个要求， 常常可用人工方式传送双方最初共享的密钥， 这种方法成本很高， 而且还完全依赖于信使的可靠性。第二个要求则完全依赖于密钥分配中心的可靠性。</p>
+<p>第二个问题数字签字考虑的是如何为数字化的消息或文件提供一种类似于为书面文件手书签字的方法。</p>
+<p>1976 年W. Diffie 和M. Hellman 对解决上述两个问题获得了突破， 从而提出了公钥密码体制。</p>
+<h3 id="1、MH-方法"><a href="#1、MH-方法" class="headerlink" title="1、MH 方法"></a>1、MH 方法</h3><p>1978 年，美国斯坦福大学的 R. C. Merkle 和 M. E. Hellman 在”Hiding information and signatures in trapdoor knapsacks” 一文中，建立了一种基于陷门背包的公钥密码系统。</p>
+<h3 id="2、RSA"><a href="#2、RSA" class="headerlink" title="2、RSA"></a>2、RSA</h3><p>RSA 算法是1978 年由R. Rivest 、A. Shamir 和L. Adleman 提出的一种用数论构造的、也是迄今为止理论上最为成熟完善的公钥密码体制， 该体制已得到广泛的应用。</p>
+<p>RSA 依赖的困难问题是：整数分解为素数是个困难问题，或者说素分解是个计算上困难的问题。 但是如果有一组素数，计算出这组素数的合数，却是一个容易的问题。 需要注意的是，虽然 RSA 计算困难问题基于的“整数分解”，但是 RSA 破解并不等价于“整数分解问题”。</p>
+<h4 id="1）密钥"><a href="#1）密钥" class="headerlink" title="1）密钥"></a>1）密钥</h4><ul>
+<li><p>用户选取两个不同的大素数 𝑝 和 𝑞</p>
+</li>
+<li><p>计算 𝑛 = 𝑝𝑞,  𝜙(𝑛) = (𝑝 − 1) (𝑞 − 1) 。其中 𝜙(𝑛) 是 n 的欧拉函数值。</p>
+</li>
+<li>选一个正整数 𝑒，满足 1&lt; 𝑒 &lt; 𝜙(𝑛) 且 𝑔𝑐𝑑(𝜙(𝑛)，𝑒) = 1 </li>
+<li>计算 𝑒 模 𝜙(𝑛) 的逆元 𝑑，也就是说 𝑒𝑑 = 1 𝑚𝑜𝑑 𝜙(𝑛)</li>
+<li>(𝑒, 𝑛) 做为公钥，(𝑑, 𝑛) 做为私钥</li>
+</ul>
+<h4 id="2）加密"><a href="#2）加密" class="headerlink" title="2）加密"></a>2）加密</h4><p>加密时首先将明文比特串分组， 使得每个分组对应的十进制数小于 n，即分组长度小于 $\log_2 n$ 。然后对每个明文分组 m，作加密运算：</p>
+<script type="math/tex; mode=display">
+c = m^e \quad (mod \ n)</script><blockquote>
+<p>RSA是分组加密，取一个明文分组 𝑀，0 ≤ 𝑀 ≤ 𝑛−1,𝐶 = 𝑀^𝑒 (𝑚𝑜𝑑 𝑛)。 </p>
+</blockquote>
+<h4 id="3）解密"><a href="#3）解密" class="headerlink" title="3）解密"></a>3）解密</h4><p>对密文分组的解密运算为：</p>
+<script type="math/tex; mode=display">
+m = c^d \quad (mod \ n)</script><h2 id="0x05-哈希函数（MD5）"><a href="#0x05-哈希函数（MD5）" class="headerlink" title="0x05 哈希函数（MD5）"></a>0x05 哈希函数（MD5）</h2><h3 id="1、哈希函数定义"><a href="#1、哈希函数定义" class="headerlink" title="1、哈希函数定义"></a>1、哈希函数定义</h3><p>哈希函数 H 是一公开函数，用于将任意长的消息 M 映射为较短的、固定长度的一个值 H(M) ，作为认证符，称函数值 H(M) 为哈希值或哈希码或消息摘要。哈希码是消息中所有比特的函数，因此提供了一种错误检测能力，即改变消息中任何一个比特或几个比特都会使哈希码发生改变。</p>
+<h3 id="2、哈希函数特点"><a href="#2、哈希函数特点" class="headerlink" title="2、哈希函数特点"></a>2、哈希函数特点</h3><p>哈希函数的目的是为需认证的数据产生一个“指纹” 。为了能够实现对数据的认证，哈希函数应满足以下性质：</p>
+<ul>
+<li><p>函数的输人可以是任意长，函数的输出是固定长。</p>
+</li>
+<li><p>已知 x ，求 H(x) 较为容易，可用硬件或软件实现。</p>
+</li>
+<li><p>已知 h，求使得 H(x) = h 的 x 在计算上是不可行的。</p>
+<blockquote>
+<p>这一性质称为函数的单向性，称 H(x) 为单向哈希函数。 </p>
+</blockquote>
+</li>
+<li><p>已知 x ，找出 y （x!=y），使得 𝐻(x) = 𝐻(y) 在计算上是不可行的。</p>
+<blockquote>
+<p>如果单向哈希函数满足这一性质， 则称其为弱单向哈希函数。</p>
+</blockquote>
+</li>
+<li><p>找出任意两个不同的输入 想 x、y ， 使得 𝐻(x) = 𝐻(y) 在计算上是不可行的。</p>
+<blockquote>
+<p>如果单向哈希函数满足这一性质， 则称其为强单向哈希函数。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="3、MD5"><a href="#3、MD5" class="headerlink" title="3、MD5"></a>3、MD5</h3><p>MD5 是 Ron Rivest 在 1990 年 10 月作为 RFC 提出的 (RFC 1321)，其前身是 MD4(RFC 1320)。MD5 输入为任意长度的信息，输出 128bit 的摘要信息 (散列值)。</p>
+<h4 id="MD5-算法"><a href="#MD5-算法" class="headerlink" title="MD5 算法"></a>MD5 算法</h4><p><img src="/2021/11/20/CTF/Crypto/Crypto/45dc898751a2af11929f9f4506445445.png" srcset="/img/loading.gif" lazyload alt="image-20211123153415491"><img src="/2021/11/20/CTF/Crypto/Crypto/42cc6117d75d7eef7cce5e04a78bf19a.png" srcset="/img/loading.gif" lazyload alt="image-20211123153458708"></p>
+<p><img src="/2021/11/20/CTF/Crypto/Crypto/d3b09550b3c08a2fb6758a85a2a687c0.png" srcset="/img/loading.gif" lazyload alt="image-20211123153606631"></p>
+<h5 id="消息填充"><a href="#消息填充" class="headerlink" title="消息填充"></a>消息填充</h5><p>填充后的消息比特长度 L 为模 512 下是 448，也就是说 𝐿 ≡ 448 (𝑚𝑜𝑑 512)，或者说 𝐿 = 𝑛 × 512 + 448，n 为大于等于 1 的正整数。填充方式为第一位为 1，后面为 0. </p>
+<h5 id="附加消息长度"><a href="#附加消息长度" class="headerlink" title="附加消息长度"></a>附加消息长度</h5><p>前面填充后最后有 448bit，448+64=512bit，留下的这 64bit 用于填写附加消息长度， 用 little-endian 方式存储。那么可存储的最大附加消息长度为 2^64，如果消息长度大于此数，存储长度模 2^64 后的值。 附加消息长度后，进行后续运算的消息长度是 512 的倍数。 </p>
+<h5 id="缓冲区初始化"><a href="#缓冲区初始化" class="headerlink" title="缓冲区初始化"></a>缓冲区初始化</h5><p>初始化MD5核心算法中的𝑊0, 𝑋0, 𝑌0, 𝑍0，𝑊0 = 01 23 45 67；𝑋0 = 89 𝐴𝐵 𝐶𝐷 𝐸𝐹；𝑌0 = 𝐹𝐸 𝐷𝐶 𝐵𝐴 98；𝑍0 = 76 54 32 10 。</p>
+<h5 id="分组流水处理"><a href="#分组流水处理" class="headerlink" title="分组流水处理"></a>分组流水处理</h5><p>将消息分为 n 个 512bit 长度的分组 𝑚1, 𝑚2, . . . , 𝑚𝑛，然后对 n 个分组依次执行： </p>
+<ol>
+<li><p>(𝑊1, 𝑋1, 𝑌1, 𝑍1) = 𝐻𝑀𝐷5 (𝑊0, 𝑋0, 𝑌0, 𝑍0, 𝑚1) </p>
+</li>
+<li><p>(𝑊2, 𝑋2, 𝑌2, 𝑍2) = 𝐻𝑀𝐷5 (𝑊1, 𝑋1, 𝑌1, 𝑍1, 𝑚2) </p>
+</li>
+<li><p>(𝑊3, 𝑋3, 𝑌3, 𝑍3) = 𝐻𝑀𝐷5 (𝑊2, 𝑋2, 𝑌2, 𝑍2, 𝑚3) </p>
+<p>·····························</p>
+</li>
+<li><p>(𝑊𝑛, 𝑋𝑛, 𝑌𝑛, 𝑍𝑛) = 𝐻𝑀𝐷5 (𝑊𝑛−1, 𝑋𝑛−1, 𝑌𝑛−1, 𝑍𝑛−1, 𝑚𝑛) </p>
+</li>
+</ol>
+<h5 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h5><p>MD5 的输出为 𝑊𝑛||𝑋𝑛||𝑌𝑛||𝑍𝑛。 </p>
+<h5 id="MD5-算法表示"><a href="#MD5-算法表示" class="headerlink" title="MD5 算法表示"></a>MD5 算法表示</h5><p>整个 MD5 算法，输入为原始消息 𝑀𝑠，初始量𝑊0, 𝑋0, 𝑌0, 𝑍0，输出为 128bit，𝑊||𝑋||𝑌 ||𝑍， 我们记为 (𝑊, 𝑋, 𝑌, 𝑍) 𝑜𝑟 𝑊||𝑋||𝑌 ||𝑍 = 𝑀𝐷5(𝑊0, 𝑋0, 𝑌0, 𝑍0, 𝑀𝑠). </p>
+<h4 id="核心算法HMD5"><a href="#核心算法HMD5" class="headerlink" title="核心算法HMD5"></a>核心算法HMD5</h4><p>核心算法 𝐻𝑀𝐷5 是个分组算法，输入是 512 位的分组数据，输出是 128 位。 </p>
+<h5 id="HMD5-算法"><a href="#HMD5-算法" class="headerlink" title="HMD5 算法"></a>HMD5 算法</h5><p>𝐻𝑀𝐷5 算法的伪代码如下：<br>𝑀, 𝑊0, 𝑋0, 𝑌0, 𝑍0<br>(𝑊1, 𝑋1, 𝑌1, 𝑍1) = 𝑅(𝐹, 𝐺, 𝐻, 𝐼, 𝑊0, 𝑋0, 𝑌0, 𝑍0, 𝑀)<br>𝑊 = 𝑊0 + 𝑊1 (𝑚𝑜𝑑 2^32)<br>𝑋 = 𝑋0 + 𝑋1 (𝑚𝑜𝑑 2^32)<br>𝑌 = 𝑌0 + 𝑌1 (𝑚𝑜𝑑 2^32)<br>𝑍 = 𝑍0 + 𝑍1 (𝑚𝑜𝑑 2^32)<br>输出 W,X,Y,Z</p>
+<p>上面伪代码表示的这个算法，其输入是 𝑀, 𝑊0, 𝑋0, 𝑌0, 𝑍0，算法输出是 W, X, Y, Z, 用 (𝑊, 𝑋, 𝑌, 𝑋) = 𝐻𝑀𝐷5 (𝑊0, 𝑋0, 𝑌0, 𝑍0, 𝑀) 符号化来表示。 </p>
+<h5 id="四轮运算-R"><a href="#四轮运算-R" class="headerlink" title="四轮运算 R"></a>四轮运算 R</h5><p>算法的输入是512bit的消息M，我们再将其分为16组，每组32bit，𝑀 = 𝑀0||𝑀1||𝑀2|| . . . ||𝑀15, 然后对其进行四轮核心运算。我们将整个四轮运算过程记为 𝑅(𝐹, 𝐺, 𝐻, 𝐼, 𝑊, 𝑋, 𝑌, 𝑍, 𝑀) : 𝑊 × 𝑋 × 𝑌 × 𝑍 × 𝑀 → 𝑊 × 𝑋 × 𝑌 × 𝑍, 也就是说这四轮运算后输出是新的 W,X,Y,X, 下面我们看看四轮运算的具体过程</p>
+<ul>
+<li>第一轮 C 为 F, 所以核心运算是 FF(W,X,Y,Z,M,s,t)，在第一轮中依次对 16 个分组数 据执行 FF 运算，也就是说第一轮执行 16 次 FF 运算，每一次的执行 FF 时，W,X,Y,X 是上 一次运算后的 W,X,Y,X，在执行第一次 FF 时，W,X,Y,X 的初始值为，𝑊 = 0𝑥01234567, 𝑋 = 0𝑥89𝑎𝑏𝑐𝑑𝑒 𝑓 , 𝑌 = 0𝑥 𝑓 𝑒𝑑𝑐𝑏𝑎98, 𝑍 = 0𝑥76543210. 我们用伪代码描述此轮算法：<br>W,X,Y,Z 初始化<br>for i=0 to 15<br>𝐹𝐹(𝑊, 𝑋, 𝑌, 𝑍, 𝑀1 𝑖 , 𝑠1 𝑖 , 𝑡𝑖+1)<br>𝑊 𝑋𝑌 𝑍 = 𝑊 𝑋𝑌 𝑍 &gt;&gt; 32; 表示将四个值连接，然后右循环移位 32， 也就是新 W 值为旧 Z，新 X 值为旧 W，新 Y 值为旧 X，新 Z 值为旧 Y</li>
+<li>第二轮 C 为 G：<br>W,X,Y,Z 上一轮遗留值<br>for i=0 to 15<br>𝐺𝐺(𝑊, 𝑋, 𝑌, 𝑍, 𝑀2 𝑖 , 𝑠2 𝑖 , 𝑡𝑖+17)<br>𝑊 𝑋𝑌 𝑍 = 𝑊 𝑋𝑌 𝑍 &gt;&gt; 32; 表示将四个值连接，然后右循环移位 32， 也就是新 W 值为旧 Z，新 X 值为旧 W，新 Y 值为旧 X，新 Z 值为旧 Y</li>
+<li>第三轮 C 为 H：<br>W,X,Y,Z 上一轮遗留值<br>for i=0 to 15<br>𝐻𝐻(𝑊, 𝑋, 𝑌, 𝑍, 𝑀3 𝑖 , 𝑠3 𝑖 , 𝑡𝑖+33)<br>𝑊 𝑋𝑌 𝑍 = 𝑊 𝑋𝑌 𝑍 &gt;&gt; 32; 表示将四个值连接，然后右循环移位 32， 也就是新 W 值为旧 Z，新 X 值为旧 W，新 Y 值为旧 X，新 Z 值为旧 Y</li>
+<li>第四轮 C 为 I：<br>W,X,Y,Z 上一轮遗留值<br>for i=0 to 15<br>𝐼 𝐼(𝑊, 𝑋, 𝑌, 𝑍, 𝑀4 𝑖 , 𝑠4 𝑖 , 𝑡𝑖+49)<br>𝑊 𝑋𝑌 𝑍 = 𝑊 𝑋𝑌 𝑍 &gt;&gt; 32; 表示将四个值连接，然后右循环移位 32， 也就是新 W 值为旧 Z，新 X 值为旧 W，新 Y 值为旧 X，新 Z 值为旧 Y </li>
+</ul>
+<h5 id="R-中的-𝑀𝑛-𝑖-𝑛-1-2-3-4"><a href="#R-中的-𝑀𝑛-𝑖-𝑛-1-2-3-4" class="headerlink" title="R 中的 𝑀𝑛 𝑖 , (𝑛 = 1, 2, 3, 4)"></a>R 中的 𝑀𝑛 𝑖 , (𝑛 = 1, 2, 3, 4)</h5><p>四轮运算中，每轮消息顺序不同，第一轮为顺次，消息从 𝑀0, 𝑀2, . . . , 𝑀15，第二、三、 四轮，对 M 的顺序进行了置换：<br>第一轮 𝑀1 𝑖 = 𝑀𝑖 , 𝑖 = 0, 1, . . . , 15<br>第二轮 𝑀2 𝑖 = 𝑀1+5𝑖 𝑚𝑜𝑑 16, 𝑖 = 0, 1, . . . , 15<br>第三轮 𝑀3 𝑖 = 𝑀5+3𝑖 𝑚𝑜𝑑 16, 𝑖 = 0, 1, . . . , 15<br>第四轮 𝑀4 𝑖 = 𝑀7𝑖 𝑚𝑜𝑑 16, 𝑖 = 0, 1, . . . , 15 </p>
+<p>按上面公式，可知，第二轮 M 的顺序是： 𝑀1, 𝑀6, 𝑀11, 𝑀0, 𝑀5, 𝑀10, 𝑀15, 𝑀4, 𝑀9, 𝑀14, 𝑀3, 𝑀8, 𝑀13, 𝑀2, 𝑀7, 𝑀12 </p>
+<h5 id="R-中的-𝑠-𝑛-𝑖-𝑛-1-2-3-4"><a href="#R-中的-𝑠-𝑛-𝑖-𝑛-1-2-3-4" class="headerlink" title="R 中的 𝑠 𝑛 𝑖 , (𝑛 = 1, 2, 3, 4)"></a>R 中的 𝑠 𝑛 𝑖 , (𝑛 = 1, 2, 3, 4)</h5><p>每轮每次运算移位数 𝑠 𝑛 𝑖 的取值如表7.1，n 表示时第几轮，i 表示是本轮的第几次运算。 </p>
+<h5 id="R-中的-𝑡𝑖"><a href="#R-中的-𝑡𝑖" class="headerlink" title="R 中的 𝑡𝑖"></a>R 中的 𝑡𝑖</h5><p>每轮中的每次运算都有 𝑡𝑖，他是个常数，在四轮运算中其是顺序变换，共有 64 个常 数值 𝑡1, 𝑡2, . . . , 𝑡64，我们这样设定这个常数值,𝑡𝑖 = [2 32 × 𝑎𝑏𝑠(𝑠𝑖𝑛(𝑖))], 其中 i 的单位为弧度 (RAD)，[] 表示取整运算，就是取一个数的整数部分，abs 是绝对值，其实我们可以事 先做好这个常数表，以备计算是使用，下面我们计算 𝑡1。 </p>
+<p>𝑡1 = [2 32 × 𝑎𝑏𝑠(𝑠𝑖𝑛(1))] = [3614090360.3] = 3614090360 = [𝑑76𝑎𝑎478]16 </p>
+<p>表 7.1: MD5 中循环移位操作参数选择</p>
+<p> 轮数 参数 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 1 7 12 17 22 7 12 17 22 7 12 17 22 7 12 17 22 2 5 9 14 20 5 9 14 20 5 9 14 20 5 9 14 20 3 4 11 16 23 4 11 16 23 4 11 16 23 4 11 16 23 4 6 10 15 21 6 10 15 21 6 10 15 21 6 10 15 21 </p>
+<h5 id="核心运算"><a href="#核心运算" class="headerlink" title="核心运算"></a>核心运算</h5><p>我们定义一个核心运算，其中 C 为非线性函数 F,G,H,I 中的一个，𝑑 &lt;&lt; 𝑠 表示对数 d 循环左移 s 位，+ 表示模 2^32 加法，后面为了方便我们直接写 +，核心运算 CC 我们定 义为： </p>
+<p>𝐶𝐶(𝑊, 𝑋, 𝑌, 𝑍, 𝑀, 𝑠, 𝑡) : 𝑊 = 𝑋 + ( (𝑊 + 𝐶(𝑋, 𝑌, 𝑍) + 𝑀 + 𝑡) &lt;&lt; 𝑠) (7.1) </p>
+<p>如果 C 用 F 替换，那么核心运算 CC 就是 FF；如果 C 用 G 替换，那么核心运算 CC 就是 GG；如果 C 用 H 替换，那么核心运算 CC 就是 HH；如果 C 用 I 替换，那么核心运 算 CC 就是 II。 </p>
+<p>这里我们其实是定义了 R 运算中的函数 FF、GG、HH、II。 </p>
+<h5 id="非线性函数"><a href="#非线性函数" class="headerlink" title="非线性函数"></a>非线性函数</h5><p>在核心运算定义中有四个非线性函数 𝐹(𝑋, 𝑌, 𝑍), 𝐺(𝑋, 𝑌, 𝑍), 𝐻(𝑋, 𝑌, 𝑍), 𝐼(𝑋, 𝑌, 𝑍)， 下面我们分别定义这四个非线性函数。 </p>
+<p>我们定义四个非线性函数，其中 X，Y，Z 是 32bit 数,∧ 是与操作，∨ 是或操作,⊕ 是 异或操作，¬ 是非操作。 </p>
+<ol>
+<li>𝐹(𝑋, 𝑌, 𝑍) = (𝑋 ∧ 𝑌) ∨ (¬𝑋 ∧ 𝑍) </li>
+<li>𝐺(𝑋, 𝑌, 𝑍) = (𝑋 ∧ 𝑍) ∨ (¬𝑌 ∧ ¬𝑍) </li>
+<li>𝐻(𝑋, 𝑌, 𝑍) = 𝑋 ⊕ 𝑌 ⊕ 𝑍 </li>
+<li>𝐼(𝑋, 𝑌, 𝑍) = 𝑌 ⊕ (𝑋 ∧ ¬𝑍) </li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Crypto/">Crypto</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/CTF/">CTF</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Crypto/">Crypto</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/25/CTF/Crypto/Crypto%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8python%E5%BA%93/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Crypto中的常用python库</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/10/11/Code/Go/Go-VScode/">
+                        <span class="hidden-mobile">Go-VScode</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

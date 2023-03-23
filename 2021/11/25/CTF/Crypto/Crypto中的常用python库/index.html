@@ -1,0 +1,480 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>Crypto中的常用python库 - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Crypto中的常用python库">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-11-25 00:00" pubdate>
+        2021年11月25日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      23
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Crypto中的常用python库</h1>
+            
+            <div class="markdown-body">
+              <h1 id="Crypto中的常用python库"><a href="#Crypto中的常用python库" class="headerlink" title="Crypto中的常用python库"></a>Crypto中的常用python库</h1><h2 id="gmpy2"><a href="#gmpy2" class="headerlink" title="gmpy2"></a>gmpy2</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># pip install gmpy2</span><br>Collecting gmpy2<br>  Using cached gmpy2-2.0.8.zip (280 kB)<br>  Preparing metadata (setup.py) ... <span class="hljs-keyword">done</span><br>Building wheels <span class="hljs-keyword">for</span> collected packages: gmpy2<br>  Building wheel <span class="hljs-keyword">for</span> gmpy2 (setup.py) ... error<br>  ERROR: Command errored out with <span class="hljs-built_in">exit</span> status 1:<br>   <span class="hljs-built_in">command</span>: <span class="hljs-string">&#x27;c:\users\13562\appdata\local\programs\python\python38-32\python.exe&#x27;</span> -u -c <span class="hljs-string">&#x27;import io, os, sys, setuptools, tokenize; sys.argv[0] = &#x27;</span><span class="hljs-string">&quot;&#x27;&quot;</span><span class="hljs-string">&#x27;C:\\Users\\13562\\AppData\\Local\\Temp\\pip-install-m7wq3tdn\\gmpy2_9788db52fac64496b99bd7d41369970a\\setup.py&#x27;</span><span class="hljs-string">&quot;&#x27;&quot;</span><span class="hljs-string">&#x27;; __file__=&#x27;</span><span class="hljs-string">&quot;&#x27;&quot;</span><span class="hljs-string">&#x27;C:\\Users\\13562\\AppData\\Local\\Temp\\pip-install-m7wq3tdn\\gmpy2_9788db52fac64496b99bd7d41369970a\\setup.py&#x27;</span><span class="hljs-string">&quot;&#x27;&quot;</span><span class="hljs-string">&#x27;;f = getattr(tokenize, &#x27;</span><span class="hljs-string">&quot;&#x27;&quot;</span><span class="hljs-string">&#x27;open&#x27;</span><span class="hljs-string">&quot;&#x27;&quot;</span><span class="hljs-string">&#x27;, open)(__file__) if os.path.exists(__file__) else io.StringIO(&#x27;</span><span class="hljs-string">&quot;&#x27;&quot;</span><span class="hljs-string">&#x27;from setuptools import setup; setup()&#x27;</span><span class="hljs-string">&quot;&#x27;&quot;</span><span class="hljs-string">&#x27;);code = f.read().replace(&#x27;</span><span class="hljs-string">&quot;&#x27;&quot;</span><span class="hljs-string">&#x27;\r\n&#x27;</span><span class="hljs-string">&quot;&#x27;&quot;</span><span class="hljs-string">&#x27;, &#x27;</span><span class="hljs-string">&quot;&#x27;&quot;</span><span class="hljs-string">&#x27;\n&#x27;</span><span class="hljs-string">&quot;&#x27;&quot;</span><span class="hljs-string">&#x27;);f.close();exec(compile(code, __file__, &#x27;</span><span class="hljs-string">&quot;&#x27;&quot;</span><span class="hljs-string">&#x27;exec&#x27;</span><span class="hljs-string">&quot;&#x27;&quot;</span><span class="hljs-string">&#x27;))&#x27;</span> bdist_wheel -d <span class="hljs-string">&#x27;C:\Users\13562\AppData\Local\Temp\pip-wheel-12kpn2mk&#x27;</span><br>       cwd: C:\Users\13562\AppData\Local\Temp\pip-install-m7wq3tdn\gmpy2_9788db52fac64496b99bd7d41369970a\<br>  Complete output (5 lines):<br>  running bdist_wheel<br>  running build<br>  running build_ext<br>  building <span class="hljs-string">&#x27;gmpy2&#x27;</span> extension<br>  error: Microsoft Visual C++ 14.0 is required. Get it with <span class="hljs-string">&quot;Microsoft Visual C++ Build Tools&quot;</span>: https://visualstudio.microsoft.com/downloads/<br>  ----------------------------------------<br>  ERROR: Failed building wheel <span class="hljs-keyword">for</span> gmpy2<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># pip install wheel</span><br></code></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">Python Extension Packages for Windows - Christoph Gohlke (uci.edu)</a></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">GMPY</span>: supports fast multiple-precision arithmetic.<br><span class="hljs-attribute">Wraps</span> the MPIR, MPFR, and MPC libraries.<br><span class="hljs-attribute">gmpy</span>‑<span class="hljs-number">1</span>.<span class="hljs-number">17</span>‑cp<span class="hljs-number">34</span>‑none‑win_amd<span class="hljs-number">64</span>.whl<br><span class="hljs-attribute">gmpy</span>‑<span class="hljs-number">1</span>.<span class="hljs-number">17</span>‑cp<span class="hljs-number">34</span>‑none‑win<span class="hljs-number">32</span>.whl<br><span class="hljs-attribute">gmpy</span>‑<span class="hljs-number">1</span>.<span class="hljs-number">17</span>‑cp<span class="hljs-number">27</span>‑none‑win_amd<span class="hljs-number">64</span>.whl<br><span class="hljs-attribute">gmpy</span>‑<span class="hljs-number">1</span>.<span class="hljs-number">17</span>‑cp<span class="hljs-number">27</span>‑none‑win<span class="hljs-number">32</span>.whl<br><span class="hljs-attribute">gmpy2</span>‑<span class="hljs-number">2</span>.<span class="hljs-number">0</span>.<span class="hljs-number">8</span>‑cp<span class="hljs-number">39</span>‑cp<span class="hljs-number">39</span>‑win_amd<span class="hljs-number">64</span>.whl<br><span class="hljs-attribute">gmpy2</span>‑<span class="hljs-number">2</span>.<span class="hljs-number">0</span>.<span class="hljs-number">8</span>‑cp<span class="hljs-number">39</span>‑cp<span class="hljs-number">39</span>‑win<span class="hljs-number">32</span>.whl<br><span class="hljs-attribute">gmpy2</span>‑<span class="hljs-number">2</span>.<span class="hljs-number">0</span>.<span class="hljs-number">8</span>‑cp<span class="hljs-number">38</span>‑cp<span class="hljs-number">38</span>‑win_amd<span class="hljs-number">64</span>.whl<br><span class="hljs-attribute">gmpy2</span>‑<span class="hljs-number">2</span>.<span class="hljs-number">0</span>.<span class="hljs-number">8</span>‑cp<span class="hljs-number">38</span>‑cp<span class="hljs-number">38</span>‑win<span class="hljs-number">32</span>.whl<br><span class="hljs-attribute">gmpy2</span>‑<span class="hljs-number">2</span>.<span class="hljs-number">0</span>.<span class="hljs-number">8</span>‑cp<span class="hljs-number">37</span>‑cp<span class="hljs-number">37</span>m‑win_amd<span class="hljs-number">64</span>.whl<br><span class="hljs-attribute">gmpy2</span>‑<span class="hljs-number">2</span>.<span class="hljs-number">0</span>.<span class="hljs-number">8</span>‑cp<span class="hljs-number">37</span>‑cp<span class="hljs-number">37</span>m‑win<span class="hljs-number">32</span>.whl<br><span class="hljs-attribute">gmpy2</span>‑<span class="hljs-number">2</span>.<span class="hljs-number">0</span>.<span class="hljs-number">8</span>‑cp<span class="hljs-number">36</span>‑cp<span class="hljs-number">36</span>m‑win_amd<span class="hljs-number">64</span>.whl<br><span class="hljs-attribute">gmpy2</span>‑<span class="hljs-number">2</span>.<span class="hljs-number">0</span>.<span class="hljs-number">8</span>‑cp<span class="hljs-number">36</span>‑cp<span class="hljs-number">36</span>m‑win<span class="hljs-number">32</span>.whl<br><span class="hljs-attribute">gmpy2</span>‑<span class="hljs-number">2</span>.<span class="hljs-number">0</span>.<span class="hljs-number">8</span>‑cp<span class="hljs-number">35</span>‑cp<span class="hljs-number">35</span>m‑win_amd<span class="hljs-number">64</span>.whl<br><span class="hljs-attribute">gmpy2</span>‑<span class="hljs-number">2</span>.<span class="hljs-number">0</span>.<span class="hljs-number">8</span>‑cp<span class="hljs-number">35</span>‑cp<span class="hljs-number">35</span>m‑win<span class="hljs-number">32</span>.whl<br><span class="hljs-attribute">gmpy2</span>‑<span class="hljs-number">2</span>.<span class="hljs-number">0</span>.<span class="hljs-number">8</span>‑cp<span class="hljs-number">34</span>‑cp<span class="hljs-number">34</span>m‑win_amd<span class="hljs-number">64</span>.whl<br><span class="hljs-attribute">gmpy2</span>‑<span class="hljs-number">2</span>.<span class="hljs-number">0</span>.<span class="hljs-number">8</span>‑cp<span class="hljs-number">34</span>‑cp<span class="hljs-number">34</span>m‑win<span class="hljs-number">32</span>.whl<br><span class="hljs-attribute">gmpy2</span>‑<span class="hljs-number">2</span>.<span class="hljs-number">0</span>.<span class="hljs-number">8</span>‑cp<span class="hljs-number">27</span>‑cp<span class="hljs-number">27</span>m‑win_amd<span class="hljs-number">64</span>.whl<br><span class="hljs-attribute">gmpy2</span>‑<span class="hljs-number">2</span>.<span class="hljs-number">0</span>.<span class="hljs-number">8</span>‑cp<span class="hljs-number">27</span>‑cp<span class="hljs-number">27</span>m‑win<span class="hljs-number">32</span>.whl<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># pip install D:\Download\gmpy2-2.0.8-cp38-cp38-win_amd64.whl</span><br>ERROR: gmpy2-2.0.8-cp38-cp38-win_amd64.whl is not a supported wheel on this platform.<br></code></pre></td></tr></table></figure>
+<p>查看pip支持的文件名和版本</p>
+<p><strong>方法一：新方法篇</strong></p>
+<p>直接用<code>pip debug --verbose</code> 命令即可看 <strong>pip</strong> 支持。<br><strong>注：</strong> 感谢 <strong>lukea</strong> 小伙伴的分享！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># pip debug --verbose</span><br>WARNING: This <span class="hljs-built_in">command</span> is only meant <span class="hljs-keyword">for</span> debugging. Do not use this with automation <span class="hljs-keyword">for</span> parsing and getting these details, since the output and options of this <span class="hljs-built_in">command</span> may change without notice.<br>pip version: pip 21.3.1 from c:\users\13562\appdata\<span class="hljs-built_in">local</span>\programs\python\python38-32\lib\site-packages\pip (python 3.8)<br>sys.version: 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:20:19) [MSC v.1925 32 bit (Intel)]<br>sys.executable: c:\users\13562\appdata\<span class="hljs-built_in">local</span>\programs\python\python38-32\python.exe<br>sys.getdefaultencoding: utf-8<br>sys.getfilesystemencoding: utf-8<br>locale.getpreferredencoding: cp936<br>sys.platform: win32<br>sys.implementation:<br>  name: cpython<br><span class="hljs-string">&#x27;cert&#x27;</span> config value: Not specified<br>REQUESTS_CA_BUNDLE: None<br>CURL_CA_BUNDLE: None<br>pip._vendor.certifi.where(): c:\users\13562\appdata\<span class="hljs-built_in">local</span>\programs\python\python38-32\lib\site-packages\pip\_vendor\certifi\cacert.pem<br>pip._vendor.DEBUNDLED: False<br>vendored library versions:<br>  CacheControl==0.12.6<br>  colorama==0.4.4<br>  distlib==0.3.3<br>  distro==1.6.0<br>  html5lib==1.1<br>  msgpack==1.0.2 (Unable to locate actual module version, using vendor.txt specified version)<br>  packaging==21.0<br>  pep517==0.12.0<br>  platformdirs==2.4.0<br>  progress==1.6<br>  pyparsing==2.4.7<br>  requests==2.26.0<br>  certifi==2021.05.30<br>  chardet==4.0.0<br>  idna==3.2<br>  urllib3==1.26.7<br>  resolvelib==0.8.0<br>  setuptools==44.0.0 (Unable to locate actual module version, using vendor.txt specified version)<br>  six==1.16.0<br>  tenacity==8.0.1 (Unable to locate actual module version, using vendor.txt specified version)<br>  tomli==1.0.3<br>  webencodings==0.5.1 (Unable to locate actual module version, using vendor.txt specified version)<br>Compatible tags: 30<br>  cp38-cp38-win32<br>  cp38-abi3-win32<br>  cp38-none-win32<br>  cp37-abi3-win32<br>  cp36-abi3-win32<br>  cp35-abi3-win32<br>  cp34-abi3-win32<br>  cp33-abi3-win32<br>  cp32-abi3-win32<br>  py38-none-win32<br>  py3-none-win32<br>  py37-none-win32<br>  py36-none-win32<br>  py35-none-win32<br>  py34-none-win32<br>  py33-none-win32<br>  py32-none-win32<br>  py31-none-win32<br>  py30-none-win32<br>  cp38-none-any<br>  py38-none-any<br>  py3-none-any<br>  py37-none-any<br>  py36-none-any<br>  py35-none-any<br>  py34-none-any<br>  py33-none-any<br>  py32-none-any<br>  py31-none-any<br>  py30-none-any<br></code></pre></td></tr></table></figure>
+<p><strong>方法二：常规方法篇</strong></p>
+<p><strong>64 位 pip 老的查看方法前段时间更新后就不能用了。</strong></p>
+<p>之前导入<code>pip._internal</code>就好了。现在需要导入 <code>pip._internal.pep425tags</code> 才可以。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pip._internal.pep425tags<br><span class="hljs-built_in">print</span>(pip._internal.pep425tags.get_supported())<br></code></pre></td></tr></table></figure>
+<p><strong>方法三：万能方法</strong></p>
+<p>我们直接在 <strong>pip</strong> 里搜 <strong>pep425tags.py</strong> 这个文件就行，找到它的位置。<br>一般导入报错就说明位置不对，每个版本都可能有一些差异，位置可能有变化。<br>我下载了个 <strong>32</strong> 位的，查找发现了它的位置，然后直接导入它就行了。</p>
+<p>C:\Users\13562\AppData\Local\Programs\Python\Python38-32\Lib\site-packages\setuptools</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> setuptools.pep425tags<br> <br><span class="hljs-built_in">print</span>(setuptools.pep425tags.get_supported())<br><br>[(<span class="hljs-string">&#x27;cp38&#x27;</span>, <span class="hljs-string">&#x27;cp38m&#x27;</span>, <span class="hljs-string">&#x27;win32&#x27;</span>), (<span class="hljs-string">&#x27;cp38&#x27;</span>, <span class="hljs-string">&#x27;none&#x27;</span>, <span class="hljs-string">&#x27;win32&#x27;</span>), (<span class="hljs-string">&#x27;py3&#x27;</span>, <span class="hljs-string">&#x27;none&#x27;</span>, <span class="hljs-string">&#x27;win32&#x27;</span>), (<span class="hljs-string">&#x27;cp38&#x27;</span>, <span class="hljs-string">&#x27;none&#x27;</span>, <span class="hljs-string">&#x27;any&#x27;</span>), (<span class="hljs-string">&#x27;cp3&#x27;</span>, <span class="hljs-string">&#x27;none&#x27;</span>, <span class="hljs-string">&#x27;any&#x27;</span>), (<span class="hljs-string">&#x27;py38&#x27;</span>, <span class="hljs-string">&#x27;none&#x27;</span>, <span class="hljs-string">&#x27;any&#x27;</span>), (<span class="hljs-string">&#x27;py3&#x27;</span>, <span class="hljs-string">&#x27;none&#x27;</span>, <span class="hljs-string">&#x27;any&#x27;</span>), (<span class="hljs-string">&#x27;py37&#x27;</span>, <span class="hljs-string">&#x27;none&#x27;</span>, <span class="hljs-string">&#x27;any&#x27;</span>), (<span class="hljs-string">&#x27;py36&#x27;</span>, <span class="hljs-string">&#x27;none&#x27;</span>, <span class="hljs-string">&#x27;any&#x27;</span>), (<span class="hljs-string">&#x27;py35&#x27;</span>, <span class="hljs-string">&#x27;none&#x27;</span>, <span class="hljs-string">&#x27;any&#x27;</span>), (<span class="hljs-string">&#x27;py34&#x27;</span>, <span class="hljs-string">&#x27;none&#x27;</span>, <span class="hljs-string">&#x27;any&#x27;</span>), (<span class="hljs-string">&#x27;py33&#x27;</span>, <span class="hljs-string">&#x27;none&#x27;</span>, <span class="hljs-string">&#x27;any&#x27;</span>), (<span class="hljs-string">&#x27;py32&#x27;</span>, <span class="hljs-string">&#x27;none&#x27;</span>, <span class="hljs-string">&#x27;any&#x27;</span>), (<span class="hljs-string">&#x27;py31&#x27;</span>, <span class="hljs-string">&#x27;none&#x27;</span>, <span class="hljs-string">&#x27;any&#x27;</span>), (<span class="hljs-string">&#x27;py30&#x27;</span>, <span class="hljs-string">&#x27;none&#x27;</span>, <span class="hljs-string">&#x27;any&#x27;</span>)]<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># pip install D:\Download\gmpy2-2.0.8-cp38-cp38-win32.whl</span><br>Processing d:\download\gmpy2-2.0.8-cp38-cp38-win32.whl<br>Installing collected packages: gmpy2<br>Successfully installed gmpy2-2.0.8<br><br><span class="hljs-comment"># pip install gmpy2</span><br>Requirement already satisfied: gmpy2 <span class="hljs-keyword">in</span> c:\users\13562\appdata\<span class="hljs-built_in">local</span>\programs\python\python38-32\lib\site-packages (2.0.8)<br><br></code></pre></td></tr></table></figure>
+<h2 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h2><p>首先直接梭哈，安装crypto</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> pip install crypto</span><br></code></pre></td></tr></table></figure>
+<p>但导入时显示 <code>No module named &#39;Crypto&#39;</code> </p>
+<p><a target="_blank" rel="noopener" href="https://s1.ax1x.com/2020/07/28/aEYrTA.png"><img src="https://s1.ax1x.com/2020/07/28/aEYrTA.png" srcset="/img/loading.gif" lazyload alt="aEYrTA.png"></a></p>
+<p>这时我们到python目录下的<code>Lib\site-packages</code>路径处，将原本的crypto改成Crypto即可</p>
+<p><a target="_blank" rel="noopener" href="https://s1.ax1x.com/2020/07/28/aEYLlT.png"><img src="https://s1.ax1x.com/2020/07/28/aEYLlT.png" srcset="/img/loading.gif" lazyload alt="aEYLlT.png"></a></p>
+<p>参考文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u012798683/article/details/88654534">No module named “Crypto”，如何安装Python三方模块Crypto</a> 第一种方法</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Crypto/">Crypto</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/CTF/">CTF</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Crypto/">Crypto</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/29/Linux/Kali/kali%E5%AE%89%E8%A3%85jre/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">kali安装jre</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/20/CTF/Crypto/Crypto/">
+                        <span class="hidden-mobile">Crypto</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

